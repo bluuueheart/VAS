@@ -1,0 +1,251 @@
+defaults:
+  - ppo_trainer
+  - _self_
+
+rl_paths:
+  root_dir: ./rl_workdir
+  data_dir: ${rl_paths.root_dir}/data
+  cache_dir: ${rl_paths.root_dir}/cache
+  outputs_dir: ${rl_paths.root_dir}/outputs
+  checkpoints_dir: ${rl_paths.root_dir}/checkpoints
+  ray_dir: ${oc.env:TOOL_STAR_RAY_TMPDIR,/tmp/tsr}
+  ray_spill_dir: ${rl_paths.root_dir}/ray_spill
+
+data:
+  train_files:
+    - ${rl_paths.data_dir}/nextqa/train.jsonl
+    - ${rl_paths.data_dir}/videobench/train.jsonl
+    - ${rl_paths.data_dir}/cfvbench/train.jsonl
+  val_files:
+    - ${rl_paths.data_dir}/nextqa/val.jsonl
+    - ${rl_paths.data_dir}/videobench/val.jsonl
+    - ${rl_paths.data_dir}/cfvbench/val.jsonl
+  prompt_key: question
+  max_prompt_length: 4096
+  max_response_length: 16384
+  train_batch_size: 8
+  val_batch_size: 8
+  shuffle: true
+  filter_prompts: true
+  custom_cls:
+    path: pkg://verl.utils.dataset.video_agent_rl_dataset
+    name: VideoAgentRLDataset
+
+actor_rollout_ref:
+  model:
+    path: ${oc.env:TOOL_STAR_MODEL_BASE_PATH,/mnt/data/LiuXiao/models}/${oc.env:TOOL_STAR_POLICY_MODEL_SUBPATH,Qwen/Qwen3.5-9B}
+    trust_remote_code: true
+    # Ulysses sequence parallelism requires remove-padding in the actor/ref path.
+    # Keep it explicitly enabled here so `actor_rollout_ref.actor.ulysses_sequence_parallel_size>1`
+    # does not fail fast in config validation.
+    use_remove_padding: true
+  actor:
+    # Keep PPO mini-batch aligned with the per-step train batch so small-batch
+    # overrides such as `data.train_batch_size=1` do not leave a stale larger
+    # mini-batch behind and fail validation before training starts.
+    ppo_mini_batch_size: ${data.train_batch_size}
+    ppo_micro_batch_size_per_gpu: 1
+    ppo_max_token_len_per_gpu: 24576
+    entropy_coeff: 0.0015
+    use_torch_compile: false
+    clip_ratio_low: 0.2
+    clip_ratio_high: 0.28
+    loss_agg_mode: token-mean
+    fsdp_config:
+      model_dtype: bf16
+      reshard_after_forward: false
+  ref:
+    log_prob_micro_batch_size_per_gpu: 1
+    log_prob_max_token_len_per_gpu: 24576
+    use_torch_compile: false
+    fsdp_config:
+      model_dtype: bf16
+  rollout:
+    name: vllm_video_agent
+    enable_native_agent_loop_for_video_agent: ${oc.env:TOOL_STAR_ENABLE_NATIVE_AGENT_LOOP_FOR_VIDEO_AGENT,true}
+    max_model_len: ${oc.env:TOOL_STAR_AGENT_LOOP_MAX_MODEL_LEN,12288}
+    gpu_memory_utilization: ${oc.env:TOOL_STAR_AGENT_LOOP_GPU_MEMORY_UTILIZATION,0.90}
+    prompt_length: ${data.max_prompt_length}
+    response_length: ${data.max_response_length}
+    persist_episode_artifacts: true
+    enable_generation_timeout_interception: ${oc.env:TOOL_STAR_ENABLE_GENERATION_TIMEOUT_INTERCEPTION,false}
+    enable_rollout_wall_clock_timeout: ${oc.env:TOOL_STAR_ENABLE_ROLLOUT_WALL_CLOCK_TIMEOUT,false}
+    planner_generation_timeout_seconds: 1200
+    subagent_generation_timeout_seconds: 720
+    allow_timeout_autoscale_when_explicit: true
+    generation_heartbeat_interval_seconds: 30
+    large_model_parameter_threshold_b: 7.0
+    large_model_timeout_multiplier: 1.3
+    large_model_timeout_min_seconds: 0
+    planner_large_model_timeout_multiplier: 1.5
+    planner_large_model_timeout_min_seconds: 900
+    subagent_large_model_timeout_multiplier: 1.2
+    subagent_large_model_timeout_min_seconds: 450
+    thinking_timeout_multiplier: 1.2
+    planner_thinking_timeout_multiplier: 1.3
+    wall_clock_budget_multiplier: 4.0
+    wall_clock_budget_extra_seconds: 0
+    wall_clock_budget_min_seconds: 10800
+    large_model_wall_clock_budget_multiplier: 1.3
+    large_model_wall_clock_budget_min_seconds: 10800
+    dataset_root: ${oc.env:CFVBENCH_DATASET_ROOT,/mnt/data/LiuXiao/datasets/CFVBENCH}
+    tensor_model_parallel_size: 1
+    max_num_batched_tokens: 4096
+    max_num_seqs: 64
+    enable_prefix_caching: false
+    log_prob_micro_batch_size_per_gpu: 1
+    log_prob_max_token_len_per_gpu: 24576
+    workspace_root: ${rl_paths.cache_dir}/cfvbench
+    append_sample_id_to_workspace: true
+    reuse_cache: true
+    grounding_embedding_provider: ${oc.env:TOOL_STAR_ROLLOUT_GROUNDING_EMBEDDING_PROVIDER,auto}
+    grounding_embedding_device: ${oc.env:TOOL_STAR_ROLLOUT_GROUNDING_EMBEDDING_DEVICE,cpu}
+    preprocess_embedding_device: ${oc.env:TOOL_STAR_ROLLOUT_PREPROCESS_EMBEDDING_DEVICE,cpu}
+    enable_preprocess_payload_memory_cache: true
+    preprocess_payload_cache_max_entries: 2
+    enable_vision_payload_memory_cache: true
+    vision_payload_cache_max_entries: 4
+    enable_rollout_prefix_cache: false
+    rollout_prefix_cache_max_entries: 2
+    rollout_prefix_cache_min_tokens: 256
+    disable_gradient_checkpointing_during_rollout: true
+    force_use_cache_during_rollout: true
+    enable_planner_incremental_decode: false
+    subagent_inference_only: true
+    subagent_force_greedy: false
+    subagent_match_e2e_sampling_profile: true
+    subagent_prefer_model_generate_for_e2e: true
+    enable_independent_subagent_service: true
+    independent_subagent_service_allow_fallback_to_rollout_actor: false
+    independent_subagent_service_model_name: null
+    enable_pre_planner_distributed_barrier: false
+    subagent_disable_progress_events: true
+    subagent_reduce_diagnostic_logging: true
+    enable_shared_accelerator_queue: true
+    shared_accelerator_queue_root: ${rl_paths.cache_dir}/_accelerator_queue
+    shared_accelerator_queue_log_wait_seconds: ${oc.env:TOOL_STAR_SHARED_ACCELERATOR_QUEUE_LOG_WAIT_SECONDS,5}
+    enable_generate_memory_admission: ${oc.env:TOOL_STAR_ENABLE_GENERATE_MEMORY_ADMISSION,true}
+    generate_memory_admission_timeout_seconds: ${oc.env:TOOL_STAR_GENERATE_MEMORY_ADMISSION_TIMEOUT_SECONDS,0}
+    generate_memory_admission_poll_seconds: ${oc.env:TOOL_STAR_GENERATE_MEMORY_ADMISSION_POLL_SECONDS,5}
+    generate_memory_admission_log_wait_seconds: ${oc.env:TOOL_STAR_GENERATE_MEMORY_ADMISSION_LOG_WAIT_SECONDS,30}
+    generate_memory_admission_base_gb: ${oc.env:TOOL_STAR_GENERATE_MEMORY_ADMISSION_BASE_GB,1.5}
+    generate_memory_admission_per_1k_prompt_tokens_gb: ${oc.env:TOOL_STAR_GENERATE_MEMORY_ADMISSION_PER_1K_PROMPT_TOKENS_GB,0.25}
+    generate_memory_admission_per_image_gb: ${oc.env:TOOL_STAR_GENERATE_MEMORY_ADMISSION_PER_IMAGE_GB,0.35}
+    generate_memory_admission_per_video_gb: ${oc.env:TOOL_STAR_GENERATE_MEMORY_ADMISSION_PER_VIDEO_GB,1.0}
+    generate_memory_admission_planner_extra_gb: ${oc.env:TOOL_STAR_GENERATE_MEMORY_ADMISSION_PLANNER_EXTRA_GB,0.5}
+    generate_memory_admission_full_sequence_extra_gb: ${oc.env:TOOL_STAR_GENERATE_MEMORY_ADMISSION_FULL_SEQUENCE_EXTRA_GB,1.0}
+    generate_memory_admission_margin_gb: ${oc.env:TOOL_STAR_GENERATE_MEMORY_ADMISSION_MARGIN_GB,0.5}
+    generate_oom_retry_count: ${oc.env:TOOL_STAR_GENERATE_OOM_RETRY_COUNT,1}
+    generate_oom_retry_extra_margin_gb: ${oc.env:TOOL_STAR_GENERATE_OOM_RETRY_EXTRA_MARGIN_GB,1.0}
+    enable_cooperative_turn_scheduler: true
+    cooperative_turn_scheduler_max_active_sessions: 2
+    cooperative_turn_scheduler_rows_per_dispatch: ${oc.env:TOOL_STAR_COOP_ROWS_PER_DISPATCH,2}
+    cooperative_turn_scheduler_event_wait_timeout_seconds: ${oc.env:TOOL_STAR_COOP_EVENT_WAIT_TIMEOUT_SECONDS,300}
+    cooperative_turn_scheduler_prioritize_new_sessions: true
+    cooperative_turn_scheduler_enable_cost_aware_dispatch: true
+    cooperative_turn_scheduler_prompt_token_cost_weight: 1.0
+    cooperative_turn_scheduler_image_cost_weight: 1536.0
+    cooperative_turn_scheduler_video_cost_weight: 4096.0
+    structured_stop_check_interval: 2
+    materialize_nested_fsdp_modules: false
+    device_type: null
+    n: 4
+    trace:
+      project_name: ${trainer.project_name}
+      experiment_name: ${trainer.experiment_name}
+      backend: ${oc.env:TOOL_STAR_ROLLOUT_TRACE_BACKEND,null}
+      token2text: ${oc.env:TOOL_STAR_ROLLOUT_TRACE_TOKEN2TEXT,false}
+      max_samples_per_step_per_worker: ${oc.env:TOOL_STAR_ROLLOUT_TRACE_MAX_SAMPLES_PER_WORKER,null}
+    multi_turn:
+      interaction_config_path: ${oc.env:TOOL_STAR_INTERACTION_CONFIG_PATH,null}
+    skip:
+      enable: false
+      dump_dir: ${rl_paths.cache_dir}/rollout_skip
+      max_dump_step: 10
+      action: cache
+    agent:
+      num_workers: ${oc.env:TOOL_STAR_AGENT_LOOP_NUM_WORKERS,4}
+
+critic:
+  model:
+    trust_remote_code: true
+  fsdp_config:
+    model_dtype: bf16
+  ppo_micro_batch_size_per_gpu: 1
+  forward_micro_batch_size_per_gpu: 1
+  ppo_max_token_len_per_gpu: 49152
+  forward_max_token_len_per_gpu: 49152
+
+reward:
+  num_workers: 8
+  reward_manager:
+    name: video_agent
+  reward_model:
+    enable: false
+  video_agent_reward:
+    enable_subagent_rl_contribution: false
+    answer_reward: 1.0
+    valid_bonus: 0.2
+    successful_tool_bonus: 0.1
+    invalid_json_penalty: 0.5
+    invalid_action_penalty: 0.5
+    repeated_action_penalty: 0.2
+    budget_penalty: 0.2
+    timeout_penalty: 0.5
+    diversity_bonus: 0.1
+    diversity_target_unique_tools: 4
+    base_meta_bonus: 0.05
+    decomposition_bonus: 0.05
+    parallel_bonus: 0.05
+    on_budget_bonus: 0.05
+    tool_chain_invalid_penalty: 0.3
+    enable_tool_backed_finish_filter: false
+    open_answer_rouge_weight: 0.35
+    open_answer_keypoint_weight: 0.65
+    open_answer_correct_threshold: 0.6
+    videobench_sentence_t5_path: ${oc.env:VIDEO_AGENT_SENTENCE_T5_PATH,sentence-transformers/sentence-t5-base}
+    subagent_local_reward_scale: 1.0
+    subagent_decomposition_weight: 0.4
+    subagent_executable_weight: 0.4
+    subagent_no_duplicate_weight: 0.2
+    subagent_invalid_json_penalty: 0.5
+    subagent_invalid_action_penalty: 0.5
+    subagent_repeated_action_penalty: 0.2
+    subagent_min_local_reward: -1.0
+    subagent_max_local_reward: 1.0
+    min_reward: -1.0
+    max_reward: 1.8
+
+algorithm:
+  adv_estimator: grpo
+  use_kl_in_reward: false
+  kl_ctrl:
+    kl_coef: 0.0015
+
+trainer:
+  project_name: retool_video_rl
+  experiment_name: cfvbench_video_agent_rl
+  nnodes: ${oc.env:TOOL_STAR_NNODES,1}
+  n_gpus_per_node: ${oc.env:TOOL_STAR_N_GPUS_PER_NODE,8}
+  logger: ["console", "wandb"]
+  wandb_init_timeout: 300
+  wandb_mode: ${oc.env:WANDB_MODE,online}
+  wandb_allow_init_failure: true
+  save_freq: ${oc.env:TOOL_STAR_SAVE_FREQ,20}
+  test_freq: ${oc.env:TOOL_STAR_TEST_FREQ,-1}
+  resume_mode: ${oc.env:TOOL_STAR_RESUME_MODE,auto}
+  max_actor_ckpt_to_keep: ${oc.env:TOOL_STAR_MAX_ACTOR_CKPT_TO_KEEP,3}
+  max_critic_ckpt_to_keep: ${oc.env:TOOL_STAR_MAX_CRITIC_CKPT_TO_KEEP,3}
+  val_before_train: false
+  val_generations_to_log_to_wandb: 4
+  validation_generation_batch_size: 1
+  rollout_data_dir: ${rl_paths.outputs_dir}/cfvbench_video_agent_rollouts
+  default_local_dir: ${rl_paths.checkpoints_dir}/${trainer.project_name}/${trainer.experiment_name}
+  ray_temp_dir: ${rl_paths.ray_dir}
+  ray_object_spilling_dir: ${oc.env:TOOL_STAR_RAY_OBJECT_SPILL_DIR,${rl_paths.ray_spill_dir}}
+  nccl_process_group_timeout_seconds: 3600
+  torch_nccl_async_error_handling: 1
+  trigger_parameter_sync_step: 4
+  staleness_threshold: 0.5
+  partial_rollout: true
+  use_legacy_worker_impl: enable

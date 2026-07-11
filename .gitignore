@@ -1,0 +1,13 @@
+.agents/
+.aris/
+.codegraph/
+
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+evaluationVideo/Mix/workspaces/
+graph/out/
+RL/rl_workdir/
+
+.DS_Store

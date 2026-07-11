@@ -1,0 +1,5 @@
+MLVU Task Type: {task_type}
+
+{question_block}
+
+Reply with exactly one best option in the format "(A) option text".
