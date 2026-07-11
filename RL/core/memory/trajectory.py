@@ -1,5 +1,7 @@
 """Trajectory recording for agent execution steps."""
 import json
+import os
+import uuid
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
@@ -87,6 +89,10 @@ class Trajectory:
     task_id: str
     goal: str
     depth: int
+    trajectory_id: str = field(default_factory=lambda: f"trajectory_{uuid.uuid4().hex}")
+    registry_snapshot_id: str = field(
+        default_factory=lambda: str(os.environ.get("CFV_REGISTRY_SNAPSHOT_ID") or "snapshot_000")
+    )
     steps: List[Step] = field(default_factory=list)
     final_answer: Optional[str] = None
     success: bool = False
@@ -168,6 +174,8 @@ class Trajectory:
     def to_dict(self) -> Dict[str, Any]:
         """Convert trajectory to dictionary."""
         return {
+            "trajectory_id": self.trajectory_id,
+            "registry_snapshot_id": self.registry_snapshot_id,
             "task_id": self.task_id,
             "goal": self.goal,
             "depth": self.depth,

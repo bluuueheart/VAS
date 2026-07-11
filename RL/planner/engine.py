@@ -26,6 +26,7 @@ from core.llm import (
     is_accelerator_fatal_error,
 )
 from core.memory import ContextManager, MaxRecursionError, Trajectory
+from evolution import EvidenceVerifier
 from runtime.session import runtime_session
 from toolkit.impl.visual import (
     prepare_planner_image_attachment,
@@ -144,7 +145,7 @@ def _infer_evidence_status(
     return "verified"
 
 
-def _extract_evidence_slots(payload: Optional[Dict[str, Any]]) -> List[Dict[str, str]]:
+def _extract_evidence_slots(payload: Optional[Dict[str, Any]]) -> List[Dict[str, Any]]:
     if not isinstance(payload, dict):
         return []
     raw_slots = payload.get("Evidence")
@@ -153,7 +154,7 @@ def _extract_evidence_slots(payload: Optional[Dict[str, Any]]) -> List[Dict[str,
     if not isinstance(raw_slots, list):
         return []
 
-    extracted: List[Dict[str, str]] = []
+    extracted: List[Dict[str, Any]] = []
     for idx, item in enumerate(raw_slots, start=1):
         if not isinstance(item, dict):
             continue
@@ -161,7 +162,7 @@ def _extract_evidence_slots(payload: Optional[Dict[str, Any]]) -> List[Dict[str,
         value = str(item.get("value", "")).strip()
         citation = str(item.get("citation", "")).strip()
         status = _infer_evidence_status(
-            value=value,
+            value=value or label,
             citation=citation,
             evidence_status=str(item.get("evidence_status", "")).strip(),
         )
@@ -170,6 +171,9 @@ def _extract_evidence_slots(payload: Optional[Dict[str, Any]]) -> List[Dict[str,
             "value": value,
             "citation": citation,
             "evidence_status": status,
+            "logical_conflict": bool(
+                item.get("logical conflict", item.get("logical_conflict", False))
+            ),
         })
     return extracted
 
@@ -770,7 +774,8 @@ class RecursiveEngine:
             if mediation_mode
             else ""
         )
-        evidence_slots: List[Dict[str, str]] = []
+        evidence_slots: List[Dict[str, Any]] = []
+        evidence_verifier = EvidenceVerifier() if evidence_first_mode else None
         visual_probe_count = 0
         retrieval_probe_count = 0
         direct_visual_probe_count = 0
@@ -5197,7 +5202,39 @@ class RecursiveEngine:
                             is_recursive=False
                         )
                         continue
-                    
+
+                    if evidence_verifier is not None:
+                        verification = evidence_verifier.verify_answerability(
+                            evidence_slots=evidence_slots,
+                            steps=agent.trajectory.steps,
+                            answer=answer,
+                            completion_basis=completion_basis,
+                        )
+                        verification_payload = verification.model_dump()
+                        verification_payload.update({
+                            "type": "verifier_decision",
+                            "event_type": "VerifierDecisionEvent",
+                            "depth": depth,
+                            "iteration": iteration,
+                        })
+                        agent.trajectory.add_debug_event(verification_payload)
+                        if not verification.can_finish:
+                            agent.trajectory.add_step(
+                                thought=thought,
+                                plan=plan,
+                                action=action_name,
+                                action_args=action_args,
+                                observation=verification.feedback,
+                                is_recursive=False,
+                            )
+                            _append_assistant_turn(thought, plan, action_name, action_args)
+                            _append_observation_json([{
+                                "tool": "Evidence_Verifier",
+                                "status": "rejected",
+                                "result": verification_payload,
+                            }])
+                            continue
+
                     # Successfully got answer - reset counter
                     consecutive_finish_without_answer = 0
                     _clear_identical_action_failure(current_signature)

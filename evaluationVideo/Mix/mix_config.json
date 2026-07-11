@@ -7,13 +7,11 @@
   "ffmpeg_binary": "ffmpeg",
   "parallel_samples": "auto",
   "dataset_order": [
-    "mvbench",
-    "mlvu",
-    "videomme"
+    "mlvu"
   ],
   "datasets": {
     "mvbench": {
-      "enabled": true,
+      "enabled": false,
       "prompt_template_path": "./mvbench_query_prompt.txt",
       "dataset_root": "../../../datasets/MVBench/video",
       "json_root": "../../../datasets/MVBench/json",
@@ -30,7 +28,7 @@
       "video_root": "./video"
     },
     "videomme": {
-      "enabled": true,
+      "enabled": false,
       "prompt_template_path": "./videomme_query_prompt.txt",
       "dataset_root": "../../../datasets/Video-MME",
       "annotation_path": "./videomme/test-00000-of-00001.parquet",
