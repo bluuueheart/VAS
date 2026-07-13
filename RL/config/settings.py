@@ -26,15 +26,15 @@ class Settings(BaseSettings):
     max_iterations: int = 15
     subagent_max_iterations: int = 3
     enable_streaming: bool = False
-    planner_max_generation_tokens: int = 8192
-    planner_min_thinking_generation_tokens: int = 8192
+    planner_max_generation_tokens: int = 2048
+    planner_min_thinking_generation_tokens: int = 2048
     subagent_max_generation_tokens: int = 2048
-    planner_temperature: float = 1.0
+    planner_temperature: float = 0.0
     planner_top_p: float = 0.95
     planner_top_k: int = 20
     planner_min_p: float = 0.0
     planner_presence_penalty: float = 1.5
-    planner_repetition_penalty: float = 1.0
+    planner_repetition_penalty: float = 1.1
     subagent_temperature: float = 0.7
     subagent_top_p: float = 0.8
     subagent_top_k: int = 20
@@ -168,8 +168,9 @@ class Settings(BaseSettings):
     video_clip_qa_min_pixels: int = 4 * 32 * 32
     video_clip_qa_processor_max_pixels: int = 65536 * 32 * 32
     video_clip_qa_max_frames: int = 80
+    video_clip_qa_max_window_seconds: float = 90.0
     video_clip_qa_max_pixels: int = 768 * 32 * 32
-    video_clip_qa_max_new_tokens: int = 8192
+    video_clip_qa_max_new_tokens: int = 768
     video_clip_qa_think_max_chars: int = 4000
     
     # Multi-Device Configuration

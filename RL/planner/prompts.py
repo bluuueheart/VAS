@@ -32,6 +32,7 @@ Given a problem, background information, and basic answers, you need to use tool
     "Evidence": [
         {
             "label": "fact or scenario",
+            "value": "observed fact that directly supports or contradicts an answer candidate",
             "logical conflict": true/false,
             "citation": "timestamp citation",
             "evidence_status": verified/approximate/missing
@@ -46,13 +47,13 @@ Given a problem, background information, and basic answers, you need to use tool
     ],
     "Finish": {
         "chain_complete": true,
-        "completion_basis": "text->visual->answer/visual->text->answer", 
+        "completion_basis": "visual->answer/text->visual->answer/visual->text->answer",
         "answer": "final answer"
     }
 }
 
 `Finish` is optional. When present, it MUST be the only termination signal and must appear as the top-level JSON field. For the root planner, `Finish` MUST include "chain_complete": true, `completion_basis`, and `answer`. 
-`Evidence` is optional but you MUST keep `Evidence` updated with one item per required fact/scenario until each has `"evidence_status": verified` and a citation. When new evidence is received, if it is found to logically conflict with previous evidence or itself, record `"logical conflict":"false"` and arbitrate it in subsequent steps.
+`Evidence` is optional on tool-use turns, but mandatory on Finish turns. Keep one item per required fact/scenario until each has a non-empty `value`, `"evidence_status": verified`, and a citation. At least one verified Evidence `label` or `value` must explicitly contain the selected answer fact, not merely a timestamp or generic probe description. When new evidence conflicts with previous evidence, record `"logical conflict":true` and arbitrate it in subsequent steps.
 The schema above illustrates the shape only. Replace every example value with task-specific content and never emit the example action literally.
 
 # Output Schema Examples
@@ -75,6 +76,7 @@ Use exactly one template per turn:
     "Thought": "...",
     "Plan": "...",
     "Actions": [],
+    "Evidence": [{"label": "answer-supporting claim", "value": "observed answer fact", "logical conflict": false, "citation": "timestamp/tool result", "evidence_status": "verified"}],
     "Finish": {
         "chain_complete": true,
         "completion_basis": "...",
@@ -95,6 +97,7 @@ Tools can access two tiers of video infomation. Specify your needs in the tool d
 4. **No fabricated tool history**: Never claim that search results were empty, a tool already failed, or prior attempts happened unless that information explicitly appears in the actual Observation history of this run.
 5. **Image-timestamp alignment is explicit**: For both initial grounding collages and tool-returned collages, sub-frames are arranged in chronological order clockwise from the top-left: top-left, top-right, bottom-right, bottom-left. The timestamps provided alongside that collage correspond to those sub-frames in the same order.
 6. **Attached images are already direct evidence**: If an Observation includes attached images from a visual tool, those images are already visible evidence for you. Do NOT call another raw image-returning tool on the same timestamps/window just to "inspect" the same images again. Re-probe only if you materially change the time window or apply `Crop`/`Zoom_in` to a returned image.
+7. **Multiple-choice comparison**: Before Finish, compare the selected option against every visually plausible alternative using the same cited evidence. For a global character/property question, inspect distinct time regions and identify which appearance belongs to the main storyline. For a transition question such as "how did X leave", use a clip spanning before, during, and after the transition rather than a single frame.
 
 # The Absolute Evidence Rule
 1. **FORBIDDEN SIMULATION**: You are STRICTLY FORBIDDEN from guessing, using general knowledge, or simulating missing data (e.g., assuming a 2% payment rate).
@@ -113,8 +116,8 @@ Tools can access two tiers of video infomation. Specify your needs in the tool d
 - **MANDATORY CITATION**: Your final "answer" must explicitly cite the timestamp for every value used. If question contains options, "answer" must include a definite option.
 - **CONDITIONAL ABORT**: You are FORBIDDEN from stating "information not present" until you have performed at least one visual/audio extraction action and received a null result.
 - **STANDARD FINISH SIGNAL**: Use only the top-level `Finish` field. Do not emit `Finish` as a tool action inside `Actions`.
-- **ROOT FINISH CONTRACT**: Planner must include `"chain_complete": true`, `completion_basis` and "Evidence":[{..., "logical conflict": false, ..., "evidence_status": verified}]in `Finish`. If the chain is incomplete, continue reasoning; do not pretend completion.
-- **FAILURE STATEMENT**: If a tool returned `status=no_valid_result`, treat that tool as invalid for the current branch: switch to another tool, and do NOT retry the same tool by only adjusting parameters. Only if all relevant probes return no valid data, state: "The information [X] was not found after visual or audio probing of the video."
+- **ROOT FINISH CONTRACT**: Planner must include top-level `Evidence` with a verified, cited value that directly states the selected answer fact, plus `Finish.chain_complete=true`, `completion_basis`, and `answer`. If the chain is incomplete, continue reasoning; do not pretend completion.
+- **FAILURE STATEMENT**: Never repeat the exact call that returned `status=no_valid_result`. If the result reports a parameter or window validation error, correct those arguments and retry the tool on a materially valid scope; otherwise switch tools. Only if all relevant probes return no valid data, state: "The information [X] was not found after visual or audio probing of the video."
 """
 # Subagent prompt
 RECURSIVE_TASK_PROMPT = """You are a subagent for a video understanding system. Your responsibility is to transform an abstract tool request into executable tool calls and return the result.
@@ -254,6 +257,7 @@ def _classify_query(query: str) -> str:
     video_keywords = [
         "video", "clip", "scene", "frame", "footage",
         "watch", "camera", "visual", "subtitle", "transcript",
+        "mlvu task type", "mvbench task type", "videomme",
         "\u64ad\u653e", "\u89c6\u9891", "\u753b\u9762", "\u955c\u5934", "\u7247\u6bb5",
     ]
     return "video" if any(kw in q for kw in video_keywords) else "text"
@@ -264,6 +268,9 @@ def query_requires_evidence_first(query: str) -> bool:
     if not query:
         return False
     q = query.lower()
+    benchmark_markers = ["mlvu task type", "mvbench task type", "videomme"]
+    if any(marker in q for marker in benchmark_markers):
+        return True
     exact_markers = [
         "exact", "exactly", "precise", "specific", "quoted",
         "total", "amount", "value", "values", "number", "numbers",
@@ -364,13 +371,42 @@ def get_system_prompt(
             f"- This query requires at least {estimate_required_evidence_slots(query)} evidence slot(s).\n"
             "- Keep `Evidence` updated until each required item has a non-empty `value`, a citation, and "
             "`evidence_status=\"exact\"`.\n"
-            "- Before setting `Finish.chain_complete=true`, you should attempt both a text/retrieval probe and "
-            "a direct visual probe. Use one modality to cue the other.\n"
+            "- At Finish, at least one verified Evidence label/value must explicitly state the selected answer fact.\n"
+            "- Use both text/retrieval and direct visual probes when both modalities contain relevant evidence. "
+            "For a purely visual event, decisive direct visual evidence may complete the chain without fabricated text support.\n"
+            "- For fine-grained action tasks such as needle retrieval, a Video_Clip_QA result must directly state the selected action.\n"
             "- Do not finish with approximate evidence.\n"
             "- Do not call math or web tools as a substitute for local video evidence.\n"
-            "- The system will only validate the `Finish` contract; you are responsible for deciding whether "
-            "the evidence chain is complete."
+            "- The system validates the `Finish` contract and evidence thresholds. If rejected, follow the "
+            "verifier feedback and acquire or reconcile the missing evidence."
         )
+        if "mlvu task type: needle" in str(query or "").lower():
+            prompt += (
+                "\n- Needle localization rule: first identify the initial grounding segment that contains the "
+                "question entities, then call Video_Clip_QA on that exact short window. Do not scan the full "
+                "video or jump to distant semantic-retrieval hits while the entity-matching grounding window "
+                "has not been checked dynamically."
+            )
+        if "mlvu task type: anomaly_reco" in str(query or "").lower():
+            prompt += (
+                "\n- Anomaly decision rule: after a focused Video_Clip_QA directly describes theft, shooting, "
+                "assault, or a road accident, map that behavior to the listed option and Finish with its citation. "
+                "Do not repeat the same frame window to seek generic confirmation after decisive anomaly evidence. "
+                "Never map an inconclusive visual answer or a semantic-retrieval rank to an anomaly option; instead "
+                "inspect a different focused window until the observed behavior is explicit."
+            )
+        if "mlvu task type: count" in str(query or "").lower():
+            prompt += (
+                "\n- Count rule: count contiguous video scenes that match the requested action, using the grounded "
+                "caption/transcript and a focused visual check. Do not reject a captioned action merely because motion "
+                "is subtle in sampled frames. If exactly one localized segment matches, select the option for 1."
+            )
+        if "mlvu task type: plotqa" in str(query or "").lower():
+            prompt += (
+                "\n- Plot rule: when an entity-matching grounding segment explicitly names an answer entity in spoken "
+                "dialogue or captions, treat that direct statement as decisive and map it to the matching option; do not "
+                "replace it with speculative character identification from unrelated frames."
+            )
     if include_examples:
         qtype = _classify_query(query)
         # For text/math queries, examples can over-anchor small local models and

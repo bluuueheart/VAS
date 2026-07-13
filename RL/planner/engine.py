@@ -130,10 +130,21 @@ def _infer_evidence_status(
     evidence_status: str = "",
 ) -> str:
     normalized_status = str(evidence_status or "").strip().lower()
-    if normalized_status in {"verified", "exact", "approximate", "missing"}:
+    if normalized_status in {"verified", "exact", "approximate", "approx", "partial", "missing"}:
         if normalized_status in {"verified", "exact"} and (not value or not citation):
             return "approximate"
-        return "verified" if normalized_status in {"verified", "exact"} else normalized_status
+        if normalized_status in {"verified", "exact"}:
+            return "verified"
+        if normalized_status in {"approximate", "approx", "partial"}:
+            return "approximate"
+        return "missing"
+
+    if normalized_status:
+        missing_markers = ("missing", "unverified", "unsupported", "unresolved", "unknown", "not_found")
+        if any(marker in normalized_status for marker in missing_markers):
+            return "missing"
+        # Never promote an unrecognized explicit status to verified.
+        return "approximate" if value or citation else "missing"
 
     if not value and not citation:
         return "missing"
@@ -148,10 +159,16 @@ def _infer_evidence_status(
 def _extract_evidence_slots(payload: Optional[Dict[str, Any]]) -> List[Dict[str, Any]]:
     if not isinstance(payload, dict):
         return []
-    raw_slots = payload.get("Evidence")
-    if raw_slots is None:
-        raw_slots = payload.get("evidence")
-    if not isinstance(raw_slots, list):
+    raw_slots: List[Any] = []
+    top_level = payload.get("Evidence", payload.get("evidence"))
+    if isinstance(top_level, list):
+        raw_slots.extend(top_level)
+    finish_payload = payload.get("Finish", payload.get("finish"))
+    if isinstance(finish_payload, dict):
+        nested = finish_payload.get("Evidence", finish_payload.get("evidence"))
+        if isinstance(nested, list):
+            raw_slots.extend(nested)
+    if not raw_slots:
         return []
 
     extracted: List[Dict[str, Any]] = []
@@ -783,7 +800,6 @@ class RecursiveEngine:
         modality_attempts: Dict[str, int] = {"text": 0, "visual": 0, "cross_modal": 0}
         modality_successes: Dict[str, int] = {"text": 0, "visual": 0, "cross_modal": 0}
         identical_action_failures: Dict[str, int] = {}
-        invalidated_no_result_tools: Dict[str, str] = {}
         last_execution_meta: Dict[str, Any] = {}
         no_progress_guard_signature = ""
         no_progress_guard_family = ""
@@ -2637,7 +2653,7 @@ class RecursiveEngine:
                 _record_progress_for_execution(executed_tool, obs_status)
                 root_effective_tool_executed = True
             if obs_status == "no_valid_result" and executed_tool:
-                _record_no_valid_result_invalidation(executed_tool, observation_text)
+                _record_no_valid_result(executed_tool, observation_text)
             if obs_status == "success":
                 success = True
             if executed_tool == "Tool_Search":
@@ -2876,49 +2892,32 @@ class RecursiveEngine:
                 values = values[-limit:]
             memory_state[key] = values
 
-        def _record_no_valid_result_invalidation(tool_name: str, reason: str) -> None:
+        def _record_no_valid_result(tool_name: str, reason: str) -> None:
             normalized_tool = str(tool_name or "").strip()
             if not normalized_tool or normalized_tool in {"Tool_Search", "Finish", "Parallel"}:
                 return
             normalized_reason = _truncate_text(str(reason or "").strip(), 220)
-            invalidated_no_result_tools[normalized_tool] = normalized_reason
             failure_summary = f"{normalized_tool}: status=no_valid_result"
             if normalized_reason:
                 failure_summary = f"{failure_summary}; {normalized_reason}"
             _append_memory_state_message("failed_actions", failure_summary)
             _append_memory_state_message(
                 "do_not_repeat",
-                f"{normalized_tool}: returned no_valid_result in this branch; switch tools instead of retrying it with new parameters.",
+                f"{normalized_tool}: do not repeat the exact failed call; correct invalid parameters or switch tools.",
             )
             if evidence_first_mode:
                 _append_memory_state_message(
                     "next_allowed_tools",
-                    "Use a different retrieval, visual, or verification tool instead of retrying a no_valid_result tool.",
+                    "Correct parameter/window validation failures; otherwise switch to a different evidence tool.",
                 )
             logger.info(
-                "%s[%s][Depth %d] Invalidated tool after no_valid_result: %s reason=%s",
+                "%s[%s][Depth %d] Recorded no_valid_result: %s reason=%s",
                 '  ' * depth,
                 role_label,
                 depth,
                 normalized_tool,
                 normalized_reason or "[empty]",
             )
-
-        def _blocked_no_valid_result_message(tool_name: str) -> str:
-            normalized_tool = str(tool_name or "").strip()
-            if not normalized_tool:
-                return ""
-            if normalized_tool not in invalidated_no_result_tools:
-                return ""
-            normalized_reason = str(invalidated_no_result_tools.get(normalized_tool, "") or "").strip()
-            blocked_message = (
-                f"Error: {normalized_tool} already returned status=no_valid_result in this branch, "
-                "so this tool is invalid for the current task. Switch to a different tool instead of retrying it "
-                "with adjusted parameters."
-            )
-            if normalized_reason:
-                blocked_message = f"{blocked_message} Last observation: {normalized_reason}"
-            return blocked_message.strip()
 
         _unresolved_pointer = object()
 
@@ -3075,23 +3074,6 @@ class RecursiveEngine:
                 depth,
                 _format_action_for_history(name, resolved_args),
             )
-            blocked_message = _blocked_no_valid_result_message(name)
-            if blocked_message:
-                result = {
-                    "status": "error",
-                    "result": blocked_message,
-                    "blocked_tool": str(name or "").strip(),
-                    "previous_status": "no_valid_result",
-                    "source": "system",
-                }
-                return {
-                    "tool_name": str(name or "").strip(),
-                    "resolved_args": resolved_args,
-                    "mode": "blocked",
-                    "result": result,
-                    "source": "system",
-                    "executed": False,
-                }
             execution_signature = _concrete_tool_execution_signature(str(name or "").strip(), resolved_args)
             duplicate_message = ""
             if execution_signature in executed_tool_signatures:
@@ -3177,13 +3159,12 @@ class RecursiveEngine:
             source = str(prepared_call.get("source", "tool")).strip() or "tool"
             abstract_label = str(abstract_tool or name).strip() or name
 
-            if mode != "blocked":
-                _clear_tool_error(name)
+            _clear_tool_error(name)
 
             _store_result_aliases(name, result)
             observation_text, observation_status, _ = format_compact_observation(result, tool_name=name)
             if observation_status == "no_valid_result":
-                _record_no_valid_result_invalidation(name, observation_text)
+                _record_no_valid_result(name, observation_text)
             _remember_execution(
                 tool_name=name,
                 tool_args=resolved_args if isinstance(resolved_args, dict) else {},
@@ -3196,17 +3177,6 @@ class RecursiveEngine:
                 executed=executed,
             )
             _record_progress_for_execution(name, observation_status)
-
-            if mode == "blocked":
-                logger.warning(
-                    "%s[%s][Depth %d] Blocked retry of invalidated tool after no_valid_result: %s",
-                    '  ' * depth,
-                    role_label,
-                    depth,
-                    name,
-                )
-                _log_observation_preview(f"Tool {name} blocked retry preview", observation_text)
-                return result, observation_text, observation_status
 
             logger.info(
                 "%s[%s][Depth %d] Tool %s completed with status=%s",
@@ -4501,6 +4471,7 @@ class RecursiveEngine:
                     )
                  
                 structured_payload = agent._extract_json_payload(response)
+                parsed_evidence_slots: List[Dict[str, Any]] = []
                 if evidence_first_mode:
                     parsed_evidence_slots = _extract_evidence_slots(structured_payload)
                     if parsed_evidence_slots:
@@ -4889,7 +4860,11 @@ class RecursiveEngine:
                     })
 
                 # Repetition circuit breaker: block identical action+args loops.
-                current_signature = _action_signature(action_name, action_args)
+                signature_args = action_args
+                if action_name == "Finish" and isinstance(action_args, dict):
+                    signature_args = dict(action_args)
+                    signature_args["__evidence_signature__"] = _stable_signature(evidence_slots)
+                current_signature = _action_signature(action_name, signature_args)
                 action_family = _action_family(action_name)
                 if current_signature in blocked_action_signatures:
                     repeated_loop_violations += 1
@@ -5205,10 +5180,11 @@ class RecursiveEngine:
 
                     if evidence_verifier is not None:
                         verification = evidence_verifier.verify_answerability(
-                            evidence_slots=evidence_slots,
+                            evidence_slots=parsed_evidence_slots or evidence_slots,
                             steps=agent.trajectory.steps,
                             answer=answer,
                             completion_basis=completion_basis,
+                            query=goal,
                         )
                         verification_payload = verification.model_dump()
                         verification_payload.update({
@@ -6545,7 +6521,7 @@ class RecursiveEngine:
                             is_recursive=True,
                         )
                         if sub_status == "no_valid_result":
-                            _record_no_valid_result_invalidation(
+                            _record_no_valid_result(
                                 sub_meta.get("tool", resolved_tool),
                                 sub_meta.get("observation", observation),
                             )

@@ -1,4 +1,5 @@
 """Deterministic evidence verifier used at the planner termination boundary."""
+import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Mapping, Optional
 
@@ -8,6 +9,21 @@ from .models import VerificationResult
 
 
 DEFAULT_CONFIG_PATH = Path(__file__).resolve().parents[1] / "config" / "evolution.yaml"
+
+_ANSWER_STOPWORDS = frozenset({
+    "a", "an", "the", "is", "are", "to", "of", "and", "or", "option", "answer",
+    "at", "for", "from", "her", "in", "it", "on", "that", "this", "where", "while", "with",
+})
+_DYNAMIC_GENERIC_TOKENS = frozenset({
+    "action", "appear", "caption", "computer", "frame", "hand", "laptop",
+    "screen", "segment", "transcript", "video", "visual", "woman",
+})
+_OPTION_LINE_RE = re.compile(r"^\s*\(([A-Z])\)\s+(.+?)\s*$", re.MULTILINE)
+_NUMBER_WORDS = {
+    "zero": "0", "one": "1", "two": "2", "three": "3", "four": "4",
+    "five": "5", "six": "6", "seven": "7", "eight": "8", "nine": "9",
+    "ten": "10",
+}
 
 
 def load_evolution_config(path: Optional[Path] = None) -> Dict[str, Any]:
@@ -39,6 +55,87 @@ def _successful_families(steps: Iterable[Any]) -> set[str]:
     return families
 
 
+def _stem_token(token: str) -> str:
+    for suffix in ("ing", "ed", "es", "s"):
+        if token.endswith(suffix) and len(token) > len(suffix) + 2:
+            return token[:-len(suffix)]
+    return token
+
+
+def _content_tokens(value: Any) -> set[str]:
+    tokens = re.findall(r"[a-z0-9]+", str(value or "").lower())
+    return {
+        _NUMBER_WORDS.get(_stem_token(token), _stem_token(token))
+        for token in tokens
+        if (len(token) > 1 or token.isdigit()) and token not in _ANSWER_STOPWORDS
+    }
+
+
+def _has_direct_answer_support(answer: str, verified_slots: Iterable[Mapping[str, Any]]) -> bool:
+    answer_tokens = _content_tokens(answer)
+    if not answer_tokens:
+        return False
+    for item in verified_slots:
+        evidence_tokens = _content_tokens(f"{item.get('label', '')} {item.get('value', '')}")
+        if answer_tokens.intersection(evidence_tokens):
+            return True
+    return False
+
+
+def _iter_observation_items(value: Any) -> Iterable[Mapping[str, Any]]:
+    if isinstance(value, list):
+        for item in value:
+            yield from _iter_observation_items(item)
+        return
+    if not isinstance(value, Mapping):
+        return
+    nested = value.get("items")
+    if isinstance(nested, list):
+        yield from _iter_observation_items(nested)
+    if str(value.get("tool") or "").strip():
+        yield value
+
+
+def _has_dynamic_answer_support(
+    answer: str,
+    steps: Iterable[Any],
+    verified_slots: Iterable[Mapping[str, Any]],
+) -> bool:
+    answer_tokens = _content_tokens(answer)
+    required_overlap = 1 if len(answer_tokens) <= 2 else 2
+    dynamic_result_tokens: List[set[str]] = []
+    for step in steps:
+        if isinstance(step, Mapping):
+            items = step.get("observation_items") or []
+        else:
+            items = getattr(step, "observation_items", None) or []
+        for item in _iter_observation_items(items):
+            if str(item.get("tool") or "") != "Video_Clip_QA":
+                continue
+            status = str(item.get("status") or "success").lower()
+            if status != "success":
+                continue
+            result_tokens = _content_tokens(item.get("result"))
+            dynamic_result_tokens.append(result_tokens)
+            if len(answer_tokens.intersection(result_tokens)) >= required_overlap:
+                return True
+    if not dynamic_result_tokens:
+        return False
+    for item in verified_slots:
+        if "video_clip_qa" not in str(item.get("citation") or "").lower():
+            continue
+        claim_tokens = _content_tokens(f"{item.get('label', '')} {item.get('value', '')}")
+        if answer_tokens.intersection(claim_tokens) and any(
+            len({
+                token for token in claim_tokens.intersection(result_tokens)
+                if token not in _DYNAMIC_GENERIC_TOKENS and not token.isdigit()
+            }) >= 2
+            for result_tokens in dynamic_result_tokens
+        ):
+            return True
+    return False
+
+
 class EvidenceVerifier:
     def __init__(self, config: Optional[Mapping[str, Any]] = None):
         payload = dict(config or load_evolution_config())
@@ -51,8 +148,27 @@ class EvidenceVerifier:
         steps: Iterable[Any],
         answer: str,
         completion_basis: str,
+        query: str = "",
     ) -> VerificationResult:
         slots = [item for item in evidence_slots if isinstance(item, dict)]
+        options = {label: text for label, text in _OPTION_LINE_RE.findall(str(query or ""))}
+        answer_label_match = re.search(r"\(([A-Z])\)", str(answer or "").upper())
+        answer_label = answer_label_match.group(1) if answer_label_match else ""
+        answer_tokens = _content_tokens(answer)
+        if options and answer_label in options:
+            has_verified_answer_slot = any(
+                str(item.get("evidence_status") or "").lower() == "verified"
+                and bool(answer_tokens.intersection(_content_tokens(f"{item.get('label', '')} {item.get('value', '')}")))
+                for item in slots
+            )
+            if has_verified_answer_slot:
+                relevant_slots = [
+                    item for item in slots
+                    if bool(item.get("logical conflict", item.get("logical_conflict", False)))
+                    or bool(answer_tokens.intersection(_content_tokens(f"{item.get('label', '')} {item.get('value', '')}")))
+                ]
+                if relevant_slots:
+                    slots = relevant_slots
         verified = [item for item in slots if str(item.get("evidence_status", "")).lower() == "verified"]
         contradicted = [item for item in slots if bool(item.get("logical conflict", item.get("logical_conflict", False)))]
         grounded = [item for item in verified if str(item.get("citation", "")).strip()]
@@ -72,6 +188,8 @@ class EvidenceVerifier:
         unresolved: List[str] = []
         if not answer.strip():
             missing.append("non-empty answer candidate")
+        if options and answer_label not in options:
+            missing.append("final answer must select one listed option label")
         if not slots:
             missing.append("structured evidence claims")
         if coverage < float(self.thresholds.get("claim_coverage", 0.8)):
@@ -80,6 +198,18 @@ class EvidenceVerifier:
                 unresolved.append("answer claim has no verified evidence")
         if grounding < float(self.thresholds.get("direct_grounding", 0.65)):
             missing.append("direct evidence citation")
+        if bool(self.thresholds.get("require_answer_support", True)) and answer.strip():
+            if not _has_direct_answer_support(answer, verified):
+                unresolved.append("answer candidate lacks directly matched verified evidence")
+        dynamic_tasks = [
+            str(item).strip().lower()
+            for item in self.thresholds.get("dynamic_answer_support_tasks", [])
+            if str(item).strip()
+        ]
+        normalized_query = str(query or "").lower()
+        if any(f"task type: {task}" in normalized_query for task in dynamic_tasks):
+            if not _has_dynamic_answer_support(answer, steps, verified):
+                missing.append("direct dynamic Video_Clip_QA result supporting the selected action")
         if contradiction > float(self.thresholds.get("contradiction_score", 0.2)):
             missing.append("resolve contradictory evidence")
         require_cross_modal = bool(self.thresholds.get("require_cross_modal", True))

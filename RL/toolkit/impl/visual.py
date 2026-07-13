@@ -3644,6 +3644,28 @@ class VideoClipQA(BaseTool):
         target_range = normalized_target["target_range"]
         if target_range["end"] <= target_range["start"]:
             raise ValueError("Video_Clip_QA requires end_time greater than start_time.")
+        max_window_seconds = max(
+            1.0,
+            float(getattr(settings, "video_clip_qa_max_window_seconds", 90.0) or 90.0),
+        )
+        requested_window_seconds = _range_length(target_range)
+        if requested_window_seconds > max_window_seconds:
+            return enrich_tool_result(
+                {
+                    "start_time": round(float(target_range["start"]), 3),
+                    "end_time": round(float(target_range["end"]), 3),
+                    "search_window": _format_range(target_range["start"], target_range["end"]),
+                    "query": query,
+                    "status": "no_valid_result",
+                    "result": (
+                        f"Video_Clip_QA accepts windows up to {max_window_seconds:g} seconds, but the "
+                        f"requested window is {requested_window_seconds:g} seconds. Use Semantic_Retrieve "
+                        "or Segment_Retrieve to localize relevant evidence, then inspect one focused window."
+                    ),
+                    "recommended_next_tools": ["Semantic_Retrieve", "Segment_Retrieve"],
+                },
+                tool_name=self.name,
+            )
 
         selected = _select_relevant_rows(
             rows,

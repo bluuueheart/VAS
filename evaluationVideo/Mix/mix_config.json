@@ -1,11 +1,14 @@
 {
   "workspaces_root": "./workspaces",
-  "progress_path": "./workspaces/mix_progress.json",
-  "results_path": "./Mix_result.json",
+  "progress_path": "./workspaces/cfv_evolve_progress.json",
+  "results_path": "./CFV_Evolve_result.json",
   "videomme_official_output_path": "./VideoMME_official_output.json",
   "shared_preprocess_root": "./workspaces/_shared_cache",
   "ffmpeg_binary": "ffmpeg",
   "parallel_samples": "auto",
+  "pipeline_options": {
+    "include_grounding_video_clip_qa": false
+  },
   "dataset_order": [
     "mlvu"
   ],

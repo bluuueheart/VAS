@@ -37,11 +37,35 @@ def iter_steps(trajectory: Mapping[str, Any]) -> Iterable[Mapping[str, Any]]:
                 yield from iter_steps(item)
 
 
+def _iter_parallel_tool_records(value: Any) -> Iterable[Mapping[str, Any]]:
+    if isinstance(value, list):
+        for item in value:
+            yield from _iter_parallel_tool_records(item)
+        return
+    if not isinstance(value, dict):
+        return
+    nested = value.get("items")
+    if isinstance(nested, list):
+        for item in nested:
+            yield from _iter_parallel_tool_records(item)
+    tool = str(value.get("tool") or "").strip()
+    if tool and tool not in {"Parallel", "System", "Assistant_Note"}:
+        status = str(value.get("status") or "").strip().lower()
+        result = str(value.get("result") or "").strip()
+        if not status:
+            status = "error" if result.lower().startswith(("error", "failed", "no_valid_result")) else "success"
+        observation = result if status == "success" else f"{status}: {result}"
+        yield {"action": tool, "observation": observation, "status": status}
+
+
 def _tool_records(trajectory: Mapping[str, Any]) -> List[Mapping[str, Any]]:
     records: List[Mapping[str, Any]] = []
     for step in iter_steps(trajectory):
         action = str(step.get("action") or "")
         if action in {"", "Finish", "System", "Assistant_Note"}:
+            continue
+        if action == "Parallel":
+            records.extend(_iter_parallel_tool_records(step.get("observation_items")))
             continue
         records.append(step)
     return records
@@ -57,6 +81,7 @@ def _event_ids(trajectory: Mapping[str, Any], event_type: str) -> List[str]:
 
 def reconstruct_finish_evidence(trajectory: Mapping[str, Any]) -> Tuple[List[Dict[str, Any]], str, str]:
     slots: Dict[str, Dict[str, Any]] = {}
+    finish_slots: Optional[Dict[str, Dict[str, Any]]] = None
     for event in trajectory.get("debug_events") or []:
         if not isinstance(event, dict) or event.get("type") != "llm_iteration":
             continue
@@ -67,21 +92,32 @@ def reconstruct_finish_evidence(trajectory: Mapping[str, Any]) -> Tuple[List[Dic
             payload = json.loads(response)
         except (TypeError, ValueError):
             continue
-        for item in payload.get("Evidence") or payload.get("evidence") or []:
+        raw_slots = payload.get("Evidence") or payload.get("evidence") or []
+        finish_payload = payload.get("Finish") or payload.get("finish") or {}
+        if isinstance(finish_payload, dict):
+            nested_slots = finish_payload.get("Evidence") or finish_payload.get("evidence") or []
+            if isinstance(nested_slots, list):
+                raw_slots = list(raw_slots) + nested_slots if isinstance(raw_slots, list) else nested_slots
+        current_slots: Dict[str, Dict[str, Any]] = {}
+        for item in raw_slots if isinstance(raw_slots, list) else []:
             if not isinstance(item, dict):
                 continue
             label = str(item.get("label") or "unnamed claim")
-            slots[label.lower()] = {
+            record = {
                 "label": label,
                 "value": str(item.get("value") or label),
                 "citation": str(item.get("citation") or ""),
                 "evidence_status": str(item.get("evidence_status") or "missing").lower(),
                 "logical_conflict": bool(item.get("logical conflict", item.get("logical_conflict", False))),
             }
+            slots[label.lower()] = record
+            current_slots[label.lower()] = record
+        if isinstance(finish_payload, dict) and current_slots:
+            finish_slots = current_slots
     finish = next((item for item in reversed(list(iter_steps(trajectory))) if item.get("action") == "Finish"), {})
     args = finish.get("action_args") if isinstance(finish.get("action_args"), dict) else {}
     answer = str(args.get("answer") or args.get("result") or trajectory.get("final_answer") or "")
-    return list(slots.values()), answer, str(args.get("completion_basis") or "")
+    return list((finish_slots or slots).values()), answer, str(args.get("completion_basis") or "")
 
 
 def has_conflicting_evidence(trajectory: Mapping[str, Any]) -> bool:
@@ -114,7 +150,7 @@ def diagnose(
         cause = "The historical trajectory reached Finish without satisfying the configured evidence gate."
         fix = str(verification.get("feedback") or "Acquire missing cited evidence before Finish.")
         confidence = 0.95
-    elif failed_tools and not planner_success:
+    elif failed_tools and (not planner_success or not correct):
         failure_type = FailureType.TOOL_EXECUTION
         component = "tool_runtime"
         cause = "The trajectory terminated after one or more tool execution failures."

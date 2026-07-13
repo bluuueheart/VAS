@@ -7,8 +7,10 @@ __pycache__/
 .ipynb_checkpoints/
 
 evaluationVideo/Mix/workspaces/
+evaluationVideo/Mix/workspaces_cfv_*/
 graph/out/
 RL/rl_workdir/
 runs/
+evaluationVideo/Mix/CFV_Evolve_result*.json
 
 .DS_Store

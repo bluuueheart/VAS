@@ -1429,8 +1429,12 @@ def _ensure_knowledge_graph_payload(video_dir: Path) -> Dict[str, Any]:
 
 
 def _load_segment_graph_entities(video_dir: Path) -> Dict[str, List[str]]:
+    graph_path = video_dir / "knowledge_graph.json"
+    if not graph_path.exists():
+        return {}
     try:
-        kg = _ensure_knowledge_graph_payload(video_dir)
+        with graph_path.open("r", encoding="utf-8") as handle:
+            kg = json.load(handle) or {}
     except Exception as exc:
         logger.warning("Failed to load graph payload for %s: %s", video_dir, exc)
         return {}

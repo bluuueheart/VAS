@@ -23,27 +23,21 @@ Carefully observe the video and identify:
 - any readable text, numbers, symbols, or on-screen UI;
 - any clearly audible speech or sound cues.
 
-If the question is vague, too broad, or insufficiently specific, provide a detailed description of all relevant video content instead of giving a narrow answer.
+If the question is vague, too broad, or insufficiently specific, state the uncertainty briefly instead of narrating the whole clip.
 If the video does not provide enough evidence to answer confidently, explicitly state what is uncertain and why. Do not fabricate missing details.
 
 # Output format requirements:
-<think>
-Briefly summarize the key visible or audible evidence from the video that supports the answer. Keep this section concise and factual. Do not include hidden reasoning, speculation, or irrelevant analysis.
-</think>
 {
   "answer": "Direct answer to the question.",
-  "evidence": [
-    "Specific visible or audible evidence from the video.",
-    "Another relevant piece of evidence if available."
-  ],
+  "evidence": ["At most two specific visible or audible facts."],
   "uncertainty": "State any uncertainty or insufficient evidence. If there is no uncertainty, write \"None\".",
-  "video_summary": "Provides a concise time-series summary of the video content."
+  "video_summary": "One sentence only."
 }
 
 # Additional rules:
 - The JSON object must be valid JSON.
-- Do not add any text before <think> or after the JSON object.
-- The answer must be direct, concise, and grounded in the video.
+- Output only the JSON object. Do not emit analysis, reasoning traces, character speculation, or repeated observations.
+- Keep the entire response under 250 words. The answer must be direct, concise, and grounded in the video.
 - If readable text appears in the video, quote it exactly when possible.
 - If the question asks about time order, describe events in chronological order.
 """

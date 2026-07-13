@@ -189,6 +189,16 @@ def _infer_step_status(step: Dict[str, Any]) -> str:
     return "success"
 
 
+def _infer_observation_item_status(item: Dict[str, Any]) -> str:
+    explicit = str(item.get("status", "")).strip().lower()
+    if explicit:
+        return explicit
+    result = _normalize_text(item.get("result"))
+    if result.startswith(("error", "failed", "no_valid_result")):
+        return "error"
+    return "success"
+
+
 def _collect_tool_records(trajectory: Any) -> List[Dict[str, Any]]:
     if not isinstance(trajectory, dict):
         return []
@@ -212,7 +222,7 @@ def _collect_tool_records(trajectory: Any) -> List[Dict[str, Any]]:
         if action == "Parallel":
             observation_items = step.get("observation_items")
             nested_records = [
-                {**item, "depth": depth}
+                {**item, "status": _infer_observation_item_status(item), "depth": depth}
                 for item in _iter_nested_observation_items(observation_items)
                 if str(item.get("tool", "")).strip() not in {"", "Parallel", "System", "Assistant_Note"}
             ]

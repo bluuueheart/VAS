@@ -2,7 +2,10 @@ verification:
   claim_coverage: 0.80
   direct_grounding: 0.65
   contradiction_score: 0.20
-  require_cross_modal: true
+  require_cross_modal: false
+  require_answer_support: true
+  dynamic_answer_support_tasks:
+    - needle
 
 diagnosis:
   confidence_threshold: 0.70
