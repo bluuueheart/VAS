@@ -56,6 +56,7 @@ except ModuleNotFoundError:  # pragma: no cover - exercised in lightweight test 
 from .base import BaseLLM
 from .process_provider import ProcessBackedLLMProvider
 from core.accelerator_queue import SharedAcceleratorQueueLock, resolve_local_accelerator_slot_key
+from core.qwen_runtime import disable_qwen35_fused_kernels_if_requested
 from core.sidecar_pool import OpenAIEndpointPool, format_endpoint_list, split_endpoint_list
 from config.settings import settings
 from config.device_config import get_accelerator_snapshot
@@ -89,7 +90,10 @@ class _StopOnStructuredJsonOrSyntheticRoleTurn(transformers.StoppingCriteria if 
             r"(?im)(?:^|\n)\s*(?:<\|im_start\|>\s*)?(user|system|tool)(?:\s*<\|im_end\|>)?\s*(?:\n|:|$)"
         )
         self.schema_key_pattern = re.compile(
-            r'"(?:Thought|thought|Plan|plan|Evidence|evidence|Actions|actions|Action|action|Finish|finish|Result|result)"\s*:'
+            r'"(?:Thought|thought|Plan|plan|Evidence|evidence|Actions|actions|Action|action|Finish|finish|Result|result|'
+            r'observation_quality|evidence_updates|recommended_action|confidence|decision|can_finish|'
+            r'missing_information|unresolved_claims|evidence_assessment|mutation|expected_effect|'
+            r'regression_risk)"\s*:'
         )
 
     def _think_block_is_open(self, text: str) -> bool:
@@ -176,10 +180,13 @@ _TEXT_ONLY_MODEL_ROLES = frozenset({
     "query_rewrite",
     "python_coder",
     "fold_memory",
+    "reflector",
+    "evolver",
 })
 _VISION_MODEL_ROLES = frozenset({
     "qwen_vl",
     "ocr",
+    "observer",
 })
 _VIDEO_METADATA_KEY_ALIASES = {
     "video_fps": "fps",
@@ -1120,6 +1127,15 @@ class TransformersProvider(BaseLLM):
         model_path = Path(model_name).expanduser().resolve()
         if not model_path.exists():
             raise FileNotFoundError(f"Local model path not found: {model_path}")
+        provider_started = time.perf_counter()
+        _require_transformers_stack()
+        # Apply the same explicit Orion safety switch to text-only Evolver and
+        # auxiliary roles. The video caption path used to own this logic,
+        # leaving direct TransformersProvider callers exposed to the same LLVM
+        # abort during Qwen3.5 generation.
+        qwen_runtime_policy = disable_qwen35_fused_kernels_if_requested(
+            transformers_module=transformers,
+        )
         # Force offline/local loading to avoid HF repo_id validation on absolute paths
         os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
         os.environ.setdefault("HF_HUB_OFFLINE", "1")
@@ -1159,6 +1175,7 @@ class TransformersProvider(BaseLLM):
         initialize_device(resolved_device_type)
         self.device = resolved_device_type
         self.runtime_device = str(resolved_runtime_device)
+        self.qwen_runtime_policy = qwen_runtime_policy
         detected_device_type, detected_device_count = detect_device()
         self.accelerator_count = detected_device_count or 0
         try:
@@ -1172,6 +1189,71 @@ class TransformersProvider(BaseLLM):
             enabled=bool(kwargs.get("enable_shared_accelerator_queue", True)) and str(self.runtime_device).startswith("cuda"),
             log_wait_seconds=queue_log_wait_seconds,
         )
+        if self._accelerator_lock is not None:
+            logger.info(
+                "[AcceleratorQueue] provider role=%s requested_capacity=%s effective_capacity=%s "
+                "memory_guard=%s slot=%s",
+                str(model_role or "default"),
+                getattr(self._accelerator_lock, "requested_capacity", getattr(self._accelerator_lock, "capacity", 1)),
+                getattr(self._accelerator_lock, "capacity", 1),
+                bool(getattr(self._accelerator_lock, "memory_guard_enabled", False)),
+                getattr(self._accelerator_lock, "slot_key", ""),
+            )
+
+        # Resident workers may remain concurrent, but a generation request is
+        # the high-water-mark allocation for Qwen3.5.  The old provider queue
+        # capacity was also used for generation, so three workers could enter
+        # three multimodal generations at once and exhaust one physical GPU.
+        # Keep the resident/model-load queue separate and arbitrate all
+        # Planner/Observer/Reflector/Video_Clip_QA generations through one
+        # shared cross-process slot.  Role views are shallow copies and share
+        # this lock with the loaded kernel provider.
+        raw_generation_capacity = str(
+            os.environ.get("TOOLSTAR_ACCELERATOR_GENERATION_QUEUE_CAPACITY") or "1"
+        ).strip()
+        try:
+            generation_capacity = max(1, min(8, int(raw_generation_capacity)))
+        except (TypeError, ValueError):
+            generation_capacity = 1
+        raw_generation_guard = str(
+            os.environ.get("TOOLSTAR_ACCELERATOR_GENERATION_MEMORY_GUARD") or "1"
+        ).strip().lower()
+        generation_guard_enabled = raw_generation_guard not in {"0", "false", "no", "off"}
+        try:
+            generation_min_free_gib = max(
+                0.0,
+                float(os.environ.get("TOOLSTAR_ACCELERATOR_GENERATION_MIN_FREE_GIB") or 1.0),
+            )
+        except (TypeError, ValueError):
+            generation_min_free_gib = 1.0
+        try:
+            generation_reserve_gib = max(
+                0.0,
+                float(os.environ.get("TOOLSTAR_ACCELERATOR_GENERATION_RESERVE_GIB") or 1.0),
+            )
+        except (TypeError, ValueError):
+            generation_reserve_gib = 1.0
+        self._generation_lock = SharedAcceleratorQueueLock(
+            name="transformers_generation",
+            queue_root=kwargs.get("shared_accelerator_queue_root"),
+            slot_key=resolve_local_accelerator_slot_key(self.runtime_device),
+            enabled=bool(kwargs.get("enable_shared_accelerator_queue", True)) and str(self.runtime_device).startswith("cuda"),
+            log_wait_seconds=queue_log_wait_seconds,
+            capacity=generation_capacity,
+            memory_guard_enabled=generation_guard_enabled,
+            memory_min_free_mib=generation_min_free_gib * 1024.0,
+            memory_reserve_mib=generation_reserve_gib * 1024.0,
+        )
+        if self._generation_lock is not None:
+            logger.info(
+                "[AcceleratorQueue] generation requested_capacity=%s effective_capacity=%s "
+                "memory_guard=%s threshold_gib=%.2f slot=%s",
+                getattr(self._generation_lock, "requested_capacity", getattr(self._generation_lock, "capacity", 1)),
+                getattr(self._generation_lock, "capacity", 1),
+                bool(getattr(self._generation_lock, "memory_guard_enabled", False)),
+                float(getattr(self._generation_lock, "memory_admission_threshold_mib", 0.0)) / 1024.0,
+                getattr(self._generation_lock, "slot_key", ""),
+            )
         
         # Determine device_map strategy
         self.device_map = self._determine_device_map(
@@ -1209,6 +1291,7 @@ class TransformersProvider(BaseLLM):
             self._model_config_dict
         )
         # Force local load to avoid HF repo_id validation when passing absolute paths
+        tokenizer_started = time.perf_counter()
         self.tokenizer = AutoTokenizer.from_pretrained(
             str(model_path),
             trust_remote_code=True,
@@ -1222,6 +1305,12 @@ class TransformersProvider(BaseLLM):
                 self.tokenizer.truncation_side = "left"
             except Exception:
                 pass
+        logger.info(
+            "TransformersProvider tokenizer ready role=%s elapsed=%.2fs model=%s",
+            str(self.model_role or "").strip().lower() or "default",
+            time.perf_counter() - tokenizer_started,
+            model_path,
+        )
         # Determine optimal dtype (bfloat16 preferred for Qwen3, float16 fallback)
         model_dtype = self._get_optimal_dtype()
 
@@ -1250,6 +1339,15 @@ class TransformersProvider(BaseLLM):
         )
         lock_context = self._accelerator_lock if self._accelerator_lock is not None else nullcontext()
         with lock_context:
+            model_load_started = time.perf_counter()
+            logger.info(
+                "TransformersProvider loading model weights role=%s model=%s dtype=%s device=%s device_map=%s",
+                str(self.model_role or "").strip().lower() or "default",
+                model_path,
+                model_dtype,
+                self.runtime_device,
+                self.device_map,
+            )
             try:
                 self.model = self._load_hf_model_with_dtype_fallback(
                     model_cls,
@@ -1257,8 +1355,24 @@ class TransformersProvider(BaseLLM):
                     _build_model_kwargs(),
                     model_dtype,
                 )
+                logger.info(
+                    "TransformersProvider model weights ready role=%s elapsed=%.2fs",
+                    str(self.model_role or "").strip().lower() or "default",
+                    time.perf_counter() - model_load_started,
+                )
                 if self.device_map is None:
+                    device_move_started = time.perf_counter()
+                    logger.info(
+                        "TransformersProvider moving model to device role=%s device=%s",
+                        str(self.model_role or "").strip().lower() or "default",
+                        self.runtime_device,
+                    )
                     self.model.to(self.runtime_device)
+                    logger.info(
+                        "TransformersProvider model moved to device role=%s elapsed=%.2fs",
+                        str(self.model_role or "").strip().lower() or "default",
+                        time.perf_counter() - device_move_started,
+                    )
                 self.model.eval()
             except Exception as exc:
                 if self._is_out_of_memory_error(exc) and self._can_retry_load_on_multi_device():
@@ -1287,6 +1401,7 @@ class TransformersProvider(BaseLLM):
 
         if self._supports_multimodal_generation:
             try:
+                processor_started = time.perf_counter()
                 processor_kwargs = {
                     "trust_remote_code": True,
                     "local_files_only": True,
@@ -1308,6 +1423,11 @@ class TransformersProvider(BaseLLM):
                 processor_tokenizer = getattr(self.processor, "tokenizer", None)
                 if processor_tokenizer is not None:
                     self.tokenizer = processor_tokenizer
+                logger.info(
+                    "TransformersProvider processor ready role=%s elapsed=%.2fs",
+                    str(self.model_role or "").strip().lower() or "default",
+                    time.perf_counter() - processor_started,
+                )
             except Exception as exc:
                 logger.warning(
                     "Failed to initialize multimodal processor for %s; planner/tool observations will fall back to text-only prompts: %s",
@@ -1357,6 +1477,11 @@ class TransformersProvider(BaseLLM):
                 actual_param_dtype,
             )
         logger.info("LLM accelerator snapshot: %s", get_accelerator_snapshot(self.device))
+        logger.info(
+            "TransformersProvider initialization complete role=%s elapsed=%.2fs",
+            str(self.model_role or "").strip().lower() or "default",
+            time.perf_counter() - provider_started,
+        )
 
     def _load_hf_model_with_dtype_fallback(
         self,
@@ -1782,15 +1907,19 @@ class TransformersProvider(BaseLLM):
         text_messages = self._normalize_text_messages(messages)
         if callable(apply_chat_template) and self._messages_include_user_turn(text_messages):
             try:
+                # Hugging Face forwards template variables as top-level
+                # keyword arguments.  Passing a nested `chat_template_kwargs`
+                # silently leaves Qwen's `enable_thinking` undefined, which
+                # makes the template enter its default thinking branch.
                 return apply_chat_template(
                     messages,
                     tokenize=False,
                     add_generation_prompt=True,
-                    chat_template_kwargs={"enable_thinking": thinking_flag},
+                    enable_thinking=thinking_flag,
                 )
             except Exception as first_exc:
                 logger.debug(
-                    "Chat template rejected chat_template_kwargs.enable_thinking=%s for %s; retrying top-level enable_thinking. error=%s",
+                    "Chat template rejected top-level enable_thinking=%s for %s; retrying chat_template_kwargs. error=%s",
                     thinking_flag,
                     type(chat_client).__name__,
                     first_exc,
@@ -1801,12 +1930,12 @@ class TransformersProvider(BaseLLM):
                     messages,
                     tokenize=False,
                     add_generation_prompt=True,
-                    enable_thinking=thinking_flag,
+                    chat_template_kwargs={"enable_thinking": thinking_flag},
                 )
             except Exception as second_exc:
                 second_error = str(second_exc)
                 logger.debug(
-                    "Chat template rejected top-level enable_thinking=%s for %s; retrying without thinking control. error=%s",
+                    "Chat template rejected chat_template_kwargs.enable_thinking=%s for %s; retrying without thinking control. error=%s",
                     thinking_flag,
                     type(chat_client).__name__,
                     second_exc,
@@ -2705,15 +2834,17 @@ class TransformersProvider(BaseLLM):
         text_messages = self._normalize_text_messages(messages)
         if self._messages_include_user_turn(text_messages):
             try:
+                # See `_apply_chat_template`: template variables belong at
+                # the top level for Hugging Face chat templates.
                 return self.tokenizer.apply_chat_template(
                     text_messages,
                     tokenize=False,
                     add_generation_prompt=True,
-                    chat_template_kwargs={"enable_thinking": thinking_flag},
+                    enable_thinking=thinking_flag,
                 )
             except Exception as first_exc:
                 logger.debug(
-                    "Tokenizer rejected chat_template_kwargs.enable_thinking=%s; retrying top-level enable_thinking. error=%s",
+                    "Tokenizer rejected top-level enable_thinking=%s; retrying chat_template_kwargs. error=%s",
                     thinking_flag,
                     first_exc,
                 )
@@ -2722,12 +2853,12 @@ class TransformersProvider(BaseLLM):
                         text_messages,
                         tokenize=False,
                         add_generation_prompt=True,
-                        enable_thinking=thinking_flag,
+                        chat_template_kwargs={"enable_thinking": thinking_flag},
                     )
                 except Exception as second_exc:
                     second_error = str(second_exc)
                     logger.debug(
-                        "Tokenizer rejected top-level enable_thinking=%s; retrying without thinking control. error=%s",
+                        "Tokenizer rejected chat_template_kwargs.enable_thinking=%s; retrying without thinking control. error=%s",
                         thinking_flag,
                         second_exc,
                     )
@@ -2885,7 +3016,7 @@ class TransformersProvider(BaseLLM):
         inputs: Any = {}
         output = None
         generated_ids = None
-        lock_context = self._accelerator_lock if self._accelerator_lock is not None else nullcontext()
+        lock_context = self._generation_lock if self._generation_lock is not None else nullcontext()
         try:
             with lock_context:
                 if use_multimodal_prompt:

@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:summarization:19:115",
+  "dataset_name": "lvbench",
+  "subset_name": "summarization",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 7,
+  "iter_num": 10,
+  "tool_success_rate": 0.857143,
+  "successful_tool_calls": 6,
+  "planner_iterations": 10,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "A man runs, stumbles against a woman, and knocks over all her stuff",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) A man runs, stumbles against a woman, and knocks over all her stuff",
+  "elapsed_seconds": 2935.954,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/summarization-00019-115",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/summarization-00019-115/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/summarization-00019-115/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/summarization-00019-115/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/q01CUy_gwdU.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/q01CUy_gwdU.mp4",
+  "question_block": "Question: What happens from 01:58-02:46?\nOptions:\n(A) A woman runs, stumbles against a man, and knocks over all his stuff\n(B) A woman runs, stumbles against a man, and he cries\n(C) A man runs, stumbles against a woman, and she cries\n(D) A man runs, stumbles against a woman, and knocks over all her stuff",
+  "options": [
+    "A woman runs, stumbles against a man, and knocks over all his stuff",
+    "A woman runs, stumbles against a man, and he cries",
+    "A man runs, stumbles against a woman, and she cries",
+    "A man runs, stumbles against a woman, and knocks over all her stuff"
+  ],
+  "official_meta": {
+    "question_type": "summarization",
+    "video_type": "cartoon",
+    "time_reference": "01:58-02:46",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "q01CUy_gwdU",
+    "resolved_video_stem": "q01CUy_gwdU",
+    "video_mapping_verified": true,
+    "source_index": 19
+  },
+  "updated_at": "2026-09-07T01:25:43.539349Z"
+}

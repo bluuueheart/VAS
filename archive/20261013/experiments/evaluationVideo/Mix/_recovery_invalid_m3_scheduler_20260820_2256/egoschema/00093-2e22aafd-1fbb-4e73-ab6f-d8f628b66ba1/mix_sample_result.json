@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00093:2e22aafd-1fbb-4e73-ab6f-d8f628b66ba1",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C cleans the mats.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00093-2e22aafd-1fbb-4e73-ab6f-d8f628b66ba1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00093-2e22aafd-1fbb-4e73-ab6f-d8f628b66ba1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00093-2e22aafd-1fbb-4e73-ab6f-d8f628b66ba1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00093-2e22aafd-1fbb-4e73-ab6f-d8f628b66ba1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/2e22aafd-1fbb-4e73-ab6f-d8f628b66ba1.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/2e22aafd-1fbb-4e73-ab6f-d8f628b66ba1.mp4",
+  "question_block": "Question: In the context of the video, what key activity does c engage in multiple times during the sequence, and what is their primary objective in doing so?\nOptions:\n(A) C assembles the washing machine.\n(B) C looks around.\n(C) C puts the machine down.\n(D) C walks forward.\n(E) C cleans the mats.",
+  "options": [
+    "C assembles the washing machine.",
+    "C looks around.",
+    "C puts the machine down.",
+    "C walks forward.",
+    "C cleans the mats."
+  ],
+  "official_meta": {
+    "question_index": "00093",
+    "video_id": "2e22aafd-1fbb-4e73-ab6f-d8f628b66ba1",
+    "source_index": 93
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:46:13.238446Z"
+}

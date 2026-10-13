@@ -1,0 +1,118 @@
+{
+  "observation": "Complete JSON or fenced JSON is flagged by prose-end heuristics.",
+  "hypothesis": "Raw-text punctuation heuristics incorrectly discard validated JSON.",
+  "minimal_intervention": "Apply prose truncation heuristic only when format_status != model_json.",
+  "expected_change": "Retain valid JSON; malformed or truncated JSON remains a tool error.",
+  "actual_result": {
+    "captured_responses": 11,
+    "a_errors": 9,
+    "b_errors": 2,
+    "valid_responses_recovered": 7,
+    "invalid_json_still_rejected": 2
+  },
+  "conclusion": "Protocol loss is reproduced and removed at this boundary; final-answer benefit is not tested.",
+  "source_files_modified": false,
+  "verifier_thresholds_modified": false,
+  "scope": "Deterministic A/B on identical captured raw responses, not full-task A/B.",
+  "rows": [
+    {
+      "uid": "lvbench:entity-recognition:4:63",
+      "response_index": 0,
+      "format_status": "model_json",
+      "a_tool_error": true,
+      "b_tool_error": false,
+      "same_model_content": true,
+      "new_model_inference": false
+    },
+    {
+      "uid": "lvbench:entity-recognition:4:63",
+      "response_index": 1,
+      "format_status": "model_json",
+      "a_tool_error": true,
+      "b_tool_error": false,
+      "same_model_content": true,
+      "new_model_inference": false
+    },
+    {
+      "uid": "mlvu:count:0:count-126",
+      "response_index": 0,
+      "format_status": "model_json",
+      "a_tool_error": true,
+      "b_tool_error": false,
+      "same_model_content": true,
+      "new_model_inference": false
+    },
+    {
+      "uid": "mlvu:count:0:count-126",
+      "response_index": 1,
+      "format_status": "model_json",
+      "a_tool_error": true,
+      "b_tool_error": false,
+      "same_model_content": true,
+      "new_model_inference": false
+    },
+    {
+      "uid": "mlvu:count:0:count-126",
+      "response_index": 2,
+      "format_status": "model_json",
+      "a_tool_error": true,
+      "b_tool_error": false,
+      "same_model_content": true,
+      "new_model_inference": false
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "response_index": 0,
+      "format_status": "model_json",
+      "a_tool_error": false,
+      "b_tool_error": false,
+      "same_model_content": true,
+      "new_model_inference": false
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "response_index": 1,
+      "format_status": "model_json",
+      "a_tool_error": true,
+      "b_tool_error": false,
+      "same_model_content": true,
+      "new_model_inference": false
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "response_index": 2,
+      "format_status": "model_json",
+      "a_tool_error": false,
+      "b_tool_error": false,
+      "same_model_content": true,
+      "new_model_inference": false
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "response_index": 0,
+      "format_status": "invalid_json",
+      "a_tool_error": true,
+      "b_tool_error": true,
+      "same_model_content": true,
+      "new_model_inference": false
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "response_index": 1,
+      "format_status": "model_json",
+      "a_tool_error": true,
+      "b_tool_error": false,
+      "same_model_content": true,
+      "new_model_inference": false
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "response_index": 2,
+      "format_status": "invalid_json",
+      "a_tool_error": true,
+      "b_tool_error": true,
+      "same_model_content": true,
+      "new_model_inference": false
+    }
+  ]
+}

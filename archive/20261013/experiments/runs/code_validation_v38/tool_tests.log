@@ -1,0 +1,9 @@
+Rebuilding dense index for tmpwve5zm1e: Expecting value: line 1 column 1 (char 0)
+Rebuilding dense index for tmpwve5zm1e: Expecting value: line 1 column 1 (char 0)
+<frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+<frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+----------------------------------------------------------------------
+Ran 5 tests in 264.364s
+
+OK
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

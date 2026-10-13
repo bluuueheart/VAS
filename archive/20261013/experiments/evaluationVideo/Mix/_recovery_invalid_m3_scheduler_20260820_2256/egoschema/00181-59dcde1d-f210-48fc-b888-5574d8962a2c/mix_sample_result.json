@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00181:59dcde1d-f210-48fc-b888-5574d8962a2c",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C stirs the paint in the coconut shell with a paint brush and a piece of wood.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00181-59dcde1d-f210-48fc-b888-5574d8962a2c",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00181-59dcde1d-f210-48fc-b888-5574d8962a2c/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00181-59dcde1d-f210-48fc-b888-5574d8962a2c/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00181-59dcde1d-f210-48fc-b888-5574d8962a2c/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/59dcde1d-f210-48fc-b888-5574d8962a2c.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/59dcde1d-f210-48fc-b888-5574d8962a2c.mp4",
+  "question_block": "Question: Summarize the overall process demonstrated in the video and identify two materials used by c to stir the paint in the coconut shell.\nOptions:\n(A) C stirs the paint in the coconut shell with a paint brush and a piece of wood.\n(B) Casually, c stirs the paint thoroughly inside the coconut shell, utilizing a repurposed bottle cover.\n(C) Carefully, c stirs the paint inside the coconut shell using his hands, mixing it well.\n(D) Enthusiastically, c stirs the paint carefully inside the coconut shell with a thin wooden stick.\n(E) C stirs the paint in the coconut shell with a spoon.",
+  "options": [
+    "C stirs the paint in the coconut shell with a paint brush and a piece of wood.",
+    "Casually, c stirs the paint thoroughly inside the coconut shell, utilizing a repurposed bottle cover.",
+    "Carefully, c stirs the paint inside the coconut shell using his hands, mixing it well.",
+    "Enthusiastically, c stirs the paint carefully inside the coconut shell with a thin wooden stick.",
+    "C stirs the paint in the coconut shell with a spoon."
+  ],
+  "official_meta": {
+    "question_index": "00181",
+    "video_id": "59dcde1d-f210-48fc-b888-5574d8962a2c",
+    "source_index": 181
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:01.196120Z"
+}

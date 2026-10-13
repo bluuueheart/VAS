@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00021:07d7128e-0684-4c6b-81cb-3ecb76c2e6ec",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The video shows a person painting a picture. the person starts by putting down their phone and rolling up their sleeves. they then dip their brush in water and apply paint to the paper. they continue to apply paint until the picture is complete.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00021-07d7128e-0684-4c6b-81cb-3ecb76c2e6ec",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00021-07d7128e-0684-4c6b-81cb-3ecb76c2e6ec/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00021-07d7128e-0684-4c6b-81cb-3ecb76c2e6ec/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00021-07d7128e-0684-4c6b-81cb-3ecb76c2e6ec/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/07d7128e-0684-4c6b-81cb-3ecb76c2e6ec.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/07d7128e-0684-4c6b-81cb-3ecb76c2e6ec.mp4",
+  "question_block": "Question: Summarize the overarching process demonstrated in this video, and compare the key similarities and differences between the various stages of the process.\nOptions:\n(A) The video shows a person painting a picture. the person starts by putting down their phone and rolling up their sleeves. they then dip their brush in water and apply paint to the paper. they continue to apply paint until the picture is complete.\n(B) The video footage displays a person skillfully making a sandwich. initially, the individual starts by placing down their phone, proceeding to gather the necessary ingredients. following this, they meticulously assemble the sandwich before enjoying and consuming it.\n(C) The video depicts a person engaged in doing their laundry. initially, the person starts by putting down their phone, and taking out the laundry. subsequently, they wash, dry, and neatly fold the laundry.\n(D) The short video displays a person diligently cooking dinner. initially, the individual sets aside their phone, assembles all the necessary ingredients, proceeds to cook the meal skillfully, and finally enjoys eating it.\n(E) The video shows a person cleaning their house. the person starts by putting down their phone and gathering the cleaning supplies. they then clean the house and put away the cleaning supplies.",
+  "options": [
+    "The video shows a person painting a picture. the person starts by putting down their phone and rolling up their sleeves. they then dip their brush in water and apply paint to the paper. they continue to apply paint until the picture is complete.",
+    "The video footage displays a person skillfully making a sandwich. initially, the individual starts by placing down their phone, proceeding to gather the necessary ingredients. following this, they meticulously assemble the sandwich before enjoying and consuming it.",
+    "The video depicts a person engaged in doing their laundry. initially, the person starts by putting down their phone, and taking out the laundry. subsequently, they wash, dry, and neatly fold the laundry.",
+    "The short video displays a person diligently cooking dinner. initially, the individual sets aside their phone, assembles all the necessary ingredients, proceeds to cook the meal skillfully, and finally enjoys eating it.",
+    "The video shows a person cleaning their house. the person starts by putting down their phone and gathering the cleaning supplies. they then clean the house and put away the cleaning supplies."
+  ],
+  "official_meta": {
+    "question_index": "00021",
+    "video_id": "07d7128e-0684-4c6b-81cb-3ecb76c2e6ec",
+    "source_index": 21
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:18:58.056698Z"
+}

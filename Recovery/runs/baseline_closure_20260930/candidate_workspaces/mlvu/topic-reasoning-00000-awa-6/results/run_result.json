@@ -1,0 +1,1509 @@
+{
+  "video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+  "query": "MLVU Task Type: topic_reasoning\n\nQuestion: What is the main background of the video?\nOptions:\n(A) Grassland\n(B) Lake\n(C) Ocean\n(D) Desert\n\nReply with exactly one best option in the format \"(A) option text\".",
+  "workspace": "/gemini/code/Recovery/runs/baseline_closure_20260930/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6",
+  "generated_at": "2026-09-30T03:03:09.198940Z",
+  "success": true,
+  "preprocessing": {
+    "video_name": "AWA-6",
+    "num_segments": 14,
+    "processed_output_dir": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/processed/AWA-6",
+    "segment_index_sample": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  "agent": {
+    "final_answer": "(A) Grassland",
+    "trajectory": {
+      "trajectory_id": "trajectory_5aa1b40714b747799283ddb5f7cc0d98",
+      "registry_snapshot_id": "snapshot_000",
+      "task_id": "task_b584841e",
+      "goal": "MLVU Task Type: topic_reasoning\n\nQuestion: What is the main background of the video?\nOptions:\n(A) Grassland\n(B) Lake\n(C) Ocean\n(D) Desert\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "depth": 0,
+      "steps": [
+        {
+          "step_id": 1,
+          "depth": 0,
+          "thought": "Initial grounding evidence strongly indicates a grassland setting through captions mentioning 'savanna', 'grassy field', and 'grassland', along with visuals of elephants and lions. I will verify this visually by inspecting the provided frame collages.",
+          "plan": "Inspect the attached frame collages from the three grounding segments to confirm the visual environment matches the 'Grassland' option.",
+          "action": "Parallel",
+          "action_args": {
+            "batch": [
+              {
+                "name": "Inspect_Frame",
+                "args": {
+                  "timestamp": [
+                    296.34,
+                    303.735,
+                    311.13,
+                    318.525
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "__raw_params_declared__": true,
+                  "__raw_param_keys__": [
+                    "timestamp",
+                    "query"
+                  ]
+                }
+              },
+              {
+                "name": "Inspect_Frame",
+                "args": {
+                  "timestamp": [
+                    120.0,
+                    127.05,
+                    134.1,
+                    141.15
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "__raw_params_declared__": true,
+                  "__raw_param_keys__": [
+                    "timestamp",
+                    "query"
+                  ]
+                }
+              },
+              {
+                "name": "Inspect_Frame",
+                "args": {
+                  "timestamp": [
+                    148.2,
+                    154.256,
+                    160.311,
+                    166.367
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "__raw_params_declared__": true,
+                  "__raw_param_keys__": [
+                    "timestamp",
+                    "query"
+                  ]
+                }
+              }
+            ]
+          },
+          "observation": "3 results. 296.34: image_timestamps=[296.34] | 303.735: image_timestamps=[303.735] | 311.13: image_timestamps=[311.13] | 318.525: image_timestamps=[318.525] | 120.0: image_timestamps=[120.0] | 127.05: image_timestamps=[127.05] | 134.1: image_timestamps=[134.1] | 141.15: image_timestamps=[141.15] | 148.2: image_timestamps=[148.2] | 154.256: image_timestamps=[154.256] | 160.311: image_timestamps=[160.311] | 166.367: image_timestamps=[166.367]",
+          "observation_items": [
+            {
+              "tool": "Inspect_Frame",
+              "probes": [
+                {
+                  "result": "image_timestamps=[296.34]",
+                  "image_evidence": [
+                    {
+                      "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/AWA-6/inspect_54e297610fda/frame_000_296p34_planner_single.jpg",
+                      "sample_times": [
+                        296.34
+                      ],
+                      "pack_mode": "single"
+                    }
+                  ],
+                  "image_timestamps": [
+                    296.34
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "density": 0.5,
+                  "source_video_duration_seconds": 450.0,
+                  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+                  "timestamp": 296.34,
+                  "t_start": 296.34,
+                  "t_end": 296.34,
+                  "status": "success"
+                },
+                {
+                  "result": "image_timestamps=[303.735]",
+                  "image_evidence": [
+                    {
+                      "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/AWA-6/inspect_bb5523d57642/frame_000_303p735_planner_single.jpg",
+                      "sample_times": [
+                        303.735
+                      ],
+                      "pack_mode": "single"
+                    }
+                  ],
+                  "image_timestamps": [
+                    303.735
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "density": 0.5,
+                  "source_video_duration_seconds": 450.0,
+                  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+                  "timestamp": 303.735,
+                  "t_start": 303.735,
+                  "t_end": 303.735,
+                  "status": "success"
+                },
+                {
+                  "result": "image_timestamps=[311.13]",
+                  "image_evidence": [
+                    {
+                      "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/AWA-6/inspect_baf9e4a54103/frame_000_311p13_planner_single.jpg",
+                      "sample_times": [
+                        311.13
+                      ],
+                      "pack_mode": "single"
+                    }
+                  ],
+                  "image_timestamps": [
+                    311.13
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "density": 0.5,
+                  "source_video_duration_seconds": 450.0,
+                  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+                  "timestamp": 311.13,
+                  "t_start": 311.13,
+                  "t_end": 311.13,
+                  "status": "success"
+                },
+                {
+                  "result": "image_timestamps=[318.525]",
+                  "image_evidence": [
+                    {
+                      "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/AWA-6/inspect_ef92f6c6059e/frame_000_318p525_planner_single.jpg",
+                      "sample_times": [
+                        318.525
+                      ],
+                      "pack_mode": "single"
+                    }
+                  ],
+                  "image_timestamps": [
+                    318.525
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "density": 0.5,
+                  "source_video_duration_seconds": 450.0,
+                  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+                  "timestamp": 318.525,
+                  "t_start": 318.525,
+                  "t_end": 318.525,
+                  "status": "success"
+                }
+              ],
+              "probe_count": 4,
+              "successful_probes": 4,
+              "failed_probes": 0,
+              "status": "success",
+              "result": "296.34: image_timestamps=[296.34] | 303.735: image_timestamps=[303.735] | 311.13: image_timestamps=[311.13] | 318.525: image_timestamps=[318.525]"
+            },
+            {
+              "tool": "Inspect_Frame",
+              "probes": [
+                {
+                  "result": "image_timestamps=[120.0]",
+                  "image_evidence": [
+                    {
+                      "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/AWA-6/inspect_96bc2049830d/frame_000_120p0_planner_single.jpg",
+                      "sample_times": [
+                        120.0
+                      ],
+                      "pack_mode": "single"
+                    }
+                  ],
+                  "image_timestamps": [
+                    120.0
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "density": 0.5,
+                  "source_video_duration_seconds": 450.0,
+                  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+                  "timestamp": 120.0,
+                  "t_start": 120.0,
+                  "t_end": 120.0,
+                  "status": "success"
+                },
+                {
+                  "result": "image_timestamps=[127.05]",
+                  "image_evidence": [
+                    {
+                      "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/AWA-6/inspect_0ea5bb3fb128/frame_000_127p05_planner_single.jpg",
+                      "sample_times": [
+                        127.05
+                      ],
+                      "pack_mode": "single"
+                    }
+                  ],
+                  "image_timestamps": [
+                    127.05
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "density": 0.5,
+                  "source_video_duration_seconds": 450.0,
+                  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+                  "timestamp": 127.05,
+                  "t_start": 127.05,
+                  "t_end": 127.05,
+                  "status": "success"
+                },
+                {
+                  "result": "image_timestamps=[134.1]",
+                  "image_evidence": [
+                    {
+                      "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/AWA-6/inspect_61b4673e28c0/frame_000_134p1_planner_single.jpg",
+                      "sample_times": [
+                        134.1
+                      ],
+                      "pack_mode": "single"
+                    }
+                  ],
+                  "image_timestamps": [
+                    134.1
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "density": 0.5,
+                  "source_video_duration_seconds": 450.0,
+                  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+                  "timestamp": 134.1,
+                  "t_start": 134.1,
+                  "t_end": 134.1,
+                  "status": "success"
+                },
+                {
+                  "result": "image_timestamps=[141.15]",
+                  "image_evidence": [
+                    {
+                      "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/AWA-6/inspect_594feb945ca7/frame_000_141p15_planner_single.jpg",
+                      "sample_times": [
+                        141.15
+                      ],
+                      "pack_mode": "single"
+                    }
+                  ],
+                  "image_timestamps": [
+                    141.15
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "density": 0.5,
+                  "source_video_duration_seconds": 450.0,
+                  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+                  "timestamp": 141.15,
+                  "t_start": 141.15,
+                  "t_end": 141.15,
+                  "status": "success"
+                }
+              ],
+              "probe_count": 4,
+              "successful_probes": 4,
+              "failed_probes": 0,
+              "status": "success",
+              "result": "120.0: image_timestamps=[120.0] | 127.05: image_timestamps=[127.05] | 134.1: image_timestamps=[134.1] | 141.15: image_timestamps=[141.15]"
+            },
+            {
+              "tool": "Inspect_Frame",
+              "probes": [
+                {
+                  "result": "image_timestamps=[148.2]",
+                  "image_evidence": [
+                    {
+                      "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/AWA-6/inspect_701bc3a4db49/frame_000_148p2_planner_single.jpg",
+                      "sample_times": [
+                        148.2
+                      ],
+                      "pack_mode": "single"
+                    }
+                  ],
+                  "image_timestamps": [
+                    148.2
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "density": 0.5,
+                  "source_video_duration_seconds": 450.0,
+                  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+                  "timestamp": 148.2,
+                  "t_start": 148.2,
+                  "t_end": 148.2,
+                  "status": "success"
+                },
+                {
+                  "result": "image_timestamps=[154.256]",
+                  "image_evidence": [
+                    {
+                      "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/AWA-6/inspect_d27ad8e72cbf/frame_000_154p256_planner_single.jpg",
+                      "sample_times": [
+                        154.256
+                      ],
+                      "pack_mode": "single"
+                    }
+                  ],
+                  "image_timestamps": [
+                    154.256
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "density": 0.5,
+                  "source_video_duration_seconds": 450.0,
+                  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+                  "timestamp": 154.256,
+                  "t_start": 154.256,
+                  "t_end": 154.256,
+                  "status": "success"
+                },
+                {
+                  "result": "image_timestamps=[160.311]",
+                  "image_evidence": [
+                    {
+                      "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/AWA-6/inspect_e02b5e2cfa92/frame_000_160p311_planner_single.jpg",
+                      "sample_times": [
+                        160.311
+                      ],
+                      "pack_mode": "single"
+                    }
+                  ],
+                  "image_timestamps": [
+                    160.311
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "density": 0.5,
+                  "source_video_duration_seconds": 450.0,
+                  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+                  "timestamp": 160.311,
+                  "t_start": 160.311,
+                  "t_end": 160.311,
+                  "status": "success"
+                },
+                {
+                  "result": "image_timestamps=[166.367]",
+                  "image_evidence": [
+                    {
+                      "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/AWA-6/inspect_f8d1a63a5588/frame_000_166p367_planner_single.jpg",
+                      "sample_times": [
+                        166.367
+                      ],
+                      "pack_mode": "single"
+                    }
+                  ],
+                  "image_timestamps": [
+                    166.367
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "density": 0.5,
+                  "source_video_duration_seconds": 450.0,
+                  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+                  "timestamp": 166.367,
+                  "t_start": 166.367,
+                  "t_end": 166.367,
+                  "status": "success"
+                }
+              ],
+              "probe_count": 4,
+              "successful_probes": 4,
+              "failed_probes": 0,
+              "status": "success",
+              "result": "148.2: image_timestamps=[148.2] | 154.256: image_timestamps=[154.256] | 160.311: image_timestamps=[160.311] | 166.367: image_timestamps=[166.367]"
+            }
+          ],
+          "timestamp": "2026-09-30T03:01:17.277091Z",
+          "is_recursive": true,
+          "sub_trajectory": null,
+          "sub_trajectories": null
+        },
+        {
+          "step_id": 2,
+          "depth": 0,
+          "thought": "Visual evidence from multiple frames consistently confirms a grassland/savanna environment. This directly supports option (A) and contradicts options (B), (C), and (D).",
+          "plan": "Submit the final answer based on the verified visual evidence.",
+          "action": "Finish",
+          "action_args": {
+            "answer": "(A) Grassland",
+            "chain_complete": true,
+            "completion_basis": "visual->answer"
+          },
+          "observation": "(A) Grassland",
+          "observation_items": [
+            {
+              "tool": "Finish",
+              "status": "success",
+              "result": "(A) Grassland"
+            }
+          ],
+          "timestamp": "2026-09-30T03:03:08.919928Z",
+          "is_recursive": false,
+          "sub_trajectory": null,
+          "sub_trajectories": null
+        }
+      ],
+      "final_answer": "(A) Grassland",
+      "success": true,
+      "error_message": null,
+      "debug_events": [
+        {
+          "type": "agent_kernel_contract",
+          "event_type": "AgentKernelContractEvent",
+          "agent_role": "workflow",
+          "roles": {
+            "runtime_release": "v41",
+            "kernel_id": "55f99d0f321a766d",
+            "kernel_provider": "transformers",
+            "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "roles": {
+              "planner": {
+                "agent_role": "planner",
+                "provider_class": "TransformersProvider",
+                "model_role": "planner",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "vlm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "planner_prompts",
+                "structured_contract": "planner_react_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "tool_orchestration_agent",
+                  "kernel_modality": "vlm",
+                  "input_contract": "goal + trajectory + registered tool observations + optional frames",
+                  "decision_authority": "select executable tool calls and propose Finish",
+                  "delegates_to": [
+                    "observer",
+                    "reflector"
+                  ]
+                }
+              },
+              "observer": {
+                "agent_role": "observer",
+                "provider_class": "TransformersProvider",
+                "model_role": "observer",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "vlm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "four_role_prompts",
+                "structured_contract": "observer_dispatch_or_evidence_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "execution_and_evidence_agent",
+                  "kernel_modality": "vlm",
+                  "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+                  "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+                  "delegates_to": [
+                    "planner"
+                  ]
+                }
+              },
+              "reflector": {
+                "agent_role": "reflector",
+                "provider_class": "TransformersProvider",
+                "model_role": "reflector",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "llm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "four_role_prompts",
+                "structured_contract": "reflector_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "evidence_judgment_agent",
+                  "kernel_modality": "llm",
+                  "input_contract": "complete execution trajectory + indexed observations + evidence slots and proposed answer, or post-run diagnostic fragments",
+                  "decision_authority": "judge Finish with verified observation references; diagnose complete trajectories before executable evolution",
+                  "delegates_to": [
+                    "planner",
+                    "evolver"
+                  ]
+                }
+              },
+              "evolver": {
+                "agent_role": "evolver",
+                "provider_class": "TransformersProvider",
+                "model_role": "evolver",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "llm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "four_role_prompts",
+                "structured_contract": "evolver_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "meta_evolution_agent",
+                  "kernel_modality": "llm",
+                  "input_contract": "complete-trajectory Reflector review + completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+                  "decision_authority": "attribute failures, analyze dependencies, and propose bounded coordinated replay-gated harness mutations",
+                  "delegates_to": [
+                    "replay_gate"
+                  ]
+                }
+              }
+            },
+            "weights_shared_for_memory": true,
+            "role_order": [
+              "planner",
+              "observer",
+              "reflector",
+              "evolver"
+            ]
+          },
+          "contract": "four_independent_llm_vlm_roles",
+          "disabled_online_roles": [],
+          "active_online_roles": [
+            "planner",
+            "observer",
+            "reflector"
+          ]
+        },
+        {
+          "type": "runtime_checkpoint",
+          "path": "/gemini/code/Recovery/runs/baseline_closure_20260930/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6/logs/runtime_checkpoints/turn_001.json",
+          "iteration": 0,
+          "prefix_steps": 0,
+          "sha256": "6b3d087e054ded974e4a9ce0f12bdf4581e157ad1f910e1ad537144dd999e360"
+        },
+        {
+          "type": "llm_iteration",
+          "agent_role": "planner",
+          "kernel": {
+            "agent_role": "planner",
+            "provider_class": "TransformersProvider",
+            "model_role": "planner",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "planner_prompts",
+            "structured_contract": "planner_react_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "tool_orchestration_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "goal + trajectory + registered tool observations + optional frames",
+              "decision_authority": "select executable tool calls and propose Finish",
+              "delegates_to": [
+                "observer",
+                "reflector"
+              ]
+            }
+          },
+          "depth": 0,
+          "iteration": 1,
+          "response": "{\n    \"Thought\": \"Initial grounding evidence strongly indicates a grassland setting through captions mentioning 'savanna', 'grassy field', and 'grassland', along with visuals of elephants and lions. I will verify this visually by inspecting the provided frame collages.\",\n    \"Plan\": \"Inspect the attached frame collages from the three grounding segments to confirm the visual environment matches the 'Grassland' option.\",\n    \"Actions\": [\n        {\n            \"tool\": \"Inspect_Frame\",\n            \"params\": {\n                \"timestamp\": [296.34, 303.735, 311.13, 318.525],\n                \"query\": \"Verify the background environment type shown in these frames\"\n            }\n        },\n        {\n            \"tool\": \"Inspect_Frame\",\n            \"params\": {\n                \"timestamp\": [120.0, 127.05, 134.1, 141.15],\n                \"query\": \"Verify the background environment type shown in these frames\"\n            }\n        },\n        {\n            \"tool\": \"Inspect_Frame\",\n            \"params\": {\n                \"timestamp\": [148.2, 154.256, 160.311, 166.367],\n                \"query\": \"Verify the background environment type shown in these frames\"\n            }\n        }\n    ]\n}",
+          "raw_response_chars": 1197,
+          "response_normalized": true,
+          "parsed_plan": "Inspect the attached frame collages from the three grounding segments to confirm the visual environment matches the 'Grassland' option.",
+          "parsed_action": "Parallel",
+          "parsed_action_args": {
+            "batch": [
+              {
+                "name": "Inspect_Frame",
+                "args": {
+                  "timestamp": [
+                    296.34,
+                    303.735,
+                    311.13,
+                    318.525
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "__raw_params_declared__": true,
+                  "__raw_param_keys__": [
+                    "timestamp",
+                    "query"
+                  ]
+                }
+              },
+              {
+                "name": "Inspect_Frame",
+                "args": {
+                  "timestamp": [
+                    120.0,
+                    127.05,
+                    134.1,
+                    141.15
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "__raw_params_declared__": true,
+                  "__raw_param_keys__": [
+                    "timestamp",
+                    "query"
+                  ]
+                }
+              },
+              {
+                "name": "Inspect_Frame",
+                "args": {
+                  "timestamp": [
+                    148.2,
+                    154.256,
+                    160.311,
+                    166.367
+                  ],
+                  "query": "Verify the background environment type shown in these frames",
+                  "__raw_params_declared__": true,
+                  "__raw_param_keys__": [
+                    "timestamp",
+                    "query"
+                  ]
+                }
+              }
+            ]
+          },
+          "thought_preview": "Initial grounding evidence strongly indicates a grassland setting through captions mentioning 'savanna', 'grassy field', and 'grassland', along with visuals of elephants and lions. I will verify this visually by inspecting the provided frame collages.",
+          "parse_success": true,
+          "parse_mode": "action"
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ObserverAgentTurnEvent",
+          "agent_role": "observer",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "observer",
+            "provider_class": "TransformersProvider",
+            "model_role": "observer",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "observer_dispatch_or_evidence_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "execution_and_evidence_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+              "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "571144ed07628947",
+          "input_char_count": 1267,
+          "trajectory_step_count": null,
+          "response": "{\n  \"dispatch_decision\": \"execute\",\n  \"executable_action\": {\n    \"tool\": \"Inspect_Frame\",\n    \"params\": {\n      \"query\": \"Verify the background environment type shown in these frames\",\n      \"timestamp\": [296.34, 303.735, 311.13, 318.525]\n    }\n  },\n  \"reason\": \"The planner has resolved a valid route to Inspect_Frame with specific timestamps and a clear query to verify the background environment. The parameters are complete and executable.\",\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "dispatch_decision": "execute",
+            "executable_action": {
+              "tool": "Inspect_Frame",
+              "params": {
+                "query": "Verify the background environment type shown in these frames",
+                "timestamp": [
+                  296.34,
+                  303.735,
+                  311.13,
+                  318.525
+                ]
+              }
+            },
+            "reason": "The planner has resolved a valid route to Inspect_Frame with specific timestamps and a clear query to verify the background environment. The parameters are complete and executable.",
+            "confidence": 1.0
+          },
+          "initial_response": "",
+          "schema_retry_count": 0,
+          "contract_mode": "dispatch",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "text",
+          "visual_item_count": 0,
+          "elapsed_seconds": 7.080033,
+          "depth": 0,
+          "iteration": 1,
+          "phase": "dispatch",
+          "planner_action_name": "Inspect_Frame",
+          "planner_action_args": {
+            "timestamp": [
+              296.34,
+              303.735,
+              311.13,
+              318.525
+            ],
+            "query": "Verify the background environment type shown in these frames",
+            "__raw_params_declared__": true,
+            "__raw_param_keys__": [
+              "timestamp",
+              "query"
+            ]
+          },
+          "resolved_tool": "Inspect_Frame",
+          "dispatch_decision": "execute",
+          "dispatch_selected_tool": "Inspect_Frame",
+          "dispatch_applied": true
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ObserverAgentTurnEvent",
+          "agent_role": "observer",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "observer",
+            "provider_class": "TransformersProvider",
+            "model_role": "observer",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "observer_dispatch_or_evidence_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "execution_and_evidence_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+              "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "43d73aac26b69882",
+          "input_char_count": 1259,
+          "trajectory_step_count": null,
+          "response": "{\n  \"dispatch_decision\": \"execute\",\n  \"executable_action\": {\n    \"tool\": \"Inspect_Frame\",\n    \"params\": {\n      \"query\": \"Verify the background environment type shown in these frames\",\n      \"timestamp\": [120.0, 127.05, 134.1, 141.15]\n    }\n  },\n  \"reason\": \"The Planner has resolved a valid route to Inspect_Frame with specific timestamps and a clear query to verify the background environment. The parameters are complete and executable.\",\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "dispatch_decision": "execute",
+            "executable_action": {
+              "tool": "Inspect_Frame",
+              "params": {
+                "query": "Verify the background environment type shown in these frames",
+                "timestamp": [
+                  120.0,
+                  127.05,
+                  134.1,
+                  141.15
+                ]
+              }
+            },
+            "reason": "The Planner has resolved a valid route to Inspect_Frame with specific timestamps and a clear query to verify the background environment. The parameters are complete and executable.",
+            "confidence": 1.0
+          },
+          "initial_response": "",
+          "schema_retry_count": 0,
+          "contract_mode": "dispatch",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "text",
+          "visual_item_count": 0,
+          "elapsed_seconds": 6.797798,
+          "depth": 0,
+          "iteration": 1,
+          "phase": "dispatch",
+          "planner_action_name": "Inspect_Frame",
+          "planner_action_args": {
+            "timestamp": [
+              120.0,
+              127.05,
+              134.1,
+              141.15
+            ],
+            "query": "Verify the background environment type shown in these frames",
+            "__raw_params_declared__": true,
+            "__raw_param_keys__": [
+              "timestamp",
+              "query"
+            ]
+          },
+          "resolved_tool": "Inspect_Frame",
+          "dispatch_decision": "execute",
+          "dispatch_selected_tool": "Inspect_Frame",
+          "dispatch_applied": true
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ObserverAgentTurnEvent",
+          "agent_role": "observer",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "observer",
+            "provider_class": "TransformersProvider",
+            "model_role": "observer",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "observer_dispatch_or_evidence_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "execution_and_evidence_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+              "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "3629fca16f0a1fea",
+          "input_char_count": 1267,
+          "trajectory_step_count": null,
+          "response": "{\n  \"dispatch_decision\": \"execute\",\n  \"executable_action\": {\n    \"tool\": \"Inspect_Frame\",\n    \"params\": {\n      \"query\": \"Verify the background environment type shown in these frames\",\n      \"timestamp\": [148.2, 154.256, 160.311, 166.367]\n    }\n  },\n  \"reason\": \"The planner has resolved a valid route to Inspect_Frame with specific timestamps and a clear query to verify the background environment. The parameters are complete and executable.\",\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "dispatch_decision": "execute",
+            "executable_action": {
+              "tool": "Inspect_Frame",
+              "params": {
+                "query": "Verify the background environment type shown in these frames",
+                "timestamp": [
+                  148.2,
+                  154.256,
+                  160.311,
+                  166.367
+                ]
+              }
+            },
+            "reason": "The planner has resolved a valid route to Inspect_Frame with specific timestamps and a clear query to verify the background environment. The parameters are complete and executable.",
+            "confidence": 1.0
+          },
+          "initial_response": "",
+          "schema_retry_count": 0,
+          "contract_mode": "dispatch",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "text",
+          "visual_item_count": 0,
+          "elapsed_seconds": 6.828204,
+          "depth": 0,
+          "iteration": 1,
+          "phase": "dispatch",
+          "planner_action_name": "Inspect_Frame",
+          "planner_action_args": {
+            "timestamp": [
+              148.2,
+              154.256,
+              160.311,
+              166.367
+            ],
+            "query": "Verify the background environment type shown in these frames",
+            "__raw_params_declared__": true,
+            "__raw_param_keys__": [
+              "timestamp",
+              "query"
+            ]
+          },
+          "resolved_tool": "Inspect_Frame",
+          "dispatch_decision": "execute",
+          "dispatch_selected_tool": "Inspect_Frame",
+          "dispatch_applied": true
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ObserverAgentTurnEvent",
+          "agent_role": "observer",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "observer",
+            "provider_class": "TransformersProvider",
+            "model_role": "observer",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "observer_dispatch_or_evidence_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "execution_and_evidence_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+              "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "e82335cd2e0dd34f",
+          "input_char_count": 20571,
+          "trajectory_step_count": null,
+          "response": "{\n  \"observation_quality\": \"sufficient\",\n  \"evidence_updates\": [\n    {\n      \"claim_id\": \"scene_count\",\n      \"scope\": \"scene_count\",\n      \"label\": \"background_environment\",\n      \"target\": \"background\",\n      \"relation\": \"is\",\n      \"direction\": \"none\",\n      \"qualifiers\": [\"grassland\", \"savanna\", \"grassy field\"],\n      \"observed_value\": \"grassland\",\n      \"value\": \"grassland\",\n      \"citation\": \"frame_000_296p34_planner_single.jpg, frame_000_303p735_planner_single.jpg, frame_000_311p13_planner_single.jpg, frame_000_318p525_planner_single.jpg, frame_000_120p0_planner_single.jpg, frame_000_127p05_planner_single.jpg, frame_000_134p1_planner_single.jpg, frame_000_141p15_planner_single.jpg, frame_000_148p2_planner_single.jpg, frame_000_154p256_planner_single.jpg, frame_000_160p311_planner_single.jpg, frame_000_166p367_planner_single.jpg\",\n      \"source_tool\": \"Inspect_Frame\",\n      \"uncertainty\": \"none\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    }\n  ],\n  \"claim_gaps\": [],\n  \"recommended_action\": {\n    \"kind\": \"finish\",\n    \"reason\": \"The visual evidence from multiple frames (aerial views of green grassy plains, close-ups of tall grass, and vultures) consistently confirms a grassland/savanna environment. This directly supports option (A) and contradicts options (B), (C), and (D).\",\n    \"tool_hint\": null,\n    \"params\": {}\n  },\n  \"confidence\": 0.95\n}",
+          "response_payload": {
+            "observation_quality": "sufficient",
+            "evidence_updates": [
+              {
+                "claim_id": "scene_count",
+                "scope": "scene_count",
+                "label": "background_environment",
+                "target": "background",
+                "relation": "is",
+                "direction": "none",
+                "qualifiers": [
+                  "grassland",
+                  "savanna",
+                  "grassy field"
+                ],
+                "observed_value": "grassland",
+                "value": "grassland",
+                "citation": "frame_000_296p34_planner_single.jpg, frame_000_303p735_planner_single.jpg, frame_000_311p13_planner_single.jpg, frame_000_318p525_planner_single.jpg, frame_000_120p0_planner_single.jpg, frame_000_127p05_planner_single.jpg, frame_000_134p1_planner_single.jpg, frame_000_141p15_planner_single.jpg, frame_000_148p2_planner_single.jpg, frame_000_154p256_planner_single.jpg, frame_000_160p311_planner_single.jpg, frame_000_166p367_planner_single.jpg",
+                "source_tool": "Inspect_Frame",
+                "uncertainty": "none",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              }
+            ],
+            "claim_gaps": [],
+            "recommended_action": {
+              "kind": "finish",
+              "reason": "The visual evidence from multiple frames (aerial views of green grassy plains, close-ups of tall grass, and vultures) consistently confirms a grassland/savanna environment. This directly supports option (A) and contradicts options (B), (C), and (D).",
+              "tool_hint": null,
+              "params": {}
+            },
+            "confidence": 0.95
+          },
+          "initial_response": "",
+          "schema_retry_count": 0,
+          "contract_mode": "evidence",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "multimodal",
+          "visual_item_count": 4,
+          "elapsed_seconds": 72.988316,
+          "depth": 0,
+          "iteration": 1,
+          "observed_tools": [
+            "Parallel"
+          ]
+        },
+        {
+          "type": "evidence_committed",
+          "event_type": "EvidenceCommittedEvent",
+          "iteration": 1,
+          "evidence_revision": 1,
+          "observer_update_count": 1,
+          "native_fallback_count": 0,
+          "finish_pending": false
+        },
+        {
+          "type": "runtime_checkpoint",
+          "path": "/gemini/code/Recovery/runs/baseline_closure_20260930/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6/logs/runtime_checkpoints/turn_002.json",
+          "iteration": 1,
+          "prefix_steps": 1,
+          "sha256": "94ecd4311ecf649f0770dde9837efbd103d5e77cbe414961c86aa607e0bbdf1a"
+        },
+        {
+          "type": "llm_iteration",
+          "agent_role": "planner",
+          "kernel": {
+            "agent_role": "planner",
+            "provider_class": "TransformersProvider",
+            "model_role": "planner",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "planner_prompts",
+            "structured_contract": "planner_react_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "tool_orchestration_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "goal + trajectory + registered tool observations + optional frames",
+              "decision_authority": "select executable tool calls and propose Finish",
+              "delegates_to": [
+                "observer",
+                "reflector"
+              ]
+            }
+          },
+          "depth": 0,
+          "iteration": 2,
+          "response": "{\"Thought\": \"Visual evidence from multiple frames consistently confirms a grassland/savanna environment. This directly supports option (A) and contradicts options (B), (C), and (D).\", \"Plan\": \"Submit the final answer based on the verified visual evidence.\", \"Actions\": [], \"Evidence\": [{\"claim_id\": \"scene_count\", \"scope\": \"scene_count\", \"label\": \"background_environment\", \"target\": \"background\", \"relation\": \"is\", \"direction\": \"none\", \"qualifiers\": [\"grassland\", \"savanna\", \"grassy field\"], \"observed_value\": \"grassland\", \"value\": \"grassland\", \"citation\": \"frame_000_296p34_planner_single.jpg, frame_000_303p735_planner_single.jpg, frame_000_311p13_planner_single.jpg, frame_000_318p525_planner_single.jpg, frame_000_120p0_planner_single.jpg, frame_000_127p05_planner_single.jpg, frame_000_134p1_planner_single.jpg, frame_000_141p15_planner_single.jpg, frame_000_148p2_planner_single.jpg, frame_000_154p256_planner_single.jpg, frame_000_160p311_planner_single.jpg, frame_000_166p367_planner_single.jpg\", \"source_tool\": \"Inspect_Frame\", \"uncertainty\": \"none\", \"evidence_status\": \"verified\", \"logical_conflict\": false}], \"Finish\": {\"chain_complete\": true, \"completion_basis\": \"visual->answer\", \"answer\": \"(A) Grassland\"}}",
+          "raw_response_chars": 1220,
+          "response_normalized": false,
+          "parsed_plan": "Submit the final answer based on the verified visual evidence.",
+          "parsed_action": "Finish",
+          "parsed_action_args": {
+            "answer": "(A) Grassland",
+            "chain_complete": true,
+            "completion_basis": "visual->answer"
+          },
+          "thought_preview": "Visual evidence from multiple frames consistently confirms a grassland/savanna environment. This directly supports option (A) and contradicts options (B), (C), and (D).",
+          "parse_success": true,
+          "parse_mode": "action"
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ReflectorAgentTurnEvent",
+          "agent_role": "reflector",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "reflector",
+            "provider_class": "TransformersProvider",
+            "model_role": "reflector",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "llm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "reflector_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "evidence_judgment_agent",
+              "kernel_modality": "llm",
+              "input_contract": "complete execution trajectory + indexed observations + evidence slots and proposed answer, or post-run diagnostic fragments",
+              "decision_authority": "judge Finish with verified observation references; diagnose complete trajectories before executable evolution",
+              "delegates_to": [
+                "planner",
+                "evolver"
+              ]
+            }
+          },
+          "request_digest": "5c886f4dbfc2862e",
+          "input_char_count": 14749,
+          "trajectory_step_count": 1,
+          "response": "{\n  \"decision\": \"accept\",\n  \"can_finish\": true,\n  \"claim_assessment\": [\n    {\n      \"claim_id\": \"scene_count\",\n      \"status\": \"supported\",\n      \"reason\": \"Multiple direct visual observations from step:1 (timestamps 120.0-166.367 and 296.34-318.525) consistently identify the background environment as 'grassland', 'savanna', or 'grassy field'. The proposed answer '(A) Grassland' is directly grounded in this verified evidence.\"\n    }\n  ],\n  \"conflicts\": [],\n  \"missing_information\": [],\n  \"unresolved_claims\": [],\n  \"evidence_assessment\": \"The evidence ledger contains a single verified claim for 'scene_count' with 'evidence_status: verified'. This claim is supported by 13 direct observations from the 'Inspect_Frame' tool across multiple timestamps. The observations explicitly describe the background as 'grassland', 'savanna', or 'grassy field', which aligns perfectly with the proposed answer option (A). There are no contradictory claims or missing information regarding the background environment type.\",\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "decision": "accept",
+            "can_finish": true,
+            "claim_assessment": [
+              {
+                "claim_id": "scene_count",
+                "status": "supported",
+                "reason": "Multiple direct visual observations from step:1 (timestamps 120.0-166.367 and 296.34-318.525) consistently identify the background environment as 'grassland', 'savanna', or 'grassy field'. The proposed answer '(A) Grassland' is directly grounded in this verified evidence."
+              }
+            ],
+            "conflicts": [],
+            "missing_information": [],
+            "unresolved_claims": [],
+            "evidence_assessment": "The evidence ledger contains a single verified claim for 'scene_count' with 'evidence_status: verified'. This claim is supported by 13 direct observations from the 'Inspect_Frame' tool across multiple timestamps. The observations explicitly describe the background as 'grassland', 'savanna', or 'grassy field', which aligns perfectly with the proposed answer option (A). There are no contradictory claims or missing information regarding the background environment type.",
+            "confidence": 1.0
+          },
+          "initial_response": "",
+          "schema_retry_count": 0,
+          "contract_mode": "default",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "multimodal",
+          "visual_item_count": 4,
+          "elapsed_seconds": 15.250384,
+          "configured_timeout_seconds": 180.0,
+          "depth": 0,
+          "iteration": 2,
+          "proposed_answer": "(A) Grassland"
+        },
+        {
+          "progress_score": 0.8,
+          "claim_coverage": 1.0,
+          "direct_grounding": 1.0,
+          "contradiction_score": 0.0,
+          "cross_modal_support": 0.0,
+          "can_finish": true,
+          "premise_mismatch": false,
+          "option_mismatch": false,
+          "missing_information": [],
+          "unresolved_claims": [],
+          "claim_contract": {
+            "status": "pass",
+            "required": [],
+            "satisfied": {},
+            "missing": [],
+            "verified_claim_count": 1,
+            "contract_version": 1
+          },
+          "feedback": "Evidence verifier accepted termination.",
+          "verification_source": "deterministic_safety_gate",
+          "type": "verifier_decision",
+          "event_type": "VerifierDecisionEvent",
+          "depth": 0,
+          "iteration": 2,
+          "reflector_agent_status": "success",
+          "reflector_agent_schema_valid": true,
+          "reflector_agent_decision": "accept",
+          "reflector_agent_can_finish": true,
+          "reflector_agent_payload": {
+            "decision": "accept",
+            "can_finish": true,
+            "claim_assessment": [
+              {
+                "claim_id": "scene_count",
+                "status": "supported",
+                "reason": "Multiple direct visual observations from step:1 (timestamps 120.0-166.367 and 296.34-318.525) consistently identify the background environment as 'grassland', 'savanna', or 'grassy field'. The proposed answer '(A) Grassland' is directly grounded in this verified evidence."
+              }
+            ],
+            "conflicts": [],
+            "missing_information": [],
+            "unresolved_claims": [],
+            "evidence_assessment": "The evidence ledger contains a single verified claim for 'scene_count' with 'evidence_status: verified'. This claim is supported by 13 direct observations from the 'Inspect_Frame' tool across multiple timestamps. The observations explicitly describe the background as 'grassland', 'savanna', or 'grassy field', which aligns perfectly with the proposed answer option (A). There are no contradictory claims or missing information regarding the background environment type.",
+            "confidence": 1.0
+          }
+        }
+      ],
+      "start_time": "2026-09-30T03:00:18.085531Z",
+      "end_time": "2026-09-30T03:03:08.922793Z",
+      "started_at": "2026-09-30T03:00:18.085531Z",
+      "finished_at": "2026-09-30T03:03:08.922793Z",
+      "duration_seconds": 170.837262
+    }
+  },
+  "metrics": {
+    "tool_usage_layers": {
+      "planner_proposed": {
+        "tool_usage_summary": {
+          "Inspect_Frame": 3
+        },
+        "unique_tools": [
+          "Inspect_Frame"
+        ],
+        "unique_tool_count": 1,
+        "tool_type_counts": {
+          "base": 3
+        },
+        "capability_tier_counts": {
+          "production": 3
+        },
+        "tool_family_counts": {
+          "visual": 3
+        },
+        "unique_tool_type_counts": {
+          "base": 1
+        },
+        "unique_capability_tier_counts": {
+          "production": 1
+        },
+        "base_meta_coverage": {
+          "base_used": true,
+          "meta_used": false,
+          "coverage_ratio": 0.5
+        }
+      },
+      "subagent_rewritten": {
+        "tool_usage_summary": {},
+        "unique_tools": [],
+        "unique_tool_count": 0,
+        "tool_type_counts": {},
+        "capability_tier_counts": {},
+        "tool_family_counts": {},
+        "unique_tool_type_counts": {},
+        "unique_capability_tier_counts": {},
+        "base_meta_coverage": {
+          "base_used": false,
+          "meta_used": false,
+          "coverage_ratio": 0.0
+        }
+      },
+      "runtime_executed": {
+        "tool_usage_summary": {
+          "Inspect_Frame": 3
+        },
+        "unique_tools": [
+          "Inspect_Frame"
+        ],
+        "unique_tool_count": 1,
+        "tool_type_counts": {
+          "base": 3
+        },
+        "capability_tier_counts": {
+          "production": 3
+        },
+        "tool_family_counts": {
+          "visual": 3
+        },
+        "unique_tool_type_counts": {
+          "base": 1
+        },
+        "unique_capability_tier_counts": {
+          "production": 1
+        },
+        "base_meta_coverage": {
+          "base_used": true,
+          "meta_used": false,
+          "coverage_ratio": 0.5
+        }
+      }
+    },
+    "tool_usage_summary": {
+      "Inspect_Frame": 3
+    },
+    "unique_tools": [
+      "Inspect_Frame"
+    ],
+    "tool_family_counts": {
+      "visual": 3
+    },
+    "tool_type_counts": {
+      "base": 3
+    },
+    "capability_tier_counts": {
+      "production": 3
+    },
+    "runtime_tool_call_count": 3,
+    "runtime_execution_steps": 1,
+    "planner_iterations": 2,
+    "subagent_iterations": 0,
+    "four_agent_kernel_contract": {
+      "runtime_release": "v41",
+      "kernel_id": "55f99d0f321a766d",
+      "kernel_provider": "transformers",
+      "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+      "roles": {
+        "planner": {
+          "agent_role": "planner",
+          "provider_class": "TransformersProvider",
+          "model_role": "planner",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "vlm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "planner_prompts",
+          "structured_contract": "planner_react_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "tool_orchestration_agent",
+            "kernel_modality": "vlm",
+            "input_contract": "goal + trajectory + registered tool observations + optional frames",
+            "decision_authority": "select executable tool calls and propose Finish",
+            "delegates_to": [
+              "observer",
+              "reflector"
+            ]
+          }
+        },
+        "observer": {
+          "agent_role": "observer",
+          "provider_class": "TransformersProvider",
+          "model_role": "observer",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "vlm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "four_role_prompts",
+          "structured_contract": "observer_dispatch_or_evidence_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "execution_and_evidence_agent",
+            "kernel_modality": "vlm",
+            "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+            "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+            "delegates_to": [
+              "planner"
+            ]
+          }
+        },
+        "reflector": {
+          "agent_role": "reflector",
+          "provider_class": "TransformersProvider",
+          "model_role": "reflector",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "llm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "four_role_prompts",
+          "structured_contract": "reflector_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "evidence_judgment_agent",
+            "kernel_modality": "llm",
+            "input_contract": "complete execution trajectory + indexed observations + evidence slots and proposed answer, or post-run diagnostic fragments",
+            "decision_authority": "judge Finish with verified observation references; diagnose complete trajectories before executable evolution",
+            "delegates_to": [
+              "planner",
+              "evolver"
+            ]
+          }
+        },
+        "evolver": {
+          "agent_role": "evolver",
+          "provider_class": "TransformersProvider",
+          "model_role": "evolver",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "llm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "four_role_prompts",
+          "structured_contract": "evolver_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "meta_evolution_agent",
+            "kernel_modality": "llm",
+            "input_contract": "complete-trajectory Reflector review + completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+            "decision_authority": "attribute failures, analyze dependencies, and propose bounded coordinated replay-gated harness mutations",
+            "delegates_to": [
+              "replay_gate"
+            ]
+          }
+        }
+      },
+      "weights_shared_for_memory": true,
+      "role_order": [
+        "planner",
+        "observer",
+        "reflector",
+        "evolver"
+      ]
+    },
+    "four_agent_active_online_roles": [
+      "planner",
+      "observer",
+      "reflector"
+    ],
+    "four_agent_disabled_online_roles": [],
+    "four_agent_role_turns": {
+      "planner": 2,
+      "observer": 4,
+      "reflector": 1,
+      "evolver": 0
+    },
+    "four_agent_role_skips": {
+      "observer": 0,
+      "reflector": 0,
+      "evolver": 0
+    },
+    "four_agent_role_schema_pass": {
+      "planner": true,
+      "observer": true,
+      "reflector": true,
+      "evolver": false
+    },
+    "delegated_root_steps": 0,
+    "decomposed_root_steps": 0,
+    "subagent_decomposition_rate": 0.0,
+    "parallel_concrete_batches": 1,
+    "parallel_concrete_batch_rate": 1.0,
+    "acceptance_metrics": {
+      "runtime_tool_call_count": 3,
+      "runtime_execution_steps": 1,
+      "runtime_tools_executed": true,
+      "unique_runtime_tools_count": 1,
+      "unique_runtime_tools_gte_4": false,
+      "runtime_base_meta_coverage": {
+        "base_used": true,
+        "meta_used": false,
+        "coverage_ratio": 0.5
+      }
+    },
+    "timing_breakdown_seconds": {
+      "observer.dispatch_llm_generate_seconds": 20.706035,
+      "observer.llm_generate_seconds": 72.988316,
+      "planner.llm_generate_seconds": 47.375442,
+      "preprocess.total_seconds": 0.084225,
+      "query.grounding_context_seconds": 309.608647,
+      "query.registry_init_seconds": 0.202421,
+      "query.solve_seconds": 170.83769,
+      "query.total_seconds": 481.057403,
+      "reflector.llm_generate_seconds": 15.250384,
+      "runtime_load.grounding_embedder_seconds": 0.001507,
+      "runtime_load.provider_planner_seconds": 537.040048,
+      "runtime_load.qwen3_vl_embedding_seconds": 263.768688
+    },
+    "cache_stats": {
+      "provider.planner.miss": 1,
+      "preprocess.output_dir.hit": 1,
+      "grounding_embedder.miss": 1,
+      "grounding_embedding_vector.miss": 29,
+      "qwen3_vl_embedding_runtime.miss": 1,
+      "grounding_embedder.hit": 28,
+      "provider.planner.hit": 1
+    },
+    "gpu_telemetry": {
+      "status": "ok",
+      "sample_count": 495,
+      "interval_s": 2.0,
+      "gpu_count": 1,
+      "avg_utilization_percent": 4.895,
+      "peak_utilization_percent": 87.0,
+      "peak_memory_used_gib": 26.361,
+      "peak_memory_percent": 33.331,
+      "per_gpu": {
+        "0": {
+          "sample_count": 495,
+          "avg_utilization_percent": 4.895,
+          "peak_utilization_percent": 87.0,
+          "peak_memory_used_gib": 26.361
+        }
+      }
+    },
+    "active_video_names": [
+      "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+      "AWA-6",
+      "AWA-6.mp4"
+    ],
+    "tool_library": {
+      "baseline_id": "snapshot_000",
+      "baseline_path": "",
+      "baseline_schema_digest": "",
+      "baseline_source_digest": "",
+      "active_schema_digest": "61b75a40d1416d764c4f2f4ef1520924c276e3cd733be5a11a01a81410d0ea98",
+      "active_source_digest": "3828fb942737c40ffa6ab8adfbf0d182f2ebf008c87586eee88137555d56131a",
+      "active_tool_count": 15,
+      "schema_match": false,
+      "source_match": false,
+      "added_tools": [
+        "Aggregation",
+        "Clean_Results",
+        "Crop",
+        "Filtering",
+        "Fold_Memory",
+        "Inspect_Frame",
+        "Keyword_Retrieve",
+        "Python_Executor",
+        "Segment_Retrieve",
+        "Semantic_Retrieve",
+        "Tool_Search",
+        "Video_Clip_QA",
+        "Video_Summary",
+        "Zoom_in",
+        "asr"
+      ],
+      "removed_tools": [],
+      "scoped_hidden_tools": [],
+      "changed_tools": [],
+      "scoped_schema_match": false,
+      "active_tools": [
+        "Aggregation",
+        "Clean_Results",
+        "Crop",
+        "Filtering",
+        "Fold_Memory",
+        "Inspect_Frame",
+        "Keyword_Retrieve",
+        "Python_Executor",
+        "Segment_Retrieve",
+        "Semantic_Retrieve",
+        "Tool_Search",
+        "Video_Clip_QA",
+        "Video_Summary",
+        "Zoom_in",
+        "asr"
+      ]
+    },
+    "evolution_harness": {
+      "enabled": true,
+      "status": "candidate",
+      "snapshot_id": "snapshot_000",
+      "snapshot_path": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline_snapshot.json",
+      "policy_digest": "549eda229b8b9113",
+      "base_tool_library_baseline_id": "",
+      "operations_applied": [],
+      "registry_mutations_applied": [],
+      "tool_overrides": {},
+      "snapshot_loaded": true,
+      "snapshot_application_proven": false,
+      "snapshot_application_proof": {
+        "snapshot_loaded": true,
+        "runtime_hook_applied": false,
+        "operation_count": 0,
+        "missing_operations": [],
+        "proof_scope": "runtime_boundary_attestation",
+        "requires_fresh_inference": false,
+        "source_application": {
+          "applied": false,
+          "targets": []
+        }
+      },
+      "mutation_declared": false,
+      "mutation_applied": false
+    },
+    "benchmark_input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "included",
+      "external_subtitles": false,
+      "audio_track": "preserved",
+      "audio_transcript_allowed": true,
+      "annotation_fields_excluded": [
+        "answer",
+        "ground_truth",
+        "ground_truth_option",
+        "time_reference",
+        "evaluator_output"
+      ],
+      "audio_track_policy": "preserved",
+      "audio_transcript_policy": "included"
+    }
+  }
+}

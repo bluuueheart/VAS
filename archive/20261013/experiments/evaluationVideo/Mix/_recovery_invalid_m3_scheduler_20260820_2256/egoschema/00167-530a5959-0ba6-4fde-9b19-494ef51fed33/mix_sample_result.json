@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00167:530a5959-0ba6-4fde-9b19-494ef51fed33",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The social interactions in the video are positive. the man and the girl are both seen interacting with each other in a friendly and supportive way.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00167-530a5959-0ba6-4fde-9b19-494ef51fed33",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00167-530a5959-0ba6-4fde-9b19-494ef51fed33/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00167-530a5959-0ba6-4fde-9b19-494ef51fed33/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00167-530a5959-0ba6-4fde-9b19-494ef51fed33/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/530a5959-0ba6-4fde-9b19-494ef51fed33.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/530a5959-0ba6-4fde-9b19-494ef51fed33.mp4",
+  "question_block": "Question: In the context of the video, discuss the role of social interactions, distractions, and the characters' behavior in relation to the primary activity.\nOptions:\n(A) The social interactions in the video are negative. the man and the girl are both seen arguing with each other. this is likely making their meal less enjoyable.\n(B) The social interactions in the video are neutral. the man and the girl are both seen eating their meal in silence. this is likely not having a significant impact on their meal experience.\n(C) The social interactions in the video are nonexistent. the man and the girl are both seen eating their meal alone. this is likely making their meal less enjoyable.\n(D) The social interactions in the video are forced. the man and the girl are both seen talking to each other only because they feel obligated to. this is likely making their meal less enjoyable.\n(E) The social interactions in the video are positive. the man and the girl are both seen interacting with each other in a friendly and supportive way.",
+  "options": [
+    "The social interactions in the video are negative. the man and the girl are both seen arguing with each other. this is likely making their meal less enjoyable.",
+    "The social interactions in the video are neutral. the man and the girl are both seen eating their meal in silence. this is likely not having a significant impact on their meal experience.",
+    "The social interactions in the video are nonexistent. the man and the girl are both seen eating their meal alone. this is likely making their meal less enjoyable.",
+    "The social interactions in the video are forced. the man and the girl are both seen talking to each other only because they feel obligated to. this is likely making their meal less enjoyable.",
+    "The social interactions in the video are positive. the man and the girl are both seen interacting with each other in a friendly and supportive way."
+  ],
+  "official_meta": {
+    "question_index": "00167",
+    "video_id": "530a5959-0ba6-4fde-9b19-494ef51fed33",
+    "source_index": 167
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:51:00.169234Z"
+}

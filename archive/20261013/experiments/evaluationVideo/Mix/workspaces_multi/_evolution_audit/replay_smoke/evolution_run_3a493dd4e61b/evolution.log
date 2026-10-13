@@ -1,0 +1,10 @@
+run_id=evolution_run_3a493dd4e61b
+trajectory_count=2
+diagnosis_count=1
+verification_accepted=1/2
+accepted_correct=0
+accepted_wrong=1
+replay_groups={"held_out": ["trajectory_c9c6117f09734efaae8110c4bd26cc32"], "neighbor": [], "regression": [], "trigger": ["trajectory_0b00f67e265547d8887ff6abce7c116b"]}
+candidate_snapshot=snapshot_5378f7a62e4d
+replay_status=accepted
+diagnosis=evidence_integration confidence=0.85 root_cause=Many successful probes did not converge to the correct option.

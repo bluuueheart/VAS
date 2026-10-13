@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00192:619fdd7a-03df-49b6-995e-2bba10a3d7f5",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's interaction with the man did not influence her crafting process or actions throughout the video.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00192-619fdd7a-03df-49b6-995e-2bba10a3d7f5",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00192-619fdd7a-03df-49b6-995e-2bba10a3d7f5/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00192-619fdd7a-03df-49b6-995e-2bba10a3d7f5/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00192-619fdd7a-03df-49b6-995e-2bba10a3d7f5/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/619fdd7a-03df-49b6-995e-2bba10a3d7f5.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/619fdd7a-03df-49b6-995e-2bba10a3d7f5.mp4",
+  "question_block": "Question: How did c's interaction with the man influence her crafting process and actions throughout the video?\nOptions:\n(A) Strikingly, c was deeply inspired by the artistic man to ingeniously create a beautiful flower-like red glitter paper design.\n(B) C was annoyed by the man's presence and tried to ignore him.\n(C) C's interaction with the man did not influence her crafting process or actions throughout the video.\n(D) Confidently, c was attempting to impress the interested man by showcasing her exceptional crafting skills.\n(E) In a creative manner, c was attempting to communicate with the man by expressing herself through her crafting skills.",
+  "options": [
+    "Strikingly, c was deeply inspired by the artistic man to ingeniously create a beautiful flower-like red glitter paper design.",
+    "C was annoyed by the man's presence and tried to ignore him.",
+    "C's interaction with the man did not influence her crafting process or actions throughout the video.",
+    "Confidently, c was attempting to impress the interested man by showcasing her exceptional crafting skills.",
+    "In a creative manner, c was attempting to communicate with the man by expressing herself through her crafting skills."
+  ],
+  "official_meta": {
+    "question_index": "00192",
+    "video_id": "619fdd7a-03df-49b6-995e-2bba10a3d7f5",
+    "source_index": 192
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:41.553020Z"
+}

@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00153:4c778f65-eeca-4280-a608-d17b0c9493c2",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C puts the paint brush and paint tin away, wipes his hands, and puts on his phone.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00153-4c778f65-eeca-4280-a608-d17b0c9493c2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00153-4c778f65-eeca-4280-a608-d17b0c9493c2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00153-4c778f65-eeca-4280-a608-d17b0c9493c2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00153-4c778f65-eeca-4280-a608-d17b0c9493c2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/4c778f65-eeca-4280-a608-d17b0c9493c2.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/4c778f65-eeca-4280-a608-d17b0c9493c2.mp4",
+  "question_block": "Question: After completing the painting task, what actions does c take to prepare for their next activities on the construction site?\nOptions:\n(A) C puts the paint brush and paint tin away, wipes his hands, and puts on his phone.\n(B) Carefully, c puts the paint brush and paint tin away, thoroughly washes his hands, and then proceeds to puts on his phone.\n(C) Carefully, c puts the paint brush and paint tin away, dries his hands thoroughly, and then puts on his phone without delay.\n(D) Carefully, c puts the paint brush and paint tin away, thoroughly sanitizes his hands, and then puts on his phone to make a call.\n(E) C puts the paint brush and paint tin away, lotions his hands, and puts on his phone.",
+  "options": [
+    "C puts the paint brush and paint tin away, wipes his hands, and puts on his phone.",
+    "Carefully, c puts the paint brush and paint tin away, thoroughly washes his hands, and then proceeds to puts on his phone.",
+    "Carefully, c puts the paint brush and paint tin away, dries his hands thoroughly, and then puts on his phone without delay.",
+    "Carefully, c puts the paint brush and paint tin away, thoroughly sanitizes his hands, and then puts on his phone to make a call.",
+    "C puts the paint brush and paint tin away, lotions his hands, and puts on his phone."
+  ],
+  "official_meta": {
+    "question_index": "00153",
+    "video_id": "4c778f65-eeca-4280-a608-d17b0c9493c2",
+    "source_index": 153
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:49:56.182131Z"
+}

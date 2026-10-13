@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00081:24f4b88e-2294-4017-a669-9e27c07d44e7",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C chops and slices the plantain flower, then arranges it in a tray.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00081-24f4b88e-2294-4017-a669-9e27c07d44e7",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00081-24f4b88e-2294-4017-a669-9e27c07d44e7/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00081-24f4b88e-2294-4017-a669-9e27c07d44e7/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00081-24f4b88e-2294-4017-a669-9e27c07d44e7/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/24f4b88e-2294-4017-a669-9e27c07d44e7.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/24f4b88e-2294-4017-a669-9e27c07d44e7.mp4",
+  "question_block": "Question: How would you concisely describe the overall process that c undertakes in order to prepare the plantain flower throughout this video?\nOptions:\n(A) C chops and slices the plantain flower, then arranges it in a tray.\n(B) Carefully, c slices the plantain flower into small, manageable pieces for cooking.\n(C) Carefully, c peels away the outer layers of the plantain flower.\n(D) Carefully, c skillfully cooks the delicious plantain flower in the kitchen.\n(E) C eats the plantain flower.",
+  "options": [
+    "C chops and slices the plantain flower, then arranges it in a tray.",
+    "Carefully, c slices the plantain flower into small, manageable pieces for cooking.",
+    "Carefully, c peels away the outer layers of the plantain flower.",
+    "Carefully, c skillfully cooks the delicious plantain flower in the kitchen.",
+    "C eats the plantain flower."
+  ],
+  "official_meta": {
+    "question_index": "00081",
+    "video_id": "24f4b88e-2294-4017-a669-9e27c07d44e7",
+    "source_index": 81
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:45:40.295301Z"
+}

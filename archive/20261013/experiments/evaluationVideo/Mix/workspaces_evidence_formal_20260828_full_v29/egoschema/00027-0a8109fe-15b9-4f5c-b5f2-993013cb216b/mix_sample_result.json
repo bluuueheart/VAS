@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00027:0a8109fe-15b9-4f5c-b5f2-993013cb216b",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 13,
+  "iter_num": 18,
+  "tool_success_rate": 0.846154,
+  "successful_tool_calls": 11,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "The correct answer to question 2 is: the primary function of the scrapper throughout the video is to cut the dough into small pieces.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [
+    "E"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 6614.667,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00027-0a8109fe-15b9-4f5c-b5f2-993013cb216b",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00027-0a8109fe-15b9-4f5c-b5f2-993013cb216b/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00027-0a8109fe-15b9-4f5c-b5f2-993013cb216b/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00027-0a8109fe-15b9-4f5c-b5f2-993013cb216b/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0a8109fe-15b9-4f5c-b5f2-993013cb216b.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0a8109fe-15b9-4f5c-b5f2-993013cb216b.mp4",
+  "question_block": "Question: In your own words, what was the primary function of the scrapper throughout the video? discuss how it contributed to the overall process without mentioning specific actions.\nOptions:\n(A) Inaccurately, the wrong response to question 2 states: the primary purpose of the scrapper throughout the entire video is to effectively remove excess dough from the wooden plank.\n(B) Inaccurately, question 2's incorrect response states: the primary purpose of the scrapper present in the video is to shape and form the dumplings.\n(C) Inaccurately, the wrong answer to question 2 states: the primary function of the scrapper, as shown in the video, is essentially to knead the dough.\n(D) The wrong answer to question 2 is: the primary function of the scrapper throughout the video is to roll out the dough.\n(E) The correct answer to question 2 is: the primary function of the scrapper throughout the video is to cut the dough into small pieces.",
+  "options": [
+    "Inaccurately, the wrong response to question 2 states: the primary purpose of the scrapper throughout the entire video is to effectively remove excess dough from the wooden plank.",
+    "Inaccurately, question 2's incorrect response states: the primary purpose of the scrapper present in the video is to shape and form the dumplings.",
+    "Inaccurately, the wrong answer to question 2 states: the primary function of the scrapper, as shown in the video, is essentially to knead the dough.",
+    "The wrong answer to question 2 is: the primary function of the scrapper throughout the video is to roll out the dough.",
+    "The correct answer to question 2 is: the primary function of the scrapper throughout the video is to cut the dough into small pieces."
+  ],
+  "official_meta": {
+    "question_index": "00027",
+    "video_id": "0a8109fe-15b9-4f5c-b5f2-993013cb216b",
+    "resolved_video_stem": "0a8109fe-15b9-4f5c-b5f2-993013cb216b",
+    "video_mapping_verified": true,
+    "source_index": 27,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-01T19:14:17.222952Z"
+}

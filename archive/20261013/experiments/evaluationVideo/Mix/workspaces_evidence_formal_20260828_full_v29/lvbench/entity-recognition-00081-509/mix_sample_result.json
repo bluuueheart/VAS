@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:entity-recognition:81:509",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 9,
+  "iter_num": 18,
+  "tool_success_rate": 0.888889,
+  "successful_tool_calls": 8,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "2",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 5012.288,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00081-509",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00081-509/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00081-509/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00081-509/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/2sriHX3PbXw.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/2sriHX3PbXw.mp4",
+  "question_block": "Question: How many mice run across the roof above the street?\nOptions:\n(A) 5\n(B) 2\n(C) 3\n(D) 1",
+  "options": [
+    "5",
+    "2",
+    "3",
+    "1"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "cartoon",
+    "time_reference": "03:46-03:47",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "2sriHX3PbXw",
+    "resolved_video_stem": "2sriHX3PbXw",
+    "video_mapping_verified": true,
+    "source_index": 81
+  },
+  "updated_at": "2026-09-09T17:57:09.690402Z"
+}

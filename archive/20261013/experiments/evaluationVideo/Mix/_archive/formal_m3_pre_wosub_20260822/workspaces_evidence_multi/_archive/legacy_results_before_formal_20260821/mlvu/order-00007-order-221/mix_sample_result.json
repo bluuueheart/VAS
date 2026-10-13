@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:order:7:order-221",
+  "dataset_name": "mlvu",
+  "subset_name": "order",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "jetskiing --> shredding paper --> zumba --> tossing coin",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00007-order-221",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00007-order-221/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00007-order-221/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00007-order-221/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_221.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_221.mp4",
+  "question_block": "Question: Can you tell me which option represents the actual order of actions shown in the video?\nOptions:\n(A) jetskiing --> tossing coin --> shredding paper --> zumba\n(B) zumba --> tossing coin --> jetskiing --> shredding paper\n(C) jetskiing --> shredding paper --> zumba --> tossing coin\n(D) zumba --> tossing coin --> shredding paper --> jetskiing",
+  "options": [
+    "jetskiing --> tossing coin --> shredding paper --> zumba",
+    "zumba --> tossing coin --> jetskiing --> shredding paper",
+    "jetskiing --> shredding paper --> zumba --> tossing coin",
+    "zumba --> tossing coin --> shredding paper --> jetskiing"
+  ],
+  "official_meta": {
+    "task_type": "order",
+    "source_json": "5_order.json",
+    "source_index": 7,
+    "video_subdir": "5_order",
+    "video_relative_path": "5_order/order_221.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:22:13.399811Z"
+}

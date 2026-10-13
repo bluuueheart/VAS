@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00108:3311f1b2-495a-4712-9989-ef8519be3cc7",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The different actions performed by c are all essential in the process of selecting and organizing clothes. c first removes the clothes that he is currently wearing, and then puts them on a hanger. he then hangs the clothes on a rod, and takes a new outfit from the closet. c tries on the new outfit, and looks in the mirror to see how it looks. if he is not happy with the outfit, he will take it off and try on another one. once c finds an outfit that he is happy with, he will put it on and wear it.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00108-3311f1b2-495a-4712-9989-ef8519be3cc7",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00108-3311f1b2-495a-4712-9989-ef8519be3cc7/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00108-3311f1b2-495a-4712-9989-ef8519be3cc7/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00108-3311f1b2-495a-4712-9989-ef8519be3cc7/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/3311f1b2-495a-4712-9989-ef8519be3cc7.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/3311f1b2-495a-4712-9989-ef8519be3cc7.mp4",
+  "question_block": "Question: In the context of selecting and organizing clothes, explain the significance of the different actions performed by c and how they collectively contribute to the overall purpose.\nOptions:\n(A) The various actions executed by c are all crucial in the process of cleaning clothes efficiently. c initially removes the clothes he is currently wearing, then places them in the washing machine. next, he washes the clothes thoroughly, and dries them in the dryer. finally, c methodically folds the clothes and organizes them away.\n(B) The different actions performed by c are all essential in the process of selecting and organizing clothes. c first removes the clothes that he is currently wearing, and then puts them on a hanger. he then hangs the clothes on a rod, and takes a new outfit from the closet. c tries on the new outfit, and looks in the mirror to see how it looks. if he is not happy with the outfit, he will take it off and try on another one. once c finds an outfit that he is happy with, he will put it on and wear it.\n(C) The different actions performed by c are all essential in the process of ironing clothes. c first removes the clothes that he is currently wearing, and then puts them on an ironing board. he then irons the clothes, and puts them away.\n(D) The various distinct actions executed by c are all fundamentally essential in the comprehensive process of mending clothes. initially, c carefully removes the clothes that he is currently wearing, and then diligently looks for any tears or holes. subsequently, he skillfully mends the tears or holes, afterwards, he neatly puts the clothes away.\n(E) The various actions executed by individual c are all crucial in the sewing process of garments. initially, c removes the clothes he is presently wearing, and then carefully dismantles them. following that, he skillfully sews the clothes back together and neatly stores them away.",
+  "options": [
+    "The various actions executed by c are all crucial in the process of cleaning clothes efficiently. c initially removes the clothes he is currently wearing, then places them in the washing machine. next, he washes the clothes thoroughly, and dries them in the dryer. finally, c methodically folds the clothes and organizes them away.",
+    "The different actions performed by c are all essential in the process of selecting and organizing clothes. c first removes the clothes that he is currently wearing, and then puts them on a hanger. he then hangs the clothes on a rod, and takes a new outfit from the closet. c tries on the new outfit, and looks in the mirror to see how it looks. if he is not happy with the outfit, he will take it off and try on another one. once c finds an outfit that he is happy with, he will put it on and wear it.",
+    "The different actions performed by c are all essential in the process of ironing clothes. c first removes the clothes that he is currently wearing, and then puts them on an ironing board. he then irons the clothes, and puts them away.",
+    "The various distinct actions executed by c are all fundamentally essential in the comprehensive process of mending clothes. initially, c carefully removes the clothes that he is currently wearing, and then diligently looks for any tears or holes. subsequently, he skillfully mends the tears or holes, afterwards, he neatly puts the clothes away.",
+    "The various actions executed by individual c are all crucial in the sewing process of garments. initially, c removes the clothes he is presently wearing, and then carefully dismantles them. following that, he skillfully sews the clothes back together and neatly stores them away."
+  ],
+  "official_meta": {
+    "question_index": "00108",
+    "video_id": "3311f1b2-495a-4712-9989-ef8519be3cc7",
+    "source_index": 108
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:47:11.898448Z"
+}

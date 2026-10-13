@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00075:22b86648-340c-4338-b46e-5eaba3a44b06",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 2,
+  "iter_num": 2,
+  "tool_success_rate": 0.5,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C is cutting and assembling metal pieces to build a structure.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) C is cutting and assembling metal pieces to build a structure.",
+  "elapsed_seconds": 714.837,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00075-22b86648-340c-4338-b46e-5eaba3a44b06",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00075-22b86648-340c-4338-b46e-5eaba3a44b06/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00075-22b86648-340c-4338-b46e-5eaba3a44b06/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00075-22b86648-340c-4338-b46e-5eaba3a44b06/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/22b86648-340c-4338-b46e-5eaba3a44b06.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/22b86648-340c-4338-b46e-5eaba3a44b06.mp4",
+  "question_block": "Question: Describe the primary aim of the actions that c is performing in the video, and address how his techniques for completing the task evolve throughout the video.\nOptions:\n(A) C is repairing a metal object.\n(B) In the workshop, c is skillfully creating a beautiful work of art using metal materials.\n(C) Currently, c is carefully dismantling a large metal structure with precision.\n(D) C is cutting and assembling metal pieces to build a structure.\n(E) C is carefully cleaning a shiny metal object with precision.",
+  "options": [
+    "C is repairing a metal object.",
+    "In the workshop, c is skillfully creating a beautiful work of art using metal materials.",
+    "Currently, c is carefully dismantling a large metal structure with precision.",
+    "C is cutting and assembling metal pieces to build a structure.",
+    "C is carefully cleaning a shiny metal object with precision."
+  ],
+  "official_meta": {
+    "question_index": "00075",
+    "video_id": "22b86648-340c-4338-b46e-5eaba3a44b06",
+    "resolved_video_stem": "22b86648-340c-4338-b46e-5eaba3a44b06",
+    "video_mapping_verified": true,
+    "source_index": 75,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-09T16:08:36.601074Z"
+}

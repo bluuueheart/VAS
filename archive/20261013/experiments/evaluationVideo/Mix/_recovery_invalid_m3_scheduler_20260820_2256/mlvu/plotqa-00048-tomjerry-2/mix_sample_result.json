@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:plotqa:48:tomjerry-2",
+  "dataset_name": "mlvu",
+  "subset_name": "plotQA",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "A bed made of cheese",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00048-tomjerry-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00048-tomjerry-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00048-tomjerry-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00048-tomjerry-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/tomjerry_2.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/tomjerry_2.mp4",
+  "question_block": "Question: What kind of bed is the cartoon mouse lying on?\nOptions:\n(A) Stone bed\n(B) A bed made of cheese\n(C) Wooden bed\n(D) Iron bed",
+  "options": [
+    "Stone bed",
+    "A bed made of cheese",
+    "Wooden bed",
+    "Iron bed"
+  ],
+  "official_meta": {
+    "task_type": "plotQA",
+    "source_json": "1_plotQA.json",
+    "source_index": 48,
+    "video_subdir": "1_plotQA",
+    "video_relative_path": "1_plotQA/tomjerry_2.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:35.483161Z"
+}

@@ -1,0 +1,9 @@
+[Main] workspace_root=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260920_main_v40
+[Main] shared_preprocess_root=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache
+[Main] config=evaluationVideo/Mix/mix_config_evidence_multi.json
+[Main] phase=batch_with_online_evolver
+Using Orion CUDA proxy runtime: /opt/orion/orion_runtime/gpu/cuda/orion-cuda-12.3
+2026-09-20 23:08:52,466 - INFO - Video-MME subtitle mode=w/o sub.; external dataset subtitles are not loaded.
+2026-09-20 23:08:55,394 - WARNING - Skipped 2 malformed MLVU samples task_type=ego source_json=3_ego.json examples=['record_index=119 video=ego_26.mp4 error=MLVU candidates contain empty option slots at indices 2.', 'record_index=313 video=ego_81.mp4 error=MLVU candidates contain empty option slots at indices 3.']
+2026-09-20 23:08:56,077 - WARNING - Skipped 1 malformed MLVU samples task_type=plotQA source_json=1_plotQA.json examples=['record_index=23 video=movie101_5.mp4 error=MLVU candidates contain empty option slots at indices 0, 3.']
+2026-09-20 23:08:57,685 - INFO - Creating immutable tool library baseline: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260920_main_v40/_audit/tool_library_baseline.json

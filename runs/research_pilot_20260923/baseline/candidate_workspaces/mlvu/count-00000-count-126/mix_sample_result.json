@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:count:0:count-126",
+  "dataset_name": "mlvu",
+  "subset_name": "count",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 10,
+  "iter_num": 11,
+  "tool_success_rate": 0.5,
+  "successful_tool_calls": 5,
+  "planner_iterations": 11,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "1",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: evidence_recovery_budget_exhausted_without_new_grounded_evidence.",
+  "elapsed_seconds": 1573.473,
+  "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126",
+  "launcher_log": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/4_count/count_126.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/4_count/count_126.mp4",
+  "question_block": "Question: Throughout this video, what is the total count of occurrences for the scene featuring the 'playing trombone' action\nOptions:\n(A) 2\n(B) 1\n(C) 5\n(D) 4",
+  "options": [
+    "2",
+    "1",
+    "5",
+    "4"
+  ],
+  "official_meta": {
+    "task_type": "count",
+    "source_question_type": "count",
+    "prompt_task_type": "count",
+    "source_json": "4_count.json",
+    "source_index": 0,
+    "video_subdir": "4_count",
+    "video_relative_path": "4_count/count_126.mp4",
+    "resolved_video_stem": "count_126",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-23T10:58:07.678649Z"
+}

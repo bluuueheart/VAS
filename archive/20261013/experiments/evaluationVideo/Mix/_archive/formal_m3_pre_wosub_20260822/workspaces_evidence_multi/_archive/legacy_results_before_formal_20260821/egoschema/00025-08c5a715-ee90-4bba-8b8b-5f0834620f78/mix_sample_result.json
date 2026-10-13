@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00025:08c5a715-ee90-4bba-8b8b-5f0834620f78",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C adjusts the camera to get a better view of the bed and the cloths.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00025-08c5a715-ee90-4bba-8b8b-5f0834620f78",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00025-08c5a715-ee90-4bba-8b8b-5f0834620f78/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00025-08c5a715-ee90-4bba-8b8b-5f0834620f78/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00025-08c5a715-ee90-4bba-8b8b-5f0834620f78/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/08c5a715-ee90-4bba-8b8b-5f0834620f78.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/08c5a715-ee90-4bba-8b8b-5f0834620f78.mp4",
+  "question_block": "Question: How does c interact with the camera during the video and what might be the reason behind these adjustments?\nOptions:\n(A) Casually, c adjusts the camera angle skillfully to achieve a more visually appealing view of herself.\n(B) C skillfully adjusts the camera angle to achieve a better, enhanced view of the entire room.\n(C) Casually, c adjusts the camera angle to get a more improved, better view of the entrance door.\n(D) C adjusts the camera to get a better view of the window.\n(E) C adjusts the camera to get a better view of the bed and the cloths.",
+  "options": [
+    "Casually, c adjusts the camera angle skillfully to achieve a more visually appealing view of herself.",
+    "C skillfully adjusts the camera angle to achieve a better, enhanced view of the entire room.",
+    "Casually, c adjusts the camera angle to get a more improved, better view of the entrance door.",
+    "C adjusts the camera to get a better view of the window.",
+    "C adjusts the camera to get a better view of the bed and the cloths."
+  ],
+  "official_meta": {
+    "question_index": "00025",
+    "video_id": "08c5a715-ee90-4bba-8b8b-5f0834620f78",
+    "source_index": 25
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:19:25.218063Z"
+}

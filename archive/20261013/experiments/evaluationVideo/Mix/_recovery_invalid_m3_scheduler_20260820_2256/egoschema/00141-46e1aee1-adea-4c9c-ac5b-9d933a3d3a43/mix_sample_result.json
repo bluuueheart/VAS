@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00141:46e1aee1-adea-4c9c-ac5b-9d933a3d3a43",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C washes the sieve, bowl, spoon, plates, and pan in that order.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00141-46e1aee1-adea-4c9c-ac5b-9d933a3d3a43",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00141-46e1aee1-adea-4c9c-ac5b-9d933a3d3a43/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00141-46e1aee1-adea-4c9c-ac5b-9d933a3d3a43/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00141-46e1aee1-adea-4c9c-ac5b-9d933a3d3a43/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/46e1aee1-adea-4c9c-ac5b-9d933a3d3a43.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/46e1aee1-adea-4c9c-ac5b-9d933a3d3a43.mp4",
+  "question_block": "Question: Comparing the instances in which c washes different items, what can you deduce about the order of importance or priority given to each item cleaned?\nOptions:\n(A) Conscientiously, c washes the items - plates, bowl, spoon, sieve, and pan carefully in that specific order.\n(B) Carefully, c washes the bowl, sieve, spoon, plates, and pan sequentially in that precise order.\n(C) C washes the sieve, bowl, spoon, plates, and pan in that order.\n(D) Carefully, c washes the spoon, bowl, sieve, plates, and pan sequentially in that specific order.\n(E) C washes the pan, plates, bowl, sieve, and spoon in that order.",
+  "options": [
+    "Conscientiously, c washes the items - plates, bowl, spoon, sieve, and pan carefully in that specific order.",
+    "Carefully, c washes the bowl, sieve, spoon, plates, and pan sequentially in that precise order.",
+    "C washes the sieve, bowl, spoon, plates, and pan in that order.",
+    "Carefully, c washes the spoon, bowl, sieve, plates, and pan sequentially in that specific order.",
+    "C washes the pan, plates, bowl, sieve, and spoon in that order."
+  ],
+  "official_meta": {
+    "question_index": "00141",
+    "video_id": "46e1aee1-adea-4c9c-ac5b-9d933a3d3a43",
+    "source_index": 141
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:49:10.197265Z"
+}

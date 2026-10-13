@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00200:65b96025-dc4e-44d9-a75d-a995f11e19d0",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C was cleaning the oven.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00200-65b96025-dc4e-44d9-a75d-a995f11e19d0",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00200-65b96025-dc4e-44d9-a75d-a995f11e19d0/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00200-65b96025-dc4e-44d9-a75d-a995f11e19d0/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00200-65b96025-dc4e-44d9-a75d-a995f11e19d0/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/65b96025-dc4e-44d9-a75d-a995f11e19d0.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/65b96025-dc4e-44d9-a75d-a995f11e19d0.mp4",
+  "question_block": "Question: What was the main purpose of the actions performed by c throughout the video, and how did various objects, such as the cloth, silicone, and detergent, contribute to that purpose?\nOptions:\n(A) On the stove, c was carefully cooking eggs for breakfast.\n(B) C was making a cake.\n(C) Earlier today, c was diligently doing the dishes in the kitchen.\n(D) In the kitchen, c was busily preparing a delicious meal for dinner.\n(E) C was cleaning the oven.",
+  "options": [
+    "On the stove, c was carefully cooking eggs for breakfast.",
+    "C was making a cake.",
+    "Earlier today, c was diligently doing the dishes in the kitchen.",
+    "In the kitchen, c was busily preparing a delicious meal for dinner.",
+    "C was cleaning the oven."
+  ],
+  "official_meta": {
+    "question_index": "00200",
+    "video_id": "65b96025-dc4e-44d9-a75d-a995f11e19d0",
+    "source_index": 200
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:53:05.667000Z"
+}

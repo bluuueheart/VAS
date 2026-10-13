@@ -1,0 +1,1264 @@
+{
+  "summary": {
+    "boundaries": 57,
+    "matches_recorded_decision": 57,
+    "new_acceptances": [
+      {
+        "uid": "mlvu:plotqa:0:movie101-66",
+        "iteration": 2,
+        "variant": "diagnostic_remove_answer_redundancy",
+        "candidate_matches_official_label": true
+      },
+      {
+        "uid": "lvbench:entity-recognition:6:67",
+        "iteration": 11,
+        "variant": "count_scope_only",
+        "candidate_matches_official_label": false
+      },
+      {
+        "uid": "videomme:geography:051-1",
+        "iteration": 4,
+        "variant": "diagnostic_remove_count_redundancy",
+        "candidate_matches_official_label": true
+      },
+      {
+        "uid": "videomme:geography:051-1",
+        "iteration": 9,
+        "variant": "diagnostic_remove_count_redundancy",
+        "candidate_matches_official_label": true
+      },
+      {
+        "uid": "videomme:geography:051-1",
+        "iteration": 15,
+        "variant": "diagnostic_remove_count_redundancy",
+        "candidate_matches_official_label": true
+      }
+    ],
+    "limitations": [
+      "Same frozen recorded evidence, no fresh generation, no overall accuracy claim.",
+      "Scope repair and rule removal are diagnostics only; source/config unchanged.",
+      "Multiple boundaries in one case are not independent samples."
+    ]
+  },
+  "boundaries": [
+    {
+      "uid": "lvbench:entity-recognition:4:63",
+      "sample_status": "failed",
+      "iteration": 10,
+      "answer": "(A) 3",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: count_redundancy",
+      "required": [
+        "action_count",
+        "count_redundancy",
+        "dynamic_relation",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action"
+        },
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: count_redundancy"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/entity-recognition-00004-63/logs/runtime_checkpoints/turn_010.json"
+    },
+    {
+      "uid": "lvbench:entity-recognition:4:63",
+      "sample_status": "failed",
+      "iteration": 14,
+      "answer": "(D) 1",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, resolve contradictory evidence, claim contract missing: count_redundancy",
+      "required": [
+        "action_count",
+        "count_redundancy",
+        "dynamic_relation",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, resolve contradictory evidence"
+        },
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, resolve contradictory evidence, claim contract missing: count_redundancy"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/entity-recognition-00004-63/logs/runtime_checkpoints/turn_014.json"
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "sample_status": "failed",
+      "iteration": 6,
+      "answer": "(C) Berries",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, claim contract missing: count_redundancy, decoration counts on German Christmas tree, apples, candles, berries, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "comparison",
+        "count_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, decoration counts on German Christmas tree, apples, candles, berries, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/humanity-history-001-1/logs/runtime_checkpoints/turn_006.json"
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "sample_status": "failed",
+      "iteration": 10,
+      "answer": "(A) Apples",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, claim contract missing: count_redundancy, decoration counts on German Christmas tree, apples, candles, berries, largest_count, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "comparison",
+        "count_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, decoration counts on German Christmas tree, apples, candles, berries, largest_count, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/humanity-history-001-1/logs/runtime_checkpoints/turn_010.json"
+    },
+    {
+      "uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+      "sample_status": "completed",
+      "iteration": 2,
+      "answer": "(D) C is cleaning dishes.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [
+        "dynamic_relation",
+        "comparison",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/logs/runtime_checkpoints/turn_002.json"
+    },
+    {
+      "uid": "mlvu:plotqa:0:movie101-66",
+      "sample_status": "completed",
+      "iteration": 2,
+      "answer": "(A) Yellow",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: answer_redundancy",
+      "required": [
+        "answer_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_answer_redundancy": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/plotqa-00000-movie101-66/logs/runtime_checkpoints/turn_002.json"
+    },
+    {
+      "uid": "mlvu:plotqa:0:movie101-66",
+      "sample_status": "completed",
+      "iteration": 9,
+      "answer": "(A) Yellow",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [
+        "answer_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_answer_redundancy": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/plotqa-00000-movie101-66/logs/runtime_checkpoints/turn_009.json"
+    },
+    {
+      "uid": "lvbench:event-understanding:1:56",
+      "sample_status": "completed",
+      "iteration": 2,
+      "answer": "(B) Snowy",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: answer_redundancy, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "dynamic_relation",
+        "answer_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_answer_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/event-understanding-00001-56/logs/runtime_checkpoints/turn_002.json"
+    },
+    {
+      "uid": "lvbench:event-understanding:1:56",
+      "sample_status": "completed",
+      "iteration": 7,
+      "answer": "(B) Snowy",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [
+        "dynamic_relation",
+        "answer_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_answer_redundancy": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/event-understanding-00001-56/logs/runtime_checkpoints/turn_007.json"
+    },
+    {
+      "uid": "videomme:literature-art:011-1",
+      "sample_status": "completed",
+      "iteration": 2,
+      "answer": "(C) Ballet",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [
+        "dynamic_relation"
+      ],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/literature-art-011-1/logs/runtime_checkpoints/turn_002.json"
+    },
+    {
+      "uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "sample_status": "failed",
+      "iteration": 5,
+      "answer": "(E) To clean the paintbrush.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "purpose",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, answer candidate lacks directly matched verified evidence"
+        },
+        "diagnostic_remove_purpose": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e/logs/runtime_checkpoints/turn_005.json"
+    },
+    {
+      "uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "sample_status": "failed",
+      "iteration": 8,
+      "answer": "(E) To clean the paintbrush.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "purpose",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, answer candidate lacks directly matched verified evidence"
+        },
+        "diagnostic_remove_purpose": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e/logs/runtime_checkpoints/turn_008.json"
+    },
+    {
+      "uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "sample_status": "failed",
+      "iteration": 12,
+      "answer": "(A) To provide a source of water for the paintbrush.",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, rinse_action",
+      "required": [
+        "purpose",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, rinse_action"
+        },
+        "diagnostic_remove_purpose": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, rinse_action"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e/logs/runtime_checkpoints/turn_012.json"
+    },
+    {
+      "uid": "mlvu:needle:0:needle-32",
+      "sample_status": "failed",
+      "iteration": 11,
+      "answer": "(A) Delivers a product",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, initial_caption_search, visual_scan_needed, hand_action, hand_action, hand_from_computer, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "dynamic_relation"
+      ],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/needle-00000-needle-32/logs/runtime_checkpoints/turn_011.json"
+    },
+    {
+      "uid": "mlvu:needle:0:needle-32",
+      "sample_status": "failed",
+      "iteration": 15,
+      "answer": "(A) Delivers a product",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, initial_caption_search, visual_scan_needed, hand_action, hand_action, hand_from_computer, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "dynamic_relation"
+      ],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/needle-00000-needle-32/logs/runtime_checkpoints/turn_015.json"
+    },
+    {
+      "uid": "lvbench:entity-recognition:6:67",
+      "sample_status": "failed",
+      "iteration": 5,
+      "answer": "(B) 4",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, final answer text does not match the selected listed option, claim contract missing: scene_count, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "scene_count",
+        "count_redundancy",
+        "dynamic_relation",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "count_scope_only": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, final answer text does not match the selected listed option, answer candidate lacks directly matched verified evidence"
+        },
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, final answer text does not match the selected listed option, claim contract missing: scene_count, answer candidate lacks directly matched verified evidence"
+        },
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, final answer text does not match the selected listed option, claim contract missing: scene_count, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/entity-recognition-00006-67/logs/runtime_checkpoints/turn_005.json"
+    },
+    {
+      "uid": "lvbench:entity-recognition:6:67",
+      "sample_status": "failed",
+      "iteration": 11,
+      "answer": "(A) 4",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: scene_count",
+      "required": [
+        "scene_count",
+        "count_redundancy",
+        "dynamic_relation",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "count_scope_only": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        },
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: scene_count"
+        },
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: scene_count"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/entity-recognition-00006-67/logs/runtime_checkpoints/turn_011.json"
+    },
+    {
+      "uid": "videomme:biology-medicine:021-1",
+      "sample_status": "completed",
+      "iteration": 2,
+      "answer": "(A) How mRNA vaccines work.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/biology-medicine-021-1/logs/runtime_checkpoints/turn_002.json"
+    },
+    {
+      "uid": "egoschema:00002:00f93e1e-cf4e-4835-88b4-4ad68216e86f",
+      "sample_status": "wrong",
+      "iteration": 6,
+      "answer": "(A) The overarching central theme presented in the video is that individuals can be both sociable and independent simultaneously. the visual content demonstrates that it is entirely possible to be both connected to others meaningfully and to savor solitary moments, emphasizing that it is crucial to find a harmonious balance between these two aspects.",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00002-00f93e1e-cf4e-4835-88b4-4ad68216e86f/logs/runtime_checkpoints/turn_006.json"
+    },
+    {
+      "uid": "mlvu:ego:0:ego-35",
+      "sample_status": "failed",
+      "iteration": 10,
+      "answer": "(A) a lemon green sponge",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, disposal into orange trashcan, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "dynamic_relation"
+      ],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/ego-00000-ego-35/logs/runtime_checkpoints/turn_010.json"
+    },
+    {
+      "uid": "lvbench:event-understanding:3:62",
+      "sample_status": "failed",
+      "iteration": 4,
+      "answer": "(A) The protagonist cuts off the hand of the man with the gun with her sword",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: answer_redundancy",
+      "required": [
+        "dynamic_relation",
+        "answer_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_answer_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/event-understanding-00003-62/logs/runtime_checkpoints/turn_004.json"
+    },
+    {
+      "uid": "lvbench:event-understanding:3:62",
+      "sample_status": "failed",
+      "iteration": 13,
+      "answer": "(C) The protagonist impales the man with the gun with her word",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: answer_redundancy, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "dynamic_relation",
+        "answer_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_answer_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/event-understanding-00003-62/logs/runtime_checkpoints/turn_013.json"
+    },
+    {
+      "uid": "lvbench:event-understanding:3:62",
+      "sample_status": "failed",
+      "iteration": 14,
+      "answer": "(A) The protagonist cuts off the hand of the man with the gun with her sword",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: answer_redundancy",
+      "required": [
+        "dynamic_relation",
+        "answer_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_answer_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/event-understanding-00003-62/logs/runtime_checkpoints/turn_014.json"
+    },
+    {
+      "uid": "videomme:finance-commerce:031-1",
+      "sample_status": "completed",
+      "iteration": 2,
+      "answer": "(D) Stocks (blue), Bonds (red), and Cash (yellow).",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/finance-commerce-031-1/logs/runtime_checkpoints/turn_002.json"
+    },
+    {
+      "uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+      "sample_status": "failed",
+      "iteration": 2,
+      "answer": "(B) C scoops clay into the brick mold, removes clay from the brick mold, scoops mortar from a pile of mortar on the floor, slams mortar into the brick mold, scoops excess mortar from the brick mold, throws excess mortar on the pile of mortar in his front, adds clay from the floor on the brick mold, and drops brick from brick mold beside already made bricks on the floor. then, c cleans brick mold with his hand.",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "order",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00003-00faf954-74f7-4aa3-8b29-4a5dff4f9518/logs/runtime_checkpoints/turn_002.json"
+    },
+    {
+      "uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+      "sample_status": "failed",
+      "iteration": 7,
+      "answer": "(B) C scoops clay into the brick mold, removes clay from the brick mold, scoops mortar from a pile of mortar on the floor, slams mortar into the brick mold, scoops excess mortar from the brick mold, throws excess mortar on the pile of mortar in his front, adds clay from the floor on the brick mold, and drops brick from brick mold beside already made bricks on the floor. then, c cleans brick mold with his hand.",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: answer candidate lacks directly matched verified evidence",
+      "required": [
+        "order",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00003-00faf954-74f7-4aa3-8b29-4a5dff4f9518/logs/runtime_checkpoints/turn_007.json"
+    },
+    {
+      "uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+      "sample_status": "failed",
+      "iteration": 12,
+      "answer": "(B) C scoops clay into the brick mold, removes clay from the brick mold, scoops mortar from a pile of mortar on the floor, slams mortar into the brick mold, scoops excess mortar from the brick mold, throws excess mortar on the pile of mortar in his front, adds clay from the floor on the brick mold, and drops brick from brick mold beside already made bricks on the floor. then, c cleans brick mold with his hand.",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: cleaning brick mold with hand, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "order",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: cleaning brick mold with hand, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00003-00faf954-74f7-4aa3-8b29-4a5dff4f9518/logs/runtime_checkpoints/turn_012.json"
+    },
+    {
+      "uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+      "sample_status": "failed",
+      "iteration": 14,
+      "answer": "(B) C scoops clay into the brick mold, removes clay from the brick mold, scoops mortar from a pile of mortar on the floor, slams mortar into the brick mold, scoops excess mortar from the brick mold, throws excess mortar on the pile of mortar in his front, adds clay from the floor on the brick mold, and drops brick from brick mold beside already made bricks on the floor. then, c cleans brick mold with his hand.",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: cleaning brick mold with hand, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "order",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: cleaning brick mold with hand, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00003-00faf954-74f7-4aa3-8b29-4a5dff4f9518/logs/runtime_checkpoints/turn_014.json"
+    },
+    {
+      "uid": "mlvu:plotqa:1:xiaoliyu-6",
+      "sample_status": "wrong",
+      "iteration": 2,
+      "answer": "(C) Carried by the cartoon catfish",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [
+        "dynamic_relation"
+      ],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/plotqa-00001-xiaoliyu-6/logs/runtime_checkpoints/turn_002.json"
+    },
+    {
+      "uid": "lvbench:key-information-retrieval:0:55",
+      "sample_status": "completed",
+      "iteration": 2,
+      "answer": "(D) 1633",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [
+        "dynamic_relation"
+      ],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/key-information-retrieval-00000-55/logs/runtime_checkpoints/turn_002.json"
+    },
+    {
+      "uid": "videomme:astronomy:041-1",
+      "sample_status": "completed",
+      "iteration": 1,
+      "answer": "(A) On March 19.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, answer claim has no verified evidence, answer candidate lacks directly matched verified evidence",
+      "required": [],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/astronomy-041-1/logs/runtime_checkpoints/turn_001.json"
+    },
+    {
+      "uid": "videomme:astronomy:041-1",
+      "sample_status": "completed",
+      "iteration": 5,
+      "answer": "(A) On March 19.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/astronomy-041-1/logs/runtime_checkpoints/turn_005.json"
+    },
+    {
+      "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+      "sample_status": "failed",
+      "iteration": 4,
+      "answer": "(D) C is an experienced woodworker. he was able to cut the wood to size and install it on the wall with few adjustments.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, cutting adjustments observed, installation fit assessment, adjustment frequency during cutting/installation, trim fit quality and correction events, slot_1, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, cutting adjustments observed, installation fit assessment, adjustment frequency during cutting/installation, trim fit quality and correction events, slot_1, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00004-011b8b73-0ce4-4843-95ef-33b79610d212/logs/runtime_checkpoints/turn_004.json"
+    },
+    {
+      "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+      "sample_status": "failed",
+      "iteration": 10,
+      "answer": "(D) C is an experienced woodworker. he was able to cut the wood to size and install it on the wall with few adjustments.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, cutting adjustments observed, installation fit assessment, adjustment frequency during cutting/installation, trim fit quality and correction events, slot_1, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, cutting adjustments observed, installation fit assessment, adjustment frequency during cutting/installation, trim fit quality and correction events, slot_1, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00004-011b8b73-0ce4-4843-95ef-33b79610d212/logs/runtime_checkpoints/turn_010.json"
+    },
+    {
+      "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+      "sample_status": "failed",
+      "iteration": 14,
+      "answer": "(D) C is an experienced woodworker. he was able to cut the wood to size and install it on the wall with few adjustments.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, cutting adjustments observed, installation fit assessment, adjustment frequency during cutting/installation, trim fit quality and correction events, slot_1, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, cutting adjustments observed, installation fit assessment, adjustment frequency during cutting/installation, trim fit quality and correction events, slot_1, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00004-011b8b73-0ce4-4843-95ef-33b79610d212/logs/runtime_checkpoints/turn_014.json"
+    },
+    {
+      "uid": "mlvu:topic-reasoning:0:awa-6",
+      "sample_status": "completed",
+      "iteration": 2,
+      "answer": "(A) Grassland",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, grassland, ocean, desert, lake, answer candidate lacks directly matched verified evidence",
+      "required": [],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/topic-reasoning-00000-awa-6/logs/runtime_checkpoints/turn_002.json"
+    },
+    {
+      "uid": "mlvu:topic-reasoning:0:awa-6",
+      "sample_status": "completed",
+      "iteration": 5,
+      "answer": "(A) Grassland",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/topic-reasoning-00000-awa-6/logs/runtime_checkpoints/turn_005.json"
+    },
+    {
+      "uid": "lvbench:entity-recognition:11:75",
+      "sample_status": "wrong",
+      "iteration": 3,
+      "answer": "(C) With her hands",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: answer_redundancy, retrieved segments, object_used, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "answer_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_answer_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, retrieved segments, object_used, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/entity-recognition-00011-75/logs/runtime_checkpoints/turn_003.json"
+    },
+    {
+      "uid": "lvbench:entity-recognition:11:75",
+      "sample_status": "wrong",
+      "iteration": 7,
+      "answer": "(C) With her hands",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [
+        "answer_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_answer_redundancy": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/entity-recognition-00011-75/logs/runtime_checkpoints/turn_007.json"
+    },
+    {
+      "uid": "videomme:geography:051-1",
+      "sample_status": "failed",
+      "iteration": 4,
+      "answer": "(B) Four.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy",
+      "required": [
+        "scene_count",
+        "count_redundancy",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "count_scope_only": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy"
+        },
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        },
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/geography-051-1/logs/runtime_checkpoints/turn_004.json"
+    },
+    {
+      "uid": "videomme:geography:051-1",
+      "sample_status": "failed",
+      "iteration": 9,
+      "answer": "(B) Four.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy",
+      "required": [
+        "scene_count",
+        "count_redundancy",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "count_scope_only": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy"
+        },
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        },
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/geography-051-1/logs/runtime_checkpoints/turn_009.json"
+    },
+    {
+      "uid": "videomme:geography:051-1",
+      "sample_status": "failed",
+      "iteration": 15,
+      "answer": "(B) Four.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy",
+      "required": [
+        "scene_count",
+        "count_redundancy",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "count_scope_only": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy"
+        },
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        },
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/geography-051-1/logs/runtime_checkpoints/turn_015.json"
+    },
+    {
+      "uid": "egoschema:00005:01a144a5-24d2-4a5a-af01-1f318d674bed",
+      "sample_status": "failed",
+      "iteration": 2,
+      "answer": "(E) C is playing a game of dominoes with a man. the man's actions contribute to the purpose of the video by providing c with an opponent to play against.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label",
+      "required": [
+        "purpose",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label"
+        },
+        "diagnostic_remove_purpose": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00005-01a144a5-24d2-4a5a-af01-1f318d674bed/logs/runtime_checkpoints/turn_002.json"
+    },
+    {
+      "uid": "egoschema:00005:01a144a5-24d2-4a5a-af01-1f318d674bed",
+      "sample_status": "failed",
+      "iteration": 8,
+      "answer": "(E) C is playing a game of dominoes with a man. the man's actions contribute to the purpose of the video by providing c with an opponent to play against.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label",
+      "required": [
+        "purpose",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label"
+        },
+        "diagnostic_remove_purpose": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00005-01a144a5-24d2-4a5a-af01-1f318d674bed/logs/runtime_checkpoints/turn_008.json"
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "sample_status": "completed",
+      "iteration": 2,
+      "answer": "(D) 1->2->3->4",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: order, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "order",
+        "dynamic_relation",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: order, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/order-00000-order-126/logs/runtime_checkpoints/turn_002.json"
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "sample_status": "completed",
+      "iteration": 13,
+      "answer": "(D) 1->2->3->4",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [
+        "order",
+        "dynamic_relation",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/order-00000-order-126/logs/runtime_checkpoints/turn_013.json"
+    },
+    {
+      "uid": "lvbench:event-understanding:7:68",
+      "sample_status": "failed",
+      "iteration": 4,
+      "answer": "(C) A man takes out his sword",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [
+        "dynamic_relation"
+      ],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/event-understanding-00007-68/logs/runtime_checkpoints/turn_004.json"
+    },
+    {
+      "uid": "lvbench:event-understanding:7:68",
+      "sample_status": "failed",
+      "iteration": 15,
+      "answer": "(C) A man pours tea",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, final answer text does not match the selected listed option, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "dynamic_relation"
+      ],
+      "variants": {},
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/event-understanding-00007-68/logs/runtime_checkpoints/turn_015.json"
+    },
+    {
+      "uid": "videomme:law:061-1",
+      "sample_status": "failed",
+      "iteration": 6,
+      "answer": "(B) 6",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: scene_count, claim contract missing: count_redundancy, red flags in segment 1, total red flags in video, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "scene_count",
+        "count_redundancy",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "count_scope_only": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: scene_count, claim contract missing: count_redundancy, red flags in segment 1, total red flags in video, answer candidate lacks directly matched verified evidence"
+        },
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: scene_count, red flags in segment 1, total red flags in video, answer candidate lacks directly matched verified evidence"
+        },
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: scene_count, claim contract missing: count_redundancy, red flags in segment 1, total red flags in video, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/law-061-1/logs/runtime_checkpoints/turn_006.json"
+    },
+    {
+      "uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+      "sample_status": "failed",
+      "iteration": 9,
+      "answer": "(B) Precision and accuracy are incredibly important in the character's actions, as they ensure that the wood is cut evenly and consistently.",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: purpose, reason for precision/accuracy in wood cutting, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "purpose",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: purpose, reason for precision/accuracy in wood cutting, answer candidate lacks directly matched verified evidence"
+        },
+        "diagnostic_remove_purpose": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, reason for precision/accuracy in wood cutting, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/logs/runtime_checkpoints/turn_009.json"
+    },
+    {
+      "uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+      "sample_status": "failed",
+      "iteration": 14,
+      "answer": "(A) Precision and accuracy are important in the character's actions because they ensure that the wood is cut in a straight line.",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: purpose, reason for precision/accuracy in wood cutting, Video_Clip_QA result for 106.2-136.2",
+      "required": [
+        "purpose",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: purpose, reason for precision/accuracy in wood cutting, Video_Clip_QA result for 106.2-136.2"
+        },
+        "diagnostic_remove_purpose": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, reason for precision/accuracy in wood cutting, Video_Clip_QA result for 106.2-136.2"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/logs/runtime_checkpoints/turn_014.json"
+    },
+    {
+      "uid": "mlvu:count:0:count-126",
+      "sample_status": "failed",
+      "iteration": 9,
+      "answer": "(A) 2",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: action_count, claim contract missing: count_redundancy, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "action_count",
+        "count_redundancy",
+        "dynamic_relation",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: action_count, answer candidate lacks directly matched verified evidence"
+        },
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: action_count, claim contract missing: count_redundancy, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/count-00000-count-126/logs/runtime_checkpoints/turn_009.json"
+    },
+    {
+      "uid": "mlvu:count:0:count-126",
+      "sample_status": "failed",
+      "iteration": 14,
+      "answer": "The action 'playing trombone' does not occur in this video; count = 0 (none of the provided options match the observed reality).",
+      "candidate_matches_official_label": false,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: final answer must select one listed option label, structured evidence claims, direct evidence citation, claim contract missing: action_count, claim contract missing: count_redundancy",
+      "required": [
+        "action_count",
+        "count_redundancy",
+        "dynamic_relation",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: final answer must select one listed option label, structured evidence claims, direct evidence citation, claim contract missing: action_count"
+        },
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: final answer must select one listed option label, structured evidence claims, direct evidence citation, claim contract missing: action_count, claim contract missing: count_redundancy"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/count-00000-count-126/logs/runtime_checkpoints/turn_014.json"
+    },
+    {
+      "uid": "videomme:life-tip:071-1",
+      "sample_status": "completed",
+      "iteration": 1,
+      "answer": "(B) 7-9.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": false,
+      "baseline_can_finish": false,
+      "baseline_feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, claim contract missing: scene_count, claim contract missing: count_redundancy, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence",
+      "required": [
+        "scene_count",
+        "count_redundancy",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "count_scope_only": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, claim contract missing: scene_count, claim contract missing: count_redundancy, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence"
+        },
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, claim contract missing: scene_count, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence"
+        },
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": false,
+          "feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, claim contract missing: scene_count, claim contract missing: count_redundancy, answer candidate lacks directly matched verified evidence"
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/life-tip-071-1/logs/runtime_checkpoints/turn_001.json"
+    },
+    {
+      "uid": "videomme:life-tip:071-1",
+      "sample_status": "completed",
+      "iteration": 12,
+      "answer": "(B) 7-9.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [
+        "scene_count",
+        "count_redundancy",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "count_scope_only": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        },
+        "diagnostic_remove_count_redundancy": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        },
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/life-tip-071-1/logs/runtime_checkpoints/turn_012.json"
+    },
+    {
+      "uid": "egoschema:00007:02925d7a-a5db-4127-8c31-b232e78b684d",
+      "sample_status": "completed",
+      "iteration": 2,
+      "answer": "(B) The most important aspects of c's actions in the video are that he is breaking concrete and cleaning the wooden bench. these actions are important because they are necessary to complete the task of repairing the wooden bench.",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [
+        "purpose",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        },
+        "diagnostic_remove_purpose": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00007-02925d7a-a5db-4127-8c31-b232e78b684d/logs/runtime_checkpoints/turn_002.json"
+    },
+    {
+      "uid": "mlvu:anomaly-reco:0:surveil-20",
+      "sample_status": "failed",
+      "iteration": 11,
+      "answer": "(C) Shoplifting",
+      "candidate_matches_official_label": true,
+      "recorded_can_finish": true,
+      "baseline_can_finish": true,
+      "baseline_feedback": "Evidence verifier accepted termination.",
+      "required": [
+        "comparison",
+        "evidence_redundancy"
+      ],
+      "variants": {
+        "diagnostic_remove_evidence_redundancy": {
+          "can_finish": true,
+          "feedback": "Evidence verifier accepted termination."
+        }
+      },
+      "checkpoint": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/anomaly-reco-00000-surveil-20/logs/runtime_checkpoints/turn_011.json"
+    }
+  ]
+}

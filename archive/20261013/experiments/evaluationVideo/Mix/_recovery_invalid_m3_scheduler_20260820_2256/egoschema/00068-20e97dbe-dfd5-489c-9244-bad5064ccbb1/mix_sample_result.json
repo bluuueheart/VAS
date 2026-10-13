@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00068:20e97dbe-dfd5-489c-9244-bad5064ccbb1",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C starts by looking at the laptop. they then lift the paintbrush and wipe it on a cloth. they then lift the paintbrush and paint on the art board. they continue to do this, wiping the brush on the cloth frequently, until they are finished.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00068-20e97dbe-dfd5-489c-9244-bad5064ccbb1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00068-20e97dbe-dfd5-489c-9244-bad5064ccbb1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00068-20e97dbe-dfd5-489c-9244-bad5064ccbb1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00068-20e97dbe-dfd5-489c-9244-bad5064ccbb1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/20e97dbe-dfd5-489c-9244-bad5064ccbb1.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/20e97dbe-dfd5-489c-9244-bad5064ccbb1.mp4",
+  "question_block": "Question: Describe the key sequence of events taking place in this video that shows c's process of creating art. focus on summarizing the workflow rather than listing individual actions.\nOptions:\n(A) C commences by carefully examining the art board. they then skillfully lift the paintbrush and gently paint on the art board's surface. persistently, they continue to do this, wiping the brush on the cloth frequently, until they are ultimately satisfied and finished.\n(B) C starts by looking at the cloth. they then lift the paintbrush and wipe it on the cloth. they then lift the paintbrush and paint on the art board. they continue to do this, wiping the brush on the cloth frequently, until they are finished.\n(C) C starts by looking at the laptop. they then lift the paintbrush and wipe it on a cloth. they then lift the paintbrush and paint on the art board. they continue to do this, wiping the brush on the cloth frequently, until they are finished.\n(D) Initially, c starts by attentively observing the sky. next, they then gently lift the paintbrush and carefully paint on the sky's surface. diligently, they continue performing this task, frequently wiping the brush on the cloth, until they finally complete the artwork.\n(E) Initially, c starts by carefully observing the flowers. afterward, they then gently lift the paintbrush and skillfully paint on the flowers. persistently, they continue to do this essential task, wiping the brush on the cloth frequently, until they finally are finished.",
+  "options": [
+    "C commences by carefully examining the art board. they then skillfully lift the paintbrush and gently paint on the art board's surface. persistently, they continue to do this, wiping the brush on the cloth frequently, until they are ultimately satisfied and finished.",
+    "C starts by looking at the cloth. they then lift the paintbrush and wipe it on the cloth. they then lift the paintbrush and paint on the art board. they continue to do this, wiping the brush on the cloth frequently, until they are finished.",
+    "C starts by looking at the laptop. they then lift the paintbrush and wipe it on a cloth. they then lift the paintbrush and paint on the art board. they continue to do this, wiping the brush on the cloth frequently, until they are finished.",
+    "Initially, c starts by attentively observing the sky. next, they then gently lift the paintbrush and carefully paint on the sky's surface. diligently, they continue performing this task, frequently wiping the brush on the cloth, until they finally complete the artwork.",
+    "Initially, c starts by carefully observing the flowers. afterward, they then gently lift the paintbrush and skillfully paint on the flowers. persistently, they continue to do this essential task, wiping the brush on the cloth frequently, until they finally are finished."
+  ],
+  "official_meta": {
+    "question_index": "00068",
+    "video_id": "20e97dbe-dfd5-489c-9244-bad5064ccbb1",
+    "source_index": 68
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:45:13.332030Z"
+}

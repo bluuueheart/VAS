@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:entity-recognition:76:419",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 14,
+  "iter_num": 19,
+  "tool_success_rate": 0.857143,
+  "successful_tool_calls": 12,
+  "planner_iterations": 19,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Vampire",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (contradictory_evidence; repeated direct evidence failure)",
+  "elapsed_seconds": 5263.133,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00076-419",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00076-419/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00076-419/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00076-419/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/HfEVEGf1A8Q.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/HfEVEGf1A8Q.mp4",
+  "question_block": "Question: Who stop the ghost hunter at last?\nOptions:\n(A) Skeleton\n(B) The human girl\n(C) Principal\n(D) Vampire",
+  "options": [
+    "Skeleton",
+    "The human girl",
+    "Principal",
+    "Vampire"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "cartoon",
+    "time_reference": "73:01-74:21",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "HfEVEGf1A8Q",
+    "resolved_video_stem": "HfEVEGf1A8Q",
+    "video_mapping_verified": true,
+    "source_index": 76
+  },
+  "updated_at": "2026-09-08T13:29:02.610343Z"
+}

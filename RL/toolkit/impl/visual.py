@@ -36,8 +36,117 @@ PLANNER_IMAGE_ORDER_RULE_TEXT = (
 )
 
 
+def _video_clip_qa_query_semantics(query: Any) -> Dict[str, Any]:
+    """Classify only the requested relation; never infer an answer value."""
+    normalized = " ".join(str(query or "").lower().split())
+    count_query = any(marker in normalized for marker in ("how many", "number of", "count"))
+    action_query = any(
+        marker in normalized
+        for marker in (
+            "what does ",
+            "what happens ",
+            " doing ",
+            " deliver ", " delivers ", " delivered ",
+            " give ", " gives ", " gave ",
+            " hand ", " hands ", " handed ",
+            " hold ", " holds ", " holding ",
+            " shake ", " shakes ", " shaking ",
+            " point ", " points ", " pointing ",
+            " put ", " puts ", " place ", " places ", " placed ", " add ",
+            " adds ", " added ", " remove ", " removes ", " removed ",
+            " insert ", " inserts ", " inserted ", " pour ", " pours ",
+            " take ", " takes ", " took ", " pick ", " picks ", " picked ",
+        )
+    )
+    if count_query and action_query:
+        requested_scope = "action_count"
+    elif count_query:
+        requested_scope = "state_or_total_count"
+    else:
+        requested_scope = "general_clip_answer"
+    return {
+        "requested_scope": requested_scope,
+        "action_sensitive": bool(action_query),
+        "answer_is_not_ground_truth": True,
+    }
+
+
+def _video_clip_qa_action_margin(query: Any) -> float:
+    semantics = _video_clip_qa_query_semantics(query)
+    if not semantics.get("action_sensitive"):
+        return 0.0
+    return max(
+        0.0,
+        float(getattr(settings, "video_clip_qa_action_margin_seconds", 5.0) or 5.0),
+    )
+
+
+def _select_coverage_focus_images(
+    persisted_frames: List[Dict[str, Any]],
+    coverage_sample_times: Optional[List[float]],
+) -> List[Dict[str, Any]]:
+    """Expose segment-coverage anchors as single images for auxiliary agents.
+
+    Long probes are packed into collages for the Planner.  Reflector/Observer
+    need at least one unambiguous frame for each short inserted segment,
+    otherwise the relevant tile can be visually drowned by unrelated frames.
+    """
+    if not persisted_frames or not coverage_sample_times:
+        return []
+    candidates = [
+        item
+        for item in persisted_frames
+        if isinstance(item, dict) and item.get("image") and item.get("timestamp") is not None
+    ]
+    if not candidates:
+        return []
+    selected: List[Dict[str, Any]] = []
+    seen: set[str] = set()
+    for anchor in coverage_sample_times:
+        try:
+            target = float(anchor)
+        except (TypeError, ValueError):
+            continue
+        nearest = min(candidates, key=lambda item: abs(float(item["timestamp"]) - target))
+        image_ref = str(nearest.get("image") or "").strip()
+        if not image_ref or image_ref in seen:
+            continue
+        focus = dict(nearest)
+        focus["focus_image"] = True
+        focus["pack_mode"] = "single"
+        focus["sample_times"] = [focus.get("timestamp")]
+        selected.append(focus)
+        seen.add(image_ref)
+    return selected
+
+
 class RequestedVideoTimeRangeError(ValueError):
     """Raised when a requested timestamp/window starts beyond the source video length."""
+
+
+def _unsupported_edge_tool_result(
+    tool_name: str,
+    *,
+    requested: Any,
+    reason: str,
+    recommended_next_tools: Optional[List[str]] = None,
+) -> Dict[str, Any]:
+    """Return a safe result for an edge tool without a real inference backend."""
+    payload: Dict[str, Any] = {
+        "status": "no_valid_result",
+        "capability_tier": "unsupported",
+        "evidence_strength": "none",
+        "verification_required": True,
+        "backend_status": "not_implemented",
+        "requested": requested,
+        "result": (
+            f"{tool_name} is unavailable for formal evidence: {reason} "
+            "It must not be treated as a positive finding."
+        ),
+    }
+    if recommended_next_tools:
+        payload["recommended_next_tools"] = list(recommended_next_tools)
+    return enrich_tool_result(payload, tool_name=tool_name)
 
 
 def _strip_think_blocks(text: Any) -> str:
@@ -443,6 +552,24 @@ def _recover_packed_image_item(item: Dict[str, Any]) -> Optional[Dict[str, Any]]
 
 
 def _release_visual_runtime_memory() -> None:
+    # Retrieval embeddings can remain cached after Semantic_Retrieve.  A visual
+    # probe may share the planner's large multimodal checkpoint, so retaining
+    # both runtimes can be wasteful on small cards.  A reusable formal worker
+    # explicitly opts into keeping the embedding runtime resident because the
+    # evaluation GPU has headroom and later retrieval must not pay another
+    # model cold load.
+    persist_embedding_runtime = str(
+        os.environ.get("TOOLSTAR_PERSIST_EMBEDDING_RUNTIME", "")
+    ).strip().lower() in {"1", "true", "yes", "on"}
+    if not persist_embedding_runtime:
+        try:
+            from preprocessing.storage.qwen3_vl_embedding_runtime import Qwen3VLEmbeddingRuntimeEncoder
+
+            Qwen3VLEmbeddingRuntimeEncoder.release_runtime_cache()
+        except Exception as exc:
+            logger.debug("Unable to release cached retrieval runtime before visual execution: %s", exc)
+    else:
+        logger.info("Keeping retrieval embedding runtime cached for reusable worker samples.")
     try:
         gc.collect()
     except Exception:
@@ -1068,8 +1195,27 @@ def _build_visual_probe_specs(
             }
         )
 
+    def _resolve_video_end_value(value: Any) -> Any:
+        if not isinstance(value, str) or value.strip().lower() not in {
+            "entire_video_time",
+            "full_video",
+            "video_end",
+        }:
+            return value
+        end_values: List[float] = []
+        for row in rows or []:
+            parsed = row.get("time_parsed") if isinstance(row, dict) else None
+            if isinstance(parsed, dict) and parsed.get("end") is not None:
+                try:
+                    end_values.append(float(parsed["end"]))
+                except (TypeError, ValueError):
+                    continue
+        if not end_values:
+            return value
+        return round(max(end_values), 3)
+
     starts = _coerce_list(t_start)
-    ends = _coerce_list(t_end)
+    ends = [_resolve_video_end_value(item) for item in _coerce_list(t_end)]
     range_segment_row: Optional[Dict[str, Any]] = None
     if segment_id not in (None, "", [], {}) and (starts or ends):
         range_segment_row = _resolve_segment_row_reference(segment_id, rows or [])
@@ -1196,6 +1342,129 @@ def _build_uniform_sample_times(start: float, end: float, sample_count: int) -> 
     if step <= 0:
         return [round(start, 3)] * sample_count
     return [round(start + step * (idx + 0.5), 3) for idx in range(sample_count)]
+
+
+def _build_coverage_preserving_sample_times(
+    start: float,
+    end: float,
+    requested_count: int,
+    coverage_sample_times: Optional[List[float]],
+    *,
+    max_count: int = 24,
+) -> List[float]:
+    """Keep prepared-segment anchors while retaining dense window coverage.
+
+    A long probe is capped before frames are extracted.  Keeping only one
+    prepared anchor per segment protects against temporal blind spots, but it
+    can still miss a brief event inside a single long segment.  Reserve the
+    anchors first, then fill the remaining budget with uniform samples.
+    """
+    start = max(0.0, float(start))
+    end = max(start, float(end))
+    limit = max(1, int(max_count))
+    anchors = sorted(
+        {
+            round(max(start, min(end, float(value))), 3)
+            for value in (coverage_sample_times or [])
+            if value is not None
+        }
+    )
+    if len(anchors) > limit:
+        if limit == 1:
+            return [anchors[len(anchors) // 2]]
+        anchor_indices = {
+            round(index * (len(anchors) - 1) / (limit - 1))
+            for index in range(limit)
+        }
+        return sorted({anchors[min(len(anchors) - 1, index)] for index in anchor_indices})
+
+    target_count = max(1, min(limit, int(requested_count)))
+    if not anchors:
+        return _build_uniform_sample_times(start, end, target_count)
+
+    uniform = _build_uniform_sample_times(start, end, target_count)
+    selected = list(anchors)
+    remaining = max(0, limit - len(selected))
+    candidates = [
+        value
+        for value in uniform
+        if all(abs(value - anchor) > 1e-3 for anchor in anchors)
+    ]
+    if remaining and len(candidates) > remaining:
+        if remaining == 1:
+            candidates = [candidates[len(candidates) // 2]]
+        else:
+            candidate_indices = {
+                round(index * (len(candidates) - 1) / (remaining - 1))
+                for index in range(remaining)
+            }
+            candidates = [candidates[min(len(candidates) - 1, index)] for index in sorted(candidate_indices)]
+    selected.extend(candidates[:remaining])
+    return sorted(set(selected))
+
+
+def _build_segment_aware_sample_times(
+    rows: List[Dict[str, Any]],
+    target: Dict[str, float],
+    *,
+    max_count: int = 24,
+) -> List[float]:
+    """Choose bounded coverage anchors from the prepared segment timeline.
+
+    A long-video probe can request more frames than the planner can attach to one
+    turn.  Uniformly truncating that request creates blind gaps around short
+    inserted events.  Prepared segments already carry representative frame times;
+    choose one time near each overlapping segment midpoint so the bounded probe
+    retains temporal coverage without using annotations or answers.
+    """
+    if not isinstance(target, dict):
+        return []
+    start = float(target.get("start", 0.0) or 0.0)
+    end = float(target.get("end", start) or start)
+    if end < start:
+        start, end = end, start
+    candidates: List[float] = []
+    for row in rows or []:
+        if not isinstance(row, dict):
+            continue
+        parsed = row.get("time_parsed")
+        if not isinstance(parsed, dict):
+            continue
+        try:
+            row_start = float(parsed.get("start"))
+            row_end = float(parsed.get("end"))
+        except (TypeError, ValueError):
+            continue
+        overlap_start = max(start, row_start)
+        overlap_end = min(end, row_end)
+        if overlap_end < overlap_start:
+            continue
+
+        frame_times: List[float] = []
+        for value in row.get("frame_times") or []:
+            try:
+                candidate = float(value)
+            except (TypeError, ValueError):
+                continue
+            if overlap_start - 1e-6 <= candidate <= overlap_end + 1e-6:
+                frame_times.append(candidate)
+        if frame_times:
+            midpoint = (overlap_start + overlap_end) / 2.0
+            candidates.append(min(frame_times, key=lambda value: abs(value - midpoint)))
+        else:
+            candidates.append((overlap_start + overlap_end) / 2.0)
+
+    if not candidates:
+        return []
+    candidates = sorted({round(max(start, min(end, value)), 3) for value in candidates})
+    limit = max(1, int(max_count))
+    if len(candidates) <= limit:
+        return candidates
+
+    selected: List[float] = []
+    for index in _build_uniform_sample_times(0.0, float(len(candidates) - 1), limit):
+        selected.append(candidates[min(len(candidates) - 1, int(round(index)))])
+    return sorted(set(selected))
 
 
 def _safe_frame_upper_bound(duration: float, fps: float) -> float:
@@ -1621,21 +1890,72 @@ def _answer_video_clip_qa_with_provider(
         video_item["max_pixels"] = max(floor_pixels, int(max_pixels))
 
     prompt_text = build_video_clip_user_message(query)
-    answer = provider.generate(
-        [
-            {
-                "role": "user",
-                "content": [
-                    video_item,
-                    {"type": "text", "text": prompt_text},
-                ],
-            }
-        ],
-        temperature=0.0,
-        max_tokens=int(max_new_tokens),
-        do_sample=False,
-        enable_thinking=False,
-    )
+    def _generate(content_item: Dict[str, Any]) -> Any:
+        return provider.generate(
+            [
+                {
+                    "role": "user",
+                    "content": [
+                        content_item,
+                        {"type": "text", "text": prompt_text},
+                    ],
+                }
+            ],
+            temperature=0.0,
+            max_tokens=int(max_new_tokens),
+            do_sample=False,
+            enable_thinking=False,
+        )
+
+    force_frame_payload = str(
+        os.environ.get("TOOLSTAR_VIDEO_CLIP_QA_FORCE_FRAME_PAYLOAD", "")
+    ).strip().lower() in {"1", "true", "yes", "on"}
+    frame_payload: Optional[List[Image.Image]] = None
+    try:
+        if force_frame_payload:
+            try:
+                frame_payload, _, sampled_source_fps = _sample_video_clip_frames_for_provider(
+                    clip_path,
+                    fps=official_sampling_fps,
+                    max_frames=official_max_frames,
+                )
+                logger.info(
+                    "Video_Clip_QA using bounded sampled-frame payload frames=%d fps=%s source_fps=%s window=%s-%s",
+                    len(frame_payload),
+                    official_sampling_fps,
+                    sampled_source_fps,
+                    start,
+                    end,
+                )
+                answer = _generate({"type": "video", "video": frame_payload})
+            except Exception as frame_payload_exc:
+                logger.warning(
+                    "Video_Clip_QA bounded frame payload failed; retrying original direct-video payload: %s",
+                    _format_exception_message(frame_payload_exc),
+                )
+                frame_payload = None
+                answer = _generate(video_item)
+        else:
+            answer = _generate(video_item)
+    except Exception as video_decode_exc:
+        # Some video readers derive an inclusive final-frame index from MP4
+        # metadata and fail at the clip boundary.  Supplying the same uniformly
+        # sampled frames as a video sequence avoids decoder-specific indexing
+        # while preserving one consistent tool and response contract.
+        frames, sample_times, _ = _sample_video_clip_frames_for_provider(
+            clip_path,
+            fps=official_sampling_fps,
+            max_frames=official_max_frames,
+        )
+        logger.warning(
+            "Video_Clip_QA video decoding failed; retrying with %d sampled frames "
+            "(timestamps=%s): %s",
+            len(frames),
+            sample_times,
+            _format_exception_message(video_decode_exc),
+        )
+        answer = _generate({"type": "video", "video": frames})
+    frame_payload = None
     raw_answer = str(answer or "").strip()
     if raw_answer:
         logger.info("[Video_Clip_QA][RAW_RESPONSE_BEGIN][backend=planner_provider_video]\n%s\n[Video_Clip_QA][RAW_RESPONSE_END]", raw_answer)
@@ -1746,12 +2066,18 @@ def _build_video_clip_qa_sampling_plans(*, min_pixels: int, max_pixels: int) -> 
     return plans
 
 
-def _finalize_video_clip_qa_answer(raw_answer: Any, *, backend: str) -> Dict[str, Any]:
-    normalized = normalize_video_clip_qa_answer(raw_answer)
+def _finalize_video_clip_qa_answer(raw_answer: Any, *, backend: str, query: str) -> Dict[str, Any]:
+    normalized = normalize_video_clip_qa_answer(raw_answer, query=query)
+    query_semantics = _video_clip_qa_query_semantics(query)
     result: Dict[str, Any] = {
         "answer": normalized["planner_text"],
         "backend": backend,
         "parsed_json": normalized["parsed_json"],
+        "format_status": normalized["format_status"],
+        # This is request metadata, not a model conclusion. It lets the
+        # verifier distinguish an action-count request from a final-state
+        # observation without trusting an LLM-generated evidence label.
+        "query_semantics": query_semantics,
     }
     parsed_json = normalized.get("parsed_json")
     if isinstance(parsed_json, dict):
@@ -1763,6 +2089,8 @@ def _finalize_video_clip_qa_answer(raw_answer: Any, *, backend: str) -> Dict[str
             result["uncertainty_value"] = parsed_json["uncertainty"]
         if "video_summary" in parsed_json:
             result["video_summary_value"] = parsed_json["video_summary"]
+    if normalized.get("format_status") == "invalid_json":
+        result["error"] = "Video_Clip_QA model response contains invalid or truncated JSON."
     warning_text = str(normalized.get("warning", "") or "").strip()
     if warning_text:
         result["warning"] = warning_text
@@ -1818,12 +2146,18 @@ def _run_video_clip_qa(
     query: str,
     model_path: str,
 ) -> Dict[str, Any]:
+    requested_start = float(start)
+    requested_end = float(end)
+    boundary_margin = _video_clip_qa_action_margin(query)
+    effective_start = max(0.0, requested_start - boundary_margin)
+    effective_end = requested_end + boundary_margin
     clip_path = _persist_probe_video_clip(
         video_path=video_path,
-        start=start,
-        end=end,
+        start=effective_start,
+        end=effective_end,
         tool_name="video_clip_qa",
     )
+    _release_visual_runtime_memory()
     with runtime_session.time_block("tool.video_clip_qa_seconds"):
         raw_answer = ""
         last_error_text = ""
@@ -1854,8 +2188,8 @@ def _run_video_clip_qa(
                 )
                 raw_answer = _answer_video_clip_qa_with_provider(
                     clip_path=clip_path,
-                    start=start,
-                    end=end,
+                    start=effective_start,
+                    end=effective_end,
                     query=query,
                     model_path=model_path,
                     max_new_tokens=int(plan["max_new_tokens"]),
@@ -1901,8 +2235,18 @@ def _run_video_clip_qa(
         result = _finalize_video_clip_qa_answer(
             raw_answer_text,
             backend="planner_provider_video",
+            query=query,
         )
         result["clip_path"] = clip_path
+        result["requested_time_range"] = {
+            "start": round(requested_start, 3),
+            "end": round(requested_end, 3),
+        }
+        result["effective_time_range"] = {
+            "start": round(effective_start, 3),
+            "end": round(effective_end, 3),
+        }
+        result["boundary_margin_seconds"] = round(boundary_margin, 3)
         if plan_warning:
             existing_warning = str(result.get("warning", "") or "").strip()
             result["warning"] = (
@@ -1932,6 +2276,7 @@ def _analyze_video_window(
     sample_count: Optional[int] = None,
     sample_density: Optional[float] = None,
     model_path: Optional[str] = None,
+    coverage_sample_times: Optional[List[float]] = None,
 ) -> Dict[str, Any]:
     del transcript, query, model_path  # raw-frame tools now return visual evidence directly.
     if not video_path:
@@ -1958,7 +2303,7 @@ def _analyze_video_window(
         clip_end = max(clip_start, min(float(normalized_range["safe_end"]), max_time))
         window_duration = max(0.0, clip_end - clip_start)
         density_sample_count = _sample_count_from_density(window_duration, sample_density)
-        effective_sample_count = (
+        requested_sample_count = (
             density_sample_count
             if density_sample_count is not None
             else (
@@ -1967,8 +2312,19 @@ def _analyze_video_window(
                 else (min(24, max(6, int(round(window_duration * 8)))) if window_duration > 0 else 1)
             )
         )
-        effective_sample_count = min(effective_sample_count, 24)
-        sample_times = _build_uniform_sample_times(clip_start, clip_end, effective_sample_count)
+        effective_sample_count = (
+            requested_sample_count
+        )
+        sampling_contract = "uniform_window"
+        if requested_sample_count > 24 and coverage_sample_times:
+            sample_times = _build_coverage_preserving_sample_times(
+                clip_start, clip_end, requested_sample_count, coverage_sample_times,
+            )
+            effective_sample_count = len(sample_times)
+            sampling_contract = "segment_aware_coverage"
+        else:
+            effective_sample_count = min(effective_sample_count, 24)
+            sample_times = _build_uniform_sample_times(clip_start, clip_end, effective_sample_count)
 
         frames: List[Image.Image] = []
         realized_times: List[float] = []
@@ -1989,6 +2345,10 @@ def _analyze_video_window(
         frames=frames,
         tool_name=mode or "inspect",
     )
+    focus_image_evidence = _select_coverage_focus_images(
+        persisted_frames,
+        coverage_sample_times,
+    )
     packed_frames = _pack_probe_frame_images(
         persisted_frames,
         text_hint=f"{mode} {clip_start:.3f}-{clip_end:.3f}",
@@ -1997,7 +2357,12 @@ def _analyze_video_window(
         "text": "",
         "sample_times": realized_times,
         "frames_analyzed": len(realized_times),
+        "requested_frame_count": int(requested_sample_count),
+        "sampling_contract": sampling_contract,
+        "source_video_duration_seconds": clip_duration,
+        "source_video_path": str(resolved_video_path),
         "image_evidence": packed_frames,
+        "focus_image_evidence": focus_image_evidence,
         "image_count": len(packed_frames),
         "effective_range": {
             "start": float(normalized_range["effective_start"]),
@@ -2740,10 +3105,17 @@ def _resolve_image_path(image: Any) -> Optional[Dict[str, Any]]:
 
 
 def _normalize_xywh_region(region: List[float], image_width: int, image_height: int) -> tuple[int, int, int, int]:
-    if len(region) != 4:
+    if not isinstance(region, (list, tuple)) or len(region) != 4:
         raise ValueError("Region must be [x, y, width, height].")
 
-    x, y, width, height = [float(value) for value in region]
+    try:
+        x, y, width, height = [float(value) for value in region]
+    except (TypeError, ValueError) as exc:
+        raise ValueError("Region coordinates must be finite numbers.") from exc
+    if not all(math.isfinite(value) for value in (x, y, width, height)):
+        raise ValueError("Region coordinates must be finite numbers.")
+    if width <= 0 or height <= 0:
+        raise ValueError("Region width and height must be positive.")
     if max(abs(x), abs(y), abs(width), abs(height)) <= 1.0:
         x *= image_width
         y *= image_height
@@ -2818,11 +3190,11 @@ class EntityTrack(BaseTool):
     
     name: str = "Entity_Track"
     description: str = (
-        "Generate continuous trajectories for specific visual objects across the video timeline. "
-        "Input object description, output all start-end time segments and corresponding IDs, "
-        "establishing inter-frame associations."
+        "Experimental object tracking capability. The current formal build does not expose a real "
+        "detector/tracker, so this tool returns a controlled unavailable result instead of fabricating "
+        "object IDs or trajectories. Use Inspect_Frame or Video_Clip_QA for visual confirmation."
     )
-    tags: list = ["base", "visual", "tracking", "weak_proxy"]
+    tags: list = ["base", "visual", "tracking", "weak_proxy", "unsupported_backend"]
     
     @property
     def model_path(self) -> str:
@@ -2866,6 +3238,17 @@ class EntityTrack(BaseTool):
         Returns:
             List of tracking results with time segments and IDs
         """
+        return _unsupported_edge_tool_result(
+            self.name,
+            requested={
+                "visual_object_description": visual_object_description,
+                "time_range": time_range,
+                "confidence_threshold": confidence_threshold,
+            },
+            reason="no real object detector/tracker is loaded in this build",
+            recommended_next_tools=["Inspect_Frame", "Video_Clip_QA"],
+        )
+
         rows = _iter_processed_segments(kwargs.get("video") or kwargs.get("video_path"))
 
         def _run_single(range_value: Any) -> Dict[str, Any]:
@@ -2956,12 +3339,11 @@ class AudioEventDetect(BaseTool):
     
     name: str = "Audio_Event_Detect"
     description: str = (
-        "Identify non-speech environmental audio events. "
-        "Input sound description (e.g., 'explosion', 'siren', 'piano music'), "
-        "output accurate time segments where the sound occurs, "
-        "supplementing information not covered by ASR captions."
+        "Experimental non-speech audio event detection. The formal build does not load a waveform/audio "
+        "event classifier; ASR text overlap is deliberately not used as an audio finding. "
+        "This tool returns an explicit unavailable result until a real backend is installed."
     )
-    tags: list = ["base", "audio", "detection", "weak_proxy"]
+    tags: list = ["base", "audio", "detection", "weak_proxy", "unsupported_backend"]
     
     @property
     def model_path(self) -> str:
@@ -2994,6 +3376,13 @@ class AudioEventDetect(BaseTool):
         Returns:
             List of detected audio events with timestamps
         """
+        return _unsupported_edge_tool_result(
+            self.name,
+            requested={"sound_description": sound_description, "time_range": time_range},
+            reason="no real waveform/audio-event model is loaded; transcript keywords are not sound evidence",
+            recommended_next_tools=["Video_Clip_QA", "Inspect_Frame"],
+        )
+
         rows = _iter_processed_segments()
 
         def _run_single(range_value: Any) -> Dict[str, Any]:
@@ -3241,6 +3630,9 @@ class OCRExtract(BaseTool):
                         "density": spec.get("density"),
                         "mode": spec.get("mode"),
                         "language": language,
+                        "extraction_mode": "frame_evidence_only",
+                        "text_extracted": False,
+                        "requires_vlm_reading": True,
                     },
                     warning=error_message,
                 ),
@@ -3261,10 +3653,10 @@ class SpeakerDiarization(BaseTool):
     
     name: str = "Speaker_Diarization"
     description: str = (
-        "Speaker separation and identification. "
-        "Input audio segment, output 'who (Speaker A/B/C) spoke during which time segments'."
+        "Experimental speaker diarization. The formal build does not load a real diarization backend; "
+        "it returns an explicit unavailable result rather than assigning Speaker_A/B/C by row order."
     )
-    tags: list = ["base", "audio", "speaker", "debug_placeholder"]
+    tags: list = ["base", "audio", "speaker", "debug_placeholder", "unsupported_backend"]
     
     @property
     def model_path(self) -> str:
@@ -3291,6 +3683,13 @@ class SpeakerDiarization(BaseTool):
         Returns:
             Speaker timeline information
         """
+        return _unsupported_edge_tool_result(
+            self.name,
+            requested={"audio_segment": audio_segment},
+            reason="no real speaker-embedding/diarization model is loaded; row order cannot identify speakers",
+            recommended_next_tools=["Video_Clip_QA", "Inspect_Frame"],
+        )
+
         rows = _iter_processed_segments()
 
         def _run_single(segment_value: Any) -> Dict[str, Any]:
@@ -3334,10 +3733,11 @@ class EmotionAnalysis(BaseTool):
     
     name: str = "Emotion_Analysis"
     description: str = (
-        "Emotion analysis combining facial expressions, body language, and voice tone. "
-        "Determine emotional states (anger, tension, happiness) and scene atmosphere."
+        "Experimental affect analysis. The formal build does not load a validated face/voice emotion "
+        "model; transcript keywords are not emotion evidence, so this tool returns an explicit unavailable "
+        "result until a real multimodal backend is installed."
     )
-    tags: list = ["base", "visual", "audio", "emotion"]
+    tags: list = ["base", "visual", "audio", "emotion", "weak_proxy", "unsupported_backend"]
     
     @property
     def audio_model_path(self) -> str:
@@ -3375,6 +3775,13 @@ class EmotionAnalysis(BaseTool):
         Returns:
             Emotion analysis results
         """
+        return _unsupported_edge_tool_result(
+            self.name,
+            requested={"video_clip": video_clip, "modality": modality or ["face", "voice"]},
+            reason="no validated face/voice/body affect model is loaded; text keywords cannot determine emotion",
+            recommended_next_tools=["Video_Clip_QA", "Inspect_Frame"],
+        )
+
         modality = modality or ["face", "voice"]
         rows = _iter_processed_segments()
 
@@ -3455,7 +3862,9 @@ class ActionRecognition(BaseTool):
     
     name: str = "Action_Recognition"
     description: str = (
-        "Identify action categories in video (e.g., 'running', 'handshake', 'fighting', 'cooking')."
+        "Weak action localizer based on preprocessed captions/text plus returned visual frames. "
+        "It is not a validated action classifier and cannot by itself establish a final answer; "
+        "follow with Video_Clip_QA or Inspect_Frame."
     )
     tags: list = ["base", "visual", "action", "weak_proxy"]
     
@@ -3562,6 +3971,10 @@ class ActionRecognition(BaseTool):
                         "action_description": action_description,
                         "items": occurrences,
                         "occurrences": occurrences,
+                        "capability_tier": "weak",
+                        "evidence_strength": "weak_localizer",
+                        "verification_required": True,
+                        "recommended_next_tools": ["Video_Clip_QA", "Inspect_Frame"],
                     },
                     warning=evidence.get("warning"),
                 ),
@@ -3581,6 +3994,8 @@ class VideoClipQA(BaseTool):
 
     name: str = "Video_Clip_QA"
     description: str = (
+        f"Each request must span at most {settings.video_clip_qa_max_window_seconds:g} seconds. "
+        "For longer ranges, localize or split into bounded windows; do not repeat an oversized request. "
         "Comprehensive short-window video understanding tool. Clip the requested start/end window first, "
         "then send that clip file directly to the local VLM and answer open-ended or ambiguous questions "
         "about the clip, including actions, interactions, temporal order, scene changes, object states, "
@@ -3634,6 +4049,22 @@ class VideoClipQA(BaseTool):
         if start is None or end is None:
             raise ValueError("Video_Clip_QA requires numeric start_time and end_time.")
         video_hint = kwargs.get("video") or kwargs.get("video_path")
+        # The planner may emit a dataset/context label (for example ``Mix``)
+        # instead of a filesystem path.  In a single-video query the runtime
+        # session is authoritative; use its active source before scoping the
+        # processed-segment lookup so a valid Video_Clip_QA call is executable.
+        active_video_path = str(
+            runtime_session.get_query_metrics().get("active_video_path") or ""
+        ).strip()
+        if active_video_path:
+            hint_path = Path(str(video_hint or "").strip()).expanduser()
+            if not video_hint or not hint_path.exists():
+                resolved_hint = _resolve_video_file_path(
+                    hint_path.stem or str(video_hint or ""),
+                    preferred_path=str(video_hint or ""),
+                )
+                if not resolved_hint:
+                    video_hint = active_video_path
         rows = _iter_processed_segments(video_hint)
         normalized_target = _resolve_video_clip_qa_target_range(
             start=start,
@@ -3642,8 +4073,40 @@ class VideoClipQA(BaseTool):
             rows=rows,
         )
         target_range = normalized_target["target_range"]
+        # Preserve the planner's absolute request separately from the
+        # duration-clamped range used for execution.  The evidence ledger
+        # needs to distinguish what was requested from what the source video
+        # could actually provide.
+        requested_target_range = {
+            "start": float(target_range["start"]),
+            "end": float(target_range["end"]),
+        }
         if target_range["end"] <= target_range["start"]:
             raise ValueError("Video_Clip_QA requires end_time greater than start_time.")
+        max_window_seconds = max(
+            1.0,
+            float(getattr(settings, "video_clip_qa_max_window_seconds", 90.0) or 90.0),
+        )
+        from toolkit.request_validation import video_qa_window_issue
+        requested_window_seconds = _range_length(target_range)
+        window_issue = video_qa_window_issue({"start_time": target_range["start"], "end_time": target_range["end"]}, max_window_seconds)
+        if window_issue:
+            return enrich_tool_result(
+                {
+                    "start_time": round(float(target_range["start"]), 3),
+                    "end_time": round(float(target_range["end"]), 3),
+                    "search_window": _format_range(target_range["start"], target_range["end"]),
+                    "query": query,
+                    "status": "no_valid_result",
+                    "result": (
+                        f"Video_Clip_QA accepts windows up to {max_window_seconds:g} seconds, but the "
+                        f"requested window is {requested_window_seconds:g} seconds. Use Semantic_Retrieve "
+                        "or Segment_Retrieve to localize relevant evidence, then inspect one focused window."
+                    ),
+                    "recommended_next_tools": ["Semantic_Retrieve", "Segment_Retrieve"],
+                },
+                tool_name=self.name,
+            )
 
         selected = _select_relevant_rows(
             rows,
@@ -3679,13 +4142,42 @@ class VideoClipQA(BaseTool):
         clip_source_path = str(source_row.get("video_path") or "").strip()
         clip_start = target_range["start"]
         clip_end = target_range["end"]
+        clip_time_offset = 0.0
         segment_clip_path = str(source_row.get("segment_video_path") or "").strip()
         segment_range = source_row.get("time_parsed")
-        if segment_clip_path and _range_contains(segment_range, target_range):
+        action_margin = _video_clip_qa_action_margin(query)
+        segment_boundary_would_clip_context = False
+        if isinstance(segment_range, dict) and action_margin > 0:
+            try:
+                segment_boundary_would_clip_context = (
+                    float(target_range["start"])
+                    <= float(segment_range["start"]) + action_margin + 1e-6
+                    or float(target_range["end"])
+                    >= float(segment_range["end"]) - action_margin - 1e-6
+                )
+            except (TypeError, ValueError):
+                segment_boundary_would_clip_context = False
+        if (
+            segment_clip_path
+            and _range_contains(segment_range, target_range)
+            and not segment_boundary_would_clip_context
+        ):
             segment_start = float(segment_range["start"])
             clip_source_path = segment_clip_path
+            clip_time_offset = segment_start
             clip_start = max(0.0, target_range["start"] - segment_start)
             clip_end = max(clip_start, target_range["end"] - segment_start)
+        elif segment_boundary_would_clip_context:
+            # Keep the full source video when a boundary margin would cross
+            # either side of the selected processed segment. Otherwise the
+            # apparent action margin is silently clamped at a segment edge and
+            # misses a transition immediately before or after the retrieved hit.
+            logger.info(
+                "Video_Clip_QA using full source for action-boundary context target=%s segment=%s margin=%ss",
+                _format_range(target_range["start"], target_range["end"]),
+                segment_range,
+                action_margin,
+            )
 
         qa_result = _run_video_clip_qa(
             video_path=clip_source_path,
@@ -3696,7 +4188,51 @@ class VideoClipQA(BaseTool):
         )
         answer = str(qa_result.get("answer", "") or "").strip()
         error_text = str(qa_result.get("error", "") or "").strip()
+        warning_text = str(qa_result.get("warning", "") or "").strip().lower()
+        if not error_text and any(
+            marker in warning_text
+            for marker in (
+                "invalid or truncated",
+                "appears truncated",
+            )
+        ):
+            # A malformed/truncated provider response is a tool failure.  It
+            # must not enter the evidence ledger as a successful answer merely
+            # because a prose recovery string happened to be non-empty.
+            error_text = str(
+                qa_result.get("warning")
+                or "Video_Clip_QA returned malformed or truncated structured output."
+            ).strip()
         status = "error" if error_text else ("success" if answer else "no_valid_result")
+        # ``qa_result`` receives coordinates relative to the temporary clip
+        # when a processed segment is reused.  Keep those coordinates for
+        # debugging, but expose absolute source-video coordinates to the
+        # planner/evidence ledger so a 0--30s segment is never mistaken for
+        # the beginning of a multi-minute video.
+        clip_requested_time_range = qa_result.get("requested_time_range")
+        clip_effective_time_range = qa_result.get("effective_time_range")
+        clip_sample_times = list(qa_result.get("sample_times") or [])
+        absolute_sample_times: List[float] = []
+        for sample_time in clip_sample_times:
+            try:
+                absolute_sample_times.append(round(float(sample_time) + clip_time_offset, 3))
+            except (TypeError, ValueError):
+                continue
+        boundary_margin_seconds = float(qa_result.get("boundary_margin_seconds", 0.0) or 0.0)
+        absolute_requested_time_range = {
+            "start": round(float(requested_target_range["start"]), 3),
+            "end": round(float(requested_target_range["end"]), 3),
+        }
+        absolute_effective_time_range = {
+            "start": round(max(0.0, float(target_range["start"]) - boundary_margin_seconds), 3),
+            "end": round(
+                min(
+                    float(normalized_request.get("duration", target_range["end"])),
+                    float(target_range["end"]) + boundary_margin_seconds,
+                ),
+                3,
+            ),
+        }
         result = {
             "start_time": round(float(target_range["start"]), 3),
             "end_time": round(float(target_range["end"]), 3),
@@ -3710,8 +4246,21 @@ class VideoClipQA(BaseTool):
             "matched_segments": _build_matched_segments(selected, limit=3),
             "clip_path": qa_result.get("clip_path"),
             "backend": qa_result.get("backend", "video"),
-            "sample_times": list(qa_result.get("sample_times") or []),
+            "source_video_duration_seconds": (
+                normalized_request.get("duration") if source_row.get("video_path") else None
+            ),
+            "source_video_path": str(source_row.get("video_path") or "") or None,
+            "sample_times": absolute_sample_times,
+            "clip_sample_times": clip_sample_times,
             "frames_analyzed": qa_result.get("frames_analyzed"),
+            "query_semantics": qa_result.get("query_semantics")
+            or _video_clip_qa_query_semantics(query),
+            "requested_time_range": absolute_requested_time_range,
+            "effective_time_range": absolute_effective_time_range,
+            "clip_requested_time_range": clip_requested_time_range,
+            "clip_effective_time_range": clip_effective_time_range,
+            "clip_time_offset_seconds": round(float(clip_time_offset), 3),
+            "boundary_margin_seconds": boundary_margin_seconds,
             "status": status,
             "result": error_text or answer or "Video_Clip_QA did not return a usable answer for the requested clip.",
         }
@@ -3749,9 +4298,9 @@ class CrossModalVerify(BaseTool):
     
     name: str = "Cross_Modal_Verify"
     description: str = (
-        "Cross-modal consistency verification. "
-        "Input visual evidence and textual claim, determine if they contradict. "
-        "E.g., caption says 'I got the red book' but video shows blue book."
+        "Weak lexical cross-modal consistency diagnostic. It compares words in a supplied visual description "
+        "and claim; it is not a VLM judgment and must not be used as final verification. Use Video_Clip_QA "
+        "or Inspect_Frame when the distinction matters."
     )
     tags: list = ["base", "crossmodal", "verification", "weak_proxy"]
     
@@ -3807,11 +4356,18 @@ class CrossModalVerify(BaseTool):
                 break
 
         is_consistent = (consistency_score >= 0.2) and (not contradiction)
+        status = "success" if visual_tokens and claim_tokens and (shared > 0 or contradiction) else "no_valid_result"
         result = {
             "visual_evidence": visual_evidence,
             "textual_claim": textual_claim,
             "is_consistent": is_consistent,
-            "confidence": round(1.0 - abs(0.5 - consistency_score), 4),
+            "confidence": round(min(0.6, 1.0 - abs(0.5 - consistency_score)), 4),
+            "status": status,
+            "capability_tier": "weak",
+            "evidence_strength": "weak_lexical_proxy",
+            "verification_mode": "lexical_token_overlap",
+            "verification_required": True,
+            "recommended_next_tools": ["Video_Clip_QA", "Inspect_Frame"],
             "explanation": (
                 "Visual and textual modalities are consistent"
                 if is_consistent
@@ -3832,7 +4388,8 @@ class InspectFrame(BaseTool):
         "Inspect a specific video moment or a short time range via uniform frame sampling. "
         "Supports two modes: Inspect_Frame(timestamp) for a single high-resolution frame, "
         "or Inspect_Frame(t_start, t_end, density) for uniformly sampled frames across a time range "
-        "(density is numeric seconds per frame). Returns direct frame evidence for downstream planners."
+        "(density is numeric seconds per frame; t_end may be 'entire_video_time' to use the "
+        "processed video's real end time). Returns direct frame evidence for downstream planners."
     )
     tags: list = ["base", "visual", "refine"]
     
@@ -3855,7 +4412,7 @@ class InspectFrame(BaseTool):
             },
             "t_end": {
                 "type": ["string", "number", "array", "null"],
-                "description": "End time or list of end times for inspection windows",
+                "description": "End time/list, or 'entire_video_time' for the processed video's real end",
                 "default": None
             },
             "density": {
@@ -3954,7 +4511,12 @@ class InspectFrame(BaseTool):
                 frames_analyzed = _sample_count_from_density(window_duration, density_value) or 1
             else:
                 frames_analyzed = max(1, int(max(0.0, float(duration or 0.0)) * 24))
+            source_video_duration_seconds = None
+            source_video_path = None
+            requested_frame_count = frames_analyzed
+            sampling_contract = "single_frame" if spec["mode"] == "single_frame" else "uniform_window"
             sample_times: List[float] = []
+            focus_image_evidence: List[Dict[str, Any]] = []
             error_message = None
 
             source_row = selected[0] if selected else None
@@ -3970,10 +4532,23 @@ class InspectFrame(BaseTool):
                         sample_count=1 if spec["mode"] == "single_frame" else None,
                         sample_density=None if spec["mode"] == "single_frame" else density_value,
                         model_path=self.model_path,
+                        coverage_sample_times=(
+                            _build_segment_aware_sample_times(selected, target)
+                            if spec["mode"] == "range"
+                            else None
+                        ),
                     )
                     image_evidence = list(analysis.get("image_evidence") or [])
+                    focus_image_evidence = list(analysis.get("focus_image_evidence") or [])
                     sample_times = analysis["sample_times"]
                     frames_analyzed = analysis["frames_analyzed"]
+                    source_video_duration_seconds = analysis.get("source_video_duration_seconds")
+                    source_video_path = analysis.get("source_video_path")
+                    requested_frame_count = int(analysis.get("requested_frame_count") or frames_analyzed)
+                    sampling_contract = str(
+                        analysis.get("sampling_contract")
+                        or sampling_contract
+                    )
                     target = analysis.get("effective_range") or target
                     error_message = _merge_warning_messages(error_message, analysis.get("warning"))
                 except RequestedVideoTimeRangeError as exc:
@@ -4032,6 +4607,14 @@ class InspectFrame(BaseTool):
                     "density": density_value,
                     "mode": spec["mode"],
                     "query": query,
+                    "requested_frame_count": (
+                        1 if spec["mode"] == "single_frame" else requested_frame_count
+                    ),
+                    "returned_frame_count": len(image_evidence),
+                    "sampling_contract": sampling_contract,
+                    "source_video_duration_seconds": source_video_duration_seconds,
+                    "source_video_path": source_video_path,
+                    "focus_image_evidence": focus_image_evidence,
                 },
                 warning=error_message,
             )
@@ -4074,6 +4657,8 @@ class Crop(BaseTool):
             "bbox": {
                 "type": "array",
                 "items": {"type": "number"},
+                "minItems": 4,
+                "maxItems": 4,
                 "description": "Bounding box [x, y, width, height]"
             }
         },
@@ -4113,7 +4698,19 @@ class Crop(BaseTool):
                 tool_name=self.name,
             )
 
-        left, top, right, bottom = _normalize_xywh_region(bbox, rgb_image.width, rgb_image.height)
+        try:
+            left, top, right, bottom = _normalize_xywh_region(bbox, rgb_image.width, rgb_image.height)
+        except ValueError as exc:
+            return enrich_tool_result(
+                {
+                    "original_image": source_path,
+                    "bbox": bbox,
+                    "status": "no_valid_result",
+                    "error": str(exc),
+                    "result": f"Crop rejected the requested region: {exc}",
+                },
+                tool_name=self.name,
+            )
         cropped = rgb_image.crop((left, top, right, bottom))
 
         output_evidence = _persist_transformed_image(
@@ -4141,6 +4738,9 @@ class Crop(BaseTool):
                 "cropped_image": output_evidence["image"],
                 "dimensions": {"width": width, "height": height},
                 "crop_area": area,
+                "derived_from": source_path,
+                "evidence_strength": "transformed_visual",
+                "semantic_verification": False,
             },
         )
         
@@ -4173,11 +4773,15 @@ class ZoomIn(BaseTool):
             "region_of_interest": {
                 "type": "array",
                 "items": {"type": "number"},
+                "minItems": 4,
+                "maxItems": 4,
                 "description": "Region to zoom [x, y, width, height]"
             },
             "zoom_factor": {
                 "type": "number",
                 "description": "Zoom factor",
+                "minimum": 1.0,
+                "maximum": 8.0,
                 "default": 2.0
             }
         },
@@ -4203,7 +4807,30 @@ class ZoomIn(BaseTool):
         source_path = str(resolved["path"])
         timestamp = resolved.get("timestamp")
         source_images = list(resolved.get("source_images") or [source_path])
-        zoom_factor = max(1.0, float(zoom_factor))
+        try:
+            zoom_factor = float(zoom_factor)
+        except (TypeError, ValueError) as exc:
+            return enrich_tool_result(
+                {
+                    "original_image": source_path,
+                    "roi": region_of_interest,
+                    "status": "no_valid_result",
+                    "error": "zoom_factor must be a finite number in [1, 8].",
+                    "result": "Zoom_in rejected the requested zoom factor.",
+                },
+                tool_name=self.name,
+            )
+        if not math.isfinite(zoom_factor) or not 1.0 <= zoom_factor <= 8.0:
+            return enrich_tool_result(
+                {
+                    "original_image": source_path,
+                    "roi": region_of_interest,
+                    "status": "no_valid_result",
+                    "error": "zoom_factor must be a finite number in [1, 8].",
+                    "result": "Zoom_in rejected the requested zoom factor.",
+                },
+                tool_name=self.name,
+            )
         try:
             rgb_image = _load_rgb_image(source_path, context="zoom source")
         except Exception as exc:
@@ -4219,11 +4846,23 @@ class ZoomIn(BaseTool):
                 tool_name=self.name,
             )
 
-        left, top, right, bottom = _normalize_xywh_region(
-            region_of_interest,
-            rgb_image.width,
-            rgb_image.height,
-        )
+        try:
+            left, top, right, bottom = _normalize_xywh_region(
+                region_of_interest,
+                rgb_image.width,
+                rgb_image.height,
+            )
+        except ValueError as exc:
+            return enrich_tool_result(
+                {
+                    "original_image": source_path,
+                    "roi": region_of_interest,
+                    "status": "no_valid_result",
+                    "error": str(exc),
+                    "result": f"Zoom_in rejected the requested region: {exc}",
+                },
+                tool_name=self.name,
+            )
         cropped = rgb_image.crop((left, top, right, bottom))
         zoomed = cropped.resize(
             (
@@ -4266,6 +4905,9 @@ class ZoomIn(BaseTool):
                     "width": round(width * zoom_factor, 2),
                     "height": round(height * zoom_factor, 2),
                 },
+                "derived_from": source_path,
+                "evidence_strength": "transformed_visual",
+                "semantic_verification": False,
             },
         )
         

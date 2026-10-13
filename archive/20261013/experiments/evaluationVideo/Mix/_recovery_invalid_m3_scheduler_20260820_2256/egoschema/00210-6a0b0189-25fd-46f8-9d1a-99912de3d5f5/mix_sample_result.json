@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00210:6a0b0189-25fd-46f8-9d1a-99912de3d5f5",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's actions in the video show that she is a caring and responsible person.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00210-6a0b0189-25fd-46f8-9d1a-99912de3d5f5",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00210-6a0b0189-25fd-46f8-9d1a-99912de3d5f5/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00210-6a0b0189-25fd-46f8-9d1a-99912de3d5f5/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00210-6a0b0189-25fd-46f8-9d1a-99912de3d5f5/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/6a0b0189-25fd-46f8-9d1a-99912de3d5f5.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/6a0b0189-25fd-46f8-9d1a-99912de3d5f5.mp4",
+  "question_block": "Question: In the context of the entire video, which actions most contribute to the overall theme and why? analyze the importance of these activities as they relate to the main story being portrayed.\nOptions:\n(A) The evidence of c's actions, as seen in the video, clearly demonstrates that she is notably a lazy and utterly irresponsible individual.\n(B) C's actions in the video show that she is a creative and imaginative person.\n(C) C's actions in the video show that she is a caring and responsible person.\n(D) The subtle cues in c's actions throughout the video evidently demonstrate that she is a rather shy, introverted person by nature.\n(E) The video displays c's actions, clearly indicating that she is a confident, self-assured, and outgoing person, effortlessly socializing.",
+  "options": [
+    "The evidence of c's actions, as seen in the video, clearly demonstrates that she is notably a lazy and utterly irresponsible individual.",
+    "C's actions in the video show that she is a creative and imaginative person.",
+    "C's actions in the video show that she is a caring and responsible person.",
+    "The subtle cues in c's actions throughout the video evidently demonstrate that she is a rather shy, introverted person by nature.",
+    "The video displays c's actions, clearly indicating that she is a confident, self-assured, and outgoing person, effortlessly socializing."
+  ],
+  "official_meta": {
+    "question_index": "00210",
+    "video_id": "6a0b0189-25fd-46f8-9d1a-99912de3d5f5",
+    "source_index": 210
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:07.218954Z"
+}

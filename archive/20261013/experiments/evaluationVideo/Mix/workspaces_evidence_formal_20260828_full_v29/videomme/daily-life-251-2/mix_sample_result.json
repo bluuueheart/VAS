@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:daily-life:251-2",
+  "dataset_name": "videomme",
+  "subset_name": "Daily Life",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 3,
+  "iter_num": 4,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 3,
+  "planner_iterations": 4,
+  "subagent_iterations": 0,
+  "predicted_label": "C",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(C) To watch TV",
+  "elapsed_seconds": 972.513,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/daily-life-251-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/daily-life-251-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/daily-life-251-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/daily-life-251-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/1sTQOxXFO44.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/1sTQOxXFO44.mp4",
+  "question_block": "Question: What is the woman sitting on the floor ready to do at the end of the video?\nOptions:\n(A) To play cell phone.\n(B) To play games.\n(C) To watch TV.\n(D) To read a book.",
+  "options": [
+    "A. To play cell phone.",
+    "B. To play games.",
+    "C. To watch TV.",
+    "D. To read a book."
+  ],
+  "official_meta": {
+    "video_id": "251",
+    "video_external_id": "1sTQOxXFO44",
+    "resolved_video_stem": "1sTQOxXFO44",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Life Record",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Daily Life",
+    "task_type": "Action Recognition",
+    "question_id": "251-2",
+    "question_index": 1,
+    "video_item_index": 250,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-06T07:00:38.680012Z"
+}

@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00070:217fe8d0-dfc8-407b-86be-269378c5259a",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "E",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C is trying to make a basket.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [
+    "E"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(E) C is trying to make a basket.",
+  "elapsed_seconds": 682.046,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00070-217fe8d0-dfc8-407b-86be-269378c5259a",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00070-217fe8d0-dfc8-407b-86be-269378c5259a/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00070-217fe8d0-dfc8-407b-86be-269378c5259a/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00070-217fe8d0-dfc8-407b-86be-269378c5259a/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/217fe8d0-dfc8-407b-86be-269378c5259a.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/217fe8d0-dfc8-407b-86be-269378c5259a.mp4",
+  "question_block": "Question: What is the primary objective of c's actions throughout the video, and how do his methods evolve over time to achieve it?\nOptions:\n(A) Currently, c is diligently attempting to skillfully repair a damaged basket.\n(B) C is attempting to creatively embellish and adorn a woven basket.\n(C) C is trying to break a basket.\n(D) Cunningly, c is attempting to quietly steal a woven basket.\n(E) C is trying to make a basket.",
+  "options": [
+    "Currently, c is diligently attempting to skillfully repair a damaged basket.",
+    "C is attempting to creatively embellish and adorn a woven basket.",
+    "C is trying to break a basket.",
+    "Cunningly, c is attempting to quietly steal a woven basket.",
+    "C is trying to make a basket."
+  ],
+  "official_meta": {
+    "question_index": "00070",
+    "video_id": "217fe8d0-dfc8-407b-86be-269378c5259a",
+    "resolved_video_stem": "217fe8d0-dfc8-407b-86be-269378c5259a",
+    "video_mapping_verified": true,
+    "source_index": 70,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-09T00:55:48.196387Z"
+}

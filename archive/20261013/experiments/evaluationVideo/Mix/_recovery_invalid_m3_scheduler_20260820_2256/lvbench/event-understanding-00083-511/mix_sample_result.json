@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:event-understanding:83:511",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "To the same direction as the other group",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00083-511",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00083-511/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00083-511/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00083-511/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/2sriHX3PbXw.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/2sriHX3PbXw.mp4",
+  "question_block": "Question: After two groups of people collide, which direction do the six people wearing the same outfit go to?\nOptions:\n(A) All but one go in the opposite direction\n(B) To the opposite direction of the other group\n(C) To the same direction as the other group\n(D) Some go to the opposite direction of the other group, some go to the same direction as the other group",
+  "options": [
+    "All but one go in the opposite direction",
+    "To the opposite direction of the other group",
+    "To the same direction as the other group",
+    "Some go to the opposite direction of the other group, some go to the same direction as the other group"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "04:41-04:42",
+    "video_key": "2sriHX3PbXw",
+    "source_index": 83
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:46:04.295369Z"
+}

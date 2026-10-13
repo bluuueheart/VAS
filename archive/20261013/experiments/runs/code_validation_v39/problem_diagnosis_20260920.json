@@ -1,0 +1,1789 @@
+{
+  "kind": "historical_read_only_diagnosis",
+  "fresh_inference": false,
+  "status_counts": {
+    "failed": 17,
+    "completed": 12,
+    "wrong": 3
+  },
+  "observer_call_missing_phase_reproduced": true,
+  "invalid_observer_counts": {
+    "dispatch_output_during_evidence": 15,
+    "reject_with_null_action": 8,
+    "other_invalid_output": 3
+  },
+  "invalid_observer_samples": 14,
+  "invalid_observer_events": [
+    {
+      "uid": "lvbench:entity-recognition:4:63",
+      "sample_status": "failed",
+      "iteration": 11,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": "umber of sticks. The evidence is insufficient to confirm the count. A higher density (0.8) is needed to capture the precise moment of stick placement and count them accurately.\",\n  \"confidence\": 0.8\n}"
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "sample_status": "failed",
+      "iteration": 4,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": "e attached image confirms the presence of the German Christmas tree illustration with visible decorations (apples, candles, berries) that need counting to answer the question.\",\n  \"confidence\": 0.95\n}"
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "sample_status": "failed",
+      "iteration": 12,
+      "kind": "reject_with_null_action",
+      "mode": "dispatch",
+      "schema_retry_count": 1,
+      "response_tail": "hed, Video_Clip_QA blocked by deduplication) and the route offers no new parameters to obtain fresh evidence, the dispatch must be rejected to prevent a futile execution loop.\",\n  \"confidence\": 0.95\n}"
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "sample_status": "failed",
+      "iteration": 12,
+      "kind": "reject_with_null_action",
+      "mode": "dispatch",
+      "schema_retry_count": 1,
+      "response_tail": "hed, Video_Clip_QA blocked by deduplication) and the route offers no new parameters to obtain fresh evidence, the dispatch must be rejected to prevent a futile execution loop.\",\n  \"confidence\": 0.95\n}"
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "sample_status": "failed",
+      "iteration": 14,
+      "kind": "reject_with_null_action",
+      "mode": "dispatch",
+      "schema_retry_count": 1,
+      "response_tail": "s twice.' Since no new visual evidence can be gathered and the only available tool in the route is blocked by the duplicate execution constraint, the dispatch must be rejected.\",\n  \"confidence\": 1.0\n}"
+    },
+    {
+      "uid": "mlvu:needle:0:needle-32",
+      "sample_status": "failed",
+      "iteration": 5,
+      "kind": "reject_with_null_action",
+      "mode": "dispatch",
+      "schema_retry_count": 1,
+      "response_tail": "r must choose a materially different tool or significantly altered parameters (e.g., different time window, different query phrasing, or a different tool entirely) to proceed.\",\n  \"confidence\": 0.95\n}"
+    },
+    {
+      "uid": "mlvu:needle:0:needle-32",
+      "sample_status": "failed",
+      "iteration": 10,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": "nt evidence is insufficient to verify the specific action described in the question. A new Inspect_Frame call with higher density is needed to properly observe the hand action.\",\n  \"confidence\": 0.0\n}"
+    },
+    {
+      "uid": "mlvu:needle:0:needle-32",
+      "sample_status": "failed",
+      "iteration": 12,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": "y the action, the Planner must execute Inspect_Frame on the specific candidate window [147.68, 182.22] with high density to obtain direct visual evidence of the hand's action.\",\n  \"confidence\": 0.95\n}"
+    },
+    {
+      "uid": "lvbench:entity-recognition:6:67",
+      "sample_status": "failed",
+      "iteration": 8,
+      "kind": "reject_with_null_action",
+      "mode": "dispatch",
+      "schema_retry_count": 1,
+      "response_tail": " The claim gap must be addressed by the evidence synthesis logic or a different probe (e.g., changing the time window or query), not by re-executing the exact same failed call.\",\n  \"confidence\": 1.0\n}"
+    },
+    {
+      "uid": "lvbench:event-understanding:3:62",
+      "sample_status": "failed",
+      "iteration": 7,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": "A. The images do not show the protagonist breaking windows or impaling the man, ruling out Options C and D. The visual evidence of a full hand being severed rules out Option B.\",\n  \"confidence\": 0.9\n}"
+    },
+    {
+      "uid": "lvbench:event-understanding:3:62",
+      "sample_status": "failed",
+      "iteration": 8,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": "on of the protagonist is missing. A re-observation of this specific time window with a focused query on the protagonist's action is required to distinguish between the options.\",\n  \"confidence\": 0.9\n}"
+    },
+    {
+      "uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+      "sample_status": "failed",
+      "iteration": 8,
+      "kind": "other_invalid_output",
+      "mode": "dispatch",
+      "schema_retry_count": 1,
+      "response_tail": "ile of mortar in his front, adds clay from the floor on the brick mold, and drops brick from brick mold beside already made bricks on the floor.\",\n      \"start_time\": 158.5\n    }\n  },\n  \"reason\": \"The"
+    },
+    {
+      "uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+      "sample_status": "failed",
+      "iteration": 15,
+      "kind": "other_invalid_output",
+      "mode": "dispatch",
+      "schema_retry_count": 1,
+      "response_tail": "s front, adds clay from the floor on the brick mold, and drops brick from brick mold beside already made bricks on the floor.\",\n      \"start_time\": 0.0\n    }\n  },\n  \"reason\": \"The Planner has resolved"
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "sample_status": "completed",
+      "iteration": 3,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": ". Event 1 (taping hands) and Event 2 (boxing) were found via Semantic_Retrieve but need visual confirmation. Starting with Event 1 is logical as it has the earliest timestamp.\",\n  \"confidence\": 0.95\n}"
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "sample_status": "completed",
+      "iteration": 10,
+      "kind": "other_invalid_output",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": "1-449s. Since the boxing and sit-ups are shown in the same continuous clip, and the taping is also in this clip, the order must be determined by the visual sequence. The images show boxing first, then"
+    },
+    {
+      "uid": "lvbench:event-understanding:7:68",
+      "sample_status": "failed",
+      "iteration": 1,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": "o see what happens next. The recommended action is to inspect the frames from the first segment (1740.0-1800.0) to confirm the kneeling event and observe the subsequent action.\",\n  \"confidence\": 0.8\n}"
+    },
+    {
+      "uid": "lvbench:event-understanding:7:68",
+      "sample_status": "failed",
+      "iteration": 10,
+      "kind": "reject_with_null_action",
+      "mode": "dispatch",
+      "schema_retry_count": 1,
+      "response_tail": "p 7. The runtime enforces deduplication, and the Planner must choose a materially different action (e.g., different time window, different tool, or different query) to proceed.\",\n  \"confidence\": 1.0\n}"
+    },
+    {
+      "uid": "videomme:law:061-1",
+      "sample_status": "failed",
+      "iteration": 10,
+      "kind": "reject_with_null_action",
+      "mode": "dispatch",
+      "schema_retry_count": 1,
+      "response_tail": "ecution of the tool. A new strategy (e.g., changing the query to a direct count without option selection, or using a different tool if available) is needed before dispatching.\",\n  \"confidence\": 0.95\n}"
+    },
+    {
+      "uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+      "sample_status": "failed",
+      "iteration": 5,
+      "kind": "reject_with_null_action",
+      "mode": "dispatch",
+      "schema_retry_count": 1,
+      "response_tail": "nner's explicit instruction to use Semantic_Retrieve first to localize evidence before querying. The route parameters do not align with the Planner's current strategic intent.\",\n  \"confidence\": 0.95\n}"
+    },
+    {
+      "uid": "mlvu:count:0:count-126",
+      "sample_status": "failed",
+      "iteration": 1,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": "he retrieved segments are incorrect (showing cars, not a band). I need to inspect the first candidate segment (0.0-62.05) directly to verify if it contains the trombone scene.\",\n  \"confidence\": 0.95\n}"
+    },
+    {
+      "uid": "mlvu:count:0:count-126",
+      "sample_status": "failed",
+      "iteration": 15,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": "nly verified as 0 for the first segment), we must continue searching the remaining video duration to either find the action or confirm its total absence across the full video.\",\n  \"confidence\": 0.95\n}"
+    },
+    {
+      "uid": "lvbench:reasoning:5:65",
+      "sample_status": "failed",
+      "iteration": 3,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": "cific interaction and reason for denial are not yet clear. Re-inspecting the 1170-1200s window with the refined query is the next logical step to gather the necessary evidence.\",\n  \"confidence\": 0.9\n}"
+    },
+    {
+      "uid": "lvbench:reasoning:5:65",
+      "sample_status": "failed",
+      "iteration": 7,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": " the mother and child in a queue and a hand holding coins, but do not show the guard's response or the reason for denial. This new query should retrieve the necessary evidence.\",\n  \"confidence\": 0.9\n}"
+    },
+    {
+      "uid": "videomme:life-tip:071-1",
+      "sample_status": "completed",
+      "iteration": 9,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": "vidence action with materially changed parameters (different time window) compared to the initial 0-36s probe. The route is executable and should be dispatched to the runtime.\",\n  \"confidence\": 0.95\n}"
+    },
+    {
+      "uid": "mlvu:anomaly-reco:0:surveil-20",
+      "sample_status": "failed",
+      "iteration": 9,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": " remains unexamined. To ensure full temporal coverage and avoid missing potential anomalies, this gap must be inspected before concluding that no anomalies exist in the video.\",\n  \"confidence\": 0.95\n}"
+    },
+    {
+      "uid": "mlvu:anomaly-reco:0:surveil-20",
+      "sample_status": "failed",
+      "iteration": 12,
+      "kind": "dispatch_output_during_evidence",
+      "mode": "default",
+      "schema_retry_count": 1,
+      "response_tail": "ict and verify the authoritative 'No' claim, a new Inspect_Frame call with the same parameters is required to obtain the detailed visual evidence for the specified time window.\",\n  \"confidence\": 0.8\n}"
+    }
+  ],
+  "signals": {
+    "finish_attempts": 59,
+    "safety_accepts": 17,
+    "reflector_rejects_after_safety_accept": 2,
+    "qa_window_limit_steps": 8,
+    "duplicate_rejection_steps": 21
+  },
+  "signal_sample_counts": {
+    "qa_window_limit_steps": 8,
+    "duplicate_rejection_steps": 13
+  },
+  "visual_sampling": {
+    "actual_branch_line": 2319,
+    "branch_reproduction": [
+      {
+        "requested_count": 15,
+        "actual_count": 15,
+        "sample_times": [
+          391.97,
+          393.97,
+          395.97,
+          397.97,
+          399.97,
+          401.97,
+          403.97,
+          405.97,
+          407.97,
+          409.97,
+          411.97,
+          413.97,
+          415.97,
+          417.97,
+          419.97
+        ]
+      },
+      {
+        "requested_count": 30,
+        "actual_count": 2,
+        "sample_times": [
+          408.967,
+          420.967
+        ]
+      },
+      {
+        "requested_count": 60,
+        "actual_count": 2,
+        "sample_times": [
+          408.967,
+          420.967
+        ]
+      }
+    ],
+    "existing_unused_helper_returns": 24,
+    "sparse_probe_observation_count": 61,
+    "sparse_probe_sample_count": 18,
+    "sparse_probes": [
+      {
+        "uid": "lvbench:entity-recognition:4:63",
+        "step": 2,
+        "requested_count": 90,
+        "window": [
+          630.0,
+          720.0
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          630.0,
+          642.0,
+          672.0,
+          702.0,
+          720.0
+        ]
+      },
+      {
+        "uid": "lvbench:entity-recognition:4:63",
+        "step": 3,
+        "requested_count": 60,
+        "window": [
+          690.0,
+          720.0
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          690.0,
+          702.0,
+          720.0
+        ]
+      },
+      {
+        "uid": "lvbench:entity-recognition:4:63",
+        "step": 4,
+        "requested_count": 30,
+        "window": [
+          660.0,
+          690.0
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          660.0,
+          672.0,
+          690.0
+        ]
+      },
+      {
+        "uid": "lvbench:entity-recognition:4:63",
+        "step": 11,
+        "requested_count": 60,
+        "window": [
+          630.0,
+          660.0
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          630.0,
+          642.0,
+          660.0
+        ]
+      },
+      {
+        "uid": "videomme:humanity-history:001-1",
+        "step": 2,
+        "requested_count": 48,
+        "window": [
+          28.24,
+          52.1
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          28.24,
+          44.147,
+          52.1
+        ]
+      },
+      {
+        "uid": "videomme:humanity-history:001-1",
+        "step": 4,
+        "requested_count": 34,
+        "window": [
+          28.24,
+          35.0
+        ],
+        "density": 0.2,
+        "returned_timestamps": [
+          28.24
+        ]
+      },
+      {
+        "uid": "videomme:humanity-history:001-1",
+        "step": 7,
+        "requested_count": 48,
+        "window": [
+          28.24,
+          52.1
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          28.24,
+          44.147,
+          52.1
+        ]
+      },
+      {
+        "uid": "videomme:humanity-history:001-1",
+        "step": 9,
+        "requested_count": 48,
+        "window": [
+          28.24,
+          52.1
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          28.24,
+          44.147,
+          52.1
+        ]
+      },
+      {
+        "uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+        "step": 1,
+        "requested_count": 25,
+        "window": [
+          0.0,
+          48.37
+        ],
+        "density": 2.0,
+        "returned_timestamps": [
+          24.183,
+          48.367
+        ]
+      },
+      {
+        "uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+        "step": 2,
+        "requested_count": 33,
+        "window": [
+          0.0,
+          48.37
+        ],
+        "density": 1.5,
+        "returned_timestamps": [
+          24.183,
+          48.367
+        ]
+      },
+      {
+        "uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+        "step": 6,
+        "requested_count": 97,
+        "window": [
+          0.0,
+          48.37
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          24.183,
+          48.367
+        ]
+      },
+      {
+        "uid": "mlvu:needle:0:needle-32",
+        "step": 10,
+        "requested_count": 35,
+        "window": [
+          147.68,
+          182.22
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          147.68,
+          161.496,
+          182.22
+        ]
+      },
+      {
+        "uid": "lvbench:entity-recognition:6:67",
+        "step": 1,
+        "requested_count": 30,
+        "window": [
+          1440.0,
+          1470.0
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          1440.0,
+          1452.0,
+          1470.0
+        ]
+      },
+      {
+        "uid": "egoschema:00002:00f93e1e-cf4e-4835-88b4-4ad68216e86f",
+        "step": 5,
+        "requested_count": 45,
+        "window": [
+          0.0,
+          90.0
+        ],
+        "density": 2.0,
+        "returned_timestamps": [
+          12.0,
+          42.0,
+          73.822
+        ]
+      },
+      {
+        "uid": "mlvu:ego:0:ego-35",
+        "step": 3,
+        "requested_count": 32,
+        "window": [
+          150.0,
+          181.2
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          150.0,
+          162.48,
+          181.2
+        ]
+      },
+      {
+        "uid": "mlvu:ego:0:ego-35",
+        "step": 4,
+        "requested_count": 45,
+        "window": [
+          336.57,
+          381.57
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          362.281,
+          381.567
+        ]
+      },
+      {
+        "uid": "mlvu:ego:0:ego-35",
+        "step": 6,
+        "requested_count": 30,
+        "window": [
+          0.0,
+          30.0
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          12.0,
+          30.0
+        ]
+      },
+      {
+        "uid": "mlvu:ego:0:ego-35",
+        "step": 9,
+        "requested_count": 63,
+        "window": [
+          150.0,
+          181.2
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          150.0,
+          162.48,
+          181.2
+        ]
+      },
+      {
+        "uid": "mlvu:ego:0:ego-35",
+        "step": 9,
+        "requested_count": 60,
+        "window": [
+          60.0,
+          90.0
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          60.0,
+          72.0,
+          90.0
+        ]
+      },
+      {
+        "uid": "mlvu:ego:0:ego-35",
+        "step": 9,
+        "requested_count": 60,
+        "window": [
+          30.0,
+          60.0
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          30.0,
+          42.0,
+          60.0
+        ]
+      },
+      {
+        "uid": "mlvu:ego:0:ego-35",
+        "step": 9,
+        "requested_count": 90,
+        "window": [
+          336.57,
+          381.57
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          362.281,
+          381.567
+        ]
+      },
+      {
+        "uid": "mlvu:ego:0:ego-35",
+        "step": 9,
+        "requested_count": 60,
+        "window": [
+          0.0,
+          30.0
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          12.0,
+          30.0
+        ]
+      },
+      {
+        "uid": "mlvu:ego:0:ego-35",
+        "step": 12,
+        "requested_count": 56,
+        "window": [
+          274.6,
+          302.6
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          274.6,
+          288.6,
+          302.6
+        ]
+      },
+      {
+        "uid": "mlvu:ego:0:ego-35",
+        "step": 14,
+        "requested_count": 300,
+        "window": [
+          0.0,
+          30.0
+        ],
+        "density": 0.1,
+        "returned_timestamps": [
+          12.0,
+          30.0
+        ]
+      },
+      {
+        "uid": "lvbench:event-understanding:3:62",
+        "step": 6,
+        "requested_count": 30,
+        "window": [
+          240.0,
+          300.0
+        ],
+        "density": 2.0,
+        "returned_timestamps": [
+          240.0,
+          252.0,
+          282.0,
+          300.0
+        ]
+      },
+      {
+        "uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+        "step": 3,
+        "requested_count": 44,
+        "window": [
+          136.87,
+          180.0
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          161.514
+        ]
+      },
+      {
+        "uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+        "step": 4,
+        "requested_count": 87,
+        "window": [
+          136.87,
+          180.0
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          161.514
+        ]
+      },
+      {
+        "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+        "step": 1,
+        "requested_count": 53,
+        "window": [
+          50.4,
+          102.43
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          50.4,
+          76.416
+        ]
+      },
+      {
+        "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+        "step": 1,
+        "requested_count": 49,
+        "window": [
+          131.7,
+          180.0
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          131.7,
+          139.966,
+          160.94
+        ]
+      },
+      {
+        "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+        "step": 2,
+        "requested_count": 360,
+        "window": [
+          0.0,
+          180.0
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          14.133,
+          35.645,
+          76.416,
+          117.066,
+          139.966,
+          160.94
+        ]
+      },
+      {
+        "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+        "step": 5,
+        "requested_count": 105,
+        "window": [
+          50.4,
+          102.43
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          50.4,
+          76.416
+        ]
+      },
+      {
+        "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+        "step": 5,
+        "requested_count": 97,
+        "window": [
+          131.7,
+          180.0
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          131.7,
+          139.966,
+          160.94
+        ]
+      },
+      {
+        "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+        "step": 7,
+        "requested_count": 66,
+        "window": [
+          50.4,
+          102.43
+        ],
+        "density": 0.8,
+        "returned_timestamps": [
+          50.4,
+          76.416
+        ]
+      },
+      {
+        "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+        "step": 7,
+        "requested_count": 61,
+        "window": [
+          131.7,
+          180.0
+        ],
+        "density": 0.8,
+        "returned_timestamps": [
+          131.7,
+          139.966,
+          160.94
+        ]
+      },
+      {
+        "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+        "step": 11,
+        "requested_count": 105,
+        "window": [
+          50.4,
+          102.43
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          50.4,
+          76.416
+        ]
+      },
+      {
+        "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+        "step": 11,
+        "requested_count": 97,
+        "window": [
+          131.7,
+          180.0
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          131.7,
+          139.966,
+          160.94
+        ]
+      },
+      {
+        "uid": "videomme:geography:051-1",
+        "step": 1,
+        "requested_count": 59,
+        "window": [
+          0.0,
+          116.31
+        ],
+        "density": 2.0,
+        "returned_timestamps": [
+          14.875,
+          43.625,
+          70.3,
+          102.905
+        ]
+      },
+      {
+        "uid": "videomme:geography:051-1",
+        "step": 2,
+        "requested_count": 117,
+        "window": [
+          0.0,
+          116.31
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          14.875,
+          43.625,
+          70.3,
+          102.905
+        ]
+      },
+      {
+        "uid": "videomme:geography:051-1",
+        "step": 7,
+        "requested_count": 30,
+        "window": [
+          0.0,
+          29.75
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          14.875,
+          29.75
+        ]
+      },
+      {
+        "uid": "videomme:geography:051-1",
+        "step": 7,
+        "requested_count": 28,
+        "window": [
+          29.75,
+          57.5
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          29.75,
+          43.625,
+          57.5
+        ]
+      },
+      {
+        "uid": "egoschema:00005:01a144a5-24d2-4a5a-af01-1f318d674bed",
+        "step": 10,
+        "requested_count": 27,
+        "window": [
+          91.93,
+          144.87
+        ],
+        "density": 2.0,
+        "returned_timestamps": [
+          91.931,
+          118.4,
+          144.867
+        ]
+      },
+      {
+        "uid": "mlvu:order:0:order-126",
+        "step": 12,
+        "requested_count": 50,
+        "window": [
+          0.0,
+          100.0
+        ],
+        "density": 2.0,
+        "returned_timestamps": [
+          12.0,
+          42.0,
+          72.0,
+          96.0
+        ]
+      },
+      {
+        "uid": "lvbench:event-understanding:7:68",
+        "step": 2,
+        "requested_count": 30,
+        "window": [
+          1770.0,
+          1800.0
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          1770.0,
+          1782.0,
+          1800.0
+        ]
+      },
+      {
+        "uid": "lvbench:event-understanding:7:68",
+        "step": 2,
+        "requested_count": 30,
+        "window": [
+          1470.0,
+          1500.0
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          1470.0,
+          1482.0,
+          1500.0
+        ]
+      },
+      {
+        "uid": "lvbench:event-understanding:7:68",
+        "step": 3,
+        "requested_count": 120,
+        "window": [
+          1710.0,
+          1770.0
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          1710.0,
+          1722.0,
+          1752.0,
+          1770.0
+        ]
+      },
+      {
+        "uid": "lvbench:event-understanding:7:68",
+        "step": 6,
+        "requested_count": 75,
+        "window": [
+          1710.0,
+          1770.0
+        ],
+        "density": 0.8,
+        "returned_timestamps": [
+          1710.0,
+          1722.0,
+          1752.0,
+          1770.0
+        ]
+      },
+      {
+        "uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+        "step": 3,
+        "requested_count": 60,
+        "window": [
+          0.0,
+          180.0
+        ],
+        "density": 3.0,
+        "returned_timestamps": [
+          13.784,
+          34.634,
+          62.484,
+          88.2,
+          121.2,
+          154.971
+        ]
+      },
+      {
+        "uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+        "step": 8,
+        "requested_count": 43,
+        "window": [
+          27.57,
+          48.77
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          41.7,
+          48.767
+        ]
+      },
+      {
+        "uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+        "step": 8,
+        "requested_count": 30,
+        "window": [
+          106.2,
+          136.2
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          106.2,
+          121.2,
+          136.2
+        ]
+      },
+      {
+        "uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+        "step": 11,
+        "requested_count": 60,
+        "window": [
+          106.2,
+          136.2
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          106.2,
+          121.2,
+          136.2
+        ]
+      },
+      {
+        "uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+        "step": 11,
+        "requested_count": 43,
+        "window": [
+          27.57,
+          48.77
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          41.7,
+          48.767
+        ]
+      },
+      {
+        "uid": "mlvu:count:0:count-126",
+        "step": 2,
+        "requested_count": 30,
+        "window": [
+          125.08,
+          272.99
+        ],
+        "density": 5.0,
+        "returned_timestamps": [
+          125.08,
+          199.035,
+          272.99
+        ]
+      },
+      {
+        "uid": "mlvu:count:0:count-126",
+        "step": 4,
+        "requested_count": 29,
+        "window": [
+          272.99,
+          330.92
+        ],
+        "density": 2.0,
+        "returned_timestamps": [
+          272.99,
+          305.173,
+          330.92
+        ]
+      },
+      {
+        "uid": "mlvu:count:0:count-126",
+        "step": 7,
+        "requested_count": 32,
+        "window": [
+          0.0,
+          62.05
+        ],
+        "density": 2.0,
+        "returned_timestamps": [
+          31.025,
+          62.05
+        ]
+      },
+      {
+        "uid": "videomme:life-tip:071-1",
+        "step": 9,
+        "requested_count": 26,
+        "window": [
+          36.0,
+          113.17
+        ],
+        "density": 3.0,
+        "returned_timestamps": [
+          55.24,
+          87.656
+        ]
+      },
+      {
+        "uid": "mlvu:anomaly-reco:0:surveil-20",
+        "step": 2,
+        "requested_count": 30,
+        "window": [
+          60.97,
+          90.97
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          78.967,
+          90.967
+        ]
+      },
+      {
+        "uid": "mlvu:anomaly-reco:0:surveil-20",
+        "step": 3,
+        "requested_count": 30,
+        "window": [
+          360.97,
+          390.97
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          378.967,
+          390.967
+        ]
+      },
+      {
+        "uid": "mlvu:anomaly-reco:0:surveil-20",
+        "step": 4,
+        "requested_count": 30,
+        "window": [
+          330.97,
+          360.97
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          348.967,
+          360.967
+        ]
+      },
+      {
+        "uid": "mlvu:anomaly-reco:0:surveil-20",
+        "step": 7,
+        "requested_count": 30,
+        "window": [
+          420.97,
+          450.97
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          438.967,
+          450.967
+        ]
+      },
+      {
+        "uid": "mlvu:anomaly-reco:0:surveil-20",
+        "step": 9,
+        "requested_count": 60,
+        "window": [
+          300.97,
+          360.97
+        ],
+        "density": 1.0,
+        "returned_timestamps": [
+          318.967,
+          342.967,
+          360.967
+        ]
+      },
+      {
+        "uid": "mlvu:anomaly-reco:0:surveil-20",
+        "step": 12,
+        "requested_count": 60,
+        "window": [
+          390.97,
+          420.97
+        ],
+        "density": 0.5,
+        "returned_timestamps": [
+          408.967,
+          420.967
+        ]
+      }
+    ],
+    "scope": "Recorded normalized observations; exact sampling branch reproduced without video decoding or model calls."
+  },
+  "reflector_temporal_misattribution": {
+    "sample_uid": "mlvu:anomaly-reco:0:surveil-20",
+    "checkpoint_sha256_verified": true,
+    "pre_finish_slots": [
+      {
+        "label": "Shoplifting",
+        "value": "Shoplifting",
+        "citation": "Video_Clip_QA result for segment 390.97-420.97",
+        "evidence_status": "verified",
+        "logical_conflict": false,
+        "scope": "event",
+        "claim_id": "anomaly:shoplifting",
+        "target": "person",
+        "relation": "performs",
+        "direction": "counter",
+        "qualifiers": [
+          "entering",
+          "approaching",
+          "taking item"
+        ],
+        "uncertainty": "None",
+        "observed_value": "A person enters the shop, approaches the counter, and takes an item from the counter.",
+        "source_tool": "Video_Clip_QA",
+        "superseded": false,
+        "context_only": false,
+        "provenance": "observer"
+      }
+    ],
+    "qa_steps": [
+      {
+        "step": 8,
+        "action_args": {
+          "batch": [
+            {
+              "name": "Video_Clip_QA",
+              "args": {
+                "start_time": 270.97,
+                "end_time": 300.97,
+                "query": "Does this video segment contain any anomalies? Specifically look for RoadAccidents, Shooting, Shoplifting, or Assault.",
+                "__raw_params_declared__": true,
+                "__raw_param_keys__": [
+                  "start_time",
+                  "end_time",
+                  "query"
+                ]
+              }
+            }
+          ]
+        },
+        "observation": "{\"answer\":\"No\",\"evidence\":[],\"uncertainty\":\"None\",\"video_summary\":\"The video shows a group of people in a shop, with no visible anomalies such as road accidents, shooting, shoplifting, or assault.\"}"
+      },
+      {
+        "step": 10,
+        "action_args": {
+          "batch": [
+            {
+              "name": "Video_Clip_QA",
+              "args": {
+                "start_time": 390.97,
+                "end_time": 420.97,
+                "query": "Does this video segment contain any anomalies? Specifically look for RoadAccidents, Shooting, Shoplifting, or Assault.",
+                "__raw_params_declared__": true,
+                "__raw_param_keys__": [
+                  "start_time",
+                  "end_time",
+                  "query"
+                ]
+              }
+            }
+          ]
+        },
+        "observation": "{\"answer\":\"Shoplifting\",\"evidence\":[\"A person is seen entering the shop and approaching the counter.\",\"The person then proceeds to take an item from the counter.\"],\"uncertainty\":\"None\",\"video_summary\":\"A person enters a shop and takes an item from the counter, indicating shoplifting.\"}"
+      }
+    ],
+    "reflector_payload": {
+      "decision": "reject",
+      "can_finish": false,
+      "claim_assessment": [
+        {
+          "claim_id": "anomaly:shoplifting",
+          "status": "contradictory",
+          "reason": "The proposed answer (C) Shoplifting is contradicted by the verified evidence from the 390.97-420.97 segment, which explicitly states 'No' anomalies were found. The evidence slots show a conflict: one slot claims 'Shoplifting' while another claims 'No'. The 'No' claim is from a later, more direct observation of the same scene, making it the authoritative claim. The 'Shoplifting' claim is superseded by the 'No' claim."
+        }
+      ],
+      "missing_information": [
+        "A direct, uncontradicted observation confirming the presence of shoplifting or the absence of any anomaly."
+      ],
+      "unresolved_claims": [
+        "The presence of shoplifting in the video."
+      ],
+      "evidence_assessment": "The evidence is contradictory. One tool (Video_Clip_QA) reports 'Shoplifting' for the 390.97-420.97 segment, while another tool (Video_Clip_QA) reports 'No' anomalies for the same segment. The 'No' claim is from a later, more direct observation, making it the authoritative claim. The 'Shoplifting' claim is superseded by the 'No' claim.",
+      "confidence": 0.0
+    }
+  },
+  "interrupted_cycle": {
+    "recovered_poll_returncode": 1,
+    "journal_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/_evolution_audit/evolution_online_cycle_00013/candidate_pending.json",
+    "snapshot_id": "snapshot_bec76b75d7611213",
+    "report_and_candidate_present": true,
+    "cycle_result_present": false,
+    "limitation": "Read-only process-death classification verified; controller restart/resume not executed."
+  },
+  "completed_cycles": [
+    {
+      "cycle": "evolution_online_cycle_00001",
+      "status": "runtime_suffix_executed",
+      "repair_evidence": {
+        "proven": false,
+        "completion_regressed": false,
+        "objective": "global_and_local_failure",
+        "repair_scope": "tool",
+        "answer_repair_proven": false,
+        "tool_repair_proven": true,
+        "answer_gain": 0.0,
+        "failed_call_reduction": 1,
+        "tool_call_reduction": -1
+      },
+      "operations": [
+        {
+          "action": "update_recovery_policy",
+          "target": "low_signal_temporal_grounding",
+          "effect": {
+            "enabled": true,
+            "max_text_failures": 2,
+            "coverage_density_seconds": 30,
+            "max_recovery_calls": 1
+          }
+        }
+      ],
+      "arms": {
+        "baseline": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        },
+        "candidate": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        }
+      }
+    },
+    {
+      "cycle": "evolution_online_cycle_00002",
+      "status": "runtime_suffix_executed",
+      "repair_evidence": {
+        "proven": false,
+        "completion_regressed": false,
+        "objective": "global_and_local_failure",
+        "repair_scope": "tool",
+        "answer_repair_proven": false,
+        "tool_repair_proven": true,
+        "answer_gain": 0.0,
+        "failed_call_reduction": 1,
+        "tool_call_reduction": 2
+      },
+      "operations": [
+        {
+          "action": "update_recovery_policy",
+          "target": "low_signal_temporal_grounding",
+          "effect": {
+            "enabled": true,
+            "max_recovery_calls": 4,
+            "max_text_failures": 8,
+            "coverage_density_seconds": 60
+          }
+        }
+      ],
+      "arms": {
+        "baseline": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        },
+        "candidate": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        }
+      }
+    },
+    {
+      "cycle": "evolution_online_cycle_00003",
+      "status": "runtime_suffix_executed",
+      "repair_evidence": {
+        "proven": false,
+        "completion_regressed": false,
+        "objective": "global_and_local_failure",
+        "repair_scope": "tool",
+        "answer_repair_proven": false,
+        "tool_repair_proven": true,
+        "answer_gain": 0.0,
+        "failed_call_reduction": 3,
+        "tool_call_reduction": 1
+      },
+      "operations": [
+        {
+          "action": "update_recovery_policy",
+          "target": "low_signal_temporal_grounding",
+          "effect": {
+            "enabled": true,
+            "coverage_density_seconds": 60,
+            "max_text_failures": 8,
+            "max_recovery_calls": 4
+          }
+        }
+      ],
+      "arms": {
+        "baseline": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        },
+        "candidate": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        }
+      }
+    },
+    {
+      "cycle": "evolution_online_cycle_00004",
+      "status": "runtime_suffix_executed",
+      "repair_evidence": {
+        "proven": false,
+        "completion_regressed": false,
+        "objective": "global_and_local_failure",
+        "repair_scope": "none",
+        "answer_repair_proven": false,
+        "tool_repair_proven": false,
+        "answer_gain": 0.0,
+        "failed_call_reduction": 0,
+        "tool_call_reduction": 0
+      },
+      "operations": [
+        {
+          "action": "update_recovery_policy",
+          "target": "low_signal_temporal_grounding",
+          "effect": {
+            "enabled": true,
+            "coverage_density_seconds": 60,
+            "max_text_failures": 8,
+            "max_recovery_calls": 4
+          }
+        }
+      ],
+      "arms": {
+        "baseline": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        },
+        "candidate": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        }
+      }
+    },
+    {
+      "cycle": "evolution_online_cycle_00005",
+      "status": "runtime_suffix_executed",
+      "repair_evidence": {
+        "proven": false,
+        "completion_regressed": false,
+        "objective": "global_and_local_failure",
+        "repair_scope": "none",
+        "answer_repair_proven": false,
+        "tool_repair_proven": false,
+        "answer_gain": 0.0,
+        "failed_call_reduction": -1,
+        "tool_call_reduction": -1
+      },
+      "operations": [
+        {
+          "action": "update_recovery_policy",
+          "target": "low_signal_temporal_grounding",
+          "effect": {
+            "enabled": true,
+            "coverage_density_seconds": 60,
+            "max_text_failures": 8,
+            "max_recovery_calls": 4
+          }
+        }
+      ],
+      "arms": {
+        "baseline": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        },
+        "candidate": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        }
+      }
+    },
+    {
+      "cycle": "evolution_online_cycle_00006",
+      "status": "runtime_suffix_executed",
+      "repair_evidence": {
+        "proven": false,
+        "completion_regressed": false,
+        "objective": "global_and_local_failure",
+        "repair_scope": "tool",
+        "answer_repair_proven": false,
+        "tool_repair_proven": true,
+        "answer_gain": 0.0,
+        "failed_call_reduction": 2,
+        "tool_call_reduction": 1
+      },
+      "operations": [
+        {
+          "action": "update_recovery_policy",
+          "target": "low_signal_temporal_grounding",
+          "effect": {
+            "enabled": true,
+            "coverage_density_seconds": 60,
+            "max_recovery_calls": 4,
+            "max_text_failures": 8
+          }
+        }
+      ],
+      "arms": {
+        "baseline": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        },
+        "candidate": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        }
+      }
+    },
+    {
+      "cycle": "evolution_online_cycle_00007",
+      "status": "runtime_suffix_executed",
+      "repair_evidence": {
+        "proven": false,
+        "completion_regressed": false,
+        "objective": "global_and_local_failure",
+        "repair_scope": "none",
+        "answer_repair_proven": false,
+        "tool_repair_proven": false,
+        "answer_gain": 0.0,
+        "failed_call_reduction": -1,
+        "tool_call_reduction": 0
+      },
+      "operations": [
+        {
+          "action": "update_recovery_policy",
+          "target": "low_signal_temporal_grounding",
+          "effect": {
+            "enabled": true,
+            "coverage_density_seconds": 120,
+            "max_recovery_calls": 4,
+            "max_text_failures": 8
+          }
+        }
+      ],
+      "arms": {
+        "baseline": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        },
+        "candidate": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        }
+      }
+    },
+    {
+      "cycle": "evolution_online_cycle_00008",
+      "status": "runtime_suffix_executed",
+      "repair_evidence": {
+        "proven": false,
+        "completion_regressed": false,
+        "objective": "global_and_local_failure",
+        "repair_scope": "none",
+        "answer_repair_proven": false,
+        "tool_repair_proven": false,
+        "answer_gain": 0.0,
+        "failed_call_reduction": -1,
+        "tool_call_reduction": 0
+      },
+      "operations": [
+        {
+          "action": "update_recovery_policy",
+          "target": "low_signal_temporal_grounding",
+          "effect": {
+            "enabled": true,
+            "coverage_density_seconds": 120,
+            "max_recovery_calls": 4,
+            "max_text_failures": 8
+          }
+        }
+      ],
+      "arms": {
+        "baseline": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        },
+        "candidate": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        }
+      }
+    },
+    {
+      "cycle": "evolution_online_cycle_00009",
+      "status": "runtime_suffix_executed",
+      "repair_evidence": {
+        "proven": false,
+        "completion_regressed": false,
+        "objective": "global_and_local_failure",
+        "repair_scope": "none",
+        "answer_repair_proven": false,
+        "tool_repair_proven": false,
+        "answer_gain": 0.0,
+        "failed_call_reduction": 0,
+        "tool_call_reduction": 0
+      },
+      "operations": [
+        {
+          "action": "update_recovery_policy",
+          "target": "low_signal_temporal_grounding",
+          "effect": {
+            "enabled": true,
+            "coverage_density_seconds": 120,
+            "max_recovery_calls": 4,
+            "max_text_failures": 8
+          }
+        }
+      ],
+      "arms": {
+        "baseline": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        },
+        "candidate": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        }
+      }
+    },
+    {
+      "cycle": "evolution_online_cycle_00010",
+      "status": "runtime_suffix_executed",
+      "repair_evidence": {
+        "proven": false,
+        "completion_regressed": false,
+        "objective": "global_and_local_failure",
+        "repair_scope": "none",
+        "answer_repair_proven": false,
+        "tool_repair_proven": false,
+        "answer_gain": 0.0,
+        "failed_call_reduction": -1,
+        "tool_call_reduction": -1
+      },
+      "operations": [
+        {
+          "action": "update_recovery_policy",
+          "target": "low_signal_temporal_grounding",
+          "effect": {
+            "enabled": true,
+            "max_recovery_calls": 4,
+            "max_text_failures": 8,
+            "coverage_density_seconds": 120
+          }
+        }
+      ],
+      "arms": {
+        "baseline": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        },
+        "candidate": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        }
+      }
+    },
+    {
+      "cycle": "evolution_online_cycle_00011",
+      "status": "runtime_suffix_executed",
+      "repair_evidence": {
+        "proven": false,
+        "completion_regressed": false,
+        "objective": "global_and_local_failure",
+        "repair_scope": "tool",
+        "answer_repair_proven": false,
+        "tool_repair_proven": true,
+        "answer_gain": 0.0,
+        "failed_call_reduction": 2,
+        "tool_call_reduction": 4
+      },
+      "operations": [
+        {
+          "action": "update_recovery_policy",
+          "target": "low_signal_temporal_grounding",
+          "effect": {
+            "enabled": true,
+            "max_recovery_calls": 4,
+            "max_text_failures": 8,
+            "coverage_density_seconds": 120
+          }
+        }
+      ],
+      "arms": {
+        "baseline": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        },
+        "candidate": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        }
+      }
+    },
+    {
+      "cycle": "evolution_online_cycle_00012",
+      "status": "runtime_suffix_executed",
+      "repair_evidence": {
+        "proven": false,
+        "completion_regressed": false,
+        "objective": "global_and_local_failure",
+        "repair_scope": "none",
+        "answer_repair_proven": false,
+        "tool_repair_proven": false,
+        "answer_gain": 0.0,
+        "failed_call_reduction": -2,
+        "tool_call_reduction": -4
+      },
+      "operations": [
+        {
+          "action": "update_recovery_policy",
+          "target": "low_signal_temporal_grounding",
+          "effect": {
+            "enabled": true,
+            "max_recovery_calls": 2,
+            "max_text_failures": 4,
+            "coverage_density_seconds": 30
+          }
+        }
+      ],
+      "arms": {
+        "baseline": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        },
+        "candidate": {
+          "executed": true,
+          "return_code": 0,
+          "reused_completed_arm": false
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Counts are recorded events/steps, not independent causal experiments.",
+    "No claim that fixing these interfaces will correct all 17 failed samples.",
+    "Reject-with-null is an output/validator mismatch, not currently a prompt-permitted response."
+  ]
+}

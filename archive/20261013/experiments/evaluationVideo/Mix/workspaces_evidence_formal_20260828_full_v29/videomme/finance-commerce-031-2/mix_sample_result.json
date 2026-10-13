@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:finance-commerce:031-2",
+  "dataset_name": "videomme",
+  "subset_name": "Finance & Commerce",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 12,
+  "iter_num": 20,
+  "tool_success_rate": 0.666667,
+  "successful_tool_calls": 8,
+  "planner_iterations": 20,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 5624.236,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/finance-commerce-031-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/finance-commerce-031-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/finance-commerce-031-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/finance-commerce-031-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/TPS22HRRY1k.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/TPS22HRRY1k.mp4",
+  "question_block": "Question: Which best summarizes the content of the video?\nOptions:\n(A) The process of registering a new mutual fund with the regulator and the associated legal requirements.\n(B) A basic explanation of what mutual funds are, and how they work.\n(C) A basic explanation of what national debts are, how they work and some key terms management.\n(D) The benefits and risks of investing in mutual funds as compared to other investment options such as individual stocks and bonds.",
+  "options": [
+    "A. The process of registering a new mutual fund with the regulator and the associated legal requirements.",
+    "B. A basic explanation of what mutual funds are, and how they work.",
+    "C. A basic explanation of what national debts are, how they work and some key terms management.",
+    "D. The benefits and risks of investing in mutual funds as compared to other investment options such as individual stocks and bonds."
+  ],
+  "official_meta": {
+    "video_id": "031",
+    "video_external_id": "TPS22HRRY1k",
+    "resolved_video_stem": "TPS22HRRY1k",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Knowledge",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Finance & Commerce",
+    "task_type": "Information Synopsis",
+    "question_id": "031-2",
+    "question_index": 1,
+    "video_item_index": 30,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-02T13:23:07.465098Z"
+}

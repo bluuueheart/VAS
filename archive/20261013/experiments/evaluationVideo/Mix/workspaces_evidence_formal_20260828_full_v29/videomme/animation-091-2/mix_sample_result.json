@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:animation:091-2",
+  "dataset_name": "videomme",
+  "subset_name": "Animation",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 10,
+  "iter_num": 13,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 10,
+  "planner_iterations": 13,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 3890.092,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/animation-091-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/animation-091-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/animation-091-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/animation-091-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/_aVHf_jmWk8.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/_aVHf_jmWk8.mp4",
+  "question_block": "Question: How many times does the butterfly occur in this video?\nOptions:\n(A) 3.\n(B) 4.\n(C) 5.\n(D) 6.",
+  "options": [
+    "A. 3.",
+    "B. 4.",
+    "C. 5.",
+    "D. 6."
+  ],
+  "official_meta": {
+    "video_id": "091",
+    "video_external_id": "_aVHf_jmWk8",
+    "resolved_video_stem": "_aVHf_jmWk8",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Film & Television",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Animation",
+    "task_type": "Counting Problem",
+    "question_id": "091-2",
+    "question_index": 1,
+    "video_item_index": 90,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-03T17:30:38.654353Z"
+}

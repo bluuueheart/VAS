@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:key-information-retrieval:214:1666",
+  "dataset_name": "lvbench",
+  "subset_name": "key information retrieval",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "United Kingdom",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00214-1666",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00214-1666/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00214-1666/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00214-1666/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/t-RtDI2RWQs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/t-RtDI2RWQs.mp4",
+  "question_block": "Question: What is the nationality of the filmmaker who directs the Best International Feature Film?\nOptions:\n(A) Italy\n(B) Japan\n(C) Spain\n(D) United Kingdom",
+  "options": [
+    "Italy",
+    "Japan",
+    "Spain",
+    "United Kingdom"
+  ],
+  "official_meta": {
+    "question_type": "key information retrieval",
+    "video_type": "live",
+    "time_reference": "35:33-36:44",
+    "video_key": "t-RtDI2RWQs",
+    "source_index": 214
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:47:29.283619Z"
+}

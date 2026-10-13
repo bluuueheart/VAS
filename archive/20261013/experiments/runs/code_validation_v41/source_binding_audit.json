@@ -1,0 +1,25 @@
+{
+  "slot": {
+    "source_tool": "Inspect_Frame",
+    "citation": "frame_that_does_not_exist.jpg at 9999 seconds",
+    "time_window": [
+      9998,
+      10000
+    ]
+  },
+  "observations": [
+    {
+      "tool": "Inspect_Frame",
+      "status": "success",
+      "t_start": 0,
+      "t_end": 10,
+      "image_evidence": [
+        {
+          "image": "/actual_frame.jpg"
+        }
+      ]
+    }
+  ],
+  "accepted_by_current_source_binding": true,
+  "scope": "Unmodified production function with all real helpers; no model calls."
+}

@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:order:9:order-115",
+  "dataset_name": "mlvu",
+  "subset_name": "order",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "3->2->4->1",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00009-order-115",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00009-order-115/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00009-order-115/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00009-order-115/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_115.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_115.mp4",
+  "question_block": "Question: Arrange the following events from the video in the correct chronological order: (1)A lady in black reads names a man hands her and passes out prize buckets to the kids; (2)A group of kids is building a moat filled with water around a sand castle; (3)We see an opening title screen; (4)We see kids across the beach working on their castles in the wet sand.\nOptions:\n(A) 3->2->4->1\n(B) 4->1->2->3\n(C) 2->3->1->4\n(D) 1->4->2->3",
+  "options": [
+    "3->2->4->1",
+    "4->1->2->3",
+    "2->3->1->4",
+    "1->4->2->3"
+  ],
+  "official_meta": {
+    "task_type": "order",
+    "source_json": "5_order.json",
+    "source_index": 9,
+    "video_subdir": "5_order",
+    "video_relative_path": "5_order/order_115.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:45:34.775921Z"
+}

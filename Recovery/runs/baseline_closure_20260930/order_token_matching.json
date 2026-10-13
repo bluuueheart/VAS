@@ -1,0 +1,118 @@
+[
+  {
+    "claim_id": "order:4_3",
+    "text": "pictures of woman in her bikini are shown event 3 (sit-ups) occurs before event 4 (bikini pictures) in the clip 390-480s",
+    "event_matching_positions": {
+      "1": [
+        [
+          12,
+          "woman"
+        ]
+      ],
+      "2": [
+        [
+          12,
+          "woman"
+        ]
+      ],
+      "3": [
+        [
+          12,
+          "woman"
+        ],
+        [
+          51,
+          "sit"
+        ],
+        [
+          55,
+          "ups"
+        ]
+      ],
+      "4": [
+        [
+          0,
+          "picture"
+        ],
+        [
+          12,
+          "woman"
+        ],
+        [
+          25,
+          "bikini"
+        ],
+        [
+          36,
+          "shown"
+        ]
+      ]
+    }
+  },
+  {
+    "claim_id": "order_2_vs_3",
+    "text": "chronological_order woman does sit ups on a towel on the beach (3) occurs before woman starts boxing in the ring with a guy (2)",
+    "event_matching_positions": {
+      "1": [
+        [
+          20,
+          "woman"
+        ]
+      ],
+      "2": [
+        [
+          20,
+          "woman"
+        ],
+        [
+          87,
+          "start"
+        ],
+        [
+          94,
+          "box"
+        ],
+        [
+          108,
+          "ring"
+        ],
+        [
+          120,
+          "guy"
+        ]
+      ],
+      "3": [
+        [
+          20,
+          "woman"
+        ],
+        [
+          26,
+          "doe"
+        ],
+        [
+          31,
+          "sit"
+        ],
+        [
+          35,
+          "ups"
+        ],
+        [
+          44,
+          "towel"
+        ],
+        [
+          57,
+          "beach"
+        ]
+      ],
+      "4": [
+        [
+          20,
+          "woman"
+        ]
+      ]
+    }
+  }
+]

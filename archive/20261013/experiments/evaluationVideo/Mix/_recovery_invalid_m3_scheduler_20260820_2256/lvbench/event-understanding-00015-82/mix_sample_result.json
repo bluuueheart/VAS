@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:event-understanding:15:82",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "One of the chopsticks on the bowl falls to the table",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00015-82",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00015-82/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00015-82/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00015-82/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: When the protagonist moves the table at the restaurant, what happens to the things on the table?\nOptions:\n(A) One of the chopsticks on the bowl falls to the table\n(B) One of the chopsticks on the bowl falls to the floor\n(C) The seasoning bottle falls\n(D) The bowl falls to the floor",
+  "options": [
+    "One of the chopsticks on the bowl falls to the table",
+    "One of the chopsticks on the bowl falls to the floor",
+    "The seasoning bottle falls",
+    "The bowl falls to the floor"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "04:35-04:42",
+    "video_key": "Cm73ma6Ibcs",
+    "source_index": 15
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:43:11.759876Z"
+}

@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:event-understanding:7:68",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 8,
+  "iter_num": 10,
+  "tool_success_rate": 0.75,
+  "successful_tool_calls": 6,
+  "planner_iterations": 10,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "A child hits her head with noodles",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) A man kneels beside her",
+  "elapsed_seconds": 800.543,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/lvbench/event-understanding-00007-68",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/lvbench/event-understanding-00007-68/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/lvbench/event-understanding-00007-68/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/lvbench/event-understanding-00007-68/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: What happens when the woman wearing a red kimono kneels?\nOptions:\n(A) A child rides on her back\n(B) A man kneels beside her\n(C) A man takes out his sword\n(D) A child hits her head with noodles",
+  "options": [
+    "A child rides on her back",
+    "A man kneels beside her",
+    "A man takes out his sword",
+    "A child hits her head with noodles"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "26:10-26:16",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "Cm73ma6Ibcs",
+    "resolved_video_stem": "Cm73ma6Ibcs",
+    "video_mapping_verified": true,
+    "source_index": 7
+  },
+  "updated_at": "2026-09-13T09:27:33.555335Z"
+}

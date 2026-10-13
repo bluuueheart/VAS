@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:acrobatics:211-3",
+  "dataset_name": "videomme",
+  "subset_name": "Acrobatics",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 2,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 2,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "A",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) Pink",
+  "elapsed_seconds": 371.059,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/acrobatics-211-3",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/acrobatics-211-3/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/acrobatics-211-3/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/acrobatics-211-3/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/lNO6cYxqMZk.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/lNO6cYxqMZk.mp4",
+  "question_block": "Question: What is the color of the woman's nails?\nOptions:\n(A) Pink.\n(B) Blue.\n(C) White.\n(D) Black.",
+  "options": [
+    "A. Pink.",
+    "B. Blue.",
+    "C. White.",
+    "D. Black."
+  ],
+  "official_meta": {
+    "video_id": "211",
+    "video_external_id": "lNO6cYxqMZk",
+    "resolved_video_stem": "lNO6cYxqMZk",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Artistic Performance",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Acrobatics",
+    "task_type": "Attribute Perception",
+    "question_id": "211-3",
+    "question_index": 2,
+    "video_item_index": 210,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-10T07:45:28.070433Z"
+}

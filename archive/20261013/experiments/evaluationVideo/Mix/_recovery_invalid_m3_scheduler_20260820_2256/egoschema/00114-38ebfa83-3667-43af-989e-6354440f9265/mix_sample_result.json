@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00114:38ebfa83-3667-43af-989e-6354440f9265",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "To complete a written task.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00114-38ebfa83-3667-43af-989e-6354440f9265",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00114-38ebfa83-3667-43af-989e-6354440f9265/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00114-38ebfa83-3667-43af-989e-6354440f9265/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00114-38ebfa83-3667-43af-989e-6354440f9265/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/38ebfa83-3667-43af-989e-6354440f9265.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/38ebfa83-3667-43af-989e-6354440f9265.mp4",
+  "question_block": "Question: In the context of the entire video, what was the main objective of c's interactions with the pen, book, and table?\nOptions:\n(A) To organize the pen, book, and table.\n(B) To complete a written task.\n(C) To take a break from reading.\n(D) To get ready to write.\n(E) To write a letter.",
+  "options": [
+    "To organize the pen, book, and table.",
+    "To complete a written task.",
+    "To take a break from reading.",
+    "To get ready to write.",
+    "To write a letter."
+  ],
+  "official_meta": {
+    "question_index": "00114",
+    "video_id": "38ebfa83-3667-43af-989e-6354440f9265",
+    "source_index": 114
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:47:27.871732Z"
+}

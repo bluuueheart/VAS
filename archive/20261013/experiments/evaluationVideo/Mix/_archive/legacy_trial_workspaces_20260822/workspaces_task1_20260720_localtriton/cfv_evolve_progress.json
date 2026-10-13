@@ -1,0 +1,20 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-07-20T07:26:28.778033Z",
+  "records": {
+    "mlvu:plotqa:1:xiaoliyu-6": {
+      "sample_uid": "mlvu:plotqa:1:xiaoliyu-6",
+      "dataset_name": "mlvu",
+      "subset_name": "plotQA",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 2,
+      "iter_num": 4,
+      "tool_success_rate": 0.5,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_task1_20260720_localtriton/mlvu/plotqa-00001-xiaoliyu-6/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_task1_20260720_localtriton/mlvu/plotqa-00001-xiaoliyu-6",
+      "updated_at": "2026-07-20T07:26:28.777078Z"
+    }
+  }
+}

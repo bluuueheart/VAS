@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00040:0f9d1d44-8a15-4135-a77e-d64064afc1e4",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The two most important moments in the video are when c picks up the plant and when c puts the plant in the tin. these are the two actions that are directly related to watering the plant.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00040-0f9d1d44-8a15-4135-a77e-d64064afc1e4",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00040-0f9d1d44-8a15-4135-a77e-d64064afc1e4/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00040-0f9d1d44-8a15-4135-a77e-d64064afc1e4/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00040-0f9d1d44-8a15-4135-a77e-d64064afc1e4/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0f9d1d44-8a15-4135-a77e-d64064afc1e4.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0f9d1d44-8a15-4135-a77e-d64064afc1e4.mp4",
+  "question_block": "Question: Identify the two most important moments in the video that are critical to achieving the key objective, and provide a brief rationale for why you chose them. remember to compress the information and avoid simply listing actions.\nOptions:\n(A) The two most important moments in the video are when c mixes soil in a basin and when c puts the plant in the basin. these are the two actions that are directly related to repotting the plant.\n(B) The two most important moments in the video are when c closes a window and when c opens a window. these are the two actions that are directly related to adjusting the temperature of the room.\n(C) The two most important moments in the video are when c puts on a sweater and when c closes a door. these are the two actions that are directly related to getting warm.\n(D) The two most important moments in the video are when c walks towards a laptop and when c opens a laptop. these are the two actions that are directly related to checking the weather forecast.\n(E) The two most important moments in the video are when c picks up the plant and when c puts the plant in the tin. these are the two actions that are directly related to watering the plant.",
+  "options": [
+    "The two most important moments in the video are when c mixes soil in a basin and when c puts the plant in the basin. these are the two actions that are directly related to repotting the plant.",
+    "The two most important moments in the video are when c closes a window and when c opens a window. these are the two actions that are directly related to adjusting the temperature of the room.",
+    "The two most important moments in the video are when c puts on a sweater and when c closes a door. these are the two actions that are directly related to getting warm.",
+    "The two most important moments in the video are when c walks towards a laptop and when c opens a laptop. these are the two actions that are directly related to checking the weather forecast.",
+    "The two most important moments in the video are when c picks up the plant and when c puts the plant in the tin. these are the two actions that are directly related to watering the plant."
+  ],
+  "official_meta": {
+    "question_index": "00040",
+    "video_id": "0f9d1d44-8a15-4135-a77e-d64064afc1e4",
+    "source_index": 40
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=255 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-22T18:53:18.307248Z"
+}

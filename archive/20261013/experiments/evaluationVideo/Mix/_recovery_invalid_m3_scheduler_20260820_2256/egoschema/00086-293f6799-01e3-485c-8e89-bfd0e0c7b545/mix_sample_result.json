@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00086:293f6799-01e3-485c-8e89-bfd0e0c7b545",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The significance of the chocolate drinking and card-dice interactions in terms of building a central theme or narrative is that they show how the players are trying to relax and have fun while they are playing the game. the chocolate drinking shows that the players are enjoying themselves, and the card-dice interactions show that they are taking the game seriously.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00086-293f6799-01e3-485c-8e89-bfd0e0c7b545",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00086-293f6799-01e3-485c-8e89-bfd0e0c7b545/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00086-293f6799-01e3-485c-8e89-bfd0e0c7b545/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00086-293f6799-01e3-485c-8e89-bfd0e0c7b545/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/293f6799-01e3-485c-8e89-bfd0e0c7b545.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/293f6799-01e3-485c-8e89-bfd0e0c7b545.mp4",
+  "question_block": "Question: Considering the entire video, discuss the significance of the chocolate drinking and card-dice interactions in terms of building a central theme or narrative.\nOptions:\n(A) The significance of the chocolate drinking and card-dice interactions in terms of building a central theme or narrative is that they show how the players are trying to compete against each other. the chocolate drinking shows that the players are determined to win, and the card-dice interactions show that they are using all of their skills to try to do so.\n(B) The significance of the chocolate drinking and card-dice interactions in terms of building a central theme or narrative is that they show how the players are trying to relax and have fun while they are playing the game. the chocolate drinking shows that the players are enjoying themselves, and the card-dice interactions show that they are taking the game seriously.\n(C) The significance of the chocolate drinking and card-dice interactions in terms of building a central theme or narrative is that they show how the players are trying to communicate with each other. the chocolate drinking shows that the players are open to sharing their thoughts and feelings, and the card-dice interactions show that they are willing to listen to each other's ideas.\n(D) The significance of the chocolate drinking and card-dice interactions in terms of building a central theme or narrative is that they show how the players are trying to connect with each other. the chocolate drinking shows that the players are interested in getting to know each other better, and the card-dice interactions show that they are willing to work together to achieve a common goal.\n(E) The significance of the chocolate drinking and card-dice interactions in terms of building a central theme or narrative is that they show how the players are trying to escape from reality. the chocolate drinking shows that the players are looking for a way to relax and forget about their problems, and the card-dice interactions show that they are trying to create a world of their own where they can be whoever they want to be.",
+  "options": [
+    "The significance of the chocolate drinking and card-dice interactions in terms of building a central theme or narrative is that they show how the players are trying to compete against each other. the chocolate drinking shows that the players are determined to win, and the card-dice interactions show that they are using all of their skills to try to do so.",
+    "The significance of the chocolate drinking and card-dice interactions in terms of building a central theme or narrative is that they show how the players are trying to relax and have fun while they are playing the game. the chocolate drinking shows that the players are enjoying themselves, and the card-dice interactions show that they are taking the game seriously.",
+    "The significance of the chocolate drinking and card-dice interactions in terms of building a central theme or narrative is that they show how the players are trying to communicate with each other. the chocolate drinking shows that the players are open to sharing their thoughts and feelings, and the card-dice interactions show that they are willing to listen to each other's ideas.",
+    "The significance of the chocolate drinking and card-dice interactions in terms of building a central theme or narrative is that they show how the players are trying to connect with each other. the chocolate drinking shows that the players are interested in getting to know each other better, and the card-dice interactions show that they are willing to work together to achieve a common goal.",
+    "The significance of the chocolate drinking and card-dice interactions in terms of building a central theme or narrative is that they show how the players are trying to escape from reality. the chocolate drinking shows that the players are looking for a way to relax and forget about their problems, and the card-dice interactions show that they are trying to create a world of their own where they can be whoever they want to be."
+  ],
+  "official_meta": {
+    "question_index": "00086",
+    "video_id": "293f6799-01e3-485c-8e89-bfd0e0c7b545",
+    "source_index": 86
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:45:54.826733Z"
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "case": "entity-recognition-00016-83",
+    "scope": "recorded first-Finish evidence, no fresh inference",
+    "slot_count": 2,
+    "independent": true,
+    "verification": {
+      "progress_score": 0.8,
+      "claim_coverage": 1.0,
+      "direct_grounding": 1.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": true,
+      "premise_mismatch": false,
+      "option_mismatch": false,
+      "missing_information": [],
+      "unresolved_claims": [],
+      "claim_contract": {
+        "status": "pass",
+        "required": [
+          "comparison",
+          "evidence_redundancy"
+        ],
+        "satisfied": {
+          "comparison": true,
+          "evidence_redundancy": true
+        },
+        "missing": [],
+        "verified_claim_count": 2,
+        "contract_version": 1
+      },
+      "feedback": "Evidence verifier accepted termination."
+    }
+  },
+  {
+    "case": "entity-recognition-00039-208",
+    "scope": "recorded first-Finish evidence, no fresh inference",
+    "slot_count": 1,
+    "independent": false,
+    "verification": {
+      "progress_score": 0.8,
+      "claim_coverage": 1.0,
+      "direct_grounding": 1.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": true,
+      "premise_mismatch": false,
+      "option_mismatch": false,
+      "missing_information": [],
+      "unresolved_claims": [],
+      "claim_contract": {
+        "status": "pass",
+        "required": [],
+        "satisfied": {},
+        "missing": [],
+        "verified_claim_count": 1,
+        "contract_version": 1
+      },
+      "feedback": "Evidence verifier accepted termination."
+    }
+  }
+]

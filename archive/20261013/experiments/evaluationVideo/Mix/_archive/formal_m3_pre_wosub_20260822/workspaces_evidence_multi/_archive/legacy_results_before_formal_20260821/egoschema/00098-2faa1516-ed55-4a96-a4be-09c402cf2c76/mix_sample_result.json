@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00098:2faa1516-ed55-4a96-a4be-09c402cf2c76",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "To make cotton wool balls.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00098-2faa1516-ed55-4a96-a4be-09c402cf2c76",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00098-2faa1516-ed55-4a96-a4be-09c402cf2c76/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00098-2faa1516-ed55-4a96-a4be-09c402cf2c76/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00098-2faa1516-ed55-4a96-a4be-09c402cf2c76/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/2faa1516-ed55-4a96-a4be-09c402cf2c76.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/2faa1516-ed55-4a96-a4be-09c402cf2c76.mp4",
+  "question_block": "Question: What is the overall objective of the actions performed by c throughout this video?\nOptions:\n(A) To make a cotton wool sculpture.\n(B) To make a cotton wool hat.\n(C) To make cotton wool balls.\n(D) To make a cotton wool wig.\n(E) To make a cotton wool beard.",
+  "options": [
+    "To make a cotton wool sculpture.",
+    "To make a cotton wool hat.",
+    "To make cotton wool balls.",
+    "To make a cotton wool wig.",
+    "To make a cotton wool beard."
+  ],
+  "official_meta": {
+    "question_index": "00098",
+    "video_id": "2faa1516-ed55-4a96-a4be-09c402cf2c76",
+    "source_index": 98
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:24:19.407871Z"
+}

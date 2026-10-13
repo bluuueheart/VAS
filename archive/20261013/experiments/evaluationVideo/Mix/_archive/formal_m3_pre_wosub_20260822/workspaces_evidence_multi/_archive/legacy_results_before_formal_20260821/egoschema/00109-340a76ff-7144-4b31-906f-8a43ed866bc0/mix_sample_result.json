@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00109:340a76ff-7144-4b31-906f-8a43ed866bc0",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "A man makes dough using a spiral mixer.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00109-340a76ff-7144-4b31-906f-8a43ed866bc0",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00109-340a76ff-7144-4b31-906f-8a43ed866bc0/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00109-340a76ff-7144-4b31-906f-8a43ed866bc0/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00109-340a76ff-7144-4b31-906f-8a43ed866bc0/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/340a76ff-7144-4b31-906f-8a43ed866bc0.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/340a76ff-7144-4b31-906f-8a43ed866bc0.mp4",
+  "question_block": "Question: Describe the primary purpose of this video in a single, concise statement.\nOptions:\n(A) In his kitchen, a man skillfully makes a cake from scratch.\n(B) A man makes bread.\n(C) A man skillfully prepares and bakes delicious pizza.\n(D) In the kitchen, a man skillfully prepares and bakes delicious cookies.\n(E) A man makes dough using a spiral mixer.",
+  "options": [
+    "In his kitchen, a man skillfully makes a cake from scratch.",
+    "A man makes bread.",
+    "A man skillfully prepares and bakes delicious pizza.",
+    "In the kitchen, a man skillfully prepares and bakes delicious cookies.",
+    "A man makes dough using a spiral mixer."
+  ],
+  "official_meta": {
+    "question_index": "00109",
+    "video_id": "340a76ff-7144-4b31-906f-8a43ed866bc0",
+    "source_index": 109
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:25:06.927642Z"
+}

@@ -1,0 +1,3 @@
+2026-09-22 22:38:58,384 INFO Video-MME subtitle mode=w/o sub.; external dataset subtitles are not loaded.
+2026-09-22 22:39:01,818 WARNING Skipped 2 malformed MLVU samples task_type=ego source_json=3_ego.json examples=['record_index=119 video=ego_26.mp4 error=MLVU candidates contain empty option slots at indices 2.', 'record_index=313 video=ego_81.mp4 error=MLVU candidates contain empty option slots at indices 3.']
+2026-09-22 22:39:03,035 WARNING Skipped 1 malformed MLVU samples task_type=plotQA source_json=1_plotQA.json examples=['record_index=23 video=movie101_5.mp4 error=MLVU candidates contain empty option slots at indices 0, 3.']

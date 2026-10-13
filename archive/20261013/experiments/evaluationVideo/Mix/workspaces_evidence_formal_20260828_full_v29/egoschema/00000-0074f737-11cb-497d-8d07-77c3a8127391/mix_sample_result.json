@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 3,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 3,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C is cleaning dishes.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) C is cleaning dishes.",
+  "elapsed_seconds": 187.684,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0074f737-11cb-497d-8d07-77c3a8127391.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0074f737-11cb-497d-8d07-77c3a8127391.mp4",
+  "question_block": "Question: Taking into account all the actions performed by c, what can you deduce about the primary objective and focus within the video content?\nOptions:\n(A) C is cooking.\n(B) C is doing laundry.\n(C) C is cleaning the kitchen.\n(D) C is cleaning dishes.\n(E) C is cleaning the bathroom.",
+  "options": [
+    "C is cooking.",
+    "C is doing laundry.",
+    "C is cleaning the kitchen.",
+    "C is cleaning dishes.",
+    "C is cleaning the bathroom."
+  ],
+  "official_meta": {
+    "question_index": "00000",
+    "video_id": "0074f737-11cb-497d-8d07-77c3a8127391",
+    "resolved_video_stem": "0074f737-11cb-497d-8d07-77c3a8127391",
+    "video_mapping_verified": true,
+    "source_index": 0,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-28T08:40:43.722556Z"
+}

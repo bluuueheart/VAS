@@ -31,6 +31,13 @@ VECTOR_STORE_SERVICE_BACKEND = "openai_compatible_text_embedding_dense_v1"
 VECTOR_STORE_BACKEND = VECTOR_STORE_LOCAL_BACKEND
 
 
+def _env_flag(name: str, default: bool = True) -> bool:
+    raw = str(os.environ.get(name, "") if name in os.environ else "").strip().lower()
+    if not raw:
+        return bool(default)
+    return raw not in {"0", "false", "no", "off"}
+
+
 def _time_to_seconds(value: Any) -> Optional[float]:
     if value is None:
         return None
@@ -261,6 +268,7 @@ class Qwen3VLEmbeddingGenerator:
         payload = dict(modal_payload or {})
         vectors: Dict[str, torch.Tensor] = {}
         processed_root = payload.get("processed_root")
+        index_video = _env_flag("TOOLSTAR_SEMANTIC_INDEX_VIDEO", default=True)
 
         frame_paths = [
             resolved
@@ -274,7 +282,7 @@ class Qwen3VLEmbeddingGenerator:
             )
             if resolved and Path(resolved).exists()
         ]
-        if frame_paths:
+        if frame_paths and index_video:
             vectors["video"] = self.runtime.encode_images(frame_paths)
 
         segment_video_path = _resolve_processed_asset_path(
@@ -282,7 +290,7 @@ class Qwen3VLEmbeddingGenerator:
             video_name=str(payload.get("video_name") or payload.get("video") or "").strip() or None,
             processed_root=processed_root,
         )
-        if segment_video_path and "video" not in vectors:
+        if segment_video_path and index_video and "video" not in vectors:
             vectors["video"] = self.runtime.encode_video(segment_video_path)
 
         caption = " ".join(str(payload.get("caption", "")).split()).strip()
@@ -292,6 +300,17 @@ class Qwen3VLEmbeddingGenerator:
         transcript = " ".join(str(payload.get("transcript", "")).split()).strip()
         if transcript:
             vectors["asr"] = self.runtime.encode_text(transcript)
+
+        # Formal batch runs can index the persisted caption/transcript text
+        # while retaining frame paths as returned evidence.  If a segment has
+        # no textual grounding at all, preserve a last-resort visual vector so
+        # the original Semantic_Retrieve contract does not disappear silently.
+        if not vectors and not index_video and frame_paths:
+            logger.warning(
+                "Semantic index has no text for segment=%s; falling back to one visual vector.",
+                payload.get("segment_id") or payload.get("segment_ref") or "unknown",
+            )
+            vectors["video"] = self.runtime.encode_images(frame_paths[:1])
 
         return vectors
 
@@ -451,6 +470,10 @@ class VideoSegmentVectorStore:
                 device=device,
                 accelerator_lock=local_accelerator_lock,
             )
+        logger.info(
+            "Semantic dense index policy video_modality=%s text_modalities=caption,transcript",
+            _env_flag("TOOLSTAR_SEMANTIC_INDEX_VIDEO", default=True),
+        )
         self.vector_store = DenseVectorStore(
             device=device or "cpu",
             backend=getattr(self.embedding_generator, "backend", VECTOR_STORE_LOCAL_BACKEND),
@@ -501,7 +524,8 @@ class VideoSegmentVectorStore:
         processed_root: Optional[str] = None,
     ) -> None:
         self.vector_store.clear()
-        for seg_id, seg_data in segments.items():
+        total_segments = len(segments)
+        for position, (seg_id, seg_data) in enumerate(segments.items(), start=1):
             payload = self._build_segment_payload(
                 str(seg_id),
                 seg_data or {},
@@ -520,6 +544,13 @@ class VideoSegmentVectorStore:
                 "indexed_modalities": sorted(vectors.keys()),
             }
             self.vector_store.add_document(vectors=vectors, metadata=metadata)
+            if position == 1 or position == total_segments or position % 10 == 0:
+                logger.info(
+                    "Vector index progress video=%s segments=%s/%s",
+                    video_name,
+                    position,
+                    total_segments,
+                )
 
     def search_segments(
         self,
@@ -529,6 +560,11 @@ class VideoSegmentVectorStore:
     ) -> List[Dict[str, Any]]:
         query_vector = self.embedding_generator.encode_query(query)
         return self.vector_store.search(query_vector, k=k, time_range=time_range)
+
+    @property
+    def document_count(self) -> int:
+        """Number of indexed segment documents currently loaded."""
+        return len(self.vector_store.metadata)
 
     def save(self, save_dir: str) -> None:
         self.vector_store.save(save_dir)

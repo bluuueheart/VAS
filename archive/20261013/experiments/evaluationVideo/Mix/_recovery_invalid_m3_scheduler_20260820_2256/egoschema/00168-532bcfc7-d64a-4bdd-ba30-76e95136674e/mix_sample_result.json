@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00168:532bcfc7-d64a-4bdd-ba30-76e95136674e",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C uses his left hand to hold branches and his right hand to use the pliers and cutter. he also uses both hands to pull branches out of the way.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00168-532bcfc7-d64a-4bdd-ba30-76e95136674e",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00168-532bcfc7-d64a-4bdd-ba30-76e95136674e/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00168-532bcfc7-d64a-4bdd-ba30-76e95136674e/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00168-532bcfc7-d64a-4bdd-ba30-76e95136674e/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/532bcfc7-d64a-4bdd-ba30-76e95136674e.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/532bcfc7-d64a-4bdd-ba30-76e95136674e.mp4",
+  "question_block": "Question: Summarize and compare the techniques used by c to cut branches and interact with the environment, explaining the significance of using his left and right hands as well as both hands together.\nOptions:\n(A) C uses his left hand to hold branches and his right hand to use the pliers and cutter. he also uses both hands to pull branches out of the way.\n(B) While working, c uses his left hand to hold branches securely and his right hand to skillfully utilize the pliers and cutter. additionally, he resourcefully uses his feet to pull obstructing branches out of the way.\n(C) C skillfully uses his dominant right hand to grasp branches firmly, and his left hand to expertly wield the pliers and cutter. additionally, he cleverly employs his feet to pull any obstructive branches out of the way.\n(D) C uses both hands to hold branches and his feet to use the pliers and cutter.\n(E) Cleverly, c utilizes his feet to firmly hold branches, while skillfully employing his hands to effectively operate the pliers and cutter.",
+  "options": [
+    "C uses his left hand to hold branches and his right hand to use the pliers and cutter. he also uses both hands to pull branches out of the way.",
+    "While working, c uses his left hand to hold branches securely and his right hand to skillfully utilize the pliers and cutter. additionally, he resourcefully uses his feet to pull obstructing branches out of the way.",
+    "C skillfully uses his dominant right hand to grasp branches firmly, and his left hand to expertly wield the pliers and cutter. additionally, he cleverly employs his feet to pull any obstructive branches out of the way.",
+    "C uses both hands to hold branches and his feet to use the pliers and cutter.",
+    "Cleverly, c utilizes his feet to firmly hold branches, while skillfully employing his hands to effectively operate the pliers and cutter."
+  ],
+  "official_meta": {
+    "question_index": "00168",
+    "video_id": "532bcfc7-d64a-4bdd-ba30-76e95136674e",
+    "source_index": 168
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:51:04.854911Z"
+}

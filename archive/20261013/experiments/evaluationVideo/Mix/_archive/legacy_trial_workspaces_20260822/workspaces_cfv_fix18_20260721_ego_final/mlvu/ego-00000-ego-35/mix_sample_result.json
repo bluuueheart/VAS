@@ -1,0 +1,44 @@
+{
+  "sample_uid": "mlvu:ego:0:ego-35",
+  "dataset_name": "mlvu",
+  "subset_name": "ego",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 1,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 1,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "ground_truth": "a lemon green sponge",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) a lemon green sponge",
+  "elapsed_seconds": 220.679,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_fix18_20260721_ego_final/mlvu/ego-00000-ego-35",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_fix18_20260721_ego_final/mlvu/ego-00000-ego-35/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_fix18_20260721_ego_final/mlvu/ego-00000-ego-35/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_fix18_20260721_ego_final/mlvu/ego-00000-ego-35/results/run_result.json",
+  "source_video_path": "/gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/3_ego/ego_35.mp4",
+  "prepared_video_path": "/gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/3_ego/ego_35.mp4",
+  "question_block": "Question: What did I put in the orange trashcan \nOptions:\n(A) a lemon green sponge\n(B) a blue pen\n(C) a red apple\n(D) a yellow banana",
+  "options": [
+    "a lemon green sponge",
+    "a blue pen",
+    "a red apple",
+    "a yellow banana"
+  ],
+  "official_meta": {
+    "task_type": "ego",
+    "source_json": "3_ego.json",
+    "source_index": 0,
+    "video_subdir": "3_ego",
+    "video_relative_path": "3_ego/ego_35.mp4",
+    "data_type": "video"
+  },
+  "updated_at": "2026-07-21T05:35:09.785634Z"
+}

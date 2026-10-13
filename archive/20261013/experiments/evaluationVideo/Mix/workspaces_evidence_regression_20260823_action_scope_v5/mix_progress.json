@@ -1,0 +1,20 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-08-22T22:55:19.168507Z",
+  "records": {
+    "videomme:literature-art:011-1": {
+      "sample_uid": "videomme:literature-art:011-1",
+      "dataset_name": "videomme",
+      "subset_name": "Literature & Art",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 2,
+      "iter_num": 4,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260823_action_scope_v5/videomme/literature-art-011-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260823_action_scope_v5/videomme/literature-art-011-1",
+      "updated_at": "2026-08-22T22:55:19.168436Z"
+    }
+  }
+}

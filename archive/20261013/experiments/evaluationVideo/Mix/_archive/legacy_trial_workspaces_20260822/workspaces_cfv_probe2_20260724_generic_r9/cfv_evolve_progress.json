@@ -1,0 +1,33 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-07-23T21:37:01.192263Z",
+  "records": {
+    "mlvu:ego:0:ego-35": {
+      "sample_uid": "mlvu:ego:0:ego-35",
+      "dataset_name": "mlvu",
+      "subset_name": "ego",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 14,
+      "iter_num": 15,
+      "tool_success_rate": 0.785714,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r9/mlvu/ego-00000-ego-35/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r9/mlvu/ego-00000-ego-35",
+      "updated_at": "2026-07-23T21:30:21.491179Z"
+    },
+    "mlvu:order:0:order-126": {
+      "sample_uid": "mlvu:order:0:order-126",
+      "dataset_name": "mlvu",
+      "subset_name": "order",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 5,
+      "iter_num": 6,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r9/mlvu/order-00000-order-126/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r9/mlvu/order-00000-order-126",
+      "updated_at": "2026-07-23T21:37:01.191123Z"
+    }
+  }
+}

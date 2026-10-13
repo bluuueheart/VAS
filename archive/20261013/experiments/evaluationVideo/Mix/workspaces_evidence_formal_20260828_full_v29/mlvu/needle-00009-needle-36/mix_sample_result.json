@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:needle:9:needle-36",
+  "dataset_name": "mlvu",
+  "subset_name": "needle",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 14,
+  "iter_num": 18,
+  "tool_success_rate": 0.285714,
+  "successful_tool_calls": 4,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "Top down aerial view",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 4484.491,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00009-needle-36",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00009-needle-36/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00009-needle-36/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00009-needle-36/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_36.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_36.mp4",
+  "question_block": "Question: What type of view is provided of the tropical beach in the video?\nOptions:\n(A) Close-up view\n(B) Bottom-up view\n(C) Top down aerial view\n(D) Side view",
+  "options": [
+    "Close-up view",
+    "Bottom-up view",
+    "Top down aerial view",
+    "Side view"
+  ],
+  "official_meta": {
+    "task_type": "needle",
+    "source_question_type": "findNeedle",
+    "prompt_task_type": "findNeedle",
+    "source_json": "2_needle.json",
+    "source_index": 9,
+    "video_subdir": "2_needle",
+    "video_relative_path": "2_needle/needle_36.mp4",
+    "resolved_video_stem": "needle_36",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-06T16:02:52.912771Z"
+}

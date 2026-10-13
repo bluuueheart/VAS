@@ -1,0 +1,57 @@
+{
+  "sample_uid": "mlvu:needle:0:needle-32",
+  "dataset_name": "mlvu",
+  "subset_name": "needle",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 9,
+  "iter_num": 15,
+  "tool_success_rate": 0.777778,
+  "successful_tool_calls": 7,
+  "planner_iterations": 15,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Delivers a product",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (planner_recovery_exhausted_without_verifiable_finish)",
+  "elapsed_seconds": 12147.917,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/mlvu/needle-00000-needle-32",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/mlvu/needle-00000-needle-32/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/mlvu/needle-00000-needle-32/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/mlvu/needle-00000-needle-32/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_32.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_32.mp4",
+  "question_block": "Question: What does the hand coming out of the computer do?\nOptions:\n(A) Delivers a product\n(B) Shakes the woman's hand\n(C) Takes the woman's credit card\n(D) Points at something on the screen",
+  "options": [
+    "Delivers a product",
+    "Shakes the woman's hand",
+    "Takes the woman's credit card",
+    "Points at something on the screen"
+  ],
+  "official_meta": {
+    "task_type": "needle",
+    "source_question_type": "findNeedle",
+    "prompt_task_type": "findNeedle",
+    "source_json": "2_needle.json",
+    "source_index": 0,
+    "video_subdir": "2_needle",
+    "video_relative_path": "2_needle/needle_32.mp4",
+    "resolved_video_stem": "needle_32",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-26T13:49:45.087852Z"
+}

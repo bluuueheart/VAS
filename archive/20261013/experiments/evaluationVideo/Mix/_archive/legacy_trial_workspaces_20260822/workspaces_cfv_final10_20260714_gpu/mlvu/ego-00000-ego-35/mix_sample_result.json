@@ -1,0 +1,44 @@
+{
+  "sample_uid": "mlvu:ego:0:ego-35",
+  "dataset_name": "mlvu",
+  "subset_name": "ego",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 13,
+  "iter_num": 14,
+  "tool_success_rate": 0.769231,
+  "successful_tool_calls": 10,
+  "planner_iterations": 14,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "a lemon green sponge",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: max_iterations_reached (planner_never_finished).",
+  "elapsed_seconds": 604.41,
+  "workspace_root": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/ego-00000-ego-35",
+  "launcher_log": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/ego-00000-ego-35/launcher.log",
+  "result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/ego-00000-ego-35/mix_sample_result.json",
+  "run_result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/ego-00000-ego-35/results/run_result.json",
+  "source_video_path": "/mnt/data/LiuXiao/datasets/MLVU/MLVU/video/3_ego/ego_35.mp4",
+  "prepared_video_path": "/mnt/data/LiuXiao/datasets/MLVU/MLVU/video/3_ego/ego_35.mp4",
+  "question_block": "Question: What did I put in the orange trashcan \nOptions:\n(A) a lemon green sponge\n(B) a blue pen\n(C) a red apple\n(D) a yellow banana",
+  "options": [
+    "a lemon green sponge",
+    "a blue pen",
+    "a red apple",
+    "a yellow banana"
+  ],
+  "official_meta": {
+    "task_type": "ego",
+    "source_json": "3_ego.json",
+    "source_index": 0,
+    "video_subdir": "3_ego",
+    "video_relative_path": "3_ego/ego_35.mp4",
+    "data_type": "video"
+  },
+  "updated_at": "2026-07-14T09:06:30.638729Z"
+}

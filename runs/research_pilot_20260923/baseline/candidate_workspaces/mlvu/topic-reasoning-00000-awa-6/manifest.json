@@ -1,0 +1,55 @@
+{
+  "kind": "query_run",
+  "layout_version": 2,
+  "status": "completed",
+  "run_id": "20260923-113450-346678_27443",
+  "created_at": "2026-09-23T11:34:50.362445Z",
+  "video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+  "video_slug": "awa-6-6b116824",
+  "query": "MLVU Task Type: topic_reasoning\n\nQuestion: What is the main background of the video?\nOptions:\n(A) Grassland\n(B) Lake\n(C) Ocean\n(D) Desert\n\nReply with exactly one best option in the format \"(A) option text\".",
+  "query_slug": "mlvu-task-type-topic-reasoning-question-what-is-the-main-bac",
+  "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6",
+  "query_group_dir": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6",
+  "run_workspace": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6",
+  "shared_preprocess_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache",
+  "tool_library_baseline": {
+    "baseline_id": "snapshot_000",
+    "path": "",
+    "status": "not_configured"
+  },
+  "input_contract": {
+    "video": "official_preclipped_task_video",
+    "question": "official_question_and_candidates",
+    "temporal_crop": false,
+    "timestamp_input": "none",
+    "audio": "preserved",
+    "audio_transcript": "included",
+    "external_subtitles": false,
+    "audio_track": "preserved",
+    "audio_transcript_allowed": true,
+    "annotation_fields_excluded": [
+      "answer",
+      "ground_truth",
+      "ground_truth_option",
+      "time_reference",
+      "evaluator_output"
+    ]
+  },
+  "directories": {
+    "inputs": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6/inputs",
+    "logs": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6/logs",
+    "results": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6/results",
+    "processed": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/processed/AWA-6",
+    "cache": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/_cache/AWA-6"
+  },
+  "files": {
+    "request": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6/inputs/request.json",
+    "run_log": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6/logs/run.log",
+    "raw_trace_jsonl": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6/logs/raw_llm_trace.jsonl",
+    "run_result": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6/results/run_result.json",
+    "error": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6/results/error.json"
+  },
+  "updated_at": "2026-09-23T11:36:55.182106Z",
+  "success": true,
+  "processed_output_dir": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/processed/AWA-6"
+}

@@ -1,0 +1,44 @@
+{
+  "evolution_checkpoint_evidence_tests": {
+    "passed": 92,
+    "status": "passed"
+  },
+  "previous_mix_data_metric_tests": {
+    "passed": 6,
+    "status": "passed"
+  },
+  "syntax": "passed",
+  "v35_control": {
+    "completed": 4,
+    "wrong": 1,
+    "failed": 3,
+    "attempt_accuracy": 0.5,
+    "stage_acceptance": "failed"
+  },
+  "v36": {
+    "root": "evaluationVideo/Mix/workspaces_evidence_regression_20260914_v36",
+    "online_evolution": true,
+    "trigger_every": 2,
+    "selected_samples": 8,
+    "status": "closed",
+    "acceptance": "not_passed",
+    "completed": 4,
+    "wrong": 1,
+    "failed": 3,
+    "attempt_accuracy": 0.5,
+    "closed_at": "2026-09-15 00:19:45 Asia/Shanghai",
+    "evolution_cycles": 4,
+    "published_candidates": 0,
+    "active_snapshot": "snapshot_000"
+  },
+  "limitations": [
+    "real paired suffix inference pending",
+    "prospective four-group coverage pending",
+    "no accepted candidate or measured framework improvement yet"
+  ],
+  "combined_regression_tests": {
+    "passed": 103,
+    "status": "passed",
+    "log": "runs/code_validation_v36/regression_tests.log"
+  }
+}

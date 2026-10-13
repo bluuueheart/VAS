@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00078:23c1f3cd-c790-47c0-ae6a-7e4af28b8819",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C and the man are playing chess.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00078-23c1f3cd-c790-47c0-ae6a-7e4af28b8819",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00078-23c1f3cd-c790-47c0-ae6a-7e4af28b8819/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00078-23c1f3cd-c790-47c0-ae6a-7e4af28b8819/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00078-23c1f3cd-c790-47c0-ae6a-7e4af28b8819/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/23c1f3cd-c790-47c0-ae6a-7e4af28b8819.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/23c1f3cd-c790-47c0-ae6a-7e4af28b8819.mp4",
+  "question_block": "Question: Describe the primary interaction between c and the man in the video. focus on their overall aim and activity.\nOptions:\n(A) C and the man are playing checkers.\n(B) C and the man are playing a game of tic-tac-toe.\n(C) C and the man are playing chess.\n(D) C and the man are playing a game of solitaire.\n(E) C and the man are not playing any game at all.",
+  "options": [
+    "C and the man are playing checkers.",
+    "C and the man are playing a game of tic-tac-toe.",
+    "C and the man are playing chess.",
+    "C and the man are playing a game of solitaire.",
+    "C and the man are not playing any game at all."
+  ],
+  "official_meta": {
+    "question_index": "00078",
+    "video_id": "23c1f3cd-c790-47c0-ae6a-7e4af28b8819",
+    "source_index": 78
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=255 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-22T18:55:27.832224Z"
+}

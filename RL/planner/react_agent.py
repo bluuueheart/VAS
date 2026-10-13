@@ -567,6 +567,14 @@ class ReactAgent:
             params, raw_param_keys, raw_declared = self._extract_action_params_payload(item)
             if not isinstance(tool_name, str):
                 continue
+            # Some planner responses put routing metadata beside ``params``
+            # (for example ``{"segment_id": "video_5"}``).  Preserve it so
+            # segment-relative timestamps reach the concrete visual tool.
+            for routing_key in ("segment_id", "segment_ref", "raw_segment_id", "video", "video_path"):
+                if routing_key in item and routing_key not in params and item.get(routing_key) not in (None, ""):
+                    params[routing_key] = item.get(routing_key)
+                    raw_param_keys.append(routing_key)
+                    raw_declared = True
             params = self._attach_runtime_param_metadata(params, raw_param_keys, raw_declared)
             # Preserve planner's description for subagent decomposition
             desc = item.get("description", "")
@@ -1149,12 +1157,24 @@ class ReactAgent:
                 if is_recursive:
                     any_recursive = True
                     logger.info(f"[Parallel] '{name}' is high-level (sub-agent will handle).")
-                    observations.append({name: f"[Placeholder: {name} will be implemented by sub-agent]"})
+                    observations.append({
+                        "tool": name,
+                        "status": "error",
+                        "payload": {
+                            "status": "error",
+                            "result": f"Tool '{name}' is abstract and requires concrete tool resolution.",
+                            "reason": "abstract_tool_requires_resolution",
+                        },
+                    })
                 else:
                     try:
-                        result = tool.run(**args)
+                        result = tool.execute(**args)
                         obs, _, _ = format_compact_observation(result, tool_name=name)
-                        observations.append({"tool": name, "status": "success", "payload": result})
+                        observations.append({
+                            "tool": name,
+                            "status": str(result.get("status", "no_valid_result")),
+                            "payload": result,
+                        })
                     except Exception as e:
                         error_msg = (
                             f"Error executing {name}: {str(e)}. "
@@ -1173,11 +1193,15 @@ class ReactAgent:
         if is_recursive:
             # This will be handled by the engine
             logger.info(f"Action '{action_name}' is a high-level abstraction (will trigger recursion)")
-            return f"[Placeholder: {action_name} will be implemented by sub-agent]", True
+            return json.dumps({
+                "status": "error",
+                "result": f"Tool '{action_name}' is abstract and requires concrete tool resolution.",
+                "reason": "abstract_tool_requires_resolution",
+            }, ensure_ascii=False), True
         
         # Execute the tool
         try:
-            result = tool.run(**action_args)
+            result = tool.execute(**action_args)
             
             # Convert result to string for observation
             observation, _, _ = format_compact_observation(result, tool_name=action_name)

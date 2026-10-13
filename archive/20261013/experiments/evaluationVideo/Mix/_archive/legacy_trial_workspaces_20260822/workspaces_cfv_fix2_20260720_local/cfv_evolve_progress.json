@@ -1,0 +1,33 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-07-20T09:06:03.446165Z",
+  "records": {
+    "mlvu:ego:0:ego-35": {
+      "sample_uid": "mlvu:ego:0:ego-35",
+      "dataset_name": "mlvu",
+      "subset_name": "ego",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 11,
+      "iter_num": 15,
+      "tool_success_rate": 0.636364,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_fix2_20260720_local/mlvu/ego-00000-ego-35/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_fix2_20260720_local/mlvu/ego-00000-ego-35",
+      "updated_at": "2026-07-20T08:41:12.431589Z"
+    },
+    "mlvu:order:0:order-126": {
+      "sample_uid": "mlvu:order:0:order-126",
+      "dataset_name": "mlvu",
+      "subset_name": "order",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 4,
+      "iter_num": 4,
+      "tool_success_rate": 0.5,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_fix2_20260720_local/mlvu/order-00000-order-126/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_fix2_20260720_local/mlvu/order-00000-order-126",
+      "updated_at": "2026-07-20T09:06:03.445335Z"
+    }
+  }
+}

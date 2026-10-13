@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:stage-play:181-1",
+  "dataset_name": "videomme",
+  "subset_name": "Stage Play",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 9,
+  "iter_num": 7,
+  "tool_success_rate": 0.777778,
+  "successful_tool_calls": 7,
+  "planner_iterations": 7,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "A",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (contradictory_evidence; repeated direct evidence failure)",
+  "elapsed_seconds": 2267.714,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/stage-play-181-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/stage-play-181-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/stage-play-181-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/stage-play-181-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/8np5YKYx3sU.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/8np5YKYx3sU.mp4",
+  "question_block": "Question: How many men and women are presenting on the stage?\nOptions:\n(A) Six men and three women.\n(B) Five men and two women.\n(C) Four men and three women.\n(D) Four men and four women.",
+  "options": [
+    "A. Six men and three women.",
+    "B. Five men and two women.",
+    "C. Four men and three women.",
+    "D. Four men and four women."
+  ],
+  "official_meta": {
+    "video_id": "181",
+    "video_external_id": "8np5YKYx3sU",
+    "resolved_video_stem": "8np5YKYx3sU",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Artistic Performance",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Stage Play",
+    "task_type": "Counting Problem",
+    "question_id": "181-1",
+    "question_index": 0,
+    "video_item_index": 180,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-31T01:23:04.159057Z"
+}

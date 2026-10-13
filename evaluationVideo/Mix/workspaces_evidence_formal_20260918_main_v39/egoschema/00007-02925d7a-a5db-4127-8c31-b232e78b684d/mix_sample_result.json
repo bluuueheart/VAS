@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00007:02925d7a-a5db-4127-8c31-b232e78b684d",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 2,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 2,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "The most important aspects of c's actions in the video are that he is breaking concrete and cleaning the wooden bench. these actions are important because they are necessary to complete the task of repairing the wooden bench.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) The most important aspects of c's actions in the video are that he is breaking concrete and cleaning the wooden bench. these actions are important because they are necessary to complete the task of repairing the wooden bench.",
+  "elapsed_seconds": 1131.796,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00007-02925d7a-a5db-4127-8c31-b232e78b684d",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00007-02925d7a-a5db-4127-8c31-b232e78b684d/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00007-02925d7a-a5db-4127-8c31-b232e78b684d/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00007-02925d7a-a5db-4127-8c31-b232e78b684d/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/02925d7a-a5db-4127-8c31-b232e78b684d.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/02925d7a-a5db-4127-8c31-b232e78b684d.mp4",
+  "question_block": "Question: Summarize the most important aspects of c's actions in the video and explain how these key elements contribute to the overall purpose of the activities depicted.\nOptions:\n(A) The most important aspects of c's actions in the video are that he is wiping his face. this action is important because it is necessary to keep c's face clean.\n(B) The most important aspects of c's actions in the video are that he is breaking concrete and cleaning the wooden bench. these actions are important because they are necessary to complete the task of repairing the wooden bench.\n(C) The most important aspects of c's actions in the video are that he is holding his shirt. this action is important because it is necessary to keep c's shirt from getting dirty.\n(D) The most important aspects of c's actions in the video are that he is walking towards the wooden bench. this action is important because it is necessary to get to the wooden bench so that c can start cleaning it.\n(E) The most important aspects of c's actions in the video are that he is picking up the plastic bowl plate and the brush. these actions are important because they are necessary to get the tools that c needs to clean the wooden bench.",
+  "options": [
+    "The most important aspects of c's actions in the video are that he is wiping his face. this action is important because it is necessary to keep c's face clean.",
+    "The most important aspects of c's actions in the video are that he is breaking concrete and cleaning the wooden bench. these actions are important because they are necessary to complete the task of repairing the wooden bench.",
+    "The most important aspects of c's actions in the video are that he is holding his shirt. this action is important because it is necessary to keep c's shirt from getting dirty.",
+    "The most important aspects of c's actions in the video are that he is walking towards the wooden bench. this action is important because it is necessary to get to the wooden bench so that c can start cleaning it.",
+    "The most important aspects of c's actions in the video are that he is picking up the plastic bowl plate and the brush. these actions are important because they are necessary to get the tools that c needs to clean the wooden bench."
+  ],
+  "official_meta": {
+    "question_index": "00007",
+    "video_id": "02925d7a-a5db-4127-8c31-b232e78b684d",
+    "resolved_video_stem": "02925d7a-a5db-4127-8c31-b232e78b684d",
+    "video_mapping_verified": true,
+    "source_index": 7,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-19T23:44:55.921138Z"
+}

@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:summarization:208:1572",
+  "dataset_name": "lvbench",
+  "subset_name": "summarization",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Donald Trump is seen engaging in a series of interviews with various hosts",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00208-1572",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00208-1572/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00208-1572/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00208-1572/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/IsdbCjlZ5cQ.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/IsdbCjlZ5cQ.mp4",
+  "question_block": "Question: What is the best summary for 60:10-60:36?\nOptions:\n(A) Donald Trump is seen engaging in a series of interviews with various hosts\n(B) Trump holds a press conference, addressing recent developments and answering questions from journalists\n(C) Trump issues a national statement, addressing the nation on a significant issue or event\n(D) Trump is seen attending a court hearing, likely related to a legal matter concerning his administration or personal affairs",
+  "options": [
+    "Donald Trump is seen engaging in a series of interviews with various hosts",
+    "Trump holds a press conference, addressing recent developments and answering questions from journalists",
+    "Trump issues a national statement, addressing the nation on a significant issue or event",
+    "Trump is seen attending a court hearing, likely related to a legal matter concerning his administration or personal affairs"
+  ],
+  "official_meta": {
+    "question_type": "summarization",
+    "video_type": "documentary",
+    "time_reference": "60:10-60:36",
+    "video_key": "IsdbCjlZ5cQ",
+    "source_index": 208
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:42.823530Z"
+}

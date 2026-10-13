@@ -1,0 +1,20 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-07-21T09:01:27.918271Z",
+  "records": {
+    "mlvu:plotqa:0:movie101-66": {
+      "sample_uid": "mlvu:plotqa:0:movie101-66",
+      "dataset_name": "mlvu",
+      "subset_name": "plotQA",
+      "status": "failed",
+      "acc": 0.0,
+      "tool_use_num": 0,
+      "iter_num": 0,
+      "tool_success_rate": 0.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_caption_eager_plotqa_20260721/mlvu/plotqa-00000-movie101-66/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_caption_eager_plotqa_20260721/mlvu/plotqa-00000-movie101-66",
+      "updated_at": "2026-07-21T09:01:27.918184Z"
+    }
+  }
+}

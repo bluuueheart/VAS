@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is an experienced woodworker. he was able to cut the wood to size and install it on the wall with few adjustments.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00004-011b8b73-0ce4-4843-95ef-33b79610d212",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00004-011b8b73-0ce4-4843-95ef-33b79610d212/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00004-011b8b73-0ce4-4843-95ef-33b79610d212/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00004-011b8b73-0ce4-4843-95ef-33b79610d212/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/011b8b73-0ce4-4843-95ef-33b79610d212.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/011b8b73-0ce4-4843-95ef-33b79610d212.mp4",
+  "question_block": "Question: What can be deduced about c's level of expertise in the task by observing the kind of adjustments made throughout the video?\nOptions:\n(A) C is a novice woodworker. he was not able to cut the wood to size and install it on the wall without making several adjustments.\n(B) C is an expert woodworker. he was able to cut the wood to size and install it on the wall without making any adjustments.\n(C) C is a professional woodworker. he was able to cut the wood to size and install it on the wall in a timely and efficient manner.\n(D) C is an experienced woodworker. he was able to cut the wood to size and install it on the wall with few adjustments.\n(E) C is an amateur woodworker. he was able to cut the wood to size and install it on the wall, but he took a long time to do so.",
+  "options": [
+    "C is a novice woodworker. he was not able to cut the wood to size and install it on the wall without making several adjustments.",
+    "C is an expert woodworker. he was able to cut the wood to size and install it on the wall without making any adjustments.",
+    "C is a professional woodworker. he was able to cut the wood to size and install it on the wall in a timely and efficient manner.",
+    "C is an experienced woodworker. he was able to cut the wood to size and install it on the wall with few adjustments.",
+    "C is an amateur woodworker. he was able to cut the wood to size and install it on the wall, but he took a long time to do so."
+  ],
+  "official_meta": {
+    "question_index": "00004",
+    "video_id": "011b8b73-0ce4-4843-95ef-33b79610d212",
+    "source_index": 4
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:18:07.784466Z"
+}

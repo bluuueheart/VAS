@@ -1,0 +1,44 @@
+{
+  "sample_uid": "mlvu:plotqa:1:xiaoliyu-6",
+  "dataset_name": "mlvu",
+  "subset_name": "plotQA",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "ground_truth": "Carried by the cartoon turtle",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "OOM error: CUDA out of memory. Tried to allocate 72.00 MiB. GPU 0 has a total capacity of 23.25 GiB of which 0 bytes is free. Including non-PyTorch memory, this process has 23.53 GiB memory in use. Of the allocated memory 23.01 GiB is allocated by PyTorch, and 204.14 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)",
+  "elapsed_seconds": 5589.354,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_task1_gpu_retry_20260719/mlvu/plotqa-00001-xiaoliyu-6",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_task1_gpu_retry_20260719/mlvu/plotqa-00001-xiaoliyu-6/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_task1_gpu_retry_20260719/mlvu/plotqa-00001-xiaoliyu-6/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_task1_gpu_retry_20260719/mlvu/plotqa-00001-xiaoliyu-6/results/run_result.json",
+  "source_video_path": "/gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/1_plotQA/xiaoliyu_6.mp4",
+  "prepared_video_path": "/gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/1_plotQA/xiaoliyu_6.mp4",
+  "question_block": "Question: How did the cartoon jellyfish leave the mire?\nOptions:\n(A) Carried by the cartoon shrimp\n(B) Carried by the cartoon turtle\n(C) Carried by the cartoon catfish\n(D) Carried by the cartoon seahorse",
+  "options": [
+    "Carried by the cartoon shrimp",
+    "Carried by the cartoon turtle",
+    "Carried by the cartoon catfish",
+    "Carried by the cartoon seahorse"
+  ],
+  "official_meta": {
+    "task_type": "plotQA",
+    "source_json": "1_plotQA.json",
+    "source_index": 1,
+    "video_subdir": "1_plotQA",
+    "video_relative_path": "1_plotQA/xiaoliyu_6.mp4",
+    "data_type": "video"
+  },
+  "updated_at": "2026-07-19T15:48:59.837658Z"
+}

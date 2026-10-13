@@ -1,0 +1,105 @@
+{
+  "intervention": "Whitespace only; same parsed JSON and model content.",
+  "fresh_inference": false,
+  "rows": [
+    {
+      "uid": "lvbench:entity-recognition:4:63",
+      "index": 0,
+      "raw": "{\"answer\":\"No\",\"evidence\":[],\"uncertainty\":\"The video does not show the protagonist putting sticks into an incense burner.\",\"video_summary\":\"The video shows a character holding a burning stick, followed by scenes of a planet, rain, and a village.\"}",
+      "json_valid": true,
+      "raw_truncated": true,
+      "normalized_format": "model_json",
+      "pretty_truncated": false
+    },
+    {
+      "uid": "lvbench:entity-recognition:4:63",
+      "index": 1,
+      "raw": "```json\n{\"answer\":\"The protagonist places one incense stick into the burner.\",\"evidence\":[\"The protagonist lights an incense stick and places it into the burner.\",\"The protagonist places one incense stick into the burner.\",\"The protagonist places one incense stick into the burner.\"],\"uncertainty\":\"None\",\"video_summary\":\"The protagonist lights an incense stick and places it into the burner.\"}",
+      "json_valid": false,
+      "raw_truncated": true,
+      "normalized_format": "model_json",
+      "pretty_truncated": null
+    },
+    {
+      "uid": "mlvu:count:0:count-126",
+      "index": 0,
+      "raw": "{\"answer\":\"No\",\"evidence\":[],\"uncertainty\":\"None\",\"video_summary\":\"The video shows a person driving a car at night, with no visible musical instruments or actions related to playing a trombone.\"}",
+      "json_valid": true,
+      "raw_truncated": true,
+      "normalized_format": "model_json",
+      "pretty_truncated": false
+    },
+    {
+      "uid": "mlvu:count:0:count-126",
+      "index": 1,
+      "raw": "{\"answer\":\"No\",\"evidence\":[],\"uncertainty\":\"None\",\"video_summary\":\"The video shows a person sitting in a car, looking around, and then the car starts moving.\"}",
+      "json_valid": true,
+      "raw_truncated": true,
+      "normalized_format": "model_json",
+      "pretty_truncated": false
+    },
+    {
+      "uid": "mlvu:count:0:count-126",
+      "index": 2,
+      "raw": "{\"answer\":\"No\",\"evidence\":[],\"uncertainty\":\"None\",\"video_summary\":\"The video shows a car chase at night with police cars and a truck involved.\"}",
+      "json_valid": true,
+      "raw_truncated": true,
+      "normalized_format": "model_json",
+      "pretty_truncated": false
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "index": 0,
+      "raw": "```json\n{\n  \"answer\": \"3, 4\",\n  \"evidence\": [\n    \"The woman is seen doing sit-ups on a towel on the beach.\",\n    \"Pictures of the woman in her bikini are shown.\"\n  ],\n  \"uncertainty\": \"None\",\n  \"video_summary\": \"The video shows a woman doing sit-ups on a towel on the beach, followed by pictures of her in her bikini.\"\n}",
+      "json_valid": false,
+      "raw_truncated": false,
+      "normalized_format": "model_json",
+      "pretty_truncated": null
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "index": 1,
+      "raw": "```json\n{\"answer\":\"(2) Woman starts boxing in the ring with a guy, (4) Pictures of woman in her bikini are shown (if present)\",\"evidence\":[\"The woman is seen boxing in a ring with a man.\",\"Pictures of the woman in a bikini are shown later in the video.\"],\"uncertainty\":\"None\",\"video_summary\":\"The video shows a woman boxing in a ring with a man, followed by pictures of her in a bikini.\"}",
+      "json_valid": false,
+      "raw_truncated": true,
+      "normalized_format": "model_json",
+      "pretty_truncated": null
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "index": 2,
+      "raw": "```json\n{\n  \"answer\": \"3, 2\",\n  \"evidence\": [\n    \"Woman does sit ups on a towel on the beach.\",\n    \"Woman starts boxing in the ring with a guy.\"\n  ],\n  \"uncertainty\": \"None\",\n  \"video_summary\": \"A woman is seen doing sit-ups on a towel on the beach, then she is seen boxing in a ring with a guy.\"\n}",
+      "json_valid": false,
+      "raw_truncated": false,
+      "normalized_format": "model_json",
+      "pretty_truncated": null
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "index": 0,
+      "raw": "```json\n{\"answer\":\"6 apples, 6 candles, and 6 clusters of berries\",\"evidence\":[\"The illustration shows a tree decorated with red apples, striped candles, and blue berries.\",\"The text 'Paradise trees' appears on screen.\",\"The video transitions to a modern Christmas tree with similar decorations.\",\"The final scene shows a black and white illustration of a family around a Christmas tree with candles.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a historical overview of Christmas tree decorations.\",\"The video summary is a",
+      "json_valid": false,
+      "raw_truncated": true,
+      "normalized_format": "invalid_json",
+      "pretty_truncated": null
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "index": 1,
+      "raw": "```json\n{\"answer\":\"4 red apples, 5 striped candles, and 6 clusters of small red berries\",\"evidence\":[\"The illustration shows 4 red apples, 5 striped candles, and 6 clusters of small red berries on the tree.\",\"The text 'Paradise trees' is visible in the video.\",\"The vintage German Christmas tree illustration is shown in the video.\"],\"uncertainty\":\"None\",\"video_summary\":\"The video shows a vintage German Christmas tree illustration with 4 red apples, 5 striped candles, and 6 clusters of small red berries on the tree branches.\"}",
+      "json_valid": false,
+      "raw_truncated": true,
+      "normalized_format": "model_json",
+      "pretty_truncated": null
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "index": 2,
+      "raw": "```json\n{\"answer\":\"(C)\",\"evidence\":[\"The tree is decorated with red apples, striped candles, and clusters of blue berries.\",\"Counting the items on the tree shows there are 4 apples, 4 candles, and 8 clusters of berries.\",\"The clusters of berries are the most numerous decoration type shown.\",\"Apples and candles are present in equal numbers, but fewer than the berry clusters.\",\"All three types of decorations are present on the tree.\",\"The video shows a modern Christmas tree being decorated with apples, candles, and berries.\",\"The tree is shown with 4 apples, 4 candles, and 8 clusters of berries.\",\"The berries are the most numerous decoration type.\",\"Apples and candles are present in equal numbers, but fewer than the berry clusters.\",\"All three types of decorations are present on the tree.\",\"The video shows a modern Christmas tree being decorated with apples, candles, and berries.\",\"The tree is shown with 4 apples, 4 candles, and 8 clusters of berries.\",\"The berries are the most numerous decoration type.\",\"Apples and candles are present in equal numbers, but fewer than the berry clusters.\",\"All three types of decorations are present on the tree.\",\"The video shows a modern Christmas tree being decorated with apples, candles,",
+      "json_valid": false,
+      "raw_truncated": true,
+      "normalized_format": "invalid_json",
+      "pretty_truncated": null
+    }
+  ]
+}

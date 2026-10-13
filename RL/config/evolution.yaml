@@ -1,0 +1,36 @@
+verification:
+  claim_coverage: 0.80
+  direct_grounding: 0.65
+  contradiction_score: 0.20
+  require_cross_modal: false
+  require_answer_support: true
+  # Completion prose is audit metadata, not additional visual evidence.
+  require_completion_basis: false
+
+diagnosis:
+  confidence_threshold: 0.70
+  excessive_tool_calls: 8
+  invalid_call_rate: 0.005
+  held_out_fraction: 0.20
+
+acceptance:
+  # Passing without a measurable accuracy or latency improvement is a no-op,
+  # not Evolver utility.
+  require_positive_utility_gain: true
+  trigger_utility_gain: 0.0
+  # Neighbor transfer must preserve quality; efficiency-only proposals are
+  # evaluated by repeated paired timing instead of an accuracy-gain floor.
+  neighbor_nonregression_floor: 0.0
+  regression_answer_drop: 0.0
+  minimum_latency_gain: 0.05
+  held_out_utility_drop: 0.0
+  invalid_call_rate_increase: 0.005
+  latency_increase: 0.10
+  latency_increase_with_answer_gain: 0.20
+  # Empty replay groups are not evidence of general utility.  A candidate
+  # with fewer than these paired groups remains case-local/insufficient.
+  minimum_group_counts:
+    trigger: 1
+    neighbor: 3
+    regression: 3
+    held_out: 3

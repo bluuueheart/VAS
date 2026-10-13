@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00104:31c47e50-5044-4eae-8314-ebc4b1d0c1fe",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The key developments in the video's narrative are the man's placement of the tiles on the scrabble board and the woman's eating of the soup. these moments stand out above the rest because they show the two characters engaged in their respective activities.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00104-31c47e50-5044-4eae-8314-ebc4b1d0c1fe",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00104-31c47e50-5044-4eae-8314-ebc4b1d0c1fe/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00104-31c47e50-5044-4eae-8314-ebc4b1d0c1fe/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00104-31c47e50-5044-4eae-8314-ebc4b1d0c1fe/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/31c47e50-5044-4eae-8314-ebc4b1d0c1fe.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/31c47e50-5044-4eae-8314-ebc4b1d0c1fe.mp4",
+  "question_block": "Question: Which individual moments can you identify as key developments in the video's narrative, and why do these instances stand out above the rest?\nOptions:\n(A) The key developments in the video's narrative are the man's placement of the tiles on the scrabble board and the woman's eating of the soup. these moments stand out above the rest because they show the two characters engaged in their respective activities.\n(B) The key developments in the video's narrative are the man's picking up the pen and the woman's picking up the spoon. these moments stand out above the rest because they show the two characters preparing to engage in their respective activities.\n(C) The primary key developments in the video's narrative involve the man diligently writing in the note and the woman contentedly eating from the fork. these distinctive moments stand out above the rest since they effectively show the two characters successfully completing their respective engaging activities.\n(D) The key developments within the video's narrative are notably the man's action of placing the pen down and the woman's act of placing the spoon down. these defining moments stand out above the rest since they illustrate the two characters consciously taking a break from their respective ongoing activities.\n(E) The key developments in the video's narrative are the man's picking up the fork and the woman's picking up the pen. these moments stand out above the rest because they show the two characters switching activities.",
+  "options": [
+    "The key developments in the video's narrative are the man's placement of the tiles on the scrabble board and the woman's eating of the soup. these moments stand out above the rest because they show the two characters engaged in their respective activities.",
+    "The key developments in the video's narrative are the man's picking up the pen and the woman's picking up the spoon. these moments stand out above the rest because they show the two characters preparing to engage in their respective activities.",
+    "The primary key developments in the video's narrative involve the man diligently writing in the note and the woman contentedly eating from the fork. these distinctive moments stand out above the rest since they effectively show the two characters successfully completing their respective engaging activities.",
+    "The key developments within the video's narrative are notably the man's action of placing the pen down and the woman's act of placing the spoon down. these defining moments stand out above the rest since they illustrate the two characters consciously taking a break from their respective ongoing activities.",
+    "The key developments in the video's narrative are the man's picking up the fork and the woman's picking up the pen. these moments stand out above the rest because they show the two characters switching activities."
+  ],
+  "official_meta": {
+    "question_index": "00104",
+    "video_id": "31c47e50-5044-4eae-8314-ebc4b1d0c1fe",
+    "source_index": 104
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:46:53.242171Z"
+}

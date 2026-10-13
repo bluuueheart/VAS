@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:magic-show:191-1",
+  "dataset_name": "videomme",
+  "subset_name": "Magic Show",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 12,
+  "iter_num": 9,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 12,
+  "planner_iterations": 9,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 3145.787,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/magic-show-191-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/magic-show-191-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/magic-show-191-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/magic-show-191-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/vQTQJ1Mlzqo.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/vQTQJ1Mlzqo.mp4",
+  "question_block": "Question: How many tricks are performed in this video?\nOptions:\n(A) 4.\n(B) 5.\n(C) 6.\n(D) 7.",
+  "options": [
+    "A. 4.",
+    "B. 5.",
+    "C. 6.",
+    "D. 7."
+  ],
+  "official_meta": {
+    "video_id": "191",
+    "video_external_id": "vQTQJ1Mlzqo",
+    "resolved_video_stem": "vQTQJ1Mlzqo",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Artistic Performance",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Magic Show",
+    "task_type": "Counting Problem",
+    "question_id": "191-1",
+    "question_index": 0,
+    "video_item_index": 190,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-31T08:56:54.689411Z"
+}

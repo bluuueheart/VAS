@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00010:049249dc-bdad-48c4-bdc0-511814c5781c",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C picks up a dog mat, puts it in the sink, washes it with soap and water, and then rinses it off.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00010-049249dc-bdad-48c4-bdc0-511814c5781c",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00010-049249dc-bdad-48c4-bdc0-511814c5781c/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00010-049249dc-bdad-48c4-bdc0-511814c5781c/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00010-049249dc-bdad-48c4-bdc0-511814c5781c/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/049249dc-bdad-48c4-bdc0-511814c5781c.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/049249dc-bdad-48c4-bdc0-511814c5781c.mp4",
+  "question_block": "Question: What were the key steps c took in cleaning the dog mat from start to finish, and what tools were used in the process?\nOptions:\n(A) C picks up a dog mat, puts it in the sink, washes it with soap and water, and then dries it off.\n(B) C picks up a dog mat, puts it in the sink, washes it with soap and water, and then puts it in the dryer.\n(C) C picks up a dog mat, puts it in the sink, washes it with soap and water, and then puts it in the washing machine.\n(D) C picks up a dog mat, puts it in the sink, washes it with soap and water, and then puts it in the dishwasher.\n(E) C picks up a dog mat, puts it in the sink, washes it with soap and water, and then rinses it off.",
+  "options": [
+    "C picks up a dog mat, puts it in the sink, washes it with soap and water, and then dries it off.",
+    "C picks up a dog mat, puts it in the sink, washes it with soap and water, and then puts it in the dryer.",
+    "C picks up a dog mat, puts it in the sink, washes it with soap and water, and then puts it in the washing machine.",
+    "C picks up a dog mat, puts it in the sink, washes it with soap and water, and then puts it in the dishwasher.",
+    "C picks up a dog mat, puts it in the sink, washes it with soap and water, and then rinses it off."
+  ],
+  "official_meta": {
+    "question_index": "00010",
+    "video_id": "049249dc-bdad-48c4-bdc0-511814c5781c",
+    "source_index": 10
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:43:00.061799Z"
+}

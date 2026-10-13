@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:key-information-retrieval:0:55",
+  "dataset_name": "lvbench",
+  "subset_name": "key information retrieval",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "1633",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00000-55",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00000-55/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00000-55/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00000-55/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: What year appears in the opening caption of the video?\nOptions:\n(A) 1636\n(B) 1366\n(C) 1363\n(D) 1633",
+  "options": [
+    "1636",
+    "1366",
+    "1363",
+    "1633"
+  ],
+  "official_meta": {
+    "question_type": "key information retrieval",
+    "video_type": "cartoon",
+    "time_reference": "00:15-00:19",
+    "video_key": "Cm73ma6Ibcs",
+    "source_index": 0
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:42:51.823733Z"
+}

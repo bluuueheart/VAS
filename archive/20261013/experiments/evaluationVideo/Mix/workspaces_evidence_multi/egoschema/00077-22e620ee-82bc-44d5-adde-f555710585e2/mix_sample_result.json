@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00077:22e620ee-82bc-44d5-adde-f555710585e2",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is the person who wraps the nylon paper around the molten dough, while the lady is the person who provides the dough paste.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00077-22e620ee-82bc-44d5-adde-f555710585e2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00077-22e620ee-82bc-44d5-adde-f555710585e2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00077-22e620ee-82bc-44d5-adde-f555710585e2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00077-22e620ee-82bc-44d5-adde-f555710585e2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/22e620ee-82bc-44d5-adde-f555710585e2.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/22e620ee-82bc-44d5-adde-f555710585e2.mp4",
+  "question_block": "Question: From a high-level perspective, how would you describe the interaction or relationship between c and the lady, and their respective roles in the process depicted in the video?\nOptions:\n(A) C is essentially the individual who supplies the dough paste; meanwhile, the lady acts as the person carefully wrapping the nylon paper around the freshly molten dough mixture.\n(B) C and the lady, working together, are both jointly responsible for carefully wrapping the nylon paper around the hot, molten dough.\n(C) Both c and the lady share equal responsibility for supplying the dough paste required.\n(D) C and the lady are not related to each other.\n(E) C is the person who wraps the nylon paper around the molten dough, while the lady is the person who provides the dough paste.",
+  "options": [
+    "C is essentially the individual who supplies the dough paste; meanwhile, the lady acts as the person carefully wrapping the nylon paper around the freshly molten dough mixture.",
+    "C and the lady, working together, are both jointly responsible for carefully wrapping the nylon paper around the hot, molten dough.",
+    "Both c and the lady share equal responsibility for supplying the dough paste required.",
+    "C and the lady are not related to each other.",
+    "C is the person who wraps the nylon paper around the molten dough, while the lady is the person who provides the dough paste."
+  ],
+  "official_meta": {
+    "question_index": "00077",
+    "video_id": "22e620ee-82bc-44d5-adde-f555710585e2",
+    "source_index": 77
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=255 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-22T18:55:23.432084Z"
+}

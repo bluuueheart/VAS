@@ -1,0 +1,54 @@
+{
+  "sample_uid": "lvbench:event-understanding:3:62",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 13,
+  "iter_num": 18,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 13,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The protagonist cuts off two fingers of the man with the gun with her sword",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "OOM error: CUDA out of memory. Tried to allocate 280.00 MiB. GPU 0 has a total capacity of 78.35 GiB of which 0 bytes is free. Including non-PyTorch memory, this process has 30.21 GiB memory in use. Process 248709 has 26.44 GiB memory in use. Process 249224 has 22.25 GiB memory in use. Of the allocated memory 29.57 GiB is allocated by PyTorch, and 127.41 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)",
+  "elapsed_seconds": 5991.549,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/lvbench/event-understanding-00003-62",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/lvbench/event-understanding-00003-62/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/lvbench/event-understanding-00003-62/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/lvbench/event-understanding-00003-62/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: What does the protagonist do when the man with the gun keeps approaching her?\nOptions:\n(A) The protagonist cuts off the hand of the man with the gun with her sword\n(B) The protagonist cuts off two fingers of the man with the gun with her sword\n(C) The protagonist impales the man with the gun with her word\n(D) The protagonist breaks the windows with her sword and flees",
+  "options": [
+    "The protagonist cuts off the hand of the man with the gun with her sword",
+    "The protagonist cuts off two fingers of the man with the gun with her sword",
+    "The protagonist impales the man with the gun with her word",
+    "The protagonist breaks the windows with her sword and flees"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "06:04-06:17",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "Cm73ma6Ibcs",
+    "source_index": 3
+  },
+  "updated_at": "2026-08-25T20:37:50.542720Z"
+}

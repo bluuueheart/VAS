@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00204:685d5e48-5e07-4522-88aa-4307207d15c9",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C makes adjustments to the clay pot by hitting it with the wood plank and adjusting it with both hands. c makes these adjustments until the clay pot is the desired shape.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00204-685d5e48-5e07-4522-88aa-4307207d15c9",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00204-685d5e48-5e07-4522-88aa-4307207d15c9/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00204-685d5e48-5e07-4522-88aa-4307207d15c9/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00204-685d5e48-5e07-4522-88aa-4307207d15c9/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/685d5e48-5e07-4522-88aa-4307207d15c9.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/685d5e48-5e07-4522-88aa-4307207d15c9.mp4",
+  "question_block": "Question: Based on the video, discuss the key moments where \"c\" made adjustments and their possible significance in achieving the desired outcome.\nOptions:\n(A) C makes adjustments to the clay pot by dipping it in the pot of water and hitting it with the wood plank. c makes these adjustments until the clay pot is the desired shape.\n(B) C makes adjustments to the clay pot by hitting it with the wood plank and adjusting it with both hands. c makes these adjustments until the clay pot is the desired shape.\n(C) C makes adjustments to the clay pot by hitting it with the wood plank and adjusting it with one hand. c makes these adjustments until the clay pot is the desired shape.\n(D) C makes adjustments to the clay pot by dipping it in the pot of water and adjusting it with one hand. c makes these adjustments until the clay pot is the desired shape.\n(E) C makes adjustments to the clay pot by hitting it with the wood plank and adjusting it with both hands, then dipping it in the pot of water. c makes these adjustments until the clay pot is the desired shape.",
+  "options": [
+    "C makes adjustments to the clay pot by dipping it in the pot of water and hitting it with the wood plank. c makes these adjustments until the clay pot is the desired shape.",
+    "C makes adjustments to the clay pot by hitting it with the wood plank and adjusting it with both hands. c makes these adjustments until the clay pot is the desired shape.",
+    "C makes adjustments to the clay pot by hitting it with the wood plank and adjusting it with one hand. c makes these adjustments until the clay pot is the desired shape.",
+    "C makes adjustments to the clay pot by dipping it in the pot of water and adjusting it with one hand. c makes these adjustments until the clay pot is the desired shape.",
+    "C makes adjustments to the clay pot by hitting it with the wood plank and adjusting it with both hands, then dipping it in the pot of water. c makes these adjustments until the clay pot is the desired shape."
+  ],
+  "official_meta": {
+    "question_index": "00204",
+    "video_id": "685d5e48-5e07-4522-88aa-4307207d15c9",
+    "source_index": 204
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:53:33.210219Z"
+}

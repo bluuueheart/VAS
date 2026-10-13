@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:anomaly-reco:17:surveil-33",
+  "dataset_name": "mlvu",
+  "subset_name": "anomaly_reco",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Burglary",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/anomaly-reco-00017-surveil-33",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/anomaly-reco-00017-surveil-33/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/anomaly-reco-00017-surveil-33/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/anomaly-reco-00017-surveil-33/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/6_anomaly_reco/surveil_33.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/6_anomaly_reco/surveil_33.mp4",
+  "question_block": "Question: Is there anything unusual in this surveillance video? If there is, what type of unusual activity is it?\nOptions:\n(A) Normal\n(B) Vandalism\n(C) RoadAccidents\n(D) Burglary",
+  "options": [
+    "Normal",
+    "Vandalism",
+    "RoadAccidents",
+    "Burglary"
+  ],
+  "official_meta": {
+    "task_type": "anomaly_reco",
+    "source_json": "6_anomaly_reco.json",
+    "source_index": 17,
+    "video_subdir": "6_anomaly_reco",
+    "video_relative_path": "6_anomaly_reco/surveil_33.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:39.290882Z"
+}

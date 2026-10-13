@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:astronomy:041-2",
+  "dataset_name": "videomme",
+  "subset_name": "Astronomy",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 9,
+  "iter_num": 18,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 9,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 2795.891,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/astronomy-041-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/astronomy-041-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/astronomy-041-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/astronomy-041-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/yl5ZXQmrtP0.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/yl5ZXQmrtP0.mp4",
+  "question_block": "Question: How many times is the sun visible in the video?\nOptions:\n(A) 2.\n(B) 4.\n(C) 3.\n(D) 1.",
+  "options": [
+    "A. 2.",
+    "B. 4.",
+    "C. 3.",
+    "D. 1."
+  ],
+  "official_meta": {
+    "video_id": "041",
+    "video_external_id": "yl5ZXQmrtP0",
+    "resolved_video_stem": "yl5ZXQmrtP0",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Knowledge",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Astronomy",
+    "task_type": "Counting Problem",
+    "question_id": "041-2",
+    "question_index": 1,
+    "video_item_index": 40,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-02T22:55:33.293585Z"
+}

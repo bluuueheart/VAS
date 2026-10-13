@@ -1,0 +1,57 @@
+{
+  "sample_uid": "videomme:astronomy:041-1",
+  "dataset_name": "videomme",
+  "subset_name": "Astronomy",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 0,
+  "iter_num": 15,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 15,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "A",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (planner_recovery_exhausted_without_verifiable_finish)",
+  "elapsed_seconds": 1904.116,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/videomme/astronomy-041-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/videomme/astronomy-041-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/videomme/astronomy-041-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/videomme/astronomy-041-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/yl5ZXQmrtP0.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/yl5ZXQmrtP0.mp4",
+  "question_block": "Question: When is the zodiacal light visible from the video?\nOptions:\n(A) On March 19.\n(B) On March 24.\n(C) On March 25.\n(D) On March 29.",
+  "options": [
+    "A. On March 19.",
+    "B. On March 24.",
+    "C. On March 25.",
+    "D. On March 29."
+  ],
+  "official_meta": {
+    "video_id": "041",
+    "duration": "short",
+    "domain": "Knowledge",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Astronomy",
+    "task_type": "Temporal Reasoning",
+    "question_id": "041-1",
+    "question_index": 0,
+    "video_item_index": 40,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-25T19:29:42.722985Z"
+}

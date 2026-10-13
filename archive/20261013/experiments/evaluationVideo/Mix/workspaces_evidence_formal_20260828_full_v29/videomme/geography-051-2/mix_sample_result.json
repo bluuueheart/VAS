@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:geography:051-2",
+  "dataset_name": "videomme",
+  "subset_name": "Geography",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 17,
+  "iter_num": 18,
+  "tool_success_rate": 0.705882,
+  "successful_tool_calls": 12,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "A",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (contradictory_evidence; repeated direct evidence failure)",
+  "elapsed_seconds": 4331.005,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/geography-051-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/geography-051-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/geography-051-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/geography-051-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/Qyg_91gNHCc.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/Qyg_91gNHCc.mp4",
+  "question_block": "Question: What do the scenes shot on Indus River and Yangze River have in common?\nOptions:\n(A) They are all shot at dusk.\n(B) The land is covered with snow in both scene.\n(C) There are bridges on both scene.\n(D) They both contain an island in the middle of the lake.",
+  "options": [
+    "A. They are all shot at dusk.",
+    "B. The land is covered with snow in both scene.",
+    "C. There are bridges on both scene.",
+    "D. They both contain an island in the middle of the lake."
+  ],
+  "official_meta": {
+    "video_id": "051",
+    "video_external_id": "Qyg_91gNHCc",
+    "resolved_video_stem": "Qyg_91gNHCc",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Knowledge",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Geography",
+    "task_type": "Object Recognition",
+    "question_id": "051-2",
+    "question_index": 1,
+    "video_item_index": 50,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-02T18:18:09.128240Z"
+}

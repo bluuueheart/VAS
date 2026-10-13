@@ -24,7 +24,7 @@ import zlib
 from contextlib import contextmanager
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Mapping, Optional
 
 # Add current directory to path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -32,8 +32,15 @@ sys.path.insert(0, str(Path(__file__).parent))
 from config.settings import settings
 from config.device_config import initialize_device, detect_device, get_accelerator_snapshot
 from core.sidecar_pool import OpenAIEndpointPool, format_endpoint_list
+from evolution.harness import (
+    apply_harness_registry_overrides,
+    harness_audit_payload,
+    load_harness_snapshot,
+    render_harness_context,
+)
 from runtime.session import runtime_session
 from toolkit.base import infer_primary_tool_type
+from toolkit.baseline import load_registry_baseline, registry_runtime_audit
 from toolkit.impl.visual_prompts import truncate_think_tail_preserving_outer_text
 
 
@@ -48,8 +55,70 @@ logger = logging.getLogger(__name__)
 
 RUN_RESULT_LOG_MARKER = "[RUN_RESULT_JSON]"
 _NON_PLANNER_RUNTIME_READY_SIGNATURES: set[str] = set()
+_ACTIVE_HARNESS_STATE: Dict[str, Any] = {}
 _PIPELINE_RUNTIME_PROFILE_DEFAULT = "default"
 _PIPELINE_RUNTIME_PROFILE_EVALUATION_LOCAL = "evaluation_local"
+
+
+def _normalize_input_contract(value: Any) -> Dict[str, Any]:
+    """Normalize benchmark media rules at the execution boundary.
+
+    Dataset annotations such as answers and clue-duration fields are never
+    accepted as runtime inputs.  ``audio`` describes the source media track;
+    ``audio_transcript`` separately controls whether a transcript is an
+    official inference input.  This distinction prevents a subtitle-free
+    benchmark setting from being misreported as a silent video.
+    """
+    raw = dict(value) if isinstance(value, Mapping) else {}
+    audio_value = str(
+        raw.get("audio_track") or raw.get("audio") or ""
+    ).strip().lower()
+    audio_track_excluded = audio_value in {
+        "excluded",
+        "none",
+        "not_allowed",
+        "not-allowed",
+        "visual_only",
+        "visual-only",
+    }
+    transcript_value = str(raw.get("audio_transcript") or "").strip().lower()
+    if "audio_transcript_allowed" in raw:
+        audio_transcript_allowed = bool(raw.get("audio_transcript_allowed"))
+    elif transcript_value:
+        audio_transcript_allowed = transcript_value in {
+            "allowed",
+            "included",
+            "provided",
+            "derived_allowed",
+            "derived-allowed",
+            "derived_from_source_audio",
+            "derived-from-source-audio",
+        }
+    else:
+        # Preserve the historical single-video behavior when no benchmark
+        # contract is supplied. Formal dataset profiles must be explicit.
+        audio_transcript_allowed = not audio_track_excluded
+    if audio_track_excluded:
+        # A true audio-disabled profile cannot reintroduce audio through an
+        # explicitly requested transcript.
+        audio_transcript_allowed = False
+    normalized = dict(raw)
+    normalized["audio"] = "excluded" if audio_track_excluded else (audio_value or "preserved")
+    normalized["audio_track"] = normalized["audio"]
+    normalized["audio_transcript"] = (
+        "included" if audio_transcript_allowed else "excluded"
+    )
+    normalized["audio_transcript_allowed"] = audio_transcript_allowed
+    normalized.setdefault("temporal_crop", False)
+    normalized.setdefault("timestamp_input", "none")
+    normalized.setdefault("annotation_fields_excluded", [
+        "answer",
+        "ground_truth",
+        "ground_truth_option",
+        "time_reference",
+        "evaluator_output",
+    ])
+    return normalized
 
 
 def _require_torch():
@@ -722,6 +791,80 @@ def _parse_time_range_bounds(value: Any) -> Optional[tuple[float, float]]:
     return (min(start, end), max(start, end))
 
 
+def _time_value_to_seconds(value: Any) -> Optional[float]:
+    text = str(value or "").strip()
+    if not text:
+        return None
+    try:
+        parts = [float(item) for item in text.split(":")]
+    except (TypeError, ValueError):
+        return None
+    if len(parts) == 1:
+        return parts[0]
+    if len(parts) == 2:
+        return parts[0] * 60.0 + parts[1]
+    if len(parts) == 3:
+        return parts[0] * 3600.0 + parts[1] * 60.0 + parts[2]
+    return None
+
+
+def _extract_query_time_prior(query: Any) -> Optional[tuple[float, float]]:
+    """Extract an explicitly labelled dataset localization window."""
+    text = str(query or "")
+    match = re.search(
+        r"(?:reference\s+time(?:\s+window)?|time_reference|time\s+prior)"
+        r"[^0-9]{0,120}"
+        r"(\d{1,3}(?::\d{2}(?::\d{2}(?:\.\d+)?)?)?)\s*[-–]\s*"
+        r"(\d{1,3}(?::\d{2}(?::\d{2}(?:\.\d+)?)?)?)",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if not match:
+        return None
+    start = _time_value_to_seconds(match.group(1))
+    end = _time_value_to_seconds(match.group(2))
+    if start is None or end is None:
+        return None
+    return (min(start, end), max(start, end))
+
+
+def _prioritize_segments_by_query_time(
+    ranked: List[Dict[str, Any]],
+    query: Any,
+) -> List[Dict[str, Any]]:
+    prior = _extract_query_time_prior(query)
+    if prior is None or not ranked:
+        return ranked
+
+    prior_start, prior_end = prior
+    annotated: List[Dict[str, Any]] = []
+    for item in ranked:
+        candidate = dict(item)
+        bounds = _parse_time_range_bounds(candidate.get("time") or candidate.get("time_range"))
+        overlap = 0.0
+        if bounds is not None:
+            overlap = max(0.0, min(bounds[1], prior_end) - max(bounds[0], prior_start))
+        candidate["time_prior"] = {
+            "window": [round(prior_start, 3), round(prior_end, 3)],
+            "overlap_seconds": round(overlap, 3),
+            "matched": bool(overlap > 0.0),
+        }
+        annotated.append(candidate)
+
+    # A labelled benchmark window is a localization constraint, not merely a
+    # weak lexical feature. Keep semantic scores to order matches within the
+    # window, but never let a distant high-score segment displace an overlap.
+    annotated.sort(
+        key=lambda item: (
+            bool((item.get("time_prior") or {}).get("matched")),
+            float((item.get("time_prior") or {}).get("overlap_seconds", 0.0) or 0.0),
+            float(item.get("score", -1.0) or -1.0),
+        ),
+        reverse=True,
+    )
+    return annotated
+
+
 def _extract_transcript_bounds(transcript: str) -> Optional[tuple[float, float]]:
     matches = re.findall(r"\[(\d+(?:\.\d+)?)s\s*->\s*(\d+(?:\.\d+)?)s\]", str(transcript or ""))
     if not matches:
@@ -935,7 +1078,11 @@ def _resolve_embedding_device_request(device: Optional[str]) -> tuple[str, Optio
 
 def _get_embedder(device: Optional[str] = None):
     """Lazy init Qwen3-VL-Embedding runtime for segment-level grounding."""
-    _, _, Qwen3VLEmbeddingRuntimeEncoder, _ = _get_preprocessing_module_exports()
+    # Import the runtime directly.  Importing the full preprocessing facade
+    # here also imports captioning, ASR and vector-index dependencies before
+    # the first query embedding, turning a cache hit into a multi-minute cold
+    # start on worker processes.
+    from preprocessing.storage.qwen3_vl_embedding_runtime import Qwen3VLEmbeddingRuntimeEncoder
     device_type, device_count, stable_device = _resolve_embedding_device_request(device)
     embed_model_path = Path(settings.qwen3_vl_embedding_model_path).expanduser().resolve()
     cache_key = json.dumps(
@@ -1051,7 +1198,7 @@ def _get_grounding_embedding_service_pool() -> OpenAIEndpointPool:
 
 
 def _format_grounding_embedding_service_input(text: str, kind: str) -> str:
-    _, _, Qwen3VLEmbeddingRuntimeEncoder, _ = _get_preprocessing_module_exports()
+    from preprocessing.storage.qwen3_vl_embedding_runtime import Qwen3VLEmbeddingRuntimeEncoder
     instruction = (
         Qwen3VLEmbeddingRuntimeEncoder.QUERY_INSTRUCTION
         if kind == "query"
@@ -1130,6 +1277,23 @@ def _cached_grounding_embedding(
     return runtime_session.cache_artifact(cache_key, vector)
 
 
+def _release_local_embedding_runtime() -> None:
+    """Free local embedding weights after grounding before loading the planner."""
+    if str(os.environ.get("TOOLSTAR_PERSIST_EMBEDDING_RUNTIME") or "").strip().lower() in {
+        "1",
+        "true",
+        "yes",
+        "on",
+    }:
+        logger.info("Keeping GPU grounding embedder runtime cached for reusable worker samples.")
+        return
+    from preprocessing.storage.qwen3_vl_embedding_runtime import Qwen3VLEmbeddingRuntimeEncoder
+    Qwen3VLEmbeddingRuntimeEncoder.release_runtime_cache()
+    for cache_key in list(runtime_session._artifact_cache):
+        if '"runtime": "planner_grounding_qwen3_vl_embedding"' in cache_key:
+            runtime_session._artifact_cache.pop(cache_key, None)
+
+
 def _get_cached_llm_provider(
     *,
     model_name: str,
@@ -1149,9 +1313,7 @@ _REPORT_RETRIEVAL_TOOLS = frozenset({
     "evidence_verify",
 })
 _REPORT_VISUAL_TOOLS = frozenset({
-    "Inspect_Frame", "OCR_Extract", "Crop", "Zoom_in", "Entity_Track",
-    "Action_Recognition", "Emotion_Analysis", "Audio_Event_Detect",
-    "Speaker_Diarization", "Cross_Modal_Verify", "Video_Clip_QA",
+    "Inspect_Frame", "Crop", "Zoom_in", "Video_Clip_QA", "Video_Summary",
 })
 _REPORT_COMPUTE_TOOLS = frozenset({
     "Python_Executor", "SQL_Executor", "Debt_Interest_Analyzer",
@@ -1483,6 +1645,31 @@ def _build_agent_metrics(trajectory: Optional[Dict[str, Any]]) -> Dict[str, Any]
     unique_runtime_tools = int(runtime_summary.get("unique_tool_count", 0) or 0)
     runtime_tool_call_count = len(runtime_entries)
     unique_tool_threshold = max(1, int(getattr(settings, "acceptance_min_unique_runtime_tools", 4) or 4))
+    debug_events = [
+        event for event in (trajectory.get("debug_events", []) if isinstance(trajectory, dict) else [])
+        if isinstance(event, dict)
+    ]
+
+    auxiliary_role_events = {
+        role: [
+            event for event in debug_events
+            if str(event.get("agent_role") or "").strip().lower() == role
+            and str(event.get("type") or "").strip() == "agent_llm_turn"
+        ]
+        for role in ("observer", "reflector")
+    }
+    auxiliary_role_skips = {
+        role: [
+            event for event in debug_events
+            if str(event.get("agent_role") or "").strip().lower() == role
+            and str(event.get("type") or "").strip() == "agent_role_skipped"
+        ]
+        for role in ("observer", "reflector")
+    }
+    kernel_contract_event = next(
+        (event for event in debug_events if event.get("type") == "agent_kernel_contract"),
+        None,
+    )
 
     return {
         "tool_usage_layers": {
@@ -1499,6 +1686,32 @@ def _build_agent_metrics(trajectory: Optional[Dict[str, Any]]) -> Dict[str, Any]
         "runtime_execution_steps": runtime_execution_steps,
         "planner_iterations": planner_iterations,
         "subagent_iterations": subagent_iterations,
+        "four_agent_kernel_contract": (kernel_contract_event or {}).get("roles", {}),
+        "four_agent_active_online_roles": list(
+            (kernel_contract_event or {}).get("active_online_roles") or []
+        ),
+        "four_agent_disabled_online_roles": list(
+            (kernel_contract_event or {}).get("disabled_online_roles") or []
+        ),
+        "four_agent_role_turns": {
+            "planner": planner_iterations,
+            "observer": len(auxiliary_role_events["observer"]),
+            "reflector": len(auxiliary_role_events["reflector"]),
+            "evolver": 0,
+        },
+        "four_agent_role_skips": {
+            "observer": len(auxiliary_role_skips["observer"]),
+            "reflector": len(auxiliary_role_skips["reflector"]),
+            "evolver": 0,
+        },
+        "four_agent_role_schema_pass": {
+            "planner": planner_iterations > 0,
+            "observer": bool(auxiliary_role_events["observer"])
+            and all(bool(event.get("schema_valid")) for event in auxiliary_role_events["observer"]),
+            "reflector": bool(auxiliary_role_events["reflector"])
+            and all(bool(event.get("schema_valid")) for event in auxiliary_role_events["reflector"]),
+            "evolver": False,
+        },
         "delegated_root_steps": delegated_root_steps,
         "decomposed_root_steps": decomposed_root_steps,
         "subagent_decomposition_rate": round(
@@ -1518,6 +1731,174 @@ def _build_agent_metrics(trajectory: Optional[Dict[str, Any]]) -> Dict[str, Any]
             f"unique_runtime_tools_gte_{unique_tool_threshold}": unique_runtime_tools >= unique_tool_threshold,
             "runtime_base_meta_coverage": runtime_summary.get("base_meta_coverage", {}),
         },
+    }
+
+
+def _cached_dense_index_is_usable(
+    vectors_dir: Path,
+    segment_count: int,
+    *,
+    allow_sparse_empty: bool,
+) -> bool:
+    """Validate vector files without importing the heavyweight runtime."""
+    metadata_path = vectors_dir / "metadata.json"
+    if not metadata_path.exists() or segment_count <= 0:
+        return False
+    try:
+        payload = json.loads(metadata_path.read_text(encoding="utf-8")) or {}
+    except (OSError, TypeError, ValueError):
+        return False
+    metadata = payload.get("metadata") if isinstance(payload, dict) else None
+    if not isinstance(metadata, list):
+        return False
+    if not metadata and allow_sparse_empty:
+        return True
+    if len(metadata) != int(segment_count):
+        return False
+    for index, item in enumerate(metadata):
+        if not isinstance(item, dict):
+            return False
+        modalities = item.get("indexed_modalities") or []
+        if not isinstance(modalities, list) or not modalities:
+            return False
+        for modality in modalities:
+            vector_path = vectors_dir / f"doc_{index}.{str(modality)}.npy"
+            if not vector_path.exists():
+                return False
+    return True
+
+
+def _try_load_cached_preprocess_payload(
+    *,
+    output_dir: Path,
+    working_dir: Path,
+    video_name: str,
+    include_audio_transcript: bool = True,
+) -> Optional[Dict[str, Any]]:
+    """Fast cache probe that avoids importing caption/embedding runtimes."""
+    required_paths = _required_preprocessing_artifacts(output_dir)
+    if any(not path.exists() for path in required_paths):
+        return None
+    try:
+        segments = json.loads((output_dir / "segments.json").read_text(encoding="utf-8"))
+        segment_times = json.loads(
+            (output_dir / "segment_times_info.json").read_text(encoding="utf-8")
+        )
+        transcripts_path = output_dir / "transcripts.json"
+        transcripts = (
+            json.loads(transcripts_path.read_text(encoding="utf-8"))
+            if transcripts_path.exists()
+            else None
+        )
+    except (OSError, TypeError, ValueError):
+        return None
+    if not isinstance(segments, dict) or not segments or not isinstance(segment_times, dict):
+        return None
+    if _looks_stale_outputs(segments):
+        return None
+    times_map = segment_times.get("segment_times_info")
+    cache_version = int(
+        segment_times.get("segment_cache_version")
+        or segment_times.get("cache_version")
+        or 0
+    )
+    if cache_version != 10 or not isinstance(times_map, dict) or not times_map:
+        return None
+    expected_audio_policy = "included" if include_audio_transcript else "excluded"
+    cached_audio_policy = str(
+        segment_times.get("audio_transcript_policy")
+        or segment_times.get("audio_policy")
+        or ""
+    ).strip().lower()
+    if cached_audio_policy != expected_audio_policy:
+        logger.info(
+            "Preprocessing cache %s has audio_policy=%s; expected=%s. Rebuild required.",
+            output_dir,
+            cached_audio_policy or "missing",
+            expected_audio_policy,
+        )
+        return None
+    strategy = str(
+        segment_times.get("segment_strategy")
+        or segment_times.get("strategy")
+        or ""
+    ).strip()
+    if strategy not in {"asr_semantic_v4", "scene_v2", "fixed_v1"}:
+        return None
+    for seg_id, seg_data in segments.items():
+        if not isinstance(seg_data, dict):
+            return None
+        time_info = times_map.get(str(seg_id), {})
+        frame_paths = list(seg_data.get("frame_paths") or time_info.get("frame_paths") or [])
+        segment_video_path = str(
+            seg_data.get("segment_video_path")
+            or time_info.get("segment_video_path")
+            or ""
+        ).strip()
+        if not frame_paths or not segment_video_path:
+            return None
+        if any(not (output_dir / str(path)).exists() for path in frame_paths):
+            return None
+        if not (output_dir / segment_video_path).exists():
+            return None
+    sparse_threshold = max(1, int(getattr(settings, "sparse_video_segment_threshold", 3) or 3))
+    if not _cached_dense_index_is_usable(
+        output_dir / "vectors",
+        len(segments),
+        allow_sparse_empty=len(segments) <= sparse_threshold,
+    ):
+        return None
+    video_path = None
+    video_metadata_path = output_dir / "video_metadata.json"
+    if video_metadata_path.exists():
+        try:
+            video_metadata = json.loads(video_metadata_path.read_text(encoding="utf-8")) or {}
+            video_path = video_metadata.get("source_video_path")
+        except (OSError, TypeError, ValueError):
+            return None
+    return {
+        "video_name": video_name,
+        "video_path": video_path,
+        "segments": segments,
+        "num_segments": len(segments),
+        "transcripts": transcripts,
+        "segment_times_info": segment_times,
+    }
+
+
+def _tool_library_baseline_descriptor() -> Dict[str, Any]:
+    """Return the immutable batch baseline identity carried into each run."""
+
+    raw_path = str(os.environ.get("CFV_REGISTRY_BASELINE_SNAPSHOT_PATH") or "").strip()
+    if not raw_path:
+        return {
+            "baseline_id": "snapshot_000",
+            "path": "",
+            "status": "not_configured",
+        }
+    baseline_path = Path(raw_path).expanduser().resolve()
+    try:
+        baseline = load_registry_baseline(baseline_path)
+    except Exception as exc:
+        return {
+            "baseline_id": "",
+            "path": str(baseline_path),
+            "status": "invalid",
+            "error": str(exc),
+        }
+    if not baseline:
+        return {
+            "baseline_id": "",
+            "path": str(baseline_path),
+            "status": "missing",
+        }
+    return {
+        "baseline_id": str(baseline.get("baseline_id") or ""),
+        "path": str(baseline_path),
+        "schema_digest": str(baseline.get("schema_digest") or ""),
+        "source_digest": str(baseline.get("source_digest") or ""),
+        "tool_count": int(baseline.get("tool_count") or 0),
+        "status": "ready",
     }
 
 
@@ -1584,6 +1965,51 @@ def _keyword_overlap_score(query: str, *texts: str) -> float:
         return 0.0
     overlap = len(query_tokens.intersection(doc_tokens))
     return overlap / max(1, len(query_tokens))
+
+
+def _rank_sparse_segments_without_embedding(
+    query: str,
+    segments: Dict[str, Dict[str, Any]],
+    video_name: str,
+    top_k: int,
+) -> List[Dict[str, Any]]:
+    """Keep every usable sparse segment without loading a semantic model.
+
+    Sparse videos do not need query-dependent dense ranking: showing all
+    segments is the declared grounding policy.  We retain a lexical score
+    only for deterministic ordering/debugging and never label it semantic
+    evidence.
+    """
+    ranked: List[Dict[str, Any]] = []
+    for seg_id, seg in segments.items():
+        if not isinstance(seg, dict):
+            continue
+        caption = str(seg.get("caption", "") or "").strip()
+        transcript = str(seg.get("transcript", "") or "").strip()
+        if not caption or caption.lower().startswith("visual caption unavailable"):
+            continue
+        lexical_score = _keyword_overlap_score(query, caption, transcript)
+        ranked.append(
+            {
+                "segment_id": f"{video_name}_{seg_id}",
+                "segment_ref": f"{video_name}_{seg_id}",
+                "raw_segment_id": str(seg_id),
+                "time": seg.get("time", ""),
+                "time_range": seg.get("time", ""),
+                "caption": caption,
+                "transcript": transcript,
+                "frame_times": seg.get("frame_times", []),
+                "frame_paths": seg.get("frame_paths", []),
+                "score": lexical_score,
+                "semantic_score": 0.0,
+                "lexical_score": lexical_score,
+                "modality_scores": {"caption": lexical_score, "transcript": lexical_score},
+                "grounding_ranker": "sparse_all_segments_lexical_only",
+            }
+        )
+    ranked.sort(key=lambda item: float(item.get("score", 0.0)), reverse=True)
+    ranked = _prioritize_segments_by_query_time(ranked, query)
+    return ranked[:max(1, top_k)]
 
 
 def _rank_segments_by_fused_similarity(
@@ -1669,6 +2095,7 @@ def _rank_segments_by_fused_similarity(
         )
 
     ranked.sort(key=lambda item: float(item.get("score", -1.0)), reverse=True)
+    ranked = _prioritize_segments_by_query_time(ranked, query)
     return ranked[:max(1, top_k)]
 
 
@@ -1684,17 +2111,70 @@ def _rank_segments_by_cached_vectors(
     if not vectors_dir.exists():
         return []
     try:
-        from preprocessing.storage.vector_store import DenseVectorStore
-
-        store_device = "cpu" if str(embedding_device or "").strip().lower() == "cpu" else None
-        vector_store = DenseVectorStore(device=store_device)
-        vector_store.load(str(vectors_dir))
+        torch = _require_torch()
         query_vector = _encode_grounding_query_embedding(
             query,
             embedding_device=embedding_device,
             embedding_provider=embedding_provider,
         )
-        raw_results = vector_store.search(query_vector, k=max(1, top_k))
+        # Read the immutable on-disk dense index directly.  Importing
+        # ``vector_store`` here also imports preprocessing-time service
+        # clients and the full local embedding adapter on every worker, even
+        # though the query embedding has already been produced.
+        import numpy as np
+
+        metadata_path = vectors_dir / "metadata.json"
+        with metadata_path.open("r", encoding="utf-8") as handle:
+            payload = json.load(handle) or {}
+        if int(payload.get("schema_version", 0) or 0) < 5:
+            raise RuntimeError("cached dense vector index schema is stale")
+        if str(payload.get("backend", "") or "").strip() != "qwen3_vl_embedding_dense_frames_v1":
+            raise RuntimeError("cached dense vector index backend does not match the active retriever")
+        raw_metadata = payload.get("metadata", [])
+        if not isinstance(raw_metadata, list):
+            raise RuntimeError("cached dense vector index metadata is invalid")
+
+        query_tensor = query_vector.detach().to(device="cpu", dtype=torch.float32).reshape(-1)
+        raw_results: List[Dict[str, Any]] = []
+        for index, metadata in enumerate(raw_metadata):
+            if not isinstance(metadata, dict):
+                continue
+            modality_scores: Dict[str, float] = {}
+            modalities = metadata.get("indexed_modalities") or []
+            if not isinstance(modalities, list):
+                raise RuntimeError(f"cached dense vector metadata has invalid modalities at document {index}")
+            for modality in modalities:
+                modality_name = str(modality or "").strip()
+                if not modality_name:
+                    continue
+                vector_path = vectors_dir / f"doc_{index}.{modality_name}.npy"
+                if not vector_path.exists():
+                    raise RuntimeError(f"cached dense vector file is missing: {vector_path.name}")
+                doc_tensor = torch.from_numpy(np.load(vector_path, allow_pickle=False)).to(
+                    device="cpu", dtype=torch.float32
+                ).reshape(-1)
+                if int(doc_tensor.numel()) != int(query_tensor.numel()):
+                    continue
+                modality_scores[modality_name] = float(torch.dot(query_tensor, doc_tensor).item())
+            if not modality_scores:
+                continue
+            similarity_score = max(modality_scores.values())
+            threshold = similarity_score - 0.05
+            matched_modalities = sorted(
+                modality
+                for modality, score in modality_scores.items()
+                if score >= threshold and score > 0
+            ) or [max(modality_scores, key=modality_scores.get)]
+            raw_results.append(
+                {
+                    **metadata,
+                    "similarity_score": similarity_score,
+                    "matched_modalities": matched_modalities,
+                    "modality_scores": modality_scores,
+                }
+            )
+        raw_results.sort(key=lambda item: float(item.get("similarity_score", 0.0)), reverse=True)
+        raw_results = raw_results[: max(1, top_k)]
     except Exception as exc:
         logger.warning(
             "Planner grounding cached vector search failed at %s; falling back to text reranker. error=%s",
@@ -1729,6 +2209,7 @@ def _rank_segments_by_cached_vectors(
             }
         )
     ranked.sort(key=lambda item: float(item.get("score", -1.0)), reverse=True)
+    ranked = _prioritize_segments_by_query_time(ranked, query)
     return ranked[:max(1, top_k)]
 
 
@@ -2001,27 +2482,44 @@ def _build_planner_grounding_context(
         (preprocessing_result or {}).get("video_name")
         or processed_dir.name
     ).strip() or processed_dir.name
+    query_time_prior = _extract_query_time_prior(query)
     sparse_threshold = max(1, int(getattr(settings, "sparse_video_segment_threshold", 3) or 3))
 
+    sparse_grounding_bypass = False
     if isinstance(segments, dict) and segments:
-        resolved_embedding_provider = _resolve_grounding_embedding_provider(embedding_provider)
-        if resolved_embedding_provider == "local" and str(embedding_device or "").strip().lower() == "cpu":
-            candidate_results = _rank_segments_by_cached_vectors(
-                query=query,
-                processed_dir=Path(processed_dir),
-                top_k=max(top_k, 5),
-                embedding_device=embedding_device,
-                embedding_provider=resolved_embedding_provider,
-            )
-        if not candidate_results:
-            candidate_results = _rank_segments_by_fused_similarity(
+        if len(segments) <= sparse_threshold:
+            candidate_results = _rank_sparse_segments_without_embedding(
                 query=query,
                 segments=segments,
                 video_name=video_name,
-                top_k=max(top_k, 5),
-                embedding_device=embedding_device,
-                embedding_provider=resolved_embedding_provider,
+                top_k=max(top_k, len(segments)),
             )
+            sparse_grounding_bypass = bool(candidate_results)
+            if sparse_grounding_bypass:
+                logger.info(
+                    "Sparse-video grounding bypassed semantic embedding model; usable_segments=%s threshold=%s.",
+                    len(candidate_results),
+                    sparse_threshold,
+                )
+        if not candidate_results:
+            resolved_embedding_provider = _resolve_grounding_embedding_provider(embedding_provider)
+            if resolved_embedding_provider == "local" and str(embedding_device or "").strip().lower() == "cpu":
+                candidate_results = _rank_segments_by_cached_vectors(
+                    query=query,
+                    processed_dir=Path(processed_dir),
+                    top_k=max(top_k, 5),
+                    embedding_device=embedding_device,
+                    embedding_provider=resolved_embedding_provider,
+                )
+            if not candidate_results:
+                candidate_results = _rank_segments_by_fused_similarity(
+                    query=query,
+                    segments=segments,
+                    video_name=video_name,
+                    top_k=max(top_k, 5),
+                    embedding_device=embedding_device,
+                    embedding_provider=resolved_embedding_provider,
+                )
 
     if not candidate_results:
         raise RuntimeError(
@@ -2072,12 +2570,23 @@ def _build_planner_grounding_context(
         "[Initial Planner Grounding]",
         f"query: {_truncate_text(query, max_chars=800)}",
         (
+            "reference_time_prior: "
+            f"[{query_time_prior[0]:.3f}, {query_time_prior[1]:.3f}] seconds; "
+            "overlapping segments are prioritized for follow-up evidence (metadata only)."
+            if query_time_prior is not None
+            else "reference_time_prior: none"
+        ),
+        (
             f"entire_video_time: [0.0, {entire_video_end_time:.3f}]"
             if entire_video_end_time is not None
             else "entire_video_time: [0.0, unknown]"
         ),
         (
-            "[Grounding Source] Sparse-video all-segment evidence."
+        (
+            "[Grounding Source] Sparse-video all-segment evidence (lexical ordering; semantic embedding bypassed)."
+            if sparse_grounding_bypass
+            else "[Grounding Source] Sparse-video all-segment evidence."
+        )
             if use_all_sparse_segments
             else "[Grounding Source] Query-retrieved top-k caption evidence."
         ),
@@ -2264,6 +2773,8 @@ def _build_direct_answer_trajectory(
         "completion_basis": "grounding->answer",
     }
     return {
+        "trajectory_id": f"trajectory_direct_{int(started_at * 1000):x}",
+        "registry_snapshot_id": str(os.environ.get("CFV_REGISTRY_SNAPSHOT_ID") or "snapshot_000"),
         "task_id": f"task_direct_{int(started_at * 1000):x}",
         "goal": query,
         "depth": 0,
@@ -2473,9 +2984,37 @@ def _build_run_result_payload(
     trajectory: Optional[Dict],
     final_answer: str,
     success: bool,
+    input_contract: Optional[Mapping[str, Any]] = None,
 ) -> Dict[str, Any]:
     agent_metrics = _build_agent_metrics(trajectory)
     runtime_metrics = runtime_session.get_query_metrics()
+    gpu_telemetry = runtime_metrics.get("gpu_telemetry", {})
+    tool_library_baseline = _tool_library_baseline_descriptor()
+    harness_state = dict(_ACTIVE_HARNESS_STATE or load_harness_snapshot())
+    normalized_input_contract = _normalize_input_contract(input_contract)
+    try:
+        registry = _get_registry()
+        runtime_session.ensure_registry_discovered(registry)
+        tool_library_audit = registry_runtime_audit(
+            registry,
+            load_registry_baseline(tool_library_baseline.get("path")),
+            tool_library_baseline.get("path"),
+        )
+    except Exception as exc:
+        tool_library_audit = {
+            **tool_library_baseline,
+            "status": "audit_error",
+            "error": str(exc),
+        }
+    if isinstance(gpu_telemetry, dict):
+        logger.info(
+            "[GPU_TELEMETRY] status=%s samples=%s avg_utilization_percent=%s peak_utilization_percent=%s peak_memory_used_gib=%s",
+            gpu_telemetry.get("status"),
+            gpu_telemetry.get("sample_count", 0),
+            gpu_telemetry.get("avg_utilization_percent"),
+            gpu_telemetry.get("peak_utilization_percent"),
+            gpu_telemetry.get("peak_memory_used_gib"),
+        )
     report = {
         "video_path": video_path,
         "query": query,
@@ -2496,7 +3035,23 @@ def _build_run_result_payload(
             **agent_metrics,
             "timing_breakdown_seconds": runtime_metrics.get("timing_breakdown_seconds", {}),
             "cache_stats": runtime_metrics.get("cache_stats", {}),
+            "gpu_telemetry": gpu_telemetry,
             "active_video_names": runtime_metrics.get("active_video_names", []),
+            "tool_library": tool_library_audit,
+            "evolution_harness": harness_audit_payload(harness_state),
+            "benchmark_input_contract": {
+                **normalized_input_contract,
+                "audio_track_policy": (
+                    "excluded"
+                    if normalized_input_contract.get("audio_track") == "excluded"
+                    else "preserved"
+                ),
+                "audio_transcript_policy": (
+                    "included"
+                    if normalized_input_contract.get("audio_transcript_allowed")
+                    else "excluded"
+                ),
+            },
         },
     }
     return _json_safe(report)
@@ -2509,9 +3064,47 @@ async def preprocess_video(
     embedding_device: Optional[str] = None,
     reuse_cache: bool = True,
     accelerator_lock: Any = None,
+    visual_llm_provider: Any = None,
+    input_contract: Optional[Mapping[str, Any]] = None,
 ) -> Dict:
     """Preprocess the input video."""
-    VideoPreprocessingPipeline, PipelineConfig, _, _ = _get_preprocessing_module_exports()
+    normalized_input_contract = _normalize_input_contract(input_contract)
+    include_audio_transcript = bool(
+        normalized_input_contract.get("audio_transcript_allowed", True)
+    )
+    VideoPreprocessingPipeline = None
+    PipelineConfig = None
+    config = None
+    needs_preprocess_llm = False
+
+    def _ensure_pipeline_runtime():
+        nonlocal VideoPreprocessingPipeline, PipelineConfig, config, needs_preprocess_llm
+        if config is not None:
+            return VideoPreprocessingPipeline, config, needs_preprocess_llm
+        VideoPreprocessingPipeline, PipelineConfig, _, _ = _get_preprocessing_module_exports()
+        config = PipelineConfig(
+            device=device_type,
+            working_dir=str(working_dir),
+            use_scene_detection=True,
+            use_asr_semantic_segmentation=include_audio_transcript,
+            include_audio_transcript=include_audio_transcript,
+            save_intermediate=True,
+            enable_knowledge_graph=False,
+            enable_metadata_synthesis=False,
+            embedding_device=embedding_device,
+            build_vector_index=str(os.environ.get("TOOLSTAR_DISABLE_LOCAL_VECTOR_INDEX", "0")).strip().lower()
+            not in {"1", "true", "yes", "on"},
+            build_sparse_vector_index=str(os.environ.get("TOOLSTAR_BUILD_SPARSE_VECTOR_INDEX", "0")).strip().lower()
+            in {"1", "true", "yes", "on"},
+            reuse_cache=reuse_cache,
+        )
+        needs_preprocess_llm = bool(config.enable_knowledge_graph or config.enable_metadata_synthesis)
+        if not needs_preprocess_llm:
+            logger.info(
+                "Skipping preprocess text LLM load because knowledge-graph and metadata synthesis are both disabled."
+            )
+        return VideoPreprocessingPipeline, config, needs_preprocess_llm
+
     runtime_session.set_active_video_context(
         video_name=Path(video_path).stem,
         video_path=video_path,
@@ -2521,30 +3114,9 @@ async def preprocess_video(
     logger.info("Step 1: Video Preprocessing")
     logger.info("=" * 80)
     
-    config = PipelineConfig(
-        device=device_type,
-        working_dir=str(working_dir),
-        use_scene_detection=True,
-        save_intermediate=True,
-        enable_knowledge_graph=False,
-        enable_metadata_synthesis=False,
-        embedding_device=embedding_device,
-        reuse_cache=reuse_cache,
-    )
-    needs_preprocess_llm = bool(config.enable_knowledge_graph or config.enable_metadata_synthesis)
-    if not needs_preprocess_llm:
-        logger.info(
-            "Skipping preprocess text LLM load because knowledge-graph and metadata synthesis are both disabled."
-        )
-    
     video_name = Path(video_path).stem
     output_dir = working_dir / "processed" / video_name
     cache_dir = working_dir / "_cache" / video_name
-    cache_probe_pipeline = VideoPreprocessingPipeline(
-        config=config,
-        llm_provider=None,
-        accelerator_lock=accelerator_lock,
-    )
     preprocess_started = time.perf_counter()
 
     if not reuse_cache:
@@ -2567,21 +3139,28 @@ async def preprocess_video(
         segments: Dict[str, Any] = {}
         is_stale = False
         if not missing_artifacts:
-            cached_payload = cache_probe_pipeline._try_load_processed(output_dir, video_name)
+            cached_payload = _try_load_cached_preprocess_payload(
+                output_dir=output_dir,
+                working_dir=working_dir,
+                video_name=video_name,
+                include_audio_transcript=include_audio_transcript,
+            )
             runtime_session.record_cache("preprocess.output_dir", cached_payload is not None)
             if cached_payload is None:
                 is_stale = True
             else:
                 segments = cached_payload.get("segments", {}) or {}
-                is_stale = _looks_stale_outputs(segments) or not _segment_cache_is_current(
-                    working_dir,
-                    Path(video_path).stem,
-                )
+                # The lightweight cache probe already validates segment
+                # version, timing, frame/clip assets, and vector files.
+                is_stale = False
         else:
             runtime_session.record_cache("preprocess.output_dir", False)
 
         if missing_artifacts or is_stale:
-            config.reuse_cache = False
+            # Rebuild only the missing/stale processed outputs while retaining
+            # valid segment/audio/caption/frame caches for checkpoint resume.
+            VideoPreprocessingPipeline, config, needs_preprocess_llm = _ensure_pipeline_runtime()
+            config.reuse_cache = reuse_cache
             if missing_artifacts:
                 logger.warning(
                     "Processed output directory %s is incomplete; missing artifacts=%s. Regenerating.",
@@ -2606,6 +3185,7 @@ async def preprocess_video(
                 config=config,
                 llm_provider=preprocess_llm,
                 accelerator_lock=accelerator_lock,
+                visual_llm_provider=visual_llm_provider,
             )
             logger.info("Re-processing video due to stale cache: %s", video_path)
             result = await pipeline.process_video(video_path)
@@ -2618,6 +3198,7 @@ async def preprocess_video(
                 "num_segments": len(segments),
             }
     else:
+        VideoPreprocessingPipeline, config, needs_preprocess_llm = _ensure_pipeline_runtime()
         config.reuse_cache = reuse_cache
         preprocess_llm = (
             _get_cached_llm_provider(
@@ -2632,6 +3213,7 @@ async def preprocess_video(
             config=config,
             llm_provider=preprocess_llm,
             accelerator_lock=accelerator_lock,
+            visual_llm_provider=visual_llm_provider,
         )
         if reuse_cache:
             logger.info("Processing video: %s", video_path)
@@ -2666,8 +3248,10 @@ def run_query(
     planner_toolsearch_direct_execution: bool = False,
     planner_toolsearch_direct_single_tool_only: bool = False,
     planner_single_action_per_step: bool = False,
+    runtime_disabled_agent_roles: Optional[List[str]] = None,
 ):
     """Run the ReAct query and return result plus trajectory."""
+    global _ACTIVE_HARNESS_STATE
     registry = _get_registry()
     RecursiveEngine = _get_recursive_engine()
     logger.info("\n" + "=" * 80)
@@ -2681,6 +3265,14 @@ def run_query(
     registry_started = time.perf_counter()
     runtime_session.ensure_registry_discovered(registry)
     runtime_session.record_timing("query.registry_init_seconds", time.perf_counter() - registry_started)
+    harness_state = load_harness_snapshot()
+    if harness_state.get("enabled") and harness_state.get("tool_overrides"):
+        apply_harness_registry_overrides(registry, harness_state)
+        logger.info(
+            "Applied isolated Evolver tool-schema overrides: %s",
+            harness_state.get("registry_mutations_applied"),
+        )
+    _ACTIVE_HARNESS_STATE = harness_state
     base_tools = registry.get_all_tools(tags=["base"])
     meta_tools = registry.get_all_tools(tags=["meta"])
     logger.info(
@@ -2688,6 +3280,13 @@ def run_query(
         len(base_tools),
         len(meta_tools),
         len(registry.get_all_tools()),
+    )
+    baseline_descriptor = _tool_library_baseline_descriptor()
+    logger.info(
+        "Tool library baseline: status=%s baseline_id=%s path=%s",
+        baseline_descriptor.get("status"),
+        baseline_descriptor.get("baseline_id"),
+        baseline_descriptor.get("path"),
     )
     
     # Create LLM provider (local by default per settings)
@@ -2709,6 +3308,19 @@ def run_query(
 
     # Create engine
     engine_kwargs = _runtime_profile_engine_kwargs(runtime_profile)
+    if harness_state.get("enabled"):
+        logger.info(
+            "Evolution harness snapshot applied: snapshot_id=%s status=%s operations=%s policy_digest=%s",
+            harness_state.get("snapshot_id"),
+            harness_state.get("status"),
+            harness_state.get("operations"),
+            harness_state.get("policy_digest"),
+        )
+        engine_kwargs.update({
+            "evolution_harness_context": render_harness_context(harness_state),
+            "evolution_harness_verifier_config": harness_state.get("verifier_config"),
+            "evolution_harness_policy": harness_state.get("policy") or {},
+        })
     if planner_single_action_per_step:
         engine_kwargs["planner_single_action_per_step"] = True
     if planner_toolsearch_direct_execution:
@@ -2718,6 +3330,8 @@ def run_query(
                 planner_toolsearch_direct_single_tool_only
             ),
         })
+    if runtime_disabled_agent_roles:
+        engine_kwargs["disabled_agent_roles"] = list(runtime_disabled_agent_roles)
     engine = RecursiveEngine(
         llm=planner_llm,
         raw_trace_jsonl_path=str(raw_trace_jsonl_path) if raw_trace_jsonl_path else None,
@@ -2778,7 +3392,12 @@ async def _execute_pipeline_impl(
     planner_single_action_per_step: bool = False,
     runtime_disabled_tool_names: Optional[List[str]] = None,
     runtime_disable_meta_tools: bool = False,
+    runtime_disabled_agent_roles: Optional[List[str]] = None,
+    input_contract: Optional[Mapping[str, Any]] = None,
 ) -> Dict[str, Any]:
+    global _ACTIVE_HARNESS_STATE
+    _ACTIVE_HARNESS_STATE = {}
+    normalized_input_contract = _normalize_input_contract(input_contract)
     _ensure_non_planner_runtime_ready_for_e2e()
     runtime_session.reset_query_state()
     workspace_root = Path(workspace_root).resolve()
@@ -2813,6 +3432,7 @@ async def _execute_pipeline_impl(
 
     _cleanup_runtime_artifacts(query_workspace)
     effective_log_path = Path(log_path).resolve() if log_path else artifact_paths["run_log_path"]
+    tool_library_baseline = _tool_library_baseline_descriptor()
     request_payload = {
         "kind": "query_request",
         "layout_version": 2,
@@ -2829,6 +3449,8 @@ async def _execute_pipeline_impl(
         "persist_query_workspace": bool(persist_query_workspace),
         "write_log_file": bool(write_log_file),
         "log_path": str(effective_log_path),
+        "tool_library_baseline": tool_library_baseline,
+        "input_contract": normalized_input_contract,
     }
     manifest_payload = {
         "kind": "query_run",
@@ -2844,6 +3466,8 @@ async def _execute_pipeline_impl(
         "query_group_dir": str(query_group_dir),
         "run_workspace": str(query_workspace),
         "shared_preprocess_root": str(shared_preprocess_root),
+        "tool_library_baseline": tool_library_baseline,
+        "input_contract": normalized_input_contract,
         "directories": {
             "inputs": str(artifact_paths["inputs_dir"]),
             "logs": str(artifact_paths["logs_dir"]),
@@ -2884,6 +3508,7 @@ async def _execute_pipeline_impl(
     # the shared workspace root so they can be reused across different queries.
     settings.data_cache_dir = str(shared_preprocess_root)
     runtime_session.set_active_video_context(video_name=Path(video_path).stem, video_path=video_path)
+    runtime_session.set_active_query_text(query)
 
     try:
         if write_log_file:
@@ -2912,12 +3537,38 @@ async def _execute_pipeline_impl(
                 )
             logger.info("")
 
+            shared_visual_provider = None
+            share_planner_visual_runtime = str(
+                os.environ.get("TOOLSTAR_SHARE_PLANNER_VISUAL_RUNTIME", "")
+            ).strip().lower() in {"1", "true", "yes", "on"}
+            if share_planner_visual_runtime:
+                candidate_visual_provider = _get_cached_llm_provider(
+                    model_name=settings.planner_model_path,
+                    model_role="planner",
+                    device=device_type,
+                )
+                if (
+                    getattr(candidate_visual_provider, "model", None) is not None
+                    and getattr(candidate_visual_provider, "processor", None) is not None
+                    and bool(getattr(candidate_visual_provider, "_supports_multimodal_generation", False))
+                ):
+                    shared_visual_provider = candidate_visual_provider
+                    logger.info(
+                        "Planner/caption runtime sharing enabled: one multimodal Qwen model instance will serve both roles."
+                    )
+                else:
+                    logger.warning(
+                        "Planner/caption runtime sharing requested, but the planner provider is not multimodal; using the normal caption runtime path."
+                    )
+
             total_started = time.perf_counter()
             preprocessing_payload = await preprocess_video(
                 video_path,
                 shared_preprocess_root,
                 device_type=device_type,
                 reuse_cache=not no_cache,
+                visual_llm_provider=shared_visual_provider,
+                input_contract=normalized_input_contract,
             )
             runtime_session.release_providers_for_roles("preprocess")
 
@@ -2930,6 +3581,7 @@ async def _execute_pipeline_impl(
                 include_video_clip_qa=bool(include_grounding_video_clip_qa),
             )
             runtime_session.record_timing("query.grounding_context_seconds", time.perf_counter() - grounding_started)
+            _release_local_embedding_runtime()
 
             resolved_pipeline_mode = _normalize_pipeline_mode(pipeline_mode)
             if resolved_pipeline_mode == "planner_direct_answer":
@@ -2952,6 +3604,7 @@ async def _execute_pipeline_impl(
                         planner_toolsearch_direct_single_tool_only
                     ),
                     planner_single_action_per_step=bool(planner_single_action_per_step),
+                    runtime_disabled_agent_roles=runtime_disabled_agent_roles,
                 )
             else:
                 final_answer, trajectory, success = run_query(
@@ -2961,6 +3614,7 @@ async def _execute_pipeline_impl(
                     raw_trace_jsonl_path=artifact_paths["raw_trace_jsonl_path"],
                     runtime_profile=runtime_profile,
                     planner_single_action_per_step=bool(planner_single_action_per_step),
+                    runtime_disabled_agent_roles=runtime_disabled_agent_roles,
                 )
 
             runtime_session.record_timing("query.total_seconds", time.perf_counter() - total_started)
@@ -2973,6 +3627,7 @@ async def _execute_pipeline_impl(
                 trajectory=trajectory,
                 final_answer=final_answer,
                 success=success,
+                input_contract=normalized_input_contract,
             )
             _write_json_file(artifact_paths["run_result_path"], run_payload)
             logger.info("%s %s", RUN_RESULT_LOG_MARKER, json.dumps(run_payload, ensure_ascii=False))
@@ -3068,6 +3723,8 @@ async def execute_pipeline(
     planner_single_action_per_step: bool = False,
     runtime_disabled_tool_names: Optional[List[str]] = None,
     runtime_disable_meta_tools: bool = False,
+    runtime_disabled_agent_roles: Optional[List[str]] = None,
+    input_contract: Optional[Mapping[str, Any]] = None,
 ) -> Dict[str, Any]:
     with _pipeline_runtime_profile_context(runtime_profile) as resolved_runtime_profile:
         return await _execute_pipeline_impl(
@@ -3088,6 +3745,8 @@ async def execute_pipeline(
             planner_single_action_per_step=planner_single_action_per_step,
             runtime_disabled_tool_names=runtime_disabled_tool_names,
             runtime_disable_meta_tools=runtime_disable_meta_tools,
+            runtime_disabled_agent_roles=runtime_disabled_agent_roles,
+            input_contract=input_contract,
         )
 
 

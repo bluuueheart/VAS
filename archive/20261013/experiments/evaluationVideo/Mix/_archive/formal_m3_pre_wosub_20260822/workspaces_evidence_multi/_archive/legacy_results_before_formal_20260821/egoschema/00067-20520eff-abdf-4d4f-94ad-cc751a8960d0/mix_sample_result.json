@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00067:20520eff-abdf-4d4f-94ad-cc751a8960d0",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C first centers the clay on the pottery wheel, then uses a modelling tool to shape it into a bowl. she then smoothes the surface of the bowl with her hands and the modelling tool. finally, she removes the bowl from the pottery wheel and cleans the modelling tool.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00067-20520eff-abdf-4d4f-94ad-cc751a8960d0",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00067-20520eff-abdf-4d4f-94ad-cc751a8960d0/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00067-20520eff-abdf-4d4f-94ad-cc751a8960d0/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00067-20520eff-abdf-4d4f-94ad-cc751a8960d0/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/20520eff-abdf-4d4f-94ad-cc751a8960d0.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/20520eff-abdf-4d4f-94ad-cc751a8960d0.mp4",
+  "question_block": "Question: Summarize the overall process c undergoes to shape, modify, and finalize the pottery piece, focusing on the core techniques utilized.\nOptions:\n(A) C first centers the clay on the pottery wheel, then uses a modelling tool to shape it into a vase. she then smoothes the surface of the vase with her hands and the modelling tool. finally, she removes the vase from the pottery wheel and cleans the modelling tool.\n(B) C first centers the clay on the pottery wheel, then uses a modelling tool to shape it into a bowl. she then smoothes the surface of the bowl with her hands and the modelling tool. finally, she removes the bowl from the pottery wheel and cleans the modelling tool.\n(C) C first centers the clay on the pottery wheel, then uses a modelling tool to shape it into a plate. she then smoothes the surface of the plate with her hands and the modelling tool. finally, she removes the plate from the pottery wheel and cleans the modelling tool.\n(D) C first centers the clay on the pottery wheel, then uses a modelling tool to shape it into a cup. she then smoothes the surface of the cup with her hands and the modelling tool. finally, she removes the cup from the pottery wheel and cleans the modelling tool.\n(E) C initially centers the clay carefully on the pottery wheel, then skillfully uses a modelling tool to shape it into a pot. she then smoothly smoothes the pot's surface using her hands and the modelling tool. ultimately, she removes the finished pot from the pottery wheel and diligently cleans the modelling tool.",
+  "options": [
+    "C first centers the clay on the pottery wheel, then uses a modelling tool to shape it into a vase. she then smoothes the surface of the vase with her hands and the modelling tool. finally, she removes the vase from the pottery wheel and cleans the modelling tool.",
+    "C first centers the clay on the pottery wheel, then uses a modelling tool to shape it into a bowl. she then smoothes the surface of the bowl with her hands and the modelling tool. finally, she removes the bowl from the pottery wheel and cleans the modelling tool.",
+    "C first centers the clay on the pottery wheel, then uses a modelling tool to shape it into a plate. she then smoothes the surface of the plate with her hands and the modelling tool. finally, she removes the plate from the pottery wheel and cleans the modelling tool.",
+    "C first centers the clay on the pottery wheel, then uses a modelling tool to shape it into a cup. she then smoothes the surface of the cup with her hands and the modelling tool. finally, she removes the cup from the pottery wheel and cleans the modelling tool.",
+    "C initially centers the clay carefully on the pottery wheel, then skillfully uses a modelling tool to shape it into a pot. she then smoothly smoothes the pot's surface using her hands and the modelling tool. ultimately, she removes the finished pot from the pottery wheel and diligently cleans the modelling tool."
+  ],
+  "official_meta": {
+    "question_index": "00067",
+    "video_id": "20520eff-abdf-4d4f-94ad-cc751a8960d0",
+    "source_index": 67
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:22:29.969780Z"
+}

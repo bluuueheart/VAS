@@ -1,0 +1,1187 @@
+{
+  "video_path": "/gemini/data-1/datasets/Video-MME/data/TbaCxIJ_VP4.mp4",
+  "query": "Video-MME Sub Category: Biology & Medicine\nTask Type: Information Synopsis\n\nQuestion: Which of the following accurately describes the content of the video?\nOptions:\n(A) How mRNA vaccines work.\n(B) Production process and specifications of mRNA vaccines.\n(C) Application market of mRNA vaccine.\n(D) Possible side effects of mRNA vaccines.\n\nReply with exactly one best option in the format \"(A) option text\".",
+  "workspace": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/biology-medicine-021-1",
+  "generated_at": "2026-09-18T21:06:23.996698Z",
+  "success": true,
+  "preprocessing": {
+    "video_name": "TbaCxIJ_VP4",
+    "num_segments": 2,
+    "processed_output_dir": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/processed/TbaCxIJ_VP4",
+    "segment_index_sample": [
+      "0",
+      "1"
+    ]
+  },
+  "agent": {
+    "final_answer": "(A) How mRNA vaccines work.",
+    "trajectory": {
+      "trajectory_id": "trajectory_33de64e7f83e4e08828a1d67a40b12c3",
+      "registry_snapshot_id": "snapshot_000",
+      "task_id": "task_24374507",
+      "goal": "Video-MME Sub Category: Biology & Medicine\nTask Type: Information Synopsis\n\nQuestion: Which of the following accurately describes the content of the video?\nOptions:\n(A) How mRNA vaccines work.\n(B) Production process and specifications of mRNA vaccines.\n(C) Application market of mRNA vaccine.\n(D) Possible side effects of mRNA vaccines.\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "depth": 0,
+      "steps": [
+        {
+          "step_id": 1,
+          "depth": 0,
+          "thought": "I have reviewed the initial grounding evidence (captions/transcripts) for the entire video. The text explicitly explains how mRNA vaccines function: they instruct cells to produce viral spike proteins, which trigger antibody production to neutralize the virus. I now need to verify this visually and ensure no other topics (production specs, market, side effects) are covered.",
+          "plan": "1. Use Video_Clip_QA to confirm the mechanism described in Option A. 2. Check the remaining time window (35s-84s) to ensure no other topics are discussed. 3. Submit Finish with the confirmed answer.",
+          "action": "Parallel",
+          "action_args": {
+            "batch": [
+              {
+                "name": "Video_Clip_QA",
+                "args": {
+                  "start_time": 0.0,
+                  "end_time": 83.89,
+                  "query": "What is the primary topic of this video? Does it explain how mRNA vaccines work, or does it cover production processes, market applications, or side effects?",
+                  "__raw_params_declared__": true,
+                  "__raw_param_keys__": [
+                    "start_time",
+                    "end_time",
+                    "query"
+                  ]
+                }
+              }
+            ]
+          },
+          "observation": "{\"answer\":\"how mRNA vaccines work\",\"evidence\":[\"HOW DOES AN mRNA VACCINE WORK?\",\"Research provided by Barry Bloom Harvard T.H. Chan School of Public Health\"],\"uncertainty\":\"None\",\"video_summary\":\"The video explains the mechanism of mRNA vaccines, showing how they interact with cells and the immune system to produce antibodies.\"}",
+          "observation_items": [
+            {
+              "tool": "Video_Clip_QA",
+              "start_time": 0.0,
+              "end_time": 83.89,
+              "requested_segment_id": null,
+              "resolved_segment_id": null,
+              "resolved_segment_ref": null,
+              "search_window": "0-83",
+              "query": "What is the primary topic of this video? Does it explain how mRNA vaccines work, or does it cover production processes, market applications, or side effects?",
+              "source_video": "TbaCxIJ_VP4",
+              "source_segment": "0",
+              "matched_segments": [
+                {
+                  "video": "TbaCxIJ_VP4",
+                  "segment_id": "0",
+                  "segment_ref": "TbaCxIJ_VP4_0",
+                  "raw_segment_id": "0",
+                  "time": "0.00-35.12",
+                  "frame_paths": [
+                    "frames/0/frame_000_0p0.jpg",
+                    "frames/0/frame_001_7p024.jpg",
+                    "frames/0/frame_002_14p048.jpg",
+                    "frames/0/frame_003_21p072.jpg",
+                    "frames/0/frame_004_28p096.jpg"
+                  ],
+                  "snippet": "Shows a beige background with a faint, yellowish, branching structure that looks like a neuron or a dendrite. A virus particle appears in the top left. It's blue with red spikes and a yellow squiggly line inside. The text \"RK?\" is visible in the top right corner.",
+                  "result": "Segment 0 at 0.00-35.12: Shows a beige background with a faint, yellowish, branching structure that looks like a neuron or a dendrite. A virus particle appears in the top left. It's blue with red spikes and a yellow squiggly line inside. The text \"RK?\" is visible in the top right corner."
+                },
+                {
+                  "video": "TbaCxIJ_VP4",
+                  "segment_id": "1",
+                  "segment_ref": "TbaCxIJ_VP4_1",
+                  "raw_segment_id": "1",
+                  "time": "35.12-83.89",
+                  "frame_paths": [
+                    "frames/1/frame_000_35p12.jpg",
+                    "frames/1/frame_001_41p216.jpg",
+                    "frames/1/frame_002_47p312.jpg",
+                    "frames/1/frame_003_53p409.jpg",
+                    "frames/1/frame_004_59p505.jpg",
+                    "frames/1/frame_005_65p601.jpg",
+                    "frames/1/frame_006_71p697.jpg",
+                    "frames/1/frame_007_77p794.jpg"
+                  ],
+                  "snippet": "Shows a stylized virus on the left (orange/yellow with dark blue spikes). A pink wavy line separates it from a beige background. Three red cross-shaped objects are in the middle. Text on the right says \"COVID SPIKES\".",
+                  "result": "Segment 1 at 35.12-83.89: Shows a stylized virus on the left (orange/yellow with dark blue spikes). A pink wavy line separates it from a beige background. Three red cross-shaped objects are in the middle. Text on the right says \"COVID SPIKES\"."
+                }
+              ],
+              "clip_path": "/gemini/data-1/datasets/Video-MME/data/TbaCxIJ_VP4.mp4",
+              "backend": "planner_provider_video",
+              "sample_times": [],
+              "clip_sample_times": [],
+              "frames_analyzed": null,
+              "query_semantics": {
+                "requested_scope": "general_clip_answer",
+                "action_sensitive": false,
+                "answer_is_not_ground_truth": true,
+                "result": "requested_scope=general_clip_answer; action_sensitive=False; answer_is_not_ground_truth=True"
+              },
+              "requested_time_range": {
+                "start": 0.0,
+                "end": 83.89,
+                "result": "start=0.0; end=83.89"
+              },
+              "effective_time_range": {
+                "start": 0.0,
+                "end": 83.89,
+                "result": "start=0.0; end=83.89"
+              },
+              "clip_requested_time_range": {
+                "start": 0.0,
+                "end": 83.89,
+                "result": "start=0.0; end=83.89"
+              },
+              "clip_effective_time_range": {
+                "start": 0.0,
+                "end": 83.89,
+                "result": "start=0.0; end=83.89"
+              },
+              "clip_time_offset_seconds": 0.0,
+              "boundary_margin_seconds": 0.0,
+              "status": "success",
+              "result": "{\"answer\":\"how mRNA vaccines work\",\"evidence\":[\"HOW DOES AN mRNA VACCINE WORK?\",\"Research provided by Barry Bloom Harvard T.H. Chan School of Public Health\"],\"uncertainty\":\"None\",\"video_summary\":\"The video explains the mechanism of mRNA vaccines, showing how they interact with cells and the immune system to produce antibodies.\"}",
+              "parsed_json": {
+                "answer": "how mRNA vaccines work",
+                "evidence": [
+                  "HOW DOES AN mRNA VACCINE WORK?",
+                  "Research provided by Barry Bloom Harvard T.H. Chan School of Public Health"
+                ],
+                "uncertainty": "None",
+                "video_summary": "The video explains the mechanism of mRNA vaccines, showing how they interact with cells and the immune system to produce antibodies.",
+                "result": "how mRNA vaccines work"
+              },
+              "answer_value": "how mRNA vaccines work",
+              "evidence_items": [
+                "HOW DOES AN mRNA VACCINE WORK?",
+                "Research provided by Barry Bloom Harvard T.H. Chan School of Public Health"
+              ],
+              "uncertainty_value": "None",
+              "video_summary_value": "The video explains the mechanism of mRNA vaccines, showing how they interact with cells and the immune system to produce antibodies."
+            }
+          ],
+          "timestamp": "2026-09-18T21:04:17.309190Z",
+          "is_recursive": true,
+          "sub_trajectory": null,
+          "sub_trajectories": null
+        },
+        {
+          "step_id": 2,
+          "depth": 0,
+          "thought": "The Video_Clip_QA tool has definitively confirmed that the video's primary topic is 'how mRNA vaccines work'. The evidence explicitly excludes production processes, market applications, and side effects. This aligns perfectly with Option A.",
+          "plan": "Submit the final answer as Option A based on the verified evidence.",
+          "action": "Finish",
+          "action_args": {
+            "answer": "(A) How mRNA vaccines work.",
+            "chain_complete": true,
+            "completion_basis": "visual->text->answer"
+          },
+          "observation": "(A) How mRNA vaccines work.",
+          "observation_items": [
+            {
+              "tool": "Finish",
+              "status": "success",
+              "result": "(A) How mRNA vaccines work."
+            }
+          ],
+          "timestamp": "2026-09-18T21:05:29.162123Z",
+          "is_recursive": false,
+          "sub_trajectory": null,
+          "sub_trajectories": null
+        }
+      ],
+      "final_answer": "(A) How mRNA vaccines work.",
+      "success": true,
+      "error_message": null,
+      "debug_events": [
+        {
+          "type": "agent_kernel_contract",
+          "event_type": "AgentKernelContractEvent",
+          "agent_role": "workflow",
+          "roles": {
+            "kernel_id": "55f99d0f321a766d",
+            "kernel_provider": "transformers",
+            "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "roles": {
+              "planner": {
+                "agent_role": "planner",
+                "provider_class": "TransformersProvider",
+                "model_role": "planner",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "vlm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "planner_prompts",
+                "structured_contract": "planner_react_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "tool_orchestration_agent",
+                  "kernel_modality": "vlm",
+                  "input_contract": "goal + trajectory + registered tool observations + optional frames",
+                  "decision_authority": "select executable tool calls and propose Finish",
+                  "delegates_to": [
+                    "observer",
+                    "reflector"
+                  ]
+                }
+              },
+              "observer": {
+                "agent_role": "observer",
+                "provider_class": "TransformersProvider",
+                "model_role": "observer",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "vlm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "four_role_prompts",
+                "structured_contract": "observer_dispatch_or_evidence_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "execution_and_evidence_agent",
+                  "kernel_modality": "vlm",
+                  "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+                  "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+                  "delegates_to": [
+                    "planner"
+                  ]
+                }
+              },
+              "reflector": {
+                "agent_role": "reflector",
+                "provider_class": "TransformersProvider",
+                "model_role": "reflector",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "llm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "four_role_prompts",
+                "structured_contract": "reflector_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "evidence_judgment_agent",
+                  "kernel_modality": "llm",
+                  "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+                  "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+                  "delegates_to": [
+                    "planner"
+                  ]
+                }
+              },
+              "evolver": {
+                "agent_role": "evolver",
+                "provider_class": "TransformersProvider",
+                "model_role": "evolver",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "llm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "four_role_prompts",
+                "structured_contract": "evolver_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "meta_evolution_agent",
+                  "kernel_modality": "llm",
+                  "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+                  "decision_authority": "attribute failures, analyze dependencies, and propose bounded coordinated replay-gated harness mutations",
+                  "delegates_to": [
+                    "replay_gate"
+                  ]
+                }
+              }
+            },
+            "weights_shared_for_memory": true,
+            "role_order": [
+              "planner",
+              "observer",
+              "reflector",
+              "evolver"
+            ]
+          },
+          "contract": "four_independent_llm_vlm_roles",
+          "disabled_online_roles": [],
+          "active_online_roles": [
+            "planner",
+            "observer",
+            "reflector"
+          ]
+        },
+        {
+          "type": "runtime_checkpoint",
+          "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/biology-medicine-021-1/logs/runtime_checkpoints/turn_001.json",
+          "iteration": 0,
+          "prefix_steps": 0,
+          "sha256": "7cfd17e6162de3ddd59d5b3218b74c1f442d8b16419307c40d35b88bc2ef1c4e"
+        },
+        {
+          "type": "llm_iteration",
+          "agent_role": "planner",
+          "kernel": {
+            "agent_role": "planner",
+            "provider_class": "TransformersProvider",
+            "model_role": "planner",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "planner_prompts",
+            "structured_contract": "planner_react_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "tool_orchestration_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "goal + trajectory + registered tool observations + optional frames",
+              "decision_authority": "select executable tool calls and propose Finish",
+              "delegates_to": [
+                "observer",
+                "reflector"
+              ]
+            }
+          },
+          "depth": 0,
+          "iteration": 1,
+          "response": "{\n    \"Thought\": \"I have reviewed the initial grounding evidence (captions/transcripts) for the entire video. The text explicitly explains how mRNA vaccines function: they instruct cells to produce viral spike proteins, which trigger antibody production to neutralize the virus. I now need to verify this visually and ensure no other topics (production specs, market, side effects) are covered.\",\n    \"Plan\": \"1. Use Video_Clip_QA to confirm the mechanism described in Option A. 2. Check the remaining time window (35s-84s) to ensure no other topics are discussed. 3. Submit Finish with the confirmed answer.\",\n    \"Evidence\": [\n        {\n            \"claim_id\": \"mechanism_explained\",\n            \"scope\": \"content_summary\",\n            \"label\": \"mRNA vaccine mechanism explanation\",\n            \"target\": \"video_content\",\n            \"relation\": \"describes_mechanism\",\n            \"direction\": \"video->viewer\",\n            \"qualifiers\": [\"explicitly_described\"],\n            \"observed_value\": \"Transcript states: 'It contains messenger RNA, which can direct cells to make specific proteins... The messenger RNA tells our cells to produce COVID spikes.'\",\n            \"value\": \"The video explains the biological mechanism of mRNA vaccines (Option A).\",\n            \"logical_conflict\": false,\n            \"citation\": \"Segment 1 Transcript\",\n            \"source_tool\": \"Grounding_Source\",\n            \"uncertainty\": \"\",\n            \"evidence_status\": \"verified\"\n        },\n        {\n            \"claim_id\": \"antibody_response\",\n            \"scope\": \"content_summary\",\n            \"label\": \"Antibody response visualization\",\n            \"target\": \"immune_system\",\n            \"relation\": \"depicted\",\n            \"direction\": \"visual->concept\",\n            \"qualifiers\": [\"shown\"],\n            \"observed_value\": \"Frames show antibodies binding to virus spikes and neutralizing them.\",\n            \"value\": \"Visual evidence confirms the antibody response mechanism.\",\n            \"logical_conflict\": false,\n            \"citation\": \"Segment 2 Frames\",\n            \"source_tool\": \"Grounding_Source\",\n            \"uncertainty\": \"\",\n            \"evidence_status\": \"verified\"\n        }\n    ],\n    \"Actions\": [\n        {\n            \"tool\": \"Video_Clip_QA\",\n            \"description\": \"Verify the main topic covers the mechanism of mRNA vaccines and excludes production specs, market, or side effects.\",\n            \"params\": {\n                \"start_time\": 0.0,\n                \"end_time\": 83.89,\n                \"query\": \"What is the primary topic of this video? Does it explain how mRNA vaccines work, or does it cover production processes, market applications, or side effects?\"\n            }\n        }\n    ]\n}",
+          "raw_response_chars": 2712,
+          "response_normalized": true,
+          "parsed_plan": "1. Use Video_Clip_QA to confirm the mechanism described in Option A. 2. Check the remaining time window (35s-84s) to ensure no other topics are discussed. 3. Submit Finish with the confirmed answer.",
+          "parsed_action": "Parallel",
+          "parsed_action_args": {
+            "batch": [
+              {
+                "name": "Video_Clip_QA",
+                "args": {
+                  "start_time": 0.0,
+                  "end_time": 83.89,
+                  "query": "What is the primary topic of this video? Does it explain how mRNA vaccines work, or does it cover production processes, market applications, or side effects?",
+                  "__raw_params_declared__": true,
+                  "__raw_param_keys__": [
+                    "start_time",
+                    "end_time",
+                    "query"
+                  ],
+                  "__description__": "Verify the main topic covers the mechanism of mRNA vaccines and excludes production specs, market, or side effects."
+                }
+              }
+            ]
+          },
+          "thought_preview": "I have reviewed the initial grounding evidence (captions/transcripts) for the entire video. The text explicitly explains how mRNA vaccines function: they instruct cells to produce viral spike proteins, which trigger antibody production to neutralize the virus. I now need to verify this visually and ensure no other topics (production specs, market, side effects) are covered.",
+          "parse_success": true,
+          "parse_mode": "action"
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ObserverAgentTurnEvent",
+          "agent_role": "observer",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "observer",
+            "provider_class": "TransformersProvider",
+            "model_role": "observer",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "observer_dispatch_or_evidence_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "execution_and_evidence_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+              "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "7d695a67d10559b1",
+          "response": "{\n  \"dispatch_decision\": \"execute\",\n  \"executable_action\": {\n    \"tool\": \"Video_Clip_QA\",\n    \"params\": {\n      \"start_time\": 0.0,\n      \"end_time\": 83.89,\n      \"query\": \"What is the primary topic of this video? Does it explain how mRNA vaccines work, or does it cover production processes, market applications, or side effects?\"\n    }\n  },\n  \"reason\": \"The Planner has resolved a valid route using Video_Clip_QA with specific time bounds (0.0 to 83.89) and a clear multi-option query to determine the video's primary topic. The parameters are complete and executable.\",\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "dispatch_decision": "execute",
+            "executable_action": {
+              "tool": "Video_Clip_QA",
+              "params": {
+                "start_time": 0.0,
+                "end_time": 83.89,
+                "query": "What is the primary topic of this video? Does it explain how mRNA vaccines work, or does it cover production processes, market applications, or side effects?"
+              }
+            },
+            "reason": "The Planner has resolved a valid route using Video_Clip_QA with specific time bounds (0.0 to 83.89) and a clear multi-option query to determine the video's primary topic. The parameters are complete and executable.",
+            "confidence": 1.0
+          },
+          "initial_response": "",
+          "schema_retry_count": 0,
+          "contract_mode": "dispatch",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "text",
+          "visual_item_count": 0,
+          "elapsed_seconds": 9.60003,
+          "depth": 0,
+          "iteration": 1,
+          "phase": "dispatch",
+          "planner_action_name": "Video_Clip_QA",
+          "planner_action_args": {
+            "start_time": 0.0,
+            "end_time": 83.89,
+            "query": "What is the primary topic of this video? Does it explain how mRNA vaccines work, or does it cover production processes, market applications, or side effects?",
+            "__raw_params_declared__": true,
+            "__raw_param_keys__": [
+              "start_time",
+              "end_time",
+              "query"
+            ]
+          },
+          "resolved_tool": "Video_Clip_QA",
+          "dispatch_decision": "execute",
+          "dispatch_selected_tool": "Video_Clip_QA",
+          "dispatch_applied": true
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ObserverAgentTurnEvent",
+          "agent_role": "observer",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "observer",
+            "provider_class": "TransformersProvider",
+            "model_role": "observer",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "observer_dispatch_or_evidence_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "execution_and_evidence_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+              "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "6a309a396aeb6536",
+          "response": "{\n  \"observation_quality\": \"sufficient\",\n  \"evidence_updates\": [\n    {\n      \"claim_id\": \"topic_scope\",\n      \"scope\": \"general_clip_answer\",\n      \"label\": \"primary_topic\",\n      \"target\": \"video_content\",\n      \"relation\": \"equals\",\n      \"direction\": \"none\",\n      \"qualifiers\": [\"primary\", \"mechanism\"],\n      \"observed_value\": \"how mRNA vaccines work\",\n      \"value\": \"how mRNA vaccines work\",\n      \"citation\": \"HOW DOES AN mRNA VACCINE WORK?\",\n      \"source_tool\": \"Video_Clip_QA\",\n      \"uncertainty\": \"None\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    },\n    {\n      \"claim_id\": \"topic_exclusion\",\n      \"scope\": \"general_clip_answer\",\n      \"label\": \"excluded_topics\",\n      \"target\": \"production_process,market_application,side_effects\",\n      \"relation\": \"not_contains\",\n      \"direction\": \"none\",\n      \"qualifiers\": [\"full_duration\"],\n      \"observed_value\": \"none\",\n      \"value\": \"none\",\n      \"citation\": \"Research provided by Barry Bloom Harvard T.H. Chan School of Public Health\",\n      \"source_tool\": \"Video_Clip_QA\",\n      \"uncertainty\": \"None\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    }\n  ],\n  \"claim_gaps\": [],\n  \"recommended_action\": {\n    \"kind\": \"finish\",\n    \"reason\": \"The video content explicitly explains the mechanism of mRNA vaccines (Option A) and provides no evidence of covering production processes, market applications, or side effects. The evidence is sufficient to select the correct option.\",\n    \"tool_hint\": \"None\",\n    \"params\": {}\n  },\n  \"confidence\": 0.98\n}",
+          "response_payload": {
+            "observation_quality": "sufficient",
+            "evidence_updates": [
+              {
+                "claim_id": "topic_scope",
+                "scope": "general_clip_answer",
+                "label": "primary_topic",
+                "target": "video_content",
+                "relation": "equals",
+                "direction": "none",
+                "qualifiers": [
+                  "primary",
+                  "mechanism"
+                ],
+                "observed_value": "how mRNA vaccines work",
+                "value": "how mRNA vaccines work",
+                "citation": "HOW DOES AN mRNA VACCINE WORK?",
+                "source_tool": "Video_Clip_QA",
+                "uncertainty": "None",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              },
+              {
+                "claim_id": "topic_exclusion",
+                "scope": "general_clip_answer",
+                "label": "excluded_topics",
+                "target": "production_process,market_application,side_effects",
+                "relation": "not_contains",
+                "direction": "none",
+                "qualifiers": [
+                  "full_duration"
+                ],
+                "observed_value": "none",
+                "value": "none",
+                "citation": "Research provided by Barry Bloom Harvard T.H. Chan School of Public Health",
+                "source_tool": "Video_Clip_QA",
+                "uncertainty": "None",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              }
+            ],
+            "claim_gaps": [],
+            "recommended_action": {
+              "kind": "finish",
+              "reason": "The video content explicitly explains the mechanism of mRNA vaccines (Option A) and provides no evidence of covering production processes, market applications, or side effects. The evidence is sufficient to select the correct option.",
+              "tool_hint": "None",
+              "params": {}
+            },
+            "confidence": 0.98
+          },
+          "initial_response": "{\n  \"dispatch_decision\": \"execute\",\n  \"executable_action\": {\n    \"tool\": \"Video_Clip_QA\",\n    \"params\": {\n      \"start_time\": 35.12,\n      \"end_time\": 83.89,\n      \"query\": \"Does this segment cover production processes, market applications, or side effects of mRNA vaccines, or does it continue explaining the mechanism?\"\n    }\n  },\n  \"reason\": \"The initial observation confirms the video explains 'how mRNA vaccines work' (Option A) but covers the full duration (0-83.89s). To rigorously validate that no other topics (production, market, side effects) are discussed in the second half (35.12-83.89s) and to ensure the answer is not a partial match, a targeted query on the remaining time window is required before finalizing.\",\n  \"confidence\": 0.95\n}",
+          "schema_retry_count": 1,
+          "contract_mode": "default",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "text",
+          "visual_item_count": 0,
+          "elapsed_seconds": 34.022821,
+          "depth": 0,
+          "iteration": 1,
+          "observed_tools": [
+            "Parallel"
+          ]
+        },
+        {
+          "type": "runtime_checkpoint",
+          "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/biology-medicine-021-1/logs/runtime_checkpoints/turn_002.json",
+          "iteration": 1,
+          "prefix_steps": 1,
+          "sha256": "fcd0705634de4e317123e13bac2c89e8740acad55010f4208297a29a71a92878"
+        },
+        {
+          "type": "llm_iteration",
+          "agent_role": "planner",
+          "kernel": {
+            "agent_role": "planner",
+            "provider_class": "TransformersProvider",
+            "model_role": "planner",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "planner_prompts",
+            "structured_contract": "planner_react_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "tool_orchestration_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "goal + trajectory + registered tool observations + optional frames",
+              "decision_authority": "select executable tool calls and propose Finish",
+              "delegates_to": [
+                "observer",
+                "reflector"
+              ]
+            }
+          },
+          "depth": 0,
+          "iteration": 2,
+          "response": "{\n    \"Thought\": \"The Video_Clip_QA tool has definitively confirmed that the video's primary topic is 'how mRNA vaccines work'. The evidence explicitly excludes production processes, market applications, and side effects. This aligns perfectly with Option A.\",\n    \"Plan\": \"Submit the final answer as Option A based on the verified evidence.\",\n    \"Evidence\": [\n        {\n            \"claim_id\": \"topic_scope\",\n            \"scope\": \"general_clip_answer\",\n            \"label\": \"primary_topic\",\n            \"target\": \"video_content\",\n            \"relation\": \"equals\",\n            \"direction\": \"none\",\n            \"qualifiers\": [\"primary\", \"mechanism\"],\n            \"observed_value\": \"how mRNA vaccines work\",\n            \"value\": \"how mRNA vaccines work\",\n            \"citation\": \"HOW DOES AN mRNA VACCINE WORK?\",\n            \"source_tool\": \"Video_Clip_QA\",\n            \"uncertainty\": \"None\",\n            \"evidence_status\": \"verified\"\n        },\n        {\n            \"claim_id\": \"topic_exclusion\",\n            \"scope\": \"general_clip_answer\",\n            \"label\": \"excluded_topics\",\n            \"target\": \"production_process,market_application,side_effects\",\n            \"relation\": \"not_contains\",\n            \"direction\": \"none\",\n            \"qualifiers\": [\"full_duration\"],\n            \"observed_value\": \"none\",\n            \"value\": \"none\",\n            \"citation\": \"Research provided by Barry Bloom Harvard T.H. Chan School of Public Health\",\n            \"source_tool\": \"Video_Clip_QA\",\n            \"uncertainty\": \"None\",\n            \"evidence_status\": \"verified\"\n        }\n    ],\n    \"Finish\": {\n        \"chain_complete\": true,\n        \"completion_basis\": \"visual->text->answer\",\n        \"answer\": \"(A) How mRNA vaccines work.\"\n    }\n}",
+          "raw_response_chars": 1737,
+          "response_normalized": false,
+          "parsed_plan": "Submit the final answer as Option A based on the verified evidence.",
+          "parsed_action": "Finish",
+          "parsed_action_args": {
+            "answer": "(A) How mRNA vaccines work.",
+            "chain_complete": true,
+            "completion_basis": "visual->text->answer"
+          },
+          "thought_preview": "The Video_Clip_QA tool has definitively confirmed that the video's primary topic is 'how mRNA vaccines work'. The evidence explicitly excludes production processes, market applications, and side effects. This aligns perfectly with Option A.",
+          "parse_success": true,
+          "parse_mode": "action"
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ReflectorAgentTurnEvent",
+          "agent_role": "reflector",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "reflector",
+            "provider_class": "TransformersProvider",
+            "model_role": "reflector",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "llm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "reflector_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "evidence_judgment_agent",
+              "kernel_modality": "llm",
+              "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+              "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "52aa5467591f052d",
+          "response": "{\n  \"decision\": \"accept\",\n  \"can_finish\": true,\n  \"claim_assessment\": [\n    {\n      \"claim_id\": \"topic_scope\",\n      \"status\": \"supported\",\n      \"reason\": \"Video_Clip_QA explicitly states the primary topic is 'how mRNA vaccines work', matching Option A.\"\n    },\n    {\n      \"claim_id\": \"mechanism_explained\",\n      \"status\": \"supported\",\n      \"reason\": \"Transcript and visual evidence confirm the video explains the biological mechanism (mRNA directing cells to produce proteins) and antibody response, consistent with Option A.\"\n    },\n    {\n      \"claim_id\": \"topic_exclusion\",\n      \"status\": \"supported\",\n      \"reason\": \"Evidence indicates the video does not cover production processes, market applications, or side effects, ruling out Options B, C, and D.\"\n    }\n  ],\n  \"missing_information\": [],\n  \"unresolved_claims\": [],\n  \"evidence_assessment\": \"The proposed answer '(A) How mRNA vaccines work.' is fully supported by direct evidence from Video_Clip_QA and transcript analysis. The evidence explicitly identifies the topic and excludes the other options. No contradictions or missing claims remain.\",\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "decision": "accept",
+            "can_finish": true,
+            "claim_assessment": [
+              {
+                "claim_id": "topic_scope",
+                "status": "supported",
+                "reason": "Video_Clip_QA explicitly states the primary topic is 'how mRNA vaccines work', matching Option A."
+              },
+              {
+                "claim_id": "mechanism_explained",
+                "status": "supported",
+                "reason": "Transcript and visual evidence confirm the video explains the biological mechanism (mRNA directing cells to produce proteins) and antibody response, consistent with Option A."
+              },
+              {
+                "claim_id": "topic_exclusion",
+                "status": "supported",
+                "reason": "Evidence indicates the video does not cover production processes, market applications, or side effects, ruling out Options B, C, and D."
+              }
+            ],
+            "missing_information": [],
+            "unresolved_claims": [],
+            "evidence_assessment": "The proposed answer '(A) How mRNA vaccines work.' is fully supported by direct evidence from Video_Clip_QA and transcript analysis. The evidence explicitly identifies the topic and excludes the other options. No contradictions or missing claims remain.",
+            "confidence": 1.0
+          },
+          "initial_response": "",
+          "schema_retry_count": 0,
+          "contract_mode": "default",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "text",
+          "visual_item_count": 0,
+          "elapsed_seconds": 15.212824,
+          "depth": 0,
+          "iteration": 2,
+          "proposed_answer": "(A) How mRNA vaccines work."
+        },
+        {
+          "progress_score": 1.0,
+          "claim_coverage": 1.0,
+          "direct_grounding": 1.0,
+          "contradiction_score": 0.0,
+          "cross_modal_support": 1.0,
+          "can_finish": true,
+          "premise_mismatch": false,
+          "option_mismatch": false,
+          "missing_information": [],
+          "unresolved_claims": [],
+          "claim_contract": {
+            "status": "pass",
+            "required": [],
+            "satisfied": {},
+            "missing": [],
+            "verified_claim_count": 2,
+            "contract_version": 1
+          },
+          "feedback": "Evidence verifier accepted termination.",
+          "verification_source": "deterministic_safety_gate",
+          "type": "verifier_decision",
+          "event_type": "VerifierDecisionEvent",
+          "depth": 0,
+          "iteration": 2,
+          "reflector_agent_status": "success",
+          "reflector_agent_schema_valid": true,
+          "reflector_agent_decision": "accept",
+          "reflector_agent_can_finish": true,
+          "reflector_agent_payload": {
+            "decision": "accept",
+            "can_finish": true,
+            "claim_assessment": [
+              {
+                "claim_id": "topic_scope",
+                "status": "supported",
+                "reason": "Video_Clip_QA explicitly states the primary topic is 'how mRNA vaccines work', matching Option A."
+              },
+              {
+                "claim_id": "mechanism_explained",
+                "status": "supported",
+                "reason": "Transcript and visual evidence confirm the video explains the biological mechanism (mRNA directing cells to produce proteins) and antibody response, consistent with Option A."
+              },
+              {
+                "claim_id": "topic_exclusion",
+                "status": "supported",
+                "reason": "Evidence indicates the video does not cover production processes, market applications, or side effects, ruling out Options B, C, and D."
+              }
+            ],
+            "missing_information": [],
+            "unresolved_claims": [],
+            "evidence_assessment": "The proposed answer '(A) How mRNA vaccines work.' is fully supported by direct evidence from Video_Clip_QA and transcript analysis. The evidence explicitly identifies the topic and excludes the other options. No contradictions or missing claims remain.",
+            "confidence": 1.0
+          }
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ObserverAgentTurnEvent",
+          "agent_role": "observer",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "observer",
+            "provider_class": "TransformersProvider",
+            "model_role": "observer",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "observer_dispatch_or_evidence_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "execution_and_evidence_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+              "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "07f1b8f6c07710b5",
+          "response": "{\n  \"observation_quality\": \"sufficient\",\n  \"evidence_updates\": [\n    {\n      \"claim_id\": \"mechanism_explained\",\n      \"scope\": \"claim\",\n      \"label\": \"mRNA vaccine mechanism explanation\",\n      \"target\": \"video_content\",\n      \"relation\": \"describes_mechanism\",\n      \"direction\": \"video->viewer\",\n      \"qualifiers\": [\"explicitly_described\"],\n      \"observed_value\": \"Transcript states: 'It contains messenger RNA, which can direct cells to make specific proteins... The messenger RNA tells our cells to produce COVID spikes.'\",\n      \"value\": \"The video explains the biological mechanism of mRNA vaccines (Option A).\",\n      \"citation\": \"Segment 1 Transcript\",\n      \"source_tool\": \"Grounding_Source\",\n      \"uncertainty\": \"None\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    },\n    {\n      \"claim_id\": \"antibody_response\",\n      \"scope\": \"claim\",\n      \"label\": \"Antibody response visualization\",\n      \"target\": \"immune_system\",\n      \"relation\": \"depicted\",\n      \"direction\": \"visual->concept\",\n      \"qualifiers\": [\"shown\"],\n      \"observed_value\": \"Frames show antibodies binding to virus spikes and neutralizing them.\",\n      \"value\": \"Visual evidence confirms the antibody response mechanism.\",\n      \"citation\": \"Segment 2 Frames\",\n      \"source_tool\": \"Grounding_Source\",\n      \"uncertainty\": \"None\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    },\n    {\n      \"claim_id\": \"topic_scope\",\n      \"scope\": \"claim\",\n      \"label\": \"primary_topic\",\n      \"target\": \"video_content\",\n      \"relation\": \"equals\",\n      \"direction\": \"none\",\n      \"qualifiers\": [\"primary\", \"mechanism\"],\n      \"observed_value\": \"how mRNA vaccines work\",\n      \"value\": \"how mRNA vaccines work\",\n      \"citation\": \"HOW DOES AN mRNA VACCINE WORK?\",\n      \"source_tool\": \"Video_Clip_QA\",\n      \"uncertainty\": \"None\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    },\n    {\n      \"claim_id\": \"topic_exclusion\",\n      \"scope\": \"claim\",\n      \"label\": \"excluded_topics\",\n      \"target\": \"production_process,market_application,side_effects\",\n      \"relation\": \"not_contains\",\n      \"direction\": \"none\",\n      \"qualifiers\": [\"full_duration\"],\n      \"observed_value\": \"none\",\n      \"value\": \"none\",\n      \"citation\": \"Research provided by Barry Bloom Harvard T.H. Chan School of Public Health\",\n      \"source_tool\": \"Video_Clip_QA\",\n      \"uncertainty\": \"None\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    }\n  ],\n  \"claim_gaps\": [],\n  \"recommended_action\": {\n    \"kind\": \"finish\",\n    \"reason\": \"The Video_Clip_QA tool has definitively confirmed the primary topic is 'how mRNA vaccines work' with verified evidence from transcripts and visual summaries. The evidence explicitly excludes production processes, market applications, and side effects. The trajectory shows a complete chain of reasoning (visual->text->answer) with no remaining gaps or contradictions. The task is resolved.\",\n    \"tool_hint\": \"Finish\",\n    \"params\": {\n      \"answer\": \"(A) How mRNA vaccines work.\",\n      \"chain_complete\": true,\n      \"completion_basis\": \"visual->text->answer\"\n    }\n  },\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "observation_quality": "sufficient",
+            "evidence_updates": [
+              {
+                "claim_id": "mechanism_explained",
+                "scope": "claim",
+                "label": "mRNA vaccine mechanism explanation",
+                "target": "video_content",
+                "relation": "describes_mechanism",
+                "direction": "video->viewer",
+                "qualifiers": [
+                  "explicitly_described"
+                ],
+                "observed_value": "Transcript states: 'It contains messenger RNA, which can direct cells to make specific proteins... The messenger RNA tells our cells to produce COVID spikes.'",
+                "value": "The video explains the biological mechanism of mRNA vaccines (Option A).",
+                "citation": "Segment 1 Transcript",
+                "source_tool": "Grounding_Source",
+                "uncertainty": "None",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              },
+              {
+                "claim_id": "antibody_response",
+                "scope": "claim",
+                "label": "Antibody response visualization",
+                "target": "immune_system",
+                "relation": "depicted",
+                "direction": "visual->concept",
+                "qualifiers": [
+                  "shown"
+                ],
+                "observed_value": "Frames show antibodies binding to virus spikes and neutralizing them.",
+                "value": "Visual evidence confirms the antibody response mechanism.",
+                "citation": "Segment 2 Frames",
+                "source_tool": "Grounding_Source",
+                "uncertainty": "None",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              },
+              {
+                "claim_id": "topic_scope",
+                "scope": "claim",
+                "label": "primary_topic",
+                "target": "video_content",
+                "relation": "equals",
+                "direction": "none",
+                "qualifiers": [
+                  "primary",
+                  "mechanism"
+                ],
+                "observed_value": "how mRNA vaccines work",
+                "value": "how mRNA vaccines work",
+                "citation": "HOW DOES AN mRNA VACCINE WORK?",
+                "source_tool": "Video_Clip_QA",
+                "uncertainty": "None",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              },
+              {
+                "claim_id": "topic_exclusion",
+                "scope": "claim",
+                "label": "excluded_topics",
+                "target": "production_process,market_application,side_effects",
+                "relation": "not_contains",
+                "direction": "none",
+                "qualifiers": [
+                  "full_duration"
+                ],
+                "observed_value": "none",
+                "value": "none",
+                "citation": "Research provided by Barry Bloom Harvard T.H. Chan School of Public Health",
+                "source_tool": "Video_Clip_QA",
+                "uncertainty": "None",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              }
+            ],
+            "claim_gaps": [],
+            "recommended_action": {
+              "kind": "finish",
+              "reason": "The Video_Clip_QA tool has definitively confirmed the primary topic is 'how mRNA vaccines work' with verified evidence from transcripts and visual summaries. The evidence explicitly excludes production processes, market applications, and side effects. The trajectory shows a complete chain of reasoning (visual->text->answer) with no remaining gaps or contradictions. The task is resolved.",
+              "tool_hint": "Finish",
+              "params": {
+                "answer": "(A) How mRNA vaccines work.",
+                "chain_complete": true,
+                "completion_basis": "visual->text->answer"
+              }
+            },
+            "confidence": 1.0
+          },
+          "initial_response": "{\n  \"dispatch_decision\": \"execute\",\n  \"executable_action\": {\"tool\": \"Finish\", \"params\": {\"answer\": \"(A) How mRNA vaccines work.\", \"chain_complete\": true, \"completion_basis\": \"visual->text->answer\"}},\n  \"reason\": \"The Video_Clip_QA tool has definitively confirmed the primary topic is 'how mRNA vaccines work' with verified evidence from transcripts and visual summaries. The evidence explicitly excludes production processes, market applications, and side effects. The trajectory shows a complete chain of reasoning (visual->text->answer) with no remaining gaps or contradictions. The task is resolved.\",\n  \"confidence\": 1.0\n}",
+          "schema_retry_count": 1,
+          "contract_mode": "default",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "text",
+          "visual_item_count": 0,
+          "elapsed_seconds": 50.773138,
+          "depth": 0,
+          "iteration": 2,
+          "observed_tools": [
+            "Finish"
+          ]
+        }
+      ],
+      "start_time": "2026-09-18T21:03:14.874595Z",
+      "end_time": "2026-09-18T21:06:19.937197Z",
+      "started_at": "2026-09-18T21:03:14.874595Z",
+      "finished_at": "2026-09-18T21:06:19.937197Z",
+      "duration_seconds": 185.062602
+    }
+  },
+  "metrics": {
+    "tool_usage_layers": {
+      "planner_proposed": {
+        "tool_usage_summary": {
+          "Video_Clip_QA": 1
+        },
+        "unique_tools": [
+          "Video_Clip_QA"
+        ],
+        "unique_tool_count": 1,
+        "tool_type_counts": {
+          "base": 1
+        },
+        "capability_tier_counts": {
+          "production": 1
+        },
+        "tool_family_counts": {
+          "visual": 1
+        },
+        "unique_tool_type_counts": {
+          "base": 1
+        },
+        "unique_capability_tier_counts": {
+          "production": 1
+        },
+        "base_meta_coverage": {
+          "base_used": true,
+          "meta_used": false,
+          "coverage_ratio": 0.5
+        }
+      },
+      "subagent_rewritten": {
+        "tool_usage_summary": {},
+        "unique_tools": [],
+        "unique_tool_count": 0,
+        "tool_type_counts": {},
+        "capability_tier_counts": {},
+        "tool_family_counts": {},
+        "unique_tool_type_counts": {},
+        "unique_capability_tier_counts": {},
+        "base_meta_coverage": {
+          "base_used": false,
+          "meta_used": false,
+          "coverage_ratio": 0.0
+        }
+      },
+      "runtime_executed": {
+        "tool_usage_summary": {
+          "Video_Clip_QA": 1
+        },
+        "unique_tools": [
+          "Video_Clip_QA"
+        ],
+        "unique_tool_count": 1,
+        "tool_type_counts": {
+          "base": 1
+        },
+        "capability_tier_counts": {
+          "production": 1
+        },
+        "tool_family_counts": {
+          "visual": 1
+        },
+        "unique_tool_type_counts": {
+          "base": 1
+        },
+        "unique_capability_tier_counts": {
+          "production": 1
+        },
+        "base_meta_coverage": {
+          "base_used": true,
+          "meta_used": false,
+          "coverage_ratio": 0.5
+        }
+      }
+    },
+    "tool_usage_summary": {
+      "Video_Clip_QA": 1
+    },
+    "unique_tools": [
+      "Video_Clip_QA"
+    ],
+    "tool_family_counts": {
+      "visual": 1
+    },
+    "tool_type_counts": {
+      "base": 1
+    },
+    "capability_tier_counts": {
+      "production": 1
+    },
+    "runtime_tool_call_count": 1,
+    "runtime_execution_steps": 1,
+    "planner_iterations": 2,
+    "subagent_iterations": 0,
+    "four_agent_kernel_contract": {
+      "kernel_id": "55f99d0f321a766d",
+      "kernel_provider": "transformers",
+      "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+      "roles": {
+        "planner": {
+          "agent_role": "planner",
+          "provider_class": "TransformersProvider",
+          "model_role": "planner",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "vlm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "planner_prompts",
+          "structured_contract": "planner_react_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "tool_orchestration_agent",
+            "kernel_modality": "vlm",
+            "input_contract": "goal + trajectory + registered tool observations + optional frames",
+            "decision_authority": "select executable tool calls and propose Finish",
+            "delegates_to": [
+              "observer",
+              "reflector"
+            ]
+          }
+        },
+        "observer": {
+          "agent_role": "observer",
+          "provider_class": "TransformersProvider",
+          "model_role": "observer",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "vlm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "four_role_prompts",
+          "structured_contract": "observer_dispatch_or_evidence_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "execution_and_evidence_agent",
+            "kernel_modality": "vlm",
+            "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+            "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+            "delegates_to": [
+              "planner"
+            ]
+          }
+        },
+        "reflector": {
+          "agent_role": "reflector",
+          "provider_class": "TransformersProvider",
+          "model_role": "reflector",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "llm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "four_role_prompts",
+          "structured_contract": "reflector_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "evidence_judgment_agent",
+            "kernel_modality": "llm",
+            "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+            "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+            "delegates_to": [
+              "planner"
+            ]
+          }
+        },
+        "evolver": {
+          "agent_role": "evolver",
+          "provider_class": "TransformersProvider",
+          "model_role": "evolver",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "llm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "four_role_prompts",
+          "structured_contract": "evolver_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "meta_evolution_agent",
+            "kernel_modality": "llm",
+            "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+            "decision_authority": "attribute failures, analyze dependencies, and propose bounded coordinated replay-gated harness mutations",
+            "delegates_to": [
+              "replay_gate"
+            ]
+          }
+        }
+      },
+      "weights_shared_for_memory": true,
+      "role_order": [
+        "planner",
+        "observer",
+        "reflector",
+        "evolver"
+      ]
+    },
+    "four_agent_active_online_roles": [
+      "planner",
+      "observer",
+      "reflector"
+    ],
+    "four_agent_disabled_online_roles": [],
+    "four_agent_role_turns": {
+      "planner": 2,
+      "observer": 3,
+      "reflector": 1,
+      "evolver": 0
+    },
+    "four_agent_role_skips": {
+      "observer": 0,
+      "reflector": 0,
+      "evolver": 0
+    },
+    "four_agent_role_schema_pass": {
+      "planner": true,
+      "observer": true,
+      "reflector": true,
+      "evolver": false
+    },
+    "delegated_root_steps": 0,
+    "decomposed_root_steps": 0,
+    "subagent_decomposition_rate": 0.0,
+    "parallel_concrete_batches": 0,
+    "parallel_concrete_batch_rate": 0.0,
+    "acceptance_metrics": {
+      "runtime_tool_call_count": 1,
+      "runtime_execution_steps": 1,
+      "runtime_tools_executed": true,
+      "unique_runtime_tools_count": 1,
+      "unique_runtime_tools_gte_4": false,
+      "runtime_base_meta_coverage": {
+        "base_used": true,
+        "meta_used": false,
+        "coverage_ratio": 0.5
+      }
+    },
+    "timing_breakdown_seconds": {
+      "observer.dispatch_llm_generate_seconds": 9.60003,
+      "observer.llm_generate_seconds": 84.795959,
+      "planner.llm_generate_seconds": 53.915964,
+      "preprocess.total_seconds": 1.4375,
+      "query.grounding_context_seconds": 1.800072,
+      "query.registry_init_seconds": 2e-06,
+      "query.solve_seconds": 185.06294,
+      "query.total_seconds": 188.310139,
+      "reflector.llm_generate_seconds": 15.212824,
+      "tool.video_clip_qa_seconds": 19.700505
+    },
+    "cache_stats": {
+      "provider.planner.hit": 4,
+      "preprocess.output_dir.hit": 1
+    },
+    "gpu_telemetry": {
+      "status": "ok",
+      "sample_count": 22,
+      "interval_s": 2.0,
+      "gpu_count": 1,
+      "avg_utilization_percent": 39.136,
+      "peak_utilization_percent": 67.0,
+      "peak_memory_used_gib": 24.211,
+      "peak_memory_percent": 30.612,
+      "per_gpu": {
+        "0": {
+          "sample_count": 22,
+          "avg_utilization_percent": 39.136,
+          "peak_utilization_percent": 67.0,
+          "peak_memory_used_gib": 24.211
+        }
+      }
+    },
+    "active_video_names": [
+      "/gemini/data-1/datasets/Video-MME/data/TbaCxIJ_VP4.mp4",
+      "TbaCxIJ_VP4",
+      "TbaCxIJ_VP4.mp4"
+    ],
+    "tool_library": {
+      "baseline_id": "toolbase_71ae508acd56119c2086",
+      "baseline_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/_audit/tool_library_baseline.json",
+      "baseline_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+      "baseline_source_digest": "e5b2eb8dde1afa89e55fd3b2c973875abb643b69a8e3c3603208f86500ce6ed1",
+      "active_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+      "active_source_digest": "e5b2eb8dde1afa89e55fd3b2c973875abb643b69a8e3c3603208f86500ce6ed1",
+      "active_tool_count": 15,
+      "schema_match": true,
+      "source_match": true,
+      "added_tools": [],
+      "removed_tools": [],
+      "scoped_hidden_tools": [],
+      "changed_tools": [],
+      "scoped_schema_match": true,
+      "active_tools": [
+        "Aggregation",
+        "Clean_Results",
+        "Crop",
+        "Filtering",
+        "Fold_Memory",
+        "Inspect_Frame",
+        "Keyword_Retrieve",
+        "Python_Executor",
+        "Segment_Retrieve",
+        "Semantic_Retrieve",
+        "Tool_Search",
+        "Video_Clip_QA",
+        "Video_Summary",
+        "Zoom_in",
+        "asr"
+      ]
+    },
+    "evolution_harness": {
+      "enabled": false,
+      "status": "baseline",
+      "snapshot_id": "snapshot_000",
+      "snapshot_path": "",
+      "policy_digest": "baseline",
+      "base_tool_library_baseline_id": "",
+      "operations_applied": [],
+      "registry_mutations_applied": [],
+      "tool_overrides": {},
+      "snapshot_loaded": false,
+      "snapshot_application_proven": false,
+      "snapshot_application_proof": {
+        "snapshot_loaded": false,
+        "runtime_hook_applied": false,
+        "operation_count": 0,
+        "missing_operations": [],
+        "proof_scope": "runtime_boundary_attestation",
+        "requires_fresh_inference": false,
+        "source_application": {
+          "applied": false,
+          "targets": []
+        }
+      },
+      "mutation_declared": false,
+      "mutation_applied": false
+    },
+    "benchmark_input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "included",
+      "external_subtitles": false,
+      "audio_track": "preserved",
+      "audio_transcript_allowed": true,
+      "annotation_fields_excluded": [
+        "answer",
+        "ground_truth",
+        "ground_truth_option",
+        "time_reference",
+        "evaluator_output"
+      ],
+      "audio_track_policy": "preserved",
+      "audio_transcript_policy": "included"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:event-understanding:14:80",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 12,
+  "iter_num": 14,
+  "tool_success_rate": 0.916667,
+  "successful_tool_calls": 11,
+  "planner_iterations": 14,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Stitches her wound",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (contradictory_evidence; repeated direct evidence failure)",
+  "elapsed_seconds": 5320.858,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00014-80",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00014-80/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00014-80/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00014-80/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: What else does the protagonist do in the shower besides taking a shower?\nOptions:\n(A) Eat some food\n(B) Stitches her wound\n(C) Drink spring water\n(D) Relax",
+  "options": [
+    "Eat some food",
+    "Stitches her wound",
+    "Drink spring water",
+    "Relax"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "56:07-56:14",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "Cm73ma6Ibcs",
+    "resolved_video_stem": "Cm73ma6Ibcs",
+    "video_mapping_verified": true,
+    "source_index": 14
+  },
+  "updated_at": "2026-08-30T16:21:03.592190Z"
+}

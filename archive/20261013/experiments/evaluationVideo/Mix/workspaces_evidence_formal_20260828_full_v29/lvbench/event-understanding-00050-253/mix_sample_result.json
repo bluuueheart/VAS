@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:event-understanding:50:253",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 9,
+  "iter_num": 17,
+  "tool_success_rate": 0.777778,
+  "successful_tool_calls": 7,
+  "planner_iterations": 17,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Tie the gift box",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 3836.237,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00050-253",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00050-253/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00050-253/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00050-253/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/TJR1oYDDTwg.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/TJR1oYDDTwg.mp4",
+  "question_block": "Question: What is the character doing between 01:05-01:09?\nOptions:\n(A) Tie the gift box\n(B) Destroy the gift box\n(C) Colour the gift box\n(D) Stuff a gift box with something",
+  "options": [
+    "Tie the gift box",
+    "Destroy the gift box",
+    "Colour the gift box",
+    "Stuff a gift box with something"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "01:05-01:09",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "TJR1oYDDTwg",
+    "resolved_video_stem": "TJR1oYDDTwg",
+    "video_mapping_verified": true,
+    "source_index": 50
+  },
+  "updated_at": "2026-09-08T08:48:14.556880Z"
+}

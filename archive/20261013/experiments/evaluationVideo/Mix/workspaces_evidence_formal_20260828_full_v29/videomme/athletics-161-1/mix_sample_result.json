@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:athletics:161-1",
+  "dataset_name": "videomme",
+  "subset_name": "Athletics",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 2,
+  "iter_num": 4,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 2,
+  "planner_iterations": 4,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) 2",
+  "elapsed_seconds": 777.219,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/athletics-161-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/athletics-161-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/athletics-161-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/athletics-161-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/-qTAeVGl_e8.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/-qTAeVGl_e8.mp4",
+  "question_block": "Question: How many athletes are doing high jumps in the video?\nOptions:\n(A) 3.\n(B) 2.\n(C) 4.\n(D) 5.",
+  "options": [
+    "A. 3.",
+    "B. 2.",
+    "C. 4.",
+    "D. 5."
+  ],
+  "official_meta": {
+    "video_id": "161",
+    "video_external_id": "-qTAeVGl_e8",
+    "resolved_video_stem": "-qTAeVGl_e8",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Sports Competition",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Athletics",
+    "task_type": "Counting Problem",
+    "question_id": "161-1",
+    "question_index": 0,
+    "video_item_index": 160,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-30T16:34:00.943212Z"
+}

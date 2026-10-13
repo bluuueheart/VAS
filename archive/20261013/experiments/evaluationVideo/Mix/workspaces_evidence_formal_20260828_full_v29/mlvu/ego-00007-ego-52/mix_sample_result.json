@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:ego:7:ego-52",
+  "dataset_name": "mlvu",
+  "subset_name": "ego",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 12,
+  "iter_num": 14,
+  "tool_success_rate": 0.75,
+  "successful_tool_calls": 9,
+  "planner_iterations": 14,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "There were four Pepsi cans on the table.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 5233.665,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/ego-00007-ego-52",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/ego-00007-ego-52/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/ego-00007-ego-52/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/ego-00007-ego-52/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/3_ego/ego_52.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/3_ego/ego_52.mp4",
+  "question_block": "Question: How many were the Pepsi cans on the table ?\nOptions:\n(A) There were six Pepsi cans on the table.\n(B) There were four Pepsi cans on the table.\n(C) There were two Pepsi cans on the table.\n(D) There were eight Pepsi cans on the table.",
+  "options": [
+    "There were six Pepsi cans on the table.",
+    "There were four Pepsi cans on the table.",
+    "There were two Pepsi cans on the table.",
+    "There were eight Pepsi cans on the table."
+  ],
+  "official_meta": {
+    "task_type": "ego",
+    "source_question_type": "ego",
+    "prompt_task_type": "ego",
+    "source_json": "3_ego.json",
+    "source_index": 7,
+    "video_subdir": "3_ego",
+    "video_relative_path": "3_ego/ego_52.mp4",
+    "resolved_video_stem": "ego_52",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-05T16:28:42.825209Z"
+}

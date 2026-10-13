@@ -1,0 +1,121 @@
+{
+  "generated_at": "2026-07-23T16:08:03.164216Z",
+  "config_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/mix_config.json",
+  "results_output_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/CFV_Evolve_result.json",
+  "progress_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/cfv_evolve_progress.json",
+  "shared_preprocess_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache",
+  "ffmpeg_binary": "ffmpeg",
+  "parallel_samples": 1,
+  "visible_cuda_devices": [
+    "0"
+  ],
+  "selection_progress": {
+    "total_samples": 8,
+    "participated_samples": 1,
+    "remaining_samples": 7,
+    "participated_sample_uids": [
+      "mlvu:ego:0:ego-35"
+    ],
+    "remaining_sample_uids": [
+      "mlvu:needle:0:needle-32",
+      "mlvu:order:0:order-126",
+      "mlvu:plotqa:0:movie101-66",
+      "mlvu:plotqa:1:xiaoliyu-6",
+      "mlvu:plotqa:2:movie101-63",
+      "mlvu:anomaly-reco:0:surveil-20",
+      "mlvu:topic-reasoning:0:awa-6"
+    ],
+    "selected_samples": 1,
+    "selected_sample_uids": [
+      "mlvu:ego:0:ego-35"
+    ],
+    "imported_skip_true_count": 0,
+    "max_samples": 1,
+    "parallel_samples": 1,
+    "skip_true": false,
+    "dataset_order": [
+      "mlvu"
+    ],
+    "per_dataset": {
+      "mlvu": {
+        "total": 8,
+        "participated": 1,
+        "remaining": 7
+      }
+    }
+  },
+  "summary_by_dataset": {
+    "mlvu": {
+      "count": 1,
+      "correct": 1,
+      "acc": 1.0,
+      "tool_use_num_mean": 2.0,
+      "iter_num_mean": 3.0,
+      "tool_success_rate_mean": 1.0,
+      "statuses": {
+        "completed": 1
+      }
+    }
+  },
+  "subset_summaries_by_dataset": {
+    "mlvu": {
+      "ego": {
+        "count": 1,
+        "correct": 1,
+        "acc": 1.0,
+        "tool_use_num_mean": 2.0,
+        "iter_num_mean": 3.0,
+        "tool_success_rate_mean": 1.0,
+        "statuses": {
+          "completed": 1
+        }
+      }
+    }
+  },
+  "results": [
+    {
+      "sample_uid": "mlvu:ego:0:ego-35",
+      "dataset_name": "mlvu",
+      "subset_name": "ego",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 2,
+      "iter_num": 3,
+      "tool_success_rate": 1.0,
+      "successful_tool_calls": 2,
+      "planner_iterations": 3,
+      "subagent_iterations": 0,
+      "predicted_label": "A",
+      "ground_truth": "a lemon green sponge",
+      "ground_truth_option": "A",
+      "ground_truth_labels": [
+        "A"
+      ],
+      "planner_success": true,
+      "raw_final_answer": "(A) a lemon green sponge",
+      "elapsed_seconds": 836.499,
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/mlvu/ego-00000-ego-35",
+      "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/mlvu/ego-00000-ego-35/launcher.log",
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/mlvu/ego-00000-ego-35/mix_sample_result.json",
+      "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/mlvu/ego-00000-ego-35/results/run_result.json",
+      "source_video_path": "/gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/3_ego/ego_35.mp4",
+      "prepared_video_path": "/gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/3_ego/ego_35.mp4",
+      "question_block": "Question: What did I put in the orange trashcan \nOptions:\n(A) a lemon green sponge\n(B) a blue pen\n(C) a red apple\n(D) a yellow banana",
+      "options": [
+        "a lemon green sponge",
+        "a blue pen",
+        "a red apple",
+        "a yellow banana"
+      ],
+      "official_meta": {
+        "task_type": "ego",
+        "source_json": "3_ego.json",
+        "source_index": 0,
+        "video_subdir": "3_ego",
+        "video_relative_path": "3_ego/ego_35.mp4",
+        "data_type": "video"
+      },
+      "updated_at": "2026-07-23T16:08:03.053757Z"
+    }
+  ]
+}

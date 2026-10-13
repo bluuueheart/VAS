@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00183:5b6b26d5-a6dd-459d-829c-98a3034f3741",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C prepares materials and tools by gathering leaves, scissors, and pins. he then folds the leaves and secures them with pins.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00183-5b6b26d5-a6dd-459d-829c-98a3034f3741",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00183-5b6b26d5-a6dd-459d-829c-98a3034f3741/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00183-5b6b26d5-a6dd-459d-829c-98a3034f3741/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00183-5b6b26d5-a6dd-459d-829c-98a3034f3741/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/5b6b26d5-a6dd-459d-829c-98a3034f3741.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/5b6b26d5-a6dd-459d-829c-98a3034f3741.mp4",
+  "question_block": "Question: Identify and summarize the key steps c takes to prepare materials and tools before and during their work with the leaves. how do these steps contribute to the overall leaf-folding process?\nOptions:\n(A) C prepares materials and tools by gathering leaves, scissors, and pins. he then folds the leaves and secures them with pins.\n(B) Carefully, c prepares materials and essential tools by diligently gathering leaves, scissors, and adhesive glue. he skillfully then folds the collected leaves and firmly secures them using the glue.\n(C) C prepares materials and tools by gathering leaves, scissors, and tape. he then folds the leaves and secures them with tape.\n(D) C diligently prepares materials and tools by carefully gathering leaves, scissors, and string. he then skillfully folds the leaves and expertly secures them with string.\n(E) In the process, c prepares essential materials and tools by diligently gathering leaves, scissors, and wire. next, he carefully folds the leaves and firmly secures them using the wire.",
+  "options": [
+    "C prepares materials and tools by gathering leaves, scissors, and pins. he then folds the leaves and secures them with pins.",
+    "Carefully, c prepares materials and essential tools by diligently gathering leaves, scissors, and adhesive glue. he skillfully then folds the collected leaves and firmly secures them using the glue.",
+    "C prepares materials and tools by gathering leaves, scissors, and tape. he then folds the leaves and secures them with tape.",
+    "C diligently prepares materials and tools by carefully gathering leaves, scissors, and string. he then skillfully folds the leaves and expertly secures them with string.",
+    "In the process, c prepares essential materials and tools by diligently gathering leaves, scissors, and wire. next, he carefully folds the leaves and firmly secures them using the wire."
+  ],
+  "official_meta": {
+    "question_index": "00183",
+    "video_id": "5b6b26d5-a6dd-459d-829c-98a3034f3741",
+    "source_index": 183
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:09.027523Z"
+}

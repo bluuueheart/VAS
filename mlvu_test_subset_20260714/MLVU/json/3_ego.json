@@ -1,0 +1,15 @@
+[
+  {
+    "video": "ego_35.mp4",
+    "duration": 408.63333328750014,
+    "question": "What did I put in the orange trashcan ",
+    "candidates": [
+      "a lemon green sponge",
+      "a blue pen",
+      "a red apple",
+      "a yellow banana"
+    ],
+    "answer": "a lemon green sponge",
+    "question_type": "ego"
+  }
+]

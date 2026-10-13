@@ -1,0 +1,14 @@
+.git
+.codegraph
+.codex
+.agents
+.aris
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Datasets, models, archives, and generated outputs are runtime mounts.
+mlvu_test_subset_20260714/
+evaluationVideo/Mix/workspaces*/
+runs/
+export_packages/

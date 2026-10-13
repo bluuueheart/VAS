@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:order:8:order-295",
+  "dataset_name": "mlvu",
+  "subset_name": "order",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 18,
+  "iter_num": 17,
+  "tool_success_rate": 0.666667,
+  "successful_tool_calls": 12,
+  "planner_iterations": 17,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "playing harp --> javelin throw --> paragliding --> carving pumpkin",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 7150.737,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00008-order-295",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00008-order-295/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00008-order-295/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00008-order-295/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_295.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_295.mp4",
+  "question_block": "Question: Which of the following options correctly matches the sequence of actions as they actually appear in the video?\nOptions:\n(A) paragliding --> javelin throw --> playing harp --> carving pumpkin\n(B) javelin throw --> playing harp --> paragliding --> carving pumpkin\n(C) javelin throw --> playing harp --> carving pumpkin --> paragliding\n(D) playing harp --> javelin throw --> paragliding --> carving pumpkin",
+  "options": [
+    "paragliding --> javelin throw --> playing harp --> carving pumpkin",
+    "javelin throw --> playing harp --> paragliding --> carving pumpkin",
+    "javelin throw --> playing harp --> carving pumpkin --> paragliding",
+    "playing harp --> javelin throw --> paragliding --> carving pumpkin"
+  ],
+  "official_meta": {
+    "task_type": "order",
+    "source_question_type": "order",
+    "prompt_task_type": "order",
+    "source_json": "5_order.json",
+    "source_index": 8,
+    "video_subdir": "5_order",
+    "video_relative_path": "5_order/order_295.mp4",
+    "resolved_video_stem": "order_295",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-09T21:30:28.932981Z"
+}

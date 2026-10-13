@@ -1,0 +1,137 @@
+{
+  "run_id": "evolution_run_eeb403812f2a",
+  "trajectory_count": 2,
+  "event_count": 8,
+  "diagnoses": [
+    {
+      "diagnosis_id": "diagnosis_eb86f4e11756",
+      "trajectory_ids": [
+        "videomme:humanity-history:001-1"
+      ],
+      "failure_type": "premature_termination",
+      "blamed_component": "evidence_verifier",
+      "blamed_tool_ids": [],
+      "supporting_event_ids": [],
+      "root_cause": "The historical trajectory reached Finish without satisfying the configured evidence gate.",
+      "counterfactual_fix": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, answer claim has no verified evidence, answer candidate lacks directly matched verified evidence",
+      "confidence": 0.95
+    }
+  ],
+  "verifications": [
+    {
+      "trajectory_id": "videomme:humanity-history:001-1",
+      "sample_uid": "videomme:humanity-history:001-1",
+      "answer_score": 0.0,
+      "sample_status": "wrong",
+      "held_out": false,
+      "progress_score": 0.0,
+      "claim_coverage": 0.0,
+      "direct_grounding": 0.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": false,
+      "missing_information": [
+        "structured evidence claims",
+        "direct evidence citation"
+      ],
+      "unresolved_claims": [
+        "answer claim has no verified evidence",
+        "answer candidate lacks directly matched verified evidence"
+      ],
+      "feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, answer claim has no verified evidence, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "trajectory_id": "videomme:biology-medicine:021-1",
+      "sample_uid": "videomme:biology-medicine:021-1",
+      "answer_score": 1.0,
+      "sample_status": "completed",
+      "held_out": true,
+      "progress_score": 0.0,
+      "claim_coverage": 0.0,
+      "direct_grounding": 0.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": false,
+      "missing_information": [
+        "structured evidence claims",
+        "direct evidence citation"
+      ],
+      "unresolved_claims": [
+        "answer claim has no verified evidence",
+        "answer candidate lacks directly matched verified evidence"
+      ],
+      "feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, answer claim has no verified evidence, answer candidate lacks directly matched verified evidence"
+    }
+  ],
+  "evolution_intent": {
+    "intent_id": "intent_7c84eda8f4b5",
+    "diagnosis_ids": [
+      "diagnosis_eb86f4e11756"
+    ],
+    "scope": "router",
+    "operations": [
+      {
+        "action": "update_router_rule",
+        "target_type": "evidence_verifier",
+        "target_ids": [
+          "finish_gate"
+        ],
+        "before": {
+          "enforced": false
+        },
+        "after": {
+          "enforced": true,
+          "reject_unverified_finish": true,
+          "resolve_conflicts": true
+        },
+        "reason": "Observed unsupported or conflict-bearing terminal answers."
+      }
+    ],
+    "expected_effects": [
+      "fewer unsupported finishes",
+      "higher evidence-grounded answer consistency"
+    ],
+    "risks": [
+      "additional tool calls",
+      "higher latency"
+    ]
+  },
+  "candidate_snapshot": {
+    "snapshot_id": "snapshot_a02b4700cf3a",
+    "parent_snapshot_id": "snapshot_000",
+    "created_at": "2026-08-20T07:50:56.285860Z",
+    "router_policy": {
+      "update_router_rule": {
+        "enforced": true,
+        "reject_unverified_finish": true,
+        "resolve_conflicts": true
+      }
+    },
+    "argument_policy": {},
+    "patch_ids": [
+      "intent_7c84eda8f4b5"
+    ],
+    "status": "candidate"
+  },
+  "replay_groups": {
+    "trigger": [
+      "videomme:humanity-history:001-1"
+    ],
+    "neighbor": [],
+    "regression": [],
+    "held_out": [
+      "videomme:biology-medicine:021-1"
+    ]
+  },
+  "replay_status": "pending",
+  "candidate_replay_status": "pending",
+  "batch_metrics": {
+    "accuracy": 0.5,
+    "mean_latency_seconds": 148.1345,
+    "invalid_call_rate": 0.0
+  },
+  "source_paths": [
+    "evaluationVideo/Mix/workspaces_multi/videomme/humanity-history-001-1/results/run_result.json",
+    "evaluationVideo/Mix/workspaces_multi/videomme/biology-medicine-021-1/results/run_result.json"
+  ]
+}

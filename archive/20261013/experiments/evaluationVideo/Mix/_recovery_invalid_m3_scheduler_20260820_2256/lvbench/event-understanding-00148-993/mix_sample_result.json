@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:event-understanding:148:993",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Zebra eat the grass",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00148-993",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00148-993/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00148-993/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00148-993/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/GcRKREorGSc.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/GcRKREorGSc.mp4",
+  "question_block": "Question: What happens after two lions lying on the grass enjoying sunshine, and then a bird standing on top of a rock?\nOptions:\n(A) Ostrich drink water\n(B) Deers eat the grass\n(C) Giraffes eat the grass\n(D) Zebra eat the grass",
+  "options": [
+    "Ostrich drink water",
+    "Deers eat the grass",
+    "Giraffes eat the grass",
+    "Zebra eat the grass"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "documentary",
+    "time_reference": "32:19-32:35",
+    "video_key": "GcRKREorGSc",
+    "source_index": 148
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:50:20.096102Z"
+}

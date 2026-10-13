@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:entity-recognition:89:527",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "3",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00089-527",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00089-527/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00089-527/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00089-527/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/2sriHX3PbXw.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/2sriHX3PbXw.mp4",
+  "question_block": "Question: One of the events for the celebration is a number of people riding on top of each other and performing acrobatics. How many people are there?\nOptions:\n(A) 5\n(B) 3\n(C) 2\n(D) 4",
+  "options": [
+    "5",
+    "3",
+    "2",
+    "4"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "cartoon",
+    "time_reference": "17:45-17:48",
+    "video_key": "2sriHX3PbXw",
+    "source_index": 89
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:46:18.089478Z"
+}

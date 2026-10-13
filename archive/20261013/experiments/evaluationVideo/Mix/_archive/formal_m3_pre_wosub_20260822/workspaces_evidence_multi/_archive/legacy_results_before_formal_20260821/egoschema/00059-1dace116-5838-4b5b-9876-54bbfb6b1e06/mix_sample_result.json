@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00059:1dace116-5838-4b5b-9876-54bbfb6b1e06",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is trying to fix a mini printer.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00059-1dace116-5838-4b5b-9876-54bbfb6b1e06",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00059-1dace116-5838-4b5b-9876-54bbfb6b1e06/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00059-1dace116-5838-4b5b-9876-54bbfb6b1e06/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00059-1dace116-5838-4b5b-9876-54bbfb6b1e06/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/1dace116-5838-4b5b-9876-54bbfb6b1e06.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/1dace116-5838-4b5b-9876-54bbfb6b1e06.mp4",
+  "question_block": "Question: Describe the main purpose of c's actions in the video and the steps taken to achieve it.\nOptions:\n(A) Currently, c is attempting to construct a small, compact mini printer device.\n(B) C is trying to disassemble a mini printer.\n(C) C is trying to fix a mini printer.\n(D) Currently, c is diligently attempting to clean a small-sized mini printer.\n(E) C is attempting to embellish a small, compact mini printer with decorations.",
+  "options": [
+    "Currently, c is attempting to construct a small, compact mini printer device.",
+    "C is trying to disassemble a mini printer.",
+    "C is trying to fix a mini printer.",
+    "Currently, c is diligently attempting to clean a small-sized mini printer.",
+    "C is attempting to embellish a small, compact mini printer with decorations."
+  ],
+  "official_meta": {
+    "question_index": "00059",
+    "video_id": "1dace116-5838-4b5b-9876-54bbfb6b1e06",
+    "source_index": 59
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:22:01.637838Z"
+}

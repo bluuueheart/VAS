@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00060:1e4ce899-0b37-44f2-9c89-dcd06c61a94f",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C picks flowers and puts them on a string.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00060-1e4ce899-0b37-44f2-9c89-dcd06c61a94f",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00060-1e4ce899-0b37-44f2-9c89-dcd06c61a94f/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00060-1e4ce899-0b37-44f2-9c89-dcd06c61a94f/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00060-1e4ce899-0b37-44f2-9c89-dcd06c61a94f/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/1e4ce899-0b37-44f2-9c89-dcd06c61a94f.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/1e4ce899-0b37-44f2-9c89-dcd06c61a94f.mp4",
+  "question_block": "Question: Summarize the primary objective and the process that c follows throughout the video to achieve it, and identify one deviation from this process. make sure you're capturing the essence of the video without listing all the individual steps.\nOptions:\n(A) Casually, c selects blossoms, picks flowers gently, and then places them carefully in a designated bag.\n(B) C picks flowers and puts them in a vase.\n(C) Carefully, c selects flowers, plucks them gently, and consumes them with delight.\n(D) Casually, c picks various flowers and joyfully gives them to someone else appreciatively.\n(E) C picks flowers and puts them on a string.",
+  "options": [
+    "Casually, c selects blossoms, picks flowers gently, and then places them carefully in a designated bag.",
+    "C picks flowers and puts them in a vase.",
+    "Carefully, c selects flowers, plucks them gently, and consumes them with delight.",
+    "Casually, c picks various flowers and joyfully gives them to someone else appreciatively.",
+    "C picks flowers and puts them on a string."
+  ],
+  "official_meta": {
+    "question_index": "00060",
+    "video_id": "1e4ce899-0b37-44f2-9c89-dcd06c61a94f",
+    "source_index": 60
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:22:03.166883Z"
+}

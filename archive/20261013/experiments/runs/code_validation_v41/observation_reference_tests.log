@@ -1,0 +1,28 @@
+======================================================================
+ERROR: test_observer_frame_citation_binds_to_retrieval_not_fictitious_inspect (RL.evolution.test_verifier_boundaries.LiveEvidenceRegressionTest.test_observer_frame_citation_binds_to_retrieval_not_fictitious_inspect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/gemini/code/export_packages/extracted/RL/evolution/test_verifier_boundaries.py", line 214, in test_observer_frame_citation_binds_to_retrieval_not_fictitious_inspect
+    bound = bind([slot], [observation])[0]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gemini/code/export_packages/extracted/RL/planner/engine.py", line 661, in _bind_observer_visual_sources
+    concrete_observations = list(_iter_observation_items(observations))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name '_iter_observation_items' is not defined
+
+======================================================================
+ERROR: test_parallel_wrapper_is_not_an_image_source (RL.evolution.test_verifier_boundaries.LiveEvidenceRegressionTest.test_parallel_wrapper_is_not_an_image_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/gemini/code/export_packages/extracted/RL/evolution/test_verifier_boundaries.py", line 224, in test_parallel_wrapper_is_not_an_image_source
+    self.assertEqual(bind([slot], [wrapper])[0], slot)
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gemini/code/export_packages/extracted/RL/planner/engine.py", line 661, in _bind_observer_visual_sources
+    concrete_observations = list(_iter_observation_items(observations))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name '_iter_observation_items' is not defined
+
+----------------------------------------------------------------------
+Ran 38 tests in 1.700s
+
+FAILED (errors=2)

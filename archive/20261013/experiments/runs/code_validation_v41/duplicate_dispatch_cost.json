@@ -1,0 +1,128 @@
+[
+  {
+    "uid": "lvbench:entity-recognition:4:63",
+    "step": 8,
+    "dispatch_calls": 1,
+    "dispatch_seconds": 8.936216
+  },
+  {
+    "uid": "videomme:humanity-history:001-1",
+    "step": 3,
+    "dispatch_calls": 1,
+    "dispatch_seconds": 9.600835
+  },
+  {
+    "uid": "videomme:humanity-history:001-1",
+    "step": 11,
+    "dispatch_calls": 2,
+    "dispatch_seconds": 32.084053
+  },
+  {
+    "uid": "videomme:humanity-history:001-1",
+    "step": 12,
+    "dispatch_calls": 2,
+    "dispatch_seconds": 59.863364
+  },
+  {
+    "uid": "videomme:humanity-history:001-1",
+    "step": 13,
+    "dispatch_calls": 1,
+    "dispatch_seconds": 13.962927
+  },
+  {
+    "uid": "videomme:humanity-history:001-1",
+    "step": 14,
+    "dispatch_calls": 1,
+    "dispatch_seconds": 22.24627
+  },
+  {
+    "uid": "mlvu:needle:0:needle-32",
+    "step": 3,
+    "dispatch_calls": 2,
+    "dispatch_seconds": 23.807923
+  },
+  {
+    "uid": "lvbench:entity-recognition:6:67",
+    "step": 7,
+    "dispatch_calls": 1,
+    "dispatch_seconds": 14.988539
+  },
+  {
+    "uid": "lvbench:entity-recognition:6:67",
+    "step": 8,
+    "dispatch_calls": 1,
+    "dispatch_seconds": 23.517407
+  },
+  {
+    "uid": "egoschema:00002:00f93e1e-cf4e-4835-88b4-4ad68216e86f",
+    "step": 4,
+    "dispatch_calls": 3,
+    "dispatch_seconds": 47.654734
+  },
+  {
+    "uid": "lvbench:event-understanding:3:62",
+    "step": 9,
+    "dispatch_calls": 2,
+    "dispatch_seconds": 18.591551000000003
+  },
+  {
+    "uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+    "step": 10,
+    "dispatch_calls": 2,
+    "dispatch_seconds": 22.091106
+  },
+  {
+    "uid": "mlvu:order:0:order-126",
+    "step": 4,
+    "dispatch_calls": 2,
+    "dispatch_seconds": 22.480342
+  },
+  {
+    "uid": "lvbench:event-understanding:7:68",
+    "step": 7,
+    "dispatch_calls": 1,
+    "dispatch_seconds": 10.391791
+  },
+  {
+    "uid": "lvbench:event-understanding:7:68",
+    "step": 8,
+    "dispatch_calls": 2,
+    "dispatch_seconds": 22.115945
+  },
+  {
+    "uid": "lvbench:event-understanding:7:68",
+    "step": 10,
+    "dispatch_calls": 1,
+    "dispatch_seconds": 16.944427
+  },
+  {
+    "uid": "lvbench:event-understanding:7:68",
+    "step": 14,
+    "dispatch_calls": 2,
+    "dispatch_seconds": 28.703744
+  },
+  {
+    "uid": "videomme:law:061-1",
+    "step": 10,
+    "dispatch_calls": 2,
+    "dispatch_seconds": 42.897394
+  },
+  {
+    "uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+    "step": 5,
+    "dispatch_calls": 4,
+    "dispatch_seconds": 72.339345
+  },
+  {
+    "uid": "lvbench:reasoning:5:65",
+    "step": 5,
+    "dispatch_calls": 2,
+    "dispatch_seconds": 19.724428
+  },
+  {
+    "uid": "videomme:life-tip:071-1",
+    "step": 3,
+    "dispatch_calls": 1,
+    "dispatch_seconds": 11.79905
+  }
+]

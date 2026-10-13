@@ -1,0 +1,20 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-08-23T19:35:12.961445Z",
+  "records": {
+    "mlvu:needle:0:needle-32": {
+      "sample_uid": "mlvu:needle:0:needle-32",
+      "dataset_name": "mlvu",
+      "subset_name": "needle",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 9,
+      "iter_num": 11,
+      "tool_success_rate": 0.666667,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_v11/mlvu/needle-00000-needle-32/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_v11/mlvu/needle-00000-needle-32",
+      "updated_at": "2026-08-23T19:35:12.961352Z"
+    }
+  }
+}

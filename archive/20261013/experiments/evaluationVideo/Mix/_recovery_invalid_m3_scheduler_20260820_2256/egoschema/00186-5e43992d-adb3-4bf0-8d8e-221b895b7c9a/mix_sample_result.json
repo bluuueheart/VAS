@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00186:5e43992d-adb3-4bf0-8d8e-221b895b7c9a",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The key elements involved in preparing the dish are parsley, onion, salt, vinegar, and spices. the parsley is washed and squeezed, the onion is chopped, the salt is added, the vinegar is added, and the spices are added. the dish is then cooked.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00186-5e43992d-adb3-4bf0-8d8e-221b895b7c9a",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00186-5e43992d-adb3-4bf0-8d8e-221b895b7c9a/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00186-5e43992d-adb3-4bf0-8d8e-221b895b7c9a/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00186-5e43992d-adb3-4bf0-8d8e-221b895b7c9a/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/5e43992d-adb3-4bf0-8d8e-221b895b7c9a.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/5e43992d-adb3-4bf0-8d8e-221b895b7c9a.mp4",
+  "question_block": "Question: What are the key elements involved in preparing the dish and in what sequence do they occur? provide a concise summary, focusing on essential information.\nOptions:\n(A) The key elements involved in preparing the dish are parsley, onion, salt, vinegar, and spices. the parsley is washed and chopped, the onion is chopped, the salt is added, the vinegar is added, and the spices are added. the dish is then served.\n(B) The key elements involved in preparing the dish are parsley, onion, salt, vinegar, and spices. the parsley is washed and squeezed, the onion is chopped, the salt is added, the vinegar is added, and the spices are added. the dish is then cooked.\n(C) The key elements involved in preparing the dish are parsley, onion, salt, vinegar, and spices. the parsley is washed and squeezed, the onion is chopped, the salt is added, the vinegar is added, and the spices are added. the dish is then stored in the refrigerator.\n(D) The key elements involved in preparing the dish are parsley, onion, salt, vinegar, and spices. the parsley is washed and chopped, the onion is chopped, the salt is added, the vinegar is added, and the spices are added. the dish is then cooked and served.\n(E) The key elements involved in preparing the dish are parsley, onion, salt, vinegar, and spices. the parsley is washed and squeezed, the onion is chopped, the salt is added, the vinegar is added, and the spices are added. the dish is then cooked, stored in the refrigerator, and served.",
+  "options": [
+    "The key elements involved in preparing the dish are parsley, onion, salt, vinegar, and spices. the parsley is washed and chopped, the onion is chopped, the salt is added, the vinegar is added, and the spices are added. the dish is then served.",
+    "The key elements involved in preparing the dish are parsley, onion, salt, vinegar, and spices. the parsley is washed and squeezed, the onion is chopped, the salt is added, the vinegar is added, and the spices are added. the dish is then cooked.",
+    "The key elements involved in preparing the dish are parsley, onion, salt, vinegar, and spices. the parsley is washed and squeezed, the onion is chopped, the salt is added, the vinegar is added, and the spices are added. the dish is then stored in the refrigerator.",
+    "The key elements involved in preparing the dish are parsley, onion, salt, vinegar, and spices. the parsley is washed and chopped, the onion is chopped, the salt is added, the vinegar is added, and the spices are added. the dish is then cooked and served.",
+    "The key elements involved in preparing the dish are parsley, onion, salt, vinegar, and spices. the parsley is washed and squeezed, the onion is chopped, the salt is added, the vinegar is added, and the spices are added. the dish is then cooked, stored in the refrigerator, and served."
+  ],
+  "official_meta": {
+    "question_index": "00186",
+    "video_id": "5e43992d-adb3-4bf0-8d8e-221b895b7c9a",
+    "source_index": 186
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:19.409482Z"
+}

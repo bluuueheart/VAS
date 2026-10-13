@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:reasoning:12:78",
+  "dataset_name": "lvbench",
+  "subset_name": "reasoning",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 15,
+  "iter_num": 18,
+  "tool_success_rate": 0.933333,
+  "successful_tool_calls": 14,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "Because he finds out that the protagonist is a woman",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 6608.892,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/reasoning-00012-78",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/reasoning-00012-78/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/reasoning-00012-78/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/reasoning-00012-78/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: Why does the protagonist aim her sword at the cook?\nOptions:\n(A) Because he is a spy\n(B) Because he wants to steal the sword\n(C) Because he wants to challenge the protagonist\n(D) Because he finds out that the protagonist is a woman",
+  "options": [
+    "Because he is a spy",
+    "Because he wants to steal the sword",
+    "Because he wants to challenge the protagonist",
+    "Because he finds out that the protagonist is a woman"
+  ],
+  "official_meta": {
+    "question_type": "reasoning",
+    "video_type": "cartoon",
+    "time_reference": "57:43-57:50",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "Cm73ma6Ibcs",
+    "resolved_video_stem": "Cm73ma6Ibcs",
+    "video_mapping_verified": true,
+    "source_index": 12
+  },
+  "updated_at": "2026-09-02T11:49:23.119057Z"
+}

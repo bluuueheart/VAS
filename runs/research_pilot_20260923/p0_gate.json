@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "checked_at": 1790159275.243273,
+  "regression_tests": 69,
+  "regression_exit_code": 0,
+  "regression_log_sha256": "200c80fba5dd25c6e5cfb9e99b58423d884b5d433cc71a0effbfc0a5ba781296",
+  "source_context_proof_sha256": "8e6371b091f48127138a420a049701435cba19a1f5af821039aabc90110e7f40",
+  "input_check_sha256": "f603bd7219a98839cc3c2638ed21095c72c415d6942ac9a48e6e0aaadf94bbf3",
+  "runner_contract_sha256": "98668673b462cf969add6f43422c45b5166d88eb312aebb3e22307937d0a342d",
+  "limitation": "Software and input validation only; no task performance gain established."
+}

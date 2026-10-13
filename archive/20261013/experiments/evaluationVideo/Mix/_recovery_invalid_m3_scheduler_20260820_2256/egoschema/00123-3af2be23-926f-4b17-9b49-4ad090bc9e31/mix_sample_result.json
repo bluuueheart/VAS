@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00123:3af2be23-926f-4b17-9b49-4ad090bc9e31",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The three critical or recurring activities that c performs are rinsing, folding, and squeezing the turbans.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00123-3af2be23-926f-4b17-9b49-4ad090bc9e31",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00123-3af2be23-926f-4b17-9b49-4ad090bc9e31/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00123-3af2be23-926f-4b17-9b49-4ad090bc9e31/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00123-3af2be23-926f-4b17-9b49-4ad090bc9e31/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/3af2be23-926f-4b17-9b49-4ad090bc9e31.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/3af2be23-926f-4b17-9b49-4ad090bc9e31.mp4",
+  "question_block": "Question: From the list of different actions performed by c in the video, identify three critical or recurring activities, and discuss their significance in the overall context of the video.\nOptions:\n(A) The three critical or recurring activities that c performs are washing, rinsing, and folding the turbans.\n(B) The three critical or recurring activities that c performs are rinsing, folding, and squeezing the turbans.\n(C) The three crucial or repeatedly occurring activities that c performs consist of folding, squeezing, and effectively drying the turbans.\n(D) The three critical tasks or repeatedly occurring activities that c performs consistently are thoroughly rinsing, precisely squeezing, and neatly folding the turbans.\n(E) The three critical or recurring tasks that c consistently performs include washing, folding, and carefully squeezing the turbans.",
+  "options": [
+    "The three critical or recurring activities that c performs are washing, rinsing, and folding the turbans.",
+    "The three critical or recurring activities that c performs are rinsing, folding, and squeezing the turbans.",
+    "The three crucial or repeatedly occurring activities that c performs consist of folding, squeezing, and effectively drying the turbans.",
+    "The three critical tasks or repeatedly occurring activities that c performs consistently are thoroughly rinsing, precisely squeezing, and neatly folding the turbans.",
+    "The three critical or recurring tasks that c consistently performs include washing, folding, and carefully squeezing the turbans."
+  ],
+  "official_meta": {
+    "question_index": "00123",
+    "video_id": "3af2be23-926f-4b17-9b49-4ad090bc9e31",
+    "source_index": 123
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:47:56.946328Z"
+}

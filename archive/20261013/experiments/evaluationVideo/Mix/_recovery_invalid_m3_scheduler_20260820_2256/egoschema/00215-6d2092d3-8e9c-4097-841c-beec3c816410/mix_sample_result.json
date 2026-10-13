@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00215:6d2092d3-8e9c-4097-841c-beec3c816410",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's actions up until he began drilling the nails were focused on preparing the tools and materials for the task at hand. he drew a line on the worktable, selected the appropriate drill bit, fixed it into the power drill, and drilled a hole in the worktable. after he began drilling the nails, his actions were focused on assembling and securing the wooden structure.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00215-6d2092d3-8e9c-4097-841c-beec3c816410",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00215-6d2092d3-8e9c-4097-841c-beec3c816410/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00215-6d2092d3-8e9c-4097-841c-beec3c816410/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00215-6d2092d3-8e9c-4097-841c-beec3c816410/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/6d2092d3-8e9c-4097-841c-beec3c816410.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/6d2092d3-8e9c-4097-841c-beec3c816410.mp4",
+  "question_block": "Question: What was the main purpose of c's actions up until he began drilling the nails, and how did his actions contrast with those after he began drilling the nails?\nOptions:\n(A) C's actions up until he began drilling the nails were focused on preparing the tools and materials for the task at hand. he drew a line on the worktable, selected the appropriate drill bit, fixed it into the power drill, and drilled a hole in the worktable. after he began drilling the nails, his actions were focused on assembling and securing the wooden structure.\n(B) C's actions up until he began drilling the nails were focused on assembling and securing the wooden structure. he drew a line on the worktable, selected the appropriate drill bit, fixed it into the power drill, and drilled a hole in the worktable. after he began drilling the nails, his actions were focused on preparing the tools and materials for the task at hand.\n(C) C's actions up until he began drilling the nails were primarily concentrated on repairing the wooden structure. he carefully drew a line on the worktable, meticulously selected the appropriate drill bit, securely fixed it into the power drill, and skillfully drilled a hole in the worktable. after he started drilling the nails, his subsequent actions were focused on disassembling the wooden structure.\n(D) C's actions up until he began drilling the nails were focused on destroying the wooden structure. he drew a line on the worktable, selected the appropriate drill bit, fixed it into the power drill, and drilled a hole in the worktable. after he began drilling the nails, his actions were focused on rebuilding the wooden structure.\n(E) Up until he started, c's actions were concentrated on creating a work of art. he carefully drew a line on the worktable, meticulously selected the suitable drill bit, securely fixed it into the power drill, and skillfully drilled a hole in the worktable. however, after he began drilling the nails, his subsequent actions were focused on intentionally destroying the work of art.",
+  "options": [
+    "C's actions up until he began drilling the nails were focused on preparing the tools and materials for the task at hand. he drew a line on the worktable, selected the appropriate drill bit, fixed it into the power drill, and drilled a hole in the worktable. after he began drilling the nails, his actions were focused on assembling and securing the wooden structure.",
+    "C's actions up until he began drilling the nails were focused on assembling and securing the wooden structure. he drew a line on the worktable, selected the appropriate drill bit, fixed it into the power drill, and drilled a hole in the worktable. after he began drilling the nails, his actions were focused on preparing the tools and materials for the task at hand.",
+    "C's actions up until he began drilling the nails were primarily concentrated on repairing the wooden structure. he carefully drew a line on the worktable, meticulously selected the appropriate drill bit, securely fixed it into the power drill, and skillfully drilled a hole in the worktable. after he started drilling the nails, his subsequent actions were focused on disassembling the wooden structure.",
+    "C's actions up until he began drilling the nails were focused on destroying the wooden structure. he drew a line on the worktable, selected the appropriate drill bit, fixed it into the power drill, and drilled a hole in the worktable. after he began drilling the nails, his actions were focused on rebuilding the wooden structure.",
+    "Up until he started, c's actions were concentrated on creating a work of art. he carefully drew a line on the worktable, meticulously selected the suitable drill bit, securely fixed it into the power drill, and skillfully drilled a hole in the worktable. however, after he began drilling the nails, his subsequent actions were focused on intentionally destroying the work of art."
+  ],
+  "official_meta": {
+    "question_index": "00215",
+    "video_id": "6d2092d3-8e9c-4097-841c-beec3c816410",
+    "source_index": 215
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:28.120205Z"
+}

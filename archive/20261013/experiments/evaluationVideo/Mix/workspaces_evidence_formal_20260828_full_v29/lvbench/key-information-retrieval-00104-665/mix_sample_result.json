@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:key-information-retrieval:104:665",
+  "dataset_name": "lvbench",
+  "subset_name": "key information retrieval",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 12,
+  "iter_num": 20,
+  "tool_success_rate": 0.916667,
+  "successful_tool_calls": 11,
+  "planner_iterations": 20,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "W",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 7303.934,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/key-information-retrieval-00104-665",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/key-information-retrieval-00104-665/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/key-information-retrieval-00104-665/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/key-information-retrieval-00104-665/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/_zrgbA3FMVE.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/_zrgbA3FMVE.mp4",
+  "question_block": "Question: What letter appears on the computer after the girl with orange hair comes down from the bed and turns on the computer?\nOptions:\n(A) M\n(B) N\n(C) V\n(D) W",
+  "options": [
+    "M",
+    "N",
+    "V",
+    "W"
+  ],
+  "official_meta": {
+    "question_type": "key information retrieval",
+    "video_type": "cartoon",
+    "time_reference": "21:07-21:15",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "_zrgbA3FMVE",
+    "resolved_video_stem": "_zrgbA3FMVE",
+    "video_mapping_verified": true,
+    "source_index": 104
+  },
+  "updated_at": "2026-09-05T09:08:42.590759Z"
+}

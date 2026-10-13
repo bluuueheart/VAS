@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00173:55ea09ed-4590-4e59-8753-40a64d67abd9",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is adjusting the lawn mower's pulley.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00173-55ea09ed-4590-4e59-8753-40a64d67abd9",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00173-55ea09ed-4590-4e59-8753-40a64d67abd9/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00173-55ea09ed-4590-4e59-8753-40a64d67abd9/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00173-55ea09ed-4590-4e59-8753-40a64d67abd9/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/55ea09ed-4590-4e59-8753-40a64d67abd9.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/55ea09ed-4590-4e59-8753-40a64d67abd9.mp4",
+  "question_block": "Question: What is the central problem being addressed in the video, and how does c gradually progress to solve it?\nOptions:\n(A) C is adjusting the lawn mower's blade.\n(B) C is adjusting the lawn mower's engine.\n(C) C is adjusting the lawn mower's carburetor.\n(D) C is adjusting the lawn mower's pulley.\n(E) C is adjusting the lawn mower's spark plug.",
+  "options": [
+    "C is adjusting the lawn mower's blade.",
+    "C is adjusting the lawn mower's engine.",
+    "C is adjusting the lawn mower's carburetor.",
+    "C is adjusting the lawn mower's pulley.",
+    "C is adjusting the lawn mower's spark plug."
+  ],
+  "official_meta": {
+    "question_index": "00173",
+    "video_id": "55ea09ed-4590-4e59-8753-40a64d67abd9",
+    "source_index": 173
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:51:31.552188Z"
+}

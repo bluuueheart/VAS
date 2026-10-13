@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00236:776d7dcf-6a44-4db3-9d37-8a75635388c0",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is using the electronic scale to measure the amount of dough, and the mixer to mix the dough.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00236-776d7dcf-6a44-4db3-9d37-8a75635388c0",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00236-776d7dcf-6a44-4db3-9d37-8a75635388c0/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00236-776d7dcf-6a44-4db3-9d37-8a75635388c0/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00236-776d7dcf-6a44-4db3-9d37-8a75635388c0/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/776d7dcf-6a44-4db3-9d37-8a75635388c0.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/776d7dcf-6a44-4db3-9d37-8a75635388c0.mp4",
+  "question_block": "Question: What is the significance of c's actions involving the electronic scale and mixing the dough in the video?\nOptions:\n(A) C is using the electronic scale to measure the amount of dough, and the mixer to mix the dough.\n(B) C is using the electronic scale to measure the amount of flour, and the mixer to mix the flour.\n(C) Carefully, c is utilizing the precise electronic scale to accurately measure the required amount of water, and employing the mixer to effectively mix the water.\n(D) Currently, c is diligently utilizing the electronic scale to precisely gauge the amount of yeast needed, and employing the mixer to blend the yeast effectively.\n(E) Carefully, c is utilizing the precise electronic scale to accurately measure the required amount of salt, and employing the mixer to effectively blend the salt.",
+  "options": [
+    "C is using the electronic scale to measure the amount of dough, and the mixer to mix the dough.",
+    "C is using the electronic scale to measure the amount of flour, and the mixer to mix the flour.",
+    "Carefully, c is utilizing the precise electronic scale to accurately measure the required amount of water, and employing the mixer to effectively mix the water.",
+    "Currently, c is diligently utilizing the electronic scale to precisely gauge the amount of yeast needed, and employing the mixer to blend the yeast effectively.",
+    "Carefully, c is utilizing the precise electronic scale to accurately measure the required amount of salt, and employing the mixer to effectively blend the salt."
+  ],
+  "official_meta": {
+    "question_index": "00236",
+    "video_id": "776d7dcf-6a44-4db3-9d37-8a75635388c0",
+    "source_index": 236
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:55:56.908664Z"
+}

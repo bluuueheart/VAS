@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:needle:35:needle-104",
+  "dataset_name": "mlvu",
+  "subset_name": "needle",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The windshield is broken",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/needle-00035-needle-104",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/needle-00035-needle-104/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/needle-00035-needle-104/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/needle-00035-needle-104/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_104.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_104.mp4",
+  "question_block": "Question: What is the condition of the car's windshield as it rides through the mountain country village?\nOptions:\n(A) The windshield is covered in snow\n(B) The windshield is foggy\n(C) The windshield is broken\n(D) The windshield is clean",
+  "options": [
+    "The windshield is covered in snow",
+    "The windshield is foggy",
+    "The windshield is broken",
+    "The windshield is clean"
+  ],
+  "official_meta": {
+    "task_type": "needle",
+    "source_json": "2_needle.json",
+    "source_index": 35,
+    "video_subdir": "2_needle",
+    "video_relative_path": "2_needle/needle_104.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:31.918677Z"
+}

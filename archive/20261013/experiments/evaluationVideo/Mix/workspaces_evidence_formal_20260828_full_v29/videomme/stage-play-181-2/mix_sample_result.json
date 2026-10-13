@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:stage-play:181-2",
+  "dataset_name": "videomme",
+  "subset_name": "Stage Play",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 9,
+  "iter_num": 12,
+  "tool_success_rate": 0.555556,
+  "successful_tool_calls": 5,
+  "planner_iterations": 12,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "D",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) A black skirt",
+  "elapsed_seconds": 2714.193,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/stage-play-181-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/stage-play-181-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/stage-play-181-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/stage-play-181-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/8np5YKYx3sU.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/8np5YKYx3sU.mp4",
+  "question_block": "Question: What clothes is the singer wearing?\nOptions:\n(A) A yellow shirt.\n(B) A blue short-sleeve.\n(C) A purple vest.\n(D) A black skirt.",
+  "options": [
+    "A. A yellow shirt.",
+    "B. A blue short-sleeve.",
+    "C. A purple vest.",
+    "D. A black skirt."
+  ],
+  "official_meta": {
+    "video_id": "181",
+    "video_external_id": "8np5YKYx3sU",
+    "resolved_video_stem": "8np5YKYx3sU",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Artistic Performance",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Stage Play",
+    "task_type": "Attribute Perception",
+    "question_id": "181-2",
+    "question_index": 1,
+    "video_item_index": 180,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-05T06:12:19.493031Z"
+}

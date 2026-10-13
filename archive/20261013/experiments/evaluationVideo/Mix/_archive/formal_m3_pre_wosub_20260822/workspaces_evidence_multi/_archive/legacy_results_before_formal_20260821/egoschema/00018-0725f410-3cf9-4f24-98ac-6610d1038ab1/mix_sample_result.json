@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00018:0725f410-3cf9-4f24-98ac-6610d1038ab1",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The critical steps taken by c to organize and prepare the engine oil for use on the lawn mower were opening the carton of engine oil and picking containers of engine oil from the carton.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00018-0725f410-3cf9-4f24-98ac-6610d1038ab1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00018-0725f410-3cf9-4f24-98ac-6610d1038ab1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00018-0725f410-3cf9-4f24-98ac-6610d1038ab1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00018-0725f410-3cf9-4f24-98ac-6610d1038ab1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0725f410-3cf9-4f24-98ac-6610d1038ab1.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0725f410-3cf9-4f24-98ac-6610d1038ab1.mp4",
+  "question_block": "Question: Identify the critical steps taken by c to organize and prepare the engine oil for use on the lawn mower, and highlight the importance of these actions in the overall video narrative.\nOptions:\n(A) The critical steps taken by c to organize and prepare the engine oil for use on the lawn mower were adjusting the torch light and hanging it on the rail.\n(B) The critical steps taken by c to organize and prepare the engine oil for use on the lawn mower were opening the carton of engine oil and picking containers of engine oil from the carton.\n(C) The critical steps diligently taken by c to efficiently organize and prepare the engine oil for optimal use on the lawn mower involved skillfully using the wrench on the lawn mower and subsequently removing the wrench from the lawn mower.\n(D) The crucial steps executed by c to systematically organize and prepare the engine oil specifically for use on the lawn mower included walking into a designated store room and effortlessly carrying a carton of the essential engine oil.\n(E) The vital critical steps carefully taken by c to effectively organize and efficiently prepare the engine oil for optimal use on the lawn mower included diligently dropping the carton of engine oil on the lawn mower and thoroughly cleaning the floor.",
+  "options": [
+    "The critical steps taken by c to organize and prepare the engine oil for use on the lawn mower were adjusting the torch light and hanging it on the rail.",
+    "The critical steps taken by c to organize and prepare the engine oil for use on the lawn mower were opening the carton of engine oil and picking containers of engine oil from the carton.",
+    "The critical steps diligently taken by c to efficiently organize and prepare the engine oil for optimal use on the lawn mower involved skillfully using the wrench on the lawn mower and subsequently removing the wrench from the lawn mower.",
+    "The crucial steps executed by c to systematically organize and prepare the engine oil specifically for use on the lawn mower included walking into a designated store room and effortlessly carrying a carton of the essential engine oil.",
+    "The vital critical steps carefully taken by c to effectively organize and efficiently prepare the engine oil for optimal use on the lawn mower included diligently dropping the carton of engine oil on the lawn mower and thoroughly cleaning the floor."
+  ],
+  "official_meta": {
+    "question_index": "00018",
+    "video_id": "0725f410-3cf9-4f24-98ac-6610d1038ab1",
+    "source_index": 18
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:18:52.202414Z"
+}

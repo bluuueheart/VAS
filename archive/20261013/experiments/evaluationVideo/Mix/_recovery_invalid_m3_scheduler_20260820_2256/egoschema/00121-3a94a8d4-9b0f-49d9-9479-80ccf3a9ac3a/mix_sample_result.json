@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00121:3a94a8d4-9b0f-49d9-9479-80ccf3a9ac3a",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The turning point is when c unfastens the hub axle.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00121-3a94a8d4-9b0f-49d9-9479-80ccf3a9ac3a",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00121-3a94a8d4-9b0f-49d9-9479-80ccf3a9ac3a/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00121-3a94a8d4-9b0f-49d9-9479-80ccf3a9ac3a/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00121-3a94a8d4-9b0f-49d9-9479-80ccf3a9ac3a/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/3a94a8d4-9b0f-49d9-9479-80ccf3a9ac3a.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/3a94a8d4-9b0f-49d9-9479-80ccf3a9ac3a.mp4",
+  "question_block": "Question: From the sequence of actions, identify a turning point or moment where c's focus shifts to a different task. explain why you believe this is the most significant part of the video.\nOptions:\n(A) The turning point is when c unfastens the hub axle.\n(B) The crucial turning point occurs when character c picks up the screwdriver from the table.\n(C) The pivotal turning point occurs when character c decides to put on the gloves.\n(D) The turning point is when c removes the tire.\n(E) The critical turning point occurs when character c successfully patches the hole, fixing it.",
+  "options": [
+    "The turning point is when c unfastens the hub axle.",
+    "The crucial turning point occurs when character c picks up the screwdriver from the table.",
+    "The pivotal turning point occurs when character c decides to put on the gloves.",
+    "The turning point is when c removes the tire.",
+    "The critical turning point occurs when character c successfully patches the hole, fixing it."
+  ],
+  "official_meta": {
+    "question_index": "00121",
+    "video_id": "3a94a8d4-9b0f-49d9-9479-80ccf3a9ac3a",
+    "source_index": 121
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:47:47.291737Z"
+}

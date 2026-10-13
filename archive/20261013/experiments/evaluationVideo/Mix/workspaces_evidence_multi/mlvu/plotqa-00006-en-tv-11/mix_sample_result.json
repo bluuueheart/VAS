@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:plotqa:6:en-tv-11",
+  "dataset_name": "mlvu",
+  "subset_name": "plotQA",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Because they triggered the alarm device",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00006-en-tv-11",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00006-en-tv-11/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00006-en-tv-11/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00006-en-tv-11/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/en_tv_11.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/en_tv_11.mp4",
+  "question_block": "Question: Why are the woman in blue clothing and the man with a scar on his face surrounded by armed personnel?\nOptions:\n(A) Because they had a fight\n(B) Because they killed someone\n(C) Because they triggered the alarm device\n(D) Because they robbed",
+  "options": [
+    "Because they had a fight",
+    "Because they killed someone",
+    "Because they triggered the alarm device",
+    "Because they robbed"
+  ],
+  "official_meta": {
+    "task_type": "plotQA",
+    "source_json": "1_plotQA.json",
+    "source_index": 6,
+    "video_subdir": "1_plotQA",
+    "video_relative_path": "1_plotQA/en_tv_11.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=255 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-22T18:52:28.297644Z"
+}

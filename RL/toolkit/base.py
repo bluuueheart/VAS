@@ -23,6 +23,40 @@ _PREFERRED_TEXT_KEYS = (
     "error",
 )
 
+_TOOL_RESULT_STATUSES = {"success", "error", "no_valid_result"}
+
+
+def tool_result_schema() -> Dict[str, Any]:
+    """Return the common public result contract for every executable tool.
+
+    Implementations may add domain-specific fields, but the planner-facing
+    execution path always exposes these fields and never converts a missing
+    result into a positive string response.
+    """
+    return {
+        "type": "object",
+        "required": ["status", "result"],
+        "properties": {
+            "status": {
+                "type": "string",
+                "enum": sorted(_TOOL_RESULT_STATUSES),
+                "description": "Execution outcome: evidence, failure, or no usable evidence.",
+            },
+            "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload.",
+            },
+            "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection.",
+            },
+            "value": {
+                "description": "Structured scalar value when the tool does not return rows.",
+            },
+        },
+        "additionalProperties": True,
+    }
+
 
 def _tool_retry_guidance(tool_name: str = "") -> str:
     label = tool_name or "This tool"
@@ -132,6 +166,51 @@ def enrich_tool_result(result: Any, tool_name: str = "") -> Any:
     return result
 
 
+def normalize_tool_result(result: Any, tool_name: str = "") -> Dict[str, Any]:
+    """Normalize a concrete tool result to the shared truthful envelope.
+
+    The function is deliberately loss-preserving: domain-specific dictionary
+    fields remain intact, lists are retained under ``items``, and scalar
+    values are retained under ``value``.  ``status=success`` is never inferred
+    for an empty payload or an explicit error.
+    """
+    if isinstance(result, dict):
+        normalized = dict(result)
+        status = str(normalized.get("status") or "").strip().lower()
+        if normalized.get("error") and status != "no_valid_result":
+            status = "error"
+        elif status not in _TOOL_RESULT_STATUSES:
+            status = "no_valid_result" if _is_effectively_empty_result(normalized) else "success"
+        normalized["status"] = status
+        summary = normalized.get("result")
+        if not isinstance(summary, str) or not summary.strip():
+            normalized["result"] = summarize_tool_result(normalized, tool_name=tool_name)
+        return normalized
+
+    if isinstance(result, list):
+        status = "success" if not _is_effectively_empty_result(result) else "no_valid_result"
+        return {
+            "status": status,
+            "result": summarize_tool_result(result, tool_name=tool_name),
+            "items": list(result),
+            "item_count": len(result),
+        }
+
+    if result is None:
+        return {
+            "status": "no_valid_result",
+            "result": _tool_retry_guidance(tool_name),
+            "value": None,
+        }
+
+    summary = summarize_tool_result(result, tool_name=tool_name)
+    return {
+        "status": "success" if str(summary).strip() else "no_valid_result",
+        "result": summary or _tool_retry_guidance(tool_name),
+        "value": result,
+    }
+
+
 def format_tool_result_observation(result: Any, tool_name: str = "") -> str:
     """Render a tool result as observation text with a guaranteed readable summary."""
     enriched = enrich_tool_result(result, tool_name=tool_name)
@@ -232,8 +311,25 @@ class BaseTool(BaseModel, ABC):
         return {
             "name": self.name,
             "description": self.description,
-            "parameters": self.parameters
+            "parameters": self.parameters,
+            "output_schema": self.get_output_schema(),
         }
+
+    def get_output_schema(self) -> Dict[str, Any]:
+        """Return the shared output contract advertised to planner tooling."""
+        return tool_result_schema()
+
+    def execute(self, **kwargs: Any) -> Dict[str, Any]:
+        """Execute a concrete tool and return the truthful public envelope."""
+        try:
+            raw_result = self.run(**kwargs)
+        except Exception as exc:
+            return {
+                "status": "error",
+                "result": f"{self.name} failed: {exc}",
+                "error": str(exc),
+            }
+        return normalize_tool_result(raw_result, tool_name=self.name)
     
     def validate_args(self, **kwargs) -> bool:
         """Validate arguments against parameter schema.
@@ -255,23 +351,32 @@ class BaseTool(BaseModel, ABC):
 
 
 class PlaceholderTool(BaseTool):
-    """Placeholder tool for high-level abstractions that trigger recursion."""
+    """Internal virtual sentinel for unresolved abstract actions.
+
+    This class is never included in the formal registry.  Its result is an
+    explicit error rather than a pseudo-positive implementation.
+    """
     
     name: str
     description: str = "High-level abstraction to be implemented by sub-agent"
     parameters: Dict[str, Any] = Field(default_factory=dict)
     is_virtual: bool = True
     
-    def run(self, **kwargs) -> str:
-        """Placeholder execution - should trigger recursion.
-        
+    def run(self, **kwargs) -> Dict[str, Any]:
+        """Report that abstract resolution is required.
+
         Args:
             **kwargs: Arguments passed to the virtual tool
             
         Returns:
-            Placeholder message
+            A truthful structured error payload.
         """
-        return f"PlaceholderTool '{self.name}' called with args: {kwargs}. This should trigger recursion."
+        return {
+            "status": "error",
+            "result": f"Tool '{self.name}' is abstract and has no concrete implementation.",
+            "reason": "abstract_tool_requires_resolution",
+            "requested_args": kwargs,
+        }
 
 
 class FallbackTool(BaseTool):
@@ -286,9 +391,11 @@ class FallbackTool(BaseTool):
     tags: Optional[list] = Field(default_factory=lambda: ["fallback"])
     is_virtual: bool = False
 
-    def run(self, **kwargs) -> str:
+    def run(self, **kwargs) -> Dict[str, Any]:
         """Return a deterministic message indicating the tool is unavailable."""
-        return (
-            f"Tool '{self.name}' is not registered. "
-            f"Received args: {kwargs}. Please use available tools or implement this tool."
-        )
+        return {
+            "status": "error",
+            "result": f"Tool '{self.name}' is not registered or is disabled.",
+            "reason": "tool_unavailable",
+            "requested_args": kwargs,
+        }

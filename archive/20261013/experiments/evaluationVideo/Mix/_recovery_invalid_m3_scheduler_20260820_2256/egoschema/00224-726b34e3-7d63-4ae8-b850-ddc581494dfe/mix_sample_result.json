@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00224:726b34e3-7d63-4ae8-b850-ddc581494dfe",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C eats chips and uses an ipad.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00224-726b34e3-7d63-4ae8-b850-ddc581494dfe",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00224-726b34e3-7d63-4ae8-b850-ddc581494dfe/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00224-726b34e3-7d63-4ae8-b850-ddc581494dfe/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00224-726b34e3-7d63-4ae8-b850-ddc581494dfe/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/726b34e3-7d63-4ae8-b850-ddc581494dfe.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/726b34e3-7d63-4ae8-b850-ddc581494dfe.mp4",
+  "question_block": "Question: Summarize the main activities c gets involved in during the video, and explain how these activities are interconnected.\nOptions:\n(A) C eats chips and watches tv.\n(B) C eats chips and talks to her friends.\n(C) C eats chips and uses an ipad.\n(D) C eats chips and plays games.\n(E) C eats chips and reads a book.",
+  "options": [
+    "C eats chips and watches tv.",
+    "C eats chips and talks to her friends.",
+    "C eats chips and uses an ipad.",
+    "C eats chips and plays games.",
+    "C eats chips and reads a book."
+  ],
+  "official_meta": {
+    "question_index": "00224",
+    "video_id": "726b34e3-7d63-4ae8-b850-ddc581494dfe",
+    "source_index": 224
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:55:05.495613Z"
+}

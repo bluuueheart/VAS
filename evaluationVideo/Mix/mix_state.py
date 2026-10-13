@@ -1,12 +1,18 @@
 from __future__ import annotations
 
 import json
+import os
+import tempfile
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Mapping, MutableMapping, Optional
 
 
-PARTICIPATED_STATUSES = {"completed", "wrong"}
+# ``unanswerable`` is a deliberate evidence-contract outcome: the sample ran
+# to a terminal audit decision, but no listed answer was truthfully supported.
+# It must count as covered for resume/checkpoint purposes while remaining
+# separate from completed/wrong accuracy in audit_multi_run.py.
+PARTICIPATED_STATUSES = {"completed", "wrong", "unanswerable"}
 SAMPLE_RESULT_FILENAME = "mix_sample_result.json"
 
 
@@ -43,8 +49,28 @@ def save_progress(progress_path: Path, payload: Mapping[str, Any]) -> None:
     progress_path.parent.mkdir(parents=True, exist_ok=True)
     mutable_payload = dict(payload)
     mutable_payload["updated_at"] = utc_now_iso()
-    with open(progress_path, "w", encoding="utf-8") as handle:
-        json.dump(mutable_payload, handle, ensure_ascii=False, indent=2)
+    temporary_path: Optional[Path] = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            dir=str(progress_path.parent),
+            prefix=f".{progress_path.name}.",
+            suffix=".tmp",
+            delete=False,
+        ) as handle:
+            temporary_path = Path(handle.name)
+            json.dump(mutable_payload, handle, ensure_ascii=False, indent=2)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary_path, progress_path)
+        temporary_path = None
+    finally:
+        if temporary_path is not None:
+            try:
+                temporary_path.unlink()
+            except FileNotFoundError:
+                pass
 
 
 def get_records(payload: Mapping[str, Any]) -> Dict[str, Dict[str, Any]]:
@@ -99,6 +125,8 @@ def import_existing_correct_result(
     sample_uid: str,
     workspace_root: Path,
 ) -> Optional[Dict[str, Any]]:
+    if (workspace_root / ".paired_pending").exists():
+        return None
     result_path = workspace_root / SAMPLE_RESULT_FILENAME
     if not result_path.exists():
         return None
@@ -107,6 +135,38 @@ def import_existing_correct_result(
     if not isinstance(result_item, dict):
         return None
     if float(result_item.get("acc") or 0.0) < 1.0:
+        return None
+    result_item["sample_uid"] = sample_uid
+    upsert_progress_record(payload, result_item)
+    return dict(result_item)
+
+
+def import_existing_participated_result(
+    payload: MutableMapping[str, Any],
+    *,
+    sample_uid: str,
+    workspace_root: Path,
+) -> Optional[Dict[str, Any]]:
+    """Recover a result written before the scheduler was interrupted.
+
+    The worker writes the per-sample result before the parent updates the
+    aggregate progress file.  On the next invocation, completed and wrong
+    results are safe to import; failed results remain retryable.
+    """
+    if (workspace_root / ".paired_pending").exists():
+        return None
+    result_path = workspace_root / SAMPLE_RESULT_FILENAME
+    if not result_path.exists():
+        return None
+    try:
+        with open(result_path, "r", encoding="utf-8") as handle:
+            result_item = json.load(handle)
+    except (OSError, json.JSONDecodeError, TypeError, ValueError):
+        return None
+    if not isinstance(result_item, dict):
+        return None
+    status = str(result_item.get("status") or "").strip().lower()
+    if status not in PARTICIPATED_STATUSES:
         return None
     result_item["sample_uid"] = sample_uid
     upsert_progress_record(payload, result_item)

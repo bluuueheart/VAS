@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:biology-medicine:021-1",
+  "dataset_name": "videomme",
+  "subset_name": "Biology & Medicine",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "A",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) How mRNA vaccines work.",
+  "elapsed_seconds": 174.437,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/videomme/biology-medicine-021-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/videomme/biology-medicine-021-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/videomme/biology-medicine-021-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/videomme/biology-medicine-021-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/TbaCxIJ_VP4.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/TbaCxIJ_VP4.mp4",
+  "question_block": "Question: Which of the following accurately describes the content of the video?\nOptions:\n(A) How mRNA vaccines work.\n(B) Production process and specifications of mRNA vaccines.\n(C) Application market of mRNA vaccine.\n(D) Possible side effects of mRNA vaccines.",
+  "options": [
+    "A. How mRNA vaccines work.",
+    "B. Production process and specifications of mRNA vaccines.",
+    "C. Application market of mRNA vaccine.",
+    "D. Possible side effects of mRNA vaccines."
+  ],
+  "official_meta": {
+    "video_id": "021",
+    "video_external_id": "TbaCxIJ_VP4",
+    "resolved_video_stem": "TbaCxIJ_VP4",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Knowledge",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Biology & Medicine",
+    "task_type": "Information Synopsis",
+    "question_id": "021-1",
+    "question_index": 0,
+    "video_item_index": 20,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-13T03:51:14.572429Z"
+}

@@ -1,0 +1,59 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-08-26T05:53:23.991756Z",
+  "records": {
+    "videomme:humanity-history:001-1": {
+      "sample_uid": "videomme:humanity-history:001-1",
+      "dataset_name": "videomme",
+      "subset_name": "Humanity & History",
+      "status": "unanswerable",
+      "acc": 0.0,
+      "tool_use_num": 1,
+      "iter_num": 3,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v25/videomme/humanity-history-001-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v25/videomme/humanity-history-001-1",
+      "updated_at": "2026-08-26T05:21:00.000804Z"
+    },
+    "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391": {
+      "sample_uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 3,
+      "iter_num": 2,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v25/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v25/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391",
+      "updated_at": "2026-08-26T05:30:06.582066Z"
+    },
+    "videomme:literature-art:011-1": {
+      "sample_uid": "videomme:literature-art:011-1",
+      "dataset_name": "videomme",
+      "subset_name": "Literature & Art",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 1,
+      "iter_num": 2,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v25/videomme/literature-art-011-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v25/videomme/literature-art-011-1",
+      "updated_at": "2026-08-26T05:43:55.240005Z"
+    },
+    "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e": {
+      "sample_uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 3,
+      "iter_num": 4,
+      "tool_success_rate": 0.666667,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v25/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v25/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "updated_at": "2026-08-26T05:53:23.991674Z"
+    }
+  }
+}

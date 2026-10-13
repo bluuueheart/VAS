@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:ego:11:ego-22",
+  "dataset_name": "mlvu",
+  "subset_name": "ego",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "red",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/ego-00011-ego-22",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/ego-00011-ego-22/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/ego-00011-ego-22/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/ego-00011-ego-22/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/3_ego/ego_22.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/3_ego/ego_22.mp4",
+  "question_block": "Question: What colour was the blouse I held in my hands\nOptions:\n(A) green\n(B) red\n(C) yellow\n(D) blue",
+  "options": [
+    "green",
+    "red",
+    "yellow",
+    "blue"
+  ],
+  "official_meta": {
+    "task_type": "ego",
+    "source_json": "3_ego.json",
+    "source_index": 11,
+    "video_subdir": "3_ego",
+    "video_relative_path": "3_ego/ego_22.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:22:45.586340Z"
+}

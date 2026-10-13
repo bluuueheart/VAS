@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:event-understanding:1:56",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 5,
+  "iter_num": 9,
+  "tool_success_rate": 0.8,
+  "successful_tool_calls": 4,
+  "planner_iterations": 9,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Snowy",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) Snowy",
+  "elapsed_seconds": 739.792,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/lvbench/event-understanding-00001-56",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/lvbench/event-understanding-00001-56/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/lvbench/event-understanding-00001-56/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/lvbench/event-understanding-00001-56/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: How is the weather like in the opening?\nOptions:\n(A) Cloudy\n(B) Snowy\n(C) Sunny\n(D) Rainy",
+  "options": [
+    "Cloudy",
+    "Snowy",
+    "Sunny",
+    "Rainy"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "00:00-01:16",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "Cm73ma6Ibcs",
+    "resolved_video_stem": "Cm73ma6Ibcs",
+    "video_mapping_verified": true,
+    "source_index": 1
+  },
+  "updated_at": "2026-09-13T02:56:48.147159Z"
+}

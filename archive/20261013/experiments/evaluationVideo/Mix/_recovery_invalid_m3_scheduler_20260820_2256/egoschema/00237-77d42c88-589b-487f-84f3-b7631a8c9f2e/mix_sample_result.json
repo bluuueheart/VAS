@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00237:77d42c88-589b-487f-84f3-b7631a8c9f2e",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C and the woman are friends.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00237-77d42c88-589b-487f-84f3-b7631a8c9f2e",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00237-77d42c88-589b-487f-84f3-b7631a8c9f2e/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00237-77d42c88-589b-487f-84f3-b7631a8c9f2e/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00237-77d42c88-589b-487f-84f3-b7631a8c9f2e/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/77d42c88-589b-487f-84f3-b7631a8c9f2e.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/77d42c88-589b-487f-84f3-b7631a8c9f2e.mp4",
+  "question_block": "Question: Can you describe the relationship between c and the woman by analyzing their overall interactions throughout the video? provide a summary that clearly demonstrates your ability to compress information from the video.\nOptions:\n(A) Coincidentally, both c and the unidentified woman happen to be strangers to each other.\n(B) Surprisingly, in this unusual situation, c and the woman are practically bitter enemies.\n(C) C and the woman are lovers.\n(D) C and the woman, both working together, are considered as coworkers in the workplace.\n(E) C and the woman are friends.",
+  "options": [
+    "Coincidentally, both c and the unidentified woman happen to be strangers to each other.",
+    "Surprisingly, in this unusual situation, c and the woman are practically bitter enemies.",
+    "C and the woman are lovers.",
+    "C and the woman, both working together, are considered as coworkers in the workplace.",
+    "C and the woman are friends."
+  ],
+  "official_meta": {
+    "question_index": "00237",
+    "video_id": "77d42c88-589b-487f-84f3-b7631a8c9f2e",
+    "source_index": 237
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:56:00.474609Z"
+}

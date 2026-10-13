@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00230:742dd0fc-018f-4e1f-b2fb-e04d38c97894",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The three most critical turning points or moments within the video are when the man drops a card on the table, when c talks to the man, and when the man drums on the table with his hand.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00230-742dd0fc-018f-4e1f-b2fb-e04d38c97894",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00230-742dd0fc-018f-4e1f-b2fb-e04d38c97894/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00230-742dd0fc-018f-4e1f-b2fb-e04d38c97894/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00230-742dd0fc-018f-4e1f-b2fb-e04d38c97894/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/742dd0fc-018f-4e1f-b2fb-e04d38c97894.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/742dd0fc-018f-4e1f-b2fb-e04d38c97894.mp4",
+  "question_block": "Question: Identify and discuss the three most critical turning points or moments within the video that significantly impacted the progression of the events.\nOptions:\n(A) The three most critical turning points or moments within the video are when the man picks up a card from the table, when c picks up a card from the table, and when c plays a card.\n(B) The three most critical turning points or moments within the video are when the man plays a card, when c plays a card, and when the man wins the game.\n(C) The three most critical turning points or moments within the video are when the man loses the game, when c wins the game, and when the man and c shake hands.\n(D) The three most critical turning points or moments within the video are when the man and c start playing the game, when the man and c stop playing the game, and when the man and c leave the table.\n(E) The three most critical turning points or moments within the video are when the man drops a card on the table, when c talks to the man, and when the man drums on the table with his hand.",
+  "options": [
+    "The three most critical turning points or moments within the video are when the man picks up a card from the table, when c picks up a card from the table, and when c plays a card.",
+    "The three most critical turning points or moments within the video are when the man plays a card, when c plays a card, and when the man wins the game.",
+    "The three most critical turning points or moments within the video are when the man loses the game, when c wins the game, and when the man and c shake hands.",
+    "The three most critical turning points or moments within the video are when the man and c start playing the game, when the man and c stop playing the game, and when the man and c leave the table.",
+    "The three most critical turning points or moments within the video are when the man drops a card on the table, when c talks to the man, and when the man drums on the table with his hand."
+  ],
+  "official_meta": {
+    "question_index": "00230",
+    "video_id": "742dd0fc-018f-4e1f-b2fb-e04d38c97894",
+    "source_index": 230
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:55:34.626391Z"
+}

@@ -1,0 +1,57 @@
+{
+  "kind": "online_evolution_state",
+  "layout_version": 1,
+  "updated_at": "2026-09-18T03:26:43.235503Z",
+  "enabled": true,
+  "status": "ready",
+  "active_snapshot_id": "snapshot_000",
+  "active_snapshot_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/_evolution_audit/active_snapshot.json",
+  "record_count": 2,
+  "last_trigger_count": 2,
+  "pending_cycle": false,
+  "pending_candidate": {},
+  "monitor": {},
+  "last_monitor_count": 0,
+  "inflight": {},
+  "cycle_count": 1,
+  "cycles": [
+    {
+      "cycle_index": 1,
+      "status": "local_repair_not_proven",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "snapshot_7d60304e011d44fd",
+      "completed_at": "2026-09-18T03:26:43.127264Z"
+    }
+  ],
+  "last_result": {
+    "kind": "online_evolution_cycle_result",
+    "layout_version": 1,
+    "cycle_index": 1,
+    "started_at": 1789696783.6958773,
+    "status": "local_repair_not_proven",
+    "online_publish_status": "not_published",
+    "miner": {
+      "status": "candidate_ready",
+      "report_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/_evolution_audit/evolution_online_cycle_00001/evolution/evolution_run_2d258cf56070/evolution_report.json",
+      "snapshot_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/_evolution_audit/evolution_online_cycle_00001/evolution/registry/snapshot_7d60304e011d44fd_candidate/snapshot.json",
+      "return_code": 0
+    },
+    "report_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/_evolution_audit/evolution_online_cycle_00001/evolution/evolution_run_2d258cf56070/evolution_report.json",
+    "candidate_snapshot_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/_evolution_audit/evolution_online_cycle_00001/evolution/registry/snapshot_7d60304e011d44fd_candidate/snapshot.json",
+    "snapshot_id": "snapshot_7d60304e011d44fd",
+    "record_uids": [
+      "lvbench:entity-recognition:4:63",
+      "videomme:humanity-history:001-1"
+    ],
+    "proposal_record_uids": [
+      "lvbench:entity-recognition:4:63",
+      "videomme:humanity-history:001-1"
+    ],
+    "trigger_proof_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/_evolution_audit/evolution_online_cycle_00001/trigger_proof.json",
+    "local_replay_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/_evolution_audit/evolution_online_cycle_00001/local_trigger",
+    "cycle_committed": true,
+    "process_return_code": 0,
+    "published": false
+  }
+}

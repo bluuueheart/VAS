@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:other-sports:171-2",
+  "dataset_name": "videomme",
+  "subset_name": "Other Sports",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 68,
+  "iter_num": 4,
+  "tool_success_rate": 0.897059,
+  "successful_tool_calls": 61,
+  "planner_iterations": 4,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 1707.313,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/other-sports-171-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/other-sports-171-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/other-sports-171-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/other-sports-171-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/FsLaTZmP6Uw.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/FsLaTZmP6Uw.mp4",
+  "question_block": "Question: Which player was the winner of the game?\nOptions:\n(A) The man in black.\n(B) The game ended in a standoff.\n(C) The man in red.\n(D) None of the above.",
+  "options": [
+    "A. The man in black.",
+    "B. The game ended in a standoff.",
+    "C. The man in red.",
+    "D. None of the above."
+  ],
+  "official_meta": {
+    "video_id": "171",
+    "video_external_id": "FsLaTZmP6Uw",
+    "resolved_video_stem": "FsLaTZmP6Uw",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Sports Competition",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Other Sports",
+    "task_type": "Object Reasoning",
+    "question_id": "171-2",
+    "question_index": 1,
+    "video_item_index": 170,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-05T00:03:35.123889Z"
+}

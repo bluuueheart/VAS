@@ -1,0 +1,46 @@
+Using Orion CUDA proxy runtime: /opt/orion/orion_runtime/gpu/cuda/orion-cuda-12.3
+2026-07-24 04:01:07,082 - WARNING - Skipping unavailable MLVU subset task_type=count: annotation file is missing: /gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/json/4_count.json
+2026-07-24 04:01:07,204 - INFO - Mix batch execution resolved parallel_samples=1 visible_cuda_devices=['0'] selected_samples=2
+2026-07-24 04:01:07,204 - INFO - Resume [mlvu 0/8]
+2026-07-24 04:01:07,204 - INFO - Launching sample 1/2 sample_uid=mlvu:ego:0:ego-35 launcher_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r5/mlvu/ego-00000-ego-35/launcher.log
+2026-07-24 04:01:18,301 - INFO - ToolRegistry initialized
+2026-07-24 04:01:18,604 - INFO - execute_pipeline runtime_profile=evaluation_local -> forcing local non-planner/visual/embedding runtime, disabling sidecar autostart, and clearing distributed worker env residue.
+2026-07-24 04:01:18,709 - INFO - ================================================================================
+2026-07-24 04:01:18,709 - INFO - Tool Star RL - End-to-End Pipeline
+2026-07-24 04:01:18,709 - INFO - ================================================================================
+2026-07-24 04:01:18,709 - INFO - Video: /gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/3_ego/ego_35.mp4
+2026-07-24 04:01:18,709 - INFO - Query: MLVU Task Type: ego
+
+Question: What did I put in the orange trashcan 
+Options:
+(A) a lemon green sponge
+(B) a blue pen
+(C) a red apple
+(D) a yellow banana
+
+Reply with exactly one best option in the format "(A) option text".
+2026-07-24 04:01:18,709 - INFO - Query group: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r5/mlvu/ego-00000-ego-35
+2026-07-24 04:01:18,710 - INFO - Run workspace: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r5/mlvu/ego-00000-ego-35
+2026-07-24 04:01:18,710 - INFO - Run manifest: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r5/mlvu/ego-00000-ego-35/manifest.json
+2026-07-24 04:01:18,710 - INFO - Run log: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r5/mlvu/ego-00000-ego-35/logs/run.log
+2026-07-24 04:01:18,710 - INFO - Shared data cache: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache
+2026-07-24 04:01:18,710 - INFO - Cache reuse: enabled
+2026-07-24 04:01:18,710 - INFO - Pipeline mode: react
+2026-07-24 04:01:18,710 - INFO - 
+2026-07-24 04:01:19,704 - INFO - ================================================================================
+2026-07-24 04:01:19,704 - INFO - Step 1: Video Preprocessing
+2026-07-24 04:01:19,704 - INFO - ================================================================================
+2026-07-24 04:01:19,704 - INFO - Skipping preprocess text LLM load because knowledge-graph and metadata synthesis are both disabled.
+2026-07-24 04:01:19,704 - INFO - Initializing device: cuda
+2026-07-24 04:01:19,706 - INFO - Visual sidecar runtime disabled for role=qwen_vl because TOOL_STAR_RUNTIME_PROFILE=evaluation_local forces local evaluation runtime.
+2026-07-24 04:01:19,709 - INFO - CUDA detected: 1 GPU(s) available
+2026-07-24 04:01:19,709 - INFO - Initializing device: cuda
+2026-07-24 04:01:19,726 - INFO - Initializing device: cuda
+2026-07-24 04:01:19,727 - INFO - Initializing device: cuda
+2026-07-24 04:01:20,841 - INFO - Found existing processed outputs at /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache/processed/ego_35, skipping preprocessing.
+2026-07-24 04:01:20,868 - INFO - Initializing device: cuda
+2026-07-24 04:01:20,868 - INFO - Initializing device: cuda
+2026-07-24 04:01:20,869 - INFO - Initializing device: cuda
+2026-07-24 04:01:20,869 - INFO - Grounding embedder runtime: device=cuda:0 visible_accelerators=1 model=/gemini/pretrain/model/Qwen/Qwen3-VL-Embedding-2B
+2026-07-24 04:01:20,870 - INFO - Grounding embedder accelerator snapshot: cuda:0 name=P1.gpu.medium allocated=0.00GB reserved=0.00GB
+Terminated

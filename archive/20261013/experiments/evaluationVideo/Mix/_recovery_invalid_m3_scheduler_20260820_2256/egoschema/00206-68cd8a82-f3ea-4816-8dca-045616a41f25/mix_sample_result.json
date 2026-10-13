@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00206:68cd8a82-f3ea-4816-8dca-045616a41f25",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The central objective within the garage environment was to fix a bolt.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00206-68cd8a82-f3ea-4816-8dca-045616a41f25",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00206-68cd8a82-f3ea-4816-8dca-045616a41f25/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00206-68cd8a82-f3ea-4816-8dca-045616a41f25/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00206-68cd8a82-f3ea-4816-8dca-045616a41f25/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/68cd8a82-f3ea-4816-8dca-045616a41f25.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/68cd8a82-f3ea-4816-8dca-045616a41f25.mp4",
+  "question_block": "Question: Taking into account the majority of the actions performed by c, what can you deduce was the central objective within the garage environment?\nOptions:\n(A) The central objective within the garage environment was to clean the garage.\n(B) The central objective within the garage environment was to fix a bolt.\n(C) The central objective within the garage environment was to assemble a piece of furniture.\n(D) The central objective within the garage environment was to repair a car.\n(E) The central objective within the garage environment was to build a birdhouse.",
+  "options": [
+    "The central objective within the garage environment was to clean the garage.",
+    "The central objective within the garage environment was to fix a bolt.",
+    "The central objective within the garage environment was to assemble a piece of furniture.",
+    "The central objective within the garage environment was to repair a car.",
+    "The central objective within the garage environment was to build a birdhouse."
+  ],
+  "official_meta": {
+    "question_index": "00206",
+    "video_id": "68cd8a82-f3ea-4816-8dca-045616a41f25",
+    "source_index": 206
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:53:44.595879Z"
+}

@@ -1,0 +1,473 @@
+{
+  "kind": "mix_worker_sample_spec",
+  "layout_version": 1,
+  "samples": [
+    {
+      "dataset_name": "mlvu",
+      "subset_name": "count",
+      "sample_uid": "mlvu:count:0:count-126",
+      "sample_index": 0,
+      "video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/4_count/count_126.mp4",
+      "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126",
+      "prompt": "MLVU Task Type: count\n\nQuestion: Throughout this video, what is the total count of occurrences for the scene featuring the 'playing trombone' action\nOptions:\n(A) 2\n(B) 1\n(C) 5\n(D) 4\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: Throughout this video, what is the total count of occurrences for the scene featuring the 'playing trombone' action\nOptions:\n(A) 2\n(B) 1\n(C) 5\n(D) 4",
+      "options": [
+        "2",
+        "1",
+        "5",
+        "4"
+      ],
+      "ground_truth": "1",
+      "ground_truth_option": "B",
+      "official_meta": {
+        "task_type": "count",
+        "source_question_type": "count",
+        "prompt_task_type": "count",
+        "source_json": "4_count.json",
+        "source_index": 0,
+        "video_subdir": "4_count",
+        "video_relative_path": "4_count/count_126.mp4",
+        "resolved_video_stem": "count_126",
+        "video_mapping_verified": true,
+        "data_type": "video",
+        "input_contract": {
+          "video": "official_preclipped_task_video",
+          "question": "official_question_and_candidates",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      }
+    },
+    {
+      "dataset_name": "mlvu",
+      "subset_name": "order",
+      "sample_uid": "mlvu:order:0:order-126",
+      "sample_index": 0,
+      "video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_126.mp4",
+      "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/order-00000-order-126",
+      "prompt": "MLVU Task Type: order\n\nQuestion: Arrange the following events from the video in the correct chronological order: (1)Woman tapes her hands with white tape; (2)Woman starts boxing in the ring with a guy; (3)Woman does sit ups on a towel on the beach; (4)Pictures of woman in her bikini are shown.\nOptions:\n(A) 2->1->3->4\n(B) 3->2->1->4\n(C) 4->3->2->1\n(D) 1->2->3->4\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: Arrange the following events from the video in the correct chronological order: (1)Woman tapes her hands with white tape; (2)Woman starts boxing in the ring with a guy; (3)Woman does sit ups on a towel on the beach; (4)Pictures of woman in her bikini are shown.\nOptions:\n(A) 2->1->3->4\n(B) 3->2->1->4\n(C) 4->3->2->1\n(D) 1->2->3->4",
+      "options": [
+        "2->1->3->4",
+        "3->2->1->4",
+        "4->3->2->1",
+        "1->2->3->4"
+      ],
+      "ground_truth": "1->2->3->4",
+      "ground_truth_option": "D",
+      "official_meta": {
+        "task_type": "order",
+        "source_question_type": "order",
+        "prompt_task_type": "order",
+        "source_json": "5_order.json",
+        "source_index": 0,
+        "video_subdir": "5_order",
+        "video_relative_path": "5_order/order_126.mp4",
+        "resolved_video_stem": "order_126",
+        "video_mapping_verified": true,
+        "data_type": "video",
+        "input_contract": {
+          "video": "official_preclipped_task_video",
+          "question": "official_question_and_candidates",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      }
+    },
+    {
+      "dataset_name": "videomme",
+      "subset_name": "Humanity & History",
+      "sample_uid": "videomme:humanity-history:001-1",
+      "sample_index": 0,
+      "video_path": "/gemini/data-1/datasets/Video-MME/data/fFjv93ACGo8.mp4",
+      "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/videomme/humanity-history-001-1",
+      "prompt": "Video-MME Sub Category: Humanity & History\nTask Type: Counting Problem\n\nQuestion: When demonstrating the Germany modern Christmas tree is initially decorated with apples, candles and berries, which kind of the decoration has the largest number?\nOptions:\n(A) Apples.\n(B) Candles.\n(C) Berries.\n(D) The three kinds are of the same number.\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: When demonstrating the Germany modern Christmas tree is initially decorated with apples, candles and berries, which kind of the decoration has the largest number?\nOptions:\n(A) Apples.\n(B) Candles.\n(C) Berries.\n(D) The three kinds are of the same number.",
+      "options": [
+        "A. Apples.",
+        "B. Candles.",
+        "C. Berries.",
+        "D. The three kinds are of the same number."
+      ],
+      "ground_truth": "C",
+      "ground_truth_option": "C",
+      "official_meta": {
+        "video_id": "001",
+        "video_external_id": "fFjv93ACGo8",
+        "resolved_video_stem": "fFjv93ACGo8",
+        "video_mapping_verified": true,
+        "duration": "short",
+        "domain": "Knowledge",
+        "subtitle_mode": "w/o sub.",
+        "external_subtitles_used": false,
+        "sub_category": "Humanity & History",
+        "task_type": "Counting Problem",
+        "question_id": "001-1",
+        "question_index": 0,
+        "video_item_index": 0,
+        "input_contract": {
+          "video": "official_full_video",
+          "question": "official_question_and_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      }
+    },
+    {
+      "dataset_name": "videomme",
+      "subset_name": "Biology & Medicine",
+      "sample_uid": "videomme:biology-medicine:021-1",
+      "sample_index": 0,
+      "video_path": "/gemini/data-1/datasets/Video-MME/data/TbaCxIJ_VP4.mp4",
+      "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/videomme/biology-medicine-021-1",
+      "prompt": "Video-MME Sub Category: Biology & Medicine\nTask Type: Information Synopsis\n\nQuestion: Which of the following accurately describes the content of the video?\nOptions:\n(A) How mRNA vaccines work.\n(B) Production process and specifications of mRNA vaccines.\n(C) Application market of mRNA vaccine.\n(D) Possible side effects of mRNA vaccines.\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: Which of the following accurately describes the content of the video?\nOptions:\n(A) How mRNA vaccines work.\n(B) Production process and specifications of mRNA vaccines.\n(C) Application market of mRNA vaccine.\n(D) Possible side effects of mRNA vaccines.",
+      "options": [
+        "A. How mRNA vaccines work.",
+        "B. Production process and specifications of mRNA vaccines.",
+        "C. Application market of mRNA vaccine.",
+        "D. Possible side effects of mRNA vaccines."
+      ],
+      "ground_truth": "A",
+      "ground_truth_option": "A",
+      "official_meta": {
+        "video_id": "021",
+        "video_external_id": "TbaCxIJ_VP4",
+        "resolved_video_stem": "TbaCxIJ_VP4",
+        "video_mapping_verified": true,
+        "duration": "short",
+        "domain": "Knowledge",
+        "subtitle_mode": "w/o sub.",
+        "external_subtitles_used": false,
+        "sub_category": "Biology & Medicine",
+        "task_type": "Information Synopsis",
+        "question_id": "021-1",
+        "question_index": 0,
+        "video_item_index": 20,
+        "input_contract": {
+          "video": "official_full_video",
+          "question": "official_question_and_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      }
+    },
+    {
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "sample_uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "sample_index": 1,
+      "video_path": "/gemini/data-1/datasets/egoschema/videos/00b9a0de-c59e-49cb-a127-6081e2fb8c8e.mp4",
+      "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "prompt": "Dataset: EgoSchema\nCategory: subset\n\nQuestion: What was the primary purpose of the cup of water in this video, and how did it contribute to the overall painting process?\nOptions:\n(A) To provide a source of water for the paintbrush.\n(B) To provide a place to store the paintbrush.\n(C) To provide a place to dispose of the paintbrush.\n(D) To provide a place to rest the paintbrush.\n(E) To clean the paintbrush.\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: What was the primary purpose of the cup of water in this video, and how did it contribute to the overall painting process?\nOptions:\n(A) To provide a source of water for the paintbrush.\n(B) To provide a place to store the paintbrush.\n(C) To provide a place to dispose of the paintbrush.\n(D) To provide a place to rest the paintbrush.\n(E) To clean the paintbrush.",
+      "options": [
+        "To provide a source of water for the paintbrush.",
+        "To provide a place to store the paintbrush.",
+        "To provide a place to dispose of the paintbrush.",
+        "To provide a place to rest the paintbrush.",
+        "To clean the paintbrush."
+      ],
+      "ground_truth": "To clean the paintbrush.",
+      "ground_truth_option": "E",
+      "official_meta": {
+        "question_index": "00001",
+        "video_id": "00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+        "resolved_video_stem": "00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+        "video_mapping_verified": true,
+        "source_index": 1,
+        "input_contract": {
+          "video": "official_three_minute_clip",
+          "question": "official_question_and_five_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      }
+    },
+    {
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "sample_uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+      "sample_index": 0,
+      "video_path": "/gemini/data-1/datasets/egoschema/videos/0074f737-11cb-497d-8d07-77c3a8127391.mp4",
+      "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391",
+      "prompt": "Dataset: EgoSchema\nCategory: subset\n\nQuestion: Taking into account all the actions performed by c, what can you deduce about the primary objective and focus within the video content?\nOptions:\n(A) C is cooking.\n(B) C is doing laundry.\n(C) C is cleaning the kitchen.\n(D) C is cleaning dishes.\n(E) C is cleaning the bathroom.\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: Taking into account all the actions performed by c, what can you deduce about the primary objective and focus within the video content?\nOptions:\n(A) C is cooking.\n(B) C is doing laundry.\n(C) C is cleaning the kitchen.\n(D) C is cleaning dishes.\n(E) C is cleaning the bathroom.",
+      "options": [
+        "C is cooking.",
+        "C is doing laundry.",
+        "C is cleaning the kitchen.",
+        "C is cleaning dishes.",
+        "C is cleaning the bathroom."
+      ],
+      "ground_truth": "C is cleaning dishes.",
+      "ground_truth_option": "D",
+      "official_meta": {
+        "question_index": "00000",
+        "video_id": "0074f737-11cb-497d-8d07-77c3a8127391",
+        "resolved_video_stem": "0074f737-11cb-497d-8d07-77c3a8127391",
+        "video_mapping_verified": true,
+        "source_index": 0,
+        "input_contract": {
+          "video": "official_three_minute_clip",
+          "question": "official_question_and_five_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      }
+    },
+    {
+      "dataset_name": "mlvu",
+      "subset_name": "needle",
+      "sample_uid": "mlvu:needle:0:needle-32",
+      "sample_index": 0,
+      "video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_32.mp4",
+      "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/needle-00000-needle-32",
+      "prompt": "MLVU Task Type: findNeedle\n\nQuestion: What does the hand coming out of the computer do?\nOptions:\n(A) Delivers a product\n(B) Shakes the woman's hand\n(C) Takes the woman's credit card\n(D) Points at something on the screen\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: What does the hand coming out of the computer do?\nOptions:\n(A) Delivers a product\n(B) Shakes the woman's hand\n(C) Takes the woman's credit card\n(D) Points at something on the screen",
+      "options": [
+        "Delivers a product",
+        "Shakes the woman's hand",
+        "Takes the woman's credit card",
+        "Points at something on the screen"
+      ],
+      "ground_truth": "Delivers a product",
+      "ground_truth_option": "A",
+      "official_meta": {
+        "task_type": "needle",
+        "source_question_type": "findNeedle",
+        "prompt_task_type": "findNeedle",
+        "source_json": "2_needle.json",
+        "source_index": 0,
+        "video_subdir": "2_needle",
+        "video_relative_path": "2_needle/needle_32.mp4",
+        "resolved_video_stem": "needle_32",
+        "video_mapping_verified": true,
+        "data_type": "video",
+        "input_contract": {
+          "video": "official_preclipped_task_video",
+          "question": "official_question_and_candidates",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      }
+    },
+    {
+      "dataset_name": "mlvu",
+      "subset_name": "topic_reasoning",
+      "sample_uid": "mlvu:topic-reasoning:0:awa-6",
+      "sample_index": 0,
+      "video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+      "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6",
+      "prompt": "MLVU Task Type: topic_reasoning\n\nQuestion: What is the main background of the video?\nOptions:\n(A) Grassland\n(B) Lake\n(C) Ocean\n(D) Desert\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: What is the main background of the video?\nOptions:\n(A) Grassland\n(B) Lake\n(C) Ocean\n(D) Desert",
+      "options": [
+        "Grassland",
+        "Lake",
+        "Ocean",
+        "Desert"
+      ],
+      "ground_truth": "Grassland",
+      "ground_truth_option": "A",
+      "official_meta": {
+        "task_type": "topic_reasoning",
+        "source_question_type": "topic_reasoning",
+        "prompt_task_type": "topic_reasoning",
+        "source_json": "7_topic_reasoning.json",
+        "source_index": 0,
+        "video_subdir": "7_topic_reasoning",
+        "video_relative_path": "7_topic_reasoning/AWA-6.mp4",
+        "resolved_video_stem": "AWA-6",
+        "video_mapping_verified": true,
+        "data_type": "video",
+        "input_contract": {
+          "video": "official_preclipped_task_video",
+          "question": "official_question_and_candidates",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      }
+    },
+    {
+      "dataset_name": "lvbench",
+      "subset_name": "entity recognition",
+      "sample_uid": "lvbench:entity-recognition:4:63",
+      "sample_index": 0,
+      "video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+      "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/lvbench/entity-recognition-00004-63",
+      "prompt": "Dataset: LVBench\nCategory: entity recognition\n\nQuestion: How many sticks does the protagonist put in the incense burner?\nOptions:\n(A) 3\n(B) 2\n(C) 5\n(D) 1\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: How many sticks does the protagonist put in the incense burner?\nOptions:\n(A) 3\n(B) 2\n(C) 5\n(D) 1",
+      "options": [
+        "3",
+        "2",
+        "5",
+        "1"
+      ],
+      "ground_truth": "1",
+      "ground_truth_option": "D",
+      "official_meta": {
+        "question_type": "entity recognition",
+        "video_type": "cartoon",
+        "time_reference": "10:43-10:50",
+        "time_reference_used_for_inference": false,
+        "time_reference_inference_scope": "annotation_only_not_used",
+        "input_contract": {
+          "video": "full_provided_video",
+          "question": "official_question_and_options",
+          "timestamp_input": "question_text_only",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false,
+          "additional_temporal_annotation": "excluded"
+        },
+        "video_key": "Cm73ma6Ibcs",
+        "resolved_video_stem": "Cm73ma6Ibcs",
+        "video_mapping_verified": true,
+        "source_index": 4
+      }
+    },
+    {
+      "dataset_name": "lvbench",
+      "subset_name": "key information retrieval",
+      "sample_uid": "lvbench:key-information-retrieval:0:55",
+      "sample_index": 0,
+      "video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+      "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/lvbench/key-information-retrieval-00000-55",
+      "prompt": "Dataset: LVBench\nCategory: key information retrieval\n\nQuestion: What year appears in the opening caption of the video?\nOptions:\n(A) 1636\n(B) 1366\n(C) 1363\n(D) 1633\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: What year appears in the opening caption of the video?\nOptions:\n(A) 1636\n(B) 1366\n(C) 1363\n(D) 1633",
+      "options": [
+        "1636",
+        "1366",
+        "1363",
+        "1633"
+      ],
+      "ground_truth": "1633",
+      "ground_truth_option": "D",
+      "official_meta": {
+        "question_type": "key information retrieval",
+        "video_type": "cartoon",
+        "time_reference": "00:15-00:19",
+        "time_reference_used_for_inference": false,
+        "time_reference_inference_scope": "annotation_only_not_used",
+        "input_contract": {
+          "video": "full_provided_video",
+          "question": "official_question_and_options",
+          "timestamp_input": "question_text_only",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false,
+          "additional_temporal_annotation": "excluded"
+        },
+        "video_key": "Cm73ma6Ibcs",
+        "resolved_video_stem": "Cm73ma6Ibcs",
+        "video_mapping_verified": true,
+        "source_index": 0
+      }
+    },
+    {
+      "dataset_name": "mlvu",
+      "subset_name": "anomaly_reco",
+      "sample_uid": "mlvu:anomaly-reco:0:surveil-20",
+      "sample_index": 0,
+      "video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/6_anomaly_reco/surveil_20.mp4",
+      "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/anomaly-reco-00000-surveil-20",
+      "prompt": "MLVU Task Type: anomaly_reco\n\nQuestion: Does this surveillance footage contain any anomalies? If yes, which kind of anomaly?\nOptions:\n(A) RoadAccidents\n(B) Shooting\n(C) Shoplifting\n(D) Assault\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: Does this surveillance footage contain any anomalies? If yes, which kind of anomaly?\nOptions:\n(A) RoadAccidents\n(B) Shooting\n(C) Shoplifting\n(D) Assault",
+      "options": [
+        "RoadAccidents",
+        "Shooting",
+        "Shoplifting",
+        "Assault"
+      ],
+      "ground_truth": "Shoplifting",
+      "ground_truth_option": "C",
+      "official_meta": {
+        "task_type": "anomaly_reco",
+        "source_question_type": "anomaly_reco",
+        "prompt_task_type": "anomaly_reco",
+        "source_json": "6_anomaly_reco.json",
+        "source_index": 0,
+        "video_subdir": "6_anomaly_reco",
+        "video_relative_path": "6_anomaly_reco/surveil_20.mp4",
+        "resolved_video_stem": "surveil_20",
+        "video_mapping_verified": true,
+        "data_type": "video",
+        "input_contract": {
+          "video": "official_preclipped_task_video",
+          "question": "official_question_and_candidates",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      }
+    },
+    {
+      "dataset_name": "videomme",
+      "subset_name": "Astronomy",
+      "sample_uid": "videomme:astronomy:041-1",
+      "sample_index": 0,
+      "video_path": "/gemini/data-1/datasets/Video-MME/data/yl5ZXQmrtP0.mp4",
+      "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/videomme/astronomy-041-1",
+      "prompt": "Video-MME Sub Category: Astronomy\nTask Type: Temporal Reasoning\n\nQuestion: When is the zodiacal light visible from the video?\nOptions:\n(A) On March 19.\n(B) On March 24.\n(C) On March 25.\n(D) On March 29.\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: When is the zodiacal light visible from the video?\nOptions:\n(A) On March 19.\n(B) On March 24.\n(C) On March 25.\n(D) On March 29.",
+      "options": [
+        "A. On March 19.",
+        "B. On March 24.",
+        "C. On March 25.",
+        "D. On March 29."
+      ],
+      "ground_truth": "A",
+      "ground_truth_option": "A",
+      "official_meta": {
+        "video_id": "041",
+        "video_external_id": "yl5ZXQmrtP0",
+        "resolved_video_stem": "yl5ZXQmrtP0",
+        "video_mapping_verified": true,
+        "duration": "short",
+        "domain": "Knowledge",
+        "subtitle_mode": "w/o sub.",
+        "external_subtitles_used": false,
+        "sub_category": "Astronomy",
+        "task_type": "Temporal Reasoning",
+        "question_id": "041-1",
+        "question_index": 0,
+        "video_item_index": 40,
+        "input_contract": {
+          "video": "official_full_video",
+          "question": "official_question_and_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      }
+    }
+  ]
+}

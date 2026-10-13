@@ -1,0 +1,43 @@
+{
+  "sample_uid": "lvbench:entity-recognition:6:67",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "ground_truth": "6",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) 4",
+  "elapsed_seconds": 345.154,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00006-67",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00006-67/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00006-67/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00006-67/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: How many people are carrying the sedan chair for the woman?\nOptions:\n(A) 4\n(B) 8\n(C) 6\n(D) 2",
+  "options": [
+    "4",
+    "8",
+    "6",
+    "2"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "cartoon",
+    "time_reference": "24:06-24:40",
+    "video_key": "Cm73ma6Ibcs",
+    "source_index": 6
+  },
+  "updated_at": "2026-08-21T22:58:11.998424Z"
+}

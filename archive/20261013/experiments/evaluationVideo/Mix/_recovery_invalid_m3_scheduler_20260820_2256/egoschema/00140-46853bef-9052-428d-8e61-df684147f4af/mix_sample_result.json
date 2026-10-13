@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00140:46853bef-9052-428d-8e61-df684147f4af",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's behavior changes throughout the video as he becomes more engaged in the game.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00140-46853bef-9052-428d-8e61-df684147f4af",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00140-46853bef-9052-428d-8e61-df684147f4af/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00140-46853bef-9052-428d-8e61-df684147f4af/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00140-46853bef-9052-428d-8e61-df684147f4af/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/46853bef-9052-428d-8e61-df684147f4af.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/46853bef-9052-428d-8e61-df684147f4af.mp4",
+  "question_block": "Question: How does c's behavior change throughout the video? consider his actions and focus on notable shifts in his engagement or the way he participates in the activity.\nOptions:\n(A) The gradual shift in c's behavior changes throughout the video, as he increasingly becomes more frustrated and annoyed with the challenging game.\n(B) C's behavior changes throughout the video as he becomes more engaged in the game.\n(C) Noticeably, c's behavior progressively changes throughout the video as he gradually becomes more bored with the game over time.\n(D) C's behavior changes throughout the video as he becomes more tired of the game.\n(E) C's behavior undergoes noticeable changes throughout the video, particularly as his hunger gradually increases, making him more hungry.",
+  "options": [
+    "The gradual shift in c's behavior changes throughout the video, as he increasingly becomes more frustrated and annoyed with the challenging game.",
+    "C's behavior changes throughout the video as he becomes more engaged in the game.",
+    "Noticeably, c's behavior progressively changes throughout the video as he gradually becomes more bored with the game over time.",
+    "C's behavior changes throughout the video as he becomes more tired of the game.",
+    "C's behavior undergoes noticeable changes throughout the video, particularly as his hunger gradually increases, making him more hungry."
+  ],
+  "official_meta": {
+    "question_index": "00140",
+    "video_id": "46853bef-9052-428d-8e61-df684147f4af",
+    "source_index": 140
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:49:04.699717Z"
+}

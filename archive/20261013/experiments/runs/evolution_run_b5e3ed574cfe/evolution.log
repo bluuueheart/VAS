@@ -1,0 +1,10 @@
+run_id=evolution_run_b5e3ed574cfe
+trajectory_count=1
+diagnosis_count=1
+verification_accepted=1/1
+accepted_correct=0
+accepted_wrong=1
+replay_groups={"held_out": [], "neighbor": [], "regression": [], "trigger": ["trajectory_1318751d2e9440c595708a6e5efff5c0"]}
+candidate_snapshot=snapshot_1e7608e9e9be
+replay_status=pending
+diagnosis=tool_execution confidence=0.90 root_cause=The trajectory terminated after one or more tool execution failures.

@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:reasoning:12:78",
+  "dataset_name": "lvbench",
+  "subset_name": "reasoning",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Because he finds out that the protagonist is a woman",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/reasoning-00012-78",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/reasoning-00012-78/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/reasoning-00012-78/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/reasoning-00012-78/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: Why does the protagonist aim her sword at the cook?\nOptions:\n(A) Because he is a spy\n(B) Because he wants to steal the sword\n(C) Because he wants to challenge the protagonist\n(D) Because he finds out that the protagonist is a woman",
+  "options": [
+    "Because he is a spy",
+    "Because he wants to steal the sword",
+    "Because he wants to challenge the protagonist",
+    "Because he finds out that the protagonist is a woman"
+  ],
+  "official_meta": {
+    "question_type": "reasoning",
+    "video_type": "cartoon",
+    "time_reference": "57:43-57:50",
+    "video_key": "Cm73ma6Ibcs",
+    "source_index": 12
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:43:33.769639Z"
+}

@@ -1,0 +1,9 @@
+run_id=evolution_run_adb829a07f3f
+trajectory_count=1
+diagnosis_count=0
+verification_accepted=1/1
+accepted_correct=1
+accepted_wrong=0
+replay_groups={"held_out": [], "neighbor": [], "regression": ["trajectory_058cd71dca12455f9ced67bf9c5e57a5"], "trigger": []}
+candidate_snapshot=none
+replay_status=not_required

@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "document_count": 1,
+  "indexed_modalities": [
+    "description",
+    "video"
+  ],
+  "match_count": 1,
+  "score": 0.44780439138412476
+}

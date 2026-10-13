@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00103:319b2c1d-e7cf-4fad-9230-4610c69fdccc",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C molds the clay, fills the mold with sand, and pours the sand into the mold.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00103-319b2c1d-e7cf-4fad-9230-4610c69fdccc",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00103-319b2c1d-e7cf-4fad-9230-4610c69fdccc/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00103-319b2c1d-e7cf-4fad-9230-4610c69fdccc/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00103-319b2c1d-e7cf-4fad-9230-4610c69fdccc/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/319b2c1d-e7cf-4fad-9230-4610c69fdccc.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/319b2c1d-e7cf-4fad-9230-4610c69fdccc.mp4",
+  "question_block": "Question: In this video, what is c's overarching process that includes molding, filling, pouring, and scraping?\nOptions:\n(A) C molds the clay, fills the mold with water, and pours the water into the mold.\n(B) C molds the clay, fills the mold with sand, and pours the sand into the mold.\n(C) Carefully, c molds the clay precisely, fills the mold gently with air, and pours the air meticulously into the mold itself.\n(D) Casually, c molds the moist clay, carefully fills the mold with fine sand, and gently throws the sand into the prepared mold.\n(E) Carefully, c molds the clay, then fills the created mold with sand, and finally puts the packed sand in the mold.",
+  "options": [
+    "C molds the clay, fills the mold with water, and pours the water into the mold.",
+    "C molds the clay, fills the mold with sand, and pours the sand into the mold.",
+    "Carefully, c molds the clay precisely, fills the mold gently with air, and pours the air meticulously into the mold itself.",
+    "Casually, c molds the moist clay, carefully fills the mold with fine sand, and gently throws the sand into the prepared mold.",
+    "Carefully, c molds the clay, then fills the created mold with sand, and finally puts the packed sand in the mold."
+  ],
+  "official_meta": {
+    "question_index": "00103",
+    "video_id": "319b2c1d-e7cf-4fad-9230-4610c69fdccc",
+    "source_index": 103
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:46:49.898490Z"
+}

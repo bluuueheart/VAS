@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:life-tip:071-1",
+  "dataset_name": "videomme",
+  "subset_name": "Life Tip",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 7,
+  "iter_num": 15,
+  "tool_success_rate": 0.857143,
+  "successful_tool_calls": 6,
+  "planner_iterations": 15,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 951.01,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/videomme/life-tip-071-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/videomme/life-tip-071-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/videomme/life-tip-071-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260912_full_v34/videomme/life-tip-071-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/IzQ2siryQrM.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/IzQ2siryQrM.mp4",
+  "question_block": "Question: How many hours of sleep does this video recommend adults aim to achieve each day, as depicted in the animation?\nOptions:\n(A) 5-7.\n(B) 7-9.\n(C) 9-11.\n(D) 11-13.",
+  "options": [
+    "A. 5-7.",
+    "B. 7-9.",
+    "C. 9-11.",
+    "D. 11-13."
+  ],
+  "official_meta": {
+    "video_id": "071",
+    "video_external_id": "IzQ2siryQrM",
+    "resolved_video_stem": "IzQ2siryQrM",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Knowledge",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Life Tip",
+    "task_type": "Temporal Perception",
+    "question_id": "071-1",
+    "question_index": 0,
+    "video_item_index": 70,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-13T11:05:03.869412Z"
+}

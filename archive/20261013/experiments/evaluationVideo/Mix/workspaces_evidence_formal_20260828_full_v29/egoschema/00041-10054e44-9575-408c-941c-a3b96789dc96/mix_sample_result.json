@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00041:10054e44-9575-408c-941c-a3b96789dc96",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "C",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "The primary goal of the actions performed by c and the man throughout the video is to build a domino chain.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(C) The primary goal of the actions performed by c and the man throughout the video is to build a domino chain.",
+  "elapsed_seconds": 542.196,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00041-10054e44-9575-408c-941c-a3b96789dc96",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00041-10054e44-9575-408c-941c-a3b96789dc96/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00041-10054e44-9575-408c-941c-a3b96789dc96/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00041-10054e44-9575-408c-941c-a3b96789dc96/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/10054e44-9575-408c-941c-a3b96789dc96.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/10054e44-9575-408c-941c-a3b96789dc96.mp4",
+  "question_block": "Question: What is the primary goal of the actions performed by c and the man throughout the video, and how does it evolve over time?\nOptions:\n(A) The primary goal of the actions performed by c and the man throughout the video is to play a game of chess.\n(B) The primary goal of the actions performed by c and the man throughout the video is to solve a puzzle.\n(C) The primary goal of the actions performed by c and the man throughout the video is to build a domino chain.\n(D) The primary goal of the actions performed by c and the man throughout the video is to create a work of art.\n(E) The primary goal of the actions performed by c and the man throughout the video is to have a conversation.",
+  "options": [
+    "The primary goal of the actions performed by c and the man throughout the video is to play a game of chess.",
+    "The primary goal of the actions performed by c and the man throughout the video is to solve a puzzle.",
+    "The primary goal of the actions performed by c and the man throughout the video is to build a domino chain.",
+    "The primary goal of the actions performed by c and the man throughout the video is to create a work of art.",
+    "The primary goal of the actions performed by c and the man throughout the video is to have a conversation."
+  ],
+  "official_meta": {
+    "question_index": "00041",
+    "video_id": "10054e44-9575-408c-941c-a3b96789dc96",
+    "resolved_video_stem": "10054e44-9575-408c-941c-a3b96789dc96",
+    "video_mapping_verified": true,
+    "source_index": 41,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-04T06:17:16.234953Z"
+}

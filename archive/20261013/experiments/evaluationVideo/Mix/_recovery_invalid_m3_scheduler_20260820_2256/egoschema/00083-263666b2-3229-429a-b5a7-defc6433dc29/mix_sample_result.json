@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00083:263666b2-3229-429a-b5a7-defc6433dc29",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C uses her hands to smoothen the flower pot and to add more clay to it. she also uses a cup of water to keep her hands wet.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00083-263666b2-3229-429a-b5a7-defc6433dc29",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00083-263666b2-3229-429a-b5a7-defc6433dc29/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00083-263666b2-3229-429a-b5a7-defc6433dc29/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00083-263666b2-3229-429a-b5a7-defc6433dc29/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/263666b2-3229-429a-b5a7-defc6433dc29.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/263666b2-3229-429a-b5a7-defc6433dc29.mp4",
+  "question_block": "Question: Summarize the primary technique used by c to create and refine the flower pot. how did c utilize the tools and materials available to her?\nOptions:\n(A) C uses a hammer and chisel to shape the flower pot.\n(B) C uses her hands to smoothen the flower pot and to add more clay to it. she also uses a cup of water to keep her hands wet.\n(C) Skillfully, c uses a pottery wheel to carefully shape the beautiful flower pot with ease.\n(D) Carefully, c employs a mold to accurately shape the flower pot's design.\n(E) Creatively, c employs her hands to skillfully shape the flower pot, and subsequently utilizes a kiln to thoroughly bake it.",
+  "options": [
+    "C uses a hammer and chisel to shape the flower pot.",
+    "C uses her hands to smoothen the flower pot and to add more clay to it. she also uses a cup of water to keep her hands wet.",
+    "Skillfully, c uses a pottery wheel to carefully shape the beautiful flower pot with ease.",
+    "Carefully, c employs a mold to accurately shape the flower pot's design.",
+    "Creatively, c employs her hands to skillfully shape the flower pot, and subsequently utilizes a kiln to thoroughly bake it."
+  ],
+  "official_meta": {
+    "question_index": "00083",
+    "video_id": "263666b2-3229-429a-b5a7-defc6433dc29",
+    "source_index": 83
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:45:45.940303Z"
+}

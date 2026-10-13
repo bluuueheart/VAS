@@ -1,0 +1,1184 @@
+{
+  "kind": "historical_execution_metadata_reconstruction",
+  "fresh_inference": false,
+  "cases": [
+    {
+      "dataset": "lvbench",
+      "prefix_steps": 8,
+      "answer": "(A) 3",
+      "restored_observations": 4,
+      "before": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation",
+          "direct temporal evidence supporting the selected action"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: action_count",
+          "claim contract missing: count_redundancy",
+          "claim contract missing: dynamic_relation",
+          "semantic retrieval result",
+          "sticks placed",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "action_count",
+            "count_redundancy",
+            "dynamic_relation",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "action_count": false,
+            "count_redundancy": false,
+            "dynamic_relation": false,
+            "evidence_redundancy": true
+          },
+          "missing": [
+            "action_count",
+            "count_redundancy",
+            "dynamic_relation"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: action_count, claim contract missing: count_redundancy, claim contract missing: dynamic_relation, semantic retrieval result, sticks placed, answer candidate lacks directly matched verified evidence"
+      },
+      "after": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation",
+          "direct temporal evidence supporting the selected action"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: action_count",
+          "claim contract missing: count_redundancy",
+          "claim contract missing: dynamic_relation",
+          "semantic retrieval result",
+          "sticks placed",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "action_count",
+            "count_redundancy",
+            "dynamic_relation",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "action_count": false,
+            "count_redundancy": false,
+            "dynamic_relation": false,
+            "evidence_redundancy": true
+          },
+          "missing": [
+            "action_count",
+            "count_redundancy",
+            "dynamic_relation"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: action_count, claim contract missing: count_redundancy, claim contract missing: dynamic_relation, semantic retrieval result, sticks placed, answer candidate lacks directly matched verified evidence"
+      }
+    },
+    {
+      "dataset": "lvbench",
+      "prefix_steps": 12,
+      "answer": "(A) 3",
+      "restored_observations": 4,
+      "before": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation",
+          "direct temporal evidence supporting the selected action"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: action_count",
+          "claim contract missing: count_redundancy",
+          "claim contract missing: dynamic_relation",
+          "semantic retrieval result",
+          "sticks placed",
+          "slot_1",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "action_count",
+            "count_redundancy",
+            "dynamic_relation",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "action_count": false,
+            "count_redundancy": false,
+            "dynamic_relation": false,
+            "evidence_redundancy": true
+          },
+          "missing": [
+            "action_count",
+            "count_redundancy",
+            "dynamic_relation"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: action_count, claim contract missing: count_redundancy, claim contract missing: dynamic_relation, semantic retrieval result, sticks placed, slot_1, answer candidate lacks directly matched verified evidence"
+      },
+      "after": {
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct temporal evidence supporting the selected action"
+        ],
+        "unresolved_claims": [],
+        "claim_contract": {
+          "status": "pass",
+          "required": [
+            "action_count",
+            "count_redundancy",
+            "dynamic_relation",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "action_count": true,
+            "count_redundancy": true,
+            "dynamic_relation": true,
+            "evidence_redundancy": true
+          },
+          "missing": [],
+          "verified_claim_count": 1,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action"
+      }
+    },
+    {
+      "dataset": "lvbench",
+      "prefix_steps": 14,
+      "answer": "(A) 3",
+      "restored_observations": 5,
+      "before": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation",
+          "direct temporal evidence supporting the selected action"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: action_count",
+          "claim contract missing: count_redundancy",
+          "claim contract missing: dynamic_relation",
+          "semantic retrieval result",
+          "sticks placed",
+          "slot_1",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "action_count",
+            "count_redundancy",
+            "dynamic_relation",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "action_count": false,
+            "count_redundancy": false,
+            "dynamic_relation": false,
+            "evidence_redundancy": true
+          },
+          "missing": [
+            "action_count",
+            "count_redundancy",
+            "dynamic_relation"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: action_count, claim contract missing: count_redundancy, claim contract missing: dynamic_relation, semantic retrieval result, sticks placed, slot_1, answer candidate lacks directly matched verified evidence"
+      },
+      "after": {
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct temporal evidence supporting the selected action"
+        ],
+        "unresolved_claims": [],
+        "claim_contract": {
+          "status": "pass",
+          "required": [
+            "action_count",
+            "count_redundancy",
+            "dynamic_relation",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "action_count": true,
+            "count_redundancy": true,
+            "dynamic_relation": true,
+            "evidence_redundancy": true
+          },
+          "missing": [],
+          "verified_claim_count": 1,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action"
+      }
+    },
+    {
+      "dataset": "videomme",
+      "prefix_steps": 4,
+      "answer": "(A) Apples.",
+      "restored_observations": 2,
+      "before": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: comparison",
+          "claim contract missing: count_redundancy",
+          "decoration counts on German Christmas tree",
+          "slot_1",
+          "slot_2",
+          "slot_3",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "satisfied": {
+            "comparison": false,
+            "count_redundancy": false
+          },
+          "missing": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, claim contract missing: count_redundancy, decoration counts on German Christmas tree, slot_1, slot_2, slot_3, answer candidate lacks directly matched verified evidence"
+      },
+      "after": {
+        "progress_score": 0.4,
+        "claim_coverage": 0.5,
+        "direct_grounding": 0.5,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: comparison",
+          "decoration counts on German Christmas tree",
+          "slot_1",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "satisfied": {
+            "comparison": false,
+            "count_redundancy": true
+          },
+          "missing": [
+            "comparison"
+          ],
+          "verified_claim_count": 2,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, decoration counts on German Christmas tree, slot_1, answer candidate lacks directly matched verified evidence"
+      }
+    },
+    {
+      "dataset": "videomme",
+      "prefix_steps": 7,
+      "answer": "(A) Apples.",
+      "restored_observations": 2,
+      "before": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: comparison",
+          "claim contract missing: count_redundancy",
+          "decoration counts on German Christmas tree",
+          "slot_1",
+          "slot_2",
+          "slot_3",
+          "decoration_count_comparison",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "satisfied": {
+            "comparison": false,
+            "count_redundancy": false
+          },
+          "missing": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, claim contract missing: count_redundancy, decoration counts on German Christmas tree, slot_1, slot_2, slot_3, decoration_count_comparison, answer candidate lacks directly matched verified evidence"
+      },
+      "after": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: comparison",
+          "claim contract missing: count_redundancy",
+          "decoration counts on German Christmas tree",
+          "slot_1",
+          "slot_2",
+          "slot_3",
+          "decoration_count_comparison",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "satisfied": {
+            "comparison": false,
+            "count_redundancy": false
+          },
+          "missing": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, claim contract missing: count_redundancy, decoration counts on German Christmas tree, slot_1, slot_2, slot_3, decoration_count_comparison, answer candidate lacks directly matched verified evidence"
+      }
+    },
+    {
+      "dataset": "videomme",
+      "prefix_steps": 11,
+      "answer": "(A) Apples.",
+      "restored_observations": 2,
+      "before": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: comparison",
+          "claim contract missing: count_redundancy",
+          "decoration counts on German Christmas tree",
+          "slot_1",
+          "slot_2",
+          "slot_3",
+          "decoration_count_comparison",
+          "relative_abundance",
+          "count",
+          "relative_quantity",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "satisfied": {
+            "comparison": false,
+            "count_redundancy": false
+          },
+          "missing": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, claim contract missing: count_redundancy, decoration counts on German Christmas tree, slot_1, slot_2, slot_3, decoration_count_comparison, relative_abundance, count, relative_quantity, answer candidate lacks directly matched verified evidence"
+      },
+      "after": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: comparison",
+          "claim contract missing: count_redundancy",
+          "decoration counts on German Christmas tree",
+          "slot_1",
+          "slot_2",
+          "slot_3",
+          "decoration_count_comparison",
+          "relative_abundance",
+          "count",
+          "relative_quantity",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "satisfied": {
+            "comparison": false,
+            "count_redundancy": false
+          },
+          "missing": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, claim contract missing: count_redundancy, decoration counts on German Christmas tree, slot_1, slot_2, slot_3, decoration_count_comparison, relative_abundance, count, relative_quantity, answer candidate lacks directly matched verified evidence"
+      }
+    },
+    {
+      "dataset": "videomme",
+      "prefix_steps": 13,
+      "answer": "(A) Apples.",
+      "restored_observations": 2,
+      "before": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: comparison",
+          "claim contract missing: count_redundancy",
+          "decoration counts on German Christmas tree",
+          "slot_1",
+          "slot_2",
+          "slot_3",
+          "decoration_count_comparison",
+          "relative_abundance",
+          "count",
+          "relative_quantity",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "satisfied": {
+            "comparison": false,
+            "count_redundancy": false
+          },
+          "missing": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, claim contract missing: count_redundancy, decoration counts on German Christmas tree, slot_1, slot_2, slot_3, decoration_count_comparison, relative_abundance, count, relative_quantity, answer candidate lacks directly matched verified evidence"
+      },
+      "after": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: comparison",
+          "claim contract missing: count_redundancy",
+          "decoration counts on German Christmas tree",
+          "slot_1",
+          "slot_2",
+          "slot_3",
+          "decoration_count_comparison",
+          "relative_abundance",
+          "count",
+          "relative_quantity",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "satisfied": {
+            "comparison": false,
+            "count_redundancy": false
+          },
+          "missing": [
+            "comparison",
+            "count_redundancy"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, claim contract missing: count_redundancy, decoration counts on German Christmas tree, slot_1, slot_2, slot_3, decoration_count_comparison, relative_abundance, count, relative_quantity, answer candidate lacks directly matched verified evidence"
+      }
+    },
+    {
+      "dataset": "egoschema",
+      "prefix_steps": 1,
+      "answer": "(D) C is cleaning dishes.",
+      "restored_observations": 1,
+      "before": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation",
+          "direct temporal evidence supporting the selected action"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: dynamic_relation",
+          "claim contract missing: comparison",
+          "primary activity",
+          "initial action",
+          "final action",
+          "washing dishes",
+          "kitchen sink",
+          "white rectangular dish",
+          "black pot/pan",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": false,
+            "comparison": false,
+            "evidence_redundancy": true
+          },
+          "missing": [
+            "dynamic_relation",
+            "comparison"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: dynamic_relation, claim contract missing: comparison, primary activity, initial action, final action, washing dishes, kitchen sink, white rectangular dish, black pot/pan, answer candidate lacks directly matched verified evidence"
+      },
+      "after": {
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": [],
+        "claim_contract": {
+          "status": "pass",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": true,
+            "comparison": true,
+            "evidence_redundancy": true
+          },
+          "missing": [],
+          "verified_claim_count": 4,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier accepted termination."
+      }
+    },
+    {
+      "dataset": "egoschema",
+      "prefix_steps": 4,
+      "answer": "(D) C is cleaning dishes.",
+      "restored_observations": 1,
+      "before": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation",
+          "direct temporal evidence supporting the selected action"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: dynamic_relation",
+          "claim contract missing: comparison",
+          "claim contract missing: evidence_redundancy",
+          "primary activity",
+          "initial action",
+          "final action",
+          "washing dishes",
+          "kitchen sink",
+          "white rectangular dish",
+          "black pot/pan",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": false,
+            "comparison": false,
+            "evidence_redundancy": false
+          },
+          "missing": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: dynamic_relation, claim contract missing: comparison, claim contract missing: evidence_redundancy, primary activity, initial action, final action, washing dishes, kitchen sink, white rectangular dish, black pot/pan, answer candidate lacks directly matched verified evidence"
+      },
+      "after": {
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct temporal evidence supporting the selected action"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: evidence_redundancy"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": true,
+            "comparison": true,
+            "evidence_redundancy": false
+          },
+          "missing": [
+            "evidence_redundancy"
+          ],
+          "verified_claim_count": 4,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: evidence_redundancy"
+      }
+    },
+    {
+      "dataset": "egoschema",
+      "prefix_steps": 6,
+      "answer": "(D) C is cleaning dishes.",
+      "restored_observations": 1,
+      "before": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation",
+          "direct temporal evidence supporting the selected action"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: dynamic_relation",
+          "claim contract missing: comparison",
+          "claim contract missing: evidence_redundancy",
+          "primary activity",
+          "initial action",
+          "final action",
+          "washing dishes",
+          "kitchen sink",
+          "white rectangular dish",
+          "black pot/pan",
+          "cleaning dishes",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": false,
+            "comparison": false,
+            "evidence_redundancy": false
+          },
+          "missing": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: dynamic_relation, claim contract missing: comparison, claim contract missing: evidence_redundancy, primary activity, initial action, final action, washing dishes, kitchen sink, white rectangular dish, black pot/pan, cleaning dishes, answer candidate lacks directly matched verified evidence"
+      },
+      "after": {
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct temporal evidence supporting the selected action"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: comparison",
+          "claim contract missing: evidence_redundancy"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": true,
+            "comparison": false,
+            "evidence_redundancy": false
+          },
+          "missing": [
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "verified_claim_count": 1,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: comparison, claim contract missing: evidence_redundancy"
+      }
+    },
+    {
+      "dataset": "egoschema",
+      "prefix_steps": 9,
+      "answer": "(D) C is cleaning dishes.",
+      "restored_observations": 1,
+      "before": {
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct evidence citation",
+          "direct temporal evidence supporting the selected action"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: dynamic_relation",
+          "claim contract missing: comparison",
+          "claim contract missing: evidence_redundancy",
+          "primary activity",
+          "initial action",
+          "final action",
+          "washing dishes",
+          "kitchen sink",
+          "white rectangular dish",
+          "black pot/pan",
+          "cleaning dishes",
+          "washing dishes",
+          "cooking",
+          "doing laundry",
+          "cleaning kitchen surfaces",
+          "cleaning bathroom",
+          "answer candidate lacks directly matched verified evidence"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": false,
+            "comparison": false,
+            "evidence_redundancy": false
+          },
+          "missing": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "verified_claim_count": 0,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: dynamic_relation, claim contract missing: comparison, claim contract missing: evidence_redundancy, primary activity, initial action, final action, washing dishes, kitchen sink, white rectangular dish, black pot/pan, cleaning dishes, washing dishes, cooking, doing laundry, cleaning kitchen surfaces, cleaning bathroom, answer candidate lacks directly matched verified evidence"
+      },
+      "after": {
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [
+          "direct temporal evidence supporting the selected action"
+        ],
+        "unresolved_claims": [
+          "claim contract missing: evidence_redundancy"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": true,
+            "comparison": true,
+            "evidence_redundancy": false
+          },
+          "missing": [
+            "evidence_redundancy"
+          ],
+          "verified_claim_count": 5,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: evidence_redundancy"
+      }
+    },
+    {
+      "dataset": "egoschema",
+      "prefix_steps": 11,
+      "answer": "(D) C is cleaning dishes.",
+      "restored_observations": 1,
+      "before": {
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": [
+          "claim contract missing: comparison"
+        ],
+        "claim_contract": {
+          "status": "blocked",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": true,
+            "comparison": false,
+            "evidence_redundancy": true
+          },
+          "missing": [
+            "comparison"
+          ],
+          "verified_claim_count": 1,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: comparison"
+      },
+      "after": {
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": [],
+        "claim_contract": {
+          "status": "pass",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": true,
+            "comparison": true,
+            "evidence_redundancy": true
+          },
+          "missing": [],
+          "verified_claim_count": 6,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier accepted termination."
+      }
+    },
+    {
+      "dataset": "egoschema",
+      "prefix_steps": 13,
+      "answer": "(D) C is cleaning dishes.",
+      "restored_observations": 1,
+      "before": {
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": [],
+        "claim_contract": {
+          "status": "pass",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": true,
+            "comparison": true,
+            "evidence_redundancy": true
+          },
+          "missing": [],
+          "verified_claim_count": 2,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier accepted termination."
+      },
+      "after": {
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": [],
+        "claim_contract": {
+          "status": "pass",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": true,
+            "comparison": true,
+            "evidence_redundancy": true
+          },
+          "missing": [],
+          "verified_claim_count": 7,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier accepted termination."
+      }
+    },
+    {
+      "dataset": "egoschema",
+      "prefix_steps": 14,
+      "answer": "(D) C is cleaning dishes.",
+      "restored_observations": 1,
+      "before": {
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": [],
+        "claim_contract": {
+          "status": "pass",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": true,
+            "comparison": true,
+            "evidence_redundancy": true
+          },
+          "missing": [],
+          "verified_claim_count": 2,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier accepted termination."
+      },
+      "after": {
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": [],
+        "claim_contract": {
+          "status": "pass",
+          "required": [
+            "dynamic_relation",
+            "comparison",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "dynamic_relation": true,
+            "comparison": true,
+            "evidence_redundancy": true
+          },
+          "missing": [],
+          "verified_claim_count": 7,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier accepted termination."
+      }
+    }
+  ],
+  "limitation": "Pre-Finish checkpoint diagnostic; Finish-time ledger updates are not replayed, so before is not the original recorded verdict."
+}

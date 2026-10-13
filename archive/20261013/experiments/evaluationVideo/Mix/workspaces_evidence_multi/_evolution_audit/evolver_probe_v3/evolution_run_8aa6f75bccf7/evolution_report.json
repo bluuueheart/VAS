@@ -1,0 +1,280 @@
+{
+  "run_id": "evolution_run_8aa6f75bccf7",
+  "trajectory_count": 1,
+  "event_count": 16,
+  "diagnoses": [
+    {
+      "diagnosis_id": "diagnosis_458a9a65fd2f",
+      "trajectory_ids": [
+        "trajectory_5a4b0cf321f54e7d8dd5ca0a6e2da8f4"
+      ],
+      "failure_type": "contradiction_handling",
+      "blamed_component": "evidence_verifier",
+      "blamed_tool_ids": [
+        "Inspect_Frame"
+      ],
+      "supporting_event_ids": [
+        "debug_5",
+        "debug_14"
+      ],
+      "root_cause": "The historical trajectory reached Finish without satisfying the configured evidence gate.",
+      "counterfactual_fix": "Evidence verifier rejected termination; acquire or reconcile: resolve contradictory evidence",
+      "confidence": 0.95
+    }
+  ],
+  "verifications": [
+    {
+      "trajectory_id": "trajectory_5a4b0cf321f54e7d8dd5ca0a6e2da8f4",
+      "sample_uid": "egoschema:00002:00f93e1e-cf4e-4835-88b4-4ad68216e86f",
+      "answer_score": 0.0,
+      "sample_status": "wrong",
+      "held_out": false,
+      "progress_score": 0.8,
+      "claim_coverage": 1.0,
+      "direct_grounding": 1.0,
+      "contradiction_score": 0.25,
+      "cross_modal_support": 0.0,
+      "can_finish": false,
+      "missing_information": [
+        "resolve contradictory evidence"
+      ],
+      "unresolved_claims": [],
+      "feedback": "Evidence verifier rejected termination; acquire or reconcile: resolve contradictory evidence"
+    }
+  ],
+  "evolution_intent": {
+    "intent_id": "intent_8bed8d0e507d",
+    "diagnosis_ids": [
+      "diagnosis_458a9a65fd2f"
+    ],
+    "scope": "router",
+    "operations": [
+      {
+        "action": "update_router_rule",
+        "target_type": "evidence_verifier",
+        "target_ids": [
+          "finish_gate"
+        ],
+        "before": {
+          "enforced": false
+        },
+        "after": {
+          "enforced": true,
+          "reject_unverified_finish": true,
+          "resolve_conflicts": true
+        },
+        "reason": "Observed unsupported or conflict-bearing terminal answers."
+      }
+    ],
+    "expected_effects": [
+      "fewer unsupported finishes",
+      "higher evidence-grounded answer consistency"
+    ],
+    "risks": [
+      "additional tool calls",
+      "higher latency"
+    ]
+  },
+  "candidate_snapshot": null,
+  "diagnostic_candidate_snapshot": {
+    "snapshot_id": "snapshot_331a20ccdb5f",
+    "parent_snapshot_id": "snapshot_000",
+    "created_at": "2026-08-22T11:16:41.160743Z",
+    "router_policy": {
+      "update_router_rule": {
+        "enforced": true,
+        "reject_unverified_finish": true,
+        "resolve_conflicts": true
+      }
+    },
+    "argument_policy": {},
+    "tool_overrides": {},
+    "base_tool_library_baseline_id": "toolbase_2de52c32a353fb78a970",
+    "patch_ids": [
+      "intent_8bed8d0e507d"
+    ],
+    "status": "candidate"
+  },
+  "candidate_source": "none",
+  "replay_groups": {
+    "trigger": [
+      "trajectory_5a4b0cf321f54e7d8dd5ca0a6e2da8f4"
+    ],
+    "neighbor": [],
+    "regression": [],
+    "held_out": []
+  },
+  "replay_status": "not_required",
+  "candidate_replay_status": "not_required",
+  "batch_metrics": {
+    "accuracy": 0.0,
+    "mean_latency_seconds": 3315.004,
+    "invalid_call_rate": 0.181818
+  },
+  "source_paths": [
+    "/gemini/code/export_packages/extracted/evaluationVideo/Mix/_archive/formal_m3_pre_wosub_20260822/workspaces_evidence_multi/egoschema/00002-00f93e1e-cf4e-4835-88b4-4ad68216e86f/results/run_result.json"
+  ],
+  "agent_value_analysis": {
+    "method": "trajectory evidence accounting; not causal ablation",
+    "cases": [
+      {
+        "sample_uid": "egoschema:00002:00f93e1e-cf4e-4835-88b4-4ad68216e86f",
+        "dataset_name": "egoschema",
+        "answer_correct": false,
+        "predicted_label": "A",
+        "roles": {
+          "planner": {
+            "turns": 11,
+            "tool_orchestration_steps": 9,
+            "finish_proposals": 2,
+            "schema_valid_turns": 11,
+            "value_verdict": "observed",
+            "evidence": [
+              "selected executable actions and/or a terminal answer"
+            ]
+          },
+          "observer": {
+            "turns": 7,
+            "schema_valid_turns": 7,
+            "evidence_updates": 15,
+            "verified_updates": 15,
+            "logical_conflicts_flagged": 3,
+            "reobserve_or_cross_verify_recommendations": 3,
+            "recommendations_followed_by_planner": 4,
+            "value_verdict": "useful",
+            "evidence": [
+              "changed evidence state or directed a subsequent observation action"
+            ]
+          },
+          "reflector": {
+            "turns": 2,
+            "schema_valid_turns": 2,
+            "accept_count": 0,
+            "reject_or_request_more_count": 2,
+            "effective_finish_blocks": 2,
+            "accept_correct_count": 0,
+            "accept_wrong_count": 0,
+            "value_verdict": "useful",
+            "evidence": [
+              "blocked Finish before additional evidence or validated a correct Finish"
+            ]
+          },
+          "evolver": {
+            "value_verdict": "offline_batch_role_not_online_case_turn",
+            "evidence": [
+              "evaluated by the batch-level replay report"
+            ]
+          }
+        }
+      }
+    ],
+    "aggregate": {
+      "case_count": 1,
+      "roles": {
+        "planner": {
+          "case_verdict_counts": {
+            "observed": 1
+          },
+          "useful_case_count": 1
+        },
+        "observer": {
+          "case_verdict_counts": {
+            "useful": 1
+          },
+          "useful_case_count": 1
+        },
+        "reflector": {
+          "case_verdict_counts": {
+            "useful": 1
+          },
+          "useful_case_count": 1
+        }
+      }
+    },
+    "evolver": {
+      "trajectory_count": 1,
+      "diagnosis_count": 1,
+      "schema_valid": true,
+      "decision": "propose_mutation",
+      "mutation_targets": [
+        "Inspect_Frame"
+      ],
+      "candidate_snapshot_created": false,
+      "proposal_validation": {
+        "status": "invalid_mutation",
+        "action": "update_tool_schema",
+        "reason": "tool schema mutation contains unsupported fields: ['output_schema']"
+      },
+      "replay_status": "not_required",
+      "value_verdict": "proposal_rejected_unexecutable",
+      "evidence": [
+        "a real Evolver kernel turn was recorded",
+        "candidate mutation is not accepted until replay/held-out gates pass"
+      ]
+    }
+  },
+  "evolver_proposal_validation": {
+    "status": "invalid_mutation",
+    "action": "update_tool_schema",
+    "reason": "tool schema mutation contains unsupported fields: ['output_schema']"
+  },
+  "evolver_agent": {
+    "agent_role": "evolver",
+    "implementation": "independent LLM meta-agent",
+    "status": "success",
+    "schema_valid": true,
+    "kernel": {
+      "agent_role": "evolver",
+      "provider_class": "TransformersProvider",
+      "model_role": "evolver",
+      "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+      "modality": "llm",
+      "independent_provider_view": true,
+      "independent_prompt": true,
+      "prompt_source": "four_role_prompts",
+      "structured_contract": "evolver_json",
+      "llm_kernel": true,
+      "agent_definition": {
+        "agent_type": "meta_evolution_agent",
+        "kernel_modality": "llm",
+        "input_contract": "completed trajectory summaries + deterministic diagnoses",
+        "decision_authority": "propose at most one replay-gated harness mutation",
+        "delegates_to": [
+          "replay_gate"
+        ]
+      }
+    },
+    "proposal": {
+      "decision": "propose_mutation",
+      "mutation": {
+        "action": "update_tool_schema",
+        "target": "Inspect_Frame",
+        "before": {
+          "output_schema": {
+            "frame_analysis": "string",
+            "evidence_confidence": "float"
+          }
+        },
+        "after": {
+          "output_schema": {
+            "frame_analysis": "string",
+            "evidence_confidence": "float",
+            "contradiction_flags": [
+              "list of strings"
+            ]
+          }
+        },
+        "reason": "The evidence verifier rejected the trajectory because the Inspect_Frame tool failed to provide explicit contradiction flags needed to reconcile conflicting evidence. Adding a 'contradiction_flags' field to the output schema allows the tool to explicitly signal when visual evidence contradicts prior claims, enabling the verifier to resolve the contradiction rather than defaulting to failure."
+      },
+      "expected_effect": "The evidence verifier will receive explicit contradiction signals from Inspect_Frame, allowing it to trigger a reconciliation step instead of rejecting the termination, thereby enabling the trajectory to satisfy the evidence gate.",
+      "regression_risk": "Low. Adding an optional list field to the output schema does not alter the core frame analysis logic or confidence scoring, and downstream components can handle the new field as optional or default to empty if not present.",
+      "confidence": 0.9
+    },
+    "proposal_validation": {
+      "status": "invalid_mutation",
+      "action": "update_tool_schema",
+      "reason": "tool schema mutation contains unsupported fields: ['output_schema']"
+    },
+    "error": ""
+  }
+}

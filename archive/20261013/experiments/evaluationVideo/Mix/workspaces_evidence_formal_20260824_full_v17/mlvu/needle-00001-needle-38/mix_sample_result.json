@@ -1,0 +1,52 @@
+{
+  "sample_uid": "mlvu:needle:1:needle-38",
+  "dataset_name": "mlvu",
+  "subset_name": "needle",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Fishing",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 341.78,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/mlvu/needle-00001-needle-38",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/mlvu/needle-00001-needle-38/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/mlvu/needle-00001-needle-38/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/mlvu/needle-00001-needle-38/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_38.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_38.mp4",
+  "question_block": "Question: What is a popular activity on the beach during the monsoon season?\nOptions:\n(A) Picnicking\n(B) Surfing\n(C) Playing volleyball\n(D) Fishing",
+  "options": [
+    "Picnicking",
+    "Surfing",
+    "Playing volleyball",
+    "Fishing"
+  ],
+  "official_meta": {
+    "task_type": "needle",
+    "source_json": "2_needle.json",
+    "source_index": 1,
+    "video_subdir": "2_needle",
+    "video_relative_path": "2_needle/needle_38.mp4",
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "error": "Unable to load the local Qwen3/Qwen3.5 checkpoint with an exact architecture class. Install a transformers build that provides the class named by config.architectures (for Qwen3.5 this must be Qwen3_5ForConditionalGeneration).",
+  "updated_at": "2026-08-24T11:41:22.076529Z"
+}

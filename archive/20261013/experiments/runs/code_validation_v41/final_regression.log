@@ -1,0 +1,7 @@
+Error searching vectors in /tmp/tmpvidlowq_: embedding unavailable
+Rebuilding dense index for tmplvlplm3g: Expecting value: line 1 column 1 (char 0)
+Rebuilding dense index for tmplvlplm3g: Expecting value: line 1 column 1 (char 0)
+----------------------------------------------------------------------
+Ran 171 tests in 11.316s
+
+OK

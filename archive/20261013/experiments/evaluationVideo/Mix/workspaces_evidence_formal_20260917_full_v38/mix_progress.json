@@ -1,0 +1,33 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-09-18T01:59:20.908719Z",
+  "records": {
+    "lvbench:entity-recognition:4:63": {
+      "sample_uid": "lvbench:entity-recognition:4:63",
+      "dataset_name": "lvbench",
+      "subset_name": "entity recognition",
+      "status": "failed",
+      "acc": 0.0,
+      "tool_use_num": 12,
+      "iter_num": 15,
+      "tool_success_rate": 0.75,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/lvbench/entity-recognition-00004-63/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/lvbench/entity-recognition-00004-63",
+      "updated_at": "2026-09-17T18:41:44.560026Z"
+    },
+    "videomme:humanity-history:001-1": {
+      "sample_uid": "videomme:humanity-history:001-1",
+      "dataset_name": "videomme",
+      "subset_name": "Humanity & History",
+      "status": "failed",
+      "acc": 0.0,
+      "tool_use_num": 12,
+      "iter_num": 15,
+      "tool_success_rate": 0.833333,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/videomme/humanity-history-001-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/videomme/humanity-history-001-1",
+      "updated_at": "2026-09-18T01:59:20.907934Z"
+    }
+  }
+}

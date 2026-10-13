@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00199:65a204f7-b699-4b08-b3de-b5004433a004",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The man is helping c to cook the chapatis.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00199-65a204f7-b699-4b08-b3de-b5004433a004",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00199-65a204f7-b699-4b08-b3de-b5004433a004/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00199-65a204f7-b699-4b08-b3de-b5004433a004/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00199-65a204f7-b699-4b08-b3de-b5004433a004/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/65a204f7-b699-4b08-b3de-b5004433a004.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/65a204f7-b699-4b08-b3de-b5004433a004.mp4",
+  "question_block": "Question: What is the primary purpose of the interaction between c and the man in the video?\nOptions:\n(A) The man is trying to steal the chapatis.\n(B) The man is helping c to cook the chapatis.\n(C) The man is giving c cooking instructions.\n(D) The man is trying to teach c how to cook chapatis.\n(E) The man is trying to impress c with his cooking skills.",
+  "options": [
+    "The man is trying to steal the chapatis.",
+    "The man is helping c to cook the chapatis.",
+    "The man is giving c cooking instructions.",
+    "The man is trying to teach c how to cook chapatis.",
+    "The man is trying to impress c with his cooking skills."
+  ],
+  "official_meta": {
+    "question_index": "00199",
+    "video_id": "65a204f7-b699-4b08-b3de-b5004433a004",
+    "source_index": 199
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:53:02.274834Z"
+}

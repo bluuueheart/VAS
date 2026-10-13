@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00211:6b8b47be-786f-4436-b70b-796c1b70f975",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is changing the oil in a lawn mower.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00211-6b8b47be-786f-4436-b70b-796c1b70f975",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00211-6b8b47be-786f-4436-b70b-796c1b70f975/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00211-6b8b47be-786f-4436-b70b-796c1b70f975/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00211-6b8b47be-786f-4436-b70b-796c1b70f975/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/6b8b47be-786f-4436-b70b-796c1b70f975.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/6b8b47be-786f-4436-b70b-796c1b70f975.mp4",
+  "question_block": "Question: Analyze the video and summarize the main task being performed by c throughout the sequence. what is the general purpose of his actions and how do they contribute to that purpose?\nOptions:\n(A) Currently, c is meticulously cleaning the lawn mower outside.\n(B) C is changing the oil in a lawn mower.\n(C) Currently, c is diligently working on repairing the lawn mower effectively.\n(D) C is adjusting the lawn mower.\n(E) Currently, c is carefully inspecting the lawn mower's condition and performance.",
+  "options": [
+    "Currently, c is meticulously cleaning the lawn mower outside.",
+    "C is changing the oil in a lawn mower.",
+    "Currently, c is diligently working on repairing the lawn mower effectively.",
+    "C is adjusting the lawn mower.",
+    "Currently, c is carefully inspecting the lawn mower's condition and performance."
+  ],
+  "official_meta": {
+    "question_index": "00211",
+    "video_id": "6b8b47be-786f-4436-b70b-796c1b70f975",
+    "source_index": 211
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:12.345431Z"
+}

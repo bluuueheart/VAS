@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:basketball:141-2",
+  "dataset_name": "videomme",
+  "subset_name": "Basketball",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 5,
+  "iter_num": 18,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 5,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: finish_recovery_budget_exhausted_after_repeated_finish_rejection.",
+  "elapsed_seconds": 2414.575,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/basketball-141-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/basketball-141-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/basketball-141-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/basketball-141-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/lsfEHOtYGyk.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/lsfEHOtYGyk.mp4",
+  "question_block": "Question: Which player is running the pick-and-roll for the other players?\nOptions:\n(A) Player number 5.\n(B) Player number 4.\n(C) Player number 2.\n(D) Player number 3.",
+  "options": [
+    "A. Player number 5.",
+    "B. Player number 4.",
+    "C. Player number 2.",
+    "D. Player number 3."
+  ],
+  "official_meta": {
+    "video_id": "141",
+    "video_external_id": "lsfEHOtYGyk",
+    "resolved_video_stem": "lsfEHOtYGyk",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Sports Competition",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Basketball",
+    "task_type": "Action Recognition",
+    "question_id": "141-2",
+    "question_index": 1,
+    "video_item_index": 140,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-04T12:52:47.900163Z"
+}

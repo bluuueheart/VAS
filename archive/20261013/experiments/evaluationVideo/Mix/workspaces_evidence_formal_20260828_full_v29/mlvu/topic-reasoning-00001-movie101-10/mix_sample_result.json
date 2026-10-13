@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:topic-reasoning:1:movie101-10",
+  "dataset_name": "mlvu",
+  "subset_name": "topic_reasoning",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 13,
+  "iter_num": 18,
+  "tool_success_rate": 0.692308,
+  "successful_tool_calls": 9,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "Blue",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 6127.056,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/topic-reasoning-00001-movie101-10",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/topic-reasoning-00001-movie101-10/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/topic-reasoning-00001-movie101-10/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/topic-reasoning-00001-movie101-10/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/movie101_10.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/movie101_10.mp4",
+  "question_block": "Question: What color is the scarf worn by the woman in the video?\nOptions:\n(A) Red\n(B) Blue\n(C) White\n(D) Pink",
+  "options": [
+    "Red",
+    "Blue",
+    "White",
+    "Pink"
+  ],
+  "official_meta": {
+    "task_type": "topic_reasoning",
+    "source_question_type": "topic_reasoning",
+    "prompt_task_type": "topic_reasoning",
+    "source_json": "7_topic_reasoning.json",
+    "source_index": 1,
+    "video_subdir": "7_topic_reasoning",
+    "video_relative_path": "7_topic_reasoning/movie101_10.mp4",
+    "resolved_video_stem": "movie101_10",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-29T15:03:02.913341Z"
+}

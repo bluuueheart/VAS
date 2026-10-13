@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00122:3adf2393-e574-4462-aff3-824873b6a9ed",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The central theme of the video is the process of painting a craft model. c's actions throughout the video support this narrative by showing him gathering his materials, preparing his workspace, and then painting the model.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00122-3adf2393-e574-4462-aff3-824873b6a9ed",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00122-3adf2393-e574-4462-aff3-824873b6a9ed/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00122-3adf2393-e574-4462-aff3-824873b6a9ed/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00122-3adf2393-e574-4462-aff3-824873b6a9ed/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/3adf2393-e574-4462-aff3-824873b6a9ed.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/3adf2393-e574-4462-aff3-824873b6a9ed.mp4",
+  "question_block": "Question: What is the central theme of the video and how do c's actions throughout the video support this narrative?\nOptions:\n(A) The central theme of the video is the importance of preparation. c's actions throughout the video support this narrative by showing him carefully gathering his materials and preparing his workspace before he begins painting.\n(B) The central theme of the video is the satisfaction of completing a task. c's actions throughout the video support this narrative by showing him working diligently on the model and then taking pride in his work when it is finished.\n(C) The central theme of the video is the process of painting a craft model. c's actions throughout the video support this narrative by showing him gathering his materials, preparing his workspace, and then painting the model.\n(D) The central theme of the video is the importance of following instructions. c's actions throughout the video support this narrative by showing him carefully following the instructions that came with the model.\n(E) The central theme of the video is the importance of being creative. c's actions throughout the video support this narrative by showing him adding his own personal touches to the model.",
+  "options": [
+    "The central theme of the video is the importance of preparation. c's actions throughout the video support this narrative by showing him carefully gathering his materials and preparing his workspace before he begins painting.",
+    "The central theme of the video is the satisfaction of completing a task. c's actions throughout the video support this narrative by showing him working diligently on the model and then taking pride in his work when it is finished.",
+    "The central theme of the video is the process of painting a craft model. c's actions throughout the video support this narrative by showing him gathering his materials, preparing his workspace, and then painting the model.",
+    "The central theme of the video is the importance of following instructions. c's actions throughout the video support this narrative by showing him carefully following the instructions that came with the model.",
+    "The central theme of the video is the importance of being creative. c's actions throughout the video support this narrative by showing him adding his own personal touches to the model."
+  ],
+  "official_meta": {
+    "question_index": "00122",
+    "video_id": "3adf2393-e574-4462-aff3-824873b6a9ed",
+    "source_index": 122
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:26:18.407315Z"
+}

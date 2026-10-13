@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00024:083c5e8e-4546-40e9-857e-b9b967e5007a",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C interacted with the laptop's motherboard, chips, and wires. the overarching goal of this sequence was to remove the motherboard from the laptop.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00024-083c5e8e-4546-40e9-857e-b9b967e5007a",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00024-083c5e8e-4546-40e9-857e-b9b967e5007a/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00024-083c5e8e-4546-40e9-857e-b9b967e5007a/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00024-083c5e8e-4546-40e9-857e-b9b967e5007a/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/083c5e8e-4546-40e9-857e-b9b967e5007a.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/083c5e8e-4546-40e9-857e-b9b967e5007a.mp4",
+  "question_block": "Question: What are the primary components that c interacted with while working on the laptop and what was the overarching goal of this sequence?\nOptions:\n(A) C interacted with the laptop's screen, keyboard, and mouse. the overarching goal of this sequence was to clean the laptop.\n(B) C interacted with the laptop's battery, hard drive, and optical drive. the overarching goal of this sequence was to upgrade the laptop's components.\n(C) C interacted with the laptop's case, bezel, and keyboard deck. the overarching goal of this sequence was to repair the laptop.\n(D) C interacted with the laptop's motherboard, chips, and wires. the overarching goal of this sequence was to remove the motherboard from the laptop.\n(E) C interacted with the laptop's power button, volume buttons, and sleep button. the overarching goal of this sequence was to configure the laptop's settings.",
+  "options": [
+    "C interacted with the laptop's screen, keyboard, and mouse. the overarching goal of this sequence was to clean the laptop.",
+    "C interacted with the laptop's battery, hard drive, and optical drive. the overarching goal of this sequence was to upgrade the laptop's components.",
+    "C interacted with the laptop's case, bezel, and keyboard deck. the overarching goal of this sequence was to repair the laptop.",
+    "C interacted with the laptop's motherboard, chips, and wires. the overarching goal of this sequence was to remove the motherboard from the laptop.",
+    "C interacted with the laptop's power button, volume buttons, and sleep button. the overarching goal of this sequence was to configure the laptop's settings."
+  ],
+  "official_meta": {
+    "question_index": "00024",
+    "video_id": "083c5e8e-4546-40e9-857e-b9b967e5007a",
+    "source_index": 24
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:19:20.635420Z"
+}

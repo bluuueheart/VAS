@@ -1,0 +1,86 @@
+{
+  "source": "MLVU subset from workspaces_cfv_final10_20260714_gpu progress",
+  "sample_count": 8,
+  "samples": [
+    {
+      "sample_uid": "mlvu:needle:0:needle-32",
+      "source_json": "2_needle.json",
+      "source_index": 0,
+      "video_relative_path": "2_needle/needle_32.mp4",
+      "ground_truth_option": "A",
+      "ground_truth": "Delivers a product",
+      "last_run_acc": 1.0,
+      "last_run_answer": "(A) Delivers a product"
+    },
+    {
+      "sample_uid": "mlvu:topic-reasoning:0:awa-6",
+      "source_json": "7_topic_reasoning.json",
+      "source_index": 0,
+      "video_relative_path": "7_topic_reasoning/AWA-6.mp4",
+      "ground_truth_option": "A",
+      "ground_truth": "Grassland",
+      "last_run_acc": 1.0,
+      "last_run_answer": "(A) Grassland"
+    },
+    {
+      "sample_uid": "mlvu:plotqa:1:xiaoliyu-6",
+      "source_json": "1_plotQA.json",
+      "source_index": 1,
+      "video_relative_path": "1_plotQA/xiaoliyu_6.mp4",
+      "ground_truth_option": "B",
+      "ground_truth": "Carried by the cartoon turtle",
+      "last_run_acc": 1.0,
+      "last_run_answer": "(B) Carried by the cartoon turtle"
+    },
+    {
+      "sample_uid": "mlvu:plotqa:0:movie101-66",
+      "source_json": "1_plotQA.json",
+      "source_index": 0,
+      "video_relative_path": "1_plotQA/movie101_66.mp4",
+      "ground_truth_option": "A",
+      "ground_truth": "Yellow",
+      "last_run_acc": 1.0,
+      "last_run_answer": "(A) Yellow"
+    },
+    {
+      "sample_uid": "mlvu:ego:0:ego-35",
+      "source_json": "3_ego.json",
+      "source_index": 0,
+      "video_relative_path": "3_ego/ego_35.mp4",
+      "ground_truth_option": "A",
+      "ground_truth": "a lemon green sponge",
+      "last_run_acc": 0.0,
+      "last_run_answer": "Error: max_iterations_reached (planner_never_finished)."
+    },
+    {
+      "sample_uid": "mlvu:order:0:order-126",
+      "source_json": "5_order.json",
+      "source_index": 0,
+      "video_relative_path": "5_order/order_126.mp4",
+      "ground_truth_option": "D",
+      "ground_truth": "1->2->3->4",
+      "last_run_acc": 0.0,
+      "last_run_answer": "Error: max_iterations_reached (planner_never_finished)."
+    },
+    {
+      "sample_uid": "mlvu:plotqa:2:movie101-63",
+      "source_json": "1_plotQA.json",
+      "source_index": 2,
+      "video_relative_path": "1_plotQA/movie101_63.mp4",
+      "ground_truth_option": "D",
+      "ground_truth": "Ox cart",
+      "last_run_acc": 1.0,
+      "last_run_answer": "(D) Ox cart"
+    },
+    {
+      "sample_uid": "mlvu:anomaly-reco:0:surveil-20",
+      "source_json": "6_anomaly_reco.json",
+      "source_index": 0,
+      "video_relative_path": "6_anomaly_reco/surveil_20.mp4",
+      "ground_truth_option": "C",
+      "ground_truth": "Shoplifting",
+      "last_run_acc": 1.0,
+      "last_run_answer": "(C) Shoplifting"
+    }
+  ]
+}

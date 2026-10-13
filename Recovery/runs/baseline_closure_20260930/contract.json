@@ -1,0 +1,38 @@
+{
+  "source_manifest": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/source_manifest.json",
+  "source_files": 111,
+  "source_drift": [],
+  "config_path": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/config.json",
+  "config_sha256": "780ff3266bf3483549a0930778398ded39a9f22a1877b2eac3e687235ee4722c",
+  "snapshot_path": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline_snapshot.json",
+  "snapshot_sha256": "6a427bd5a5cf78b4614abc5b77180f442b946b63d8928eadbbc7f315276ba3f4",
+  "online_evolution": false,
+  "paired_ablations": false,
+  "single_worker": true,
+  "cache": "Historical shared preprocess cache; fresh trajectories; replay seed=0",
+  "environment": {
+    "MODEL_BASE_PATH": "/gemini/pretrain/model",
+    "CUDA_VISIBLE_DEVICES": "0",
+    "TOOLSTAR_DISABLE_CUDNN": "1",
+    "TOOLSTAR_DISABLE_QWEN_FUSED_KERNELS": "full",
+    "QWEN_VL_IMAGE_MIN_PIXELS": "65536",
+    "QWEN_VL_IMAGE_MAX_PIXELS": "200704",
+    "PYTORCH_ALLOC_CONF": "expandable_segments:True",
+    "ONLINE_EVOLUTION": "0",
+    "MIX_PAIRED_ABLATIONS": "0"
+  },
+  "inputs": [
+    {
+      "uid": "mlvu:topic-reasoning:0:awa-6",
+      "video": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+      "video_exists": true
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "video": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_126.mp4",
+      "video_exists": true
+    }
+  ],
+  "timeout_seconds_per_sample": 1200,
+  "total_worker_timeout_seconds": 2400
+}

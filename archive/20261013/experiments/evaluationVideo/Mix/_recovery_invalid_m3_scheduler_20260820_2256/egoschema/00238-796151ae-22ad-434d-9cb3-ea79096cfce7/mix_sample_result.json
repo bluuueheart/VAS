@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00238:796151ae-22ad-434d-9cb3-ea79096cfce7",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's primary objective is to make bricks.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00238-796151ae-22ad-434d-9cb3-ea79096cfce7",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00238-796151ae-22ad-434d-9cb3-ea79096cfce7/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00238-796151ae-22ad-434d-9cb3-ea79096cfce7/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00238-796151ae-22ad-434d-9cb3-ea79096cfce7/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/796151ae-22ad-434d-9cb3-ea79096cfce7.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/796151ae-22ad-434d-9cb3-ea79096cfce7.mp4",
+  "question_block": "Question: Considering the significant parts of the video, what would you infer is the primary objective of c's work?\nOptions:\n(A) C's primary objective is to make a sculpture.\n(B) C's primary objective is to make a vase.\n(C) C's primary objective is to make a pot.\n(D) C's primary objective is to make a plate.\n(E) C's primary objective is to make bricks.",
+  "options": [
+    "C's primary objective is to make a sculpture.",
+    "C's primary objective is to make a vase.",
+    "C's primary objective is to make a pot.",
+    "C's primary objective is to make a plate.",
+    "C's primary objective is to make bricks."
+  ],
+  "official_meta": {
+    "question_index": "00238",
+    "video_id": "796151ae-22ad-434d-9cb3-ea79096cfce7",
+    "source_index": 238
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:56:03.084929Z"
+}

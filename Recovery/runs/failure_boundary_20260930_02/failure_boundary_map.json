@@ -1,0 +1,58 @@
+[
+  {
+    "sample": "mlvu:count:0:count-126 (historical)",
+    "last_correct_boundary": "step 2: complete normalized Video_Clip_QA JSON",
+    "first_broken_boundary": "step 2: raw response → tool error status",
+    "failure_type": "A Tool execution/return; B Tool-interface design",
+    "evidence": "Three complete JSON No responses are flagged truncated; no positive count evidence produced. Empty ledger does not prove dropped positive claims.",
+    "confidence": "HIGH for protocol loss; UNKNOWN whether its removal resolves full count task"
+  },
+  {
+    "sample": "mlvu:order:0:order-126 (historical)",
+    "last_correct_boundary": "step 1: retrieval/frame observation reaches Observer",
+    "first_broken_boundary": "step 1: Observer result marks sufficient and recommends full order despite explicitly unobserved event 1",
+    "failure_type": "A Observer return/role contract; B Role responsibility mismatch",
+    "evidence": "Observer says all four located, while event 1 value=0 and reason says not visually present. Later step 6 says 3 before 2 but recommends 1→2→3→4; step 7 deterministic accepts all four answer variants.",
+    "confidence": "HIGH for internal contradiction; UNKNOWN for correctness of every visual event"
+  },
+  {
+    "sample": "videomme:humanity-history:001-1 (historical, whole trajectory)",
+    "last_correct_boundary": "step 2: Inspect_Frame successfully returns native frames",
+    "first_broken_boundary": "step 2: Observer certainty/Finish recommendation contradicts its approximate evidence",
+    "failure_type": "A Observer return/role contract; B Role responsibility mismatch",
+    "evidence": "uncertainty=approximate, evidence_status=verified, observation_quality=sufficient, recommendation=finish. Runtime retains approximate slot; first Finish rejected. Step 5 is a separate later confirmed protocol loss.",
+    "confidence": "HIGH for certainty contract inconsistency; UNKNOWN whether apples judgment is visually wrong"
+  },
+  {
+    "sample": "videomme:humanity-history:001-1 (targeted step-5 cut)",
+    "last_correct_boundary": "step 5: complete raw JSON with counts 4 apples, 5 candles, 6 berry clusters",
+    "first_broken_boundary": "step 5: validated JSON → appears-truncated warning → error → Observer evidence skipped",
+    "failure_type": "A Tool execution/return; B Tool-interface/Information-flow design",
+    "evidence": "Historical parsed_json retained but concrete_evidence_success false; no Observer evidence event; revision stays 1. A/B suffix replay independently measures downstream movement.",
+    "confidence": "HIGH"
+  },
+  {
+    "sample": "lvbench:entity-recognition:4:63 (historical)",
+    "last_correct_boundary": "step 6: complete normalized Video_Clip_QA JSON No",
+    "first_broken_boundary": "step 6: protocol heuristic creates tool error",
+    "failure_type": "A Tool execution/return; B Tool-interface design",
+    "evidence": "Earlier lack of insertion frames is insufficient evidence, not confirmed implementation failure. Later step 12 yields count 2; step 13 claim contract passes but deterministic dynamic support blocks and Reflector accepts.",
+    "confidence": "HIGH for protocol loss; PARTIAL for downstream verification-design diagnosis"
+  },
+  {
+    "sample": "mlvu:needle:0:needle-32 (historical)",
+    "last_correct_boundary": "step 1: full-span sampled frames returned; Observer correctly reports event not captured",
+    "first_broken_boundary": "step 2: Planner requests density=20 to obtain finer sampling (density means seconds/frame)",
+    "failure_type": "A Planner delegation; B Tool-interface/Information-flow design; C Observation limitation (candidate)",
+    "evidence": "10→20 seconds/frame is coarser; both calls produce 24 frames. Later candidate policy replaces requested Video_Clip_QA with Inspect_Frame, including 298.88–360 request → 83.52–120 actual. Event absence across entire video not established.",
+    "confidence": "HIGH for parameter-direction error; UNKNOWN for decisive causal contribution"
+  },
+  {
+    "sample": "mlvu:order:0:order-126 (fresh closure)",
+    "last_correct_boundary": "step 1: executable retrieval returns frames and segment times",
+    "first_broken_boundary": "step 1: Observer recommends global Finish beyond narrow routing responsibility",
+    "failure_type": "A Observer role contract; B Role responsibility mismatch; later A Verifier validation/B Information-flow design",
+    "evidence": "First Finish at iteration 2 triggers Reflector conflicts ref=evidence_slots:order:1, invalid actual-observation ID; terminal role execution failure. This is not the historical step-7 failure.",
+    "confidence": "HIGH for role expansion and invalid-ref terminal cause; PARTIAL for event mapping semantics"
+  }
+]

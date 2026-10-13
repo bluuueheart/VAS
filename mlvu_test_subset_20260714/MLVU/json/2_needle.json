@@ -1,0 +1,15 @@
+[
+  {
+    "video": "needle_32.mp4",
+    "duration": 467.98,
+    "question": "What does the hand coming out of the computer do?",
+    "candidates": [
+      "Delivers a product",
+      "Shakes the woman's hand",
+      "Takes the woman's credit card",
+      "Points at something on the screen"
+    ],
+    "answer": "Delivers a product",
+    "question_type": "findNeedle"
+  }
+]

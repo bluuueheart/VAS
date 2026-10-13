@@ -1,0 +1,111 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-07-14T09:12:40.592932Z",
+  "records": {
+    "mlvu:needle:0:needle-32": {
+      "sample_uid": "mlvu:needle:0:needle-32",
+      "dataset_name": "mlvu",
+      "subset_name": "needle",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 2,
+      "iter_num": 3,
+      "tool_success_rate": 1.0,
+      "result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/needle-00000-needle-32/mix_sample_result.json",
+      "workspace_root": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/needle-00000-needle-32",
+      "updated_at": "2026-07-14T08:58:16.782766Z"
+    },
+    "mlvu:topic-reasoning:0:awa-6": {
+      "sample_uid": "mlvu:topic-reasoning:0:awa-6",
+      "dataset_name": "mlvu",
+      "subset_name": "topic_reasoning",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 0,
+      "iter_num": 1,
+      "tool_success_rate": 0.0,
+      "result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/topic-reasoning-00000-awa-6/mix_sample_result.json",
+      "workspace_root": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/topic-reasoning-00000-awa-6",
+      "updated_at": "2026-07-14T08:59:26.920551Z"
+    },
+    "mlvu:plotqa:1:xiaoliyu-6": {
+      "sample_uid": "mlvu:plotqa:1:xiaoliyu-6",
+      "dataset_name": "mlvu",
+      "subset_name": "plotQA",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 7,
+      "iter_num": 9,
+      "tool_success_rate": 0.428571,
+      "result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/plotqa-00001-xiaoliyu-6/mix_sample_result.json",
+      "workspace_root": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/plotqa-00001-xiaoliyu-6",
+      "updated_at": "2026-07-14T09:03:05.054089Z"
+    },
+    "mlvu:plotqa:0:movie101-66": {
+      "sample_uid": "mlvu:plotqa:0:movie101-66",
+      "dataset_name": "mlvu",
+      "subset_name": "plotQA",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 7,
+      "iter_num": 7,
+      "tool_success_rate": 0.714286,
+      "result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/plotqa-00000-movie101-66/mix_sample_result.json",
+      "workspace_root": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/plotqa-00000-movie101-66",
+      "updated_at": "2026-07-14T09:04:57.811318Z"
+    },
+    "mlvu:ego:0:ego-35": {
+      "sample_uid": "mlvu:ego:0:ego-35",
+      "dataset_name": "mlvu",
+      "subset_name": "ego",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 13,
+      "iter_num": 14,
+      "tool_success_rate": 0.769231,
+      "result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/ego-00000-ego-35/mix_sample_result.json",
+      "workspace_root": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/ego-00000-ego-35",
+      "updated_at": "2026-07-14T09:06:36.753141Z"
+    },
+    "mlvu:order:0:order-126": {
+      "sample_uid": "mlvu:order:0:order-126",
+      "dataset_name": "mlvu",
+      "subset_name": "order",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 11,
+      "iter_num": 14,
+      "tool_success_rate": 0.636364,
+      "result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/order-00000-order-126/mix_sample_result.json",
+      "workspace_root": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/order-00000-order-126",
+      "updated_at": "2026-07-14T09:08:05.371984Z"
+    },
+    "mlvu:plotqa:2:movie101-63": {
+      "sample_uid": "mlvu:plotqa:2:movie101-63",
+      "dataset_name": "mlvu",
+      "subset_name": "plotQA",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 3,
+      "iter_num": 5,
+      "tool_success_rate": 1.0,
+      "result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/plotqa-00002-movie101-63/mix_sample_result.json",
+      "workspace_root": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/plotqa-00002-movie101-63",
+      "updated_at": "2026-07-14T09:11:26.639087Z"
+    },
+    "mlvu:anomaly-reco:0:surveil-20": {
+      "sample_uid": "mlvu:anomaly-reco:0:surveil-20",
+      "dataset_name": "mlvu",
+      "subset_name": "anomaly_reco",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 9,
+      "iter_num": 13,
+      "tool_success_rate": 0.666667,
+      "result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/anomaly-reco-00000-surveil-20/mix_sample_result.json",
+      "workspace_root": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/anomaly-reco-00000-surveil-20",
+      "updated_at": "2026-07-14T09:12:40.592755Z"
+    }
+  }
+}

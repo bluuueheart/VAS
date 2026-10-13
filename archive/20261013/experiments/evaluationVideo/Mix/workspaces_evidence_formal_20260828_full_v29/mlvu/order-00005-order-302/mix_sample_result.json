@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:order:5:order-302",
+  "dataset_name": "mlvu",
+  "subset_name": "order",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 15,
+  "iter_num": 19,
+  "tool_success_rate": 0.6,
+  "successful_tool_calls": 9,
+  "planner_iterations": 19,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "stomping grapes --> playing trombone --> baking cookies --> javelin throw",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (contradictory_evidence; repeated direct evidence failure)",
+  "elapsed_seconds": 7791.544,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00005-order-302",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00005-order-302/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00005-order-302/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00005-order-302/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_302.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_302.mp4",
+  "question_block": "Question: Can you tell me which option represents the actual order of actions shown in the video?\nOptions:\n(A) javelin throw --> stomping grapes --> baking cookies --> playing trombone\n(B) playing trombone --> baking cookies --> stomping grapes --> javelin throw\n(C) javelin throw --> stomping grapes --> playing trombone --> baking cookies\n(D) stomping grapes --> playing trombone --> baking cookies --> javelin throw",
+  "options": [
+    "javelin throw --> stomping grapes --> baking cookies --> playing trombone",
+    "playing trombone --> baking cookies --> stomping grapes --> javelin throw",
+    "javelin throw --> stomping grapes --> playing trombone --> baking cookies",
+    "stomping grapes --> playing trombone --> baking cookies --> javelin throw"
+  ],
+  "official_meta": {
+    "task_type": "order",
+    "source_question_type": "order",
+    "prompt_task_type": "order",
+    "source_json": "5_order.json",
+    "source_index": 5,
+    "video_subdir": "5_order",
+    "video_relative_path": "5_order/order_302.mp4",
+    "resolved_video_stem": "order_302",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-05T23:38:39.820954Z"
+}

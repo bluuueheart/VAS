@@ -1,0 +1,18 @@
+{
+  "copied_files": 4460,
+  "secret_redactions": [],
+  "source_code_modified": false,
+  "frozen_source_files_verified": 111,
+  "publication_links_verified": true,
+  "download_dry_run_passed": true,
+  "local_config_and_data_paths_passed": true,
+  "mlvu_subset_dry_run_passed": true,
+  "plan_only": {
+    "exit_code": 0,
+    "sample_uids": [
+      "mlvu:topic-reasoning:0:awa-6",
+      "mlvu:order:0:order-126"
+    ]
+  },
+  "gpu_inference_run": false
+}

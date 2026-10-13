@@ -1,0 +1,84 @@
+{
+  "kind": "mix_worker_sample_spec",
+  "layout_version": 1,
+  "samples": [
+    {
+      "dataset_name": "mlvu",
+      "subset_name": "topic_reasoning",
+      "sample_uid": "mlvu:topic-reasoning:0:awa-6",
+      "sample_index": 0,
+      "video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+      "workspace_root": "/gemini/code/Recovery/runs/baseline_closure_20260930/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6",
+      "prompt": "MLVU Task Type: topic_reasoning\n\nQuestion: What is the main background of the video?\nOptions:\n(A) Grassland\n(B) Lake\n(C) Ocean\n(D) Desert\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: What is the main background of the video?\nOptions:\n(A) Grassland\n(B) Lake\n(C) Ocean\n(D) Desert",
+      "options": [
+        "Grassland",
+        "Lake",
+        "Ocean",
+        "Desert"
+      ],
+      "ground_truth": "Grassland",
+      "ground_truth_option": "A",
+      "official_meta": {
+        "task_type": "topic_reasoning",
+        "source_question_type": "topic_reasoning",
+        "prompt_task_type": "topic_reasoning",
+        "source_json": "7_topic_reasoning.json",
+        "source_index": 0,
+        "video_subdir": "7_topic_reasoning",
+        "video_relative_path": "7_topic_reasoning/AWA-6.mp4",
+        "resolved_video_stem": "AWA-6",
+        "video_mapping_verified": true,
+        "data_type": "video",
+        "input_contract": {
+          "video": "official_preclipped_task_video",
+          "question": "official_question_and_candidates",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      }
+    },
+    {
+      "dataset_name": "mlvu",
+      "subset_name": "order",
+      "sample_uid": "mlvu:order:0:order-126",
+      "sample_index": 0,
+      "video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_126.mp4",
+      "workspace_root": "/gemini/code/Recovery/runs/baseline_closure_20260930/candidate_workspaces/mlvu/order-00000-order-126",
+      "prompt": "MLVU Task Type: order\n\nQuestion: Arrange the following events from the video in the correct chronological order: (1)Woman tapes her hands with white tape; (2)Woman starts boxing in the ring with a guy; (3)Woman does sit ups on a towel on the beach; (4)Pictures of woman in her bikini are shown.\nOptions:\n(A) 2->1->3->4\n(B) 3->2->1->4\n(C) 4->3->2->1\n(D) 1->2->3->4\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "question_block": "Question: Arrange the following events from the video in the correct chronological order: (1)Woman tapes her hands with white tape; (2)Woman starts boxing in the ring with a guy; (3)Woman does sit ups on a towel on the beach; (4)Pictures of woman in her bikini are shown.\nOptions:\n(A) 2->1->3->4\n(B) 3->2->1->4\n(C) 4->3->2->1\n(D) 1->2->3->4",
+      "options": [
+        "2->1->3->4",
+        "3->2->1->4",
+        "4->3->2->1",
+        "1->2->3->4"
+      ],
+      "ground_truth": "1->2->3->4",
+      "ground_truth_option": "D",
+      "official_meta": {
+        "task_type": "order",
+        "source_question_type": "order",
+        "prompt_task_type": "order",
+        "source_json": "5_order.json",
+        "source_index": 0,
+        "video_subdir": "5_order",
+        "video_relative_path": "5_order/order_126.mp4",
+        "resolved_video_stem": "order_126",
+        "video_mapping_verified": true,
+        "data_type": "video",
+        "input_contract": {
+          "video": "official_preclipped_task_video",
+          "question": "official_question_and_candidates",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      }
+    }
+  ]
+}

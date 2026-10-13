@@ -62,7 +62,7 @@ def normalize_text(value: Any) -> str:
 
 
 def strip_choice_prefix(value: str) -> str:
-    return re.sub(r"^\s*[\(\[]?[A-D][\)\]\.\:\-]\s*", "", str(value or "").strip(), flags=re.IGNORECASE)
+    return re.sub(r"^\s*[\(\[]?[A-Z][\)\]\.\:\-]\s*", "", str(value or "").strip(), flags=re.IGNORECASE)
 
 
 def resolve_path(base_dir: Path, raw_path: str) -> Path:
@@ -149,6 +149,37 @@ def _resolve_mlvu_video_subdir(video_root: Path, canonical_subdir: str, task_typ
     )
 
 
+def _resolve_mlvu_video_path(
+    video_root: Path,
+    video_relative_path: Path,
+    *,
+    record_index: int,
+) -> Path:
+    """Resolve an MLVU video reference inside the configured video root."""
+
+    resolved_root = video_root.resolve()
+    resolved_path = (resolved_root / video_relative_path).resolve()
+    try:
+        resolved_path.relative_to(resolved_root)
+    except ValueError as exc:
+        raise ValueError(
+            f"MLVU record_index={record_index} video reference escapes video_root: "
+            f"{video_relative_path.as_posix()!r}."
+        ) from exc
+    if not resolved_path.is_file():
+        raise FileNotFoundError(
+            f"MLVU record_index={record_index} video file is missing: {resolved_path}"
+        )
+    return resolved_path
+
+
+def _mlvu_prompt_task_type(record: Mapping[str, Any], canonical_task_type: str) -> str:
+    """Use the released MLVU task label in the model-facing prompt."""
+
+    source_task_type = str(record.get("question_type") or "").strip()
+    return source_task_type or str(canonical_task_type or "").strip()
+
+
 def render_prompt(template: str, **kwargs: Any) -> str:
     class _SafeDict(dict):
         def __missing__(self, key: str) -> str:
@@ -168,8 +199,11 @@ def build_multiple_choice_question_block(question: str, options: Sequence[str]) 
 
 def infer_ground_truth_option(answer: Any, options: Sequence[str]) -> str:
     answer_text = str(answer or "").strip()
-    if re.fullmatch(r"[A-D]", answer_text, flags=re.IGNORECASE):
-        return answer_text.upper()
+    if re.fullmatch(r"[A-Z]", answer_text, flags=re.IGNORECASE):
+        answer_option = answer_text.upper()
+        option_index = ord(answer_option) - ord("A")
+        if 0 <= option_index < len(options):
+            return answer_option
     normalized_answer = normalize_text(strip_choice_prefix(answer_text))
     for index, option_text in enumerate(options):
         normalized_option = normalize_text(strip_choice_prefix(option_text))
@@ -180,7 +214,7 @@ def infer_ground_truth_option(answer: Any, options: Sequence[str]) -> str:
 
 def _option_text_from_label(option_label: str, options: Sequence[str]) -> str:
     normalized_label = str(option_label or "").strip().upper()
-    if not re.fullmatch(r"[A-D]", normalized_label):
+    if not re.fullmatch(r"[A-Z]", normalized_label):
         return ""
     option_index = ord(normalized_label) - ord("A")
     if option_index < 0 or option_index >= len(options):
@@ -348,6 +382,15 @@ def load_mvbench_inventory(
                     "media_prefix": media_prefix,
                     "bound": list(bound) if bound is not None else None,
                     "data_type": data_type,
+                    "input_contract": {
+                        "video": "official_mvbench_media",
+                        "question": "official_question_and_candidates",
+                        "temporal_crop": bool(bound is not None),
+                        "timestamp_input": "none",
+                        "audio": "preserved",
+                        "audio_transcript": "derived_from_source_audio",
+                        "external_subtitles": False,
+                    },
                 },
             )
             samples_by_subset[subset_name].append(sample)
@@ -382,7 +425,22 @@ def load_mlvu_inventory(
 
     for task_type, json_file, canonical_video_subdir in MLVU_DEV_TASK_SPECS:
         json_path = annotation_root / json_file
-        video_subdir = _resolve_mlvu_video_subdir(video_root, canonical_video_subdir, task_type)
+        if not json_path.is_file():
+            LOGGER.warning(
+                "Skipping unavailable MLVU subset task_type=%s: annotation file is missing: %s",
+                task_type,
+                json_path,
+            )
+            continue
+        try:
+            video_subdir = _resolve_mlvu_video_subdir(video_root, canonical_video_subdir, task_type)
+        except FileNotFoundError:
+            LOGGER.warning(
+                "Skipping unavailable MLVU subset task_type=%s: video directory is missing under %s",
+                task_type,
+                video_root,
+            )
+            continue
         with open(json_path, "r", encoding="utf-8") as handle:
             records = json.load(handle)
         skipped_examples: List[str] = []
@@ -408,17 +466,24 @@ def load_mlvu_inventory(
                     )
                 continue
             question_block = build_multiple_choice_question_block(str(record["question"]), options)
+            source_question_type = str(record.get("question_type") or "").strip()
+            prompt_task_type = _mlvu_prompt_task_type(record, task_type)
             prompt = render_prompt(
                 prompt_template,
                 dataset_name="MLVU",
                 subset_name=task_type,
-                task_type=task_type,
+                task_type=prompt_task_type,
                 sub_category=task_type,
                 question_block=question_block,
             )
-            video_rel = Path(video_subdir) / str(record["video"])
-            video_path = (video_root / video_rel).resolve()
-            video_stem = Path(str(record["video"])).stem
+            video_reference = str(record.get("video") or "").strip()
+            video_rel = Path(video_subdir) / video_reference
+            video_path = _resolve_mlvu_video_path(
+                video_root,
+                video_rel,
+                record_index=record_index,
+            )
+            video_stem = Path(video_reference).stem
             sample_uid = f"mlvu:{slugify(task_type)}:{record_index}:{slugify(video_stem)}"
             workspace_name = f"{slugify(task_type)}-{record_index:05d}-{slugify(video_stem)}"
             sample = MixSample(
@@ -435,11 +500,24 @@ def load_mlvu_inventory(
                 ground_truth_option=answer_option,
                 official_meta={
                     "task_type": task_type,
+                    "source_question_type": source_question_type,
+                    "prompt_task_type": prompt_task_type,
                     "source_json": json_file,
                     "source_index": record_index,
                     "video_subdir": video_subdir,
                     "video_relative_path": video_rel.as_posix(),
+                    "resolved_video_stem": video_path.stem,
+                    "video_mapping_verified": video_path.name == Path(video_reference).name,
                     "data_type": "video",
+                    "input_contract": {
+                        "video": "official_preclipped_task_video",
+                        "question": "official_question_and_candidates",
+                        "temporal_crop": False,
+                        "timestamp_input": "none",
+                        "audio": "preserved",
+                        "audio_transcript": "derived_from_source_audio",
+                        "external_subtitles": False,
+                    },
                 },
             )
             samples_by_subset[task_type].append(sample)
@@ -704,10 +782,13 @@ def _load_videomme_mapping_records(path: Path) -> List[Any]:
                 records.append(json.loads(line_text))
         return records
     if suffix == ".parquet":
-        import pandas as pd  # type: ignore[import-not-found]
+        import pyarrow.parquet as parquet  # type: ignore[import-not-found]
 
-        frame = pd.read_parquet(path)
-        return [dict(record) for record in frame.to_dict(orient="records")]
+        parquet_file = parquet.ParquetFile(path)
+        records: List[Any] = []
+        for batch in parquet_file.iter_batches(batch_size=1024, use_threads=False):
+            records.extend(batch.to_pylist())
+        return records
 
     loaded = _load_json_relaxed(path)
     if isinstance(loaded, list):
@@ -918,6 +999,23 @@ def _resolve_videomme_video_path(
     video_index: Mapping[str, Path],
     video_id_aliases: Mapping[str, Sequence[str]],
 ) -> Path:
+    video_id = _coerce_optional_text(item.get("video_id"))
+    external_keys = [
+        _extract_videomme_external_video_id(item.get("videoID")),
+        _extract_videomme_external_video_id(item.get("videoId")),
+        _extract_videomme_external_video_id(item.get("youtube_id")),
+        _extract_videomme_external_video_id(item.get("youtubeId")),
+        _extract_videomme_external_video_id(item.get("url")),
+    ]
+    normalized_external_keys = {
+        str(value).strip().lower()
+        for value in external_keys
+        if str(value or "").strip()
+    }
+
+    def _path_matches_explicit_external_id(path: Path) -> bool:
+        return not normalized_external_keys or path.stem.lower() in normalized_external_keys
+
     direct_candidates: List[Path] = []
     for key in ("video_path", "video", "video_name", "file_name"):
         raw_value = _coerce_optional_text(item.get(key))
@@ -925,40 +1023,55 @@ def _resolve_videomme_video_path(
             continue
         direct_candidates.append(resolve_dataset_child(dataset_root, raw_value))
     for candidate in direct_candidates:
-        if candidate.exists():
+        if candidate.exists() and _path_matches_explicit_external_id(candidate):
             return candidate.resolve()
 
-    video_id = _coerce_optional_text(item.get("video_id"))
     candidate_keys: List[str] = []
-    for value in (
-        video_id,
-        _extract_videomme_external_video_id(item.get("videoID")),
-        _extract_videomme_external_video_id(item.get("videoId")),
-        _extract_videomme_external_video_id(item.get("youtube_id")),
-        _extract_videomme_external_video_id(item.get("youtubeId")),
-        _extract_videomme_external_video_id(item.get("url")),
-    ):
+
+    def _append_candidate(value: Any) -> None:
         normalized_value = _coerce_optional_text(value).lower()
         if normalized_value and normalized_value not in candidate_keys:
             candidate_keys.append(normalized_value)
+
+    # Video-MME's canonical parquet contains both a numeric benchmark
+    # ``video_id`` (e.g. ``021``) and the actual YouTube/file identifier in
+    # ``videoID``/``url``.  The video index also exposes numeric aliases for
+    # digits embedded in filenames; considering the numeric id first can
+    # therefore silently select an unrelated file such as ``21q-...``.
+    # Prefer explicit external identifiers and mapped aliases before any
+    # numeric filename fallback.
+    for value in external_keys:
+        _append_candidate(value)
+
+    mapping_keys = list(external_keys)
+    if video_id:
+        mapping_keys.insert(0, video_id)
     if video_id.isdigit():
         normalized_numeric = str(int(video_id))
-        for value in (normalized_numeric, f"{int(video_id):03d}", f"{int(video_id):04d}"):
-            lowered = value.lower()
-            if lowered not in candidate_keys:
-                candidate_keys.append(lowered)
-    for mapping_key in list(candidate_keys):
+        mapping_keys.extend(
+            (normalized_numeric, f"{int(video_id):03d}", f"{int(video_id):04d}")
+        )
+    for mapping_key in mapping_keys:
         for alias in video_id_aliases.get(str(mapping_key or ""), ()):
-            if alias and alias.lower() not in candidate_keys:
-                candidate_keys.append(alias.lower())
+            _append_candidate(alias)
+
+    # Keep legacy numeric filename matching only as a final fallback.  It is
+    # intentionally after explicit IDs and parquet aliases because embedded
+    # digits in unrelated hash filenames are not a reliable identity.
+    if not external_keys:
+        _append_candidate(video_id)
+        if video_id.isdigit():
+            normalized_numeric = str(int(video_id))
+            for value in (normalized_numeric, f"{int(video_id):03d}", f"{int(video_id):04d}"):
+                _append_candidate(value)
     for candidate_key in candidate_keys:
         matched = video_index.get(candidate_key.lower())
-        if matched is not None:
+        if matched is not None and _path_matches_explicit_external_id(matched):
             return matched.resolve()
     raise FileNotFoundError(
         "Unable to resolve Video-MME video path for item="
         f"{video_id or item}. searched_roots=[{_format_path_list(search_roots)}] "
-        f"candidate_keys={candidate_keys}"
+        f"candidate_keys={candidate_keys} explicit_external_ids={sorted(normalized_external_keys)}"
     )
 
 
@@ -970,6 +1083,16 @@ def load_videomme_inventory(
 ) -> DatasetInventory:
     prompt_template_path = resolve_path(mix_dir, str(dataset_config.get("prompt_template_path") or "./videomme_query_prompt.txt"))
     dataset_root = resolve_path(mix_dir, str(dataset_config.get("dataset_root") or "../../../datasets/Video-MME"))
+    subtitle_mode = str(dataset_config.get("subtitle_mode") or "w/o sub.").strip().lower()
+    if subtitle_mode not in {"w/o sub.", "w/o subtitles", "without subtitles"}:
+        raise ValueError(
+            "This M3 Video-MME inventory only supports VideoMME(w/o sub.); "
+            f"received subtitle_mode={subtitle_mode!r}."
+        )
+    LOGGER.info(
+        "Video-MME subtitle mode=%s; external dataset subtitles are not loaded.",
+        "w/o sub.",
+    )
     annotation_path = resolve_dataset_child(dataset_root, str(dataset_config.get("annotation_path") or "./evaluation/output_test_template.json"))
     search_roots = [
         resolve_dataset_child(dataset_root, str(item))
@@ -1020,6 +1143,12 @@ def load_videomme_inventory(
             video_index=video_index,
             video_id_aliases=video_id_aliases,
         )
+        external_video_id = _extract_videomme_external_video_id(
+            item.get("videoID") or item.get("videoId") or item.get("url")
+        )
+        video_mapping_verified = bool(
+            external_video_id and video_path.stem.lower() == external_video_id.lower()
+        )
         questions = item.get("questions") or []
         if not isinstance(questions, list):
             continue
@@ -1058,13 +1187,27 @@ def load_videomme_inventory(
                 ground_truth_option=answer_option,
                 official_meta={
                     "video_id": str(item.get("video_id") or ""),
+                    "video_external_id": external_video_id,
+                    "resolved_video_stem": video_path.stem,
+                    "video_mapping_verified": video_mapping_verified,
                     "duration": str(item.get("duration") or ""),
                     "domain": str(item.get("domain") or ""),
+                    "subtitle_mode": "w/o sub.",
+                    "external_subtitles_used": False,
                     "sub_category": subset_name,
                     "task_type": str(question.get("task_type") or ""),
                     "question_id": question_id,
                     "question_index": question_index,
                     "video_item_index": item_index,
+                    "input_contract": {
+                        "video": "official_full_video",
+                        "question": "official_question_and_options",
+                        "temporal_crop": False,
+                        "timestamp_input": "none",
+                        "audio": "preserved",
+                        "audio_transcript": "derived_from_source_audio",
+                        "external_subtitles": False,
+                    },
                 },
             )
             samples_by_subset[subset_name].append(sample)

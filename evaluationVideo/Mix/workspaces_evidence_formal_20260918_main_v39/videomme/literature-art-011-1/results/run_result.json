@@ -1,0 +1,1161 @@
+{
+  "video_path": "/gemini/data-1/datasets/Video-MME/data/OE5S-NbNsro.mp4",
+  "query": "Video-MME Sub Category: Literature & Art\nTask Type: Action Reasoning\n\nQuestion: What is the kind of the dance in the video?\nOptions:\n(A) Hip hop.\n(B) Jazz.\n(C) Ballet.\n(D) Folk dance.\n\nReply with exactly one best option in the format \"(A) option text\".",
+  "workspace": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/literature-art-011-1",
+  "generated_at": "2026-09-18T16:56:05.386387Z",
+  "success": true,
+  "preprocessing": {
+    "video_name": "OE5S-NbNsro",
+    "num_segments": 4,
+    "processed_output_dir": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/processed/OE5S-NbNsro",
+    "segment_index_sample": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "agent": {
+    "final_answer": "(C) Ballet",
+    "trajectory": {
+      "trajectory_id": "trajectory_bc134cefd4264021b9c3dcab94e3ad96",
+      "registry_snapshot_id": "snapshot_000",
+      "task_id": "task_1cff1f97",
+      "goal": "Video-MME Sub Category: Literature & Art\nTask Type: Action Reasoning\n\nQuestion: What is the kind of the dance in the video?\nOptions:\n(A) Hip hop.\n(B) Jazz.\n(C) Ballet.\n(D) Folk dance.\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "depth": 0,
+      "steps": [
+        {
+          "step_id": 1,
+          "depth": 0,
+          "thought": "Caption evidence identifies dancers in white tutus performing classical ballet movements, with title card referencing Swan Lake. Need to cross-verify visually with frame inspection.",
+          "plan": "Inspect frames from early segment showing title card and dancers to confirm ballet characteristics (pointed toes, tutus, classical poses). Then finalize answer.",
+          "action": "Parallel",
+          "action_args": {
+            "batch": [
+              {
+                "name": "Inspect_Frame",
+                "args": {
+                  "t_start": 0,
+                  "t_end": 30,
+                  "density": 5,
+                  "query": "confirm ballet characteristics: tutus, classical poses, Swan Lake title card",
+                  "__raw_params_declared__": true,
+                  "__raw_param_keys__": [
+                    "t_start",
+                    "t_end",
+                    "density",
+                    "query"
+                  ]
+                }
+              }
+            ]
+          },
+          "observation": "image_timestamps=[2.5, 7.5, 12.5, 17.5, 22.5, 27.5]",
+          "observation_items": [
+            {
+              "tool": "Inspect_Frame",
+              "result": "image_timestamps=[2.5, 7.5, 12.5, 17.5, 22.5, 27.5]",
+              "image_evidence": [
+                {
+                  "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/OE5S-NbNsro/inspect_c33dc2cc7639/pack_000.jpg",
+                  "sample_times": [
+                    2.5,
+                    7.5,
+                    12.5,
+                    17.5
+                  ],
+                  "pack_mode": "4up"
+                },
+                {
+                  "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/OE5S-NbNsro/inspect_c33dc2cc7639/pack_001.jpg",
+                  "sample_times": [
+                    22.5,
+                    27.5
+                  ],
+                  "pack_mode": "2up"
+                }
+              ],
+              "image_timestamps": [
+                2.5,
+                7.5,
+                12.5,
+                17.5,
+                22.5,
+                27.5
+              ],
+              "query": "confirm ballet characteristics: tutus, classical poses, Swan Lake title card",
+              "density": 5.0,
+              "t_start": 0.0,
+              "t_end": 30.0,
+              "status": "success"
+            }
+          ],
+          "timestamp": "2026-09-18T16:53:58.451549Z",
+          "is_recursive": true,
+          "sub_trajectory": null,
+          "sub_trajectories": null
+        },
+        {
+          "step_id": 2,
+          "depth": 0,
+          "thought": "All required evidence slots are now verified: title card shows 'Waltz of the Big Swans' from Swan Lake, dancers wear white tutus, and they perform classical ballet poses with pointed toes. The evidence fully supports ballet as the dance type.",
+          "plan": "Submit final answer with verified evidence citing the title card and visual characteristics confirming ballet.",
+          "action": "Finish",
+          "action_args": {
+            "answer": "(C) Ballet",
+            "chain_complete": true,
+            "completion_basis": "visual->answer"
+          },
+          "observation": "(C) Ballet",
+          "observation_items": [
+            {
+              "tool": "Finish",
+              "status": "success",
+              "result": "(C) Ballet"
+            }
+          ],
+          "timestamp": "2026-09-18T16:55:06.805099Z",
+          "is_recursive": false,
+          "sub_trajectory": null,
+          "sub_trajectories": null
+        }
+      ],
+      "final_answer": "(C) Ballet",
+      "success": true,
+      "error_message": null,
+      "debug_events": [
+        {
+          "type": "agent_kernel_contract",
+          "event_type": "AgentKernelContractEvent",
+          "agent_role": "workflow",
+          "roles": {
+            "kernel_id": "55f99d0f321a766d",
+            "kernel_provider": "transformers",
+            "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "roles": {
+              "planner": {
+                "agent_role": "planner",
+                "provider_class": "TransformersProvider",
+                "model_role": "planner",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "vlm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "planner_prompts",
+                "structured_contract": "planner_react_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "tool_orchestration_agent",
+                  "kernel_modality": "vlm",
+                  "input_contract": "goal + trajectory + registered tool observations + optional frames",
+                  "decision_authority": "select executable tool calls and propose Finish",
+                  "delegates_to": [
+                    "observer",
+                    "reflector"
+                  ]
+                }
+              },
+              "observer": {
+                "agent_role": "observer",
+                "provider_class": "TransformersProvider",
+                "model_role": "observer",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "vlm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "four_role_prompts",
+                "structured_contract": "observer_dispatch_or_evidence_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "execution_and_evidence_agent",
+                  "kernel_modality": "vlm",
+                  "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+                  "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+                  "delegates_to": [
+                    "planner"
+                  ]
+                }
+              },
+              "reflector": {
+                "agent_role": "reflector",
+                "provider_class": "TransformersProvider",
+                "model_role": "reflector",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "llm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "four_role_prompts",
+                "structured_contract": "reflector_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "evidence_judgment_agent",
+                  "kernel_modality": "llm",
+                  "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+                  "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+                  "delegates_to": [
+                    "planner"
+                  ]
+                }
+              },
+              "evolver": {
+                "agent_role": "evolver",
+                "provider_class": "TransformersProvider",
+                "model_role": "evolver",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "llm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "four_role_prompts",
+                "structured_contract": "evolver_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "meta_evolution_agent",
+                  "kernel_modality": "llm",
+                  "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+                  "decision_authority": "attribute failures, analyze dependencies, and propose bounded coordinated replay-gated harness mutations",
+                  "delegates_to": [
+                    "replay_gate"
+                  ]
+                }
+              }
+            },
+            "weights_shared_for_memory": true,
+            "role_order": [
+              "planner",
+              "observer",
+              "reflector",
+              "evolver"
+            ]
+          },
+          "contract": "four_independent_llm_vlm_roles",
+          "disabled_online_roles": [],
+          "active_online_roles": [
+            "planner",
+            "observer",
+            "reflector"
+          ]
+        },
+        {
+          "type": "runtime_checkpoint",
+          "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/literature-art-011-1/logs/runtime_checkpoints/turn_001.json",
+          "iteration": 0,
+          "prefix_steps": 0,
+          "sha256": "333cfe17f08ed2a5d3a4d5ec8215ec905758c9f5f4bab9b9e28d7c73f0fe4603"
+        },
+        {
+          "type": "llm_iteration",
+          "agent_role": "planner",
+          "kernel": {
+            "agent_role": "planner",
+            "provider_class": "TransformersProvider",
+            "model_role": "planner",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "planner_prompts",
+            "structured_contract": "planner_react_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "tool_orchestration_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "goal + trajectory + registered tool observations + optional frames",
+              "decision_authority": "select executable tool calls and propose Finish",
+              "delegates_to": [
+                "observer",
+                "reflector"
+              ]
+            }
+          },
+          "depth": 0,
+          "iteration": 1,
+          "response": "{\n    \"Thought\": \"Caption evidence identifies dancers in white tutus performing classical ballet movements, with title card referencing Swan Lake. Need to cross-verify visually with frame inspection.\",\n    \"Plan\": \"Inspect frames from early segment showing title card and dancers to confirm ballet characteristics (pointed toes, tutus, classical poses). Then finalize answer.\",\n    \"Evidence\": [\n        {\n            \"claim_id\": \"dance_style_identified\",\n            \"scope\": \"action_reasoning\",\n            \"label\": \"ballet identification\",\n            \"target\": \"dancers\",\n            \"relation\": \"performing ballet\",\n            \"direction\": \"video->dancers\",\n            \"qualifiers\": [\"white tutus\", \"classical poses\", \"Swan Lake reference\"],\n            \"observed_value\": \"Four ballerinas in white tutus performing classical ballet movements. Title card shows 'Waltz of the Big Swans' from Swan Lake, Op. 20, Act 2.\",\n            \"value\": \"The dance is ballet, confirmed by costume (tutus), movement style (classical ballet poses), and explicit title card reference to Swan Lake.\",\n            \"logical_conflict\": false,\n            \"citation\": \"Segment 3 (0-30s) + Segments 1-2 (30-118s)\",\n            \"source_tool\": \"initial_caption_retrieval\",\n            \"uncertainty\": \"\",\n            \"evidence_status\": \"verified\"\n        },\n        {\n            \"claim_id\": \"visual_ballet_confirmation\",\n            \"scope\": \"visual_verification\",\n            \"label\": \"visual ballet confirmation\",\n            \"target\": \"dancers\",\n            \"relation\": \"wearing tutus, performing ballet poses\",\n            \"direction\": \"frames->dancers\",\n            \"qualifiers\": [\"white tutus\", \"classical ballet poses\", \"stage performance\"],\n            \"observed_value\": \"Frames show four female dancers in white tutus performing classical ballet poses on stage with audience silhouettes.\",\n            \"value\": \"Visual evidence confirms ballet through characteristic costumes (tutus) and classical ballet movement styles.\",\n            \"logical_conflict\": false,\n            \"citation\": \"Frame inspection pending\",\n            \"source_tool\": \"pending\",\n            \"uncertainty\": \"\",\n            \"evidence_status\": \"approximate\"\n        }\n    ],\n    \"Actions\": [\n        {\n            \"tool\": \"Inspect_Frame\",\n            \"description\": \"Inspect frames from early segment showing title card and dancers to confirm ballet characteristics\",\n            \"params\": {\n                \"t_start\": 0,\n                \"t_end\": 30,\n                \"density\": 5,\n                \"query\": \"confirm ballet characteristics: tutus, classical poses, Swan Lake title card\"\n            }\n        }\n    ]\n}",
+          "raw_response_chars": 2677,
+          "response_normalized": false,
+          "parsed_plan": "Inspect frames from early segment showing title card and dancers to confirm ballet characteristics (pointed toes, tutus, classical poses). Then finalize answer.",
+          "parsed_action": "Parallel",
+          "parsed_action_args": {
+            "batch": [
+              {
+                "name": "Inspect_Frame",
+                "args": {
+                  "t_start": 0,
+                  "t_end": 30,
+                  "density": 5,
+                  "query": "confirm ballet characteristics: tutus, classical poses, Swan Lake title card",
+                  "__raw_params_declared__": true,
+                  "__raw_param_keys__": [
+                    "t_start",
+                    "t_end",
+                    "density",
+                    "query"
+                  ],
+                  "__description__": "Inspect frames from early segment showing title card and dancers to confirm ballet characteristics"
+                }
+              }
+            ]
+          },
+          "thought_preview": "Caption evidence identifies dancers in white tutus performing classical ballet movements, with title card referencing Swan Lake. Need to cross-verify visually with frame inspection.",
+          "parse_success": true,
+          "parse_mode": "action"
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ObserverAgentTurnEvent",
+          "agent_role": "observer",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "observer",
+            "provider_class": "TransformersProvider",
+            "model_role": "observer",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "observer_dispatch_or_evidence_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "execution_and_evidence_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+              "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "7f4c3a4178c27ac7",
+          "response": "{\n  \"dispatch_decision\": \"execute\",\n  \"executable_action\": {\n    \"tool\": \"Inspect_Frame\",\n    \"params\": {\n      \"t_start\": 0,\n      \"t_end\": 30,\n      \"density\": 5,\n      \"query\": \"confirm ballet characteristics: tutus, classical poses, Swan Lake title card\"\n    }\n  },\n  \"reason\": \"The planner has resolved a route to Inspect_Frame with specific parameters to verify ballet characteristics (tutus, classical poses, title card) within the 0-30s window. The parameters are valid and executable. As the Observer Agent, I validate the route and return the action for the runtime to execute.\",\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "dispatch_decision": "execute",
+            "executable_action": {
+              "tool": "Inspect_Frame",
+              "params": {
+                "t_start": 0,
+                "t_end": 30,
+                "density": 5,
+                "query": "confirm ballet characteristics: tutus, classical poses, Swan Lake title card"
+              }
+            },
+            "reason": "The planner has resolved a route to Inspect_Frame with specific parameters to verify ballet characteristics (tutus, classical poses, title card) within the 0-30s window. The parameters are valid and executable. As the Observer Agent, I validate the route and return the action for the runtime to execute.",
+            "confidence": 1.0
+          },
+          "initial_response": "",
+          "schema_retry_count": 0,
+          "contract_mode": "dispatch",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "text",
+          "visual_item_count": 0,
+          "elapsed_seconds": 10.700023,
+          "depth": 0,
+          "iteration": 1,
+          "phase": "dispatch",
+          "planner_action_name": "Inspect_Frame",
+          "planner_action_args": {
+            "t_start": 0,
+            "t_end": 30,
+            "density": 5,
+            "query": "confirm ballet characteristics: tutus, classical poses, Swan Lake title card",
+            "__raw_params_declared__": true,
+            "__raw_param_keys__": [
+              "t_start",
+              "t_end",
+              "density",
+              "query"
+            ]
+          },
+          "resolved_tool": "Inspect_Frame",
+          "dispatch_decision": "execute",
+          "dispatch_selected_tool": "Inspect_Frame",
+          "dispatch_applied": true
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ObserverAgentTurnEvent",
+          "agent_role": "observer",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "observer",
+            "provider_class": "TransformersProvider",
+            "model_role": "observer",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "observer_dispatch_or_evidence_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "execution_and_evidence_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+              "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "a03ace87f9c10355",
+          "response": "{\n  \"observation_quality\": \"sufficient\",\n  \"evidence_updates\": [\n    {\n      \"claim_id\": \"event:1\",\n      \"scope\": \"event\",\n      \"label\": \"dance_type\",\n      \"target\": \"dance\",\n      \"relation\": \"is\",\n      \"direction\": \"none\",\n      \"qualifiers\": [\"classical\", \"ballet\"],\n      \"observed_value\": \"ballet\",\n      \"value\": \"ballet\",\n      \"citation\": \"title_card\",\n      \"source_tool\": \"Inspect_Frame\",\n      \"uncertainty\": \"none\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    },\n    {\n      \"claim_id\": \"qualifier:1\",\n      \"scope\": \"qualifier\",\n      \"label\": \"costume\",\n      \"target\": \"dancers\",\n      \"relation\": \"wearing\",\n      \"direction\": \"none\",\n      \"qualifiers\": [\"white\", \"tutus\"],\n      \"observed_value\": \"white tutus\",\n      \"value\": \"white tutus\",\n      \"citation\": \"visual\",\n      \"source_tool\": \"Inspect_Frame\",\n      \"uncertainty\": \"none\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    },\n    {\n      \"claim_id\": \"qualifier:2\",\n      \"scope\": \"qualifier\",\n      \"label\": \"pose\",\n      \"target\": \"dancers\",\n      \"relation\": \"performing\",\n      \"direction\": \"none\",\n      \"qualifiers\": [\"classical\", \"pointed_toes\"],\n      \"observed_value\": \"classical ballet poses\",\n      \"value\": \"classical ballet poses\",\n      \"citation\": \"visual\",\n      \"source_tool\": \"Inspect_Frame\",\n      \"uncertainty\": \"none\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    }\n  ],\n  \"claim_gaps\": [],\n  \"recommended_action\": {\n    \"kind\": \"finish\",\n    \"reason\": \"Visual evidence confirms ballet characteristics (tutus, classical poses) and title card explicitly references 'Swan Lake', a famous ballet. All required evidence is present.\",\n    \"tool_hint\": \"None\",\n    \"params\": {}\n  },\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "observation_quality": "sufficient",
+            "evidence_updates": [
+              {
+                "claim_id": "event:1",
+                "scope": "event",
+                "label": "dance_type",
+                "target": "dance",
+                "relation": "is",
+                "direction": "none",
+                "qualifiers": [
+                  "classical",
+                  "ballet"
+                ],
+                "observed_value": "ballet",
+                "value": "ballet",
+                "citation": "title_card",
+                "source_tool": "Inspect_Frame",
+                "uncertainty": "none",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              },
+              {
+                "claim_id": "qualifier:1",
+                "scope": "qualifier",
+                "label": "costume",
+                "target": "dancers",
+                "relation": "wearing",
+                "direction": "none",
+                "qualifiers": [
+                  "white",
+                  "tutus"
+                ],
+                "observed_value": "white tutus",
+                "value": "white tutus",
+                "citation": "visual",
+                "source_tool": "Inspect_Frame",
+                "uncertainty": "none",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              },
+              {
+                "claim_id": "qualifier:2",
+                "scope": "qualifier",
+                "label": "pose",
+                "target": "dancers",
+                "relation": "performing",
+                "direction": "none",
+                "qualifiers": [
+                  "classical",
+                  "pointed_toes"
+                ],
+                "observed_value": "classical ballet poses",
+                "value": "classical ballet poses",
+                "citation": "visual",
+                "source_tool": "Inspect_Frame",
+                "uncertainty": "none",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              }
+            ],
+            "claim_gaps": [],
+            "recommended_action": {
+              "kind": "finish",
+              "reason": "Visual evidence confirms ballet characteristics (tutus, classical poses) and title card explicitly references 'Swan Lake', a famous ballet. All required evidence is present.",
+              "tool_hint": "None",
+              "params": {}
+            },
+            "confidence": 1.0
+          },
+          "initial_response": "",
+          "schema_retry_count": 0,
+          "contract_mode": "default",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "multimodal",
+          "visual_item_count": 2,
+          "elapsed_seconds": 28.700327,
+          "depth": 0,
+          "iteration": 1,
+          "observed_tools": [
+            "Parallel"
+          ]
+        },
+        {
+          "type": "runtime_checkpoint",
+          "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/literature-art-011-1/logs/runtime_checkpoints/turn_002.json",
+          "iteration": 1,
+          "prefix_steps": 1,
+          "sha256": "9974c251c007fbef760712e842d1f37e63316a608845c88ae625c5caca636d29"
+        },
+        {
+          "type": "llm_iteration",
+          "agent_role": "planner",
+          "kernel": {
+            "agent_role": "planner",
+            "provider_class": "TransformersProvider",
+            "model_role": "planner",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "planner_prompts",
+            "structured_contract": "planner_react_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "tool_orchestration_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "goal + trajectory + registered tool observations + optional frames",
+              "decision_authority": "select executable tool calls and propose Finish",
+              "delegates_to": [
+                "observer",
+                "reflector"
+              ]
+            }
+          },
+          "depth": 0,
+          "iteration": 2,
+          "response": "{\"Thought\": \"All required evidence slots are now verified: title card shows 'Waltz of the Big Swans' from Swan Lake, dancers wear white tutus, and they perform classical ballet poses with pointed toes. The evidence fully supports ballet as the dance type.\", \"Plan\": \"Submit final answer with verified evidence citing the title card and visual characteristics confirming ballet.\", \"Actions\": [], \"Evidence\": [{\"label\": \"dance_type\", \"value\": \"ballet\", \"citation\": \"title_card + visual\", \"evidence_status\": \"verified\", \"logical_conflict\": false, \"scope\": \"event\", \"claim_id\": \"event:1\", \"target\": \"dance\", \"relation\": \"is\", \"direction\": \"none\", \"qualifiers\": [\"classical\", \"ballet\"], \"observed_value\": \"ballet\", \"source_tool\": \"Inspect_Frame\"}, {\"label\": \"costume\", \"value\": \"white tutus\", \"citation\": \"visual\", \"evidence_status\": \"verified\", \"logical_conflict\": false, \"scope\": \"qualifier\", \"claim_id\": \"qualifier:1\", \"target\": \"dancers\", \"relation\": \"wearing\", \"direction\": \"none\", \"qualifiers\": [\"white\", \"tutus\"], \"observed_value\": \"white tutus\", \"source_tool\": \"Inspect_Frame\"}, {\"label\": \"pose\", \"value\": \"classical ballet poses\", \"citation\": \"visual\", \"evidence_status\": \"verified\", \"logical_conflict\": false, \"scope\": \"qualifier\", \"claim_id\": \"qualifier:2\", \"target\": \"dancers\", \"relation\": \"performing\", \"direction\": \"none\", \"qualifiers\": [\"classical\", \"pointed_toes\"], \"observed_value\": \"classical ballet poses\", \"source_tool\": \"Inspect_Frame\"}], \"Finish\": {\"chain_complete\": true, \"completion_basis\": \"visual->answer\", \"answer\": \"(C) Ballet\"}}",
+          "raw_response_chars": 1552,
+          "response_normalized": false,
+          "parsed_plan": "Submit final answer with verified evidence citing the title card and visual characteristics confirming ballet.",
+          "parsed_action": "Finish",
+          "parsed_action_args": {
+            "answer": "(C) Ballet",
+            "chain_complete": true,
+            "completion_basis": "visual->answer"
+          },
+          "thought_preview": "All required evidence slots are now verified: title card shows 'Waltz of the Big Swans' from Swan Lake, dancers wear white tutus, and they perform classical ballet poses with pointed toes. The evidence fully supports ballet as the dance type.",
+          "parse_success": true,
+          "parse_mode": "action"
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ReflectorAgentTurnEvent",
+          "agent_role": "reflector",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "reflector",
+            "provider_class": "TransformersProvider",
+            "model_role": "reflector",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "llm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "reflector_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "evidence_judgment_agent",
+              "kernel_modality": "llm",
+              "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+              "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "06880ea5f9e31961",
+          "response": "{\n  \"decision\": \"accept\",\n  \"can_finish\": true,\n  \"claim_assessment\": [\n    {\n      \"claim_id\": \"dance_style_identified\",\n      \"status\": \"supported\",\n      \"reason\": \"Multiple verified evidence slots (title card, costumes, poses) directly confirm the dance is ballet, matching option C.\"\n    }\n  ],\n  \"missing_information\": [],\n  \"unresolved_claims\": [],\n  \"evidence_assessment\": \"The evidence is sufficient. The title card explicitly names 'Waltz of the Big Swans' from 'Swan Lake', the dancers are wearing white tutus, and they are performing classical ballet poses. This directly supports the answer 'Ballet' (Option C).\",\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "decision": "accept",
+            "can_finish": true,
+            "claim_assessment": [
+              {
+                "claim_id": "dance_style_identified",
+                "status": "supported",
+                "reason": "Multiple verified evidence slots (title card, costumes, poses) directly confirm the dance is ballet, matching option C."
+              }
+            ],
+            "missing_information": [],
+            "unresolved_claims": [],
+            "evidence_assessment": "The evidence is sufficient. The title card explicitly names 'Waltz of the Big Swans' from 'Swan Lake', the dancers are wearing white tutus, and they are performing classical ballet poses. This directly supports the answer 'Ballet' (Option C).",
+            "confidence": 1.0
+          },
+          "initial_response": "",
+          "schema_retry_count": 0,
+          "contract_mode": "default",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "multimodal",
+          "visual_item_count": 2,
+          "elapsed_seconds": 10.736433,
+          "depth": 0,
+          "iteration": 2,
+          "proposed_answer": "(C) Ballet"
+        },
+        {
+          "progress_score": 0.8,
+          "claim_coverage": 1.0,
+          "direct_grounding": 1.0,
+          "contradiction_score": 0.0,
+          "cross_modal_support": 0.0,
+          "can_finish": true,
+          "premise_mismatch": false,
+          "option_mismatch": false,
+          "missing_information": [],
+          "unresolved_claims": [],
+          "claim_contract": {
+            "status": "pass",
+            "required": [
+              "dynamic_relation"
+            ],
+            "satisfied": {
+              "dynamic_relation": true
+            },
+            "missing": [],
+            "verified_claim_count": 3,
+            "contract_version": 1
+          },
+          "feedback": "Evidence verifier accepted termination.",
+          "verification_source": "deterministic_safety_gate",
+          "type": "verifier_decision",
+          "event_type": "VerifierDecisionEvent",
+          "depth": 0,
+          "iteration": 2,
+          "reflector_agent_status": "success",
+          "reflector_agent_schema_valid": true,
+          "reflector_agent_decision": "accept",
+          "reflector_agent_can_finish": true,
+          "reflector_agent_payload": {
+            "decision": "accept",
+            "can_finish": true,
+            "claim_assessment": [
+              {
+                "claim_id": "dance_style_identified",
+                "status": "supported",
+                "reason": "Multiple verified evidence slots (title card, costumes, poses) directly confirm the dance is ballet, matching option C."
+              }
+            ],
+            "missing_information": [],
+            "unresolved_claims": [],
+            "evidence_assessment": "The evidence is sufficient. The title card explicitly names 'Waltz of the Big Swans' from 'Swan Lake', the dancers are wearing white tutus, and they are performing classical ballet poses. This directly supports the answer 'Ballet' (Option C).",
+            "confidence": 1.0
+          }
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ObserverAgentTurnEvent",
+          "agent_role": "observer",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "observer",
+            "provider_class": "TransformersProvider",
+            "model_role": "observer",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "observer_dispatch_or_evidence_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "execution_and_evidence_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+              "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "f755c65f2e161753",
+          "response": "{\n  \"observation_quality\": \"sufficient\",\n  \"evidence_updates\": [\n    {\n      \"claim_id\": \"dance_style_identified\",\n      \"scope\": \"claim\",\n      \"label\": \"ballet identification\",\n      \"target\": \"dancers\",\n      \"relation\": \"is\",\n      \"direction\": \"video->dancers\",\n      \"qualifiers\": [\"white tutus\", \"classical poses\", \"Swan Lake reference\"],\n      \"observed_value\": \"ballet\",\n      \"value\": \"The dance is ballet, confirmed by costume (tutus), movement style (classical ballet poses), and explicit title card reference to Swan Lake.\",\n      \"citation\": \"Segment 3 (0-30s) + Segments 1-2 (30-118s)\",\n      \"source_tool\": \"initial_caption_retrieval\",\n      \"uncertainty\": \"none\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    },\n    {\n      \"claim_id\": \"visual_ballet_confirmation\",\n      \"scope\": \"claim\",\n      \"label\": \"visual ballet confirmation\",\n      \"target\": \"dancers\",\n      \"relation\": \"wearing/performing\",\n      \"direction\": \"frames->dancers\",\n      \"qualifiers\": [\"white tutus\", \"classical ballet poses\", \"stage performance\"],\n      \"observed_value\": \"white tutus, classical ballet poses\",\n      \"value\": \"Visual evidence confirms ballet through characteristic costumes (tutus) and classical ballet movement styles.\",\n      \"citation\": \"Frame inspection pending\",\n      \"source_tool\": \"pending\",\n      \"uncertainty\": \"approximate\",\n      \"evidence_status\": \"approximate\",\n      \"logical_conflict\": false\n    },\n    {\n      \"claim_id\": \"event:1\",\n      \"scope\": \"event\",\n      \"label\": \"dance_type\",\n      \"target\": \"dance\",\n      \"relation\": \"is\",\n      \"direction\": \"none\",\n      \"qualifiers\": [\"classical\", \"ballet\"],\n      \"observed_value\": \"ballet\",\n      \"value\": \"ballet\",\n      \"citation\": \"title_card\",\n      \"source_tool\": \"Inspect_Frame\",\n      \"uncertainty\": \"none\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    },\n    {\n      \"claim_id\": \"qualifier:1\",\n      \"scope\": \"qualifier\",\n      \"label\": \"costume\",\n      \"target\": \"dancers\",\n      \"relation\": \"wearing\",\n      \"direction\": \"none\",\n      \"qualifiers\": [\"white\", \"tutus\"],\n      \"observed_value\": \"white tutus\",\n      \"value\": \"white tutus\",\n      \"citation\": \"visual\",\n      \"source_tool\": \"Inspect_Frame\",\n      \"uncertainty\": \"none\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    },\n    {\n      \"claim_id\": \"qualifier:2\",\n      \"scope\": \"qualifier\",\n      \"label\": \"pose\",\n      \"target\": \"dancers\",\n      \"relation\": \"performing\",\n      \"direction\": \"none\",\n      \"qualifiers\": [\"classical\", \"pointed_toes\"],\n      \"observed_value\": \"classical ballet poses\",\n      \"value\": \"classical ballet poses\",\n      \"citation\": \"visual\",\n      \"source_tool\": \"Inspect_Frame\",\n      \"uncertainty\": \"none\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    }\n  ],\n  \"claim_gaps\": [],\n  \"recommended_action\": {\n    \"kind\": \"finish\",\n    \"reason\": \"The chain is complete. The task has been successfully resolved with verified evidence: a title card explicitly identifies the piece as 'Waltz of the Big Swans' from Swan Lake, and visual inspection confirms dancers in white tutus performing classical ballet poses. The answer '(C) Ballet' is fully supported.\",\n    \"tool_hint\": \"Finish\",\n    \"params\": {\n      \"answer\": \"(C) Ballet\",\n      \"chain_complete\": true,\n      \"completion_basis\": \"visual->answer\"\n    }\n  },\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "observation_quality": "sufficient",
+            "evidence_updates": [
+              {
+                "claim_id": "dance_style_identified",
+                "scope": "claim",
+                "label": "ballet identification",
+                "target": "dancers",
+                "relation": "is",
+                "direction": "video->dancers",
+                "qualifiers": [
+                  "white tutus",
+                  "classical poses",
+                  "Swan Lake reference"
+                ],
+                "observed_value": "ballet",
+                "value": "The dance is ballet, confirmed by costume (tutus), movement style (classical ballet poses), and explicit title card reference to Swan Lake.",
+                "citation": "Segment 3 (0-30s) + Segments 1-2 (30-118s)",
+                "source_tool": "initial_caption_retrieval",
+                "uncertainty": "none",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              },
+              {
+                "claim_id": "visual_ballet_confirmation",
+                "scope": "claim",
+                "label": "visual ballet confirmation",
+                "target": "dancers",
+                "relation": "wearing/performing",
+                "direction": "frames->dancers",
+                "qualifiers": [
+                  "white tutus",
+                  "classical ballet poses",
+                  "stage performance"
+                ],
+                "observed_value": "white tutus, classical ballet poses",
+                "value": "Visual evidence confirms ballet through characteristic costumes (tutus) and classical ballet movement styles.",
+                "citation": "Frame inspection pending",
+                "source_tool": "pending",
+                "uncertainty": "approximate",
+                "evidence_status": "approximate",
+                "logical_conflict": false
+              },
+              {
+                "claim_id": "event:1",
+                "scope": "event",
+                "label": "dance_type",
+                "target": "dance",
+                "relation": "is",
+                "direction": "none",
+                "qualifiers": [
+                  "classical",
+                  "ballet"
+                ],
+                "observed_value": "ballet",
+                "value": "ballet",
+                "citation": "title_card",
+                "source_tool": "Inspect_Frame",
+                "uncertainty": "none",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              },
+              {
+                "claim_id": "qualifier:1",
+                "scope": "qualifier",
+                "label": "costume",
+                "target": "dancers",
+                "relation": "wearing",
+                "direction": "none",
+                "qualifiers": [
+                  "white",
+                  "tutus"
+                ],
+                "observed_value": "white tutus",
+                "value": "white tutus",
+                "citation": "visual",
+                "source_tool": "Inspect_Frame",
+                "uncertainty": "none",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              },
+              {
+                "claim_id": "qualifier:2",
+                "scope": "qualifier",
+                "label": "pose",
+                "target": "dancers",
+                "relation": "performing",
+                "direction": "none",
+                "qualifiers": [
+                  "classical",
+                  "pointed_toes"
+                ],
+                "observed_value": "classical ballet poses",
+                "value": "classical ballet poses",
+                "citation": "visual",
+                "source_tool": "Inspect_Frame",
+                "uncertainty": "none",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              }
+            ],
+            "claim_gaps": [],
+            "recommended_action": {
+              "kind": "finish",
+              "reason": "The chain is complete. The task has been successfully resolved with verified evidence: a title card explicitly identifies the piece as 'Waltz of the Big Swans' from Swan Lake, and visual inspection confirms dancers in white tutus performing classical ballet poses. The answer '(C) Ballet' is fully supported.",
+              "tool_hint": "Finish",
+              "params": {
+                "answer": "(C) Ballet",
+                "chain_complete": true,
+                "completion_basis": "visual->answer"
+              }
+            },
+            "confidence": 1.0
+          },
+          "initial_response": "{\n  \"dispatch_decision\": \"reject\",\n  \"executable_action\": null,\n  \"reason\": \"The task has already been completed in the recent trajectory. The 'Finish' action was executed with the answer '(C) Ballet', supported by verified evidence including a title card reference to 'Swan Lake' and visual confirmation of tutus and classical poses. No further observation actions are required or permitted as the chain is complete.\",\n  \"confidence\": 1.0\n}",
+          "schema_retry_count": 1,
+          "contract_mode": "default",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "text",
+          "visual_item_count": 0,
+          "elapsed_seconds": 58.234345,
+          "depth": 0,
+          "iteration": 2,
+          "observed_tools": [
+            "Finish"
+          ]
+        }
+      ],
+      "start_time": "2026-09-18T16:53:09.499114Z",
+      "end_time": "2026-09-18T16:56:05.042932Z",
+      "started_at": "2026-09-18T16:53:09.499114Z",
+      "finished_at": "2026-09-18T16:56:05.042932Z",
+      "duration_seconds": 175.543818
+    }
+  },
+  "metrics": {
+    "tool_usage_layers": {
+      "planner_proposed": {
+        "tool_usage_summary": {
+          "Inspect_Frame": 1
+        },
+        "unique_tools": [
+          "Inspect_Frame"
+        ],
+        "unique_tool_count": 1,
+        "tool_type_counts": {
+          "base": 1
+        },
+        "capability_tier_counts": {
+          "production": 1
+        },
+        "tool_family_counts": {
+          "visual": 1
+        },
+        "unique_tool_type_counts": {
+          "base": 1
+        },
+        "unique_capability_tier_counts": {
+          "production": 1
+        },
+        "base_meta_coverage": {
+          "base_used": true,
+          "meta_used": false,
+          "coverage_ratio": 0.5
+        }
+      },
+      "subagent_rewritten": {
+        "tool_usage_summary": {},
+        "unique_tools": [],
+        "unique_tool_count": 0,
+        "tool_type_counts": {},
+        "capability_tier_counts": {},
+        "tool_family_counts": {},
+        "unique_tool_type_counts": {},
+        "unique_capability_tier_counts": {},
+        "base_meta_coverage": {
+          "base_used": false,
+          "meta_used": false,
+          "coverage_ratio": 0.0
+        }
+      },
+      "runtime_executed": {
+        "tool_usage_summary": {
+          "Inspect_Frame": 1
+        },
+        "unique_tools": [
+          "Inspect_Frame"
+        ],
+        "unique_tool_count": 1,
+        "tool_type_counts": {
+          "base": 1
+        },
+        "capability_tier_counts": {
+          "production": 1
+        },
+        "tool_family_counts": {
+          "visual": 1
+        },
+        "unique_tool_type_counts": {
+          "base": 1
+        },
+        "unique_capability_tier_counts": {
+          "production": 1
+        },
+        "base_meta_coverage": {
+          "base_used": true,
+          "meta_used": false,
+          "coverage_ratio": 0.5
+        }
+      }
+    },
+    "tool_usage_summary": {
+      "Inspect_Frame": 1
+    },
+    "unique_tools": [
+      "Inspect_Frame"
+    ],
+    "tool_family_counts": {
+      "visual": 1
+    },
+    "tool_type_counts": {
+      "base": 1
+    },
+    "capability_tier_counts": {
+      "production": 1
+    },
+    "runtime_tool_call_count": 1,
+    "runtime_execution_steps": 1,
+    "planner_iterations": 2,
+    "subagent_iterations": 0,
+    "four_agent_kernel_contract": {
+      "kernel_id": "55f99d0f321a766d",
+      "kernel_provider": "transformers",
+      "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+      "roles": {
+        "planner": {
+          "agent_role": "planner",
+          "provider_class": "TransformersProvider",
+          "model_role": "planner",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "vlm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "planner_prompts",
+          "structured_contract": "planner_react_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "tool_orchestration_agent",
+            "kernel_modality": "vlm",
+            "input_contract": "goal + trajectory + registered tool observations + optional frames",
+            "decision_authority": "select executable tool calls and propose Finish",
+            "delegates_to": [
+              "observer",
+              "reflector"
+            ]
+          }
+        },
+        "observer": {
+          "agent_role": "observer",
+          "provider_class": "TransformersProvider",
+          "model_role": "observer",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "vlm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "four_role_prompts",
+          "structured_contract": "observer_dispatch_or_evidence_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "execution_and_evidence_agent",
+            "kernel_modality": "vlm",
+            "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+            "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+            "delegates_to": [
+              "planner"
+            ]
+          }
+        },
+        "reflector": {
+          "agent_role": "reflector",
+          "provider_class": "TransformersProvider",
+          "model_role": "reflector",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "llm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "four_role_prompts",
+          "structured_contract": "reflector_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "evidence_judgment_agent",
+            "kernel_modality": "llm",
+            "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+            "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+            "delegates_to": [
+              "planner"
+            ]
+          }
+        },
+        "evolver": {
+          "agent_role": "evolver",
+          "provider_class": "TransformersProvider",
+          "model_role": "evolver",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "llm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "four_role_prompts",
+          "structured_contract": "evolver_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "meta_evolution_agent",
+            "kernel_modality": "llm",
+            "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+            "decision_authority": "attribute failures, analyze dependencies, and propose bounded coordinated replay-gated harness mutations",
+            "delegates_to": [
+              "replay_gate"
+            ]
+          }
+        }
+      },
+      "weights_shared_for_memory": true,
+      "role_order": [
+        "planner",
+        "observer",
+        "reflector",
+        "evolver"
+      ]
+    },
+    "four_agent_active_online_roles": [
+      "planner",
+      "observer",
+      "reflector"
+    ],
+    "four_agent_disabled_online_roles": [],
+    "four_agent_role_turns": {
+      "planner": 2,
+      "observer": 3,
+      "reflector": 1,
+      "evolver": 0
+    },
+    "four_agent_role_skips": {
+      "observer": 0,
+      "reflector": 0,
+      "evolver": 0
+    },
+    "four_agent_role_schema_pass": {
+      "planner": true,
+      "observer": true,
+      "reflector": true,
+      "evolver": false
+    },
+    "delegated_root_steps": 0,
+    "decomposed_root_steps": 0,
+    "subagent_decomposition_rate": 0.0,
+    "parallel_concrete_batches": 0,
+    "parallel_concrete_batch_rate": 0.0,
+    "acceptance_metrics": {
+      "runtime_tool_call_count": 1,
+      "runtime_execution_steps": 1,
+      "runtime_tools_executed": true,
+      "unique_runtime_tools_count": 1,
+      "unique_runtime_tools_gte_4": false,
+      "runtime_base_meta_coverage": {
+        "base_used": true,
+        "meta_used": false,
+        "coverage_ratio": 0.5
+      }
+    },
+    "timing_breakdown_seconds": {
+      "observer.dispatch_llm_generate_seconds": 10.700023,
+      "observer.llm_generate_seconds": 86.934672,
+      "planner.llm_generate_seconds": 60.764457,
+      "preprocess.total_seconds": 0.103847,
+      "query.grounding_context_seconds": 1.472095,
+      "query.registry_init_seconds": 2e-06,
+      "query.solve_seconds": 175.544308,
+      "query.total_seconds": 177.129599,
+      "reflector.llm_generate_seconds": 10.736433
+    },
+    "cache_stats": {
+      "provider.planner.hit": 2,
+      "preprocess.output_dir.hit": 1,
+      "grounding_embedder.hit": 5,
+      "grounding_embedding_vector.miss": 5
+    },
+    "gpu_telemetry": {
+      "status": "ok",
+      "sample_count": 81,
+      "interval_s": 2.0,
+      "gpu_count": 1,
+      "avg_utilization_percent": 40.79,
+      "peak_utilization_percent": 76.0,
+      "peak_memory_used_gib": 24.816,
+      "peak_memory_percent": 31.377,
+      "per_gpu": {
+        "0": {
+          "sample_count": 81,
+          "avg_utilization_percent": 40.79,
+          "peak_utilization_percent": 76.0,
+          "peak_memory_used_gib": 24.816
+        }
+      }
+    },
+    "active_video_names": [
+      "/gemini/data-1/datasets/Video-MME/data/OE5S-NbNsro.mp4",
+      "OE5S-NbNsro",
+      "OE5S-NbNsro.mp4"
+    ],
+    "tool_library": {
+      "baseline_id": "toolbase_71ae508acd56119c2086",
+      "baseline_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/_audit/tool_library_baseline.json",
+      "baseline_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+      "baseline_source_digest": "e5b2eb8dde1afa89e55fd3b2c973875abb643b69a8e3c3603208f86500ce6ed1",
+      "active_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+      "active_source_digest": "e5b2eb8dde1afa89e55fd3b2c973875abb643b69a8e3c3603208f86500ce6ed1",
+      "active_tool_count": 15,
+      "schema_match": true,
+      "source_match": true,
+      "added_tools": [],
+      "removed_tools": [],
+      "scoped_hidden_tools": [],
+      "changed_tools": [],
+      "scoped_schema_match": true,
+      "active_tools": [
+        "Aggregation",
+        "Clean_Results",
+        "Crop",
+        "Filtering",
+        "Fold_Memory",
+        "Inspect_Frame",
+        "Keyword_Retrieve",
+        "Python_Executor",
+        "Segment_Retrieve",
+        "Semantic_Retrieve",
+        "Tool_Search",
+        "Video_Clip_QA",
+        "Video_Summary",
+        "Zoom_in",
+        "asr"
+      ]
+    },
+    "evolution_harness": {
+      "enabled": false,
+      "status": "baseline",
+      "snapshot_id": "snapshot_000",
+      "snapshot_path": "",
+      "policy_digest": "baseline",
+      "base_tool_library_baseline_id": "",
+      "operations_applied": [],
+      "registry_mutations_applied": [],
+      "tool_overrides": {},
+      "snapshot_loaded": false,
+      "snapshot_application_proven": false,
+      "snapshot_application_proof": {
+        "snapshot_loaded": false,
+        "runtime_hook_applied": false,
+        "operation_count": 0,
+        "missing_operations": [],
+        "proof_scope": "runtime_boundary_attestation",
+        "requires_fresh_inference": false,
+        "source_application": {
+          "applied": false,
+          "targets": []
+        }
+      },
+      "mutation_declared": false,
+      "mutation_applied": false
+    },
+    "benchmark_input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "included",
+      "external_subtitles": false,
+      "audio_track": "preserved",
+      "audio_transcript_allowed": true,
+      "annotation_fields_excluded": [
+        "answer",
+        "ground_truth",
+        "ground_truth_option",
+        "time_reference",
+        "evaluator_output"
+      ],
+      "audio_track_policy": "preserved",
+      "audio_transcript_policy": "included"
+    }
+  }
+}

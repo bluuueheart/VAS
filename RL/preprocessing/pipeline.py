@@ -16,7 +16,7 @@ from config.settings import settings
 from core.llm import get_llm_provider
 from .video.segmentation import VideoSegmenter
 from .video.asr import ASRProcessor
-from .video.caption import create_visual_processor
+from .video.caption import VisualProcessor, create_visual_processor
 from .video.frame_assets import (
     build_segment_aliases,
     persist_segment_frame_assets,
@@ -113,6 +113,40 @@ def _segments_look_stale(segments: Any) -> bool:
                 return True
 
     return transcript_zero_time_mismatch > 0
+
+
+def _vector_index_cache_is_complete(vectors_dir: Path, segment_count: int) -> bool:
+    """Return whether a cached dense index covers every processed segment.
+
+    Older runs could persist ``vectors/metadata.json`` with an empty metadata
+    list when local vector indexing was disabled.  That file is structurally
+    valid, so ``VideoSegmentVectorStore.load`` accepts it, but semantic
+    retrieval then silently returns no results for every query.  Treat an
+    empty or partial index as an invalid cache and rebuild it while the
+    already persisted captions/frames remain reusable.
+    """
+    metadata_path = vectors_dir / "metadata.json"
+    if not metadata_path.exists() or segment_count <= 0:
+        return False
+    try:
+        with open(metadata_path, "r", encoding="utf-8") as f:
+            payload = json.load(f) or {}
+    except Exception as exc:
+        logger.warning("Failed to inspect cached vector metadata at %s: %s", metadata_path, exc)
+        return False
+
+    metadata = payload.get("metadata") if isinstance(payload, dict) else None
+    if not isinstance(metadata, list) or len(metadata) != int(segment_count):
+        return False
+    for item in metadata:
+        if not isinstance(item, dict):
+            return False
+        indexed_modalities = item.get("indexed_modalities") or []
+        if not isinstance(indexed_modalities, list) or not indexed_modalities:
+            return False
+        if os.environ.get('TOOLSTAR_SEMANTIC_INDEX_VIDEO', '1').strip().lower() not in {'0', 'false', 'no', 'off'} and 'video' not in indexed_modalities:
+            return False
+    return True
 
 
 def _is_placeholder_caption_text(text: Any) -> bool:
@@ -213,6 +247,10 @@ class PipelineConfig:
     frame_interval: float = 6.0  # Time interval in seconds between sampled frames (5-10s per PRD)
     use_scene_detection: bool = True
     use_asr_semantic_segmentation: bool = True
+    # A benchmark may exclude transcript text while retaining the source
+    # video's audio track. In that mode ASR is disabled for segmentation and
+    # planner-facing transcript evidence.
+    include_audio_transcript: bool = True
     min_segment_duration: int = 15
     max_segment_duration: int = 45
     hard_max_segment_duration: int = 60
@@ -225,7 +263,13 @@ class PipelineConfig:
     whisper_cpu_chunk_seconds: int = field(default_factory=lambda: max(0, int(settings.asr_cpu_chunk_seconds)))
     whisper_cpu_chunk_threshold_seconds: int = field(default_factory=lambda: max(0, int(settings.asr_cpu_chunk_threshold_seconds)))
     whisper_cpu_threads: int = field(default_factory=lambda: max(1, int(settings.asr_cpu_threads)))
-    asr_device: Optional[str] = field(default_factory=lambda: str(settings.preprocess_asr_device or "cpu"))
+    asr_device: Optional[str] = field(
+        default_factory=lambda: str(
+            os.environ.get("TOOLSTAR_ASR_DEVICE")
+            or settings.preprocess_asr_device
+            or "cpu"
+        )
+    )
     
     # Visual processing (Frame Captions)
     vision_model: str = field(default_factory=lambda: settings.qwen_vl_model_path)
@@ -235,6 +279,10 @@ class PipelineConfig:
     embedding_model_path: str = ""  # Will use settings.qwen3_vl_embedding_model_path if empty
     embedding_device: Optional[str] = None
     embedding_dim: int = 1152
+    build_vector_index: bool = True
+    # Sparse videos retain real captions/frames but do not need a dense query
+    # index because the planner exposes every usable segment directly.
+    build_sparse_vector_index: bool = False
     
     # Knowledge graph
     enable_knowledge_graph: bool = True
@@ -252,13 +300,21 @@ class PipelineConfig:
 class VideoPreprocessingPipeline:
     """Main pipeline for video preprocessing."""
     
-    def __init__(self, config: PipelineConfig, llm_provider=None, accelerator_lock: Any = None):
+    def __init__(
+        self,
+        config: PipelineConfig,
+        llm_provider=None,
+        accelerator_lock: Any = None,
+        visual_llm_provider: Any = None,
+    ):
         """
         Initialize preprocessing pipeline.
         
         Args:
             config: Pipeline configuration
             llm_provider: LLM provider for entity extraction and metadata synthesis
+            visual_llm_provider: Optional already-loaded multimodal provider to
+                share between captioning and planner inference
         """
         self.config = config
         # Default预处理LLM使用独立模型（无帧输入），可外部覆盖
@@ -292,12 +348,37 @@ class VideoPreprocessingPipeline:
             else settings.qwen_vl_model_path
         )
 
-        self.visual_processor = create_visual_processor(
-            model_name=config.vision_model,
-            model_path=config.vision_model_path or default_vision_path,
-            device=config.device,
-            accelerator_lock=accelerator_lock,
-        )
+        resolved_vision_path = config.vision_model_path or default_vision_path
+        self.visual_processor = None
+        if (
+            visual_llm_provider is not None
+            and getattr(visual_llm_provider, "model", None) is not None
+            and getattr(visual_llm_provider, "processor", None) is not None
+            and bool(getattr(visual_llm_provider, "_supports_multimodal_generation", False))
+        ):
+            try:
+                self.visual_processor = VisualProcessor.from_loaded_llm_provider(
+                    visual_llm_provider,
+                    model_name=config.vision_model,
+                    model_path=resolved_vision_path,
+                )
+                logger.info(
+                    "Sharing the already-loaded planner multimodal runtime with captioning: model=%s provider_role=%s.",
+                    resolved_vision_path,
+                    str(getattr(visual_llm_provider, "model_role", "") or "").strip().lower() or "unknown",
+                )
+            except Exception as exc:
+                logger.warning(
+                    "Could not build a shared caption view over the planner runtime; falling back to the caption runtime cache: %s",
+                    exc,
+                )
+        if self.visual_processor is None:
+            self.visual_processor = create_visual_processor(
+                model_name=config.vision_model,
+                model_path=resolved_vision_path,
+                device=config.device,
+                accelerator_lock=accelerator_lock,
+            )
         
         self.vector_store = VideoSegmentVectorStore(
             embedding_dim=config.embedding_dim,
@@ -378,7 +459,38 @@ class VideoPreprocessingPipeline:
         segment_strategy = self._segment_strategy_label(
             "scene_v2" if self.config.use_scene_detection else "fixed_v1"
         )
-        if self.config.use_asr_semantic_segmentation:
+        cached_segment_metadata: Optional[Tuple[Dict[str, str], Dict[str, Dict[str, Any]]]] = None
+        reuse_cached_segment_metadata = (
+            self.config.include_audio_transcript
+            and
+            self.config.reuse_cache
+            and str(os.environ.get("TOOLSTAR_REUSE_SEGMENT_METADATA", "")).strip().lower()
+            in {"1", "true", "yes", "on"}
+        )
+        if reuse_cached_segment_metadata:
+            cache_path = Path(self.config.working_dir) / "_cache" / video_name
+            try:
+                cached_segment_metadata = self.video_segmenter._try_load_cached_segments(
+                    cache_path,
+                    expected_strategy="asr_semantic_v4",
+                )
+            except Exception as exc:
+                logger.warning(
+                    "Failed to inspect cached segment metadata for %s; falling back to ASR: %s",
+                    video_name,
+                    exc,
+                )
+                cached_segment_metadata = None
+
+        if cached_segment_metadata is not None:
+            segment_index2name, segment_times_info = cached_segment_metadata
+            segment_strategy = self._segment_strategy_label("asr_semantic_v4")
+            logger.info(
+                "Reusing cached segment metadata for %s: segments=%s; skipping full-video ASR.",
+                video_name,
+                len(segment_index2name),
+            )
+        elif self.config.use_asr_semantic_segmentation and self.config.include_audio_transcript:
             try:
                 global_asr_segments = self.asr_processor.transcribe_video(
                     video_path=video_path,
@@ -410,17 +522,63 @@ class VideoPreprocessingPipeline:
                 subtitle_validity_reason = "asr_failed"
                 subtitle_validity_stats = {"error": str(exc)}
 
-        segment_index2name, segment_times_info = self.video_segmenter.segment_video(
-            video_path,
-            self.config.working_dir,
-            use_scene_detection=self.config.use_scene_detection,
-            asr_segments=semantic_asr_segments or None,
-            reuse_cache=self.config.reuse_cache,
-        )
+        if cached_segment_metadata is None:
+            segment_index2name, segment_times_info = self.video_segmenter.segment_video(
+                video_path,
+                self.config.working_dir,
+                use_scene_detection=self.config.use_scene_detection,
+                asr_segments=semantic_asr_segments or None,
+                reuse_cache=self.config.reuse_cache,
+                extract_audio=bool(self.config.include_audio_transcript),
+            )
 
-        # Step 2: Attach per-segment transcripts
-        logger.info("Step 2: Building per-segment transcripts...")
-        if semantic_asr_segments:
+        # Step 2: Attach per-segment transcripts only when the benchmark
+        # contract explicitly permits transcript text. A source audio track
+        # may still be retained in the exported segment video.
+        logger.info(
+            "Step 2: Building per-segment transcripts (audio=%s)...",
+            "included" if self.config.include_audio_transcript else "excluded",
+        )
+        def _transcribe_segments_or_empty() -> Dict[str, str]:
+            """Keep visual preprocessing available when optional ASR is unavailable."""
+            try:
+                return self.asr_processor.transcribe_segments(
+                    video_name,
+                    self.config.working_dir,
+                    segment_index2name,
+                    segment_times_info=segment_times_info,
+                    reuse_cache=self.config.reuse_cache,
+                )
+            except Exception as exc:
+                logger.warning(
+                    "Segment-wise ASR unavailable for %s; continuing with empty transcripts: %s",
+                    video_name,
+                    exc,
+                )
+                return {str(segment_id): "" for segment_id in segment_times_info}
+
+        if not self.config.include_audio_transcript:
+            transcripts = {str(segment_id): "" for segment_id in segment_index2name}
+            logger.info(
+                "Transcript-excluded input contract active; skipping ASR transcript extraction for %s (source audio is not stripped).",
+                video_name,
+            )
+        elif cached_segment_metadata is not None:
+            cached_transcripts = self.asr_processor._load_cached_transcripts(
+                Path(self.config.working_dir) / "_cache" / video_name / "transcripts.json",
+                segment_index2name=segment_index2name,
+            )
+            transcripts = {
+                str(segment_id): str(cached_transcripts.get(str(segment_id), "") or "")
+                for segment_id in segment_index2name
+            }
+            logger.info(
+                "Reusing cached segment metadata for %s with cached_transcripts=%s/%s; no ASR model load.",
+                video_name,
+                sum(bool(text.strip()) for text in transcripts.values()),
+                len(transcripts),
+            )
+        elif semantic_asr_segments:
             total_duration = 0.0
             for info in segment_times_info.values():
                 if not isinstance(info, dict):
@@ -448,24 +606,27 @@ class VideoPreprocessingPipeline:
             )
             if not any(str(text or "").strip() for text in transcripts.values()):
                 logger.warning("Projected global ASR transcripts are empty; falling back to segment-wise ASR.")
-                transcripts = self.asr_processor.transcribe_segments(
-                    video_name,
-                    self.config.working_dir,
-                    segment_index2name,
-                    segment_times_info=segment_times_info,
-                    reuse_cache=self.config.reuse_cache,
-                )
+                transcripts = _transcribe_segments_or_empty()
         else:
-            transcripts = self.asr_processor.transcribe_segments(
-                video_name,
-                self.config.working_dir,
-                segment_index2name,
-                segment_times_info=segment_times_info,
-                reuse_cache=self.config.reuse_cache,
-            )
+            transcripts = _transcribe_segments_or_empty()
         
+        # A large-memory reusable batch worker can keep Whisper resident so
+        # each new video does not pay the ASR cold-load cost again.  Preserve
+        # the historical release behavior unless the batch caller opts in;
+        # small cards can explicitly set TOOLSTAR_PERSIST_ASR_RUNTIME=0.
+        persist_asr_runtime = str(
+            os.environ.get("TOOLSTAR_PERSIST_ASR_RUNTIME", "")
+        ).strip().lower() in {"1", "true", "yes", "on"}
+        if persist_asr_runtime:
+            logger.info("Keeping GPU Whisper runtime cached for reusable worker samples.")
+        else:
+            self.asr_processor.unload_model()
+
         # Step 3: Generate captions
         logger.info("Step 3: Generating captions...")
+        persist_visual_runtime = str(
+            os.environ.get("TOOLSTAR_PERSIST_VISUAL_RUNTIME", "")
+        ).strip().lower() in {"1", "true", "yes", "on"}
         try:
             captions = self.visual_processor.caption_segments(
                 video_name,
@@ -477,7 +638,12 @@ class VideoPreprocessingPipeline:
                 reuse_cache=self.config.reuse_cache,
             )
         finally:
-            self.visual_processor.unload_model(clear_runtime_cache=True)
+            # A reusable batch worker keeps the loaded visual runtime in the
+            # class cache between samples.  The normal one-shot pipeline keeps
+            # its previous release semantics and clears the cache explicitly.
+            self.visual_processor.unload_model(
+                clear_runtime_cache=not persist_visual_runtime
+            )
 
         logger.info("Step 3.5: Persisting segment clips and sampled frames for multimodal retrieval...")
         clip_assets_task = asyncio.to_thread(
@@ -542,12 +708,30 @@ class VideoPreprocessingPipeline:
             self._attach_graph_text(enhanced_segments)
         
         # Step 7: Index in vector store
-        logger.info("Step 7: Indexing in vector store...")
-        self.vector_store.index_segments(
-            enhanced_segments,
-            video_name,
-            processed_root=str(output_dir),
+        sparse_threshold = max(1, int(getattr(settings, "sparse_video_segment_threshold", 3) or 3))
+        skip_sparse_vector_index = (
+            self.config.build_vector_index
+            and not self.config.build_sparse_vector_index
+            and len(enhanced_segments) <= sparse_threshold
         )
+        if self.config.build_vector_index and not skip_sparse_vector_index:
+            logger.info("Step 7: Indexing in vector store...")
+            self.vector_store.index_segments(
+                enhanced_segments,
+                video_name,
+                processed_root=str(output_dir),
+            )
+        elif skip_sparse_vector_index:
+            logger.info(
+                "Step 7: Skipping dense index for sparse video (segments=%s threshold=%s); "
+                "retaining caption/transcript/frame evidence.",
+                len(enhanced_segments),
+                sparse_threshold,
+            )
+        else:
+            logger.info(
+                "Step 7: Local vector index disabled; retaining caption/transcript grounding inputs."
+            )
         
         # Step 8: Save outputs
         if self.config.save_intermediate:
@@ -790,6 +974,18 @@ class VideoPreprocessingPipeline:
             payload = {
                 "segment_cache_version": self.video_segmenter.CACHE_VERSION,
                 "segment_strategy": segment_strategy or self._segment_strategy_label(False),
+                "input_modalities": (
+                    ["video", "audio_transcript"]
+                    if self.config.include_audio_transcript
+                    else ["video"]
+                ),
+                "audio_policy": (
+                    "included" if self.config.include_audio_transcript else "excluded"
+                ),
+                "audio_track_policy": "source_preserved",
+                "audio_transcript_policy": (
+                    "included" if self.config.include_audio_transcript else "excluded"
+                ),
                 "segment_index2name": {str(k): str(v) for k, v in segment_index2name.items()},
                 "segment_times_info": safe_times_info
             }
@@ -837,6 +1033,23 @@ class VideoPreprocessingPipeline:
                 )
                 return None
 
+            expected_audio_policy = (
+                "included" if self.config.include_audio_transcript else "excluded"
+            )
+            cached_audio_policy = str(
+                (segment_times_info or {}).get("audio_transcript_policy")
+                or (segment_times_info or {}).get("audio_policy")
+                or ""
+            ).strip().lower()
+            if cached_audio_policy != expected_audio_policy:
+                logger.info(
+                    "Cached preprocessing outputs for %s use audio_policy=%s, expected=%s; regenerating.",
+                    video_name,
+                    cached_audio_policy or "missing",
+                    expected_audio_policy,
+                )
+                return None
+
             if _segments_look_stale(segments):
                 logger.info(
                     "Cached preprocessing outputs for %s have stale segment timing; regenerating.",
@@ -855,7 +1068,19 @@ class VideoPreprocessingPipeline:
                     video_metadata = json.load(f)
                 video_path = video_metadata.get("source_video_path")
 
+            sparse_threshold = max(1, int(getattr(settings, "sparse_video_segment_threshold", 3) or 3))
+            allow_sparse_empty_index = (
+                not self.config.build_sparse_vector_index
+                and len(segments) <= sparse_threshold
+            )
             if vectors_dir.exists() and (vectors_dir / "metadata.json").exists():
+                if not _vector_index_cache_is_complete(vectors_dir, len(segments)) and not allow_sparse_empty_index:
+                    logger.warning(
+                        "Cached vector index at %s is empty or incomplete for %d segments; rebuilding it.",
+                        vectors_dir,
+                        len(segments),
+                    )
+                    return None
                 try:
                     self.vector_store.load(str(vectors_dir))
                 except Exception as e:

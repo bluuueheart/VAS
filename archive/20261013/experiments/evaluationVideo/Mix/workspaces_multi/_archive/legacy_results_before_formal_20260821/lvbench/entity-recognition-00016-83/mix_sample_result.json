@@ -1,0 +1,43 @@
+{
+  "sample_uid": "lvbench:entity-recognition:16:83",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 1,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 1,
+  "subagent_iterations": 0,
+  "predicted_label": "C",
+  "ground_truth": "Hand",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(C) Eye",
+  "elapsed_seconds": 99.465,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_multi/lvbench/entity-recognition-00016-83",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_multi/lvbench/entity-recognition-00016-83/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_multi/lvbench/entity-recognition-00016-83/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_multi/lvbench/entity-recognition-00016-83/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: What part of the cook is different from other people?\nOptions:\n(A) Leg\n(B) Foot\n(C) Eye\n(D) Hand",
+  "options": [
+    "Leg",
+    "Foot",
+    "Eye",
+    "Hand"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "cartoon",
+    "time_reference": "03:00-03:03",
+    "video_key": "Cm73ma6Ibcs",
+    "source_index": 16
+  },
+  "updated_at": "2026-08-20T08:10:13.270496Z"
+}

@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00205:689396c1-fc87-48f1-bdaf-00bc5efb3d4f",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The main dish prepared in the video is a stir-fry of spring onions, peppers, and leaves.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00205-689396c1-fc87-48f1-bdaf-00bc5efb3d4f",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00205-689396c1-fc87-48f1-bdaf-00bc5efb3d4f/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00205-689396c1-fc87-48f1-bdaf-00bc5efb3d4f/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00205-689396c1-fc87-48f1-bdaf-00bc5efb3d4f/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/689396c1-fc87-48f1-bdaf-00bc5efb3d4f.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/689396c1-fc87-48f1-bdaf-00bc5efb3d4f.mp4",
+  "question_block": "Question: What was the main dish prepared in the video, and which key ingredients were used?\nOptions:\n(A) In the video, the main dish skillfully prepared by the chef is a delicious, hearty soup.\n(B) The main dish prepared in the video is a salad.\n(C) In the video, the primary dish skillfully prepared by the chef is a delicious curry.\n(D) In the video, the primary main dish showcased and prepared is indeed a delicious stew.\n(E) The main dish prepared in the video is a stir-fry of spring onions, peppers, and leaves.",
+  "options": [
+    "In the video, the main dish skillfully prepared by the chef is a delicious, hearty soup.",
+    "The main dish prepared in the video is a salad.",
+    "In the video, the primary dish skillfully prepared by the chef is a delicious curry.",
+    "In the video, the primary main dish showcased and prepared is indeed a delicious stew.",
+    "The main dish prepared in the video is a stir-fry of spring onions, peppers, and leaves."
+  ],
+  "official_meta": {
+    "question_index": "00205",
+    "video_id": "689396c1-fc87-48f1-bdaf-00bc5efb3d4f",
+    "source_index": 205
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:53:40.479069Z"
+}

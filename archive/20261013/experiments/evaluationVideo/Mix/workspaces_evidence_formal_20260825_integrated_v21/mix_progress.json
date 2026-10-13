@@ -1,0 +1,98 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-08-25T20:45:08.098955Z",
+  "records": {
+    "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391": {
+      "sample_uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "status": "unanswerable",
+      "acc": 0.0,
+      "tool_use_num": 6,
+      "iter_num": 18,
+      "tool_success_rate": 0.833333,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391",
+      "updated_at": "2026-08-25T20:45:04.599762Z"
+    },
+    "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e": {
+      "sample_uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "status": "unanswerable",
+      "acc": 0.0,
+      "tool_use_num": 8,
+      "iter_num": 17,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "updated_at": "2026-08-25T20:45:06.326956Z"
+    },
+    "videomme:biology-medicine:021-1": {
+      "sample_uid": "videomme:biology-medicine:021-1",
+      "dataset_name": "videomme",
+      "subset_name": "Biology & Medicine",
+      "status": "unanswerable",
+      "acc": 0.0,
+      "tool_use_num": 1,
+      "iter_num": 10,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/videomme/biology-medicine-021-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/videomme/biology-medicine-021-1",
+      "updated_at": "2026-08-25T20:45:06.538255Z"
+    },
+    "mlvu:ego:0:ego-35": {
+      "sample_uid": "mlvu:ego:0:ego-35",
+      "dataset_name": "mlvu",
+      "subset_name": "ego",
+      "status": "unanswerable",
+      "acc": 0.0,
+      "tool_use_num": 7,
+      "iter_num": 15,
+      "tool_success_rate": 0.428571,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/mlvu/ego-00000-ego-35/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/mlvu/ego-00000-ego-35",
+      "updated_at": "2026-08-25T20:45:06.653870Z"
+    },
+    "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518": {
+      "sample_uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "status": "unanswerable",
+      "acc": 0.0,
+      "tool_use_num": 11,
+      "iter_num": 17,
+      "tool_success_rate": 0.818182,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/egoschema/00003-00faf954-74f7-4aa3-8b29-4a5dff4f9518/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/egoschema/00003-00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+      "updated_at": "2026-08-25T20:45:07.598727Z"
+    },
+    "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212": {
+      "sample_uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "status": "unanswerable",
+      "acc": 0.0,
+      "tool_use_num": 3,
+      "iter_num": 16,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/egoschema/00004-011b8b73-0ce4-4843-95ef-33b79610d212/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/egoschema/00004-011b8b73-0ce4-4843-95ef-33b79610d212",
+      "updated_at": "2026-08-25T20:45:07.715131Z"
+    },
+    "videomme:geography:051-1": {
+      "sample_uid": "videomme:geography:051-1",
+      "dataset_name": "videomme",
+      "subset_name": "Geography",
+      "status": "unanswerable",
+      "acc": 0.0,
+      "tool_use_num": 4,
+      "iter_num": 15,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/videomme/geography-051-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/videomme/geography-051-1",
+      "updated_at": "2026-08-25T20:45:08.098884Z"
+    }
+  }
+}

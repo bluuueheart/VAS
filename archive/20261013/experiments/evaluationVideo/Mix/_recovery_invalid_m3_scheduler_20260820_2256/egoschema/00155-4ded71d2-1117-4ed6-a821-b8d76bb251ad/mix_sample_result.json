@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00155:4ded71d2-1117-4ed6-a821-b8d76bb251ad",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's overarching goal is to paint the wooden furniture.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00155-4ded71d2-1117-4ed6-a821-b8d76bb251ad",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00155-4ded71d2-1117-4ed6-a821-b8d76bb251ad/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00155-4ded71d2-1117-4ed6-a821-b8d76bb251ad/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00155-4ded71d2-1117-4ed6-a821-b8d76bb251ad/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/4ded71d2-1117-4ed6-a821-b8d76bb251ad.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/4ded71d2-1117-4ed6-a821-b8d76bb251ad.mp4",
+  "question_block": "Question: What overarching goal does c accomplish throughout the video, and how do their actions contribute to this objective?\nOptions:\n(A) C's overarching goal is to paint the wooden furniture.\n(B) C's predominant, overarching goal and objective is to efficiently clean and maintain the wooden furniture surfaces.\n(C) The principal overarching goal of c is to effectively repair and restore the damaged wooden furniture.\n(D) C's overarching goal is to decorate the wooden furniture.\n(E) C's primary overarching goal is to efficiently sell the high-quality wooden furniture to customers.",
+  "options": [
+    "C's overarching goal is to paint the wooden furniture.",
+    "C's predominant, overarching goal and objective is to efficiently clean and maintain the wooden furniture surfaces.",
+    "The principal overarching goal of c is to effectively repair and restore the damaged wooden furniture.",
+    "C's overarching goal is to decorate the wooden furniture.",
+    "C's primary overarching goal is to efficiently sell the high-quality wooden furniture to customers."
+  ],
+  "official_meta": {
+    "question_index": "00155",
+    "video_id": "4ded71d2-1117-4ed6-a821-b8d76bb251ad",
+    "source_index": 155
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:50:04.690049Z"
+}

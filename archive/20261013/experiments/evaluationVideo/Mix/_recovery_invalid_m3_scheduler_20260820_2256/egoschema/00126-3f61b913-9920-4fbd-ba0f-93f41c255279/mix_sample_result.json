@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00126:3f61b913-9920-4fbd-ba0f-93f41c255279",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The most important activities that changed the course of events in the video are c's decision to play the card game, c's frustration with the game, and c's eventual abandonment of the game. these events serve to highlight c's playful and impulsive nature, as well as c's difficulty in focusing on tasks that require sustained attention.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00126-3f61b913-9920-4fbd-ba0f-93f41c255279",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00126-3f61b913-9920-4fbd-ba0f-93f41c255279/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00126-3f61b913-9920-4fbd-ba0f-93f41c255279/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00126-3f61b913-9920-4fbd-ba0f-93f41c255279/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/3f61b913-9920-4fbd-ba0f-93f41c255279.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/3f61b913-9920-4fbd-ba0f-93f41c255279.mp4",
+  "question_block": "Question: Identify and evaluate the most important activities that changed the course of events in the video and their potential implications.\nOptions:\n(A) The most crucial activities that altered the course of events in the video are c's decision to brush the cat, c's boredom with brushing the cat, and c's eventual choice to stop brushing the cat. these particular events serve to emphasize c's short attention span and their lack of perseverance.\n(B) The most important activities that changed the course of events in the video are c's decision to play with the dog, c's exhaustion from playing with the dog, and c's eventual decision to take a break from playing with the dog. these events serve to highlight c's high energy levels and need for physical activity.\n(C) The most significant and impactful activities that drastically changed the course of events in the video are c's decision to drink from the cup, c's clumsiness, and the following spilling of the cup, and c's eventual responsible decision to clean up the mess. these events effectively serve to emphasize and showcase c's lack of coordination and attention to detail.\n(D) The most important activities that changed the course of events in the video are c's decision to play the card game, c's frustration with the game, and c's eventual abandonment of the game. these events serve to highlight c's playful and impulsive nature, as well as c's difficulty in focusing on tasks that require sustained attention.\n(E) The most significant activities that drastically altered the course of events in the video are c's intentional decision to walk around the house, c's eventual boredom with wandering around the house, and c's subsequent choice to find something else to engage in. these impactful events serve to emphasize c's underlying restlessness and persistent need for stimulation.",
+  "options": [
+    "The most crucial activities that altered the course of events in the video are c's decision to brush the cat, c's boredom with brushing the cat, and c's eventual choice to stop brushing the cat. these particular events serve to emphasize c's short attention span and their lack of perseverance.",
+    "The most important activities that changed the course of events in the video are c's decision to play with the dog, c's exhaustion from playing with the dog, and c's eventual decision to take a break from playing with the dog. these events serve to highlight c's high energy levels and need for physical activity.",
+    "The most significant and impactful activities that drastically changed the course of events in the video are c's decision to drink from the cup, c's clumsiness, and the following spilling of the cup, and c's eventual responsible decision to clean up the mess. these events effectively serve to emphasize and showcase c's lack of coordination and attention to detail.",
+    "The most important activities that changed the course of events in the video are c's decision to play the card game, c's frustration with the game, and c's eventual abandonment of the game. these events serve to highlight c's playful and impulsive nature, as well as c's difficulty in focusing on tasks that require sustained attention.",
+    "The most significant activities that drastically altered the course of events in the video are c's intentional decision to walk around the house, c's eventual boredom with wandering around the house, and c's subsequent choice to find something else to engage in. these impactful events serve to emphasize c's underlying restlessness and persistent need for stimulation."
+  ],
+  "official_meta": {
+    "question_index": "00126",
+    "video_id": "3f61b913-9920-4fbd-ba0f-93f41c255279",
+    "source_index": 126
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:48:05.776831Z"
+}

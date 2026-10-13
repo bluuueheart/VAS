@@ -1,0 +1,23 @@
+[Evolver] role=online_trajectory_cycle_miner
+run_id=evolution_run_9a0b046871d8
+trajectory_count=20
+diagnosis_count=13
+verification_accepted=11/20
+accepted_correct=9
+accepted_wrong=2
+replay_groups={"held_out": ["trajectory_eccf7f4358e84435b82917acd898e244"], "neighbor": ["trajectory_bac8d76261de415b81a1d0db002f4ade"], "regression": ["trajectory_b55bf1df7e764df9b19be75152371e6b", "trajectory_d38c46d0369e4048b1b551c849c40b56", "trajectory_108331980c414fbaac5c45793d6a1a51", "trajectory_33de64e7f83e4e08828a1d67a40b12c3", "trajectory_51f5b6b402bc4e18a658cb9f21d1c1b1", "trajectory_bc134cefd4264021b9c3dcab94e3ad96", "trajectory_6a3a1c259124408fbaab2a62e6850419", "trajectory_87c2740e7f554057a73a53389f54a52e"], "trigger": ["trajectory_5376b6720f0f4a32bc355b10635474e6"]}
+candidate_snapshot=snapshot_464d138ff4e04dce
+replay_status=candidate_pending_fresh_inference
+diagnosis=contradiction_handling confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=answer_synthesis confidence=0.80 root_cause=The final option was inconsistent with the collected trajectory evidence.
+diagnosis=tool_execution confidence=0.90 root_cause=The trajectory contained one or more tool execution failures; the final answer is not a safe proxy for tool correctness.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=contradiction_handling confidence=0.90 root_cause=The trajectory contained conflicting evidence but still produced a terminal answer.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=tool_execution confidence=0.90 root_cause=The trajectory contained one or more tool execution failures; the final answer is not a safe proxy for tool correctness.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.

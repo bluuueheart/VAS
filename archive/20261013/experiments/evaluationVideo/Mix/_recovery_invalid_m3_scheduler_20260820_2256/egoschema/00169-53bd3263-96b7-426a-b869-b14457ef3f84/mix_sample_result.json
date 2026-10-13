@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00169:53bd3263-96b7-426a-b869-b14457ef3f84",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The person's approach to removing the plants from the ground is to first put on gloves, then touch the plants to identify which ones they want to remove, and then pull them out of the ground and put them in a bucket.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00169-53bd3263-96b7-426a-b869-b14457ef3f84",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00169-53bd3263-96b7-426a-b869-b14457ef3f84/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00169-53bd3263-96b7-426a-b869-b14457ef3f84/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00169-53bd3263-96b7-426a-b869-b14457ef3f84/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/53bd3263-96b7-426a-b869-b14457ef3f84.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/53bd3263-96b7-426a-b869-b14457ef3f84.mp4",
+  "question_block": "Question: Analyze and outline the person's approach to the primary activity shown in the video; describe any possible improvements or changes they could make to increase their effectiveness in the task.\nOptions:\n(A) The person's approach is to first check the plants, then wipe the pavement, and then point at a plant.\n(B) The individual's chosen approach involves initially playing with the dog, subsequently engaging with a bug on the pavement, and ultimately proceeding to remove the plants from the ground.\n(C) The individual's approach initially involves carefully removing the plants from the ground, subsequently inspecting them, later diligently wiping the pavement clean, and finally gesturing towards them.\n(D) The individual's chosen approach involves initially removing the plants from the ground, subsequently inspecting them, afterwards wiping the pavement clean, subsequently pointing at the plants, and finally engaging in play with the dog.\n(E) The person's approach to removing the plants from the ground is to first put on gloves, then touch the plants to identify which ones they want to remove, and then pull them out of the ground and put them in a bucket.",
+  "options": [
+    "The person's approach is to first check the plants, then wipe the pavement, and then point at a plant.",
+    "The individual's chosen approach involves initially playing with the dog, subsequently engaging with a bug on the pavement, and ultimately proceeding to remove the plants from the ground.",
+    "The individual's approach initially involves carefully removing the plants from the ground, subsequently inspecting them, later diligently wiping the pavement clean, and finally gesturing towards them.",
+    "The individual's chosen approach involves initially removing the plants from the ground, subsequently inspecting them, afterwards wiping the pavement clean, subsequently pointing at the plants, and finally engaging in play with the dog.",
+    "The person's approach to removing the plants from the ground is to first put on gloves, then touch the plants to identify which ones they want to remove, and then pull them out of the ground and put them in a bucket."
+  ],
+  "official_meta": {
+    "question_index": "00169",
+    "video_id": "53bd3263-96b7-426a-b869-b14457ef3f84",
+    "source_index": 169
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:51:07.926245Z"
+}

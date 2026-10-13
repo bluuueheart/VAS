@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:summarization:119:855",
+  "dataset_name": "lvbench",
+  "subset_name": "summarization",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Reporter spends three months with the Penan people, learning about their history, lifestyle, how to hunt, how to use darts, and also recorded the lifestyle of some Penan people living in the village",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00119-855",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00119-855/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00119-855/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00119-855/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/TiQBTesZUJQ.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/TiQBTesZUJQ.mp4",
+  "question_block": "Question: What happens between 22:17-42:05?\nOptions:\n(A) Reporter spends three months with the Penan people, understanding their psychological characteristics and documenting the lifestyle of some Penan people living in the city\n(B) Reporter spends three months with the Penan people, learning about their history, lifestyle, how to hunt, how to use darts, and also documented the lifestyle of some Penan people living in the city\n(C) Reporter spends three months with the Penan people, learning about their history, lifestyle, how to hunt, how to use darts, and also recorded the lifestyle of some Penan people living in the village\n(D) Reporter spends three months with the Penan people, understanding their psychological characteristics and recording the lifestyle of some of the Penan people living in the countryside",
+  "options": [
+    "Reporter spends three months with the Penan people, understanding their psychological characteristics and documenting the lifestyle of some Penan people living in the city",
+    "Reporter spends three months with the Penan people, learning about their history, lifestyle, how to hunt, how to use darts, and also documented the lifestyle of some Penan people living in the city",
+    "Reporter spends three months with the Penan people, learning about their history, lifestyle, how to hunt, how to use darts, and also recorded the lifestyle of some Penan people living in the village",
+    "Reporter spends three months with the Penan people, understanding their psychological characteristics and recording the lifestyle of some of the Penan people living in the countryside"
+  ],
+  "official_meta": {
+    "question_type": "summarization",
+    "video_type": "documentary",
+    "time_reference": "22:17-42:05",
+    "video_key": "TiQBTesZUJQ",
+    "source_index": 119
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:48:43.964487Z"
+}

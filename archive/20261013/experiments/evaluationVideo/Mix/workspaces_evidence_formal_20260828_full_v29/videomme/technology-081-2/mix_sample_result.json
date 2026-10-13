@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:technology:081-2",
+  "dataset_name": "videomme",
+  "subset_name": "Technology",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 6,
+  "iter_num": 10,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 6,
+  "planner_iterations": 10,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (contradictory_evidence; repeated direct evidence failure)",
+  "elapsed_seconds": 2692.452,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/technology-081-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/technology-081-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/technology-081-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/technology-081-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/FjS2LzrHEO8.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/FjS2LzrHEO8.mp4",
+  "question_block": "Question: What is the size of the back touchscreen display in this video?\nOptions:\n(A) 15 inches.\n(B) 9.4 inches.\n(C) 17.4 inches.\n(D) 18.5 inches.",
+  "options": [
+    "A. 15 inches.",
+    "B. 9.4 inches.",
+    "C. 17.4 inches.",
+    "D. 18.5 inches."
+  ],
+  "official_meta": {
+    "video_id": "081",
+    "video_external_id": "FjS2LzrHEO8",
+    "resolved_video_stem": "FjS2LzrHEO8",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Knowledge",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Technology",
+    "task_type": "OCR Problems",
+    "question_id": "081-2",
+    "question_index": 1,
+    "video_item_index": 80,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-03T11:35:05.040257Z"
+}

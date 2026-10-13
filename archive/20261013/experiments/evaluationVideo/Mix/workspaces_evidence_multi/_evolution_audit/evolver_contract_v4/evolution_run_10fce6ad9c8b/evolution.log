@@ -1,0 +1,11 @@
+[Evolver] role=offline_trajectory_miner
+run_id=evolution_run_10fce6ad9c8b
+trajectory_count=2
+diagnosis_count=1
+verification_accepted=1/2
+accepted_correct=1
+accepted_wrong=0
+replay_groups={"held_out": ["trajectory_f23209e3afec4ebcbaba6f2ba94bdcee"], "neighbor": [], "regression": [], "trigger": ["trajectory_ef5490ada76a4ef7b1aa41cce5fe85e7"]}
+candidate_snapshot=none
+replay_status=not_required
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.

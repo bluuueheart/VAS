@@ -5,6 +5,10 @@ from __future__ import annotations
 import logging
 import time
 import gc
+import os
+import shutil
+import subprocess
+import threading
 from collections import Counter, defaultdict, deque
 from contextlib import contextmanager
 from pathlib import Path
@@ -39,16 +43,154 @@ class RuntimeSession:
         self._artifact_cache: Dict[str, Any] = {}
         self._stable_devices: Dict[str, str] = {}
         self._registry_auto_discovered = False
-        self.reset_query_state()
+        self._gpu_sampler_stop: Optional[threading.Event] = None
+        self._gpu_sampler_thread: Optional[threading.Thread] = None
+        self._gpu_sampler_lock = threading.Lock()
+        self._gpu_samples: list[Dict[str, float]] = []
+        self._gpu_telemetry: Dict[str, Any] = {"status": "not_started"}
+        self.reset_query_state(start_gpu_telemetry=False)
 
-    def reset_query_state(self) -> None:
+    def reset_query_state(self, *, start_gpu_telemetry: bool = True) -> None:
+        self._stop_gpu_telemetry()
         self._active_video_names: Set[str] = set()
         self._active_video_path: Optional[str] = None
         self._active_processed_dir: Optional[str] = None
         self._active_segment_count: Optional[int] = None
+        self._active_query_text: Optional[str] = None
         self._timings: Dict[str, float] = defaultdict(float)
         self._cache_stats: Counter[str] = Counter()
         self._recent_tools: Deque[str] = deque(maxlen=24)
+        if start_gpu_telemetry:
+            self._start_gpu_telemetry()
+
+    def _start_gpu_telemetry(self) -> None:
+        """Sample GPU utilization for the current query without owning CUDA."""
+        enabled = str(os.environ.get("TOOLSTAR_GPU_TELEMETRY", "1")).strip().lower()
+        if enabled in {"0", "false", "no", "off"} or shutil.which("nvidia-smi") is None:
+            self._gpu_telemetry = {
+                "status": "disabled" if enabled in {"0", "false", "no", "off"} else "unavailable",
+                "sample_count": 0,
+            }
+            return
+        interval_text = str(os.environ.get("TOOLSTAR_GPU_TELEMETRY_INTERVAL_S", "2.0"))
+        try:
+            interval_s = max(0.5, float(interval_text))
+        except (TypeError, ValueError):
+            interval_s = 2.0
+        stop = threading.Event()
+        self._gpu_sampler_stop = stop
+        self._gpu_samples = []
+        self._gpu_telemetry = {
+            "status": "sampling",
+            "sample_count": 0,
+            "interval_s": interval_s,
+        }
+
+        def _sample_once() -> None:
+            try:
+                completed = subprocess.run(
+                    [
+                        "nvidia-smi",
+                        "--query-gpu=index,utilization.gpu,memory.used,memory.total",
+                        "--format=csv,noheader,nounits",
+                    ],
+                    capture_output=True,
+                    text=True,
+                    timeout=1.0,
+                    check=False,
+                )
+            except (OSError, subprocess.SubprocessError):
+                return
+            if completed.returncode != 0:
+                return
+            for line in completed.stdout.splitlines():
+                fields = [item.strip() for item in line.split(",")]
+                if len(fields) != 4:
+                    continue
+                try:
+                    gpu_index = float(fields[0])
+                    utilization = float(fields[1])
+                    memory_used_mib = float(fields[2])
+                    memory_total_mib = float(fields[3])
+                except (TypeError, ValueError):
+                    continue
+                if memory_total_mib <= 0:
+                    continue
+                sample = {
+                    "gpu_index": gpu_index,
+                    "utilization_percent": max(0.0, utilization),
+                    "memory_used_gib": max(0.0, memory_used_mib / 1024.0),
+                    "memory_total_gib": max(0.0, memory_total_mib / 1024.0),
+                }
+                sample["memory_percent"] = (
+                    100.0 * sample["memory_used_gib"] / sample["memory_total_gib"]
+                )
+                with self._gpu_sampler_lock:
+                    if len(self._gpu_samples) < 1800:
+                        self._gpu_samples.append(sample)
+
+        def _sampler() -> None:
+            while not stop.is_set():
+                _sample_once()
+                stop.wait(interval_s)
+
+        thread = threading.Thread(
+            target=_sampler,
+            name="toolstar-gpu-telemetry",
+            daemon=True,
+        )
+        self._gpu_sampler_thread = thread
+        thread.start()
+
+    def _stop_gpu_telemetry(self) -> Dict[str, Any]:
+        stop = self._gpu_sampler_stop
+        thread = self._gpu_sampler_thread
+        if stop is not None:
+            stop.set()
+        if thread is not None and thread.is_alive():
+            thread.join(timeout=1.5)
+        self._gpu_sampler_stop = None
+        self._gpu_sampler_thread = None
+        with self._gpu_sampler_lock:
+            samples = list(self._gpu_samples)
+        if not samples:
+            if self._gpu_telemetry.get("status") == "sampling":
+                self._gpu_telemetry = {
+                    **self._gpu_telemetry,
+                    "status": "no_samples",
+                    "sample_count": 0,
+                }
+            return dict(self._gpu_telemetry)
+        utilizations = [item["utilization_percent"] for item in samples]
+        memory_used = [item["memory_used_gib"] for item in samples]
+        memory_percent = [item["memory_percent"] for item in samples]
+        per_gpu: Dict[str, Dict[str, Any]] = {}
+        for sample in samples:
+            key = str(int(sample["gpu_index"]))
+            entry = per_gpu.setdefault(key, {"samples": []})
+            entry["samples"].append(sample)
+        per_gpu_summary: Dict[str, Dict[str, Any]] = {}
+        for key, entries in per_gpu.items():
+            gpu_utils = [item["utilization_percent"] for item in entries["samples"]]
+            gpu_memory = [item["memory_used_gib"] for item in entries["samples"]]
+            per_gpu_summary[key] = {
+                "sample_count": len(entries["samples"]),
+                "avg_utilization_percent": round(sum(gpu_utils) / len(gpu_utils), 3),
+                "peak_utilization_percent": round(max(gpu_utils), 3),
+                "peak_memory_used_gib": round(max(gpu_memory), 3),
+            }
+        self._gpu_telemetry = {
+            "status": "ok",
+            "sample_count": len(samples),
+            "interval_s": self._gpu_telemetry.get("interval_s"),
+            "gpu_count": len(per_gpu_summary),
+            "avg_utilization_percent": round(sum(utilizations) / len(utilizations), 3),
+            "peak_utilization_percent": round(max(utilizations), 3),
+            "peak_memory_used_gib": round(max(memory_used), 3),
+            "peak_memory_percent": round(max(memory_percent), 3),
+            "per_gpu": per_gpu_summary,
+        }
+        return dict(self._gpu_telemetry)
 
     def ensure_registry_discovered(self, registry: Any) -> None:
         if self._registry_auto_discovered:
@@ -112,6 +254,12 @@ class RuntimeSession:
     def get_active_segment_count(self) -> Optional[int]:
         return self._active_segment_count
 
+    def set_active_query_text(self, query: Optional[str]) -> None:
+        self._active_query_text = str(query or "").strip() or None
+
+    def get_active_query_text(self) -> str:
+        return str(self._active_query_text or "")
+
     def resolve_video_scope(self, explicit_hint: Optional[str] = None) -> Set[str]:
         hinted = _normalize_video_scope_names([explicit_hint])
         if hinted:
@@ -144,6 +292,7 @@ class RuntimeSession:
             "active_video_path": self._active_video_path,
             "active_processed_dir": self._active_processed_dir,
             "active_segment_count": self._active_segment_count,
+            "active_query_text": self._active_query_text,
             "timings": dict(self._timings),
             "cache_stats": dict(self._cache_stats),
             "recent_tools": list(self._recent_tools),
@@ -169,6 +318,8 @@ class RuntimeSession:
             if active_segment_count is not None
             else None
         )
+        active_query_text = snapshot.get("active_query_text")
+        self._active_query_text = str(active_query_text).strip() if active_query_text else None
 
         timings = defaultdict(float)
         for key, value in dict(snapshot.get("timings") or {}).items():
@@ -300,6 +451,7 @@ class RuntimeSession:
         return artifact
 
     def get_query_metrics(self) -> Dict[str, Any]:
+        gpu_telemetry = self._stop_gpu_telemetry()
         return {
             "active_video_names": sorted(self._active_video_names),
             "active_video_path": self._active_video_path,
@@ -311,6 +463,7 @@ class RuntimeSession:
             },
             "cache_stats": dict(self._cache_stats),
             "recent_tools": list(self._recent_tools),
+            "gpu_telemetry": gpu_telemetry,
         }
 
 

@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:finance-commerce:031-1",
+  "dataset_name": "videomme",
+  "subset_name": "Finance & Commerce",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "D",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) Stocks (blue), Bonds (red), and Cash (yellow).",
+  "elapsed_seconds": 95.545,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/finance-commerce-031-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/finance-commerce-031-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/finance-commerce-031-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/finance-commerce-031-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/TPS22HRRY1k.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/TPS22HRRY1k.mp4",
+  "question_block": "Question: Which of the following best describes the types of assets included within Will's \"Assets Under Management\" visual bar in the video, showcasing the composition of the mutual fund's holdings?\nOptions:\n(A) Real Estate (blue), Precious Metals (red), and Foreign Currencies (yellow).\n(B) Real Estate (blue), Foreign Currencies (red), and Precious Metals (yellow).\n(C) Bonds (blue), Stocks (red), and Cash (yellow).\n(D) Stocks (blue), Bonds (red), and Cash (yellow).",
+  "options": [
+    "A. Real Estate (blue), Precious Metals (red), and Foreign Currencies (yellow).",
+    "B. Real Estate (blue), Foreign Currencies (red), and Precious Metals (yellow).",
+    "C. Bonds (blue), Stocks (red), and Cash (yellow).",
+    "D. Stocks (blue), Bonds (red), and Cash (yellow)."
+  ],
+  "official_meta": {
+    "video_id": "031",
+    "video_external_id": "TPS22HRRY1k",
+    "resolved_video_stem": "TPS22HRRY1k",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Knowledge",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Finance & Commerce",
+    "task_type": "Attribute Perception",
+    "question_id": "031-1",
+    "question_index": 0,
+    "video_item_index": 30,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-19T02:18:18.812942Z"
+}

@@ -26,29 +26,74 @@ class Settings(BaseSettings):
     max_iterations: int = 15
     subagent_max_iterations: int = 3
     enable_streaming: bool = False
-    planner_max_generation_tokens: int = 8192
-    planner_min_thinking_generation_tokens: int = 8192
+    planner_max_generation_tokens: int = 2048
+    planner_min_thinking_generation_tokens: int = 2048
     subagent_max_generation_tokens: int = 2048
-    planner_temperature: float = 1.0
+    planner_temperature: float = 0.0
     planner_top_p: float = 0.95
     planner_top_k: int = 20
     planner_min_p: float = 0.0
     planner_presence_penalty: float = 1.5
-    planner_repetition_penalty: float = 1.0
+    planner_repetition_penalty: float = 1.1
     subagent_temperature: float = 0.7
     subagent_top_p: float = 0.8
     subagent_top_k: int = 20
     subagent_min_p: float = 0.0
     subagent_presence_penalty: float = 1.5
     subagent_repetition_penalty: float = 1.0
+    observer_temperature: float = 0.0
+    observer_top_p: float = 0.95
+    observer_top_k: int = 20
+    observer_min_p: float = 0.0
+    observer_repetition_penalty: float = 1.0
+    # Auxiliary role contracts carry evidence arrays and explicit rationales;
+    # leave enough room for a complete JSON object instead of relying on a
+    # truncation fallback.
+    observer_max_generation_tokens: int = 1024
+    reflector_temperature: float = 0.0
+    reflector_top_p: float = 0.95
+    reflector_top_k: int = 20
+    reflector_min_p: float = 0.0
+    reflector_repetition_penalty: float = 1.0
+    reflector_max_generation_tokens: int = 1024
+    # One shared wall-clock budget for judgment and any same-input repair.
+    reflector_timeout_seconds: float = 180.0
+    evolver_temperature: float = 0.0
+    evolver_top_p: float = 0.95
+    evolver_top_k: int = 20
+    evolver_min_p: float = 0.0
+    evolver_repetition_penalty: float = 1.0
+    evolver_max_generation_tokens: int = 4096
     structured_repair_timeout_seconds: float = 600.0
-    planner_enable_thinking: bool = True
+    # Planner responses drive a machine-readable tool protocol.  Disable model
+    # reasoning tokens here so the model can satisfy the JSON-only contract at
+    # the transport boundary; any concise rationale belongs inside `Thought`.
+    planner_enable_thinking: bool = False
     subagent_enable_thinking: bool = False
     graph_enable: bool = False
     web_search_enabled: bool = False
     entity_track_enabled: bool = False
     disable_meta_tools: bool = True
-    disabled_tool_names_base: Tuple[str, ...] = ("Debt_Interest_Analyzer",)
+    # These edge tools have no validated backend in the formal local build.
+    # Keep them out of the registry instead of exposing pseudo-positive
+    # transcript/row-order/lexical results.  A future batch may re-enable a
+    # name only after installing and testing its real model backend.
+    disabled_tool_names_base: Tuple[str, ...] = (
+        "Debt_Interest_Analyzer",
+        "Action_Recognition",
+        "Audio_Event_Detect",
+        "Cross_Modal_Verify",
+        "Emotion_Analysis",
+        "OCR_Extract",
+        "Speaker_Diarization",
+        # These entries either duplicate an existing runtime responsibility or
+        # only expose a narrow heuristic/optional backend.  Keep their source
+        # available for a future candidate, but do not advertise them as
+        # executable formal tools until they have a distinct validated contract.
+        "Query_Rewrite",
+        "SQL_Executor",
+        "evidence_verify",
+    )
     disabled_graph_tool_names: Tuple[str, ...] = (
         "Graph_Search",
         "Neighbor_List_Graph",
@@ -146,7 +191,7 @@ class Settings(BaseSettings):
     non_planner_embedding_role_models: Dict[str, str] = {}
     # Preprocessing models are inference-only. Keep them off the RL actor CUDA
     # context unless explicitly changed here.
-    preprocess_asr_device: str = "cpu"
+    preprocess_asr_device: str = "cuda"
     per_device_max_memory_gb: Optional[float] = None
     planner_visual_observation_token_budget: int = 12288
     planner_visual_observation_image_token_estimate: int = 1536
@@ -168,8 +213,15 @@ class Settings(BaseSettings):
     video_clip_qa_min_pixels: int = 4 * 32 * 32
     video_clip_qa_processor_max_pixels: int = 65536 * 32 * 32
     video_clip_qa_max_frames: int = 80
+    video_clip_qa_max_window_seconds: float = 90.0
     video_clip_qa_max_pixels: int = 768 * 32 * 32
-    video_clip_qa_max_new_tokens: int = 8192
+    # Approximate retrieval windows can begin just after a short action. For
+    # action-localization queries, include a bounded boundary margin while
+    # preserving the requested range in the tool result for auditability.
+    video_clip_qa_action_margin_seconds: float = 5.0
+    # Video_Clip_QA has a compact JSON response contract; a small cap prevents
+    # verbose reasoning from crowding out the final structured answer.
+    video_clip_qa_max_new_tokens: int = 256
     video_clip_qa_think_max_chars: int = 4000
     
     # Multi-Device Configuration
@@ -193,9 +245,12 @@ class Settings(BaseSettings):
     processed_frames_subdir: str = "frames"
     processed_clips_subdir: str = "clips"
     
-    # Model Base Path - User only needs to modify this ONE line
-
-    model_base_path: str = "/mnt/data/LiuXiao/models"
+    # Model Base Path
+    #
+    # Keep checkpoints adjacent to the project workspace rather than binding the
+    # runtime to the source machine's absolute path.  MODEL_BASE_PATH remains an
+    # explicit override for deployments that keep models elsewhere.
+    model_base_path: str = str(Path(__file__).resolve().parents[4] / "model")
     planner_model_subpath: str = "Qwen/Qwen3.5-9B"
     subagent_model_subpath: str = "Qwen/Qwen3.5-9B"
     preprocess_model_subpath: str = "Qwen/Qwen3.5-9B"
@@ -350,6 +405,42 @@ class Settings(BaseSettings):
         }
 
     @property
+    def observer_generation_config(self) -> Dict[str, Any]:
+        return {
+            "temperature": self.observer_temperature,
+            "top_p": self.observer_top_p,
+            "top_k": self.observer_top_k,
+            "min_p": self.observer_min_p,
+            "repetition_penalty": self.observer_repetition_penalty,
+            "enable_thinking": False,
+            "max_new_tokens": int(self.observer_max_generation_tokens),
+        }
+
+    @property
+    def reflector_generation_config(self) -> Dict[str, Any]:
+        return {
+            "temperature": self.reflector_temperature,
+            "top_p": self.reflector_top_p,
+            "top_k": self.reflector_top_k,
+            "min_p": self.reflector_min_p,
+            "repetition_penalty": self.reflector_repetition_penalty,
+            "enable_thinking": False,
+            "max_new_tokens": int(self.reflector_max_generation_tokens),
+        }
+
+    @property
+    def evolver_generation_config(self) -> Dict[str, Any]:
+        return {
+            "temperature": self.evolver_temperature,
+            "top_p": self.evolver_top_p,
+            "top_k": self.evolver_top_k,
+            "min_p": self.evolver_min_p,
+            "repetition_penalty": self.evolver_repetition_penalty,
+            "enable_thinking": False,
+            "max_new_tokens": int(self.evolver_max_generation_tokens),
+        }
+
+    @property
     def preprocess_generation_config(self) -> Dict[str, Any]:
         return {
             "temperature": 0.7,
@@ -474,6 +565,12 @@ class Settings(BaseSettings):
             config = dict(self.planner_generation_config)
         elif role == "subagent":
             config = dict(self.subagent_generation_config)
+        elif role == "observer":
+            config = dict(self.observer_generation_config)
+        elif role == "reflector":
+            config = dict(self.reflector_generation_config)
+        elif role == "evolver":
+            config = dict(self.evolver_generation_config)
         elif role == "preprocess":
             config = dict(self.preprocess_generation_config)
         elif role == "qwen_vl":

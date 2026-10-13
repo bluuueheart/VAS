@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:event-understanding:59:268",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Drive a car",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) Pilot a plane",
+  "elapsed_seconds": 424.101,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00059-268",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00059-268/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00059-268/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00059-268/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/TJR1oYDDTwg.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/TJR1oYDDTwg.mp4",
+  "question_block": "Question: How does the villain follow the prince, princess and dragon?\nOptions:\n(A) Run after\n(B) Pilot a plane\n(C) Drive a car\n(D) Ride a bike",
+  "options": [
+    "Run after",
+    "Pilot a plane",
+    "Drive a car",
+    "Ride a bike"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "14:57-16:25",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "TJR1oYDDTwg",
+    "resolved_video_stem": "TJR1oYDDTwg",
+    "video_mapping_verified": true,
+    "source_index": 59
+  },
+  "updated_at": "2026-09-09T00:17:58.774235Z"
+}

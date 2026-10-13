@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00161:505834f9-c164-4ca7-9f4c-a37bd55e359d",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C first opens the measuring bottle and pours some liquid from a gallon into it. then, c shakes the measuring bottle to mix the liquid. finally, c uses the micropipette to take some of the liquid out of the measuring bottle and injects it into the chair.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00161-505834f9-c164-4ca7-9f4c-a37bd55e359d",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00161-505834f9-c164-4ca7-9f4c-a37bd55e359d/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00161-505834f9-c164-4ca7-9f4c-a37bd55e359d/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00161-505834f9-c164-4ca7-9f4c-a37bd55e359d/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/505834f9-c164-4ca7-9f4c-a37bd55e359d.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/505834f9-c164-4ca7-9f4c-a37bd55e359d.mp4",
+  "question_block": "Question: Considering all the actions taken with the measuring bottle, summarize and describe the process that c goes through to obtain, mix, and ultimately use the liquid contents for another task.\nOptions:\n(A) C first opens the measuring bottle and pours some liquid from a gallon into it. then, c shakes the measuring bottle to mix the liquid. finally, c uses the micropipette to take some of the liquid out of the measuring bottle and drinks it.\n(B) C first opens the measuring bottle and pours some liquid from a gallon into it. then, c shakes the measuring bottle to mix the liquid. finally, c uses the micropipette to take some of the liquid out of the measuring bottle and injects it into the chair.\n(C) Initially, c first opens the measuring bottle carefully and pours some liquid from a gallon container into it. next, c gently shakes the measuring bottle to evenly mix the liquid inside. lastly, c skillfully uses the micropipette to extract some of the liquid from the measuring bottle and deliberately pours it onto the floor.\n(D) Initially, c first opens the measuring bottle and carefully pours some liquid from a gallon into it. subsequently, c shakes the measuring bottle thoroughly to mix the liquid well. finally, c utilizes the micropipette to extract some of the liquid out of the measuring bottle and transfers it into a designated container.\n(E) C first opens the measuring bottle and pours some liquid from a gallon into it. then, c shakes the measuring bottle to mix the liquid. finally, c uses the micropipette to take some of the liquid out of the measuring bottle and sprays it on the chair.",
+  "options": [
+    "C first opens the measuring bottle and pours some liquid from a gallon into it. then, c shakes the measuring bottle to mix the liquid. finally, c uses the micropipette to take some of the liquid out of the measuring bottle and drinks it.",
+    "C first opens the measuring bottle and pours some liquid from a gallon into it. then, c shakes the measuring bottle to mix the liquid. finally, c uses the micropipette to take some of the liquid out of the measuring bottle and injects it into the chair.",
+    "Initially, c first opens the measuring bottle carefully and pours some liquid from a gallon container into it. next, c gently shakes the measuring bottle to evenly mix the liquid inside. lastly, c skillfully uses the micropipette to extract some of the liquid from the measuring bottle and deliberately pours it onto the floor.",
+    "Initially, c first opens the measuring bottle and carefully pours some liquid from a gallon into it. subsequently, c shakes the measuring bottle thoroughly to mix the liquid well. finally, c utilizes the micropipette to extract some of the liquid out of the measuring bottle and transfers it into a designated container.",
+    "C first opens the measuring bottle and pours some liquid from a gallon into it. then, c shakes the measuring bottle to mix the liquid. finally, c uses the micropipette to take some of the liquid out of the measuring bottle and sprays it on the chair."
+  ],
+  "official_meta": {
+    "question_index": "00161",
+    "video_id": "505834f9-c164-4ca7-9f4c-a37bd55e359d",
+    "source_index": 161
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:50:34.026606Z"
+}

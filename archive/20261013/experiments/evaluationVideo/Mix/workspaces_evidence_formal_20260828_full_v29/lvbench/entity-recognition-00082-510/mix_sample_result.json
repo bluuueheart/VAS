@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:entity-recognition:82:510",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 11,
+  "iter_num": 14,
+  "tool_success_rate": 0.909091,
+  "successful_tool_calls": 10,
+  "planner_iterations": 14,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "6",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 4545.909,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00082-510",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00082-510/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00082-510/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00082-510/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/2sriHX3PbXw.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/2sriHX3PbXw.mp4",
+  "question_block": "Question: There is a group of people wearing the same outfit, lining up in a line across the street. How many people are there\nOptions:\n(A) 8\n(B) 6\n(C) 5\n(D) 4",
+  "options": [
+    "8",
+    "6",
+    "5",
+    "4"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "cartoon",
+    "time_reference": "04:16-04:20",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "2sriHX3PbXw",
+    "resolved_video_stem": "2sriHX3PbXw",
+    "video_mapping_verified": true,
+    "source_index": 82
+  },
+  "updated_at": "2026-09-10T00:51:57.540373Z"
+}

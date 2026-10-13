@@ -1,0 +1,44 @@
+{
+  "sample_uid": "mlvu:topic-reasoning:0:awa-6",
+  "dataset_name": "mlvu",
+  "subset_name": "topic_reasoning",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 0,
+  "iter_num": 1,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 1,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "ground_truth": "Grassland",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) Grassland",
+  "elapsed_seconds": 61.334,
+  "workspace_root": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/topic-reasoning-00000-awa-6",
+  "launcher_log": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/topic-reasoning-00000-awa-6/launcher.log",
+  "result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/topic-reasoning-00000-awa-6/mix_sample_result.json",
+  "run_result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/topic-reasoning-00000-awa-6/results/run_result.json",
+  "source_video_path": "/mnt/data/LiuXiao/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+  "prepared_video_path": "/mnt/data/LiuXiao/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+  "question_block": "Question: What is the main background of the video?\nOptions:\n(A) Grassland\n(B) Lake\n(C) Ocean\n(D) Desert",
+  "options": [
+    "Grassland",
+    "Lake",
+    "Ocean",
+    "Desert"
+  ],
+  "official_meta": {
+    "task_type": "topic_reasoning",
+    "source_json": "7_topic_reasoning.json",
+    "source_index": 0,
+    "video_subdir": "7_topic_reasoning",
+    "video_relative_path": "7_topic_reasoning/AWA-6.mp4",
+    "data_type": "video"
+  },
+  "updated_at": "2026-07-14T08:59:24.828384Z"
+}

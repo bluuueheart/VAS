@@ -1,0 +1,21 @@
+{
+  "pid": 91351,
+  "command": [
+    "/gemini/code/bin/python3.11",
+    "evaluationVideo/Mix/run_mix_batch.py",
+    "--config",
+    "evaluationVideo/Mix/mix_config_evidence_multi.json",
+    ""
+  ],
+  "environment": {
+    "ONLINE_EVOLUTION": "1",
+    "ONLINE_EVOLUTION_GROUP_SIZE": "2",
+    "ONLINE_EVOLUTION_TRIGGER_EVERY": "2",
+    "MIX_PAIRED_ABLATIONS": "0",
+    "TOOLSTAR_DISABLE_LOCAL_VECTOR_INDEX": "0",
+    "TOOLSTAR_SEMANTIC_INDEX_VIDEO": "1",
+    "TOOLSTAR_WORKSPACES_ROOT_OVERRIDE": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39",
+    "TOOLSTAR_ABLATION_DISABLED_AGENT_ROLES": null,
+    "TOOLSTAR_ABLATION_DISABLED_TOOL_NAMES": null
+  }
+}

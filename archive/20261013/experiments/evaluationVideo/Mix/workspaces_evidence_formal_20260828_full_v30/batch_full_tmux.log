@@ -1,0 +1,9 @@
+Using Orion CUDA proxy runtime: /opt/orion/orion_runtime/gpu/cuda/orion-cuda-12.3
+2026-08-28 22:48:45,379 - INFO - Video-MME subtitle mode=w/o sub.; external dataset subtitles are not loaded.
+2026-08-28 22:48:48,542 - WARNING - Skipped 2 malformed MLVU samples task_type=ego source_json=3_ego.json examples=['record_index=119 video=ego_26.mp4 error=MLVU candidates contain empty option slots at indices 2.', 'record_index=313 video=ego_81.mp4 error=MLVU candidates contain empty option slots at indices 3.']
+2026-08-28 22:48:49,239 - WARNING - Skipped 1 malformed MLVU samples task_type=plotQA source_json=1_plotQA.json examples=['record_index=23 video=movie101_5.mp4 error=MLVU candidates contain empty option slots at indices 0, 3.']
+2026-08-28 22:48:49,807 - WARNING - --force-rerun reset formal progress; archived legacy checkpoint at /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v30/mix_progress_legacy_before_force_rerun.json
+2026-08-28 22:48:49,831 - INFO - Reusing immutable tool library baseline baseline_id=toolbase_046224480e0d995b8b52 path=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v30/_audit/tool_library_baseline.json
+2026-08-28 22:52:05,790 - INFO - Mix batch execution resolved parallel_samples=1 reuse_worker_samples=6920 asr_beam_size=1 asr_best_of=1 asr_condition_on_previous_text=False asr_vad_filter=True caption_batch_size=8 caption_max_frames=4 caption_max_new_tokens=128 visible_cuda_devices=['0'] selected_samples=6920
+2026-08-28 22:52:05,794 - INFO - Resume [lvbench 0/1549] | [videomme 0/2700] | [egoschema 0/500] | [mlvu 0/2171]
+2026-08-28 22:52:05,794 - INFO - Launching reusable worker group 1-6920/6920 first_sample_uid=lvbench:entity-recognition:4:63 last_sample_uid=videomme:multilingual:900-3

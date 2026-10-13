@@ -1,0 +1,140 @@
+{
+  "kind": "development_pilot",
+  "created_at": 1790158701.8689716,
+  "research_baseline": "current_techplan_four_role_system",
+  "final_test": false,
+  "selection": "Prespecified historical failures and correct controls; not a representative benchmark.",
+  "cases": [
+    {
+      "role": "trigger",
+      "diagnostic_hypothesis": "temporal_coverage",
+      "sample_uid": "mlvu:count:0:count-126",
+      "media_identity": "/gemini/data-1/datasets/MLVU/MLVU/video/4_count/count_126.mp4",
+      "historical_status": "failed",
+      "historical_metrics_path": "evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/count-00000-count-126/mix_sample_result.json",
+      "historical_metrics_sha256": "2a3f7c41147fcb569c80082f7f42c3ada37d9c75211b6b39eb8b8dc714e11c70",
+      "historical_run_sha256": "3be3723cd7757f913629b79041315a44a8d7439e8c970e11c85f0011a40124ea"
+    },
+    {
+      "role": "control",
+      "diagnostic_hypothesis": "historically_correct",
+      "sample_uid": "mlvu:order:0:order-126",
+      "media_identity": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_126.mp4",
+      "historical_status": "completed",
+      "historical_metrics_path": "evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/order-00000-order-126/mix_sample_result.json",
+      "historical_metrics_sha256": "b5c13a48336b9c132c326823db430952a81e865ad45a577017dac6bff3356fa5",
+      "historical_run_sha256": "5d4d71d69e4ad1dd0c07262ff2275aeeb33b56bcb36ef5d3f5b7b547feec9473"
+    },
+    {
+      "role": "trigger",
+      "diagnostic_hypothesis": "local_visual_detail",
+      "sample_uid": "videomme:humanity-history:001-1",
+      "media_identity": "/gemini/data-1/datasets/Video-MME/data/fFjv93ACGo8.mp4",
+      "historical_status": "failed",
+      "historical_metrics_path": "evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/humanity-history-001-1/mix_sample_result.json",
+      "historical_metrics_sha256": "eb1220b0367f1baf3825874ddbd3ff0e23877863d2d8536efabb79dc832b833f",
+      "historical_run_sha256": "664d7579b9636dc211b5ae87aacf401d4949a3d4c633298eb9047b94c35afa8b"
+    },
+    {
+      "role": "control",
+      "diagnostic_hypothesis": "historically_correct",
+      "sample_uid": "videomme:biology-medicine:021-1",
+      "media_identity": "/gemini/data-1/datasets/Video-MME/data/TbaCxIJ_VP4.mp4",
+      "historical_status": "completed",
+      "historical_metrics_path": "evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/biology-medicine-021-1/mix_sample_result.json",
+      "historical_metrics_sha256": "a02f005c26403a58267d842d689786daf80b702394cab39f0512c76107ec262c",
+      "historical_run_sha256": "3b32d659ce5d846e80053a16bece97bd4820d7a65aebea5e053f207dbd766293"
+    },
+    {
+      "role": "trigger",
+      "diagnostic_hypothesis": "evidence_interpretation",
+      "sample_uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "media_identity": "/gemini/data-1/datasets/egoschema/videos/00b9a0de-c59e-49cb-a127-6081e2fb8c8e.mp4",
+      "historical_status": "failed",
+      "historical_metrics_path": "evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e/mix_sample_result.json",
+      "historical_metrics_sha256": "b81f3f4b68584c53ae22ef3c6ecaaf3f6ce0b0147a25927419917d17f20daf21",
+      "historical_run_sha256": "fe3c64c9f56d0f306cd3242e7588927aeb072ae74570030134ca7337f9f7e722"
+    },
+    {
+      "role": "control",
+      "diagnostic_hypothesis": "historically_correct",
+      "sample_uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+      "media_identity": "/gemini/data-1/datasets/egoschema/videos/0074f737-11cb-497d-8d07-77c3a8127391.mp4",
+      "historical_status": "completed",
+      "historical_metrics_path": "evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/mix_sample_result.json",
+      "historical_metrics_sha256": "3ce3737656922f99a96421e7385ff748fa0e1f1c72839140d22fa02b71b9768f",
+      "historical_run_sha256": "bb92fc6e3f7a877a6a2955a75637dcd78dcd49530dbbe1b6045a0e79ecf462d3"
+    },
+    {
+      "role": "trigger",
+      "diagnostic_hypothesis": "temporal_coverage",
+      "sample_uid": "mlvu:needle:0:needle-32",
+      "media_identity": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_32.mp4",
+      "historical_status": "failed",
+      "historical_metrics_path": "evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/needle-00000-needle-32/mix_sample_result.json",
+      "historical_metrics_sha256": "f1acbcc7d7e6a5f09936eede1308a9b5ef68f888062693e612d6b958e4902f39",
+      "historical_run_sha256": "75ba2006bd78cbb0ab0ae1c61c6395e54e9d77ec90d18a4f36bd5b3d64f4f803"
+    },
+    {
+      "role": "control",
+      "diagnostic_hypothesis": "historically_correct",
+      "sample_uid": "mlvu:topic-reasoning:0:awa-6",
+      "media_identity": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/AWA-6.mp4",
+      "historical_status": "completed",
+      "historical_metrics_path": "evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/topic-reasoning-00000-awa-6/mix_sample_result.json",
+      "historical_metrics_sha256": "e1c532d9d9b72be821465b0910be7fa71c9751bc7b49322b540fc93d28db1fbe",
+      "historical_run_sha256": "f47e6c5378a181c73025b82e34dab6f6a92fe0edd370da9c9f99736765f2d22b"
+    },
+    {
+      "role": "trigger",
+      "diagnostic_hypothesis": "local_visual_detail",
+      "sample_uid": "lvbench:entity-recognition:4:63",
+      "media_identity": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+      "historical_status": "failed",
+      "historical_metrics_path": "evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/entity-recognition-00004-63/mix_sample_result.json",
+      "historical_metrics_sha256": "47c7b86747c7d2dfd3f4c2c68c87230ca37a858b59152b4c160c90a884e51aaf",
+      "historical_run_sha256": "ec836411c492bf54a0efb36ddd97a372a3276ffb714763966592c413f825819c"
+    },
+    {
+      "role": "control",
+      "diagnostic_hypothesis": "historically_correct",
+      "sample_uid": "lvbench:key-information-retrieval:0:55",
+      "media_identity": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+      "historical_status": "completed",
+      "historical_metrics_path": "evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/key-information-retrieval-00000-55/mix_sample_result.json",
+      "historical_metrics_sha256": "e7ed6b842be7fc074231ef4745297d8c1a981896c6e6f7967f528a5ea2a29a96",
+      "historical_run_sha256": "ee085342f4b07133ff16d6b9e4c9e2ce081db04d68943d050fd08913509d15e0"
+    },
+    {
+      "role": "trigger",
+      "diagnostic_hypothesis": "evidence_interpretation",
+      "sample_uid": "mlvu:anomaly-reco:0:surveil-20",
+      "media_identity": "/gemini/data-1/datasets/MLVU/MLVU/video/6_anomaly_reco/surveil_20.mp4",
+      "historical_status": "failed",
+      "historical_metrics_path": "evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/mlvu/anomaly-reco-00000-surveil-20/mix_sample_result.json",
+      "historical_metrics_sha256": "a4b573a45ec0fbcfb6d3260902ad5feda157eb6f7f7be5a3ca91acf80f05f801",
+      "historical_run_sha256": "f2ff3a57a44466b04ae6de1e9b2d2385fa1912e9d5173d4784f876614a586e59"
+    },
+    {
+      "role": "control",
+      "diagnostic_hypothesis": "historically_correct",
+      "sample_uid": "videomme:astronomy:041-1",
+      "media_identity": "/gemini/data-1/datasets/Video-MME/data/yl5ZXQmrtP0.mp4",
+      "historical_status": "completed",
+      "historical_metrics_path": "evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/videomme/astronomy-041-1/mix_sample_result.json",
+      "historical_metrics_sha256": "bef37c2dbad2bd027ec140fdaa9d3ea45c66201498721d3dbbb736b2064c30b2",
+      "historical_run_sha256": "074d93588c14f46200dfb3df52633b1b1c070994948d9dfb278f379cd2fc4494"
+    }
+  ],
+  "source_manifest_sha256": "634478035def9f97da6e9581e60dce91f74ae7f767af72381c35e4e4f5e02758",
+  "p1_device_wall_seconds_limit": 43200,
+  "baseline_wall_seconds_limit": 14400,
+  "proposal_attempt_limit": 12,
+  "proposal_attempts_used": 0,
+  "shared_cache": "Reuse allowed only under existing input fingerprint validation; no result reuse.",
+  "limitations": [
+    "Group labels are hypotheses.",
+    "No fine-grained/CFVBench claim from this pilot.",
+    "Controls may share media with development triggers; all are excluded from future audit/test."
+  ]
+}

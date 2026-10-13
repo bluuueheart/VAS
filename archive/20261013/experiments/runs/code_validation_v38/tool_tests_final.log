@@ -1,0 +1,10 @@
+Rebuilding dense index for tmpeoyb75wl: Expecting value: line 1 column 1 (char 0)
+Rebuilding dense index for tmpeoyb75wl: Expecting value: line 1 column 1 (char 0)
+<frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+<frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+Error searching vectors in /tmp/tmp2trr3zcq: embedding unavailable
+----------------------------------------------------------------------
+Ran 6 tests in 168.360s
+
+OK
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

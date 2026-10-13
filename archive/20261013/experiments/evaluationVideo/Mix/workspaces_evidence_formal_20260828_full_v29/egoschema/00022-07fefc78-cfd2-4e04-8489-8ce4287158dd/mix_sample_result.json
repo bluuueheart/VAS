@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00022:07fefc78-cfd2-4e04-8489-8ce4287158dd",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 9,
+  "iter_num": 18,
+  "tool_success_rate": 0.777778,
+  "successful_tool_calls": 7,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "The primary elements involved in the process depicted in the video are clay, soil, and a box. the clay is used to create the desired shape, the soil is used to keep the clay moist and prevent it from cracking, and the box is used to hold the clay and soil in place.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [
+    "E"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 5943.889,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00022-07fefc78-cfd2-4e04-8489-8ce4287158dd",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00022-07fefc78-cfd2-4e04-8489-8ce4287158dd/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00022-07fefc78-cfd2-4e04-8489-8ce4287158dd/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00022-07fefc78-cfd2-4e04-8489-8ce4287158dd/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/07fefc78-cfd2-4e04-8489-8ce4287158dd.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/07fefc78-cfd2-4e04-8489-8ce4287158dd.mp4",
+  "question_block": "Question: Summarize the primary elements involved in the process depicted in the video, focusing on the essential components.\nOptions:\n(A) In the process portrayed in the video, the primary elements involved are clay, water, and a mold. the clay is utilized to create the desired shape, while the water keeps the clay moist, preventing cracks, and the mold securely holds the clay in its place.\n(B) The primary elements involved in the process depicted in the video are clay, sand, and a stick. the clay is used to create the desired shape, the sand is used to keep the clay moist and prevent it from cracking, and the stick is used to mold the clay into the desired shape.\n(C) The primary elements involved in the process depicted in the video are clay, paint, and a brush. the clay is utilized to create the desired shape or form, while the paint serves to artistically decorate the clay surface, and the brush is skillfully used for applying the paint.\n(D) The primary elements involved in the process shown in the video are clay, fire, and a kiln. the clay is skillfully used to create the desired shape, the fire effectively hardens the clay, and the kiln is crucially employed to control the temperature of the fire.\n(E) The primary elements involved in the process depicted in the video are clay, soil, and a box. the clay is used to create the desired shape, the soil is used to keep the clay moist and prevent it from cracking, and the box is used to hold the clay and soil in place.",
+  "options": [
+    "In the process portrayed in the video, the primary elements involved are clay, water, and a mold. the clay is utilized to create the desired shape, while the water keeps the clay moist, preventing cracks, and the mold securely holds the clay in its place.",
+    "The primary elements involved in the process depicted in the video are clay, sand, and a stick. the clay is used to create the desired shape, the sand is used to keep the clay moist and prevent it from cracking, and the stick is used to mold the clay into the desired shape.",
+    "The primary elements involved in the process depicted in the video are clay, paint, and a brush. the clay is utilized to create the desired shape or form, while the paint serves to artistically decorate the clay surface, and the brush is skillfully used for applying the paint.",
+    "The primary elements involved in the process shown in the video are clay, fire, and a kiln. the clay is skillfully used to create the desired shape, the fire effectively hardens the clay, and the kiln is crucially employed to control the temperature of the fire.",
+    "The primary elements involved in the process depicted in the video are clay, soil, and a box. the clay is used to create the desired shape, the soil is used to keep the clay moist and prevent it from cracking, and the box is used to hold the clay and soil in place."
+  ],
+  "official_meta": {
+    "question_index": "00022",
+    "video_id": "07fefc78-cfd2-4e04-8489-8ce4287158dd",
+    "resolved_video_stem": "07fefc78-cfd2-4e04-8489-8ce4287158dd",
+    "video_mapping_verified": true,
+    "source_index": 22,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-31T22:57:00.776883Z"
+}

@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:ego:24:ego-36",
+  "dataset_name": "mlvu",
+  "subset_name": "ego",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "the woman on black sports tight",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/ego-00024-ego-36",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/ego-00024-ego-36/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/ego-00024-ego-36/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/ego-00024-ego-36/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/3_ego/ego_36.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/3_ego/ego_36.mp4",
+  "question_block": "Question: Who did I interact with when I skated\nOptions:\n(A) the dog running alongside\n(B) the woman on black sports tight\n(C) the man in red sneakers\n(D) the child with a skateboard",
+  "options": [
+    "the dog running alongside",
+    "the woman on black sports tight",
+    "the man in red sneakers",
+    "the child with a skateboard"
+  ],
+  "official_meta": {
+    "task_type": "ego",
+    "source_json": "3_ego.json",
+    "source_index": 24,
+    "video_subdir": "3_ego",
+    "video_relative_path": "3_ego/ego_36.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:49:49.674229Z"
+}

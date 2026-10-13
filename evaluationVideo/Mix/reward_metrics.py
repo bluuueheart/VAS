@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from core.answer_contract import normalize_answer_format
 from typing import Any, Dict, Iterable, List, Mapping
 
 
@@ -12,11 +13,31 @@ def _normalize_dataset_name(dataset_name: Any) -> str:
     return str(dataset_name or "").strip().lower()
 
 
+def _strip_option_label_prefix(text: Any, label: Any) -> str:
+    """Remove a duplicated leading option label from option text.
+
+    Dataset loaders expose options in both forms ``"Berries"`` and
+    ``"C. Berries."``.  The label is already stored separately, so keeping
+    the latter prefix makes a valid answer ``"(C) Berries"`` fail the
+    label/text consistency check.
+    """
+    value = str(text or "").strip()
+    normalized_label = str(label or "").strip().upper()
+    if not value or not re.fullmatch(r"[A-Z]", normalized_label):
+        return value
+    prefix = rf"^\s*\(?{re.escape(normalized_label)}\)?\s*[.):\-]\s*"
+    return re.sub(prefix, "", value, count=1, flags=re.IGNORECASE).strip()
+
+
 def _coerce_options(options: Any) -> List[Dict[str, str]]:
     normalized: List[Dict[str, str]] = []
     if isinstance(options, dict):
         for label, text in options.items():
-            normalized.append({"label": str(label).strip(), "text": str(text).strip()})
+            normalized_label = str(label).strip()
+            normalized.append({
+                "label": normalized_label,
+                "text": _strip_option_label_prefix(text, normalized_label),
+            })
         return normalized
     if isinstance(options, (list, tuple)):
         for index, item in enumerate(options):
@@ -26,7 +47,7 @@ def _coerce_options(options: Any) -> List[Dict[str, str]]:
             else:
                 label = chr(ord("A") + index)
                 text = str(item).strip()
-            normalized.append({"label": label, "text": text})
+            normalized.append({"label": label, "text": _strip_option_label_prefix(text, label)})
     return normalized
 
 
@@ -68,7 +89,11 @@ def resolve_ground_truth_labels(ground_truth: Any, options: Any) -> List[str]:
         values.append(option_label_match.group(1))
 
     if normalized in option_text_to_label:
-        values.append(option_text_to_label[normalized])
+        # Dataset annotations may use a numeric option *text* (for example
+        # "1") as well as numeric zero-/one-based indices.  The normalized
+        # option text is the unambiguous interpretation used by the dataset
+        # loader, so do not add index-based alternatives here.
+        return [option_text_to_label[normalized]]
 
     try:
         numeric_value = int(float(text))
@@ -85,7 +110,7 @@ def resolve_ground_truth_labels(ground_truth: Any, options: Any) -> List[str]:
 
 
 def extract_predicted_label(final_answer: Any, options: Any) -> str:
-    answer_text = str(final_answer or "").strip()
+    answer_text = normalize_answer_format(final_answer)
     if not answer_text:
         return ""
 
@@ -119,6 +144,34 @@ def extract_predicted_label(final_answer: Any, options: Any) -> str:
     return ""
 
 
+def _answer_text_matches_option(final_answer: Any, predicted_label: str, options: Any) -> bool:
+    """Require the answer text to agree with its selected label.
+
+    A known label alone identifies its listed option. If text is supplied,
+    it must agree: ``(D) 7`` cannot be credited when D actually means ``1``.
+    """
+
+    label = str(predicted_label or "").strip().upper()
+    if not label:
+        return False
+    normalized_options = _coerce_options(options)
+    selected = next(
+        (item for item in normalized_options if str(item.get("label") or "").strip().upper() == label),
+        None,
+    )
+    if selected is None:
+        return False
+    answer = normalize_answer_format(final_answer, {item['label']: item['text'] for item in normalized_options})
+    match = re.search(r"\(([A-Z])\)\s*(.*?)\s*$", answer, re.IGNORECASE | re.DOTALL)
+    answer_text = str(match.group(2) if match and match.group(1).upper() == label else "").strip()
+    option_text = str(selected.get("text") or "").strip()
+    if not answer_text or not option_text:
+        return False
+    option_tokens = set(re.findall(r"[a-z0-9]+", _normalize_text(option_text)))
+    answer_tokens = set(re.findall(r"[a-z0-9]+", _normalize_text(answer_text)))
+    return bool(option_tokens) and option_tokens.issubset(answer_tokens)
+
+
 def _evaluate_rule_answer(
     final_answer: Any,
     ground_truth: Any,
@@ -129,7 +182,11 @@ def _evaluate_rule_answer(
     del dataset_name
     predicted_label = extract_predicted_label(final_answer, options)
     ground_truth_labels = resolve_ground_truth_labels(ground_truth, options)
-    label_matched = bool(predicted_label and predicted_label in ground_truth_labels)
+    label_matched = bool(
+        predicted_label
+        and predicted_label in ground_truth_labels
+        and _answer_text_matches_option(final_answer, predicted_label, options)
+    )
     normalized_answer = _normalize_text(final_answer)
     exact_text_match = bool(normalized_answer and normalized_answer == _normalize_text(ground_truth))
     answer_correct = bool(label_matched or exact_text_match)
@@ -189,6 +246,16 @@ def _infer_step_status(step: Dict[str, Any]) -> str:
     return "success"
 
 
+def _infer_observation_item_status(item: Dict[str, Any]) -> str:
+    explicit = str(item.get("status", "")).strip().lower()
+    if explicit:
+        return explicit
+    result = _normalize_text(item.get("result"))
+    if result.startswith(("error", "failed", "no_valid_result")):
+        return "error"
+    return "success"
+
+
 def _collect_tool_records(trajectory: Any) -> List[Dict[str, Any]]:
     if not isinstance(trajectory, dict):
         return []
@@ -212,7 +279,7 @@ def _collect_tool_records(trajectory: Any) -> List[Dict[str, Any]]:
         if action == "Parallel":
             observation_items = step.get("observation_items")
             nested_records = [
-                {**item, "depth": depth}
+                {**item, "status": _infer_observation_item_status(item), "depth": depth}
                 for item in _iter_nested_observation_items(observation_items)
                 if str(item.get("tool", "")).strip() not in {"", "Parallel", "System", "Assistant_Note"}
             ]

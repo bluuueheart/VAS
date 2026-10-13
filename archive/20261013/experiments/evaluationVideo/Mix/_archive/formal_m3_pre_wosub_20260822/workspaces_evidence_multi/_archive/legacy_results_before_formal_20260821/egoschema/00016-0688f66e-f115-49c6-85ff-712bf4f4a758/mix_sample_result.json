@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00016:0688f66e-f115-49c6-85ff-712bf4f4a758",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The peeler is used to remove the skin of the carrots, while the knife is used to cut the stem and taproot, and to cut the carrots into smaller pieces.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00016-0688f66e-f115-49c6-85ff-712bf4f4a758",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00016-0688f66e-f115-49c6-85ff-712bf4f4a758/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00016-0688f66e-f115-49c6-85ff-712bf4f4a758/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00016-0688f66e-f115-49c6-85ff-712bf4f4a758/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0688f66e-f115-49c6-85ff-712bf4f4a758.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0688f66e-f115-49c6-85ff-712bf4f4a758.mp4",
+  "question_block": "Question: Explain the significance of the peeler and the knife in the video and their respective roles in the preparation process.\nOptions:\n(A) The peeler is used to cut the stem and taproot of the carrots, while the knife is used to peel them.\n(B) The peeler is commonly utilized to expertly cut the carrots into significantly smaller pieces, while the knife is employed to carefully peel them and competently cut the stem and taproot.\n(C) The knife is conveniently used to remove the delicate skin of the carrots, while the peeler efficiently is used to cut the stem and taproot precisely, and to cut the carrots into consistently smaller pieces.\n(D) The knife is employed to precisely slice the stem and taproot of the carrots, whereas the peeler is effectively utilized to cut them into smaller, manageable pieces.\n(E) The peeler is used to remove the skin of the carrots, while the knife is used to cut the stem and taproot, and to cut the carrots into smaller pieces.",
+  "options": [
+    "The peeler is used to cut the stem and taproot of the carrots, while the knife is used to peel them.",
+    "The peeler is commonly utilized to expertly cut the carrots into significantly smaller pieces, while the knife is employed to carefully peel them and competently cut the stem and taproot.",
+    "The knife is conveniently used to remove the delicate skin of the carrots, while the peeler efficiently is used to cut the stem and taproot precisely, and to cut the carrots into consistently smaller pieces.",
+    "The knife is employed to precisely slice the stem and taproot of the carrots, whereas the peeler is effectively utilized to cut them into smaller, manageable pieces.",
+    "The peeler is used to remove the skin of the carrots, while the knife is used to cut the stem and taproot, and to cut the carrots into smaller pieces."
+  ],
+  "official_meta": {
+    "question_index": "00016",
+    "video_id": "0688f66e-f115-49c6-85ff-712bf4f4a758",
+    "source_index": 16
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:18:45.814287Z"
+}

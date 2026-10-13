@@ -1,0 +1,108 @@
+{
+  "workspaces_root": "/gemini/code/export_packages/extracted/runs/code_validation_v41/validation_workspaces",
+  "progress_path": "/gemini/code/export_packages/extracted/runs/code_validation_v41/validation_progress.json",
+  "results_path": "/gemini/code/export_packages/extracted/runs/code_validation_v41/validation_results.json",
+  "videomme_official_output_path": "/gemini/code/export_packages/extracted/runs/code_validation_v41/validation_videomme_output.json",
+  "shared_preprocess_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache",
+  "ffmpeg_binary": "ffmpeg",
+  "parallel_samples": 1,
+  "delivery_acceptance": {
+    "minimum_accuracy": {
+      "lvbench": 0.7,
+      "videomme": 0.784,
+      "mlvu": 0.844
+    },
+    "require_accepted_evolver": true
+  },
+  "allow_same_device_parallel": false,
+  "accelerator_queue_enabled": true,
+  "sample_worker_admission_capacity": 1,
+  "resident_model_workers_per_device": 1,
+  "accelerator_queue_memory_guard": true,
+  "accelerator_queue_min_free_gib": 8,
+  "accelerator_queue_reserve_gib": 12,
+  "persistent_worker_start_stagger_seconds": 0,
+  "reuse_worker_samples": 6920,
+  "pipeline_options": {
+    "mode": "react",
+    "include_grounding_video_clip_qa": false,
+    "asr_beam_size": 1,
+    "asr_best_of": 1,
+    "asr_condition_on_previous_text": false,
+    "asr_vad_filter": true,
+    "asr_device": "cpu",
+    "caption_batch_size": 8,
+    "caption_max_frames": 4,
+    "caption_max_new_tokens": 128,
+    "share_planner_visual_runtime": true,
+    "provider_accelerator_queue_capacity": 1,
+    "generation_accelerator_queue_capacity": 1,
+    "online_evolution": true,
+    "online_evolution_trigger_every": 8,
+    "online_evolution_window": 32,
+    "online_evolution_group_size": 512,
+    "online_evolution_timeout_seconds": 7200,
+    "online_evolution_min_group_counts": {
+      "trigger": 1,
+      "neighbor": 3,
+      "regression": 3,
+      "held_out": 3
+    },
+    "online_evolution_cycle_timeout_seconds": 172800
+  },
+  "dataset_order": [
+    "lvbench",
+    "videomme",
+    "egoschema",
+    "mlvu"
+  ],
+  "datasets": {
+    "lvbench": {
+      "enabled": true,
+      "prompt_template_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/lvbench_query_prompt.txt",
+      "dataset_root": "/gemini/data-1/datasets/LVBench",
+      "annotation_path": "./data/train-00000-of-00001.parquet",
+      "video_root": "./video_chunks",
+      "allow_annotation_time_prior": false
+    },
+    "videomme": {
+      "enabled": true,
+      "prompt_template_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/videomme_query_prompt.txt",
+      "subtitle_mode": "w/o sub.",
+      "dataset_root": "/gemini/data-1/datasets/Video-MME",
+      "annotation_path": "./videomme/test-00000-of-00001.parquet",
+      "video_id_mapping_path": "./videomme/test-00000-of-00001.parquet",
+      "video_search_roots": [
+        "./data"
+      ],
+      "video_extensions": [
+        ".mp4",
+        ".mkv",
+        ".webm",
+        ".avi",
+        ".mov"
+      ],
+      "recursive_video_lookup": true,
+      "include_durations": [
+        "short",
+        "medium",
+        "long"
+      ]
+    },
+    "egoschema": {
+      "enabled": true,
+      "prompt_template_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/egoschema_query_prompt.txt",
+      "dataset_root": "/gemini/data-1/datasets/egoschema",
+      "annotation_path": "./Subset/test-00000-of-00001.parquet",
+      "video_root": "./videos",
+      "subset_name": "subset"
+    },
+    "mlvu": {
+      "enabled": true,
+      "prompt_template_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/mlvu_query_prompt.txt",
+      "dataset_root": "/gemini/data-1/datasets/MLVU/MLVU",
+      "annotation_root": "./json",
+      "video_root": "./video"
+    }
+  }
+}

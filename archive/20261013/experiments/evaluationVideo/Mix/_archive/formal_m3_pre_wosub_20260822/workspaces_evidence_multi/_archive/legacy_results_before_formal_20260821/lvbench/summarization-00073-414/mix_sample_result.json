@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:summarization:73:414",
+  "dataset_name": "lvbench",
+  "subset_name": "summarization",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The vampire breaks the girl's cell phone but has no money to compensate, so he can only help the girl study. In the end, they become good friends",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00073-414",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00073-414/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00073-414/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00073-414/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/HfEVEGf1A8Q.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/HfEVEGf1A8Q.mp4",
+  "question_block": "Question: What happens to the girl and the vampire?\nOptions:\n(A) The vampire breaks the girl's game console but has no money to compensate, so he can only help the girl study. In the end, they become good friends\n(B) The vampire breaks the girl's game console but has no money to compensate, so he can only work in labor to earn money with the girl. In the end, they become good friends\n(C) The vampire breaks the girl's cell phone but has no money to compensate, so he can only work in labor to earn money with the girl. In the end, they become good friends\n(D) The vampire breaks the girl's cell phone but has no money to compensate, so he can only help the girl study. In the end, they become good friends",
+  "options": [
+    "The vampire breaks the girl's game console but has no money to compensate, so he can only help the girl study. In the end, they become good friends",
+    "The vampire breaks the girl's game console but has no money to compensate, so he can only work in labor to earn money with the girl. In the end, they become good friends",
+    "The vampire breaks the girl's cell phone but has no money to compensate, so he can only work in labor to earn money with the girl. In the end, they become good friends",
+    "The vampire breaks the girl's cell phone but has no money to compensate, so he can only help the girl study. In the end, they become good friends"
+  ],
+  "official_meta": {
+    "question_type": "summarization",
+    "video_type": "cartoon",
+    "time_reference": "13:14-53:28",
+    "video_key": "HfEVEGf1A8Q",
+    "source_index": 73
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:25:05.924579Z"
+}

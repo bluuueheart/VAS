@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00221:715ae2dd-58ed-4abf-b4e2-0348fb12f611",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The rolling pin, the spatula, and the oven were crucial for achieving the desired outcome.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00221-715ae2dd-58ed-4abf-b4e2-0348fb12f611",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00221-715ae2dd-58ed-4abf-b4e2-0348fb12f611/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00221-715ae2dd-58ed-4abf-b4e2-0348fb12f611/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00221-715ae2dd-58ed-4abf-b4e2-0348fb12f611/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/715ae2dd-58ed-4abf-b4e2-0348fb12f611.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/715ae2dd-58ed-4abf-b4e2-0348fb12f611.mp4",
+  "question_block": "Question: Taking into account all steps performed by c, which techniques and tools were crucial for achieving the desired outcome? explain why these were vital in c's process.\nOptions:\n(A) The essential ingredients, the flour, the water, and the vital yeast, were absolutely crucial for achieving the desired, successful outcome.\n(B) The rolling pin, the spatula, and the oven were crucial for achieving the desired outcome.\n(C) The essential tools, the cutting board, the knife, and the bowl, were absolutely crucial for achieving the desired culinary outcome.\n(D) The pizza sauce, the cheese, and the pepperoni were crucial for achieving the desired outcome.\n(E) The girl's significant presence was absolutely crucial for successfully achieving the desired outcome in the situation.",
+  "options": [
+    "The essential ingredients, the flour, the water, and the vital yeast, were absolutely crucial for achieving the desired, successful outcome.",
+    "The rolling pin, the spatula, and the oven were crucial for achieving the desired outcome.",
+    "The essential tools, the cutting board, the knife, and the bowl, were absolutely crucial for achieving the desired culinary outcome.",
+    "The pizza sauce, the cheese, and the pepperoni were crucial for achieving the desired outcome.",
+    "The girl's significant presence was absolutely crucial for successfully achieving the desired outcome in the situation."
+  ],
+  "official_meta": {
+    "question_index": "00221",
+    "video_id": "715ae2dd-58ed-4abf-b4e2-0348fb12f611",
+    "source_index": 221
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:48.082153Z"
+}

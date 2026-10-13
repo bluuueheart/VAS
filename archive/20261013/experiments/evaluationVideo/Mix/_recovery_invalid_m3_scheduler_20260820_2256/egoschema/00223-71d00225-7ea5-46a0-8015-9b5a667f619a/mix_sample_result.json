@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00223:71d00225-7ea5-46a0-8015-9b5a667f619a",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The main components of the dish being prepared are eggs, garlic, oil, food, spices, and a pan. the most significant ingredients are eggs and garlic. the most significant techniques are stirring, pouring, and dicing.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00223-71d00225-7ea5-46a0-8015-9b5a667f619a",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00223-71d00225-7ea5-46a0-8015-9b5a667f619a/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00223-71d00225-7ea5-46a0-8015-9b5a667f619a/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00223-71d00225-7ea5-46a0-8015-9b5a667f619a/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/71d00225-7ea5-46a0-8015-9b5a667f619a.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/71d00225-7ea5-46a0-8015-9b5a667f619a.mp4",
+  "question_block": "Question: Analyze the video and identify the main components of the dish being prepared. what are the most significant ingredients and techniques used during the cooking process?\nOptions:\n(A) The main components of the dish being prepared are eggs, garlic, oil, food, spices, and a pan. the most significant ingredients are eggs and garlic. the most significant techniques are stirring, pouring, and dicing.\n(B) The main components of the dish being prepared are milk, sugar, and chocolate. the most significant ingredients are milk and sugar. the most significant techniques are blending, pouring, and stirring.\n(C) The main components of the dish being prepared are lettuce, tomatoes, cucumbers, and onions. the most significant ingredients are lettuce and tomatoes. the most significant techniques are chopping, adding, and tossing.\n(D) The main components of the dish being prepared are bread, mayonnaise, cheese, lettuce, tomato, and ham. the most significant ingredients are bread and mayonnaise. the most significant techniques are spreading, adding, and putting together.\n(E) The main components of the dish being prepared are pizza crust, tomato sauce, cheese, pepperoni, sausage, and mushrooms. the most significant ingredients are pizza crust and tomato sauce. the most significant techniques are spreading, adding, and baking.",
+  "options": [
+    "The main components of the dish being prepared are eggs, garlic, oil, food, spices, and a pan. the most significant ingredients are eggs and garlic. the most significant techniques are stirring, pouring, and dicing.",
+    "The main components of the dish being prepared are milk, sugar, and chocolate. the most significant ingredients are milk and sugar. the most significant techniques are blending, pouring, and stirring.",
+    "The main components of the dish being prepared are lettuce, tomatoes, cucumbers, and onions. the most significant ingredients are lettuce and tomatoes. the most significant techniques are chopping, adding, and tossing.",
+    "The main components of the dish being prepared are bread, mayonnaise, cheese, lettuce, tomato, and ham. the most significant ingredients are bread and mayonnaise. the most significant techniques are spreading, adding, and putting together.",
+    "The main components of the dish being prepared are pizza crust, tomato sauce, cheese, pepperoni, sausage, and mushrooms. the most significant ingredients are pizza crust and tomato sauce. the most significant techniques are spreading, adding, and baking."
+  ],
+  "official_meta": {
+    "question_index": "00223",
+    "video_id": "71d00225-7ea5-46a0-8015-9b5a667f619a",
+    "source_index": 223
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:58.268945Z"
+}

@@ -1,0 +1,72 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-08-26T03:00:18.343776Z",
+  "records": {
+    "videomme:humanity-history:001-1": {
+      "sample_uid": "videomme:humanity-history:001-1",
+      "dataset_name": "videomme",
+      "subset_name": "Humanity & History",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 1,
+      "iter_num": 2,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v23/videomme/humanity-history-001-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v23/videomme/humanity-history-001-1",
+      "updated_at": "2026-08-26T01:53:26.369691Z"
+    },
+    "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391": {
+      "sample_uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 1,
+      "iter_num": 2,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v23/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v23/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391",
+      "updated_at": "2026-08-26T02:06:16.008163Z"
+    },
+    "videomme:literature-art:011-1": {
+      "sample_uid": "videomme:literature-art:011-1",
+      "dataset_name": "videomme",
+      "subset_name": "Literature & Art",
+      "status": "unanswerable",
+      "acc": 0.0,
+      "tool_use_num": 4,
+      "iter_num": 5,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v23/videomme/literature-art-011-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v23/videomme/literature-art-011-1",
+      "updated_at": "2026-08-26T02:30:08.559399Z"
+    },
+    "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e": {
+      "sample_uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 3,
+      "iter_num": 3,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v23/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v23/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "updated_at": "2026-08-26T02:32:24.430332Z"
+    },
+    "videomme:biology-medicine:021-1": {
+      "sample_uid": "videomme:biology-medicine:021-1",
+      "dataset_name": "videomme",
+      "subset_name": "Biology & Medicine",
+      "status": "unanswerable",
+      "acc": 0.0,
+      "tool_use_num": 3,
+      "iter_num": 6,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v23/videomme/biology-medicine-021-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v23/videomme/biology-medicine-021-1",
+      "updated_at": "2026-08-26T03:00:18.343681Z"
+    }
+  }
+}

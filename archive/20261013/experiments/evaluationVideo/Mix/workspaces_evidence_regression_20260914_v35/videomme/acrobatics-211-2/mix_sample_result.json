@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:acrobatics:211-2",
+  "dataset_name": "videomme",
+  "subset_name": "Acrobatics",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 9,
+  "iter_num": 14,
+  "tool_success_rate": 0.888889,
+  "successful_tool_calls": 8,
+  "planner_iterations": 14,
+  "subagent_iterations": 0,
+  "predicted_label": "C",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(C) A huge full moon with light effects.",
+  "elapsed_seconds": 1106.167,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260914_v35/videomme/acrobatics-211-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260914_v35/videomme/acrobatics-211-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260914_v35/videomme/acrobatics-211-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260914_v35/videomme/acrobatics-211-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/lNO6cYxqMZk.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/lNO6cYxqMZk.mp4",
+  "question_block": "Question: What is the background for the stage when the little girl and her mom jump on ropes in this video?\nOptions:\n(A) Colorful backdrops and props.\n(B) A big visually horrible eye.\n(C) A huge full moon with light effects.\n(D) A plastic white ball with abstract designs.",
+  "options": [
+    "A. Colorful backdrops and props.",
+    "B. A big visually horrible eye.",
+    "C. A huge full moon with light effects.",
+    "D. A plastic white ball with abstract designs."
+  ],
+  "official_meta": {
+    "video_id": "211",
+    "video_external_id": "lNO6cYxqMZk",
+    "resolved_video_stem": "lNO6cYxqMZk",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Artistic Performance",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Acrobatics",
+    "task_type": "Object Recognition",
+    "question_id": "211-2",
+    "question_index": 1,
+    "video_item_index": 210,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-14T06:01:55.086592Z"
+}

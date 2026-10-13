@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:count:2:count-108",
+  "dataset_name": "mlvu",
+  "subset_name": "count",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 8,
+  "iter_num": 7,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 8,
+  "planner_iterations": 7,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "5",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) 0",
+  "elapsed_seconds": 2911.564,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/count-00002-count-108",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/count-00002-count-108/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/count-00002-count-108/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/count-00002-count-108/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/4_count/count_108.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/4_count/count_108.mp4",
+  "question_block": "Question: In this video, how many instances are there of the 'carving pumpkin' action scene in total?\nOptions:\n(A) 5\n(B) 3\n(C) 1\n(D) 0",
+  "options": [
+    "5",
+    "3",
+    "1",
+    "0"
+  ],
+  "official_meta": {
+    "task_type": "count",
+    "source_question_type": "count",
+    "prompt_task_type": "count",
+    "source_json": "4_count.json",
+    "source_index": 2,
+    "video_subdir": "4_count",
+    "video_relative_path": "4_count/count_108.mp4",
+    "resolved_video_stem": "count_108",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-02T09:59:14.109476Z"
+}

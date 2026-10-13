@@ -1,0 +1,17 @@
+{
+  "snapshot_id": "snapshot_5378f7a62e4d",
+  "parent_snapshot_id": "snapshot_000",
+  "created_at": "2026-07-20T12:59:58.838407Z",
+  "router_policy": {
+    "add_composition_edge": {
+      "after": "evidence_acquisition",
+      "before": "finish",
+      "required": true
+    }
+  },
+  "argument_policy": {},
+  "patch_ids": [
+    "intent_38001752c19c"
+  ],
+  "status": "candidate"
+}

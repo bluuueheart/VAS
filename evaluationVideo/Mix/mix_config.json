@@ -1,19 +1,20 @@
 {
   "workspaces_root": "./workspaces",
-  "progress_path": "./workspaces/mix_progress.json",
-  "results_path": "./Mix_result.json",
+  "progress_path": "./workspaces/cfv_evolve_progress.json",
+  "results_path": "./CFV_Evolve_result.json",
   "videomme_official_output_path": "./VideoMME_official_output.json",
   "shared_preprocess_root": "./workspaces/_shared_cache",
   "ffmpeg_binary": "ffmpeg",
   "parallel_samples": "auto",
+  "pipeline_options": {
+    "include_grounding_video_clip_qa": false
+  },
   "dataset_order": [
-    "mvbench",
-    "mlvu",
-    "videomme"
+    "mlvu"
   ],
   "datasets": {
     "mvbench": {
-      "enabled": true,
+      "enabled": false,
       "prompt_template_path": "./mvbench_query_prompt.txt",
       "dataset_root": "../../../datasets/MVBench/video",
       "json_root": "../../../datasets/MVBench/json",
@@ -25,12 +26,12 @@
     "mlvu": {
       "enabled": true,
       "prompt_template_path": "./mlvu_query_prompt.txt",
-      "dataset_root": "../../../datasets/MLVU/MLVU",
+      "dataset_root": "../../mlvu_test_subset_20260714/MLVU",
       "annotation_root": "./json",
       "video_root": "./video"
     },
     "videomme": {
-      "enabled": true,
+      "enabled": false,
       "prompt_template_path": "./videomme_query_prompt.txt",
       "dataset_root": "../../../datasets/Video-MME",
       "annotation_path": "./videomme/test-00000-of-00001.parquet",

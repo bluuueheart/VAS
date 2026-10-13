@@ -1,0 +1,10 @@
+run_id=evolution_run_eeb403812f2a
+trajectory_count=2
+diagnosis_count=1
+verification_accepted=0/2
+accepted_correct=0
+accepted_wrong=0
+replay_groups={"held_out": ["videomme:biology-medicine:021-1"], "neighbor": [], "regression": [], "trigger": ["videomme:humanity-history:001-1"]}
+candidate_snapshot=snapshot_a02b4700cf3a
+replay_status=pending
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.

@@ -1,0 +1,44 @@
+{
+  "sample_uid": "mlvu:needle:0:needle-32",
+  "dataset_name": "mlvu",
+  "subset_name": "needle",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 2,
+  "iter_num": 3,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 2,
+  "planner_iterations": 3,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "ground_truth": "Delivers a product",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) Delivers a product",
+  "elapsed_seconds": 108.232,
+  "workspace_root": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/needle-00000-needle-32",
+  "launcher_log": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/needle-00000-needle-32/launcher.log",
+  "result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/needle-00000-needle-32/mix_sample_result.json",
+  "run_result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/needle-00000-needle-32/results/run_result.json",
+  "source_video_path": "/mnt/data/LiuXiao/datasets/MLVU/MLVU/video/2_needle/needle_32.mp4",
+  "prepared_video_path": "/mnt/data/LiuXiao/datasets/MLVU/MLVU/video/2_needle/needle_32.mp4",
+  "question_block": "Question: What does the hand coming out of the computer do?\nOptions:\n(A) Delivers a product\n(B) Shakes the woman's hand\n(C) Takes the woman's credit card\n(D) Points at something on the screen",
+  "options": [
+    "Delivers a product",
+    "Shakes the woman's hand",
+    "Takes the woman's credit card",
+    "Points at something on the screen"
+  ],
+  "official_meta": {
+    "task_type": "needle",
+    "source_json": "2_needle.json",
+    "source_index": 0,
+    "video_subdir": "2_needle",
+    "video_relative_path": "2_needle/needle_32.mp4",
+    "data_type": "video"
+  },
+  "updated_at": "2026-07-14T08:58:14.740606Z"
+}

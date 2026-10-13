@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00185:5d744ae9-c7f7-43b0-b284-54de70ca1340",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's overall purpose in the video was to paint the wall. he adapted his approach by using a paint brush at first, and then switching to a paint roller. he also took breaks to look around and remove any drips from the wall.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00185-5d744ae9-c7f7-43b0-b284-54de70ca1340",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00185-5d744ae9-c7f7-43b0-b284-54de70ca1340/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00185-5d744ae9-c7f7-43b0-b284-54de70ca1340/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00185-5d744ae9-c7f7-43b0-b284-54de70ca1340/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/5d744ae9-c7f7-43b0-b284-54de70ca1340.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/5d744ae9-c7f7-43b0-b284-54de70ca1340.mp4",
+  "question_block": "Question: What was the overall purpose of c's actions in the video, and how did he adapt his approach in order to achieve that purpose?\nOptions:\n(A) C's overall purpose in the video was to clean the wall. he adapted his approach by using a wet cloth to wipe down the wall. he also took breaks to look around and make sure that he was cleaning the entire wall.\n(B) C's overall purpose in the video was to decorate the wall. he adapted his approach by using different colors of paint to create a design on the wall. he also took breaks to look around and make sure that the design was symmetrical.\n(C) C's overall purpose in the video was to paint the wall. he adapted his approach by using a paint brush at first, and then switching to a paint roller. he also took breaks to look around and remove any drips from the wall.\n(D) C's overall purpose in the video was to make the wall look more interesting. he adapted his approach by using different textures and patterns to create a visually appealing wall. he also took breaks to look around and make sure that the wall was balanced.\n(E) C's overall purpose in the video was to make the wall look more professional. he adapted his approach by using high-quality paint and tools to create a smooth, even finish. he also took breaks to look around and make sure that the wall was free of imperfections.",
+  "options": [
+    "C's overall purpose in the video was to clean the wall. he adapted his approach by using a wet cloth to wipe down the wall. he also took breaks to look around and make sure that he was cleaning the entire wall.",
+    "C's overall purpose in the video was to decorate the wall. he adapted his approach by using different colors of paint to create a design on the wall. he also took breaks to look around and make sure that the design was symmetrical.",
+    "C's overall purpose in the video was to paint the wall. he adapted his approach by using a paint brush at first, and then switching to a paint roller. he also took breaks to look around and remove any drips from the wall.",
+    "C's overall purpose in the video was to make the wall look more interesting. he adapted his approach by using different textures and patterns to create a visually appealing wall. he also took breaks to look around and make sure that the wall was balanced.",
+    "C's overall purpose in the video was to make the wall look more professional. he adapted his approach by using high-quality paint and tools to create a smooth, even finish. he also took breaks to look around and make sure that the wall was free of imperfections."
+  ],
+  "official_meta": {
+    "question_index": "00185",
+    "video_id": "5d744ae9-c7f7-43b0-b284-54de70ca1340",
+    "source_index": 185
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:16.429121Z"
+}

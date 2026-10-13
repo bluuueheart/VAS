@@ -1,0 +1,19 @@
+[Evolver] role=online_trajectory_cycle_miner
+run_id=evolution_run_a19d43dc5210
+trajectory_count=14
+diagnosis_count=9
+verification_accepted=7/14
+accepted_correct=6
+accepted_wrong=1
+replay_groups={"held_out": ["trajectory_eccf7f4358e84435b82917acd898e244"], "neighbor": ["trajectory_6ed9b28d5cbd4c59b16a148d8f7f9eb8"], "regression": ["trajectory_6a3a1c259124408fbaab2a62e6850419", "trajectory_87c2740e7f554057a73a53389f54a52e", "trajectory_33de64e7f83e4e08828a1d67a40b12c3", "trajectory_51f5b6b402bc4e18a658cb9f21d1c1b1", "trajectory_bc134cefd4264021b9c3dcab94e3ad96"], "trigger": ["trajectory_f730b5f7dec64461ad144a255500d7ae"]}
+candidate_snapshot=snapshot_5aec7212a4f2aea6
+replay_status=candidate_pending_fresh_inference
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=contradiction_handling confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=contradiction_handling confidence=0.90 root_cause=The trajectory contained conflicting evidence but still produced a terminal answer.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=tool_execution confidence=0.90 root_cause=The trajectory contained one or more tool execution failures; the final answer is not a safe proxy for tool correctness.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.

@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00028:0a8b2c9d-b54c-4811-acf3-5977895d2445",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 13,
+  "iter_num": 18,
+  "tool_success_rate": 0.846154,
+  "successful_tool_calls": 11,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "C is cooking a meal.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [
+    "E"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 5411.298,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00028-0a8b2c9d-b54c-4811-acf3-5977895d2445",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00028-0a8b2c9d-b54c-4811-acf3-5977895d2445/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00028-0a8b2c9d-b54c-4811-acf3-5977895d2445/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00028-0a8b2c9d-b54c-4811-acf3-5977895d2445/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0a8b2c9d-b54c-4811-acf3-5977895d2445.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0a8b2c9d-b54c-4811-acf3-5977895d2445.mp4",
+  "question_block": "Question: Describe the overall process that c is engaged in throughout the video, and how his actions contribute to accomplishing this activity.\nOptions:\n(A) C is cleaning the kitchen.\n(B) C is preparing a snack.\n(C) C is making a cheese sauce.\n(D) C is making a cheese fondue.\n(E) C is cooking a meal.",
+  "options": [
+    "C is cleaning the kitchen.",
+    "C is preparing a snack.",
+    "C is making a cheese sauce.",
+    "C is making a cheese fondue.",
+    "C is cooking a meal."
+  ],
+  "official_meta": {
+    "question_index": "00028",
+    "video_id": "0a8b2c9d-b54c-4811-acf3-5977895d2445",
+    "resolved_video_stem": "0a8b2c9d-b54c-4811-acf3-5977895d2445",
+    "video_mapping_verified": true,
+    "source_index": 28,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-01T22:33:26.672266Z"
+}

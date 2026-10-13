@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00009:0437cf5f-5014-47d6-b4b3-f299380aa688",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "While performing repetitive actions, there were no key deviations that had significant impact on the overall process.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00009-0437cf5f-5014-47d6-b4b3-f299380aa688",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00009-0437cf5f-5014-47d6-b4b3-f299380aa688/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00009-0437cf5f-5014-47d6-b4b3-f299380aa688/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00009-0437cf5f-5014-47d6-b4b3-f299380aa688/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0437cf5f-5014-47d6-b4b3-f299380aa688.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0437cf5f-5014-47d6-b4b3-f299380aa688.mp4",
+  "question_block": "Question: While performing repetitive actions, were there any key deviations that had significant impact on the overall process? explain what was different about them and why they were important in the context of the video.\nOptions:\n(A) While performing repetitive actions, there were no key deviations that had significant impact on the overall process.\n(B) While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character accidentally dropped one of the books.\n(C) While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character ran out of cleaning supplies.\n(D) While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character got tired and had to take a break.\n(E) While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character found a book that they were interested in and started reading it.",
+  "options": [
+    "While performing repetitive actions, there were no key deviations that had significant impact on the overall process.",
+    "While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character accidentally dropped one of the books.",
+    "While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character ran out of cleaning supplies.",
+    "While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character got tired and had to take a break.",
+    "While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character found a book that they were interested in and started reading it."
+  ],
+  "official_meta": {
+    "question_index": "00009",
+    "video_id": "0437cf5f-5014-47d6-b4b3-f299380aa688",
+    "source_index": 9
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=255 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-22T18:51:44.545260Z"
+}

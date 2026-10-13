@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00212:6c2c9e3b-935d-4dbf-8f1d-7876a5210518",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's primary occupation or focus of attention while they engage with their surroundings is the cat.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00212-6c2c9e3b-935d-4dbf-8f1d-7876a5210518",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00212-6c2c9e3b-935d-4dbf-8f1d-7876a5210518/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00212-6c2c9e3b-935d-4dbf-8f1d-7876a5210518/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00212-6c2c9e3b-935d-4dbf-8f1d-7876a5210518/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/6c2c9e3b-935d-4dbf-8f1d-7876a5210518.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/6c2c9e3b-935d-4dbf-8f1d-7876a5210518.mp4",
+  "question_block": "Question: In this video, what is the primary occupation or focus of c's attention while they engage with their surroundings? support your answer with specific examples or explanations.\nOptions:\n(A) C's primary occupation or main focus of attention when interacting or engaging with their surroundings is primarily the appreciation of art.\n(B) C's primary occupation or focus of attention while they engage with their surroundings is the pathway.\n(C) C's primary occupation or focus of attention while they engage with their surroundings is the cat.\n(D) C's primary occupation or focus of attention, when they actively engage with their surroundings, is predominantly the man.\n(E) C's primary occupation or main focus of attention while they actively engage with their surroundings largely involves appreciating the scenery.",
+  "options": [
+    "C's primary occupation or main focus of attention when interacting or engaging with their surroundings is primarily the appreciation of art.",
+    "C's primary occupation or focus of attention while they engage with their surroundings is the pathway.",
+    "C's primary occupation or focus of attention while they engage with their surroundings is the cat.",
+    "C's primary occupation or focus of attention, when they actively engage with their surroundings, is predominantly the man.",
+    "C's primary occupation or main focus of attention while they actively engage with their surroundings largely involves appreciating the scenery."
+  ],
+  "official_meta": {
+    "question_index": "00212",
+    "video_id": "6c2c9e3b-935d-4dbf-8f1d-7876a5210518",
+    "source_index": 212
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:15.223511Z"
+}

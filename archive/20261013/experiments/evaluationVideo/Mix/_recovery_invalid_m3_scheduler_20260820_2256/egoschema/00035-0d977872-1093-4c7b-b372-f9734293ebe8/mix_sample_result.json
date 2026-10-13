@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00035:0d977872-1093-4c7b-b372-f9734293ebe8",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is a sculptor who is creating a plaster sculpture. c starts by cutting the plaster into small pieces. c then shapes the plaster pieces into a sculpture. c finally smooths the surface of the sculpture.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00035-0d977872-1093-4c7b-b372-f9734293ebe8",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00035-0d977872-1093-4c7b-b372-f9734293ebe8/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00035-0d977872-1093-4c7b-b372-f9734293ebe8/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00035-0d977872-1093-4c7b-b372-f9734293ebe8/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0d977872-1093-4c7b-b372-f9734293ebe8.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0d977872-1093-4c7b-b372-f9734293ebe8.mp4",
+  "question_block": "Question: In your own words, explain the thought process and reasoning behind c's actions throughout the video, making sure to compress the information without just listing the actions that occurred.\nOptions:\n(A) C is a sculptor who is creating a plaster sculpture. c starts by cutting the plaster into small pieces. c then shapes the plaster pieces into a sculpture. c finally smooths the surface of the sculpture.\n(B) C is a baker who is making a cake. c starts by mixing the ingredients. c then bakes the cake. c finally frosts the cake.\n(C) C is a skilled painter who is diligently painting a beautiful picture. c begins by carefully mixing the paints. c then artistically paints the captivating picture. c finally frames the completed picture perfectly.\n(D) C is a talented musician who is skillfully playing a song. initially, c starts by carefully tuning the instrument. c then skillfully plays the entire song. finally, c passionately sings the beautiful song.\n(E) C is a talented writer who is diligently writing a book. c initially starts by brainstorming creative ideas. c then writes the engaging book. c ultimately and finally publishes the remarkable book.",
+  "options": [
+    "C is a sculptor who is creating a plaster sculpture. c starts by cutting the plaster into small pieces. c then shapes the plaster pieces into a sculpture. c finally smooths the surface of the sculpture.",
+    "C is a baker who is making a cake. c starts by mixing the ingredients. c then bakes the cake. c finally frosts the cake.",
+    "C is a skilled painter who is diligently painting a beautiful picture. c begins by carefully mixing the paints. c then artistically paints the captivating picture. c finally frames the completed picture perfectly.",
+    "C is a talented musician who is skillfully playing a song. initially, c starts by carefully tuning the instrument. c then skillfully plays the entire song. finally, c passionately sings the beautiful song.",
+    "C is a talented writer who is diligently writing a book. c initially starts by brainstorming creative ideas. c then writes the engaging book. c ultimately and finally publishes the remarkable book."
+  ],
+  "official_meta": {
+    "question_index": "00035",
+    "video_id": "0d977872-1093-4c7b-b372-f9734293ebe8",
+    "source_index": 35
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:43:48.323430Z"
+}

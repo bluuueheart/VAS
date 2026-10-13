@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00190:5fe9843b-0b74-4505-b864-86eb53c25cc6",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's main objective is to water the lawn.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00190-5fe9843b-0b74-4505-b864-86eb53c25cc6",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00190-5fe9843b-0b74-4505-b864-86eb53c25cc6/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00190-5fe9843b-0b74-4505-b864-86eb53c25cc6/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00190-5fe9843b-0b74-4505-b864-86eb53c25cc6/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/5fe9843b-0b74-4505-b864-86eb53c25cc6.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/5fe9843b-0b74-4505-b864-86eb53c25cc6.mp4",
+  "question_block": "Question: Analyzing the video, what can you deduce c’s main objective is in this sequence of events? provide a summary of the process.\nOptions:\n(A) C's main objective is to clean the truck.\n(B) C's main objective is to fix the hose.\n(C) C's main objective is to water the lawn.\n(D) C's main objective is to take a picture of the lawn.\n(E) C's main objective is to get in the truck.",
+  "options": [
+    "C's main objective is to clean the truck.",
+    "C's main objective is to fix the hose.",
+    "C's main objective is to water the lawn.",
+    "C's main objective is to take a picture of the lawn.",
+    "C's main objective is to get in the truck."
+  ],
+  "official_meta": {
+    "question_index": "00190",
+    "video_id": "5fe9843b-0b74-4505-b864-86eb53c25cc6",
+    "source_index": 190
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:34.988705Z"
+}

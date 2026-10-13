@@ -1,0 +1,682 @@
+{
+  "status": "complete",
+  "trajectory_id": "trajectory_f67a83ed042c496c8195ebc1bee37960",
+  "step_count": 15,
+  "event_count": 67,
+  "input_sha256": "168d5dac8d23e744beca47496fe230e7bbb8e62ec20d19ef5a788e441bda022e",
+  "input_char_count": 217575,
+  "processed_char_count": 217575,
+  "fragment_count": 10,
+  "full_trajectory_processed": true,
+  "issues": [
+    {
+      "step_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "component": "Semantic_Retrieve",
+      "cause": "Tool hallucination or data leakage: The Semantic_Retrieve tool returned specific segment references (surveil_20_2, surveil_20_12, surveil_20_11) with high confidence for 'shoplifting', yet the subsequent visual evidence (Observer turns) explicitly states these frames show 'normal customer interactions' and 'ambiguous' behavior with no clear concealment. The tool failed to provide valid visual grounding for its retrieval, leading to a wasted multi-step inspection loop.",
+      "evidence": "Step 2 (Observer): 'Semantic_Retrieve returned 2 text-grounded segments... but did not provide visual confirmation... attached images show normal customer interactions'. Step 4 (Observer): 'frames (timestamps 78.967, 90.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'.",
+      "proposed_fix": "Modify the Semantic_Retrieve tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives."
+    },
+    {
+      "step_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "component": "Semantic_Retrieve",
+      "cause": "Tool hallucination or data leakage: The Semantic_Retrieve tool returned specific segment references (surveil_20_2, surveil_20_12, surveil_20_11) with high confidence for 'shoplifting', yet the subsequent visual evidence (Observer turns) explicitly states these frames show 'normal customer interactions' and 'ambiguous' behavior with no clear concealment. The tool failed to provide valid visual grounding for its retrieval, leading to a wasted multi-step inspection loop.",
+      "evidence": "Step 2 (Observer): 'Semantic_Retrieve returned 2 text-grounded segments... but did not provide visual confirmation... attached images show normal customer interactions'. Step 4 (Observer): 'frames (timestamps 78.967, 90.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'.",
+      "proposed_fix": "Modify the Semantic_Retrieve tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives."
+    },
+    {
+      "step_ids": [
+        12
+      ],
+      "component": "Observer",
+      "cause": "Tool execution failure due to insufficient visual evidence in the provided artifact. The Observer reported that the attached images for the Inspect_Frame call (timestamps 408.967, 420.967) showed a shop scene but did not clearly depict the action of 'taking an item', leading to a 'reject' decision and a request for a new call with the same parameters. This indicates a failure in the tool's ability to provide sufficient visual grounding or a mismatch between the tool's output and the query's requirements.",
+      "evidence": "Step 12 (Observer): 'The attached images show a shop scene with people at a counter, but the specific action of 'taking an item' is not clearly visible or confirmed in the provided 2up view.'",
+      "proposed_fix": "Modify the Inspect_Frame tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives."
+    },
+    {
+      "step_ids": [
+        15
+      ],
+      "component": "Planner",
+      "cause": "Logical error in contradiction resolution: The Planner incorrectly identified a contradiction between 'Shoplifting' (segment 390.97-420.97) and 'No' (segment 270.97-300.97) as a conflict requiring resolution, when they are distinct temporal segments. This led to an invalid 'Finish' proposal based on a hallucinated conflict rather than verified evidence for the specific query window.",
+      "evidence": "Step 15 Thought: 'The first Video_Clip_QA was for 270.97-300.97 and said No. The second was for 390.97-420.97 and said Shoplifting. The Verifier said the No claim was for the same segment, which is incorrect... They are different segments! So there is no contradiction.' The Planner explicitly recognized the segments were different but proceeded to submit a Finish based on the 'Shoplifting' claim without executing the required 'concrete evidence action with a materially different tool' mandated by the recovery protocol for the unresolved state.",
+      "proposed_fix": "Enforce a strict temporal binding check in the Planner's Finish generation logic. Before accepting a 'Finish' based on a specific segment's evidence, the Planner must verify that the evidence timestamp matches the current active query window exactly. If the evidence comes from a different window, the Planner must trigger a new evidence-gathering step (e.g., Inspect_Frame) for the current window rather than synthesizing an answer from out-of-bounds data."
+    },
+    {
+      "step_ids": [
+        1
+      ],
+      "component": "Semantic_Retrieve",
+      "cause": "Tool hallucination or data leakage: The Semantic_Retrieve tool returned specific segment references (surveil_20_2, surveil_20_12, surveil_20_11) with high confidence for 'shoplifting', yet the subsequent visual evidence (Observer turns) explicitly states these frames show 'normal customer interactions' and 'ambiguous' behavior with no clear concealment. The tool failed to provide valid visual grounding for its retrieval, leading to a wasted multi-step inspection loop.",
+      "evidence": "Step 1 (Semantic_Retrieve): 'Semantic_Retrieve found 2 text-grounded segments for shoplifting... segment_ref=surveil_20_2; segment_ref=surveil_20_12'. Step 2 (Observer): 'frames (timestamps 78.967, 90.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'. Step 3 (Observer): 'frames (timestamps 378.967, 390.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'.",
+      "proposed_fix": "Modify the Semantic_Retrieve tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives."
+    },
+    {
+      "step_ids": [
+        10,
+        11,
+        15
+      ],
+      "component": "Planner",
+      "cause": "Temporal mismatch in evidence synthesis: The Planner executed a Video_Clip_QA on window 390.97-420.97 (Step 10) which returned 'Shoplifting'. However, in Step 11, the Planner attempted to 'Finish' by claiming a contradiction with a 'No' claim for the *same* segment, while the trace evidence (Step 15 thought) reveals the 'No' claim actually originated from a different temporal window (270.97-300.97). The Planner failed to enforce strict temporal binding before synthesizing a final answer, leading to a hallucinated contradiction and an invalid recovery loop.",
+      "evidence": "Step 10: Video_Clip_QA called on 390.97-420.97 returned 'Shoplifting'. Step 11 Thought: 'The first Video_Clip_QA was for 270.97-300.97 and said No. The second was for 390.97-420.97 and said Shoplifting... They are different segments! So there is no contradiction.' Yet Step 11 Action (Finish) was blocked/rejected based on the premise of a contradiction that the thought process explicitly denied existed due to temporal mismatch.",
+      "proposed_fix": "Enforce a strict temporal binding check in the Planner's Finish generation logic. Before accepting a 'Finish' based on a specific segment's evidence, the Planner must verify that the evidence timestamp matches the current active query window exactly. If the evidence comes from a different window, the Planner must trigger a new evidence-gathering step (e.g., Inspect_Frame) for the current window rather than synthesizing an answer from out-of-bounds data."
+    },
+    {
+      "step_ids": [
+        15
+      ],
+      "component": "Planner",
+      "cause": "Recovery protocol violation: The Planner identified a temporal mismatch (different segments for 'No' vs 'Shoplifting') and correctly concluded there was no contradiction, yet failed to execute the mandatory recovery step ('one concrete evidence action with a materially different tool') before submitting the final answer. Instead, it submitted the Finish based on the 'Shoplifting' claim without verifying the specific query window (390.97-420.97) contained definitive visual evidence, relying on a previous ambiguous or hallucinated retrieval.",
+      "evidence": "Step 15 Thought: 'They are different segments! So there is no contradiction. The 'Shoplifting' claim is for 390.97-420.97... So the answer is (C) Shoplifting. I will submit the Finish with this answer.' The thought explicitly acknowledges the lack of contradiction but skips the required 'concrete evidence action' mandated by the recovery protocol for an unresolved state, proceeding directly to a potentially unsupported conclusion.",
+      "proposed_fix": "Enforce a hard stop in the Planner's Finish generation logic if the current state is 'unresolved' or if the final evidence relies on a segment retrieved via a tool known to hallucinate (Semantic_Retrieve). The Planner must execute at least one additional verification step (e.g., Inspect_Frame on the specific timestamp 390.97-420.97 with a strict 'confirm action' query) before allowing a Finish. If the new evidence is ambiguous, the Planner must default to 'No Anomaly' or request human review rather than guessing based on conflicting temporal windows."
+    }
+  ],
+  "calls": [
+    {
+      "type": "agent_llm_turn",
+      "event_type": "ReflectorAgentTurnEvent",
+      "agent_role": "reflector",
+      "status": "success",
+      "schema_valid": true,
+      "kernel": {
+        "agent_role": "reflector",
+        "provider_class": "TransformersProvider",
+        "model_role": "reflector",
+        "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+        "modality": "llm",
+        "independent_provider_view": true,
+        "independent_prompt": true,
+        "prompt_source": "four_role_prompts",
+        "structured_contract": "reflector_json",
+        "llm_kernel": true,
+        "agent_definition": {
+          "agent_type": "evidence_judgment_agent",
+          "kernel_modality": "llm",
+          "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+          "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+          "delegates_to": [
+            "planner"
+          ]
+        }
+      },
+      "request_digest": "767349adbf3b018b",
+      "input_char_count": 26742,
+      "trajectory_step_count": null,
+      "response": "```json\n{\"issues\": [{\"step_ids\": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], \"component\": \"Semantic_Retrieve\", \"cause\": \"Tool hallucination or data leakage: The Semantic_Retrieve tool returned specific segment references (surveil_20_2, surveil_20_12, surveil_20_11) with high confidence for 'shoplifting', yet the subsequent visual evidence (Observer turns) explicitly states these frames show 'normal customer interactions' and 'ambiguous' behavior with no clear concealment. The tool failed to provide valid visual grounding for its retrieval, leading to a wasted multi-step inspection loop.\", \"evidence\": \"Step 2 (Observer): 'Semantic_Retrieve returned 2 text-grounded segments... but did not provide visual confirmation... attached images show normal customer interactions'. Step 4 (Observer): 'frames (timestamps 78.967, 90.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'.\", \"proposed_fix\": \"Modify the Semantic_Retrieve tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives.\"}]}",
+      "response_payload": {
+        "issues": [
+          {
+            "step_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "component": "Semantic_Retrieve",
+            "cause": "Tool hallucination or data leakage: The Semantic_Retrieve tool returned specific segment references (surveil_20_2, surveil_20_12, surveil_20_11) with high confidence for 'shoplifting', yet the subsequent visual evidence (Observer turns) explicitly states these frames show 'normal customer interactions' and 'ambiguous' behavior with no clear concealment. The tool failed to provide valid visual grounding for its retrieval, leading to a wasted multi-step inspection loop.",
+            "evidence": "Step 2 (Observer): 'Semantic_Retrieve returned 2 text-grounded segments... but did not provide visual confirmation... attached images show normal customer interactions'. Step 4 (Observer): 'frames (timestamps 78.967, 90.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'.",
+            "proposed_fix": "Modify the Semantic_Retrieve tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives."
+          }
+        ]
+      },
+      "initial_response": "",
+      "schema_retry_count": 0,
+      "contract_mode": "trajectory_analysis",
+      "system_directive_applied": false,
+      "error": "",
+      "input_modality": "text",
+      "visual_item_count": 0,
+      "elapsed_seconds": 17.547779
+    },
+    {
+      "type": "agent_llm_turn",
+      "event_type": "ReflectorAgentTurnEvent",
+      "agent_role": "reflector",
+      "status": "success",
+      "schema_valid": true,
+      "kernel": {
+        "agent_role": "reflector",
+        "provider_class": "TransformersProvider",
+        "model_role": "reflector",
+        "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+        "modality": "llm",
+        "independent_provider_view": true,
+        "independent_prompt": true,
+        "prompt_source": "four_role_prompts",
+        "structured_contract": "reflector_json",
+        "llm_kernel": true,
+        "agent_definition": {
+          "agent_type": "evidence_judgment_agent",
+          "kernel_modality": "llm",
+          "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+          "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+          "delegates_to": [
+            "planner"
+          ]
+        }
+      },
+      "request_digest": "00904ddc7c21c82e",
+      "input_char_count": 28111,
+      "trajectory_step_count": null,
+      "response": "{\"issues\":[{\"step_ids\":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],\"component\":\"Semantic_Retrieve\",\"cause\":\"Tool hallucination or data leakage: The Semantic_Retrieve tool returned specific segment references (surveil_20_2, surveil_20_12, surveil_20_11) with high confidence for 'shoplifting', yet the subsequent visual evidence (Observer turns) explicitly states these frames show 'normal customer interactions' and 'ambiguous' behavior with no clear concealment. The tool failed to provide valid visual grounding for its retrieval, leading to a wasted multi-step inspection loop.\",\"evidence\":\"Step 2 (Observer): 'Semantic_Retrieve returned 2 text-grounded segments... but did not provide visual confirmation... attached images show normal customer interactions'. Step 4 (Observer): 'frames (timestamps 78.967, 90.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'.\",\"proposed_fix\":\"Modify the Semantic_Retrieve tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives.\"}]}",
+      "response_payload": {
+        "issues": [
+          {
+            "step_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "component": "Semantic_Retrieve",
+            "cause": "Tool hallucination or data leakage: The Semantic_Retrieve tool returned specific segment references (surveil_20_2, surveil_20_12, surveil_20_11) with high confidence for 'shoplifting', yet the subsequent visual evidence (Observer turns) explicitly states these frames show 'normal customer interactions' and 'ambiguous' behavior with no clear concealment. The tool failed to provide valid visual grounding for its retrieval, leading to a wasted multi-step inspection loop.",
+            "evidence": "Step 2 (Observer): 'Semantic_Retrieve returned 2 text-grounded segments... but did not provide visual confirmation... attached images show normal customer interactions'. Step 4 (Observer): 'frames (timestamps 78.967, 90.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'.",
+            "proposed_fix": "Modify the Semantic_Retrieve tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives."
+          }
+        ]
+      },
+      "initial_response": "",
+      "schema_retry_count": 0,
+      "contract_mode": "trajectory_analysis",
+      "system_directive_applied": false,
+      "error": "",
+      "input_modality": "text",
+      "visual_item_count": 0,
+      "elapsed_seconds": 17.324107
+    },
+    {
+      "type": "agent_llm_turn",
+      "event_type": "ReflectorAgentTurnEvent",
+      "agent_role": "reflector",
+      "status": "success",
+      "schema_valid": true,
+      "kernel": {
+        "agent_role": "reflector",
+        "provider_class": "TransformersProvider",
+        "model_role": "reflector",
+        "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+        "modality": "llm",
+        "independent_provider_view": true,
+        "independent_prompt": true,
+        "prompt_source": "four_role_prompts",
+        "structured_contract": "reflector_json",
+        "llm_kernel": true,
+        "agent_definition": {
+          "agent_type": "evidence_judgment_agent",
+          "kernel_modality": "llm",
+          "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+          "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+          "delegates_to": [
+            "planner"
+          ]
+        }
+      },
+      "request_digest": "a1dda837161b67ce",
+      "input_char_count": 27984,
+      "trajectory_step_count": null,
+      "response": "{\"issues\":[{\"step_ids\":[1,2,3,4,5,6,7,8],\"component\":\"Semantic_Retrieve\",\"cause\":\"Tool hallucination or data leakage: The Semantic_Retrieve tool returned specific segment references (surveil_20_2, surveil_20_12, surveil_20_11) with high confidence for 'shoplifting', yet the subsequent visual evidence (Observer turns) explicitly states these frames show 'normal customer interactions' and 'ambiguous' behavior with no clear concealment. The tool failed to provide valid visual grounding for its retrieval, leading to a wasted multi-step inspection loop.\",\"evidence\":\"Step 2 (Observer): 'Semantic_Retrieve returned 2 text-grounded segments... but did not provide visual confirmation... attached images show normal customer interactions'. Step 4 (Observer): 'frames (timestamps 78.967, 90.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'.\",\"proposed_fix\":\"Modify the Semantic_Retrieve tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives.\"}]}",
+      "response_payload": {
+        "issues": [
+          {
+            "step_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "component": "Semantic_Retrieve",
+            "cause": "Tool hallucination or data leakage: The Semantic_Retrieve tool returned specific segment references (surveil_20_2, surveil_20_12, surveil_20_11) with high confidence for 'shoplifting', yet the subsequent visual evidence (Observer turns) explicitly states these frames show 'normal customer interactions' and 'ambiguous' behavior with no clear concealment. The tool failed to provide valid visual grounding for its retrieval, leading to a wasted multi-step inspection loop.",
+            "evidence": "Step 2 (Observer): 'Semantic_Retrieve returned 2 text-grounded segments... but did not provide visual confirmation... attached images show normal customer interactions'. Step 4 (Observer): 'frames (timestamps 78.967, 90.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'.",
+            "proposed_fix": "Modify the Semantic_Retrieve tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives."
+          }
+        ]
+      },
+      "initial_response": "",
+      "schema_retry_count": 0,
+      "contract_mode": "trajectory_analysis",
+      "system_directive_applied": false,
+      "error": "",
+      "input_modality": "text",
+      "visual_item_count": 0,
+      "elapsed_seconds": 15.257609
+    },
+    {
+      "type": "agent_llm_turn",
+      "event_type": "ReflectorAgentTurnEvent",
+      "agent_role": "reflector",
+      "status": "success",
+      "schema_valid": true,
+      "kernel": {
+        "agent_role": "reflector",
+        "provider_class": "TransformersProvider",
+        "model_role": "reflector",
+        "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+        "modality": "llm",
+        "independent_provider_view": true,
+        "independent_prompt": true,
+        "prompt_source": "four_role_prompts",
+        "structured_contract": "reflector_json",
+        "llm_kernel": true,
+        "agent_definition": {
+          "agent_type": "evidence_judgment_agent",
+          "kernel_modality": "llm",
+          "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+          "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+          "delegates_to": [
+            "planner"
+          ]
+        }
+      },
+      "request_digest": "15a3b63a489a53f8",
+      "input_char_count": 29399,
+      "trajectory_step_count": null,
+      "response": "```json\n{\"issues\": [{\"step_ids\": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], \"component\": \"Semantic_Retrieve\", \"cause\": \"Tool hallucination or data leakage: The Semantic_Retrieve tool returned specific segment references (surveil_20_2, surveil_20_12, surveil_20_11) with high confidence for 'shoplifting', yet the subsequent visual evidence (Observer turns) explicitly states these frames show 'normal customer interactions' and 'ambiguous' behavior with no clear concealment. The tool failed to provide valid visual grounding for its retrieval, leading to a wasted multi-step inspection loop.\", \"evidence\": \"Step 2 (Observer): 'Semantic_Retrieve returned 2 text-grounded segments... but did not provide visual confirmation... attached images show normal customer interactions'. Step 4 (Observer): 'frames (timestamps 78.967, 90.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'.\", \"proposed_fix\": \"Modify the Semantic_Retrieve tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives.\"}]}",
+      "response_payload": {
+        "issues": [
+          {
+            "step_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "component": "Semantic_Retrieve",
+            "cause": "Tool hallucination or data leakage: The Semantic_Retrieve tool returned specific segment references (surveil_20_2, surveil_20_12, surveil_20_11) with high confidence for 'shoplifting', yet the subsequent visual evidence (Observer turns) explicitly states these frames show 'normal customer interactions' and 'ambiguous' behavior with no clear concealment. The tool failed to provide valid visual grounding for its retrieval, leading to a wasted multi-step inspection loop.",
+            "evidence": "Step 2 (Observer): 'Semantic_Retrieve returned 2 text-grounded segments... but did not provide visual confirmation... attached images show normal customer interactions'. Step 4 (Observer): 'frames (timestamps 78.967, 90.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'.",
+            "proposed_fix": "Modify the Semantic_Retrieve tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives."
+          }
+        ]
+      },
+      "initial_response": "",
+      "schema_retry_count": 0,
+      "contract_mode": "trajectory_analysis",
+      "system_directive_applied": false,
+      "error": "",
+      "input_modality": "text",
+      "visual_item_count": 0,
+      "elapsed_seconds": 17.459967
+    },
+    {
+      "type": "agent_llm_turn",
+      "event_type": "ReflectorAgentTurnEvent",
+      "agent_role": "reflector",
+      "status": "success",
+      "schema_valid": true,
+      "kernel": {
+        "agent_role": "reflector",
+        "provider_class": "TransformersProvider",
+        "model_role": "reflector",
+        "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+        "modality": "llm",
+        "independent_provider_view": true,
+        "independent_prompt": true,
+        "prompt_source": "four_role_prompts",
+        "structured_contract": "reflector_json",
+        "llm_kernel": true,
+        "agent_definition": {
+          "agent_type": "evidence_judgment_agent",
+          "kernel_modality": "llm",
+          "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+          "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+          "delegates_to": [
+            "planner"
+          ]
+        }
+      },
+      "request_digest": "b6935a2062ba3850",
+      "input_char_count": 29051,
+      "trajectory_step_count": null,
+      "response": "{\"issues\":[{\"step_ids\":[12],\"component\":\"Observer\",\"cause\":\"Tool execution failure due to insufficient visual evidence in the provided artifact. The Observer reported that the attached images for the Inspect_Frame call (timestamps 408.967, 420.967) showed a shop scene but did not clearly depict the action of 'taking an item', leading to a 'reject' decision and a request for a new call with the same parameters. This indicates a failure in the tool's ability to provide sufficient visual grounding or a mismatch between the tool's output and the query's requirements.\",\"evidence\":\"Step 12 (Observer): 'The attached images show a shop scene with people at a counter, but the specific action of 'taking an item' is not clearly visible or confirmed in the provided 2up view.'\",\"proposed_fix\":\"Modify the Inspect_Frame tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives.\"}]}",
+      "response_payload": {
+        "issues": [
+          {
+            "step_ids": [
+              12
+            ],
+            "component": "Observer",
+            "cause": "Tool execution failure due to insufficient visual evidence in the provided artifact. The Observer reported that the attached images for the Inspect_Frame call (timestamps 408.967, 420.967) showed a shop scene but did not clearly depict the action of 'taking an item', leading to a 'reject' decision and a request for a new call with the same parameters. This indicates a failure in the tool's ability to provide sufficient visual grounding or a mismatch between the tool's output and the query's requirements.",
+            "evidence": "Step 12 (Observer): 'The attached images show a shop scene with people at a counter, but the specific action of 'taking an item' is not clearly visible or confirmed in the provided 2up view.'",
+            "proposed_fix": "Modify the Inspect_Frame tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives."
+          }
+        ]
+      },
+      "initial_response": "",
+      "schema_retry_count": 0,
+      "contract_mode": "trajectory_analysis",
+      "system_directive_applied": false,
+      "error": "",
+      "input_modality": "text",
+      "visual_item_count": 0,
+      "elapsed_seconds": 13.649179
+    },
+    {
+      "type": "agent_llm_turn",
+      "event_type": "ReflectorAgentTurnEvent",
+      "agent_role": "reflector",
+      "status": "success",
+      "schema_valid": true,
+      "kernel": {
+        "agent_role": "reflector",
+        "provider_class": "TransformersProvider",
+        "model_role": "reflector",
+        "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+        "modality": "llm",
+        "independent_provider_view": true,
+        "independent_prompt": true,
+        "prompt_source": "four_role_prompts",
+        "structured_contract": "reflector_json",
+        "llm_kernel": true,
+        "agent_definition": {
+          "agent_type": "evidence_judgment_agent",
+          "kernel_modality": "llm",
+          "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+          "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+          "delegates_to": [
+            "planner"
+          ]
+        }
+      },
+      "request_digest": "a5b0df5025282863",
+      "input_char_count": 30313,
+      "trajectory_step_count": null,
+      "response": "{\"issues\":[{\"step_ids\":[15],\"component\":\"Planner\",\"cause\":\"Logical error in contradiction resolution: The Planner incorrectly identified a contradiction between 'Shoplifting' (segment 390.97-420.97) and 'No' (segment 270.97-300.97) as a conflict requiring resolution, when they are distinct temporal segments. This led to an invalid 'Finish' proposal based on a hallucinated conflict rather than verified evidence for the specific query window.\",\"evidence\":\"Step 15 Thought: 'The first Video_Clip_QA was for 270.97-300.97 and said No. The second was for 390.97-420.97 and said Shoplifting. The Verifier said the No claim was for the same segment, which is incorrect... They are different segments! So there is no contradiction.' The Planner explicitly recognized the segments were different but proceeded to submit a Finish based on the 'Shoplifting' claim without executing the required 'concrete evidence action with a materially different tool' mandated by the recovery protocol for the unresolved state.\",\"proposed_fix\":\"Enforce a strict temporal binding check in the Planner's Finish generation logic. Before accepting a 'Finish' based on a specific segment's evidence, the Planner must verify that the evidence timestamp matches the current active query window exactly. If the evidence comes from a different window, the Planner must trigger a new evidence-gathering step (e.g., Inspect_Frame) for the current window rather than synthesizing an answer from out-of-bounds data.\"}]}",
+      "response_payload": {
+        "issues": [
+          {
+            "step_ids": [
+              15
+            ],
+            "component": "Planner",
+            "cause": "Logical error in contradiction resolution: The Planner incorrectly identified a contradiction between 'Shoplifting' (segment 390.97-420.97) and 'No' (segment 270.97-300.97) as a conflict requiring resolution, when they are distinct temporal segments. This led to an invalid 'Finish' proposal based on a hallucinated conflict rather than verified evidence for the specific query window.",
+            "evidence": "Step 15 Thought: 'The first Video_Clip_QA was for 270.97-300.97 and said No. The second was for 390.97-420.97 and said Shoplifting. The Verifier said the No claim was for the same segment, which is incorrect... They are different segments! So there is no contradiction.' The Planner explicitly recognized the segments were different but proceeded to submit a Finish based on the 'Shoplifting' claim without executing the required 'concrete evidence action with a materially different tool' mandated by the recovery protocol for the unresolved state.",
+            "proposed_fix": "Enforce a strict temporal binding check in the Planner's Finish generation logic. Before accepting a 'Finish' based on a specific segment's evidence, the Planner must verify that the evidence timestamp matches the current active query window exactly. If the evidence comes from a different window, the Planner must trigger a new evidence-gathering step (e.g., Inspect_Frame) for the current window rather than synthesizing an answer from out-of-bounds data."
+          }
+        ]
+      },
+      "initial_response": "",
+      "schema_retry_count": 0,
+      "contract_mode": "trajectory_analysis",
+      "system_directive_applied": false,
+      "error": "",
+      "input_modality": "text",
+      "visual_item_count": 0,
+      "elapsed_seconds": 17.717161
+    },
+    {
+      "type": "agent_llm_turn",
+      "event_type": "ReflectorAgentTurnEvent",
+      "agent_role": "reflector",
+      "status": "success",
+      "schema_valid": true,
+      "kernel": {
+        "agent_role": "reflector",
+        "provider_class": "TransformersProvider",
+        "model_role": "reflector",
+        "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+        "modality": "llm",
+        "independent_provider_view": true,
+        "independent_prompt": true,
+        "prompt_source": "four_role_prompts",
+        "structured_contract": "reflector_json",
+        "llm_kernel": true,
+        "agent_definition": {
+          "agent_type": "evidence_judgment_agent",
+          "kernel_modality": "llm",
+          "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+          "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+          "delegates_to": [
+            "planner"
+          ]
+        }
+      },
+      "request_digest": "a35769b131b2a532",
+      "input_char_count": 31468,
+      "trajectory_step_count": null,
+      "response": "{\"issues\":[{\"step_ids\":[1],\"component\":\"Semantic_Retrieve\",\"cause\":\"Tool hallucination or data leakage: The Semantic_Retrieve tool returned specific segment references (surveil_20_2, surveil_20_12, surveil_20_11) with high confidence for 'shoplifting', yet the subsequent visual evidence (Observer turns) explicitly states these frames show 'normal customer interactions' and 'ambiguous' behavior with no clear concealment. The tool failed to provide valid visual grounding for its retrieval, leading to a wasted multi-step inspection loop.\",\"evidence\":\"Step 1 (Semantic_Retrieve): 'Semantic_Retrieve found 2 text-grounded segments for shoplifting... segment_ref=surveil_20_2; segment_ref=surveil_20_12'. Step 2 (Observer): 'frames (timestamps 78.967, 90.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'. Step 3 (Observer): 'frames (timestamps 378.967, 390.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'.\",\"proposed_fix\":\"Modify the Semantic_Retrieve tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives.\"}]}",
+      "response_payload": {
+        "issues": [
+          {
+            "step_ids": [
+              1
+            ],
+            "component": "Semantic_Retrieve",
+            "cause": "Tool hallucination or data leakage: The Semantic_Retrieve tool returned specific segment references (surveil_20_2, surveil_20_12, surveil_20_11) with high confidence for 'shoplifting', yet the subsequent visual evidence (Observer turns) explicitly states these frames show 'normal customer interactions' and 'ambiguous' behavior with no clear concealment. The tool failed to provide valid visual grounding for its retrieval, leading to a wasted multi-step inspection loop.",
+            "evidence": "Step 1 (Semantic_Retrieve): 'Semantic_Retrieve found 2 text-grounded segments for shoplifting... segment_ref=surveil_20_2; segment_ref=surveil_20_12'. Step 2 (Observer): 'frames (timestamps 78.967, 90.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'. Step 3 (Observer): 'frames (timestamps 378.967, 390.967) show a person in a shop but do not clearly depict the specific actions of shoplifting'.",
+            "proposed_fix": "Modify the Semantic_Retrieve tool contract to require a 'visual_confidence_score' or 'frame_sample' in its output. If the tool cannot provide visual evidence matching the query, it must return a 'no_match' status rather than hallucinating segment IDs. This prevents the Planner from executing costly Inspect_Frame calls on false positives."
+          }
+        ]
+      },
+      "initial_response": "",
+      "schema_retry_count": 0,
+      "contract_mode": "trajectory_analysis",
+      "system_directive_applied": false,
+      "error": "",
+      "input_modality": "text",
+      "visual_item_count": 0,
+      "elapsed_seconds": 17.944744
+    },
+    {
+      "type": "agent_llm_turn",
+      "event_type": "ReflectorAgentTurnEvent",
+      "agent_role": "reflector",
+      "status": "success",
+      "schema_valid": true,
+      "kernel": {
+        "agent_role": "reflector",
+        "provider_class": "TransformersProvider",
+        "model_role": "reflector",
+        "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+        "modality": "llm",
+        "independent_provider_view": true,
+        "independent_prompt": true,
+        "prompt_source": "four_role_prompts",
+        "structured_contract": "reflector_json",
+        "llm_kernel": true,
+        "agent_definition": {
+          "agent_type": "evidence_judgment_agent",
+          "kernel_modality": "llm",
+          "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+          "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+          "delegates_to": [
+            "planner"
+          ]
+        }
+      },
+      "request_digest": "021814e96e014cdc",
+      "input_char_count": 32811,
+      "trajectory_step_count": null,
+      "response": "{\"issues\":[{\"step_ids\":[15],\"component\":\"Planner\",\"cause\":\"Logical error in contradiction resolution: The Planner incorrectly identified a contradiction between 'Shoplifting' (segment 390.97-420.97) and 'No' (segment 270.97-300.97) as a conflict requiring resolution, when they are distinct temporal segments. This led to an invalid 'Finish' proposal based on a hallucinated conflict rather than verified evidence for the specific query window.\",\"evidence\":\"Step 15 Thought: 'The first Video_Clip_QA was for 270.97-300.97 and said No. The second was for 390.97-420.97 and said Shoplifting. The Verifier said the No claim was for the same segment, which is incorrect... They are different segments! So there is no contradiction.' The Planner explicitly recognized the segments were different but proceeded to submit a Finish based on the 'Shoplifting' claim without executing the required 'concrete evidence action with a materially different tool' mandated by the recovery protocol for the unresolved state.\",\"proposed_fix\":\"Enforce a strict temporal binding check in the Planner's Finish generation logic. Before accepting a 'Finish' based on a specific segment's evidence, the Planner must verify that the evidence timestamp matches the current active query window exactly. If the evidence comes from a different window, the Planner must trigger a new evidence-gathering step (e.g., Inspect_Frame) for the current window rather than synthesizing an answer from out-of-bounds data.\"}]}",
+      "response_payload": {
+        "issues": [
+          {
+            "step_ids": [
+              15
+            ],
+            "component": "Planner",
+            "cause": "Logical error in contradiction resolution: The Planner incorrectly identified a contradiction between 'Shoplifting' (segment 390.97-420.97) and 'No' (segment 270.97-300.97) as a conflict requiring resolution, when they are distinct temporal segments. This led to an invalid 'Finish' proposal based on a hallucinated conflict rather than verified evidence for the specific query window.",
+            "evidence": "Step 15 Thought: 'The first Video_Clip_QA was for 270.97-300.97 and said No. The second was for 390.97-420.97 and said Shoplifting. The Verifier said the No claim was for the same segment, which is incorrect... They are different segments! So there is no contradiction.' The Planner explicitly recognized the segments were different but proceeded to submit a Finish based on the 'Shoplifting' claim without executing the required 'concrete evidence action with a materially different tool' mandated by the recovery protocol for the unresolved state.",
+            "proposed_fix": "Enforce a strict temporal binding check in the Planner's Finish generation logic. Before accepting a 'Finish' based on a specific segment's evidence, the Planner must verify that the evidence timestamp matches the current active query window exactly. If the evidence comes from a different window, the Planner must trigger a new evidence-gathering step (e.g., Inspect_Frame) for the current window rather than synthesizing an answer from out-of-bounds data."
+          }
+        ]
+      },
+      "initial_response": "",
+      "schema_retry_count": 0,
+      "contract_mode": "trajectory_analysis",
+      "system_directive_applied": false,
+      "error": "",
+      "input_modality": "text",
+      "visual_item_count": 0,
+      "elapsed_seconds": 18.648335
+    },
+    {
+      "type": "agent_llm_turn",
+      "event_type": "ReflectorAgentTurnEvent",
+      "agent_role": "reflector",
+      "status": "success",
+      "schema_valid": true,
+      "kernel": {
+        "agent_role": "reflector",
+        "provider_class": "TransformersProvider",
+        "model_role": "reflector",
+        "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+        "modality": "llm",
+        "independent_provider_view": true,
+        "independent_prompt": true,
+        "prompt_source": "four_role_prompts",
+        "structured_contract": "reflector_json",
+        "llm_kernel": true,
+        "agent_definition": {
+          "agent_type": "evidence_judgment_agent",
+          "kernel_modality": "llm",
+          "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+          "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+          "delegates_to": [
+            "planner"
+          ]
+        }
+      },
+      "request_digest": "5f4f40e96ea5d8b1",
+      "input_char_count": 33250,
+      "trajectory_step_count": null,
+      "response": "{\"issues\":[{\"step_ids\":[10,11],\"component\":\"Planner\",\"cause\":\"Temporal mismatch in evidence synthesis: The Planner executed a Video_Clip_QA on window 390.97-420.97 (Step 10) which returned 'Shoplifting'. However, in Step 11, the Planner attempted to 'Finish' by claiming a contradiction with a 'No' claim for the *same* segment, while the trace evidence (Step 15 thought) reveals the 'No' claim actually originated from a different temporal window (270.97-300.97). The Planner failed to enforce strict temporal binding before synthesizing a final answer, leading to a hallucinated contradiction and an invalid recovery loop.\",\"evidence\":\"Step 10: Video_Clip_QA called on 390.97-420.97 returned 'Shoplifting'. Step 11 Thought: 'The first Video_Clip_QA was for 270.97-300.97 and said No. The second was for 390.97-420.97 and said Shoplifting... They are different segments! So there is no contradiction.' Yet Step 11 Action (Finish) was blocked/rejected based on the premise of a contradiction that the thought process explicitly denied existed due to temporal mismatch.\",\"proposed_fix\":\"Enforce a strict temporal binding check in the Planner's Finish generation logic. Before accepting a 'Finish' based on a specific segment's evidence, the Planner must verify that the evidence timestamp matches the current active query window exactly. If the evidence comes from a different window, the Planner must trigger a new evidence-gathering step (e.g., Inspect_Frame) for the current window rather than synthesizing an answer from out-of-bounds data.\",\"step_ids\":[10,11,15]}]}",
+      "response_payload": {
+        "issues": [
+          {
+            "step_ids": [
+              10,
+              11,
+              15
+            ],
+            "component": "Planner",
+            "cause": "Temporal mismatch in evidence synthesis: The Planner executed a Video_Clip_QA on window 390.97-420.97 (Step 10) which returned 'Shoplifting'. However, in Step 11, the Planner attempted to 'Finish' by claiming a contradiction with a 'No' claim for the *same* segment, while the trace evidence (Step 15 thought) reveals the 'No' claim actually originated from a different temporal window (270.97-300.97). The Planner failed to enforce strict temporal binding before synthesizing a final answer, leading to a hallucinated contradiction and an invalid recovery loop.",
+            "evidence": "Step 10: Video_Clip_QA called on 390.97-420.97 returned 'Shoplifting'. Step 11 Thought: 'The first Video_Clip_QA was for 270.97-300.97 and said No. The second was for 390.97-420.97 and said Shoplifting... They are different segments! So there is no contradiction.' Yet Step 11 Action (Finish) was blocked/rejected based on the premise of a contradiction that the thought process explicitly denied existed due to temporal mismatch.",
+            "proposed_fix": "Enforce a strict temporal binding check in the Planner's Finish generation logic. Before accepting a 'Finish' based on a specific segment's evidence, the Planner must verify that the evidence timestamp matches the current active query window exactly. If the evidence comes from a different window, the Planner must trigger a new evidence-gathering step (e.g., Inspect_Frame) for the current window rather than synthesizing an answer from out-of-bounds data."
+          }
+        ]
+      },
+      "initial_response": "",
+      "schema_retry_count": 0,
+      "contract_mode": "trajectory_analysis",
+      "system_directive_applied": false,
+      "error": "",
+      "input_modality": "text",
+      "visual_item_count": 0,
+      "elapsed_seconds": 21.271967
+    },
+    {
+      "type": "agent_llm_turn",
+      "event_type": "ReflectorAgentTurnEvent",
+      "agent_role": "reflector",
+      "status": "success",
+      "schema_valid": true,
+      "kernel": {
+        "agent_role": "reflector",
+        "provider_class": "TransformersProvider",
+        "model_role": "reflector",
+        "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+        "modality": "llm",
+        "independent_provider_view": true,
+        "independent_prompt": true,
+        "prompt_source": "four_role_prompts",
+        "structured_contract": "reflector_json",
+        "llm_kernel": true,
+        "agent_definition": {
+          "agent_type": "evidence_judgment_agent",
+          "kernel_modality": "llm",
+          "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+          "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+          "delegates_to": [
+            "planner"
+          ]
+        }
+      },
+      "request_digest": "b815ad0906f8a5a5",
+      "input_char_count": 10460,
+      "trajectory_step_count": null,
+      "response": "{\"issues\":[{\"step_ids\":[15],\"component\":\"Planner\",\"cause\":\"Recovery protocol violation: The Planner identified a temporal mismatch (different segments for 'No' vs 'Shoplifting') and correctly concluded there was no contradiction, yet failed to execute the mandatory recovery step ('one concrete evidence action with a materially different tool') before submitting the final answer. Instead, it submitted the Finish based on the 'Shoplifting' claim without verifying the specific query window (390.97-420.97) contained definitive visual evidence, relying on a previous ambiguous or hallucinated retrieval.\",\"evidence\":\"Step 15 Thought: 'They are different segments! So there is no contradiction. The 'Shoplifting' claim is for 390.97-420.97... So the answer is (C) Shoplifting. I will submit the Finish with this answer.' The thought explicitly acknowledges the lack of contradiction but skips the required 'concrete evidence action' mandated by the recovery protocol for an unresolved state, proceeding directly to a potentially unsupported conclusion.\",\"proposed_fix\":\"Enforce a hard stop in the Planner's Finish generation logic if the current state is 'unresolved' or if the final evidence relies on a segment retrieved via a tool known to hallucinate (Semantic_Retrieve). The Planner must execute at least one additional verification step (e.g., Inspect_Frame on the specific timestamp 390.97-420.97 with a strict 'confirm action' query) before allowing a Finish. If the new evidence is ambiguous, the Planner must default to 'No Anomaly' or request human review rather than guessing based on conflicting temporal windows.\",\"step_ids\":[15]}]}",
+      "response_payload": {
+        "issues": [
+          {
+            "step_ids": [
+              15
+            ],
+            "component": "Planner",
+            "cause": "Recovery protocol violation: The Planner identified a temporal mismatch (different segments for 'No' vs 'Shoplifting') and correctly concluded there was no contradiction, yet failed to execute the mandatory recovery step ('one concrete evidence action with a materially different tool') before submitting the final answer. Instead, it submitted the Finish based on the 'Shoplifting' claim without verifying the specific query window (390.97-420.97) contained definitive visual evidence, relying on a previous ambiguous or hallucinated retrieval.",
+            "evidence": "Step 15 Thought: 'They are different segments! So there is no contradiction. The 'Shoplifting' claim is for 390.97-420.97... So the answer is (C) Shoplifting. I will submit the Finish with this answer.' The thought explicitly acknowledges the lack of contradiction but skips the required 'concrete evidence action' mandated by the recovery protocol for an unresolved state, proceeding directly to a potentially unsupported conclusion.",
+            "proposed_fix": "Enforce a hard stop in the Planner's Finish generation logic if the current state is 'unresolved' or if the final evidence relies on a segment retrieved via a tool known to hallucinate (Semantic_Retrieve). The Planner must execute at least one additional verification step (e.g., Inspect_Frame on the specific timestamp 390.97-420.97 with a strict 'confirm action' query) before allowing a Finish. If the new evidence is ambiguous, the Planner must default to 'No Anomaly' or request human review rather than guessing based on conflicting temporal windows."
+          }
+        ]
+      },
+      "initial_response": "",
+      "schema_retry_count": 0,
+      "contract_mode": "trajectory_analysis",
+      "system_directive_applied": false,
+      "error": "",
+      "input_modality": "text",
+      "visual_item_count": 0,
+      "elapsed_seconds": 17.554396
+    }
+  ]
+}

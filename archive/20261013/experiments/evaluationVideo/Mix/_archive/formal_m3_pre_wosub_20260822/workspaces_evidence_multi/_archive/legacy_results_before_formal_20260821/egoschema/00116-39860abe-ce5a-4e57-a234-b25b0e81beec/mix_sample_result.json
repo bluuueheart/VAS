@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00116:39860abe-ce5a-4e57-a234-b25b0e81beec",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The most essential actions for achieving the desired outcome are dipping the paint brush into the paint container and painting the edge of the window and the wall.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00116-39860abe-ce5a-4e57-a234-b25b0e81beec",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00116-39860abe-ce5a-4e57-a234-b25b0e81beec/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00116-39860abe-ce5a-4e57-a234-b25b0e81beec/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00116-39860abe-ce5a-4e57-a234-b25b0e81beec/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/39860abe-ce5a-4e57-a234-b25b0e81beec.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/39860abe-ce5a-4e57-a234-b25b0e81beec.mp4",
+  "question_block": "Question: Among all the actions in the video, which ones can be considered the most essential for achieving the desired outcome, and why?\nOptions:\n(A) The most essential actions for achieving the desired outcome are cleaning the window and the wall.\n(B) The most essential actions for achieving the desired outcome are dipping the paint brush into the paint container and painting the edge of the window and the wall.\n(C) The most crucial and essential actions for successfully achieving the desired outcome primarily involve repairing the window and the wall.\n(D) The most crucial and essential actions for successfully achieving the desired outcome involve meticulously decorating both the window and the wall surfaces.\n(E) The most essential actions for successfully achieving the desired outcome primarily involve protecting both the window and the adjacent wall.",
+  "options": [
+    "The most essential actions for achieving the desired outcome are cleaning the window and the wall.",
+    "The most essential actions for achieving the desired outcome are dipping the paint brush into the paint container and painting the edge of the window and the wall.",
+    "The most crucial and essential actions for successfully achieving the desired outcome primarily involve repairing the window and the wall.",
+    "The most crucial and essential actions for successfully achieving the desired outcome involve meticulously decorating both the window and the wall surfaces.",
+    "The most essential actions for successfully achieving the desired outcome primarily involve protecting both the window and the adjacent wall."
+  ],
+  "official_meta": {
+    "question_index": "00116",
+    "video_id": "39860abe-ce5a-4e57-a234-b25b0e81beec",
+    "source_index": 116
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:25:49.725064Z"
+}

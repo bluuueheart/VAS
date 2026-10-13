@@ -1,0 +1,18 @@
+{
+  "kind": "online_evolution_state",
+  "layout_version": 1,
+  "updated_at": "2026-09-14T03:34:27.046816Z",
+  "enabled": false,
+  "status": "disabled",
+  "active_snapshot_id": "snapshot_000",
+  "active_snapshot_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260914_v35/_evolution_audit/active_snapshot.json",
+  "record_count": 0,
+  "last_trigger_count": 0,
+  "pending_cycle": false,
+  "pending_candidate": {},
+  "monitor": {},
+  "last_monitor_count": 0,
+  "inflight": {},
+  "cycle_count": 0,
+  "cycles": []
+}

@@ -1,0 +1,16 @@
+{
+  "snapshot_id": "snapshot_1e7608e9e9be",
+  "parent_snapshot_id": "snapshot_000",
+  "created_at": "2026-07-23T15:09:25.493855Z",
+  "router_policy": {
+    "add_fallback": {
+      "on_hard_failure": "next_validated_same_family_tool",
+      "max_retries": 1
+    }
+  },
+  "argument_policy": {},
+  "patch_ids": [
+    "intent_c5d10db53c97"
+  ],
+  "status": "candidate"
+}

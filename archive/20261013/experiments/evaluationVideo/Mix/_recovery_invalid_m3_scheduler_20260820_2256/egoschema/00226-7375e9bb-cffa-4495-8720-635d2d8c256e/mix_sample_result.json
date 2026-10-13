@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00226:7375e9bb-cffa-4495-8720-635d2d8c256e",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C uses a trowel to spread concrete on the bricks, and then uses a hammer to level the bricks.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00226-7375e9bb-cffa-4495-8720-635d2d8c256e",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00226-7375e9bb-cffa-4495-8720-635d2d8c256e/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00226-7375e9bb-cffa-4495-8720-635d2d8c256e/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00226-7375e9bb-cffa-4495-8720-635d2d8c256e/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/7375e9bb-cffa-4495-8720-635d2d8c256e.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/7375e9bb-cffa-4495-8720-635d2d8c256e.mp4",
+  "question_block": "Question: Based on the events in the video, what are the key steps and tools c uses to achieve their main objective? provide a concise breakdown without listing every single action.\nOptions:\n(A) C uses a trowel to spread concrete on the bricks, and then uses a saw to cut the bricks.\n(B) Skillfully, c uses a trowel to carefully spread concrete on the bricks, and then utilizes a sharp chisel to break the bricks effectively.\n(C) Carefully, c utilizes a trowel to evenly spread concrete on the bricks, and subsequently employs a level to accurately measure the bricks' alignment.\n(D) C diligently uses a trowel to evenly spread concrete on the bricks, and afterward, skillfully uses a brush to carefully paint those bricks.\n(E) C uses a trowel to spread concrete on the bricks, and then uses a hammer to level the bricks.",
+  "options": [
+    "C uses a trowel to spread concrete on the bricks, and then uses a saw to cut the bricks.",
+    "Skillfully, c uses a trowel to carefully spread concrete on the bricks, and then utilizes a sharp chisel to break the bricks effectively.",
+    "Carefully, c utilizes a trowel to evenly spread concrete on the bricks, and subsequently employs a level to accurately measure the bricks' alignment.",
+    "C diligently uses a trowel to evenly spread concrete on the bricks, and afterward, skillfully uses a brush to carefully paint those bricks.",
+    "C uses a trowel to spread concrete on the bricks, and then uses a hammer to level the bricks."
+  ],
+  "official_meta": {
+    "question_index": "00226",
+    "video_id": "7375e9bb-cffa-4495-8720-635d2d8c256e",
+    "source_index": 226
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:55:18.576342Z"
+}

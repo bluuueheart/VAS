@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:entity-recognition:107:668",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Because the girl with short blond hair throws an explosive charge on his boat",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00107-668",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00107-668/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00107-668/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00107-668/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/_zrgbA3FMVE.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/_zrgbA3FMVE.mp4",
+  "question_block": "Question: Why does the boat where the man with gray hair in a suit sink into the river?\nOptions:\n(A) Because the girl with long black hair throws an explosive charge on his boat\n(B) Because the girl with short black hair throws an explosive charge on his boat\n(C) Because the girl with short red hair throws an explosive charge on his boat\n(D) Because the girl with short blond hair throws an explosive charge on his boat",
+  "options": [
+    "Because the girl with long black hair throws an explosive charge on his boat",
+    "Because the girl with short black hair throws an explosive charge on his boat",
+    "Because the girl with short red hair throws an explosive charge on his boat",
+    "Because the girl with short blond hair throws an explosive charge on his boat"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "cartoon",
+    "time_reference": "24:45-24:53",
+    "video_key": "_zrgbA3FMVE",
+    "source_index": 107
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:24:53.489031Z"
+}

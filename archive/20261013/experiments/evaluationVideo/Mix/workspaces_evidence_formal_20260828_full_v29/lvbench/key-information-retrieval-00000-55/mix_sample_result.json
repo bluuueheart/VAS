@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:key-information-retrieval:0:55",
+  "dataset_name": "lvbench",
+  "subset_name": "key information retrieval",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "1633",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) 1633",
+  "elapsed_seconds": 78.835,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/key-information-retrieval-00000-55",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/key-information-retrieval-00000-55/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/key-information-retrieval-00000-55/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/key-information-retrieval-00000-55/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: What year appears in the opening caption of the video?\nOptions:\n(A) 1636\n(B) 1366\n(C) 1363\n(D) 1633",
+  "options": [
+    "1636",
+    "1366",
+    "1363",
+    "1633"
+  ],
+  "official_meta": {
+    "question_type": "key information retrieval",
+    "video_type": "cartoon",
+    "time_reference": "00:15-00:19",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "Cm73ma6Ibcs",
+    "resolved_video_stem": "Cm73ma6Ibcs",
+    "video_mapping_verified": true,
+    "source_index": 0
+  },
+  "updated_at": "2026-08-28T10:30:18.123521Z"
+}

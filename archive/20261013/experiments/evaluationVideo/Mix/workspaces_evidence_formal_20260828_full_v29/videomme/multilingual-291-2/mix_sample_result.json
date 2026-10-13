@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:multilingual:291-2",
+  "dataset_name": "videomme",
+  "subset_name": "Multilingual",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 15,
+  "iter_num": 18,
+  "tool_success_rate": 0.466667,
+  "successful_tool_calls": 7,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_repeated_blocked_action_loop.",
+  "elapsed_seconds": 4716.807,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/multilingual-291-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/multilingual-291-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/multilingual-291-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/multilingual-291-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/nVtTVt9csBc.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/nVtTVt9csBc.mp4",
+  "question_block": "Question: Which mode of transportation is not shown in the video?\nOptions:\n(A) Train.\n(B) Bike.\n(C) Car.\n(D) Airplane.",
+  "options": [
+    "A. Train.",
+    "B. Bike.",
+    "C. Car.",
+    "D. Airplane."
+  ],
+  "official_meta": {
+    "video_id": "291",
+    "video_external_id": "nVtTVt9csBc",
+    "resolved_video_stem": "nVtTVt9csBc",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Multilingual",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Multilingual",
+    "task_type": "Object Recognition",
+    "question_id": "291-2",
+    "question_index": 1,
+    "video_item_index": 290,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-07T02:44:20.504452Z"
+}

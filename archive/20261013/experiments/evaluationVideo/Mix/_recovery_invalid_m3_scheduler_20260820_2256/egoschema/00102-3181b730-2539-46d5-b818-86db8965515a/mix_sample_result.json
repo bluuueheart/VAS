@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00102:3181b730-2539-46d5-b818-86db8965515a",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is drilling holes in the metal.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00102-3181b730-2539-46d5-b818-86db8965515a",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00102-3181b730-2539-46d5-b818-86db8965515a/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00102-3181b730-2539-46d5-b818-86db8965515a/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00102-3181b730-2539-46d5-b818-86db8965515a/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/3181b730-2539-46d5-b818-86db8965515a.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/3181b730-2539-46d5-b818-86db8965515a.mp4",
+  "question_block": "Question: Describe the primary repetitive process that c is performing throughout the video and explain its significance in the overall context.\nOptions:\n(A) C is drilling holes in the metal.\n(B) Currently, the person named c is skillfully cutting the metal material.\n(C) C is sanding the metal.\n(D) Currently, c is carefully polishing the metal surface with precision.\n(E) Currently, c is meticulously painting the metal surface with precision.",
+  "options": [
+    "C is drilling holes in the metal.",
+    "Currently, the person named c is skillfully cutting the metal material.",
+    "C is sanding the metal.",
+    "Currently, c is carefully polishing the metal surface with precision.",
+    "Currently, c is meticulously painting the metal surface with precision."
+  ],
+  "official_meta": {
+    "question_index": "00102",
+    "video_id": "3181b730-2539-46d5-b818-86db8965515a",
+    "source_index": 102
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:46:40.286964Z"
+}

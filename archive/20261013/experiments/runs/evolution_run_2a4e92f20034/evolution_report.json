@@ -1,0 +1,141 @@
+{
+  "run_id": "evolution_run_2a4e92f20034",
+  "trajectory_count": 2,
+  "event_count": 25,
+  "diagnoses": [
+    {
+      "diagnosis_id": "diagnosis_a20550ddbc07",
+      "trajectory_ids": [
+        "trajectory_2245e4bb0ea3471e8e90536e473b2580"
+      ],
+      "failure_type": "premature_termination",
+      "blamed_component": "evidence_verifier",
+      "blamed_tool_ids": [
+        "Clean_Results",
+        "Keyword_Retrieve",
+        "Video_Clip_QA",
+        "evidence_retrieval"
+      ],
+      "supporting_event_ids": [
+        "debug_10",
+        "debug_12",
+        "debug_16",
+        "debug_18"
+      ],
+      "root_cause": "The historical trajectory reached Finish without satisfying the configured evidence gate.",
+      "counterfactual_fix": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, Food handling context, Selected option justification, answer candidate lacks directly matched verified evidence",
+      "confidence": 0.95
+    }
+  ],
+  "verifications": [
+    {
+      "trajectory_id": "trajectory_2245e4bb0ea3471e8e90536e473b2580",
+      "sample_uid": "mlvu:ego:0:ego-35",
+      "answer_score": 0.0,
+      "sample_status": "wrong",
+      "held_out": false,
+      "progress_score": 0.4,
+      "claim_coverage": 0.5,
+      "direct_grounding": 0.5,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": false,
+      "missing_information": [
+        "direct evidence citation"
+      ],
+      "unresolved_claims": [
+        "Food handling context",
+        "Selected option justification",
+        "answer candidate lacks directly matched verified evidence"
+      ],
+      "feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, Food handling context, Selected option justification, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "trajectory_id": "trajectory_8c1c48f449614503be69bcfeca144331",
+      "sample_uid": "mlvu:order:0:order-126",
+      "answer_score": 0.0,
+      "sample_status": "wrong",
+      "held_out": true,
+      "progress_score": 0.8,
+      "claim_coverage": 1.0,
+      "direct_grounding": 1.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": true,
+      "missing_information": [],
+      "unresolved_claims": [],
+      "feedback": "Evidence verifier accepted termination."
+    }
+  ],
+  "evolution_intent": {
+    "intent_id": "intent_02ac7e315b2e",
+    "diagnosis_ids": [
+      "diagnosis_a20550ddbc07"
+    ],
+    "scope": "router",
+    "operations": [
+      {
+        "action": "update_router_rule",
+        "target_type": "evidence_verifier",
+        "target_ids": [
+          "finish_gate"
+        ],
+        "before": {
+          "enforced": false
+        },
+        "after": {
+          "enforced": true,
+          "reject_unverified_finish": true,
+          "resolve_conflicts": true
+        },
+        "reason": "Observed unsupported or conflict-bearing terminal answers."
+      }
+    ],
+    "expected_effects": [
+      "fewer unsupported finishes",
+      "higher evidence-grounded answer consistency"
+    ],
+    "risks": [
+      "additional tool calls",
+      "higher latency"
+    ]
+  },
+  "candidate_snapshot": {
+    "snapshot_id": "snapshot_665c6a5215e0",
+    "parent_snapshot_id": "snapshot_000",
+    "created_at": "2026-07-20T09:10:29.770484Z",
+    "router_policy": {
+      "update_router_rule": {
+        "enforced": true,
+        "reject_unverified_finish": true,
+        "resolve_conflicts": true
+      }
+    },
+    "argument_policy": {},
+    "patch_ids": [
+      "intent_02ac7e315b2e"
+    ],
+    "status": "candidate"
+  },
+  "replay_groups": {
+    "trigger": [
+      "trajectory_2245e4bb0ea3471e8e90536e473b2580"
+    ],
+    "neighbor": [],
+    "regression": [],
+    "held_out": [
+      "trajectory_8c1c48f449614503be69bcfeca144331"
+    ]
+  },
+  "replay_status": "pending",
+  "candidate_replay_status": "pending",
+  "batch_metrics": {
+    "accuracy": 0.0,
+    "mean_latency_seconds": 2295.973,
+    "invalid_call_rate": 0.4
+  },
+  "source_paths": [
+    "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_fix2_20260720_local/mlvu/ego-00000-ego-35/results/run_result.json",
+    "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_fix2_20260720_local/mlvu/order-00000-order-126/results/run_result.json"
+  ]
+}

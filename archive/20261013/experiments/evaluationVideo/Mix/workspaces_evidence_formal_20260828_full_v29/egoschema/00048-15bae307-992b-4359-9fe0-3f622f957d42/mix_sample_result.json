@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00048:15bae307-992b-4359-9fe0-3f622f957d42",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 11,
+  "iter_num": 20,
+  "tool_success_rate": 0.454545,
+  "successful_tool_calls": 5,
+  "planner_iterations": 20,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "C repeatedly touches her hair and walks her dog.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [
+    "E"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 5573.899,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00048-15bae307-992b-4359-9fe0-3f622f957d42",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00048-15bae307-992b-4359-9fe0-3f622f957d42/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00048-15bae307-992b-4359-9fe0-3f622f957d42/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00048-15bae307-992b-4359-9fe0-3f622f957d42/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/15bae307-992b-4359-9fe0-3f622f957d42.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/15bae307-992b-4359-9fe0-3f622f957d42.mp4",
+  "question_block": "Question: In your own words, summarize the key actions c repeatedly performs throughout the video without simply listing them out.\nOptions:\n(A) The individual, c, continuously and repeatedly ceases their walking motion.\n(B) Continuously, c repeatedly waves her right hand multiple times.\n(C) Continuously, c takes plastic paper using her right hand, performing the action repeatedly.\n(D) C repeatedly takes plastic paper with her left hand.\n(E) C repeatedly touches her hair and walks her dog.",
+  "options": [
+    "The individual, c, continuously and repeatedly ceases their walking motion.",
+    "Continuously, c repeatedly waves her right hand multiple times.",
+    "Continuously, c takes plastic paper using her right hand, performing the action repeatedly.",
+    "C repeatedly takes plastic paper with her left hand.",
+    "C repeatedly touches her hair and walks her dog."
+  ],
+  "official_meta": {
+    "question_index": "00048",
+    "video_id": "15bae307-992b-4359-9fe0-3f622f957d42",
+    "resolved_video_stem": "15bae307-992b-4359-9fe0-3f622f957d42",
+    "video_mapping_verified": true,
+    "source_index": 48,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-05T10:52:43.792571Z"
+}

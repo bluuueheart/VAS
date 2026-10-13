@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:reasoning:230:1691",
+  "dataset_name": "lvbench",
+  "subset_name": "reasoning",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Marilyn Monroe",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/reasoning-00230-1691",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/reasoning-00230-1691/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/reasoning-00230-1691/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/reasoning-00230-1691/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/t-RtDI2RWQs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/t-RtDI2RWQs.mp4",
+  "question_block": "Question: Gosling's performance mirrors a scene from a movie that stars ___.\nOptions:\n(A) Demi Moore\n(B) Marlon Brando\n(C) Keanu Reeves\n(D) Marilyn Monroe",
+  "options": [
+    "Demi Moore",
+    "Marlon Brando",
+    "Keanu Reeves",
+    "Marilyn Monroe"
+  ],
+  "official_meta": {
+    "question_type": "reasoning",
+    "video_type": "live",
+    "time_reference": "49:12-52:32",
+    "video_key": "t-RtDI2RWQs",
+    "source_index": 230
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:55:25.612460Z"
+}

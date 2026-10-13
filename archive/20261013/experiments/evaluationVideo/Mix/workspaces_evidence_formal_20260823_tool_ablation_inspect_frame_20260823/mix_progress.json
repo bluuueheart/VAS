@@ -1,0 +1,20 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-08-23T15:44:19.475261Z",
+  "records": {
+    "videomme:humanity-history:001-1": {
+      "sample_uid": "videomme:humanity-history:001-1",
+      "dataset_name": "videomme",
+      "subset_name": "Humanity & History",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 7,
+      "iter_num": 12,
+      "tool_success_rate": 0.285714,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_tool_ablation_inspect_frame_20260823/videomme/humanity-history-001-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_tool_ablation_inspect_frame_20260823/videomme/humanity-history-001-1",
+      "updated_at": "2026-08-23T15:44:19.475175Z"
+    }
+  }
+}

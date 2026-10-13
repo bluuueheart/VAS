@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00037:0e4804e0-85fa-48bc-ada3-a94167b06e53",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C was trying to attach a cable channel to the wall. he used a spirit level to check the accuracy of his work.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00037-0e4804e0-85fa-48bc-ada3-a94167b06e53",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00037-0e4804e0-85fa-48bc-ada3-a94167b06e53/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00037-0e4804e0-85fa-48bc-ada3-a94167b06e53/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00037-0e4804e0-85fa-48bc-ada3-a94167b06e53/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0e4804e0-85fa-48bc-ada3-a94167b06e53.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0e4804e0-85fa-48bc-ada3-a94167b06e53.mp4",
+  "question_block": "Question: Based on the actions in the video, what was the primary objective that c was trying to accomplish and what tool did he use repeatedly to check the accuracy of his work?\nOptions:\n(A) C was trying to install a new window. he used a spirit level to make sure the window was level.\n(B) C was attempting to fix a leak located in the wall. he utilized a spirit level tool to ensure the applied patch was perfectly level.\n(C) C was trying to attach a cable channel to the wall. he used a spirit level to check the accuracy of his work.\n(D) C was attempting to hang a picture carefully. utilizing a spirit level, he ensured the picture was perfectly level and straight.\n(E) C was attempting to construct a shelf. diligently, he utilized a spirit level to ensure the shelf remained perfectly level and even.",
+  "options": [
+    "C was trying to install a new window. he used a spirit level to make sure the window was level.",
+    "C was attempting to fix a leak located in the wall. he utilized a spirit level tool to ensure the applied patch was perfectly level.",
+    "C was trying to attach a cable channel to the wall. he used a spirit level to check the accuracy of his work.",
+    "C was attempting to hang a picture carefully. utilizing a spirit level, he ensured the picture was perfectly level and straight.",
+    "C was attempting to construct a shelf. diligently, he utilized a spirit level to ensure the shelf remained perfectly level and even."
+  ],
+  "official_meta": {
+    "question_index": "00037",
+    "video_id": "0e4804e0-85fa-48bc-ada3-a94167b06e53",
+    "source_index": 37
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=255 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-22T18:53:12.039970Z"
+}

@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00219:6f42ba6a-cb2a-428f-bffb-7a15abd94727",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The primary tools and ingredients c used throughout the video were a spatula, a strainer, a dessert bowl, cocoa powder, and tissue paper. the spatula was used to spread the batter in the bowl. the strainer was used to sieve the cocoa powder into the bowl. the dessert bowl was used to hold the batter. the cocoa powder was used to add flavor and color to the batter. the tissue paper was used to wipe the edges of the bowl.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00219-6f42ba6a-cb2a-428f-bffb-7a15abd94727",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00219-6f42ba6a-cb2a-428f-bffb-7a15abd94727/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00219-6f42ba6a-cb2a-428f-bffb-7a15abd94727/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00219-6f42ba6a-cb2a-428f-bffb-7a15abd94727/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/6f42ba6a-cb2a-428f-bffb-7a15abd94727.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/6f42ba6a-cb2a-428f-bffb-7a15abd94727.mp4",
+  "question_block": "Question: Identify the primary tools and ingredients c used throughout the video, and discuss how they contributed to the overall dessert preparation process.\nOptions:\n(A) The primary tools and ingredients c used throughout the video were a spatula, a strainer, a dessert bowl, cocoa powder, and tissue paper. the spatula was used to spread the batter in the bowl. the strainer was used to sieve the cocoa powder into the bowl. the dessert bowl was used to hold the batter. the cocoa powder was used to add flavor and color to the batter. the tissue paper was used to wipe the edges of the bowl.\n(B) The primary tools and ingredients c used throughout the video were a mixing bowl, a whisk, a baking dish, flour, sugar, eggs, and butter. the mixing bowl was used to mix the batter. the whisk was used to beat the eggs. the baking dish was used to bake the cake. the flour was used to add structure to the cake. the sugar was used to add sweetness to the cake. the eggs were used to add moisture to the cake. the butter was used to add flavor and richness to the cake.\n(C) The primary tools and ingredients c used throughout the video were a muffin tin, a spoon, chocolate chips, flour, sugar, eggs, and butter. the muffin tin was used to bake the muffins. the spoon was used to scoop the batter into the muffin tin. the chocolate chips were used to add flavor and color to the muffins. the flour was used to add structure to the muffins. the sugar was used to add sweetness to the muffins. the eggs were used to add moisture to the muffins. the butter was used to add flavor and richness to the muffins.\n(D) The primary tools and ingredients c used throughout the video were a cake pan, a spatula, chocolate frosting, flour, sugar, eggs, and butter. the cake pan was used to bake the cake. the spatula was used to spread the frosting on the cake. the chocolate frosting was used to add flavor and color to the cake. the flour was used to add structure to the cake. the sugar was used to add sweetness to the cake. the eggs were used to add moisture to the cake. the butter was used to add flavor and richness to the cake.\n(E) The primary tools and ingredients c used throughout the video were a mixing bowl, a whisk, a baking sheet, flour, sugar, eggs, and butter. the mixing bowl was used to mix the batter. the whisk was used to beat the eggs. the baking sheet was used to bake the cookies. the flour was used to add structure to the cookies. the sugar was used to add sweetness to the cookies. the eggs were used to add moisture to the cookies. the butter was used to add flavor and richness to the cookies.",
+  "options": [
+    "The primary tools and ingredients c used throughout the video were a spatula, a strainer, a dessert bowl, cocoa powder, and tissue paper. the spatula was used to spread the batter in the bowl. the strainer was used to sieve the cocoa powder into the bowl. the dessert bowl was used to hold the batter. the cocoa powder was used to add flavor and color to the batter. the tissue paper was used to wipe the edges of the bowl.",
+    "The primary tools and ingredients c used throughout the video were a mixing bowl, a whisk, a baking dish, flour, sugar, eggs, and butter. the mixing bowl was used to mix the batter. the whisk was used to beat the eggs. the baking dish was used to bake the cake. the flour was used to add structure to the cake. the sugar was used to add sweetness to the cake. the eggs were used to add moisture to the cake. the butter was used to add flavor and richness to the cake.",
+    "The primary tools and ingredients c used throughout the video were a muffin tin, a spoon, chocolate chips, flour, sugar, eggs, and butter. the muffin tin was used to bake the muffins. the spoon was used to scoop the batter into the muffin tin. the chocolate chips were used to add flavor and color to the muffins. the flour was used to add structure to the muffins. the sugar was used to add sweetness to the muffins. the eggs were used to add moisture to the muffins. the butter was used to add flavor and richness to the muffins.",
+    "The primary tools and ingredients c used throughout the video were a cake pan, a spatula, chocolate frosting, flour, sugar, eggs, and butter. the cake pan was used to bake the cake. the spatula was used to spread the frosting on the cake. the chocolate frosting was used to add flavor and color to the cake. the flour was used to add structure to the cake. the sugar was used to add sweetness to the cake. the eggs were used to add moisture to the cake. the butter was used to add flavor and richness to the cake.",
+    "The primary tools and ingredients c used throughout the video were a mixing bowl, a whisk, a baking sheet, flour, sugar, eggs, and butter. the mixing bowl was used to mix the batter. the whisk was used to beat the eggs. the baking sheet was used to bake the cookies. the flour was used to add structure to the cookies. the sugar was used to add sweetness to the cookies. the eggs were used to add moisture to the cookies. the butter was used to add flavor and richness to the cookies."
+  ],
+  "official_meta": {
+    "question_index": "00219",
+    "video_id": "6f42ba6a-cb2a-428f-bffb-7a15abd94727",
+    "source_index": 219
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:42.389027Z"
+}

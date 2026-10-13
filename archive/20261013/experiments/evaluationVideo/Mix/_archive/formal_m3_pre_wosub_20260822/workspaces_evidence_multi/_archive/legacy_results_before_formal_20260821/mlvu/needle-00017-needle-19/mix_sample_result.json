@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:needle:17:needle-19",
+  "dataset_name": "mlvu",
+  "subset_name": "needle",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "A beautiful fishing village",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/needle-00017-needle-19",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/needle-00017-needle-19/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/needle-00017-needle-19/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/needle-00017-needle-19/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_19.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_19.mp4",
+  "question_block": "Question: What is the setting of the segment where people tourists are walking?\nOptions:\n(A) A quiet forest\n(B) A bustling city\n(C) A beautiful fishing village\n(D) A crowded beach",
+  "options": [
+    "A quiet forest",
+    "A bustling city",
+    "A beautiful fishing village",
+    "A crowded beach"
+  ],
+  "official_meta": {
+    "task_type": "needle",
+    "source_json": "2_needle.json",
+    "source_index": 17,
+    "video_subdir": "2_needle",
+    "video_relative_path": "2_needle/needle_19.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:25:03.390199Z"
+}

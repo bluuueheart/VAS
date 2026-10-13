@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00239:7981baa1-eb63-4ba6-9bde-cf35249e682c",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is working on repairing a lawn mower.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00239-7981baa1-eb63-4ba6-9bde-cf35249e682c",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00239-7981baa1-eb63-4ba6-9bde-cf35249e682c/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00239-7981baa1-eb63-4ba6-9bde-cf35249e682c/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00239-7981baa1-eb63-4ba6-9bde-cf35249e682c/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/7981baa1-eb63-4ba6-9bde-cf35249e682c.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/7981baa1-eb63-4ba6-9bde-cf35249e682c.mp4",
+  "question_block": "Question: In the context of this video, what is the primary task c is working on and what steps are involved in completing this task?\nOptions:\n(A) C is working on building a new lawn mower.\n(B) C is working on cleaning a lawn mower.\n(C) C is working on painting a lawn mower.\n(D) C is working on repairing a lawn mower.\n(E) C is working on sharpening a lawn mower.",
+  "options": [
+    "C is working on building a new lawn mower.",
+    "C is working on cleaning a lawn mower.",
+    "C is working on painting a lawn mower.",
+    "C is working on repairing a lawn mower.",
+    "C is working on sharpening a lawn mower."
+  ],
+  "official_meta": {
+    "question_index": "00239",
+    "video_id": "7981baa1-eb63-4ba6-9bde-cf35249e682c",
+    "source_index": 239
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:56:09.625627Z"
+}

@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00202:662d710e-54ea-4e63-bfc3-8f4e14873fd4",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's overall purpose in the video is to play soccer.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00202-662d710e-54ea-4e63-bfc3-8f4e14873fd4",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00202-662d710e-54ea-4e63-bfc3-8f4e14873fd4/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00202-662d710e-54ea-4e63-bfc3-8f4e14873fd4/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00202-662d710e-54ea-4e63-bfc3-8f4e14873fd4/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/662d710e-54ea-4e63-bfc3-8f4e14873fd4.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/662d710e-54ea-4e63-bfc3-8f4e14873fd4.mp4",
+  "question_block": "Question: How would you compress the overall purpose of c's actions in the video into a single, concise statement?\nOptions:\n(A) C's overall purpose in the video is to warm up.\n(B) C's overall purpose in the video is to cool down.\n(C) C's overall purpose in the video is to play soccer.\n(D) C's overall purpose in the video is to celebrate.\n(E) C's overall purpose in the video is to reflect on the game.",
+  "options": [
+    "C's overall purpose in the video is to warm up.",
+    "C's overall purpose in the video is to cool down.",
+    "C's overall purpose in the video is to play soccer.",
+    "C's overall purpose in the video is to celebrate.",
+    "C's overall purpose in the video is to reflect on the game."
+  ],
+  "official_meta": {
+    "question_index": "00202",
+    "video_id": "662d710e-54ea-4e63-bfc3-8f4e14873fd4",
+    "source_index": 202
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:53:17.456908Z"
+}

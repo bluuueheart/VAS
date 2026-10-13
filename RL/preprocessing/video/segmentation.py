@@ -64,6 +64,7 @@ class VideoSegmenter:
         use_scene_detection: bool = True,
         asr_segments: Optional[List[Dict[str, Any]]] = None,
         reuse_cache: bool = True,
+        extract_audio: bool = True,
     ) -> Tuple[Dict[str, str], Dict[str, Dict]]:
         """
         Segment video into reusable chunks.
@@ -76,7 +77,11 @@ class VideoSegmenter:
         strategy = "asr_semantic_v4" if asr_segments else ("scene_v2" if use_scene_detection else "fixed_v1")
 
         if reuse_cache:
-            cached = self._try_load_cached_segments(cache_path, expected_strategy=strategy)
+            cached = self._try_load_cached_segments(
+                cache_path,
+                expected_strategy=strategy,
+                require_audio=bool(extract_audio),
+            )
             if cached:
                 return cached
 
@@ -108,9 +113,10 @@ class VideoSegmenter:
                     "timestamp": (round(float(start), 3), round(float(end), 3)),
                 }
 
-                audio_path = cache_path / f"{segment_name}.{self.audio_format}"
-                if not audio_path.exists():
-                    self._extract_audio(video_path, start, end, audio_path)
+                if extract_audio:
+                    audio_path = cache_path / f"{segment_name}.{self.audio_format}"
+                    if not audio_path.exists():
+                        self._extract_audio(video_path, start, end, audio_path)
 
         self._persist_cache(
             cache_path=cache_path,
@@ -318,7 +324,15 @@ class VideoSegmenter:
 
         planned = solve(0)
         if planned is None:
-            fallback_ranges = [(float(normalized_units[0]["start"]), float(normalized_units[-1]["end"]))]
+            # A short final ASR unit can make the dynamic-programming tail
+            # infeasible when it cannot be merged without violating the
+            # duration contract.  Never fall back to the whole video: that
+            # silently creates an overlong segment and defeats the caption/
+            # evidence runtime assumptions.  Use the bounded fixed-span
+            # splitter as a safe coverage fallback instead.
+            fallback_start = 0.0 if cover_full_span else float(normalized_units[0]["start"])
+            fallback_end = float(total_duration) if cover_full_span else float(normalized_units[-1]["end"])
+            fallback_ranges = self._subdivide_long_range(fallback_start, fallback_end)
             return self._normalize_ranges(
                 fallback_ranges,
                 total_duration,
@@ -837,6 +851,7 @@ class VideoSegmenter:
         self,
         cache_path: Path,
         expected_strategy: Optional[str] = None,
+        require_audio: bool = True,
     ) -> Optional[Tuple[Dict[str, str], Dict[str, Dict]]]:
         meta_path = self._segment_times_info_path(cache_path)
         if not meta_path.exists():
@@ -857,10 +872,11 @@ class VideoSegmenter:
             raw_times = meta.get("segment_times_info", {})
             cached_duration = float(meta.get("video_duration", 0.0) or 0.0)
 
-            for _, name in segment_index2name.items():
-                audio_path = cache_path / f"{name}.{self.audio_format}"
-                if not audio_path.exists():
-                    return None
+            if require_audio:
+                for _, name in segment_index2name.items():
+                    audio_path = cache_path / f"{name}.{self.audio_format}"
+                    if not audio_path.exists():
+                        return None
 
             segment_times_info: Dict[str, Dict[str, Any]] = {}
             for idx, info in raw_times.items():

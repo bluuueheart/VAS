@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00182:5a992458-f01e-49db-bb84-502c3ccedc7c",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's primary goal in the video is to set up their work station and start working on their computer.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00182-5a992458-f01e-49db-bb84-502c3ccedc7c",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00182-5a992458-f01e-49db-bb84-502c3ccedc7c/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00182-5a992458-f01e-49db-bb84-502c3ccedc7c/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00182-5a992458-f01e-49db-bb84-502c3ccedc7c/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/5a992458-f01e-49db-bb84-502c3ccedc7c.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/5a992458-f01e-49db-bb84-502c3ccedc7c.mp4",
+  "question_block": "Question: What was the primary goal of c in the video, and how did their interactions with the person contribute to this objective?\nOptions:\n(A) In the video, c's main objective or primary goal is essentially to communicate and talk to the person.\n(B) C's primary goal in the video is to eat the wrapper.\n(C) C's primary goal, while demonstrating in the video, is to skillfully play the guitar with enthusiasm.\n(D) C's primary objective in the video presentation is to efficiently clean the cloth thoroughly.\n(E) C's primary goal in the video is to set up their work station and start working on their computer.",
+  "options": [
+    "In the video, c's main objective or primary goal is essentially to communicate and talk to the person.",
+    "C's primary goal in the video is to eat the wrapper.",
+    "C's primary goal, while demonstrating in the video, is to skillfully play the guitar with enthusiasm.",
+    "C's primary objective in the video presentation is to efficiently clean the cloth thoroughly.",
+    "C's primary goal in the video is to set up their work station and start working on their computer."
+  ],
+  "official_meta": {
+    "question_index": "00182",
+    "video_id": "5a992458-f01e-49db-bb84-502c3ccedc7c",
+    "source_index": 182
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:06.044697Z"
+}

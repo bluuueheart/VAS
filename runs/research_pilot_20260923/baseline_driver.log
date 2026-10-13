@@ -1,0 +1,2 @@
+Skipped 2 malformed MLVU samples task_type=ego source_json=3_ego.json examples=['record_index=119 video=ego_26.mp4 error=MLVU candidates contain empty option slots at indices 2.', 'record_index=313 video=ego_81.mp4 error=MLVU candidates contain empty option slots at indices 3.']
+Skipped 1 malformed MLVU samples task_type=plotQA source_json=1_plotQA.json examples=['record_index=23 video=movie101_5.mp4 error=MLVU candidates contain empty option slots at indices 0, 3.']

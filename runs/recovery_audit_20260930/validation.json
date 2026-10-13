@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-30",
+  "regression": {
+    "modules": 18,
+    "tests": 176,
+    "result": "OK",
+    "exit_code": 0,
+    "test_execution_seconds": 9.602,
+    "log": "regression.log",
+    "sha256": "135c4f4dd7b6a9ed7ad758b3b688c46a1f3a4b9f8515f4e5512f7d9710e4469d"
+  },
+  "plan_only": {
+    "exit_code": 0,
+    "inference_started": false,
+    "log": "plan_only.log",
+    "sample_uids": [
+      "mlvu:topic-reasoning:0:awa-6",
+      "mlvu:order:0:order-126"
+    ],
+    "sha256": "75c81342b28df3317679264e361424e11ee4d2181f0b67a97be160a28ff8b756"
+  },
+  "source_manifest_after_checks": {
+    "files": 111,
+    "mismatches": []
+  }
+}

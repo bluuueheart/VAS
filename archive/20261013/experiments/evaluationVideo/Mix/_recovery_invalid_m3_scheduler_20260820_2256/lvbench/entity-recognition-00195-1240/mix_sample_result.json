@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:entity-recognition:195:1240",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "1",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00195-1240",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00195-1240/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00195-1240/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00195-1240/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/aJI8XTa_DII.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/aJI8XTa_DII.mp4",
+  "question_block": "Question: How many microphones are on stage during Donald Trump's speech?\nOptions:\n(A) 3\n(B) 2\n(C) 0\n(D) 1",
+  "options": [
+    "3",
+    "2",
+    "0",
+    "1"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "documentary",
+    "time_reference": "35:00-35:07",
+    "video_key": "aJI8XTa_DII",
+    "source_index": 195
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:55:45.126240Z"
+}

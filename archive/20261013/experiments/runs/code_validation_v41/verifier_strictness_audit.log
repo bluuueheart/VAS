@@ -1,0 +1,98 @@
+lvbench:entity-recognition:4:63 10 False {'diagnostic_remove_count_redundancy': False, 'diagnostic_remove_evidence_redundancy': False}
+lvbench:entity-recognition:4:63 14 False {'diagnostic_remove_count_redundancy': False, 'diagnostic_remove_evidence_redundancy': False}
+videomme:humanity-history:001-1 6 False {'diagnostic_remove_count_redundancy': False}
+videomme:humanity-history:001-1 10 False {'diagnostic_remove_count_redundancy': False}
+egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391 2 True {'diagnostic_remove_evidence_redundancy': True}
+mlvu:plotqa:0:movie101-66 2 False {'diagnostic_remove_answer_redundancy': True}
+mlvu:plotqa:0:movie101-66 9 True {'diagnostic_remove_answer_redundancy': True}
+lvbench:event-understanding:1:56 2 False {'diagnostic_remove_answer_redundancy': False}
+lvbench:event-understanding:1:56 7 True {'diagnostic_remove_answer_redundancy': True}
+videomme:literature-art:011-1 2 True {}
+egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e 5 False {'diagnostic_remove_evidence_redundancy': False, 'diagnostic_remove_purpose': False}
+egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e 8 False {'diagnostic_remove_evidence_redundancy': False, 'diagnostic_remove_purpose': False}
+egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e 12 False {'diagnostic_remove_evidence_redundancy': False, 'diagnostic_remove_purpose': False}
+mlvu:needle:0:needle-32 11 False {}
+mlvu:needle:0:needle-32 15 False {}
+lvbench:entity-recognition:6:67 5 False {'count_scope_only': False, 'diagnostic_remove_count_redundancy': False, 'diagnostic_remove_evidence_redundancy': False}
+lvbench:entity-recognition:6:67 11 False {'count_scope_only': True, 'diagnostic_remove_count_redundancy': False, 'diagnostic_remove_evidence_redundancy': False}
+videomme:biology-medicine:021-1 2 True {}
+egoschema:00002:00f93e1e-cf4e-4835-88b4-4ad68216e86f 6 True {}
+mlvu:ego:0:ego-35 10 False {}
+lvbench:event-understanding:3:62 4 False {'diagnostic_remove_answer_redundancy': False}
+lvbench:event-understanding:3:62 13 False {'diagnostic_remove_answer_redundancy': False}
+lvbench:event-understanding:3:62 14 False {'diagnostic_remove_answer_redundancy': False}
+videomme:finance-commerce:031-1 2 True {}
+egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518 2 False {'diagnostic_remove_evidence_redundancy': False}
+egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518 7 False {'diagnostic_remove_evidence_redundancy': False}
+egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518 12 False {'diagnostic_remove_evidence_redundancy': False}
+egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518 14 False {'diagnostic_remove_evidence_redundancy': False}
+mlvu:plotqa:1:xiaoliyu-6 2 True {}
+lvbench:key-information-retrieval:0:55 2 True {}
+videomme:astronomy:041-1 1 False {}
+videomme:astronomy:041-1 5 True {}
+egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212 4 False {'diagnostic_remove_evidence_redundancy': False}
+egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212 10 False {'diagnostic_remove_evidence_redundancy': False}
+egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212 14 False {'diagnostic_remove_evidence_redundancy': False}
+mlvu:topic-reasoning:0:awa-6 2 False {}
+mlvu:topic-reasoning:0:awa-6 5 True {}
+lvbench:entity-recognition:11:75 3 False {'diagnostic_remove_answer_redundancy': False}
+lvbench:entity-recognition:11:75 7 True {'diagnostic_remove_answer_redundancy': True}
+videomme:geography:051-1 4 False {'count_scope_only': False, 'diagnostic_remove_count_redundancy': True, 'diagnostic_remove_evidence_redundancy': False}
+videomme:geography:051-1 9 False {'count_scope_only': False, 'diagnostic_remove_count_redundancy': True, 'diagnostic_remove_evidence_redundancy': False}
+videomme:geography:051-1 15 False {'count_scope_only': False, 'diagnostic_remove_count_redundancy': True, 'diagnostic_remove_evidence_redundancy': False}
+egoschema:00005:01a144a5-24d2-4a5a-af01-1f318d674bed 2 False {'diagnostic_remove_evidence_redundancy': False, 'diagnostic_remove_purpose': False}
+egoschema:00005:01a144a5-24d2-4a5a-af01-1f318d674bed 8 False {'diagnostic_remove_evidence_redundancy': False, 'diagnostic_remove_purpose': False}
+mlvu:order:0:order-126 2 False {'diagnostic_remove_evidence_redundancy': False}
+mlvu:order:0:order-126 13 True {'diagnostic_remove_evidence_redundancy': True}
+lvbench:event-understanding:7:68 4 True {}
+lvbench:event-understanding:7:68 15 False {}
+videomme:law:061-1 6 False {'count_scope_only': False, 'diagnostic_remove_count_redundancy': False, 'diagnostic_remove_evidence_redundancy': False}
+egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf 9 False {'diagnostic_remove_evidence_redundancy': False, 'diagnostic_remove_purpose': False}
+egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf 14 False {'diagnostic_remove_evidence_redundancy': False, 'diagnostic_remove_purpose': False}
+mlvu:count:0:count-126 9 False {'diagnostic_remove_count_redundancy': False, 'diagnostic_remove_evidence_redundancy': False}
+mlvu:count:0:count-126 14 False {'diagnostic_remove_count_redundancy': False, 'diagnostic_remove_evidence_redundancy': False}
+videomme:life-tip:071-1 1 False {'count_scope_only': False, 'diagnostic_remove_count_redundancy': False, 'diagnostic_remove_evidence_redundancy': False}
+videomme:life-tip:071-1 12 True {'count_scope_only': True, 'diagnostic_remove_count_redundancy': True, 'diagnostic_remove_evidence_redundancy': True}
+egoschema:00007:02925d7a-a5db-4127-8c31-b232e78b684d 2 True {'diagnostic_remove_evidence_redundancy': True, 'diagnostic_remove_purpose': True}
+mlvu:anomaly-reco:0:surveil-20 11 True {'diagnostic_remove_evidence_redundancy': True}
+{
+  "boundaries": 57,
+  "matches_recorded_decision": 57,
+  "new_acceptances": [
+    {
+      "uid": "mlvu:plotqa:0:movie101-66",
+      "iteration": 2,
+      "variant": "diagnostic_remove_answer_redundancy",
+      "candidate_matches_official_label": true
+    },
+    {
+      "uid": "lvbench:entity-recognition:6:67",
+      "iteration": 11,
+      "variant": "count_scope_only",
+      "candidate_matches_official_label": false
+    },
+    {
+      "uid": "videomme:geography:051-1",
+      "iteration": 4,
+      "variant": "diagnostic_remove_count_redundancy",
+      "candidate_matches_official_label": true
+    },
+    {
+      "uid": "videomme:geography:051-1",
+      "iteration": 9,
+      "variant": "diagnostic_remove_count_redundancy",
+      "candidate_matches_official_label": true
+    },
+    {
+      "uid": "videomme:geography:051-1",
+      "iteration": 15,
+      "variant": "diagnostic_remove_count_redundancy",
+      "candidate_matches_official_label": true
+    }
+  ],
+  "limitations": [
+    "Same frozen recorded evidence, no fresh generation, no overall accuracy claim.",
+    "Scope repair and rule removal are diagnostics only; source/config unchanged.",
+    "Multiple boundaries in one case are not independent samples."
+  ]
+}

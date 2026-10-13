@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00156:4e0b4961-1c21-4025-9ba6-0b526e3aaf3c",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The main goal c achieves at the end of the video is to clean all of the dishes.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00156-4e0b4961-1c21-4025-9ba6-0b526e3aaf3c",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00156-4e0b4961-1c21-4025-9ba6-0b526e3aaf3c/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00156-4e0b4961-1c21-4025-9ba6-0b526e3aaf3c/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00156-4e0b4961-1c21-4025-9ba6-0b526e3aaf3c/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/4e0b4961-1c21-4025-9ba6-0b526e3aaf3c.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/4e0b4961-1c21-4025-9ba6-0b526e3aaf3c.mp4",
+  "question_block": "Question: Determine the main goal c achieves at the end of the video and explain which tools and equipment were involved over the course of the actions.\nOptions:\n(A) The main goal c achieves at the end of the video is to use up all of the soap.\n(B) The main goal c achieves at the end of the video is to use up all of the water.\n(C) The main goal c achieves at the end of the video is to use up all of the energy.\n(D) The main goal c achieves at the end of the video is to clean all of the dishes and put them away.\n(E) The main goal c achieves at the end of the video is to clean all of the dishes.",
+  "options": [
+    "The main goal c achieves at the end of the video is to use up all of the soap.",
+    "The main goal c achieves at the end of the video is to use up all of the water.",
+    "The main goal c achieves at the end of the video is to use up all of the energy.",
+    "The main goal c achieves at the end of the video is to clean all of the dishes and put them away.",
+    "The main goal c achieves at the end of the video is to clean all of the dishes."
+  ],
+  "official_meta": {
+    "question_index": "00156",
+    "video_id": "4e0b4961-1c21-4025-9ba6-0b526e3aaf3c",
+    "source_index": 156
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:50:11.096427Z"
+}

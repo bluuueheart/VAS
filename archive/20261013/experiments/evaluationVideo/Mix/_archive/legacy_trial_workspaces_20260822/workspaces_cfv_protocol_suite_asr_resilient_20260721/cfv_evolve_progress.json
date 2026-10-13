@@ -1,0 +1,33 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-07-21T08:56:11.313677Z",
+  "records": {
+    "mlvu:plotqa:0:movie101-66": {
+      "sample_uid": "mlvu:plotqa:0:movie101-66",
+      "dataset_name": "mlvu",
+      "subset_name": "plotQA",
+      "status": "failed",
+      "acc": 0.0,
+      "tool_use_num": 0,
+      "iter_num": 0,
+      "tool_success_rate": 0.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_protocol_suite_asr_resilient_20260721/mlvu/plotqa-00000-movie101-66/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_protocol_suite_asr_resilient_20260721/mlvu/plotqa-00000-movie101-66",
+      "updated_at": "2026-07-21T08:54:25.134185Z"
+    },
+    "mlvu:plotqa:1:xiaoliyu-6": {
+      "sample_uid": "mlvu:plotqa:1:xiaoliyu-6",
+      "dataset_name": "mlvu",
+      "subset_name": "plotQA",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 0,
+      "iter_num": 15,
+      "tool_success_rate": 0.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_protocol_suite_asr_resilient_20260721/mlvu/plotqa-00001-xiaoliyu-6/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_protocol_suite_asr_resilient_20260721/mlvu/plotqa-00001-xiaoliyu-6",
+      "updated_at": "2026-07-21T08:56:11.313592Z"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00017:06899b20-702f-450f-8422-2ae6dc9a6da8",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 7,
+  "iter_num": 6,
+  "tool_success_rate": 0.714286,
+  "successful_tool_calls": 5,
+  "planner_iterations": 6,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and shaping the dough.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and shaping the dough.",
+  "elapsed_seconds": 1768.786,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00017-06899b20-702f-450f-8422-2ae6dc9a6da8",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00017-06899b20-702f-450f-8422-2ae6dc9a6da8/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00017-06899b20-702f-450f-8422-2ae6dc9a6da8/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00017-06899b20-702f-450f-8422-2ae6dc9a6da8/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/06899b20-702f-450f-8422-2ae6dc9a6da8.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/06899b20-702f-450f-8422-2ae6dc9a6da8.mp4",
+  "question_block": "Question: In the process of creating the final dough piece, can you identify three main stages that c goes through, and explain how her methods and techniques change during each stage?\nOptions:\n(A) C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and baking the dough.\n(B) C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and letting the dough rise.\n(C) C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and adding the toppings.\n(D) C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and shaping the dough.\n(E) C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and freezing the dough.",
+  "options": [
+    "C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and baking the dough.",
+    "C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and letting the dough rise.",
+    "C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and adding the toppings.",
+    "C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and shaping the dough.",
+    "C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and freezing the dough."
+  ],
+  "official_meta": {
+    "question_index": "00017",
+    "video_id": "06899b20-702f-450f-8422-2ae6dc9a6da8",
+    "resolved_video_stem": "06899b20-702f-450f-8422-2ae6dc9a6da8",
+    "video_mapping_verified": true,
+    "source_index": 17,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-31T01:52:33.081772Z"
+}

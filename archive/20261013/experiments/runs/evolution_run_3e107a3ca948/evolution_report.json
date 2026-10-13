@@ -1,0 +1,114 @@
+{
+  "run_id": "evolution_run_3e107a3ca948",
+  "trajectory_count": 1,
+  "event_count": 9,
+  "diagnoses": [
+    {
+      "diagnosis_id": "diagnosis_f439a848a8ae",
+      "trajectory_ids": [
+        "trajectory_a727c367cefe4c32af2efe2990a86668"
+      ],
+      "failure_type": "premature_termination",
+      "blamed_component": "evidence_verifier",
+      "blamed_tool_ids": [
+        "Inspect_Frame"
+      ],
+      "supporting_event_ids": [],
+      "root_cause": "The historical trajectory reached Finish without satisfying the configured evidence gate.",
+      "counterfactual_fix": "Evidence verifier rejected termination; acquire or reconcile: final answer must select one listed option label, completion basis, Event (4) Bikini pictures location, answer candidate lacks directly matched verified evidence",
+      "confidence": 0.95
+    }
+  ],
+  "verifications": [
+    {
+      "trajectory_id": "trajectory_a727c367cefe4c32af2efe2990a86668",
+      "sample_uid": "mlvu:order:0:order-126",
+      "answer_score": 0.0,
+      "sample_status": "wrong",
+      "held_out": false,
+      "progress_score": 0.6,
+      "claim_coverage": 0.75,
+      "direct_grounding": 0.75,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": false,
+      "missing_information": [
+        "final answer must select one listed option label",
+        "completion basis"
+      ],
+      "unresolved_claims": [
+        "Event (4) Bikini pictures location",
+        "answer candidate lacks directly matched verified evidence"
+      ],
+      "feedback": "Evidence verifier rejected termination; acquire or reconcile: final answer must select one listed option label, completion basis, Event (4) Bikini pictures location, answer candidate lacks directly matched verified evidence"
+    }
+  ],
+  "evolution_intent": {
+    "intent_id": "intent_d0baadfd84d0",
+    "diagnosis_ids": [
+      "diagnosis_f439a848a8ae"
+    ],
+    "scope": "router",
+    "operations": [
+      {
+        "action": "update_router_rule",
+        "target_type": "evidence_verifier",
+        "target_ids": [
+          "finish_gate"
+        ],
+        "before": {
+          "enforced": false
+        },
+        "after": {
+          "enforced": true,
+          "reject_unverified_finish": true,
+          "resolve_conflicts": true
+        },
+        "reason": "Observed unsupported or conflict-bearing terminal answers."
+      }
+    ],
+    "expected_effects": [
+      "fewer unsupported finishes",
+      "higher evidence-grounded answer consistency"
+    ],
+    "risks": [
+      "additional tool calls",
+      "higher latency"
+    ]
+  },
+  "candidate_snapshot": {
+    "snapshot_id": "snapshot_08fafaf4df19",
+    "parent_snapshot_id": "snapshot_000",
+    "created_at": "2026-07-21T06:59:21.416276Z",
+    "router_policy": {
+      "update_router_rule": {
+        "enforced": true,
+        "reject_unverified_finish": true,
+        "resolve_conflicts": true
+      }
+    },
+    "argument_policy": {},
+    "patch_ids": [
+      "intent_d0baadfd84d0"
+    ],
+    "status": "candidate"
+  },
+  "replay_groups": {
+    "trigger": [
+      "trajectory_a727c367cefe4c32af2efe2990a86668"
+    ],
+    "neighbor": [],
+    "regression": [],
+    "held_out": []
+  },
+  "replay_status": "pending",
+  "candidate_replay_status": "pending",
+  "batch_metrics": {
+    "accuracy": 0.0,
+    "mean_latency_seconds": 835.013,
+    "invalid_call_rate": 0.25
+  },
+  "source_paths": [
+    "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_generic_order2_20260721/mlvu/order-00000-order-126/results/run_result.json"
+  ]
+}

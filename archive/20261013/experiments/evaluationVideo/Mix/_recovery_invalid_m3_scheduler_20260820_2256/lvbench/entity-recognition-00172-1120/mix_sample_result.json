@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:entity-recognition:172:1120",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "He is checking the vehicle chassis",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00172-1120",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00172-1120/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00172-1120/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00172-1120/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Z4HGQL_McDQ.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Z4HGQL_McDQ.mp4",
+  "question_block": "Question: What does a man wearing a black suit, black glasses, and a beard do?\nOptions:\n(A) He is checking the vehicle chassis\n(B) He is checking the vehicle interior\n(C) He is checking the vehicle windows\n(D) He is checking the vehicle headlights",
+  "options": [
+    "He is checking the vehicle chassis",
+    "He is checking the vehicle interior",
+    "He is checking the vehicle windows",
+    "He is checking the vehicle headlights"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "documentary",
+    "time_reference": "33:00-33:30",
+    "video_key": "Z4HGQL_McDQ",
+    "source_index": 172
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:33.353332Z"
+}

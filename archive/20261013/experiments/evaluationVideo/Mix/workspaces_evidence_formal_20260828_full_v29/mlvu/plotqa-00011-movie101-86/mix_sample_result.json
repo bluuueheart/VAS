@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:plotqa:11:movie101-86",
+  "dataset_name": "mlvu",
+  "subset_name": "plotQA",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "C",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Snowy day",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(C) Overcast day",
+  "elapsed_seconds": 1217.671,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00011-movie101-86",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00011-movie101-86/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00011-movie101-86/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00011-movie101-86/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/movie101_86.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/movie101_86.mp4",
+  "question_block": "Question: What weather does the event occur in?\nOptions:\n(A) Snowy day\n(B) Rainy day\n(C) Overcast day\n(D) Sunny day",
+  "options": [
+    "Snowy day",
+    "Rainy day",
+    "Overcast day",
+    "Sunny day"
+  ],
+  "official_meta": {
+    "task_type": "plotQA",
+    "source_question_type": "plotQA",
+    "prompt_task_type": "plotQA",
+    "source_json": "1_plotQA.json",
+    "source_index": 11,
+    "video_subdir": "1_plotQA",
+    "video_relative_path": "1_plotQA/movie101_86.mp4",
+    "resolved_video_stem": "movie101_86",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-03T22:35:55.978586Z"
+}

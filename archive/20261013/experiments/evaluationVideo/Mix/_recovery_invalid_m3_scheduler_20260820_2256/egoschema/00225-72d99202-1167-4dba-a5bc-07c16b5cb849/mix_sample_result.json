@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00225:72d99202-1167-4dba-a5bc-07c16b5cb849",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C repeatedly picks up and drops cans of chicken noodle soup from the kitchen shelf. the woman does not perform this action.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00225-72d99202-1167-4dba-a5bc-07c16b5cb849",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00225-72d99202-1167-4dba-a5bc-07c16b5cb849/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00225-72d99202-1167-4dba-a5bc-07c16b5cb849/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00225-72d99202-1167-4dba-a5bc-07c16b5cb849/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/72d99202-1167-4dba-a5bc-07c16b5cb849.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/72d99202-1167-4dba-a5bc-07c16b5cb849.mp4",
+  "question_block": "Question: What is the recurrent activity performed by c in the video, and how does it contrast with the woman's activities?\nOptions:\n(A) C continuously picks up and drops sachets of corn flakes from the kitchen shelf, again and again. contrarily, the woman does not perform this action.\n(B) C repeatedly picks up and drops cans of chicken noodle soup from the kitchen shelf. the woman does not perform this action.\n(C) Continuously, c picks up and drops cans of soup from the kitchen cabinet numerous times. however, the woman refrains from performing this particular action.\n(D) Consistently, c repeatedly picks up and drops bowls from the kitchen cabinet. meanwhile, the woman does not perform this action at all.\n(E) C repeatedly picks up and drops pots from the kitchen cabinet. the woman does not perform this action.",
+  "options": [
+    "C continuously picks up and drops sachets of corn flakes from the kitchen shelf, again and again. contrarily, the woman does not perform this action.",
+    "C repeatedly picks up and drops cans of chicken noodle soup from the kitchen shelf. the woman does not perform this action.",
+    "Continuously, c picks up and drops cans of soup from the kitchen cabinet numerous times. however, the woman refrains from performing this particular action.",
+    "Consistently, c repeatedly picks up and drops bowls from the kitchen cabinet. meanwhile, the woman does not perform this action at all.",
+    "C repeatedly picks up and drops pots from the kitchen cabinet. the woman does not perform this action."
+  ],
+  "official_meta": {
+    "question_index": "00225",
+    "video_id": "72d99202-1167-4dba-a5bc-07c16b5cb849",
+    "source_index": 225
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:55:13.432082Z"
+}

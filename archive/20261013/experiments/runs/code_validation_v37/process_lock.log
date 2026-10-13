@@ -1,0 +1,2 @@
+independent child model lock acquired
+PASS: real child process acquired model slot while parent held admission slot

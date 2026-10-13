@@ -1,0 +1,111 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-09-12T07:12:30.447931Z",
+  "records": {
+    "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf": {
+      "sample_uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "status": "failed",
+      "acc": 0.0,
+      "tool_use_num": 19,
+      "iter_num": 18,
+      "tool_success_rate": 0.736842,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+      "updated_at": "2026-09-12T04:59:26.349394Z"
+    },
+    "lvbench:entity-recognition:16:83": {
+      "sample_uid": "lvbench:entity-recognition:16:83",
+      "dataset_name": "lvbench",
+      "subset_name": "entity recognition",
+      "status": "failed",
+      "acc": 0.0,
+      "tool_use_num": 13,
+      "iter_num": 18,
+      "tool_success_rate": 0.769231,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00016-83/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00016-83",
+      "updated_at": "2026-09-12T05:38:17.651211Z"
+    },
+    "videomme:acrobatics:211-1": {
+      "sample_uid": "videomme:acrobatics:211-1",
+      "dataset_name": "videomme",
+      "subset_name": "Acrobatics",
+      "status": "failed",
+      "acc": 0.0,
+      "tool_use_num": 10,
+      "iter_num": 18,
+      "tool_success_rate": 0.7,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/videomme/acrobatics-211-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/videomme/acrobatics-211-1",
+      "updated_at": "2026-09-12T06:02:23.754726Z"
+    },
+    "mlvu:anomaly-reco:0:surveil-20": {
+      "sample_uid": "mlvu:anomaly-reco:0:surveil-20",
+      "dataset_name": "mlvu",
+      "subset_name": "anomaly_reco",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 11,
+      "iter_num": 13,
+      "tool_success_rate": 0.909091,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/anomaly-reco-00000-surveil-20/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/anomaly-reco-00000-surveil-20",
+      "updated_at": "2026-09-12T06:21:47.314363Z"
+    },
+    "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391": {
+      "sample_uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 1,
+      "iter_num": 2,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391",
+      "updated_at": "2026-09-12T06:24:30.883106Z"
+    },
+    "lvbench:entity-recognition:39:208": {
+      "sample_uid": "lvbench:entity-recognition:39:208",
+      "dataset_name": "lvbench",
+      "subset_name": "entity recognition",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 9,
+      "iter_num": 14,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00039-208/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00039-208",
+      "updated_at": "2026-09-12T06:45:10.224206Z"
+    },
+    "videomme:acrobatics:211-2": {
+      "sample_uid": "videomme:acrobatics:211-2",
+      "dataset_name": "videomme",
+      "subset_name": "Acrobatics",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 1,
+      "iter_num": 2,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/videomme/acrobatics-211-2/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/videomme/acrobatics-211-2",
+      "updated_at": "2026-09-12T06:47:00.996786Z"
+    },
+    "mlvu:ego:1:ego-36": {
+      "sample_uid": "mlvu:ego:1:ego-36",
+      "dataset_name": "mlvu",
+      "subset_name": "ego",
+      "status": "failed",
+      "acc": 0.0,
+      "tool_use_num": 18,
+      "iter_num": 18,
+      "tool_success_rate": 0.722222,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/ego-00001-ego-36/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/ego-00001-ego-36",
+      "updated_at": "2026-09-12T07:12:30.447831Z"
+    }
+  }
+}

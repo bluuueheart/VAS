@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00023:080eb552-9103-4f3e-a7e9-3417c1c0bcec",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is knitting a scarf. the child interacts with c by talking to her and occasionally touching the scarf.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00023-080eb552-9103-4f3e-a7e9-3417c1c0bcec",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00023-080eb552-9103-4f3e-a7e9-3417c1c0bcec/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00023-080eb552-9103-4f3e-a7e9-3417c1c0bcec/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00023-080eb552-9103-4f3e-a7e9-3417c1c0bcec/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/080eb552-9103-4f3e-a7e9-3417c1c0bcec.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/080eb552-9103-4f3e-a7e9-3417c1c0bcec.mp4",
+  "question_block": "Question: What is the primary focus of activity in the video and how does interaction between c and the child contribute to this?\nOptions:\n(A) C is making a hat. the child interacts with c by talking to her and occasionally touching the hat.\n(B) C is making a sweater. the child interacts with c by talking to her and occasionally touching the sweater.\n(C) C is making a pair of gloves. the child interacts with c by talking to her and occasionally touching the gloves.\n(D) C is making a blanket. the child interacts with c by talking to her and occasionally touching the blanket.\n(E) C is knitting a scarf. the child interacts with c by talking to her and occasionally touching the scarf.",
+  "options": [
+    "C is making a hat. the child interacts with c by talking to her and occasionally touching the hat.",
+    "C is making a sweater. the child interacts with c by talking to her and occasionally touching the sweater.",
+    "C is making a pair of gloves. the child interacts with c by talking to her and occasionally touching the gloves.",
+    "C is making a blanket. the child interacts with c by talking to her and occasionally touching the blanket.",
+    "C is knitting a scarf. the child interacts with c by talking to her and occasionally touching the scarf."
+  ],
+  "official_meta": {
+    "question_index": "00023",
+    "video_id": "080eb552-9103-4f3e-a7e9-3417c1c0bcec",
+    "source_index": 23
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:43:25.014740Z"
+}

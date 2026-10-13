@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00176:5748bb14-fa12-4c6e-b0cd-e2cdadb75889",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C interacts with the black bag to get a better grip on the paint brush.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00176-5748bb14-fa12-4c6e-b0cd-e2cdadb75889",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00176-5748bb14-fa12-4c6e-b0cd-e2cdadb75889/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00176-5748bb14-fa12-4c6e-b0cd-e2cdadb75889/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00176-5748bb14-fa12-4c6e-b0cd-e2cdadb75889/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/5748bb14-fa12-4c6e-b0cd-e2cdadb75889.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/5748bb14-fa12-4c6e-b0cd-e2cdadb75889.mp4",
+  "question_block": "Question: Analyze the sequence of events in the video, then identify and explain the significance of c interacting with the black bag.\nOptions:\n(A) C interacts with the black bag to clean it.\n(B) Cleverly, c interacts with the inconspicuous black bag, intending to conceal and hide it securely.\n(C) The character c interacts with the mysterious black bag, intending to properly throw it away.\n(D) C interacts with the black bag to get a better grip on the paint brush.\n(E) Casually, c interacts with the sizeable black bag, intending to carefully put it away.",
+  "options": [
+    "C interacts with the black bag to clean it.",
+    "Cleverly, c interacts with the inconspicuous black bag, intending to conceal and hide it securely.",
+    "The character c interacts with the mysterious black bag, intending to properly throw it away.",
+    "C interacts with the black bag to get a better grip on the paint brush.",
+    "Casually, c interacts with the sizeable black bag, intending to carefully put it away."
+  ],
+  "official_meta": {
+    "question_index": "00176",
+    "video_id": "5748bb14-fa12-4c6e-b0cd-e2cdadb75889",
+    "source_index": 176
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:51:40.114716Z"
+}

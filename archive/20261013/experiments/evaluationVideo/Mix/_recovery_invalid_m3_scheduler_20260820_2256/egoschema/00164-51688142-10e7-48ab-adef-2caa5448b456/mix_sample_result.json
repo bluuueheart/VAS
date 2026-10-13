@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00164:51688142-10e7-48ab-adef-2caa5448b456",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The palm frond contributes to the development of the final product by providing a decorative element.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00164-51688142-10e7-48ab-adef-2caa5448b456",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00164-51688142-10e7-48ab-adef-2caa5448b456/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00164-51688142-10e7-48ab-adef-2caa5448b456/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00164-51688142-10e7-48ab-adef-2caa5448b456/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/51688142-10e7-48ab-adef-2caa5448b456.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/51688142-10e7-48ab-adef-2caa5448b456.mp4",
+  "question_block": "Question: How does the introduction of the palm frond contribute to the development of the final product, and why might c have chosen to include it?\nOptions:\n(A) The palm frond contributes to the development of the final product by providing a structural element.\n(B) The versatile palm frond significantly contributes to the development of the final product by providing a highly functional and essential element.\n(C) The palm frond contributes to the development of the final product by providing a decorative element.\n(D) The palm frond significantly contributes to the ultimate development of the final product by reliably providing a crucial protective element.\n(E) The palm frond significantly contributes to the development of the final product by providing an essential nutritional element, enriching its value.",
+  "options": [
+    "The palm frond contributes to the development of the final product by providing a structural element.",
+    "The versatile palm frond significantly contributes to the development of the final product by providing a highly functional and essential element.",
+    "The palm frond contributes to the development of the final product by providing a decorative element.",
+    "The palm frond significantly contributes to the ultimate development of the final product by reliably providing a crucial protective element.",
+    "The palm frond significantly contributes to the development of the final product by providing an essential nutritional element, enriching its value."
+  ],
+  "official_meta": {
+    "question_index": "00164",
+    "video_id": "51688142-10e7-48ab-adef-2caa5448b456",
+    "source_index": 164
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:50:49.071675Z"
+}

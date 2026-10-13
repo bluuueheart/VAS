@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:temporal-grounding:247:1962",
+  "dataset_name": "lvbench",
+  "subset_name": "temporal grounding",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The singer was so nervous that the audience applauded after singing",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/temporal-grounding-00247-1962",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/temporal-grounding-00247-1962/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/temporal-grounding-00247-1962/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/temporal-grounding-00247-1962/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/8QdE--Y-x7U.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/8QdE--Y-x7U.mp4",
+  "question_block": "Question: What happened between 65:02-65:29?\nOptions:\n(A) The singer sang a high note and the audience applauded excitedly\n(B) The singer was so nervous that the audience sighed after singing\n(C) The singer was so nervous that the audience applauded after singing\n(D) The singing was interrupted by a command error",
+  "options": [
+    "The singer sang a high note and the audience applauded excitedly",
+    "The singer was so nervous that the audience sighed after singing",
+    "The singer was so nervous that the audience applauded after singing",
+    "The singing was interrupted by a command error"
+  ],
+  "official_meta": {
+    "question_type": "temporal grounding",
+    "video_type": "live",
+    "time_reference": "65:02-65:09",
+    "video_key": "8QdE--Y-x7U",
+    "source_index": 247
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:21.749373Z"
+}

@@ -1,0 +1,43 @@
+{
+  "sample_uid": "lvbench:event-understanding:22:121",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The woman has his book",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00022-121",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00022-121/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00022-121/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00022-121/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/q01CUy_gwdU.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/q01CUy_gwdU.mp4",
+  "question_block": "Question: Why does the man follow the woman in red after they meet for the third time?\nOptions:\n(A) He falls in love with the woman\n(B) He is a spy\n(C) The woman has his phone\n(D) The woman has his book",
+  "options": [
+    "He falls in love with the woman",
+    "He is a spy",
+    "The woman has his phone",
+    "The woman has his book"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "05:15-05:31",
+    "time_reference_used_for_inference": false,
+    "video_key": "q01CUy_gwdU",
+    "source_index": 22
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=255 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-22T18:52:55.137626Z"
+}

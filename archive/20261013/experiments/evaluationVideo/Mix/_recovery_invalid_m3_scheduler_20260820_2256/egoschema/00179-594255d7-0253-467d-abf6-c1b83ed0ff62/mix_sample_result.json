@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00179:594255d7-0253-467d-abf6-c1b83ed0ff62",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The two main categories of activities c participates in are labeling mortars and using the phone.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00179-594255d7-0253-467d-abf6-c1b83ed0ff62",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00179-594255d7-0253-467d-abf6-c1b83ed0ff62/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00179-594255d7-0253-467d-abf6-c1b83ed0ff62/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00179-594255d7-0253-467d-abf6-c1b83ed0ff62/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/594255d7-0253-467d-abf6-c1b83ed0ff62.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/594255d7-0253-467d-abf6-c1b83ed0ff62.mp4",
+  "question_block": "Question: Identify the two main categories of activities c participates in throughout the video and, focusing on the most critical actions, briefly explain the goals of each category.\nOptions:\n(A) The two main categories of activities c participates in are cleaning and repairing.\n(B) The two main categories of activities c participates in are decorating and vandalizing.\n(C) The two main categories of activities c participates in are moving around and checking on the seedlings.\n(D) The two main categories of activities c participates in are labeling mortars and using the phone.\n(E) The two main categories of activities c participates in are operating the phone and walking around.",
+  "options": [
+    "The two main categories of activities c participates in are cleaning and repairing.",
+    "The two main categories of activities c participates in are decorating and vandalizing.",
+    "The two main categories of activities c participates in are moving around and checking on the seedlings.",
+    "The two main categories of activities c participates in are labeling mortars and using the phone.",
+    "The two main categories of activities c participates in are operating the phone and walking around."
+  ],
+  "official_meta": {
+    "question_index": "00179",
+    "video_id": "594255d7-0253-467d-abf6-c1b83ed0ff62",
+    "source_index": 179
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:51:48.998237Z"
+}

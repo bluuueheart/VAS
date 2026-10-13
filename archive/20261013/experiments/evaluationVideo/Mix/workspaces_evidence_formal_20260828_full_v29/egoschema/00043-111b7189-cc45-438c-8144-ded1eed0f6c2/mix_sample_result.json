@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00043:111b7189-cc45-438c-8144-ded1eed0f6c2",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 3,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 3,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C uses a clay mould to shape the clay into bricks.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) C uses a clay mould to shape the clay into bricks.",
+  "elapsed_seconds": 636.563,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00043-111b7189-cc45-438c-8144-ded1eed0f6c2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00043-111b7189-cc45-438c-8144-ded1eed0f6c2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00043-111b7189-cc45-438c-8144-ded1eed0f6c2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00043-111b7189-cc45-438c-8144-ded1eed0f6c2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/111b7189-cc45-438c-8144-ded1eed0f6c2.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/111b7189-cc45-438c-8144-ded1eed0f6c2.mp4",
+  "question_block": "Question: What are the key techniques and steps c utilized to work with the clay and clay mould throughout the video? please summarize them succinctly.\nOptions:\n(A) C uses a hoe to shape the clay into bricks.\n(B) C uses a clay mould to shape the clay into bricks.\n(C) Carefully, c employs his skillful hands to progressively mold the clay into sturdy bricks.\n(D) Carefully, c employs a wheel for shaping the clay effectively into well-formed bricks.\n(E) C skillfully uses a high-temperature kiln to carefully shape the malleable clay into strong, durable bricks.",
+  "options": [
+    "C uses a hoe to shape the clay into bricks.",
+    "C uses a clay mould to shape the clay into bricks.",
+    "Carefully, c employs his skillful hands to progressively mold the clay into sturdy bricks.",
+    "Carefully, c employs a wheel for shaping the clay effectively into well-formed bricks.",
+    "C skillfully uses a high-temperature kiln to carefully shape the malleable clay into strong, durable bricks."
+  ],
+  "official_meta": {
+    "question_index": "00043",
+    "video_id": "111b7189-cc45-438c-8144-ded1eed0f6c2",
+    "resolved_video_stem": "111b7189-cc45-438c-8144-ded1eed0f6c2",
+    "video_mapping_verified": true,
+    "source_index": 43,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-04T13:03:24.573739Z"
+}

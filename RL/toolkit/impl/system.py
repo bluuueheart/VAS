@@ -406,7 +406,7 @@ class FoldMemory(BaseTool):
                 continue
             entry = dict(item)
             entry["tool"] = str(item.get("tool", "")).strip()
-            entry["status"] = str(item.get("status", "success")).strip().lower()
+            entry["status"] = str(item.get("status") or "success").strip().lower()
             entry["result"] = str(item.get("result", ""))
             normalized.append(entry)
         return normalized
@@ -421,7 +421,7 @@ class FoldMemory(BaseTool):
         action_by_tool = {str(item.get("tool")): item for item in last_actions}
         for observation in observations:
             tool = observation.get("tool", "") or "Unknown"
-            status = observation.get("status", "success")
+            status = observation.get("status") or "success"
             result_text = observation.get("result", "")
             result_payload = _safe_json_loads(result_text)
             if result_payload is None and isinstance(observation, dict):
@@ -467,7 +467,7 @@ class FoldMemory(BaseTool):
                             continue
                         nested_observations.append({
                             "tool": str(item.get("tool", "")).strip() or "Unknown",
-                            "status": str(item.get("status", "success")).strip().lower(),
+                            "status": str(item.get("status") or "success").strip().lower(),
                             "result": json.dumps(item, ensure_ascii=False),
                         })
                     if nested_observations:

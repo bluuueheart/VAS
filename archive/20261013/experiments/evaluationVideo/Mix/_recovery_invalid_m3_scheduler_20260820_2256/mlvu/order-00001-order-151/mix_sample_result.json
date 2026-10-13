@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:order:1:order-151",
+  "dataset_name": "mlvu",
+  "subset_name": "order",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "2->4->1->3",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00001-order-151",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00001-order-151/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00001-order-151/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00001-order-151/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_151.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_151.mp4",
+  "question_block": "Question: Arrange the following events from the video in the correct chronological order: (1)The woman starts working on her nails using bottles from a box next to her; (2)The words \"Love Food & Money with Angie Greenup\" appears on screen; (3)Her twitter handle and subscribe screen are shown while she holds her dogs; (4)The woman speaks to the camera from her living room while her dogs play fight behind her.\nOptions:\n(A) 2->4->1->3\n(B) 2->1->4->3\n(C) 4->2->1->3\n(D) 1->2->4->3",
+  "options": [
+    "2->4->1->3",
+    "2->1->4->3",
+    "4->2->1->3",
+    "1->2->4->3"
+  ],
+  "official_meta": {
+    "task_type": "order",
+    "source_json": "5_order.json",
+    "source_index": 1,
+    "video_subdir": "5_order",
+    "video_relative_path": "5_order/order_151.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:43:03.840208Z"
+}

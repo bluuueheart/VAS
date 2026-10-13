@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00110:34125d63-5dc5-44dd-af35-1d6528b37f74",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The main objective of the video is to show how to grind and polish iron rods.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00110-34125d63-5dc5-44dd-af35-1d6528b37f74",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00110-34125d63-5dc5-44dd-af35-1d6528b37f74/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00110-34125d63-5dc5-44dd-af35-1d6528b37f74/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00110-34125d63-5dc5-44dd-af35-1d6528b37f74/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/34125d63-5dc5-44dd-af35-1d6528b37f74.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/34125d63-5dc5-44dd-af35-1d6528b37f74.mp4",
+  "question_block": "Question: Summarize the main objective of the video and discuss the important steps in the process, without recounting the specific actions in detail.\nOptions:\n(A) The main objective of the video is to show how to grind and polish iron rods.\n(B) The primary purpose of this video presentation is to effectively demonstrate the process of making iron rods.\n(C) The primary aim of this instructional video is to clearly demonstrate the proper technique for sharpening iron rods effectively.\n(D) The main objective of the video is to show how to weld iron rods.\n(E) The primary aim of the video is to effectively demonstrate the process of cutting iron rods with ease.",
+  "options": [
+    "The main objective of the video is to show how to grind and polish iron rods.",
+    "The primary purpose of this video presentation is to effectively demonstrate the process of making iron rods.",
+    "The primary aim of this instructional video is to clearly demonstrate the proper technique for sharpening iron rods effectively.",
+    "The main objective of the video is to show how to weld iron rods.",
+    "The primary aim of the video is to effectively demonstrate the process of cutting iron rods with ease."
+  ],
+  "official_meta": {
+    "question_index": "00110",
+    "video_id": "34125d63-5dc5-44dd-af35-1d6528b37f74",
+    "source_index": 110
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:25:30.245179Z"
+}

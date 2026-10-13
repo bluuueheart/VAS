@@ -1,0 +1,25 @@
+{
+  "hypothesis": "Validated JSON is incorrectly rejected by a prose truncation heuristic.",
+  "single_intervention": "B: apply prose truncation guard only when normalized format_status != model_json.",
+  "baseline_source_edits": false,
+  "source_drift_before": [],
+  "checkpoint": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/videomme/humanity-history-001-1/logs/runtime_checkpoints/turn_005.json",
+  "checkpoint_sha256": "90f9888eadd933b7c92f9096d370129d8d2ff84f25c117893e9d821e894d748d",
+  "prefix_steps": 4,
+  "iteration": 4,
+  "common_fixtures": [
+    "historical Planner turn 5",
+    "historical Observer dispatch turn 5",
+    "historical Video_Clip_QA raw response index 1"
+  ],
+  "live_suffix": "Observer evidence extraction, evidence commit, subsequent Planner, tools and Finish verification",
+  "not_fresh_end_to_end": true,
+  "ground_truth_injected": false,
+  "budget_config_changed": false,
+  "verifier_changed": false,
+  "online_evolution": false,
+  "snapshot": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline_snapshot.json",
+  "config": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/config.json",
+  "model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+  "fixture_raw_sha256": "566d5a62a5c51ac84f97c04c1e7a3cc49d2b21d4de2c100dbd54f05d69fb405f"
+}

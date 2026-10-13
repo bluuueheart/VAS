@@ -1,0 +1,31 @@
+[Evolver] role=online_trajectory_cycle_miner
+run_id=evolution_run_97d538454f23
+trajectory_count=28
+diagnosis_count=21
+verification_accepted=13/28
+accepted_correct=10
+accepted_wrong=3
+replay_groups={"held_out": ["trajectory_eccf7f4358e84435b82917acd898e244"], "neighbor": ["trajectory_f730b5f7dec64461ad144a255500d7ae", "trajectory_5e26291447cc461aadb4a0e9fb0e5058", "trajectory_4727d4f7d1984ee895d3263018791c84", "trajectory_6ed9b28d5cbd4c59b16a148d8f7f9eb8", "trajectory_3517af9eb8da4524bf6c3a67e12add31"], "regression": ["trajectory_b55bf1df7e764df9b19be75152371e6b", "trajectory_638a97d26dc54784a943aec14c480432", "trajectory_d38c46d0369e4048b1b551c849c40b56", "trajectory_108331980c414fbaac5c45793d6a1a51", "trajectory_33de64e7f83e4e08828a1d67a40b12c3", "trajectory_51f5b6b402bc4e18a658cb9f21d1c1b1", "trajectory_bc134cefd4264021b9c3dcab94e3ad96", "trajectory_87c2740e7f554057a73a53389f54a52e", "trajectory_6a3a1c259124408fbaab2a62e6850419"], "trigger": ["trajectory_2ab3443c7cc4411a842ab28efeaf54e7"]}
+candidate_snapshot=snapshot_464d138ff4e04dce
+replay_status=candidate_pending_fresh_inference
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=contradiction_handling confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=tool_execution confidence=0.90 root_cause=The trajectory contained one or more tool execution failures; the final answer is not a safe proxy for tool correctness.
+diagnosis=answer_synthesis confidence=0.80 root_cause=The final option was inconsistent with the collected trajectory evidence.
+diagnosis=tool_execution confidence=0.90 root_cause=The trajectory contained one or more tool execution failures; the final answer is not a safe proxy for tool correctness.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=contradiction_handling confidence=0.90 root_cause=The trajectory contained conflicting evidence but still produced a terminal answer.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=answer_synthesis confidence=0.80 root_cause=The final option was inconsistent with the collected trajectory evidence.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=tool_execution confidence=0.90 root_cause=The trajectory contained one or more tool execution failures; the final answer is not a safe proxy for tool correctness.
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.

@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:event-understanding:42:214",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Mask",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00042-214",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00042-214/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00042-214/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00042-214/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/28CIeC8cZks.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/28CIeC8cZks.mp4",
+  "question_block": "Question: What does the girl use to find the person she is looking for in the video?\nOptions:\n(A) Mask\n(B) Tail\n(C) Phone\n(D) Car",
+  "options": [
+    "Mask",
+    "Tail",
+    "Phone",
+    "Car"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "00:00-63:48",
+    "video_key": "28CIeC8cZks",
+    "source_index": 42
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:21:54.910962Z"
+}

@@ -1,0 +1,36 @@
+{
+  "time": "2026-09-20T23:09:46.304325",
+  "reason": "User requested fixing problems before restarting experiment",
+  "processes": [
+    {
+      "pid": 176057,
+      "command": "/gemini/code/bin/python3.11 /gemini/code/export_packages/extracted/RL/toolkit/baseline.py --output /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260920_main_v40/_audit/tool_library_baseline.json ",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 175745,
+      "command": "/gemini/code/bin/python3.11 evaluationVideo/Mix/run_mix_batch.py --config evaluationVideo/Mix/mix_config_evidence_multi.json ",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 175731,
+      "command": "tee /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260920_main_v40/batch_online_tmux.log ",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 175730,
+      "command": "bash /gemini/code/export_packages/extracted/evaluationVideo/Mix/run_mix_batch.sh evaluationVideo/Mix/mix_config_evidence_multi.json ",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 175725,
+      "command": "bash evaluationVideo/Mix/run_mix_with_evolver.sh evaluationVideo/Mix/mix_config_evidence_multi.json ",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 175718,
+      "command": "bash /gemini/code/export_packages/extracted/runs/code_validation_v40/start_main.sh ",
+      "signal": "SIGTERM"
+    }
+  ]
+}

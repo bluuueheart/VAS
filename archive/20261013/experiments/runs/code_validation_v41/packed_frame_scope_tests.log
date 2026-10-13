@@ -1,0 +1,12 @@
+======================================================================
+FAIL: test_two_positive_comparison_targets_require_discriminator (RL.evolution.test_replay.DynamicEvidenceVerifierTest.test_two_positive_comparison_targets_require_discriminator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/gemini/code/export_packages/extracted/RL/evolution/test_replay.py", line 744, in test_two_positive_comparison_targets_require_discriminator
+    self.assertTrue(_comparison_option_is_ambiguous(
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.147s
+
+FAILED (failures=1)

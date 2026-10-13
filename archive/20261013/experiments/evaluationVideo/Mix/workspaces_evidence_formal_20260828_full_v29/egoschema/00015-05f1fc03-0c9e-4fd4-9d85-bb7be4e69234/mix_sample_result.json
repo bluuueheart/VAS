@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00015:05f1fc03-0c9e-4fd4-9d85-bb7be4e69234",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 3,
+  "iter_num": 3,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 3,
+  "planner_iterations": 3,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C is smoothing the cement cast with a flooring trowel and a bucket trowel.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) C is smoothing the cement cast with a flooring trowel and a bucket trowel.",
+  "elapsed_seconds": 966.105,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00015-05f1fc03-0c9e-4fd4-9d85-bb7be4e69234",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00015-05f1fc03-0c9e-4fd4-9d85-bb7be4e69234/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00015-05f1fc03-0c9e-4fd4-9d85-bb7be4e69234/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00015-05f1fc03-0c9e-4fd4-9d85-bb7be4e69234/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/05f1fc03-0c9e-4fd4-9d85-bb7be4e69234.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/05f1fc03-0c9e-4fd4-9d85-bb7be4e69234.mp4",
+  "question_block": "Question: Describe the overall goal achieved by c throughout the video and explain how the various trowels were used in working with the cement cast.\nOptions:\n(A) C is attempting diligently to break the solid cement cast surrounding it.\n(B) C is attempting to carefully remove the solid cement cast from their body.\n(C) C is trying to repair the cement cast.\n(D) C is smoothing the cement cast with a flooring trowel and a bucket trowel.\n(E) C is attempting to creatively embellish the sturdy cement cast for aesthetics.",
+  "options": [
+    "C is attempting diligently to break the solid cement cast surrounding it.",
+    "C is attempting to carefully remove the solid cement cast from their body.",
+    "C is trying to repair the cement cast.",
+    "C is smoothing the cement cast with a flooring trowel and a bucket trowel.",
+    "C is attempting to creatively embellish the sturdy cement cast for aesthetics."
+  ],
+  "official_meta": {
+    "question_index": "00015",
+    "video_id": "05f1fc03-0c9e-4fd4-9d85-bb7be4e69234",
+    "resolved_video_stem": "05f1fc03-0c9e-4fd4-9d85-bb7be4e69234",
+    "video_mapping_verified": true,
+    "source_index": 15,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-30T16:50:07.086883Z"
+}

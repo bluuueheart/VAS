@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:literature-art:011-2",
+  "dataset_name": "videomme",
+  "subset_name": "Literature & Art",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 3,
+  "iter_num": 4,
+  "tool_success_rate": 0.666667,
+  "successful_tool_calls": 2,
+  "planner_iterations": 4,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) Black",
+  "elapsed_seconds": 842.173,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/literature-art-011-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/literature-art-011-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/literature-art-011-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/literature-art-011-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/OE5S-NbNsro.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/OE5S-NbNsro.mp4",
+  "question_block": "Question: What's the color of the cosmos introduced by the video?\nOptions:\n(A) White.\n(B) Black.\n(C) Navy blue.\n(D) Dark purple.",
+  "options": [
+    "A. White.",
+    "B. Black.",
+    "C. Navy blue.",
+    "D. Dark purple."
+  ],
+  "official_meta": {
+    "video_id": "011",
+    "video_external_id": "OE5S-NbNsro",
+    "resolved_video_stem": "OE5S-NbNsro",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Knowledge",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Literature & Art",
+    "task_type": "Attribute Perception",
+    "question_id": "011-2",
+    "question_index": 1,
+    "video_item_index": 10,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-02T06:11:27.450861Z"
+}

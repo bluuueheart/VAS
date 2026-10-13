@@ -1,0 +1,197 @@
+[
+  {
+    "uid": "lvbench:entity-recognition:4:63",
+    "observer_calls": 8,
+    "observer_empty_updates": 6,
+    "last_checkpoint_ledger_size": 2,
+    "last_checkpoint_revision": 1,
+    "last_checkpoint_prefix_steps": 14,
+    "terminal_step_count": 15,
+    "tool_status_counts": [
+      {
+        "tool": "Inspect_Frame",
+        "status": "success",
+        "count": 4
+      },
+      {
+        "tool": "Semantic_Retrieve",
+        "status": "success",
+        "count": 4
+      },
+      {
+        "tool": "Keyword_Retrieve",
+        "status": "no_valid_result",
+        "count": 1
+      },
+      {
+        "tool": "Video_Clip_QA",
+        "status": "error",
+        "count": 4
+      },
+      {
+        "tool": "Parallel",
+        "status": "error",
+        "count": 1
+      }
+    ],
+    "verifier_boundaries": [
+      {
+        "step": 13,
+        "deterministic_can_finish": false,
+        "reflector_can_finish": true
+      }
+    ]
+  },
+  {
+    "uid": "mlvu:count:0:count-126",
+    "observer_calls": 5,
+    "observer_empty_updates": 5,
+    "last_checkpoint_ledger_size": 0,
+    "last_checkpoint_revision": 0,
+    "last_checkpoint_prefix_steps": 11,
+    "terminal_step_count": 11,
+    "tool_status_counts": [
+      {
+        "tool": "Semantic_Retrieve",
+        "status": "no_valid_result",
+        "count": 1
+      },
+      {
+        "tool": "Video_Clip_QA",
+        "status": "error",
+        "count": 4
+      },
+      {
+        "tool": "Inspect_Frame",
+        "status": "success",
+        "count": 4
+      },
+      {
+        "tool": "asr",
+        "status": "success",
+        "count": 1
+      }
+    ],
+    "verifier_boundaries": [
+      {
+        "step": 8,
+        "deterministic_can_finish": false,
+        "reflector_can_finish": false
+      }
+    ]
+  },
+  {
+    "uid": "mlvu:needle:0:needle-32",
+    "observer_calls": 6,
+    "observer_empty_updates": 6,
+    "last_checkpoint_ledger_size": 0,
+    "last_checkpoint_revision": 0,
+    "last_checkpoint_prefix_steps": 8,
+    "terminal_step_count": 8,
+    "tool_status_counts": [
+      {
+        "tool": "Inspect_Frame",
+        "status": "success",
+        "count": 3
+      },
+      {
+        "tool": "Semantic_Retrieve",
+        "status": "no_valid_result",
+        "count": 1
+      },
+      {
+        "tool": "Video_Clip_QA",
+        "status": "success",
+        "count": 2
+      },
+      {
+        "tool": "asr",
+        "status": "success",
+        "count": 1
+      }
+    ],
+    "verifier_boundaries": [
+      {
+        "step": 6,
+        "deterministic_can_finish": false,
+        "reflector_can_finish": false
+      }
+    ]
+  },
+  {
+    "uid": "mlvu:order:0:order-126",
+    "observer_calls": 3,
+    "observer_empty_updates": 0,
+    "last_checkpoint_ledger_size": 9,
+    "last_checkpoint_revision": 3,
+    "last_checkpoint_prefix_steps": 7,
+    "terminal_step_count": 7,
+    "tool_status_counts": [
+      {
+        "tool": "Semantic_Retrieve",
+        "status": "success",
+        "count": 1
+      },
+      {
+        "tool": "Video_Clip_QA",
+        "status": "error",
+        "count": 2
+      },
+      {
+        "tool": "Video_Clip_QA",
+        "status": "success",
+        "count": 2
+      }
+    ],
+    "verifier_boundaries": [
+      {
+        "step": 2,
+        "deterministic_can_finish": false,
+        "reflector_can_finish": false
+      },
+      {
+        "step": 5,
+        "deterministic_can_finish": false,
+        "reflector_can_finish": false
+      },
+      {
+        "step": 7,
+        "deterministic_can_finish": true,
+        "reflector_can_finish": false
+      }
+    ]
+  },
+  {
+    "uid": "videomme:humanity-history:001-1",
+    "observer_calls": 2,
+    "observer_empty_updates": 1,
+    "last_checkpoint_ledger_size": 1,
+    "last_checkpoint_revision": 1,
+    "last_checkpoint_prefix_steps": 6,
+    "terminal_step_count": 6,
+    "tool_status_counts": [
+      {
+        "tool": "Inspect_Frame",
+        "status": "success",
+        "count": 2
+      },
+      {
+        "tool": "Video_Clip_QA",
+        "status": "error",
+        "count": 2
+      },
+      {
+        "tool": "Video_Clip_QA",
+        "status": "success",
+        "count": 1
+      }
+    ],
+    "verifier_boundaries": [
+      {
+        "step": 3,
+        "deterministic_can_finish": false,
+        "reflector_can_finish": false
+      }
+    ]
+  }
+]

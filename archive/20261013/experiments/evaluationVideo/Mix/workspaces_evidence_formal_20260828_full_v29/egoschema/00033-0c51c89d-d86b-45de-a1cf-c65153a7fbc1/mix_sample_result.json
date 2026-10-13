@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00033:0c51c89d-d86b-45de-a1cf-c65153a7fbc1",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 3,
+  "iter_num": 3,
+  "tool_success_rate": 0.333333,
+  "successful_tool_calls": 1,
+  "planner_iterations": 3,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C is grating ginger.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) C is grating ginger.",
+  "elapsed_seconds": 770.544,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00033-0c51c89d-d86b-45de-a1cf-c65153a7fbc1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00033-0c51c89d-d86b-45de-a1cf-c65153a7fbc1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00033-0c51c89d-d86b-45de-a1cf-c65153a7fbc1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00033-0c51c89d-d86b-45de-a1cf-c65153a7fbc1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0c51c89d-d86b-45de-a1cf-c65153a7fbc1.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0c51c89d-d86b-45de-a1cf-c65153a7fbc1.mp4",
+  "question_block": "Question: What is the overall task being accomplished in the video, and what key repetitive actions did c perform to achieve this goal?\nOptions:\n(A) C is grating ginger.\n(B) C is peeling ginger.\n(C) Currently, c is actively engaged in chopping ginger meticulously.\n(D) Currently, c is carefully slicing ginger into thin pieces.\n(E) Currently, c is carefully dicing ginger into small pieces.",
+  "options": [
+    "C is grating ginger.",
+    "C is peeling ginger.",
+    "Currently, c is actively engaged in chopping ginger meticulously.",
+    "Currently, c is carefully slicing ginger into thin pieces.",
+    "Currently, c is carefully dicing ginger into small pieces."
+  ],
+  "official_meta": {
+    "question_index": "00033",
+    "video_id": "0c51c89d-d86b-45de-a1cf-c65153a7fbc1",
+    "resolved_video_stem": "0c51c89d-d86b-45de-a1cf-c65153a7fbc1",
+    "video_mapping_verified": true,
+    "source_index": 33,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-02T18:30:59.739649Z"
+}

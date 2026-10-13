@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00009:0437cf5f-5014-47d6-b4b3-f299380aa688",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "E",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "While performing repetitive actions, there were no key deviations that had significant impact on the overall process.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(E) While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character found a book that they were interested in and started reading it.",
+  "elapsed_seconds": 720.341,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00009-0437cf5f-5014-47d6-b4b3-f299380aa688",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00009-0437cf5f-5014-47d6-b4b3-f299380aa688/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00009-0437cf5f-5014-47d6-b4b3-f299380aa688/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00009-0437cf5f-5014-47d6-b4b3-f299380aa688/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0437cf5f-5014-47d6-b4b3-f299380aa688.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0437cf5f-5014-47d6-b4b3-f299380aa688.mp4",
+  "question_block": "Question: While performing repetitive actions, were there any key deviations that had significant impact on the overall process? explain what was different about them and why they were important in the context of the video.\nOptions:\n(A) While performing repetitive actions, there were no key deviations that had significant impact on the overall process.\n(B) While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character accidentally dropped one of the books.\n(C) While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character ran out of cleaning supplies.\n(D) While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character got tired and had to take a break.\n(E) While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character found a book that they were interested in and started reading it.",
+  "options": [
+    "While performing repetitive actions, there were no key deviations that had significant impact on the overall process.",
+    "While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character accidentally dropped one of the books.",
+    "While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character ran out of cleaning supplies.",
+    "While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character got tired and had to take a break.",
+    "While performing repetitive actions, there was a key deviation that had a significant impact on the overall process. the character found a book that they were interested in and started reading it."
+  ],
+  "official_meta": {
+    "question_index": "00009",
+    "video_id": "0437cf5f-5014-47d6-b4b3-f299380aa688",
+    "resolved_video_stem": "0437cf5f-5014-47d6-b4b3-f299380aa688",
+    "video_mapping_verified": true,
+    "source_index": 9,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-29T16:07:30.204744Z"
+}

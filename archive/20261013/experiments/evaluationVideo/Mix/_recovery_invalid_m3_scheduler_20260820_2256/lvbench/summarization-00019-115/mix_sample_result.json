@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:summarization:19:115",
+  "dataset_name": "lvbench",
+  "subset_name": "summarization",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "A man runs, stumbles against a woman, and knocks over all her stuff",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00019-115",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00019-115/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00019-115/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00019-115/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/q01CUy_gwdU.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/q01CUy_gwdU.mp4",
+  "question_block": "Question: What happens from 01:58-02:46?\nOptions:\n(A) A woman runs, stumbles against a man, and knocks over all his stuff\n(B) A woman runs, stumbles against a man, and he cries\n(C) A man runs, stumbles against a woman, and she cries\n(D) A man runs, stumbles against a woman, and knocks over all her stuff",
+  "options": [
+    "A woman runs, stumbles against a man, and knocks over all his stuff",
+    "A woman runs, stumbles against a man, and he cries",
+    "A man runs, stumbles against a woman, and she cries",
+    "A man runs, stumbles against a woman, and knocks over all her stuff"
+  ],
+  "official_meta": {
+    "question_type": "summarization",
+    "video_type": "cartoon",
+    "time_reference": "01:58-02:46",
+    "video_key": "q01CUy_gwdU",
+    "source_index": 19
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:44:41.021234Z"
+}

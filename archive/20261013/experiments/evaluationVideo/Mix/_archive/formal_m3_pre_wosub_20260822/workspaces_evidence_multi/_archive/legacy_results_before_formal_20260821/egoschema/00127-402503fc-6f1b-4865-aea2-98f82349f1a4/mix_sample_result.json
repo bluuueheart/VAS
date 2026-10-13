@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00127:402503fc-6f1b-4865-aea2-98f82349f1a4",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's actions throughout the video contribute to completing the task of soldering a metal rod.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00127-402503fc-6f1b-4865-aea2-98f82349f1a4",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00127-402503fc-6f1b-4865-aea2-98f82349f1a4/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00127-402503fc-6f1b-4865-aea2-98f82349f1a4/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00127-402503fc-6f1b-4865-aea2-98f82349f1a4/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/402503fc-6f1b-4865-aea2-98f82349f1a4.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/402503fc-6f1b-4865-aea2-98f82349f1a4.mp4",
+  "question_block": "Question: Explain how c's actions throughout the video contributed to completing a specific task in a concise manner. what was the primary intent or goal behind the actions?\nOptions:\n(A) Throughout the entire video, c's actions consistently contribute to successfully completing the task of building a house efficiently.\n(B) C's actions throughout the video contribute to completing the task of soldering a metal rod.\n(C) C's actions throughout the video contribute to completing the task of cooking a meal.\n(D) Throughout the entire video, c's actions consistently contribute to successfully completing the task of cleaning a room efficiently.\n(E) C's consistent actions throughout the entire video significantly contribute to successfully completing the task of writing a well-structured paper.",
+  "options": [
+    "Throughout the entire video, c's actions consistently contribute to successfully completing the task of building a house efficiently.",
+    "C's actions throughout the video contribute to completing the task of soldering a metal rod.",
+    "C's actions throughout the video contribute to completing the task of cooking a meal.",
+    "Throughout the entire video, c's actions consistently contribute to successfully completing the task of cleaning a room efficiently.",
+    "C's consistent actions throughout the entire video significantly contribute to successfully completing the task of writing a well-structured paper."
+  ],
+  "official_meta": {
+    "question_index": "00127",
+    "video_id": "402503fc-6f1b-4865-aea2-98f82349f1a4",
+    "source_index": 127
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:26:37.187386Z"
+}

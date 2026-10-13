@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00214:6c901d03-3413-41a8-9aa0-8f9f6ed6b6f1",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The three individuals prepared and ate their tacos in different ways. the man used a fork to eat his tacos, while the woman and child used their hands. the man also ate his tacos with both hands, while the woman and child ate their tacos with one hand.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00214-6c901d03-3413-41a8-9aa0-8f9f6ed6b6f1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00214-6c901d03-3413-41a8-9aa0-8f9f6ed6b6f1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00214-6c901d03-3413-41a8-9aa0-8f9f6ed6b6f1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00214-6c901d03-3413-41a8-9aa0-8f9f6ed6b6f1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/6c901d03-3413-41a8-9aa0-8f9f6ed6b6f1.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/6c901d03-3413-41a8-9aa0-8f9f6ed6b6f1.mp4",
+  "question_block": "Question: Summarize the unique ways in which the three individuals prepared and ate their tacos, focusing on the most prominent differences.\nOptions:\n(A) The three individuals prepared and ate their tacos in the same way. they all used a fork to eat their tacos.\n(B) Interestingly, the three individuals prepared and consumed their tacos in unique ways. the adult man utilized a fork for eating his tacos, whereas the woman and child employed their hands. the woman additionally devoured her tacos using both hands, while the young child managed to eat her tacos using only one hand.\n(C) In distinct manners, the three unrelated individuals prepared and consumed their tacos. the adult man utilized a fork for eating his tacos, whereas the woman and child relied on their hands. impressively, the woman managed to eat her tacos with both hands, while the child skillfully ate his tacos with just one hand.\n(D) The three individuals, following the same method, prepared and consumed their tacos in an identical way. they all consistently used their hands to eat their delicious tacos.\n(E) The three individuals prepared and ate their tacos in different ways. the man used a fork to eat his tacos, while the woman and child used their hands. the man also ate his tacos with both hands, while the woman and child ate their tacos with one hand.",
+  "options": [
+    "The three individuals prepared and ate their tacos in the same way. they all used a fork to eat their tacos.",
+    "Interestingly, the three individuals prepared and consumed their tacos in unique ways. the adult man utilized a fork for eating his tacos, whereas the woman and child employed their hands. the woman additionally devoured her tacos using both hands, while the young child managed to eat her tacos using only one hand.",
+    "In distinct manners, the three unrelated individuals prepared and consumed their tacos. the adult man utilized a fork for eating his tacos, whereas the woman and child relied on their hands. impressively, the woman managed to eat her tacos with both hands, while the child skillfully ate his tacos with just one hand.",
+    "The three individuals, following the same method, prepared and consumed their tacos in an identical way. they all consistently used their hands to eat their delicious tacos.",
+    "The three individuals prepared and ate their tacos in different ways. the man used a fork to eat his tacos, while the woman and child used their hands. the man also ate his tacos with both hands, while the woman and child ate their tacos with one hand."
+  ],
+  "official_meta": {
+    "question_index": "00214",
+    "video_id": "6c901d03-3413-41a8-9aa0-8f9f6ed6b6f1",
+    "source_index": 214
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:23.231664Z"
+}

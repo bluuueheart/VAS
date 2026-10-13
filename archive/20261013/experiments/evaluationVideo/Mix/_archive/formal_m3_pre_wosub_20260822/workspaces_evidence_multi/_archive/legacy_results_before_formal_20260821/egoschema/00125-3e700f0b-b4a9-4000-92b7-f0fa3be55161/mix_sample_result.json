@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00125:3e700f0b-b4a9-4000-92b7-f0fa3be55161",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C and the lady are discussing the ingredients for a meal.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00125-3e700f0b-b4a9-4000-92b7-f0fa3be55161",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00125-3e700f0b-b4a9-4000-92b7-f0fa3be55161/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00125-3e700f0b-b4a9-4000-92b7-f0fa3be55161/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00125-3e700f0b-b4a9-4000-92b7-f0fa3be55161/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/3e700f0b-b4a9-4000-92b7-f0fa3be55161.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/3e700f0b-b4a9-4000-92b7-f0fa3be55161.mp4",
+  "question_block": "Question: In the context of the video, discuss the most important sequence of interactions between c and the lady, focusing on the purpose of their conversation.\nOptions:\n(A) C and the lady are discussing the weather.\n(B) Casually, c and the lady engage in discussing the recent news events together.\n(C) C and the lady are discussing the ingredients for a meal.\n(D) During the conversation, both c and the lady are ardently discussing their plans for the day's activities.\n(E) Currently, c and the lady engage in a conversation, discussing their respective families' details.",
+  "options": [
+    "C and the lady are discussing the weather.",
+    "Casually, c and the lady engage in discussing the recent news events together.",
+    "C and the lady are discussing the ingredients for a meal.",
+    "During the conversation, both c and the lady are ardently discussing their plans for the day's activities.",
+    "Currently, c and the lady engage in a conversation, discussing their respective families' details."
+  ],
+  "official_meta": {
+    "question_index": "00125",
+    "video_id": "3e700f0b-b4a9-4000-92b7-f0fa3be55161",
+    "source_index": 125
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:26:28.627239Z"
+}

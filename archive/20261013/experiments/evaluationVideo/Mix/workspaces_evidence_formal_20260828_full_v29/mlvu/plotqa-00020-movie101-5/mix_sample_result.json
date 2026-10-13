@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:plotqa:20:movie101-5",
+  "dataset_name": "mlvu",
+  "subset_name": "plotQA",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Rainy",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) Rainy",
+  "elapsed_seconds": 1670.64,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00020-movie101-5",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00020-movie101-5/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00020-movie101-5/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00020-movie101-5/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/movie101_5.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/movie101_5.mp4",
+  "question_block": "Question: What is the weather during the outdoor fight scene with the soldiers standing?\nOptions:\n(A) Cloudy\n(B) Rainy\n(C) Sunny\n(D) Snowstorm",
+  "options": [
+    "Cloudy",
+    "Rainy",
+    "Sunny",
+    "Snowstorm"
+  ],
+  "official_meta": {
+    "task_type": "plotQA",
+    "source_question_type": "plotQA",
+    "prompt_task_type": "plotQA",
+    "source_json": "1_plotQA.json",
+    "source_index": 20,
+    "video_subdir": "1_plotQA",
+    "video_relative_path": "1_plotQA/movie101_5.mp4",
+    "resolved_video_stem": "movie101_5",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-10T02:44:35.022821Z"
+}

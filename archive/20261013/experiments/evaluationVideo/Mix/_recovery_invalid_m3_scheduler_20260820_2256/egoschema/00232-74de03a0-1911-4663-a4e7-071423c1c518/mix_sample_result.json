@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00232:74de03a0-1911-4663-a4e7-071423c1c518",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is embroidering a pattern.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00232-74de03a0-1911-4663-a4e7-071423c1c518",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00232-74de03a0-1911-4663-a4e7-071423c1c518/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00232-74de03a0-1911-4663-a4e7-071423c1c518/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00232-74de03a0-1911-4663-a4e7-071423c1c518/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/74de03a0-1911-4663-a4e7-071423c1c518.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/74de03a0-1911-4663-a4e7-071423c1c518.mp4",
+  "question_block": "Question: Given the repetitive nature of certain actions in the video, can you identify a main, overarching task being accomplished by 'c'? describe that task without listing individual actions.\nOptions:\n(A) C is sewing a button.\n(B) Currently, c is diligently knitting a beautifully designed scarf with care.\n(C) C is embroidering a pattern.\n(D) Currently, c is meticulously and creatively crocheting a warm hat.\n(E) Currently, an individual named c is meticulously weaving together a lovely basket.",
+  "options": [
+    "C is sewing a button.",
+    "Currently, c is diligently knitting a beautifully designed scarf with care.",
+    "C is embroidering a pattern.",
+    "Currently, c is meticulously and creatively crocheting a warm hat.",
+    "Currently, an individual named c is meticulously weaving together a lovely basket."
+  ],
+  "official_meta": {
+    "question_index": "00232",
+    "video_id": "74de03a0-1911-4663-a4e7-071423c1c518",
+    "source_index": 232
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:55:40.281243Z"
+}

@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00106:329c45dd-202d-4787-8734-f3900a0df321",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C prepared the tray by unfolding foil, cutting foil, and placing foil on the tray.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00106-329c45dd-202d-4787-8734-f3900a0df321",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00106-329c45dd-202d-4787-8734-f3900a0df321/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00106-329c45dd-202d-4787-8734-f3900a0df321/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00106-329c45dd-202d-4787-8734-f3900a0df321/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/329c45dd-202d-4787-8734-f3900a0df321.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/329c45dd-202d-4787-8734-f3900a0df321.mp4",
+  "question_block": "Question: Based on the video, summarize the key steps in the process that c undertook while preparing the tray and working with the foil.\nOptions:\n(A) Carefully, c prepared the serving tray by skillfully unfolding the aluminum foil on it.\n(B) C prepared the tray by cutting foil.\n(C) Carefully, c prepared the tray by thoughtfully placing foil securely on the tray's surface.\n(D) C prepared the tray by unfolding foil, cutting foil, and placing foil on the tray.\n(E) Carefully, c prepared the tray by unfolding, then cutting foil, and finally arranging the foil neatly on the tray itself.",
+  "options": [
+    "Carefully, c prepared the serving tray by skillfully unfolding the aluminum foil on it.",
+    "C prepared the tray by cutting foil.",
+    "Carefully, c prepared the tray by thoughtfully placing foil securely on the tray's surface.",
+    "C prepared the tray by unfolding foil, cutting foil, and placing foil on the tray.",
+    "Carefully, c prepared the tray by unfolding, then cutting foil, and finally arranging the foil neatly on the tray itself."
+  ],
+  "official_meta": {
+    "question_index": "00106",
+    "video_id": "329c45dd-202d-4787-8734-f3900a0df321",
+    "source_index": 106
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:47:04.255755Z"
+}

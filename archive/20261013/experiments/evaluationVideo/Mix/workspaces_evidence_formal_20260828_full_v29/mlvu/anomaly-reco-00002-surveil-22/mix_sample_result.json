@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:anomaly-reco:2:surveil-22",
+  "dataset_name": "mlvu",
+  "subset_name": "anomaly_reco",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 18,
+  "iter_num": 19,
+  "tool_success_rate": 0.833333,
+  "successful_tool_calls": 15,
+  "planner_iterations": 19,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "Fighting",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 6502.472,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/anomaly-reco-00002-surveil-22",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/anomaly-reco-00002-surveil-22/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/anomaly-reco-00002-surveil-22/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/anomaly-reco-00002-surveil-22/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/6_anomaly_reco/surveil_22.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/6_anomaly_reco/surveil_22.mp4",
+  "question_block": "Question: Is there any abnormality in this surveillance video? If so, what type of abnormality is it?\nOptions:\n(A) Shooting\n(B) Fighting\n(C) RoadAccidents\n(D) Shooting",
+  "options": [
+    "Shooting",
+    "Fighting",
+    "RoadAccidents",
+    "Shooting"
+  ],
+  "official_meta": {
+    "task_type": "anomaly_reco",
+    "source_question_type": "anomaly_reco",
+    "prompt_task_type": "anomaly_reco",
+    "source_json": "6_anomaly_reco.json",
+    "source_index": 2,
+    "video_subdir": "6_anomaly_reco",
+    "video_relative_path": "6_anomaly_reco/surveil_22.mp4",
+    "resolved_video_stem": "surveil_22",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-02T20:19:22.421249Z"
+}

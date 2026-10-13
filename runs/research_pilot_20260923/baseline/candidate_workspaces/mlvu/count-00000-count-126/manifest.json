@@ -1,0 +1,55 @@
+{
+  "kind": "query_run",
+  "layout_version": 2,
+  "status": "completed",
+  "run_id": "20260923-103154-338998_27443",
+  "created_at": "2026-09-23T10:31:54.355452Z",
+  "video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/4_count/count_126.mp4",
+  "video_slug": "count-126-65416502",
+  "query": "MLVU Task Type: count\n\nQuestion: Throughout this video, what is the total count of occurrences for the scene featuring the 'playing trombone' action\nOptions:\n(A) 2\n(B) 1\n(C) 5\n(D) 4\n\nReply with exactly one best option in the format \"(A) option text\".",
+  "query_slug": "mlvu-task-type-count-question-throughout-this-video-what-is-",
+  "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126",
+  "query_group_dir": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126",
+  "run_workspace": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126",
+  "shared_preprocess_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache",
+  "tool_library_baseline": {
+    "baseline_id": "snapshot_000",
+    "path": "",
+    "status": "not_configured"
+  },
+  "input_contract": {
+    "video": "official_preclipped_task_video",
+    "question": "official_question_and_candidates",
+    "temporal_crop": false,
+    "timestamp_input": "none",
+    "audio": "preserved",
+    "audio_transcript": "included",
+    "external_subtitles": false,
+    "audio_track": "preserved",
+    "audio_transcript_allowed": true,
+    "annotation_fields_excluded": [
+      "answer",
+      "ground_truth",
+      "ground_truth_option",
+      "time_reference",
+      "evaluator_output"
+    ]
+  },
+  "directories": {
+    "inputs": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126/inputs",
+    "logs": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126/logs",
+    "results": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126/results",
+    "processed": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/processed/count_126",
+    "cache": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/_cache/count_126"
+  },
+  "files": {
+    "request": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126/inputs/request.json",
+    "run_log": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126/logs/run.log",
+    "raw_trace_jsonl": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126/logs/raw_llm_trace.jsonl",
+    "run_result": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126/results/run_result.json",
+    "error": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126/results/error.json"
+  },
+  "updated_at": "2026-09-23T10:58:07.446386Z",
+  "success": false,
+  "processed_output_dir": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/processed/count_126"
+}

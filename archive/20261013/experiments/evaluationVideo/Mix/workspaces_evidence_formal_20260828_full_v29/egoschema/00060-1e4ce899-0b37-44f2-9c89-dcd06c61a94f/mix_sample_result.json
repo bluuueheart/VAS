@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00060:1e4ce899-0b37-44f2-9c89-dcd06c61a94f",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 3,
+  "iter_num": 8,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 3,
+  "planner_iterations": 8,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C picks flowers and puts them on a string.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [
+    "E"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (contradictory_evidence; repeated direct evidence failure)",
+  "elapsed_seconds": 1728.762,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00060-1e4ce899-0b37-44f2-9c89-dcd06c61a94f",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00060-1e4ce899-0b37-44f2-9c89-dcd06c61a94f/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00060-1e4ce899-0b37-44f2-9c89-dcd06c61a94f/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00060-1e4ce899-0b37-44f2-9c89-dcd06c61a94f/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/1e4ce899-0b37-44f2-9c89-dcd06c61a94f.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/1e4ce899-0b37-44f2-9c89-dcd06c61a94f.mp4",
+  "question_block": "Question: Summarize the primary objective and the process that c follows throughout the video to achieve it, and identify one deviation from this process. make sure you're capturing the essence of the video without listing all the individual steps.\nOptions:\n(A) Casually, c selects blossoms, picks flowers gently, and then places them carefully in a designated bag.\n(B) C picks flowers and puts them in a vase.\n(C) Carefully, c selects flowers, plucks them gently, and consumes them with delight.\n(D) Casually, c picks various flowers and joyfully gives them to someone else appreciatively.\n(E) C picks flowers and puts them on a string.",
+  "options": [
+    "Casually, c selects blossoms, picks flowers gently, and then places them carefully in a designated bag.",
+    "C picks flowers and puts them in a vase.",
+    "Carefully, c selects flowers, plucks them gently, and consumes them with delight.",
+    "Casually, c picks various flowers and joyfully gives them to someone else appreciatively.",
+    "C picks flowers and puts them on a string."
+  ],
+  "official_meta": {
+    "question_index": "00060",
+    "video_id": "1e4ce899-0b37-44f2-9c89-dcd06c61a94f",
+    "resolved_video_stem": "1e4ce899-0b37-44f2-9c89-dcd06c61a94f",
+    "video_mapping_verified": true,
+    "source_index": 60,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-07T10:59:21.315988Z"
+}

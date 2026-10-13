@@ -1,0 +1,138 @@
+{
+  "kind": "frozen_boundary_answer_sensitivity",
+  "fresh_model_inference": false,
+  "source_checkpoint": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/order-00000-order-126/logs/runtime_checkpoints/turn_007.json",
+  "checkpoint_prefix_steps": 6,
+  "evidence_revision": 3,
+  "intervention": "Only proposed option/permutation changed; ledger, successful observations, thresholds and query fixed.",
+  "rows": [
+    {
+      "answer": "(A) 2->1->3->4",
+      "verification": {
+        "progress_score": 1.0,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 1.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": [],
+        "claim_contract": {
+          "status": "pass",
+          "required": [
+            "order",
+            "dynamic_relation",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "order": true,
+            "dynamic_relation": true,
+            "evidence_redundancy": true
+          },
+          "missing": [],
+          "verified_claim_count": 6,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier accepted termination."
+      }
+    },
+    {
+      "answer": "(B) 3->2->1->4",
+      "verification": {
+        "progress_score": 1.0,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 1.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": [],
+        "claim_contract": {
+          "status": "pass",
+          "required": [
+            "order",
+            "dynamic_relation",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "order": true,
+            "dynamic_relation": true,
+            "evidence_redundancy": true
+          },
+          "missing": [],
+          "verified_claim_count": 6,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier accepted termination."
+      }
+    },
+    {
+      "answer": "(C) 4->3->2->1",
+      "verification": {
+        "progress_score": 1.0,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 1.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": [],
+        "claim_contract": {
+          "status": "pass",
+          "required": [
+            "order",
+            "dynamic_relation",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "order": true,
+            "dynamic_relation": true,
+            "evidence_redundancy": true
+          },
+          "missing": [],
+          "verified_claim_count": 6,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier accepted termination."
+      }
+    },
+    {
+      "answer": "(D) 1->2->3->4",
+      "verification": {
+        "progress_score": 1.0,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 1.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "option_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": [],
+        "claim_contract": {
+          "status": "pass",
+          "required": [
+            "order",
+            "dynamic_relation",
+            "evidence_redundancy"
+          ],
+          "satisfied": {
+            "order": true,
+            "dynamic_relation": true,
+            "evidence_redundancy": true
+          },
+          "missing": [],
+          "verified_claim_count": 6,
+          "contract_version": 1
+        },
+        "feedback": "Evidence verifier accepted termination."
+      }
+    }
+  ]
+}

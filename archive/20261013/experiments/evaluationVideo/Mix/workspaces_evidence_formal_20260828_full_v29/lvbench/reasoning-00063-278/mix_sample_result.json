@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:reasoning:63:278",
+  "dataset_name": "lvbench",
+  "subset_name": "reasoning",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 9,
+  "iter_num": 13,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 9,
+  "planner_iterations": 13,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Christmas Day",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 4325.231,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/reasoning-00063-278",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/reasoning-00063-278/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/reasoning-00063-278/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/reasoning-00063-278/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/TJR1oYDDTwg.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/TJR1oYDDTwg.mp4",
+  "question_block": "Question: What festival are they celebrating?\nOptions:\n(A) Mid-Autumn Festival\n(B) Christmas Day\n(C) All Saints' Day\n(D) Valentine's day",
+  "options": [
+    "Mid-Autumn Festival",
+    "Christmas Day",
+    "All Saints' Day",
+    "Valentine's day"
+  ],
+  "official_meta": {
+    "question_type": "reasoning",
+    "video_type": "cartoon",
+    "time_reference": "21:21-23:15",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "TJR1oYDDTwg",
+    "resolved_video_stem": "TJR1oYDDTwg",
+    "video_mapping_verified": true,
+    "source_index": 63
+  },
+  "updated_at": "2026-09-09T12:20:32.726344Z"
+}

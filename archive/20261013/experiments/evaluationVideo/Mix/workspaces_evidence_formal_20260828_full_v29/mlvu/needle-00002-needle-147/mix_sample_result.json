@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:needle:2:needle-147",
+  "dataset_name": "mlvu",
+  "subset_name": "needle",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 9,
+  "iter_num": 19,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 9,
+  "planner_iterations": 19,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "By the sea shore",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 4926.534,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00002-needle-147",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00002-needle-147/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00002-needle-147/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00002-needle-147/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_147.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_147.mp4",
+  "question_block": "Question: Where is the senior businessman having a serious conversation on the cell phone?\nOptions:\n(A) By the sea shore\n(B) In a park\n(C) In his office\n(D) At a restaurant",
+  "options": [
+    "By the sea shore",
+    "In a park",
+    "In his office",
+    "At a restaurant"
+  ],
+  "official_meta": {
+    "task_type": "needle",
+    "source_question_type": "findNeedle",
+    "prompt_task_type": "findNeedle",
+    "source_json": "2_needle.json",
+    "source_index": 2,
+    "video_subdir": "2_needle",
+    "video_relative_path": "2_needle/needle_147.mp4",
+    "resolved_video_stem": "needle_147",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-30T10:26:10.515873Z"
+}

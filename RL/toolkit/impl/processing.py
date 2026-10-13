@@ -16,13 +16,76 @@ from toolkit.base import BaseTool, enrich_tool_result
 logger = logging.getLogger(__name__)
 
 
+def _coerce_comparable(value: Any) -> Any:
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        return float(value)
+    text = str(value or "").strip()
+    if not text:
+        return value
+    try:
+        return float(text)
+    except (TypeError, ValueError):
+        return value
+
+
+def _matches_constraint(actual: Any, expected: Any) -> bool:
+    """Match exact values plus explicit deterministic comparison operators."""
+    if isinstance(expected, dict):
+        for operator, operand in expected.items():
+            left = _coerce_comparable(actual)
+            right = _coerce_comparable(operand)
+            if operator in {"$eq", "eq"} and left != right:
+                return False
+            if operator in {"$ne", "ne"} and left == right:
+                return False
+            if operator in {"$in", "in"} and actual not in (operand or []):
+                return False
+            if operator in {"$contains", "contains"} and str(operand).lower() not in str(actual).lower():
+                return False
+            if operator in {"$gte", "gte"} and left < right:
+                return False
+            if operator in {"$gt", "gt"} and left <= right:
+                return False
+            if operator in {"$lte", "lte"} and left > right:
+                return False
+            if operator in {"$lt", "lt"} and left >= right:
+                return False
+        return True
+    if isinstance(expected, (list, tuple, set)):
+        return actual in expected
+    left = _coerce_comparable(actual)
+    right = _coerce_comparable(expected)
+    return left == right
+
+
+def _temporal_bounds(item: Any) -> Optional[tuple[float, float]]:
+    if not isinstance(item, dict):
+        return None
+    start = item.get("start", item.get("t_start"))
+    end = item.get("end", item.get("t_end"))
+    if start is None or end is None:
+        value = item.get("time_range", item.get("time"))
+        text = str(value or "").strip()
+        if "-" not in text:
+            return None
+        start, end = text.split("-", 1)
+    try:
+        left = float(start)
+        right = float(end)
+    except (TypeError, ValueError):
+        return None
+    if not math.isfinite(left) or not math.isfinite(right):
+        return None
+    return (min(left, right), max(left, right))
+
+
 class Filtering(BaseTool):
     """Filter results based on metadata constraints."""
     
     name: str = "Filtering"
     description: str = (
-        "Filter retrieval results based on structured metadata. "
-        "Supports filtering by timestamp range, video source, author, location, etc."
+        "Filter retrieval results based on structured metadata. Supports exact values and explicit "
+        "operators ($eq/$ne/$in/$contains/$gte/$gt/$lte/$lt); it does not search the video corpus."
     )
     tags: list = ["base", "filter", "metadata", "selection"]
     parameters: Dict[str, Any] = {
@@ -56,7 +119,7 @@ class Filtering(BaseTool):
         for item in data:
             matches = True
             for key, value in metadata_constraints.items():
-                if key not in item or item[key] != value:
+                if key not in item or not _matches_constraint(item[key], value):
                     matches = False
                     break
             
@@ -74,7 +137,8 @@ class Aggregation(BaseTool):
     description: str = (
         "Perform statistical aggregation on retrieval results. "
         "Supports counting, sorting by confidence/time, finding extremes (e.g., longest segment), "
-        "and temporal fusion (merging overlapping time ranges)."
+        "and temporal fusion (merging overlapping or adjacent time ranges). Invalid operations are "
+        "reported instead of silently returning the unmodified input."
     )
     tags: list = ["base", "aggregation", "composite"]
     parameters: Dict[str, Any] = {
@@ -113,30 +177,114 @@ class Aggregation(BaseTool):
         if operation == "count":
             result = len(data)
         
-        elif operation == "sort" and target_field:
+        elif operation in {"sort", "max", "min"}:
+            if not target_field:
+                return enrich_tool_result(
+                    {
+                        "status": "no_valid_result",
+                        "operation": operation,
+                        "result": f"Aggregation operation={operation!r} requires target_field.",
+                    },
+                    tool_name=self.name,
+                )
+            if not data:
+                return enrich_tool_result(
+                    {
+                        "status": "no_valid_result",
+                        "operation": operation,
+                        "target_field": target_field,
+                        "result": "Aggregation received no rows to process.",
+                    },
+                    tool_name=self.name,
+                )
+            if not all(isinstance(item, dict) and target_field in item for item in data):
+                return enrich_tool_result(
+                    {
+                        "status": "no_valid_result",
+                        "operation": operation,
+                        "target_field": target_field,
+                        "result": (
+                            f"Aggregation cannot {operation} because target_field={target_field!r} "
+                            "is absent from one or more input rows."
+                        ),
+                    },
+                    tool_name=self.name,
+                )
             try:
-                result = sorted(data, key=lambda x: x.get(target_field, 0), reverse=True)
-            except:
-                result = data
-        
-        elif operation == "max" and target_field:
-            try:
-                result = max(data, key=lambda x: x.get(target_field, 0))
-            except:
-                result = None
-        
-        elif operation == "min" and target_field:
-            try:
-                result = min(data, key=lambda x: x.get(target_field, 0))
-            except:
-                result = None
+                if operation == "sort":
+                    result = sorted(data, key=lambda x: _coerce_comparable(x[target_field]), reverse=True)
+                elif operation == "max":
+                    result = max(data, key=lambda x: _coerce_comparable(x[target_field]))
+                else:
+                    result = min(data, key=lambda x: _coerce_comparable(x[target_field]))
+            except (TypeError, ValueError) as exc:
+                return enrich_tool_result(
+                    {
+                        "status": "no_valid_result",
+                        "operation": operation,
+                        "target_field": target_field,
+                        "error": str(exc),
+                        "result": "Aggregation could not compare the requested target_field values.",
+                    },
+                    tool_name=self.name,
+                )
         
         elif operation == "merge_temporal":
-            # Simple temporal merge for demo
-            result = {"merged_segments": data}
-        
+            try:
+                tolerance = float(kwargs.get("tolerance", 0.0) or 0.0)
+            except (TypeError, ValueError):
+                tolerance = -1.0
+            if not math.isfinite(tolerance) or tolerance < 0:
+                return enrich_tool_result(
+                    {
+                        "status": "no_valid_result",
+                        "operation": operation,
+                        "result": "Aggregation rejected tolerance; it must be a finite non-negative number.",
+                    },
+                    tool_name=self.name,
+                )
+            normalized = []
+            ignored_count = 0
+            for item in data:
+                bounds = _temporal_bounds(item)
+                if bounds is None:
+                    ignored_count += 1
+                    continue
+                normalized.append({"start": bounds[0], "end": bounds[1], "source": item})
+            normalized.sort(key=lambda item: (item["start"], item["end"]))
+            merged = []
+            for item in normalized:
+                if not merged or item["start"] > merged[-1]["end"] + tolerance:
+                    merged.append(
+                        {
+                            "start": item["start"],
+                            "end": item["end"],
+                            "source_segments": [item["source"]],
+                        }
+                    )
+                else:
+                    merged[-1]["end"] = max(merged[-1]["end"], item["end"])
+                    merged[-1]["source_segments"].append(item["source"])
+            result = {
+                "status": "success" if normalized else "no_valid_result",
+                "merged_segments": merged,
+                "input_count": len(data),
+                "ignored_count": ignored_count,
+                "tolerance": tolerance,
+            }
+
         else:
-            result = data
+            return enrich_tool_result(
+                {
+                    "status": "no_valid_result",
+                    "operation": operation,
+                    "result": (
+                        f"Aggregation does not support operation={operation!r}. "
+                        "Use count, sort, max, min, or merge_temporal."
+                    ),
+                },
+                tool_name=self.name,
+            )
         
         logger.info(f"Aggregation ({operation}): {len(data)} items on field '{target_field}'")
         return result

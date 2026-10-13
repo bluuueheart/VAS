@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-09-20T05:41:46.220207+00:00",
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39",
+  "decision": "keep_paused",
+  "resumed": false,
+  "reason": "High unresolved sample failure rate and observed Observer schema errors/evidence conflicts; user authorized resumption only if checks found no problems.",
+  "total_planned": 6920,
+  "terminal_records": 32,
+  "status_counts": {
+    "failed": 17,
+    "completed": 12,
+    "wrong": 3
+  },
+  "attempted_accuracy": 0.375,
+  "progress_result_mismatches": [],
+  "source_manifest_matches": true,
+  "completed_evolution_cycles": 12,
+  "cycle_status_counts": {
+    "local_repair_not_proven": 12
+  },
+  "active_snapshot_id": "snapshot_000",
+  "interrupted_cycle": {
+    "pid": 177540,
+    "identity": "6080033990",
+    "root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/_evolution_audit/evolution_online_cycle_00013",
+    "started_at": 1789862428.4904323,
+    "record_count": 32,
+    "monitor": false
+  },
+  "observations": [
+    "No running experiment processes; GPU idle.",
+    "All 32 progress result files readable and referenced source videos exist.",
+    "17 sample_failure records report planner_recovery_exhausted_without_verifiable_finish.",
+    "Latest MLVU anomaly sample contains Observer schema_valid=False and conflicting Video_Clip_QA evidence.",
+    "Worker missing-payload error reports zero missing samples; unconditional logging at run_mix_batch.py:2245, not proof of lost results.",
+    "Cycle 13 has candidate_pending.json but no cycle_result.json; saved running status is stale after interruption."
+  ],
+  "limitations": [
+    "Did not rerun GPU inference or modify experiment source/state.",
+    "Sample failures alone do not establish a specific code defect; further diagnosis needed before changes."
+  ]
+}

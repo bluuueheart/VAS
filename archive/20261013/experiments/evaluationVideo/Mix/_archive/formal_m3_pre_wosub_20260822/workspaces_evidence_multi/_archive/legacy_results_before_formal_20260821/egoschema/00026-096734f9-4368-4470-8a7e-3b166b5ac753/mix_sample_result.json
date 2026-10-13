@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00026:096734f9-4368-4470-8a7e-3b166b5ac753",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is studying for a test.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00026-096734f9-4368-4470-8a7e-3b166b5ac753",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00026-096734f9-4368-4470-8a7e-3b166b5ac753/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00026-096734f9-4368-4470-8a7e-3b166b5ac753/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00026-096734f9-4368-4470-8a7e-3b166b5ac753/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/096734f9-4368-4470-8a7e-3b166b5ac753.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/096734f9-4368-4470-8a7e-3b166b5ac753.mp4",
+  "question_block": "Question: What activities contribute to c's main goal in the video, and how do they relate to each other?\nOptions:\n(A) C is studying for a test.\n(B) Currently, c is in the process of writing a book diligently.\n(C) Currently, the student c is diligently taking notes in class.\n(D) Currently, c is diligently preparing an engaging presentation for the audience.\n(E) C is doing homework.",
+  "options": [
+    "C is studying for a test.",
+    "Currently, c is in the process of writing a book diligently.",
+    "Currently, the student c is diligently taking notes in class.",
+    "Currently, c is diligently preparing an engaging presentation for the audience.",
+    "C is doing homework."
+  ],
+  "official_meta": {
+    "question_index": "00026",
+    "video_id": "096734f9-4368-4470-8a7e-3b166b5ac753",
+    "source_index": 26
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:19:28.074523Z"
+}

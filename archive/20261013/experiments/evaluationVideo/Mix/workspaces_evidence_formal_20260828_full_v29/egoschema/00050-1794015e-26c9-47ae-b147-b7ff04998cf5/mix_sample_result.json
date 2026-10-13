@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00050:1794015e-26c9-47ae-b147-b7ff04998cf5",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 6,
+  "iter_num": 18,
+  "tool_success_rate": 0.666667,
+  "successful_tool_calls": 4,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "C believes that the plants are healthy and need to be pruned.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 3973.478,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00050-1794015e-26c9-47ae-b147-b7ff04998cf5",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00050-1794015e-26c9-47ae-b147-b7ff04998cf5/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00050-1794015e-26c9-47ae-b147-b7ff04998cf5/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00050-1794015e-26c9-47ae-b147-b7ff04998cf5/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/1794015e-26c9-47ae-b147-b7ff04998cf5.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/1794015e-26c9-47ae-b147-b7ff04998cf5.mp4",
+  "question_block": "Question: What can be inferred about c's assessment of the plants during the video? explain how their actions reflect their evaluations.\nOptions:\n(A) C believes that the plants are unhealthy and need to be replaced.\n(B) C believes that the plants are healthy and need to be pruned.\n(C) C believes that the plants are not getting enough water and need to be watered more often.\n(D) C believes that the plants are not getting enough sunlight and need to be moved to a sunnier spot.\n(E) C believes that the plants are infested with pests and need to be treated with pesticides.",
+  "options": [
+    "C believes that the plants are unhealthy and need to be replaced.",
+    "C believes that the plants are healthy and need to be pruned.",
+    "C believes that the plants are not getting enough water and need to be watered more often.",
+    "C believes that the plants are not getting enough sunlight and need to be moved to a sunnier spot.",
+    "C believes that the plants are infested with pests and need to be treated with pesticides."
+  ],
+  "official_meta": {
+    "question_index": "00050",
+    "video_id": "1794015e-26c9-47ae-b147-b7ff04998cf5",
+    "resolved_video_stem": "1794015e-26c9-47ae-b147-b7ff04998cf5",
+    "video_mapping_verified": true,
+    "source_index": 50,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-05T17:53:12.507630Z"
+}

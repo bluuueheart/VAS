@@ -1,0 +1,20 @@
+======================================================================
+FAIL: test_conflicting_direct_attribute_claims_are_blocked (RL.evolution.test_replay.DynamicEvidenceVerifierTest.test_conflicting_direct_attribute_claims_are_blocked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/gemini/code/export_packages/extracted/RL/evolution/test_replay.py", line 511, in test_conflicting_direct_attribute_claims_are_blocked
+    self.assertTrue(
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_later_direct_frame_support_resolves_stale_qa_conflict (RL.evolution.test_replay.DynamicEvidenceVerifierTest.test_later_direct_frame_support_resolves_stale_qa_conflict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/gemini/code/export_packages/extracted/RL/evolution/test_replay.py", line 410, in test_later_direct_frame_support_resolves_stale_qa_conflict
+    self.assertTrue(result.can_finish, result)
+AssertionError: False is not true : progress_score=0.2 claim_coverage=0.25 direct_grounding=0.25 contradiction_score=0.0 cross_modal_support=0.0 can_finish=False premise_mismatch=False option_mismatch=False missing_information=['direct evidence citation'] unresolved_claims=['old_collage_scene', 'old_planner_guess', 'hand_action'] claim_contract={'status': 'pass', 'required': ['dynamic_relation'], 'satisfied': {'dynamic_relation': True}, 'missing': [], 'verified_claim_count': 0, 'contract_version': 1} feedback='Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, old_collage_scene, old_planner_guess, hand_action'
+
+----------------------------------------------------------------------
+Ran 56 tests in 6.941s
+
+FAILED (failures=2)

@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00074:22a479e6-4054-4520-89a7-c7d068eadbe3",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "C",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C's main activities are eating and watching a movie.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [
+    "E"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(C) C's main activities are eating, watching a movie, and operating a laptop.",
+  "elapsed_seconds": 732.37,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00074-22a479e6-4054-4520-89a7-c7d068eadbe3",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00074-22a479e6-4054-4520-89a7-c7d068eadbe3/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00074-22a479e6-4054-4520-89a7-c7d068eadbe3/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00074-22a479e6-4054-4520-89a7-c7d068eadbe3/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/22a479e6-4054-4520-89a7-c7d068eadbe3.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/22a479e6-4054-4520-89a7-c7d068eadbe3.mp4",
+  "question_block": "Question: Identify the two main activities c engages in throughout the video and explain how he shifts focus between them.\nOptions:\n(A) C's main activities are eating and operating a laptop.\n(B) C's main activities are watching a movie and operating a laptop.\n(C) C's main activities are eating, watching a movie, and operating a laptop.\n(D) C's main activity is eating.\n(E) C's main activities are eating and watching a movie.",
+  "options": [
+    "C's main activities are eating and operating a laptop.",
+    "C's main activities are watching a movie and operating a laptop.",
+    "C's main activities are eating, watching a movie, and operating a laptop.",
+    "C's main activity is eating.",
+    "C's main activities are eating and watching a movie."
+  ],
+  "official_meta": {
+    "question_index": "00074",
+    "video_id": "22a479e6-4054-4520-89a7-c7d068eadbe3",
+    "resolved_video_stem": "22a479e6-4054-4520-89a7-c7d068eadbe3",
+    "video_mapping_verified": true,
+    "source_index": 74,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-09T12:37:45.588547Z"
+}

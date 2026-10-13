@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00203:66ae46ba-63c5-41b1-ab18-33a5561660f9",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C organized the items on the counter and inside the fridge by placing them in logical locations. for example, he placed the flour on the steel wall cabinet, the water bottle on the sink top, and the chips on the shelf. he also placed the jug under the running tap, the bag of flour under the table, and the bin under the desk.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00203-66ae46ba-63c5-41b1-ab18-33a5561660f9",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00203-66ae46ba-63c5-41b1-ab18-33a5561660f9/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00203-66ae46ba-63c5-41b1-ab18-33a5561660f9/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00203-66ae46ba-63c5-41b1-ab18-33a5561660f9/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/66ae46ba-63c5-41b1-ab18-33a5561660f9.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/66ae46ba-63c5-41b1-ab18-33a5561660f9.mp4",
+  "question_block": "Question: How did c's process in the kitchen reflect effective organization and management of items on the counter and inside the fridge? provide specific examples to support your answer.\nOptions:\n(A) C did not organize the items on the counter and inside the fridge. he simply placed them wherever he could find space.\n(B) C organized the items on the counter and inside the fridge by placing them in logical locations. for example, he placed the flour on the steel wall cabinet, the water bottle on the sink top, and the chips on the shelf. he also placed the jug under the running tap, the bag of flour under the table, and the bin under the desk.\n(C) Carefully, c organized the items on the counter and inside the fridge by color coordination. for instance, he placed the flour on the steel wall cabinet, the water bottle strategically on the sink top, and the chips neatly on the shelf. moreover, he also placed the jug under the running tap, the bag of flour securely under the table, and the bin conveniently under the desk.\n(D) Carefully, c organized the items on the counter and inside the fridge by size. for instance, he placed the flour on the steel wall cabinet, the water bottle on the space-saving sink top, and the crunchy chips on the shelf. moreover, he strategically placed the jug under the running tap, the bag of flour under the sturdy table, and the bin under the wooden desk.\n(E) Carefully, c organized the items on the counter and inside the fridge methodically by type. for instance, he deliberately placed the flour on the steel wall cabinet, the water bottle on the sink top, and the chips on the shelf. additionally, he also positioned the jug under the running tap, the bag of flour under the table, and the refuse bin under the desk.",
+  "options": [
+    "C did not organize the items on the counter and inside the fridge. he simply placed them wherever he could find space.",
+    "C organized the items on the counter and inside the fridge by placing them in logical locations. for example, he placed the flour on the steel wall cabinet, the water bottle on the sink top, and the chips on the shelf. he also placed the jug under the running tap, the bag of flour under the table, and the bin under the desk.",
+    "Carefully, c organized the items on the counter and inside the fridge by color coordination. for instance, he placed the flour on the steel wall cabinet, the water bottle strategically on the sink top, and the chips neatly on the shelf. moreover, he also placed the jug under the running tap, the bag of flour securely under the table, and the bin conveniently under the desk.",
+    "Carefully, c organized the items on the counter and inside the fridge by size. for instance, he placed the flour on the steel wall cabinet, the water bottle on the space-saving sink top, and the crunchy chips on the shelf. moreover, he strategically placed the jug under the running tap, the bag of flour under the sturdy table, and the bin under the wooden desk.",
+    "Carefully, c organized the items on the counter and inside the fridge methodically by type. for instance, he deliberately placed the flour on the steel wall cabinet, the water bottle on the sink top, and the chips on the shelf. additionally, he also positioned the jug under the running tap, the bag of flour under the table, and the refuse bin under the desk."
+  ],
+  "official_meta": {
+    "question_index": "00203",
+    "video_id": "66ae46ba-63c5-41b1-ab18-33a5561660f9",
+    "source_index": 203
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:53:26.255499Z"
+}

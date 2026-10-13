@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:order:7:order-221",
+  "dataset_name": "mlvu",
+  "subset_name": "order",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 36,
+  "iter_num": 18,
+  "tool_success_rate": 0.416667,
+  "successful_tool_calls": 15,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "jetskiing --> shredding paper --> zumba --> tossing coin",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 8781.616,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00007-order-221",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00007-order-221/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00007-order-221/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00007-order-221/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_221.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_221.mp4",
+  "question_block": "Question: Can you tell me which option represents the actual order of actions shown in the video?\nOptions:\n(A) jetskiing --> tossing coin --> shredding paper --> zumba\n(B) zumba --> tossing coin --> jetskiing --> shredding paper\n(C) jetskiing --> shredding paper --> zumba --> tossing coin\n(D) zumba --> tossing coin --> shredding paper --> jetskiing",
+  "options": [
+    "jetskiing --> tossing coin --> shredding paper --> zumba",
+    "zumba --> tossing coin --> jetskiing --> shredding paper",
+    "jetskiing --> shredding paper --> zumba --> tossing coin",
+    "zumba --> tossing coin --> shredding paper --> jetskiing"
+  ],
+  "official_meta": {
+    "task_type": "order",
+    "source_question_type": "order",
+    "prompt_task_type": "order",
+    "source_json": "5_order.json",
+    "source_index": 7,
+    "video_subdir": "5_order",
+    "video_relative_path": "5_order/order_221.mp4",
+    "resolved_video_stem": "order_221",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-08T16:17:58.613686Z"
+}

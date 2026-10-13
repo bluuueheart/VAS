@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00222:719432f6-c6eb-44f1-a005-b22e0c4312e6",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The measuring, writing, and cutting activities are all part of the process of measuring a wall and cutting a piece of wood to fit it. the measuring tape is used to measure the width of the wall, the paper is used to write down the measurements, and the wood cutter is used to cut the wood to the correct size.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00222-719432f6-c6eb-44f1-a005-b22e0c4312e6",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00222-719432f6-c6eb-44f1-a005-b22e0c4312e6/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00222-719432f6-c6eb-44f1-a005-b22e0c4312e6/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00222-719432f6-c6eb-44f1-a005-b22e0c4312e6/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/719432f6-c6eb-44f1-a005-b22e0c4312e6.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/719432f6-c6eb-44f1-a005-b22e0c4312e6.mp4",
+  "question_block": "Question: Describe the relationship between the measuring, writing, and cutting activities observed in the video, and explain their purpose in the context of the overall task being performed.\nOptions:\n(A) The measuring, writing, and cutting activities actively contribute to the process of making a paper airplane. utilizing the measuring tape, one measures the paper's length, writing down the measurements on the paper itself, and finally, a wood cutter carefully trims it to the desired size.\n(B) The measuring, writing, and cutting activities, essential components of constructing a house, are all part of the process. the measuring tape is utilized to accurately measure the length of the walls, the paper is employed to record the measurements, and the wood cutter safely cuts the wood to the precise size needed.\n(C) The measuring, writing, and cutting activities are all part of the process of making a cake. the measuring tape is used to measure the ingredients, the paper is used to write down the measurements, and the wood cutter is used to cut the cake into pieces.\n(D) The measuring, writing, and cutting activities are all part of the process of measuring a wall and cutting a piece of wood to fit it. the measuring tape is used to measure the width of the wall, the paper is used to write down the measurements, and the wood cutter is used to cut the wood to the correct size.\n(E) In dressmaking, the measuring, writing, and cutting activities are all essential parts of the process of creating a dress. the measuring tape is utilized to accurately measure the body, while the paper records the necessary measurements, and the wood cutter efficiently cuts the fabric to the proper size.",
+  "options": [
+    "The measuring, writing, and cutting activities actively contribute to the process of making a paper airplane. utilizing the measuring tape, one measures the paper's length, writing down the measurements on the paper itself, and finally, a wood cutter carefully trims it to the desired size.",
+    "The measuring, writing, and cutting activities, essential components of constructing a house, are all part of the process. the measuring tape is utilized to accurately measure the length of the walls, the paper is employed to record the measurements, and the wood cutter safely cuts the wood to the precise size needed.",
+    "The measuring, writing, and cutting activities are all part of the process of making a cake. the measuring tape is used to measure the ingredients, the paper is used to write down the measurements, and the wood cutter is used to cut the cake into pieces.",
+    "The measuring, writing, and cutting activities are all part of the process of measuring a wall and cutting a piece of wood to fit it. the measuring tape is used to measure the width of the wall, the paper is used to write down the measurements, and the wood cutter is used to cut the wood to the correct size.",
+    "In dressmaking, the measuring, writing, and cutting activities are all essential parts of the process of creating a dress. the measuring tape is utilized to accurately measure the body, while the paper records the necessary measurements, and the wood cutter efficiently cuts the fabric to the proper size."
+  ],
+  "official_meta": {
+    "question_index": "00222",
+    "video_id": "719432f6-c6eb-44f1-a005-b22e0c4312e6",
+    "source_index": 222
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:53.066174Z"
+}

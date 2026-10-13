@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00184:5d15c716-f179-462c-84a6-fa94e9d14e94",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C was working on a wood project in the garage.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00184-5d15c716-f179-462c-84a6-fa94e9d14e94",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00184-5d15c716-f179-462c-84a6-fa94e9d14e94/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00184-5d15c716-f179-462c-84a6-fa94e9d14e94/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00184-5d15c716-f179-462c-84a6-fa94e9d14e94/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/5d15c716-f179-462c-84a6-fa94e9d14e94.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/5d15c716-f179-462c-84a6-fa94e9d14e94.mp4",
+  "question_block": "Question: In the video, what was the main focus of c's activity, and how was it being executed in different ways in the garage?\nOptions:\n(A) C was cleaning the garage.\n(B) One day, c was diligently organizing the cluttered garage space.\n(C) Recently, c was diligently searching for something specific within the cluttered garage.\n(D) Casually, c was taking a short break in the spacious garage.\n(E) C was working on a wood project in the garage.",
+  "options": [
+    "C was cleaning the garage.",
+    "One day, c was diligently organizing the cluttered garage space.",
+    "Recently, c was diligently searching for something specific within the cluttered garage.",
+    "Casually, c was taking a short break in the spacious garage.",
+    "C was working on a wood project in the garage."
+  ],
+  "official_meta": {
+    "question_index": "00184",
+    "video_id": "5d15c716-f179-462c-84a6-fa94e9d14e94",
+    "source_index": 184
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:12.814141Z"
+}

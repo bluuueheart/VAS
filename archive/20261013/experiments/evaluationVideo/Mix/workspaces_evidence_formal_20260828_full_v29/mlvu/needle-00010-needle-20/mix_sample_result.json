@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:needle:10:needle-20",
+  "dataset_name": "mlvu",
+  "subset_name": "needle",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 3,
+  "iter_num": 4,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 3,
+  "planner_iterations": 4,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Summer sunny day",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) Summer sunny day",
+  "elapsed_seconds": 1275.409,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00010-needle-20",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00010-needle-20/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00010-needle-20/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00010-needle-20/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_20.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_20.mp4",
+  "question_block": "Question: What is the weather like as the car with a broken windshield rides through the mountain country village?\nOptions:\n(A) Autumn rainy day\n(B) Winter snowy day\n(C) Spring cloudy day\n(D) Summer sunny day",
+  "options": [
+    "Autumn rainy day",
+    "Winter snowy day",
+    "Spring cloudy day",
+    "Summer sunny day"
+  ],
+  "official_meta": {
+    "task_type": "needle",
+    "source_question_type": "findNeedle",
+    "prompt_task_type": "findNeedle",
+    "source_json": "2_needle.json",
+    "source_index": 10,
+    "video_subdir": "2_needle",
+    "video_relative_path": "2_needle/needle_20.mp4",
+    "resolved_video_stem": "needle_20",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-07T12:36:41.814859Z"
+}

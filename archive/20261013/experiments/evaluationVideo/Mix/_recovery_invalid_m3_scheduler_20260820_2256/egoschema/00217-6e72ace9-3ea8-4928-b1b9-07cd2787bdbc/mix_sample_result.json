@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00217:6e72ace9-3ea8-4928-b1b9-07cd2787bdbc",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C used tissue paper to wipe the edges of the dessert bowl to make it look neat and tidy.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00217-6e72ace9-3ea8-4928-b1b9-07cd2787bdbc",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00217-6e72ace9-3ea8-4928-b1b9-07cd2787bdbc/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00217-6e72ace9-3ea8-4928-b1b9-07cd2787bdbc/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00217-6e72ace9-3ea8-4928-b1b9-07cd2787bdbc/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/6e72ace9-3ea8-4928-b1b9-07cd2787bdbc.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/6e72ace9-3ea8-4928-b1b9-07cd2787bdbc.mp4",
+  "question_block": "Question: What was the main purpose of c using tissue paper and what was the overall impact of this action on the dessert bowl's presentation?\nOptions:\n(A) C used tissue paper to decorate the dessert bowl.\n(B) Carefully, c utilized used tissue paper to effectively absorb any possible excess moisture present from the cake batter.\n(C) C used tissue paper to wipe the edges of the dessert bowl to make it look neat and tidy.\n(D) Carefully, c utilized used tissue paper to effectively prevent the batter from sticking to the bowl's sides.\n(E) Carefully, c utilized used tissue paper for maintaining the batter's warmth, keeping it warm.",
+  "options": [
+    "C used tissue paper to decorate the dessert bowl.",
+    "Carefully, c utilized used tissue paper to effectively absorb any possible excess moisture present from the cake batter.",
+    "C used tissue paper to wipe the edges of the dessert bowl to make it look neat and tidy.",
+    "Carefully, c utilized used tissue paper to effectively prevent the batter from sticking to the bowl's sides.",
+    "Carefully, c utilized used tissue paper for maintaining the batter's warmth, keeping it warm."
+  ],
+  "official_meta": {
+    "question_index": "00217",
+    "video_id": "6e72ace9-3ea8-4928-b1b9-07cd2787bdbc",
+    "source_index": 217
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:34.449089Z"
+}

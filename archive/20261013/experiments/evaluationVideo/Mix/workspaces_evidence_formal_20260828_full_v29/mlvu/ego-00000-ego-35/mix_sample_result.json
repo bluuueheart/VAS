@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:ego:0:ego-35",
+  "dataset_name": "mlvu",
+  "subset_name": "ego",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 12,
+  "iter_num": 15,
+  "tool_success_rate": 0.666667,
+  "successful_tool_calls": 8,
+  "planner_iterations": 15,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "a lemon green sponge",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 4057.646,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/ego-00000-ego-35",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/ego-00000-ego-35/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/ego-00000-ego-35/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/ego-00000-ego-35/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/3_ego/ego_35.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/3_ego/ego_35.mp4",
+  "question_block": "Question: What did I put in the orange trashcan \nOptions:\n(A) a lemon green sponge\n(B) a blue pen\n(C) a red apple\n(D) a yellow banana",
+  "options": [
+    "a lemon green sponge",
+    "a blue pen",
+    "a red apple",
+    "a yellow banana"
+  ],
+  "official_meta": {
+    "task_type": "ego",
+    "source_question_type": "ego",
+    "prompt_task_type": "ego",
+    "source_json": "3_ego.json",
+    "source_index": 0,
+    "video_subdir": "3_ego",
+    "video_relative_path": "3_ego/ego_35.mp4",
+    "resolved_video_stem": "ego_35",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-29T07:21:23.711620Z"
+}

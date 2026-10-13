@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00051:17d3ed08-b062-4197-9497-d06c6fd4f562",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 13,
+  "iter_num": 20,
+  "tool_success_rate": 0.615385,
+  "successful_tool_calls": 8,
+  "planner_iterations": 20,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "C is making kaliche ladoo balls.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 5317.632,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00051-17d3ed08-b062-4197-9497-d06c6fd4f562",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00051-17d3ed08-b062-4197-9497-d06c6fd4f562/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00051-17d3ed08-b062-4197-9497-d06c6fd4f562/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00051-17d3ed08-b062-4197-9497-d06c6fd4f562/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/17d3ed08-b062-4197-9497-d06c6fd4f562.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/17d3ed08-b062-4197-9497-d06c6fd4f562.mp4",
+  "question_block": "Question: What is the primary process being undertaken in this video, and how does it consist of both repetitive actions and brief moments of interpersonal interaction?\nOptions:\n(A) Currently, c is in the process of making a delightful cake.\n(B) C is making kaliche ladoo balls.\n(C) Currently, c is in the process of making a delicious pie.\n(D) Currently, c is in the process of making a delicious pizza.\n(E) C is making a sandwich.",
+  "options": [
+    "Currently, c is in the process of making a delightful cake.",
+    "C is making kaliche ladoo balls.",
+    "Currently, c is in the process of making a delicious pie.",
+    "Currently, c is in the process of making a delicious pizza.",
+    "C is making a sandwich."
+  ],
+  "official_meta": {
+    "question_index": "00051",
+    "video_id": "17d3ed08-b062-4197-9497-d06c6fd4f562",
+    "resolved_video_stem": "17d3ed08-b062-4197-9497-d06c6fd4f562",
+    "video_mapping_verified": true,
+    "source_index": 51,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-05T21:28:48.193927Z"
+}

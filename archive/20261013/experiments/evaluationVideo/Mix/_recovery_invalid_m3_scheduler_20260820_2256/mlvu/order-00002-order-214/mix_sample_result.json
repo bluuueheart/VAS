@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:order:2:order-214",
+  "dataset_name": "mlvu",
+  "subset_name": "order",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "abseiling --> making jewelry --> milking cow --> cleaning toilet",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00002-order-214",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00002-order-214/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00002-order-214/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00002-order-214/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_214.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_214.mp4",
+  "question_block": "Question: Please identify the option that corresponds to the order of events as they occur in the video.\nOptions:\n(A) abseiling --> making jewelry --> milking cow --> cleaning toilet\n(B) making jewelry --> abseiling --> cleaning toilet --> milking cow\n(C) milking cow --> cleaning toilet --> abseiling --> making jewelry\n(D) cleaning toilet --> milking cow --> abseiling --> making jewelry",
+  "options": [
+    "abseiling --> making jewelry --> milking cow --> cleaning toilet",
+    "making jewelry --> abseiling --> cleaning toilet --> milking cow",
+    "milking cow --> cleaning toilet --> abseiling --> making jewelry",
+    "cleaning toilet --> milking cow --> abseiling --> making jewelry"
+  ],
+  "official_meta": {
+    "task_type": "order",
+    "source_json": "5_order.json",
+    "source_index": 2,
+    "video_subdir": "5_order",
+    "video_relative_path": "5_order/order_214.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:43:25.345512Z"
+}

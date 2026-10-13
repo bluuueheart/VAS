@@ -1,0 +1,6 @@
+Dataset: {dataset_name}
+Category: {subset_name}
+
+{question_block}
+
+Reply with exactly one best option in the format "(A) option text".

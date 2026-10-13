@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00166:51bea80c-3f6f-4406-ac56-9af2a547b2bf",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C and the woman are peeling pomegranates.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00166-51bea80c-3f6f-4406-ac56-9af2a547b2bf",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00166-51bea80c-3f6f-4406-ac56-9af2a547b2bf/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00166-51bea80c-3f6f-4406-ac56-9af2a547b2bf/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00166-51bea80c-3f6f-4406-ac56-9af2a547b2bf/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/51bea80c-3f6f-4406-ac56-9af2a547b2bf.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/51bea80c-3f6f-4406-ac56-9af2a547b2bf.mp4",
+  "question_block": "Question: In this video, what is the main task that c and the woman are engaged in, and how does their interaction with each other evolve over the course of the video?\nOptions:\n(A) C and the woman are eating pomegranates.\n(B) C and the woman are playing with pomegranates.\n(C) C and the woman are selling pomegranates.\n(D) C and the woman are peeling pomegranates.\n(E) C and the woman are buying pomegranates.",
+  "options": [
+    "C and the woman are eating pomegranates.",
+    "C and the woman are playing with pomegranates.",
+    "C and the woman are selling pomegranates.",
+    "C and the woman are peeling pomegranates.",
+    "C and the woman are buying pomegranates."
+  ],
+  "official_meta": {
+    "question_index": "00166",
+    "video_id": "51bea80c-3f6f-4406-ac56-9af2a547b2bf",
+    "source_index": 166
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:50:56.153383Z"
+}

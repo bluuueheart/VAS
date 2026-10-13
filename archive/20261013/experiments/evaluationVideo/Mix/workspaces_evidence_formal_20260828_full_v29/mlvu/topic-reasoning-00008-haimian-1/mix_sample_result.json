@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:topic-reasoning:8:haimian-1",
+  "dataset_name": "mlvu",
+  "subset_name": "topic_reasoning",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 7,
+  "iter_num": 13,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 7,
+  "planner_iterations": 13,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Undersea",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 4651.811,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/topic-reasoning-00008-haimian-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/topic-reasoning-00008-haimian-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/topic-reasoning-00008-haimian-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/topic-reasoning-00008-haimian-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/haimian_1.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/7_topic_reasoning/haimian_1.mp4",
+  "question_block": "Question: What is the background of the video?\nOptions:\n(A) Desert\n(B) Undersea\n(C) Forest\n(D) Beach",
+  "options": [
+    "Desert",
+    "Undersea",
+    "Forest",
+    "Beach"
+  ],
+  "official_meta": {
+    "task_type": "topic_reasoning",
+    "source_question_type": "topic_reasoning",
+    "prompt_task_type": "topic_reasoning",
+    "source_json": "7_topic_reasoning.json",
+    "source_index": 8,
+    "video_subdir": "7_topic_reasoning",
+    "video_relative_path": "7_topic_reasoning/haimian_1.mp4",
+    "resolved_video_stem": "haimian_1",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-08T12:01:19.312416Z"
+}

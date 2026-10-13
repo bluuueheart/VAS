@@ -1,0 +1,59 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-08-22T21:25:49.835831Z",
+  "records": {
+    "videomme:humanity-history:001-1": {
+      "sample_uid": "videomme:humanity-history:001-1",
+      "dataset_name": "videomme",
+      "subset_name": "Humanity & History",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 1,
+      "iter_num": 2,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_capacity2/videomme/humanity-history-001-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_capacity2/videomme/humanity-history-001-1",
+      "updated_at": "2026-08-22T21:09:43.271689Z"
+    },
+    "mlvu:plotqa:0:movie101-66": {
+      "sample_uid": "mlvu:plotqa:0:movie101-66",
+      "dataset_name": "mlvu",
+      "subset_name": "plotQA",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 2,
+      "iter_num": 4,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_capacity2/mlvu/plotqa-00000-movie101-66/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_capacity2/mlvu/plotqa-00000-movie101-66",
+      "updated_at": "2026-08-22T21:15:22.275136Z"
+    },
+    "videomme:literature-art:011-1": {
+      "sample_uid": "videomme:literature-art:011-1",
+      "dataset_name": "videomme",
+      "subset_name": "Literature & Art",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 2,
+      "iter_num": 8,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_capacity2/videomme/literature-art-011-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_capacity2/videomme/literature-art-011-1",
+      "updated_at": "2026-08-22T21:22:58.686157Z"
+    },
+    "lvbench:entity-recognition:4:63": {
+      "sample_uid": "lvbench:entity-recognition:4:63",
+      "dataset_name": "lvbench",
+      "subset_name": "entity recognition",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 10,
+      "iter_num": 15,
+      "tool_success_rate": 0.8,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_capacity2/lvbench/entity-recognition-00004-63/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_capacity2/lvbench/entity-recognition-00004-63",
+      "updated_at": "2026-08-22T21:25:49.835767Z"
+    }
+  }
+}

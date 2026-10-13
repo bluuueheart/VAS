@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00178:57ae157f-e1ea-4dc1-ad67-8a34f6de0356",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The two critical actions that c performed were picking up the seedlings and dropping them in the container in his left hand. the importance of these actions is that they allowed c to prepare the soil and seedlings for planting, and to plant the seedlings in the flower pots.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00178-57ae157f-e1ea-4dc1-ad67-8a34f6de0356",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00178-57ae157f-e1ea-4dc1-ad67-8a34f6de0356/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00178-57ae157f-e1ea-4dc1-ad67-8a34f6de0356/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00178-57ae157f-e1ea-4dc1-ad67-8a34f6de0356/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/57ae157f-e1ea-4dc1-ad67-8a34f6de0356.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/57ae157f-e1ea-4dc1-ad67-8a34f6de0356.mp4",
+  "question_block": "Question: In the context of the video, identify two critical actions that c performed and explain their importance for the long-term video understanding.\nOptions:\n(A) The two critical actions that c performed were pouring soil into the flower pots and adjusting the placement of the plants in the flower pots. the importance of these actions is that they allowed c to prepare the soil and seedlings for planting.\n(B) The two critical actions that c performed were putting his right hand in a sand container on the table and removing his right hand from the sand container on the table. the importance of these actions is that they allowed c to pick up the particles from the sand container.\n(C) The two critical actions that c performed were carrying an empty container from the table and dropping the empty container on the table. the importance of these actions is that they allowed c to prepare the empty container for receiving the sand from the sand container.\n(D) The two critical actions that c performed were picking up the seedlings and dropping them in the container in his left hand. the importance of these actions is that they allowed c to prepare the soil and seedlings for planting, and to plant the seedlings in the flower pots.\n(E) The two critical actions that c performed were picking the trowel from the table and holding the sack on the table with his left hand. the importance of these actions is that they allowed c to prepare the trowel for planting the seedlings.",
+  "options": [
+    "The two critical actions that c performed were pouring soil into the flower pots and adjusting the placement of the plants in the flower pots. the importance of these actions is that they allowed c to prepare the soil and seedlings for planting.",
+    "The two critical actions that c performed were putting his right hand in a sand container on the table and removing his right hand from the sand container on the table. the importance of these actions is that they allowed c to pick up the particles from the sand container.",
+    "The two critical actions that c performed were carrying an empty container from the table and dropping the empty container on the table. the importance of these actions is that they allowed c to prepare the empty container for receiving the sand from the sand container.",
+    "The two critical actions that c performed were picking up the seedlings and dropping them in the container in his left hand. the importance of these actions is that they allowed c to prepare the soil and seedlings for planting, and to plant the seedlings in the flower pots.",
+    "The two critical actions that c performed were picking the trowel from the table and holding the sack on the table with his left hand. the importance of these actions is that they allowed c to prepare the trowel for planting the seedlings."
+  ],
+  "official_meta": {
+    "question_index": "00178",
+    "video_id": "57ae157f-e1ea-4dc1-ad67-8a34f6de0356",
+    "source_index": 178
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:51:45.918280Z"
+}

@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:order:2:order-214",
+  "dataset_name": "mlvu",
+  "subset_name": "order",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 21,
+  "iter_num": 11,
+  "tool_success_rate": 0.761905,
+  "successful_tool_calls": 16,
+  "planner_iterations": 11,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "abseiling --> making jewelry --> milking cow --> cleaning toilet",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 4314.967,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00002-order-214",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00002-order-214/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00002-order-214/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/order-00002-order-214/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_214.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_214.mp4",
+  "question_block": "Question: Please identify the option that corresponds to the order of events as they occur in the video.\nOptions:\n(A) abseiling --> making jewelry --> milking cow --> cleaning toilet\n(B) making jewelry --> abseiling --> cleaning toilet --> milking cow\n(C) milking cow --> cleaning toilet --> abseiling --> making jewelry\n(D) cleaning toilet --> milking cow --> abseiling --> making jewelry",
+  "options": [
+    "abseiling --> making jewelry --> milking cow --> cleaning toilet",
+    "making jewelry --> abseiling --> cleaning toilet --> milking cow",
+    "milking cow --> cleaning toilet --> abseiling --> making jewelry",
+    "cleaning toilet --> milking cow --> abseiling --> making jewelry"
+  ],
+  "official_meta": {
+    "task_type": "order",
+    "source_question_type": "order",
+    "prompt_task_type": "order",
+    "source_json": "5_order.json",
+    "source_index": 2,
+    "video_subdir": "5_order",
+    "video_relative_path": "5_order/order_214.mp4",
+    "resolved_video_stem": "order_214",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-01T20:26:12.593345Z"
+}

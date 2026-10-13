@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00013:05ad5736-88f5-42bb-ac9f-689e199c50de",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C loosens the color intensity on the paint brush in her right hand in the small cup on the floor, which allows her to create a more subtle and nuanced effect.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00013-05ad5736-88f5-42bb-ac9f-689e199c50de",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00013-05ad5736-88f5-42bb-ac9f-689e199c50de/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00013-05ad5736-88f5-42bb-ac9f-689e199c50de/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00013-05ad5736-88f5-42bb-ac9f-689e199c50de/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/05ad5736-88f5-42bb-ac9f-689e199c50de.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/05ad5736-88f5-42bb-ac9f-689e199c50de.mp4",
+  "question_block": "Question: Summarize the process c uses to prepare her brush for painting and how it contributes to the artwork's quality.\nOptions:\n(A) C cleans the paint brush in her right hand in the small cup on the floor, which helps to keep the brush clean and free of debris.\n(B) Skillfully, c mixes paint on the paint board using the brush in her right hand, which enables her to effortlessly create a wide variety of different colors and shades for her artwork.\n(C) Skillfully, c picks paint from the paint board using the brush in her right hand, which conveniently allows her to apply paint gracefully onto the canvas.\n(D) C loosens the color intensity on the paint brush in her right hand in the small cup on the floor, which allows her to create a more subtle and nuanced effect.\n(E) Carefully, c paints with the paint brush skillfully on the art work displayed on the canvas, which is the ultimate, final step in the entire painting process.",
+  "options": [
+    "C cleans the paint brush in her right hand in the small cup on the floor, which helps to keep the brush clean and free of debris.",
+    "Skillfully, c mixes paint on the paint board using the brush in her right hand, which enables her to effortlessly create a wide variety of different colors and shades for her artwork.",
+    "Skillfully, c picks paint from the paint board using the brush in her right hand, which conveniently allows her to apply paint gracefully onto the canvas.",
+    "C loosens the color intensity on the paint brush in her right hand in the small cup on the floor, which allows her to create a more subtle and nuanced effect.",
+    "Carefully, c paints with the paint brush skillfully on the art work displayed on the canvas, which is the ultimate, final step in the entire painting process."
+  ],
+  "official_meta": {
+    "question_index": "00013",
+    "video_id": "05ad5736-88f5-42bb-ac9f-689e199c50de",
+    "source_index": 13
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=255 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-22T18:51:59.566249Z"
+}

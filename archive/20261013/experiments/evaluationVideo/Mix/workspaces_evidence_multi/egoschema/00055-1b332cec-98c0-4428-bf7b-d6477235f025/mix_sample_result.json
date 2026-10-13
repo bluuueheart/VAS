@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00055:1b332cec-98c0-4428-bf7b-d6477235f025",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "A recurring action in the video is the characters' use of their phones. the characters are seen using their phones to communicate with each other, to look up information, and to pay for items. this suggests that the characters rely on their phones to help them to navigate the world around them.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00055-1b332cec-98c0-4428-bf7b-d6477235f025",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00055-1b332cec-98c0-4428-bf7b-d6477235f025/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00055-1b332cec-98c0-4428-bf7b-d6477235f025/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00055-1b332cec-98c0-4428-bf7b-d6477235f025/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/1b332cec-98c0-4428-bf7b-d6477235f025.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/1b332cec-98c0-4428-bf7b-d6477235f025.mp4",
+  "question_block": "Question: Identify a recurring action in the video and explain how it contributes to the understanding of the characters' goals and motivations in the scene.\nOptions:\n(A) A recurring action highlighted in the video is the characters' consistent use of their sturdy baskets. frequently, the animated characters are observed utilizing their baskets to transport various items. this strongly implies that these characters exhibit organized and efficient qualities.\n(B) In the video, a recurring action prominently involves the characters' use of their eyes. throughout the scene, the characters are frequently seen looking around the supermarket. this visual storytelling suggests that the characters are notably curious and observant.\n(C) A recurring action in the video is the characters' use of their mouths. the characters are seen talking to each other. this suggests that the characters are social and communicative.\n(D) A recurring action evident in the video is the characters' frequent use of their hands. the characters are consistently seen picking up and skillfully putting down items. this strongly suggests that the characters are quite active and significantly engaged.\n(E) A recurring action in the video is the characters' use of their phones. the characters are seen using their phones to communicate with each other, to look up information, and to pay for items. this suggests that the characters rely on their phones to help them to navigate the world around them.",
+  "options": [
+    "A recurring action highlighted in the video is the characters' consistent use of their sturdy baskets. frequently, the animated characters are observed utilizing their baskets to transport various items. this strongly implies that these characters exhibit organized and efficient qualities.",
+    "In the video, a recurring action prominently involves the characters' use of their eyes. throughout the scene, the characters are frequently seen looking around the supermarket. this visual storytelling suggests that the characters are notably curious and observant.",
+    "A recurring action in the video is the characters' use of their mouths. the characters are seen talking to each other. this suggests that the characters are social and communicative.",
+    "A recurring action evident in the video is the characters' frequent use of their hands. the characters are consistently seen picking up and skillfully putting down items. this strongly suggests that the characters are quite active and significantly engaged.",
+    "A recurring action in the video is the characters' use of their phones. the characters are seen using their phones to communicate with each other, to look up information, and to pay for items. this suggests that the characters rely on their phones to help them to navigate the world around them."
+  ],
+  "official_meta": {
+    "question_index": "00055",
+    "video_id": "1b332cec-98c0-4428-bf7b-d6477235f025",
+    "source_index": 55
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=255 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-22T18:54:13.089536Z"
+}

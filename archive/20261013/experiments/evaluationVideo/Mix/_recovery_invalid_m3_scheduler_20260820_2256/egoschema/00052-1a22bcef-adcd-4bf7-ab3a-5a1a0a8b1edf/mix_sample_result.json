@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00052:1a22bcef-adcd-4bf7-ab3a-5a1a0a8b1edf",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The overall cooking technique used in this video is stir-frying. stir-frying is a cooking method that involves cooking food quickly over high heat in a small amount of oil. the food is typically cut into small pieces so that it cooks quickly. stir-frying is a popular cooking method in many asian cuisines.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00052-1a22bcef-adcd-4bf7-ab3a-5a1a0a8b1edf",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00052-1a22bcef-adcd-4bf7-ab3a-5a1a0a8b1edf/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00052-1a22bcef-adcd-4bf7-ab3a-5a1a0a8b1edf/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00052-1a22bcef-adcd-4bf7-ab3a-5a1a0a8b1edf/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/1a22bcef-adcd-4bf7-ab3a-5a1a0a8b1edf.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/1a22bcef-adcd-4bf7-ab3a-5a1a0a8b1edf.mp4",
+  "question_block": "Question: Sythesize the information from the video and provide a brief, high-level description of the overall cooking technique used in this video. be concise and avoid listing individual actions.\nOptions:\n(A) In this video, the primary, overall cooking technique employed is boiling. boiling, as a cooking method, involves preparing food in water or another liquid that reaches boiling point. generally, the food is cooked until reaching a tender state. this prevalent cooking method is suitable for vegetables, pasta, and eggs.\n(B) The overall cooking technique used in this video is baking. baking is a cooking method that involves cooking food in an oven. the food is typically cooked until it is golden brown and cooked through. baking is a common cooking method for bread, cakes, and pies.\n(C) In this instructional video, the primary cooking technique demonstrated is roasting. roasting is a popular cooking method that requires heating food in an oven at high temperatures. generally, the food is cooked until it reaches a browned, fully cooked state. this technique is frequently utilized when preparing meat, poultry, and various vegetables.\n(D) In this video, the overall cooking technique demonstrated is grilling. grilling is a particular cooking method that involves preparing food over direct heat. generally, the food is cooked until it becomes browned and properly cooked through. grilling is quite a common cooking method, typically used for meat, poultry, and various vegetables.\n(E) The overall cooking technique used in this video is stir-frying. stir-frying is a cooking method that involves cooking food quickly over high heat in a small amount of oil. the food is typically cut into small pieces so that it cooks quickly. stir-frying is a popular cooking method in many asian cuisines.",
+  "options": [
+    "In this video, the primary, overall cooking technique employed is boiling. boiling, as a cooking method, involves preparing food in water or another liquid that reaches boiling point. generally, the food is cooked until reaching a tender state. this prevalent cooking method is suitable for vegetables, pasta, and eggs.",
+    "The overall cooking technique used in this video is baking. baking is a cooking method that involves cooking food in an oven. the food is typically cooked until it is golden brown and cooked through. baking is a common cooking method for bread, cakes, and pies.",
+    "In this instructional video, the primary cooking technique demonstrated is roasting. roasting is a popular cooking method that requires heating food in an oven at high temperatures. generally, the food is cooked until it reaches a browned, fully cooked state. this technique is frequently utilized when preparing meat, poultry, and various vegetables.",
+    "In this video, the overall cooking technique demonstrated is grilling. grilling is a particular cooking method that involves preparing food over direct heat. generally, the food is cooked until it becomes browned and properly cooked through. grilling is quite a common cooking method, typically used for meat, poultry, and various vegetables.",
+    "The overall cooking technique used in this video is stir-frying. stir-frying is a cooking method that involves cooking food quickly over high heat in a small amount of oil. the food is typically cut into small pieces so that it cooks quickly. stir-frying is a popular cooking method in many asian cuisines."
+  ],
+  "official_meta": {
+    "question_index": "00052",
+    "video_id": "1a22bcef-adcd-4bf7-ab3a-5a1a0a8b1edf",
+    "source_index": 52
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:44:35.840725Z"
+}

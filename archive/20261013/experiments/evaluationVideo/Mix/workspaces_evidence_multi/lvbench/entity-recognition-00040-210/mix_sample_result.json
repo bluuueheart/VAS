@@ -1,0 +1,43 @@
+{
+  "sample_uid": "lvbench:entity-recognition:40:210",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Blue",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00040-210",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00040-210/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00040-210/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00040-210/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/28CIeC8cZks.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/28CIeC8cZks.mp4",
+  "question_block": "Question: What color are the balls held by the two people in the video?\nOptions:\n(A) Black\n(B) Blue\n(C) Green\n(D) Red",
+  "options": [
+    "Black",
+    "Blue",
+    "Green",
+    "Red"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "cartoon",
+    "time_reference": "27:13-27:13",
+    "time_reference_used_for_inference": false,
+    "video_key": "28CIeC8cZks",
+    "source_index": 40
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=255 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-22T18:52:36.098487Z"
+}

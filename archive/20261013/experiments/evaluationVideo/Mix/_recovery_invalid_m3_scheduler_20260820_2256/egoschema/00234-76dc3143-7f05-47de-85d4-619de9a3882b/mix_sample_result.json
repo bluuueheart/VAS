@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00234:76dc3143-7f05-47de-85d4-619de9a3882b",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C was focused on creating a mold for a spoon.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00234-76dc3143-7f05-47de-85d4-619de9a3882b",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00234-76dc3143-7f05-47de-85d4-619de9a3882b/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00234-76dc3143-7f05-47de-85d4-619de9a3882b/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00234-76dc3143-7f05-47de-85d4-619de9a3882b/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/76dc3143-7f05-47de-85d4-619de9a3882b.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/76dc3143-7f05-47de-85d4-619de9a3882b.mp4",
+  "question_block": "Question: What was the primary task that c was focused on throughout the video, and how did different actions contribute to its completion?\nOptions:\n(A) C was focused on creating a mold for a spoon.\n(B) Diligently, c was entirely focused on cleaning the workshop area thoroughly.\n(C) Concentrating diligently, c was primarily focused on organizing and overseeing the successful workshop preparations.\n(D) Concentrated diligently, c was solely focused on carefully repairing the workshop's interior.\n(E) C was focused on taking inventory of the workshop.",
+  "options": [
+    "C was focused on creating a mold for a spoon.",
+    "Diligently, c was entirely focused on cleaning the workshop area thoroughly.",
+    "Concentrating diligently, c was primarily focused on organizing and overseeing the successful workshop preparations.",
+    "Concentrated diligently, c was solely focused on carefully repairing the workshop's interior.",
+    "C was focused on taking inventory of the workshop."
+  ],
+  "official_meta": {
+    "question_index": "00234",
+    "video_id": "76dc3143-7f05-47de-85d4-619de9a3882b",
+    "source_index": 234
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:55:47.608290Z"
+}

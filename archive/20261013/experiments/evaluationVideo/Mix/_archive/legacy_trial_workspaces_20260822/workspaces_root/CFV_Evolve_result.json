@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-07-21T10:28:34.422422Z",
+  "config_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/mix_config.json",
+  "results_output_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/CFV_Evolve_result.json",
+  "progress_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/cfv_evolve_progress.json",
+  "shared_preprocess_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache",
+  "ffmpeg_binary": "ffmpeg",
+  "parallel_samples": 2,
+  "visible_cuda_devices": [
+    "0",
+    "1",
+    "2",
+    "3"
+  ],
+  "selection_progress": {
+    "total_samples": 8,
+    "participated_samples": 0,
+    "remaining_samples": 8,
+    "participated_sample_uids": [],
+    "remaining_sample_uids": [
+      "mlvu:ego:0:ego-35",
+      "mlvu:needle:0:needle-32",
+      "mlvu:order:0:order-126",
+      "mlvu:plotqa:0:movie101-66",
+      "mlvu:plotqa:1:xiaoliyu-6",
+      "mlvu:plotqa:2:movie101-63",
+      "mlvu:anomaly-reco:0:surveil-20",
+      "mlvu:topic-reasoning:0:awa-6"
+    ],
+    "selected_samples": 2,
+    "selected_sample_uids": [
+      "mlvu:plotqa:0:movie101-66",
+      "mlvu:plotqa:1:xiaoliyu-6"
+    ],
+    "imported_skip_true_count": 0,
+    "max_samples": 2,
+    "parallel_samples": 2,
+    "skip_true": false,
+    "dataset_order": [
+      "mlvu"
+    ],
+    "per_dataset": {
+      "mlvu": {
+        "total": 8,
+        "participated": 0,
+        "remaining": 8
+      }
+    }
+  },
+  "summary_by_dataset": {
+    "mlvu": {
+      "count": 0,
+      "correct": 0,
+      "acc": 0.0,
+      "tool_use_num_mean": 0.0,
+      "iter_num_mean": 0.0,
+      "tool_success_rate_mean": 0.0,
+      "statuses": {}
+    }
+  },
+  "subset_summaries_by_dataset": {
+    "mlvu": {}
+  },
+  "results": []
+}

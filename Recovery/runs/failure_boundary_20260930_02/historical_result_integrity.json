@@ -1,0 +1,62 @@
+[
+  {
+    "uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+    "metrics_unchanged": true,
+    "run_unchanged": true
+  },
+  {
+    "uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+    "metrics_unchanged": true,
+    "run_unchanged": true
+  },
+  {
+    "uid": "lvbench:entity-recognition:4:63",
+    "metrics_unchanged": true,
+    "run_unchanged": true
+  },
+  {
+    "uid": "lvbench:key-information-retrieval:0:55",
+    "metrics_unchanged": true,
+    "run_unchanged": true
+  },
+  {
+    "uid": "mlvu:anomaly-reco:0:surveil-20",
+    "metrics_unchanged": true,
+    "run_unchanged": true
+  },
+  {
+    "uid": "mlvu:count:0:count-126",
+    "metrics_unchanged": true,
+    "run_unchanged": true
+  },
+  {
+    "uid": "mlvu:needle:0:needle-32",
+    "metrics_unchanged": true,
+    "run_unchanged": true
+  },
+  {
+    "uid": "mlvu:order:0:order-126",
+    "metrics_unchanged": true,
+    "run_unchanged": true
+  },
+  {
+    "uid": "mlvu:topic-reasoning:0:awa-6",
+    "metrics_unchanged": true,
+    "run_unchanged": true
+  },
+  {
+    "uid": "videomme:astronomy:041-1",
+    "metrics_unchanged": true,
+    "run_unchanged": true
+  },
+  {
+    "uid": "videomme:biology-medicine:021-1",
+    "metrics_unchanged": true,
+    "run_unchanged": true
+  },
+  {
+    "uid": "videomme:humanity-history:001-1",
+    "metrics_unchanged": true,
+    "run_unchanged": true
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00046:1417b854-3022-401a-b01c-6f87e12f847b",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 17,
+  "iter_num": 18,
+  "tool_success_rate": 0.705882,
+  "successful_tool_calls": 12,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "The individual's movements were intended to stretch and exercise the body.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (contradictory_evidence; repeated direct evidence failure)",
+  "elapsed_seconds": 6928.627,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00046-1417b854-3022-401a-b01c-6f87e12f847b",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00046-1417b854-3022-401a-b01c-6f87e12f847b/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00046-1417b854-3022-401a-b01c-6f87e12f847b/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00046-1417b854-3022-401a-b01c-6f87e12f847b/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/1417b854-3022-401a-b01c-6f87e12f847b.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/1417b854-3022-401a-b01c-6f87e12f847b.mp4",
+  "question_block": "Question: Based on the actions performed in the video, what could be the possible overarching theme or purpose of the person's movements?\nOptions:\n(A) The particular individual's bodily movements were deliberately intended to skillfully perform a beautifully choreographed dance routine.\n(B) The individual's movements were intended to stretch and exercise the body.\n(C) The particular individual's precise movements were deliberately intended to execute a martial arts routine skillfully.\n(D) The individual's movements were intended to perform a yoga routine.\n(E) The individual's fluid, slow movements were deliberately intended to effectively perform a traditional tai chi routine seamlessly.",
+  "options": [
+    "The particular individual's bodily movements were deliberately intended to skillfully perform a beautifully choreographed dance routine.",
+    "The individual's movements were intended to stretch and exercise the body.",
+    "The particular individual's precise movements were deliberately intended to execute a martial arts routine skillfully.",
+    "The individual's movements were intended to perform a yoga routine.",
+    "The individual's fluid, slow movements were deliberately intended to effectively perform a traditional tai chi routine seamlessly."
+  ],
+  "official_meta": {
+    "question_index": "00046",
+    "video_id": "1417b854-3022-401a-b01c-6f87e12f847b",
+    "resolved_video_stem": "1417b854-3022-401a-b01c-6f87e12f847b",
+    "video_mapping_verified": true,
+    "source_index": 46,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-05T01:59:03.789709Z"
+}

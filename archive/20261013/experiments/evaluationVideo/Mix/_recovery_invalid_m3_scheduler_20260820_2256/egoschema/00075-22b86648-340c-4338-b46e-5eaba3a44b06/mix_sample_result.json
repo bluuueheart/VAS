@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00075:22b86648-340c-4338-b46e-5eaba3a44b06",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is cutting and assembling metal pieces to build a structure.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00075-22b86648-340c-4338-b46e-5eaba3a44b06",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00075-22b86648-340c-4338-b46e-5eaba3a44b06/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00075-22b86648-340c-4338-b46e-5eaba3a44b06/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00075-22b86648-340c-4338-b46e-5eaba3a44b06/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/22b86648-340c-4338-b46e-5eaba3a44b06.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/22b86648-340c-4338-b46e-5eaba3a44b06.mp4",
+  "question_block": "Question: Describe the primary aim of the actions that c is performing in the video, and address how his techniques for completing the task evolve throughout the video.\nOptions:\n(A) C is repairing a metal object.\n(B) In the workshop, c is skillfully creating a beautiful work of art using metal materials.\n(C) Currently, c is carefully dismantling a large metal structure with precision.\n(D) C is cutting and assembling metal pieces to build a structure.\n(E) C is carefully cleaning a shiny metal object with precision.",
+  "options": [
+    "C is repairing a metal object.",
+    "In the workshop, c is skillfully creating a beautiful work of art using metal materials.",
+    "Currently, c is carefully dismantling a large metal structure with precision.",
+    "C is cutting and assembling metal pieces to build a structure.",
+    "C is carefully cleaning a shiny metal object with precision."
+  ],
+  "official_meta": {
+    "question_index": "00075",
+    "video_id": "22b86648-340c-4338-b46e-5eaba3a44b06",
+    "source_index": 75
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:45:24.923548Z"
+}

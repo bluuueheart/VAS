@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:food:231-1",
+  "dataset_name": "videomme",
+  "subset_name": "Food",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 4,
+  "iter_num": 5,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 4,
+  "planner_iterations": 5,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "A",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) Egg.",
+  "elapsed_seconds": 836.344,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/food-231-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/food-231-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/food-231-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/food-231-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/KfTtpoIovuk.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/KfTtpoIovuk.mp4",
+  "question_block": "Question: What does the chef in the video end up cutting with a knife?\nOptions:\n(A) Egg.\n(B) Beef.\n(C) Cake.\n(D) Cheese.",
+  "options": [
+    "A. Egg.",
+    "B. Beef.",
+    "C. Cake.",
+    "D. Cheese."
+  ],
+  "official_meta": {
+    "video_id": "231",
+    "video_external_id": "KfTtpoIovuk",
+    "resolved_video_stem": "KfTtpoIovuk",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Life Record",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Food",
+    "task_type": "Object Recognition",
+    "question_id": "231-1",
+    "question_index": 0,
+    "video_item_index": 230,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-31T21:17:56.731839Z"
+}

@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:key-information-retrieval:385:2783",
+  "dataset_name": "lvbench",
+  "subset_name": "key information retrieval",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Incheon",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00385-2783",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00385-2783/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00385-2783/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00385-2783/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/RbpKkvlHYTw.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/RbpKkvlHYTw.mp4",
+  "question_block": "Question: Which city does the vlogger first go to?\nOptions:\n(A) Incheon\n(B) Busan\n(C) Yesan\n(D) Seoul",
+  "options": [
+    "Incheon",
+    "Busan",
+    "Yesan",
+    "Seoul"
+  ],
+  "official_meta": {
+    "question_type": "key information retrieval",
+    "video_type": "selfmedia",
+    "time_reference": "00:00-01:54",
+    "video_key": "RbpKkvlHYTw",
+    "source_index": 385
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:55:41.434692Z"
+}

@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:summarization:223:1680",
+  "dataset_name": "lvbench",
+  "subset_name": "summarization",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "There is a short clip. Then two presenters come onstage and present the award for Best Animated Feature Film. The winning film is The Boy and the Heron",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00223-1680",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00223-1680/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00223-1680/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/summarization-00223-1680/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/t-RtDI2RWQs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/t-RtDI2RWQs.mp4",
+  "question_block": "Question: What happens after the presentation of the award for Best Supporting Actress?\nOptions:\n(A) There is a short clip. Then two presenters come onstage and present the award for Best Animated Feature Film. The winning film is The Boy and the Heron. The award winner comes onstage to give a speech\n(B) There is a short clip. Then two presenters come onstage and present the award for Best Animated Feature Film. The winning film is The Boy and the Heron\n(C) Two presenters come onstage and present the award for Best Animated Feature Film. The winning film is The Boy and the Heron\n(D) Two presenters come onstage and present the award for Best Animated Feature Film. The winning film is The Boy and the Heron. The award winner comes onstage to give a speech",
+  "options": [
+    "There is a short clip. Then two presenters come onstage and present the award for Best Animated Feature Film. The winning film is The Boy and the Heron. The award winner comes onstage to give a speech",
+    "There is a short clip. Then two presenters come onstage and present the award for Best Animated Feature Film. The winning film is The Boy and the Heron",
+    "Two presenters come onstage and present the award for Best Animated Feature Film. The winning film is The Boy and the Heron",
+    "Two presenters come onstage and present the award for Best Animated Feature Film. The winning film is The Boy and the Heron. The award winner comes onstage to give a speech"
+  ],
+  "official_meta": {
+    "question_type": "summarization",
+    "video_type": "live",
+    "time_reference": "23:30-25:03",
+    "video_key": "t-RtDI2RWQs",
+    "source_index": 223
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:49.640199Z"
+}

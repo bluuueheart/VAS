@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:event-understanding:15:82",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 16,
+  "iter_num": 19,
+  "tool_success_rate": 0.875,
+  "successful_tool_calls": 14,
+  "planner_iterations": 19,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "One of the chopsticks on the bowl falls to the table",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 7273.675,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00015-82",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00015-82/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00015-82/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00015-82/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: When the protagonist moves the table at the restaurant, what happens to the things on the table?\nOptions:\n(A) One of the chopsticks on the bowl falls to the table\n(B) One of the chopsticks on the bowl falls to the floor\n(C) The seasoning bottle falls\n(D) The bowl falls to the floor",
+  "options": [
+    "One of the chopsticks on the bowl falls to the table",
+    "One of the chopsticks on the bowl falls to the floor",
+    "The seasoning bottle falls",
+    "The bowl falls to the floor"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "04:35-04:42",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "Cm73ma6Ibcs",
+    "resolved_video_stem": "Cm73ma6Ibcs",
+    "video_mapping_verified": true,
+    "source_index": 15
+  },
+  "updated_at": "2026-08-31T08:04:28.718293Z"
+}

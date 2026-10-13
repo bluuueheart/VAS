@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00049:16eb6914-00e7-4692-a7d7-d6ba36f61a5d",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 11,
+  "iter_num": 20,
+  "tool_success_rate": 0.727273,
+  "successful_tool_calls": 8,
+  "planner_iterations": 20,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "The primary action performed with the frying pan at the beginning is to wash it. the main purpose of using a frying pan in the context of this video is to cook the food. washing the frying pan ensures that the food will not be contaminated with bacteria.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_repeated_blocked_action_loop.",
+  "elapsed_seconds": 5024.405,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00049-16eb6914-00e7-4692-a7d7-d6ba36f61a5d",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00049-16eb6914-00e7-4692-a7d7-d6ba36f61a5d/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00049-16eb6914-00e7-4692-a7d7-d6ba36f61a5d/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00049-16eb6914-00e7-4692-a7d7-d6ba36f61a5d/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/16eb6914-00e7-4692-a7d7-d6ba36f61a5d.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/16eb6914-00e7-4692-a7d7-d6ba36f61a5d.mp4",
+  "question_block": "Question: What is the primary action performed with the frying pan at the beginning and the main purpose of using a frying pan in the context of this video? please highlight the significance of this action in the overall cooking process.\nOptions:\n(A) The primary action performed with the frying pan at the beginning is to open it. the main purpose of using a frying pan in the context of this video is to store the food. opening the frying pan allows the food to breathe and prevents it from becoming stale.\n(B) The primary action performed with the frying pan at the beginning is to close it. the main purpose of using a frying pan in the context of this video is to cook the food. closing the frying pan helps to keep the heat in and prevents the food from splattering.\n(C) The primary action performed with the frying pan at the beginning is to put it on the stove. the main purpose of using a frying pan in the context of this video is to cook the food. putting the frying pan on the stove allows the food to heat up evenly.\n(D) The primary action performed with the frying pan at the beginning is to wash it. the main purpose of using a frying pan in the context of this video is to cook the food. washing the frying pan ensures that the food will not be contaminated with bacteria.\n(E) The primary action performed with the frying pan at the beginning is to take it off the stove. the main purpose of using a frying pan in the context of this video is to cook the food. taking the frying pan off the stove allows the food to cool down before it is served.",
+  "options": [
+    "The primary action performed with the frying pan at the beginning is to open it. the main purpose of using a frying pan in the context of this video is to store the food. opening the frying pan allows the food to breathe and prevents it from becoming stale.",
+    "The primary action performed with the frying pan at the beginning is to close it. the main purpose of using a frying pan in the context of this video is to cook the food. closing the frying pan helps to keep the heat in and prevents the food from splattering.",
+    "The primary action performed with the frying pan at the beginning is to put it on the stove. the main purpose of using a frying pan in the context of this video is to cook the food. putting the frying pan on the stove allows the food to heat up evenly.",
+    "The primary action performed with the frying pan at the beginning is to wash it. the main purpose of using a frying pan in the context of this video is to cook the food. washing the frying pan ensures that the food will not be contaminated with bacteria.",
+    "The primary action performed with the frying pan at the beginning is to take it off the stove. the main purpose of using a frying pan in the context of this video is to cook the food. taking the frying pan off the stove allows the food to cool down before it is served."
+  ],
+  "official_meta": {
+    "question_index": "00049",
+    "video_id": "16eb6914-00e7-4692-a7d7-d6ba36f61a5d",
+    "resolved_video_stem": "16eb6914-00e7-4692-a7d7-d6ba36f61a5d",
+    "video_mapping_verified": true,
+    "source_index": 49,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-05T15:01:28.952613Z"
+}

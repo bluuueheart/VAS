@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00045:13da1294-2b42-4ef6-8dd6-ff651ef4571f",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C picks up a ceramic art from the metal stool, rotates the table, looks at the ceramic art, dips the paint brush in the paint container, paints the ceramic art with a paint brush, rotates the ceramic art, dips the paint brush in the paint container, paints the ceramic art with a paint brush, and repeats these steps until the ceramic art is painted.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00045-13da1294-2b42-4ef6-8dd6-ff651ef4571f",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00045-13da1294-2b42-4ef6-8dd6-ff651ef4571f/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00045-13da1294-2b42-4ef6-8dd6-ff651ef4571f/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00045-13da1294-2b42-4ef6-8dd6-ff651ef4571f/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/13da1294-2b42-4ef6-8dd6-ff651ef4571f.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/13da1294-2b42-4ef6-8dd6-ff651ef4571f.mp4",
+  "question_block": "Question: Summarize the core process and sequence of actions taken by c to paint the ceramic artwork.\nOptions:\n(A) C picks up a ceramic art from the metal stool, rotates the table, looks at the ceramic art, dips the paint brush in the paint container, paints the ceramic art with a paint brush, rotates the ceramic art, dips the paint brush in the paint container, paints the ceramic art with a paint brush, and repeats these steps until the ceramic art is painted.\n(B) Carefully, c picks up a ceramic art piece from the metal stool, skillfully rotates the table, closely looks at the ceramic art, dips the paint brush in the paint container, meticulously paints the ceramic art with a paint brush, and then gently puts the ceramic art back on the metal stool.\n(C) C picks up a ceramic art from the metal stool, rotates the table, looks at the ceramic art, dips the paint brush in the paint container, paints the ceramic art with a paint brush, and then throws the ceramic art on the ground.\n(D) C carefully picks up a delicate ceramic art piece from the metal stool, smoothly rotates the table, closely examines the ceramic art, expertly dips the paint brush in the paint container, skillfully paints the ceramic art with a paint brush, and then humorously eats the ceramic art.\n(E) C carefully picks up a ceramic art piece from the metal stool, skillfully rotates the table, closely examines the ceramic art, dips the paint brush in the paint container with precision, attentively paints the ceramic art using a paint brush, and then happily sings a song.",
+  "options": [
+    "C picks up a ceramic art from the metal stool, rotates the table, looks at the ceramic art, dips the paint brush in the paint container, paints the ceramic art with a paint brush, rotates the ceramic art, dips the paint brush in the paint container, paints the ceramic art with a paint brush, and repeats these steps until the ceramic art is painted.",
+    "Carefully, c picks up a ceramic art piece from the metal stool, skillfully rotates the table, closely looks at the ceramic art, dips the paint brush in the paint container, meticulously paints the ceramic art with a paint brush, and then gently puts the ceramic art back on the metal stool.",
+    "C picks up a ceramic art from the metal stool, rotates the table, looks at the ceramic art, dips the paint brush in the paint container, paints the ceramic art with a paint brush, and then throws the ceramic art on the ground.",
+    "C carefully picks up a delicate ceramic art piece from the metal stool, smoothly rotates the table, closely examines the ceramic art, expertly dips the paint brush in the paint container, skillfully paints the ceramic art with a paint brush, and then humorously eats the ceramic art.",
+    "C carefully picks up a ceramic art piece from the metal stool, skillfully rotates the table, closely examines the ceramic art, dips the paint brush in the paint container with precision, attentively paints the ceramic art using a paint brush, and then happily sings a song."
+  ],
+  "official_meta": {
+    "question_index": "00045",
+    "video_id": "13da1294-2b42-4ef6-8dd6-ff651ef4571f",
+    "source_index": 45
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:21:10.330906Z"
+}

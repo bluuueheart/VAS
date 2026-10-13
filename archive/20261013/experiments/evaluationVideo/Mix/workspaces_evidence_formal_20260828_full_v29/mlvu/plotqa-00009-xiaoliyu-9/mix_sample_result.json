@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:plotqa:9:xiaoliyu-9",
+  "dataset_name": "mlvu",
+  "subset_name": "plotQA",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 13,
+  "iter_num": 20,
+  "tool_success_rate": 0.846154,
+  "successful_tool_calls": 11,
+  "planner_iterations": 20,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "Surprised",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 6475.023,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00009-xiaoliyu-9",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00009-xiaoliyu-9/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00009-xiaoliyu-9/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00009-xiaoliyu-9/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/xiaoliyu_9.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/xiaoliyu_9.mp4",
+  "question_block": "Question: What expression did the school of fish in the cage show when they saw the cartoon snake?\nOptions:\n(A) Surprised\n(B) Happy\n(C) Sad\n(D) Angry",
+  "options": [
+    "Surprised",
+    "Happy",
+    "Sad",
+    "Angry"
+  ],
+  "official_meta": {
+    "task_type": "plotQA",
+    "source_question_type": "plotQA",
+    "prompt_task_type": "plotQA",
+    "source_json": "1_plotQA.json",
+    "source_index": 9,
+    "video_subdir": "1_plotQA",
+    "video_relative_path": "1_plotQA/xiaoliyu_9.mp4",
+    "resolved_video_stem": "xiaoliyu_9",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-02T15:22:57.639769Z"
+}

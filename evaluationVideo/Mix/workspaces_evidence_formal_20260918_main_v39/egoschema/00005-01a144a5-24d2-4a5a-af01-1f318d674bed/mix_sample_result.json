@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00005:01a144a5-24d2-4a5a-af01-1f318d674bed",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 10,
+  "iter_num": 15,
+  "tool_success_rate": 0.7,
+  "successful_tool_calls": 7,
+  "planner_iterations": 15,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "C is playing a game of dominoes with a man. the man's actions contribute to the purpose of the video by providing c with an opponent to play against.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [
+    "E"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 2589.355,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00005-01a144a5-24d2-4a5a-af01-1f318d674bed",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00005-01a144a5-24d2-4a5a-af01-1f318d674bed/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00005-01a144a5-24d2-4a5a-af01-1f318d674bed/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/egoschema/00005-01a144a5-24d2-4a5a-af01-1f318d674bed/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/01a144a5-24d2-4a5a-af01-1f318d674bed.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/01a144a5-24d2-4a5a-af01-1f318d674bed.mp4",
+  "question_block": "Question: What is the overall purpose of c's actions in this video? how do the actions of the man contribute to this purpose?\nOptions:\n(A) C is trying to build a tower out of tiles. the man's actions contribute to the purpose of the video by providing c with a steady surface to build on.\n(B) C is trying to solve a puzzle. the man's actions contribute to the purpose of the video by providing c with clues to help solve the puzzle.\n(C) C is trying to create a work of art. the man's actions contribute to the purpose of the video by providing c with inspiration and feedback.\n(D) C is trying to teach the man how to play dominoes. the man's actions contribute to the purpose of the video by providing c with a willing student.\n(E) C is playing a game of dominoes with a man. the man's actions contribute to the purpose of the video by providing c with an opponent to play against.",
+  "options": [
+    "C is trying to build a tower out of tiles. the man's actions contribute to the purpose of the video by providing c with a steady surface to build on.",
+    "C is trying to solve a puzzle. the man's actions contribute to the purpose of the video by providing c with clues to help solve the puzzle.",
+    "C is trying to create a work of art. the man's actions contribute to the purpose of the video by providing c with inspiration and feedback.",
+    "C is trying to teach the man how to play dominoes. the man's actions contribute to the purpose of the video by providing c with a willing student.",
+    "C is playing a game of dominoes with a man. the man's actions contribute to the purpose of the video by providing c with an opponent to play against."
+  ],
+  "official_meta": {
+    "question_index": "00005",
+    "video_id": "01a144a5-24d2-4a5a-af01-1f318d674bed",
+    "resolved_video_stem": "01a144a5-24d2-4a5a-af01-1f318d674bed",
+    "video_mapping_verified": true,
+    "source_index": 5,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-19T13:44:09.663040Z"
+}

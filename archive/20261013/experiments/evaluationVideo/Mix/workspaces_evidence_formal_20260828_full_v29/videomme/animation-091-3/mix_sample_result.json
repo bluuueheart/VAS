@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:animation:091-3",
+  "dataset_name": "videomme",
+  "subset_name": "Animation",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 3,
+  "iter_num": 3,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 3,
+  "planner_iterations": 3,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) 4",
+  "elapsed_seconds": 527.186,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/animation-091-3",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/animation-091-3/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/animation-091-3/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/animation-091-3/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/_aVHf_jmWk8.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/_aVHf_jmWk8.mp4",
+  "question_block": "Question: What is the number of three-dimensional graphics that can be seen in this video?\nOptions:\n(A) 1.\n(B) 2.\n(C) 3.\n(D) 4.",
+  "options": [
+    "A. 1.",
+    "B. 2.",
+    "C. 3.",
+    "D. 4."
+  ],
+  "official_meta": {
+    "video_id": "091",
+    "video_external_id": "_aVHf_jmWk8",
+    "resolved_video_stem": "_aVHf_jmWk8",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Film & Television",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Animation",
+    "task_type": "Counting Problem",
+    "question_id": "091-3",
+    "question_index": 2,
+    "video_item_index": 90,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-08T17:52:24.482068Z"
+}

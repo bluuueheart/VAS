@@ -1,0 +1,14 @@
+{
+  "boundaries": 57,
+  "changed": [
+    {
+      "uid": "mlvu:plotqa:0:movie101-66",
+      "iteration": 2,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": true,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: answer_redundancy",
+      "after_feedback": "Evidence verifier accepted termination."
+    }
+  ]
+}

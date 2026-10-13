@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:event-understanding:209:1575",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The video is shot at a parking lot exit gate",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00209-1575",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00209-1575/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00209-1575/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00209-1575/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/IsdbCjlZ5cQ.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/IsdbCjlZ5cQ.mp4",
+  "question_block": "Question: What is the place that the footage shows a red car passes when the light is green, and a person wearing a white shirt with a red circle on her left sleeve, a black pant, standing in front of the light?\nOptions:\n(A) The location seems to be a shopping mall entrance\n(B) The video is likely taken in a public transportation station\n(C) The setting appears to be an airport terminal\n(D) The video is shot at a parking lot exit gate",
+  "options": [
+    "The location seems to be a shopping mall entrance",
+    "The video is likely taken in a public transportation station",
+    "The setting appears to be an airport terminal",
+    "The video is shot at a parking lot exit gate"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "documentary",
+    "time_reference": "83:44-83:51",
+    "video_key": "IsdbCjlZ5cQ",
+    "source_index": 209
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:21.252161Z"
+}

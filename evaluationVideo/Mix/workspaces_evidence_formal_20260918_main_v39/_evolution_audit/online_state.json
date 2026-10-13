@@ -1,0 +1,122 @@
+{
+  "kind": "online_evolution_state",
+  "layout_version": 1,
+  "updated_at": "2026-09-20T00:00:28.654723Z",
+  "enabled": true,
+  "status": "running",
+  "active_snapshot_id": "snapshot_000",
+  "active_snapshot_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/_evolution_audit/active_snapshot.json",
+  "record_count": 32,
+  "last_trigger_count": 30,
+  "pending_cycle": false,
+  "pending_candidate": {},
+  "monitor": {},
+  "last_monitor_count": 0,
+  "inflight": {
+    "pid": 177540,
+    "identity": "6080033990",
+    "root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/_evolution_audit/evolution_online_cycle_00013",
+    "started_at": 1789862428.4904323,
+    "record_count": 32,
+    "monitor": false
+  },
+  "cycle_count": 12,
+  "cycles": [
+    {
+      "cycle_index": 1,
+      "status": "local_repair_not_proven",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "snapshot_573aa1e9ec2ae299",
+      "completed_at": "2026-09-18T15:50:19.675301Z"
+    },
+    {
+      "cycle_index": 2,
+      "status": "local_repair_not_proven",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "snapshot_5aec7212a4f2aea6",
+      "completed_at": "2026-09-18T20:05:54.677594Z"
+    },
+    {
+      "cycle_index": 3,
+      "status": "local_repair_not_proven",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "snapshot_5aec7212a4f2aea6",
+      "completed_at": "2026-09-18T23:15:32.284133Z"
+    },
+    {
+      "cycle_index": 4,
+      "status": "local_repair_not_proven",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "snapshot_5aec7212a4f2aea6",
+      "completed_at": "2026-09-19T01:37:37.950626Z"
+    },
+    {
+      "cycle_index": 5,
+      "status": "local_repair_not_proven",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "snapshot_5aec7212a4f2aea6",
+      "completed_at": "2026-09-19T04:18:35.923578Z"
+    },
+    {
+      "cycle_index": 6,
+      "status": "local_repair_not_proven",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "snapshot_5aec7212a4f2aea6",
+      "completed_at": "2026-09-19T07:47:56.239723Z"
+    },
+    {
+      "cycle_index": 7,
+      "status": "local_repair_not_proven",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "snapshot_464d138ff4e04dce",
+      "completed_at": "2026-09-19T10:38:38.602099Z"
+    },
+    {
+      "cycle_index": 8,
+      "status": "local_repair_not_proven",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "snapshot_464d138ff4e04dce",
+      "completed_at": "2026-09-19T12:57:58.808014Z"
+    },
+    {
+      "cycle_index": 9,
+      "status": "local_repair_not_proven",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "snapshot_464d138ff4e04dce",
+      "completed_at": "2026-09-19T15:37:29.245148Z"
+    },
+    {
+      "cycle_index": 10,
+      "status": "local_repair_not_proven",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "snapshot_464d138ff4e04dce",
+      "completed_at": "2026-09-19T18:05:45.741601Z"
+    },
+    {
+      "cycle_index": 11,
+      "status": "local_repair_not_proven",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "snapshot_464d138ff4e04dce",
+      "completed_at": "2026-09-19T20:52:03.979558Z"
+    },
+    {
+      "cycle_index": 12,
+      "status": "local_repair_not_proven",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "snapshot_bec76b75d7611213",
+      "completed_at": "2026-09-19T23:22:34.587958Z"
+    }
+  ]
+}

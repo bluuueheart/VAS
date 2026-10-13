@@ -1,0 +1,400 @@
+{
+  "note": "Current shared assets hashed on 2026-09-30; these hashes do not prove immutable asset contents at historical inference time.",
+  "assets": [
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_168496adcf28/pack_000.jpg",
+      "exists": true,
+      "sha256": "30b70ca6a44f483b77c82effd2f9f3cd97f9265cd769f5f600ced3a69f964188"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_168496adcf28/pack_001.jpg",
+      "exists": true,
+      "sha256": "4c73968ca2d26334a4154a61026820bf964c021eeabd252cce9eacd94bda8895"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_168496adcf28/pack_002.jpg",
+      "exists": true,
+      "sha256": "01d2843d14ee4dd6271fc0a1951a34c33618710dcede395fcab33fac3016af00"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_168496adcf28/pack_003.jpg",
+      "exists": true,
+      "sha256": "af1f5c9e776216b063bbb37181dccd618c3c59648839b4640ede599783ecf260"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_168496adcf28/pack_004.jpg",
+      "exists": true,
+      "sha256": "09166a8c720cbcb100f30cdcc3df2ba8be8aaa3dae5bb235037021b899fad405"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_168496adcf28/pack_005.jpg",
+      "exists": true,
+      "sha256": "1ece41429e961a68a63ee9cbc4c9f9983f7af382b51019fb77e6473dfeb0d0a5"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_71a2bdfb2377/pack_000.jpg",
+      "exists": true,
+      "sha256": "ed15391899a712c3cdc171939d341887faafa5c787062b6e8856a3e44f88e88c"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_71a2bdfb2377/pack_001.jpg",
+      "exists": true,
+      "sha256": "a46c2eba38f21d58992c4b7e85ce67a32e2ff32fbbe8c00674b252e8df224912"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_71a2bdfb2377/pack_002.jpg",
+      "exists": true,
+      "sha256": "f415ffdd7200e640704e95bf3c6425523437af1b3c216b3b3903952a518fb3e0"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_71a2bdfb2377/pack_003.jpg",
+      "exists": true,
+      "sha256": "6679cb5a98d4cfb212f3b3c81e8bc5383b42c605d7b0f949f204636dea6c30b7"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_71a2bdfb2377/pack_004.jpg",
+      "exists": true,
+      "sha256": "4d7907882787d514719928e6274c3a83cb8b7e44658fb0f27eb8e9c92920af3b"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_71a2bdfb2377/pack_005.jpg",
+      "exists": true,
+      "sha256": "136195833782067a97dcbcd0a0472848f966c39b710768e825e6955117ad446a"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_e1f407afda19/pack_000.jpg",
+      "exists": true,
+      "sha256": "6c3b7cc4f7bb6a7923bacd512356e47d755c9af9e71ef98420d3211de2ec0faa"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_e1f407afda19/pack_001.jpg",
+      "exists": true,
+      "sha256": "7d312f05469c1cb6fe383104de5e502b817945370bba344d28d75a33c0467fd6"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_e1f407afda19/pack_002.jpg",
+      "exists": true,
+      "sha256": "c247474b5551f87c0dcd2dd5a0eaf2d9a1caf8a2598911f9870d729d23faf67c"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_e1f407afda19/pack_003.jpg",
+      "exists": true,
+      "sha256": "ac852c302117f16bfe9401ef843546b8338c6bf834959acf33060a5abcd1cfce"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_e1f407afda19/pack_004.jpg",
+      "exists": true,
+      "sha256": "e59f899f79f0da1ea05bb51190f95b9ef754832423e507b36a824d2b9ca40f65"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_e1f407afda19/pack_005.jpg",
+      "exists": true,
+      "sha256": "04f6adb4fb49279e376d4734af233a3cb5ec35ed9b6a8f1aecb7ce947fc48d45"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_043150d06fea/pack_000.jpg",
+      "exists": true,
+      "sha256": "806419218abd37d1e00dc8b15d4bd0af7f813ea6becad5fbf51763e3332d1493"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_043150d06fea/pack_001.jpg",
+      "exists": true,
+      "sha256": "abdbbaedb8033044d1e630804d2ae7814fdbbc1d71162926b527dfef3b876953"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_043150d06fea/pack_002.jpg",
+      "exists": true,
+      "sha256": "40e6ff6ef752ba6e42359701b9c6c812153ac6e22e7d1c48df24ed390d352205"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_043150d06fea/pack_003.jpg",
+      "exists": true,
+      "sha256": "4937d15cc11a50ad8549ab3b60f398e79b3603ba70342955b4d35f6c5de8b411"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_043150d06fea/pack_004.jpg",
+      "exists": true,
+      "sha256": "92e3c032b40b2215c942e3c882d8feac27288d52d355437d082c156c1a035c07"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_043150d06fea/pack_005.jpg",
+      "exists": true,
+      "sha256": "e1623656b5600070a0acd2c31a0da4f9fe0dfbb520e6baf1ac7c617a01a74e9d"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_062029fe21a3/pack_000.jpg",
+      "exists": true,
+      "sha256": "9f28339c9c6db491ac8410103cc732444ffefe24f0bd5d99131a17dd600c4dd2"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_062029fe21a3/pack_001.jpg",
+      "exists": true,
+      "sha256": "456ee417966412ae130b4d2c891266b37cc6f165e118900e132941450e6fea22"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_062029fe21a3/pack_002.jpg",
+      "exists": true,
+      "sha256": "5e18b5c36760b9602715b1148c6ff0ae6344ff1ccabe9adb338fa02e4430f457"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_062029fe21a3/pack_003.jpg",
+      "exists": true,
+      "sha256": "fa6ba5c44e9437f5334c5c43dbf00412a2a4bff5b8aa55340159c6014fdcafa0"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_062029fe21a3/pack_004.jpg",
+      "exists": true,
+      "sha256": "3cac426b73a93bdaf2b7b89365b7abf1f2da56bba1fb6c0f0be2d745322a56d1"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_062029fe21a3/pack_005.jpg",
+      "exists": true,
+      "sha256": "3acfee31885767fd3721ebc3db333327e6b4860384cfea5e127bea483ffc508a"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_07d54eb34f38/pack_000.jpg",
+      "exists": true,
+      "sha256": "cf0f2053357797d6b7743aa6114abbdd5e163a83168d78d956691d9f4d41e0e2"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_07d54eb34f38/pack_001.jpg",
+      "exists": true,
+      "sha256": "8b9fb44156eb8078148b7d76827e260220a4248106198deff69c79fdfa7edead"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_07d54eb34f38/pack_002.jpg",
+      "exists": true,
+      "sha256": "0b458afcad9761ce07f11ad58aa0bdfe2d6247192651b5edec564a3f093279e1"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_07d54eb34f38/pack_003.jpg",
+      "exists": true,
+      "sha256": "286424cc16170fd3fdee13e7993b684d1ea4730b468968a492d21a9a26a2ec75"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_07d54eb34f38/pack_004.jpg",
+      "exists": true,
+      "sha256": "33057cfa46d9f2d3200e2f497f12753a4c7f352f3198fc2bfe6869e7dae26bf6"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_07d54eb34f38/pack_005.jpg",
+      "exists": true,
+      "sha256": "ff532abeebd27989cbfbead49fc62521e012e9593d9820465c8323ac959108a9"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_44101ef69c68/pack_000.jpg",
+      "exists": true,
+      "sha256": "cc5ce1dfcd062dc0f7d7dea07d1e77f3fd071fbe8e66581fa0e5d71b67ea36e9"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_44101ef69c68/pack_001.jpg",
+      "exists": true,
+      "sha256": "ba2a24def3e90b92b75984f134581192755ea2c3491a19d9eb86db8251406c2f"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_44101ef69c68/pack_002.jpg",
+      "exists": true,
+      "sha256": "4c0603d84f09b14a5c6bba9e80396f0dfdd875c29f02677765acabd19f02cd46"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_44101ef69c68/pack_003.jpg",
+      "exists": true,
+      "sha256": "1e966ff6755e971983a074a3d80f71378e47c2d695e61698cd21793a33a07a81"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_44101ef69c68/pack_004.jpg",
+      "exists": true,
+      "sha256": "fd5a333a8c56be93569d6ee707e2965ed7293d3ca25040516992d362400d79cf"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/count_126/inspect_44101ef69c68/pack_005.jpg",
+      "exists": true,
+      "sha256": "846051bd309375d2585a84661976e5c55f85b9297e6a1ebaab1a06fb3272559c"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/fFjv93ACGo8/inspect_64d814a5e443/pack_000.jpg",
+      "exists": true,
+      "sha256": "091bc8c94dab1d66b463793e35ce7702fd3b96dc29592cfde82cc331c58b6f88"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/fFjv93ACGo8/inspect_64d814a5e443/pack_001.jpg",
+      "exists": true,
+      "sha256": "517d19ab8f1fd34ff359bd3a800507beef42bb4787102767618702fd07ccdcce"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/fFjv93ACGo8/inspect_64d814a5e443/pack_002.jpg",
+      "exists": true,
+      "sha256": "a10fbf082ee2f87baa6b7cca2cfe256d62623867ff7a0d9ffc26fd587e02a1cd"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/fFjv93ACGo8/inspect_64d814a5e443/pack_003.jpg",
+      "exists": true,
+      "sha256": "87e74b92811c315a3c2017b5e65e7da3c5bf6bc386babc50f3ef2ff537d5f375"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/fFjv93ACGo8/inspect_e8ad449dcf51/pack_000.jpg",
+      "exists": true,
+      "sha256": "d8fd1fbe5a50a7a785c89342520e46d6d8d19608da707e976341d228934dd028"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/fFjv93ACGo8/inspect_e8ad449dcf51/pack_001.jpg",
+      "exists": true,
+      "sha256": "38649083be8c2f1a97fd70eb0f4b84f3fbcf31482d60092ffc4ee3f70f82f87e"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/fFjv93ACGo8/inspect_e8ad449dcf51/pack_002.jpg",
+      "exists": true,
+      "sha256": "7f1721d6382751787c7728af866d32c846327027d5badb370ed31feaa9cf201d"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_3f8203ef079f/pack_000.jpg",
+      "exists": true,
+      "sha256": "7ff7fdbf227b73465266c9cacc9829e225f670daa3f1accae309b4d126bc8619"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_3f8203ef079f/pack_001.jpg",
+      "exists": true,
+      "sha256": "1d28b87371da0c381f20b04fb94e0d4a61bed64bbbf0557dd2645200c09cd9e6"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_3f8203ef079f/pack_002.jpg",
+      "exists": true,
+      "sha256": "8222ebb3ae101d4d65a3797cf18322fb183b8004297afb62e57f271e328823af"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_3f8203ef079f/pack_003.jpg",
+      "exists": true,
+      "sha256": "cbc00d27ce293ca81c41313e5a34d2de5069293ad0b946acc5d4025c1522c0f5"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_3f8203ef079f/pack_004.jpg",
+      "exists": true,
+      "sha256": "1853e35aef9745d36dddbec3f1011d9f882b7e087e225208ed166be27d03e24d"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_3f8203ef079f/pack_005.jpg",
+      "exists": true,
+      "sha256": "66d763c402f9aded2c3c951a88e73fad4f6fd72cef8b911a0e38f8581e01a9c9"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_6a32277b4e77/pack_000.jpg",
+      "exists": true,
+      "sha256": "3d36f41a6a7ddf5b8a45492302dc0e3cc74d2cab53e4cc464f97626ddcf231ce"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_6a32277b4e77/pack_001.jpg",
+      "exists": true,
+      "sha256": "8eda46ab2362c2a1860a43ece5d7ae448920742a9a5f701454a0a24e4b89816a"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_6a32277b4e77/pack_002.jpg",
+      "exists": true,
+      "sha256": "ef95062578fed84d72bc36006cc98b5af50a1f241ec69b1ebcd329b2c0802229"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_6a32277b4e77/pack_003.jpg",
+      "exists": true,
+      "sha256": "3f100e53c9c6a7915bb313ecd3ccb27a488bb6d97f8101e27da172122809688c"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_6a32277b4e77/pack_004.jpg",
+      "exists": true,
+      "sha256": "5300ec6dd200c37ce4db25d8b12c04340e4a154b43036e06a082854263227d25"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_6a32277b4e77/pack_005.jpg",
+      "exists": true,
+      "sha256": "1070e1d1354d292f8180db65a04fcbbb164d4f60e5db1b28b1e819fbb3e286c6"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_9bc64e897fae/pack_000.jpg",
+      "exists": true,
+      "sha256": "919467917d57f7ab5fc2c416968a1a7fe731a5b43ce9d15d91a2efe6abd565f7"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_9bc64e897fae/pack_001.jpg",
+      "exists": true,
+      "sha256": "782b5cdcad530ec6ebf38c60f345c1d176fc86e77ea4148059a90b58cdbccc4d"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_9bc64e897fae/pack_002.jpg",
+      "exists": true,
+      "sha256": "b9202cd6239a94a9a61afe2d5fa7b5e1cdb5dda5aefbf22ce595c9b1d0ad3e84"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_9bc64e897fae/pack_003.jpg",
+      "exists": true,
+      "sha256": "679e1e785f81354fb45fb679cfe2c7a657d14c19ff24bf4592e81f4b06d50549"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_9bc64e897fae/pack_004.jpg",
+      "exists": true,
+      "sha256": "a5135bd3f09de7adce9297f67e5a2284be7a7407b37dedfb52d603735a20dfca"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_9bc64e897fae/pack_005.jpg",
+      "exists": true,
+      "sha256": "da51e490560e5cb4911e4aa520c42afb013f79fa6b49396fb8accd7bba77cac2"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_bac0c36d3936/pack_000.jpg",
+      "exists": true,
+      "sha256": "76e562b719f4280ceed2ec3435305f4b9387591cd0884e695d3f83d679eae8dc"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_bac0c36d3936/pack_001.jpg",
+      "exists": true,
+      "sha256": "106627aef20d9285d3a36caaec66e148ac07cc12b65b8fd2ffd2f3cbcfdf9439"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_bac0c36d3936/pack_002.jpg",
+      "exists": true,
+      "sha256": "882c2f63bc8de8a40f73111708bfb6c81d8cc4561cbc53f52734d7781c8252ae"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_bac0c36d3936/pack_003.jpg",
+      "exists": true,
+      "sha256": "075d2100657bacd15cf2e88d8313e680bd0050d9c7d122c30831f92e54e3bb13"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_bac0c36d3936/pack_004.jpg",
+      "exists": true,
+      "sha256": "30fd70faca3f367bb6b890bfc4eb4155839eec0cb87514b9a892675a2f8ca15e"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_bac0c36d3936/pack_005.jpg",
+      "exists": true,
+      "sha256": "c98c24d06af1b54077d92483c460e1b2adb765f5374dbad9911d1f71c702e462"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_d13712b30d5a/pack_000.jpg",
+      "exists": true,
+      "sha256": "1d6d233f65f5bb3db342a7bcf15215dfa8f6148fa1c5a6a5b53a66a8bde00f87"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_d13712b30d5a/pack_001.jpg",
+      "exists": true,
+      "sha256": "fc5e39112f511c3f80452d9b2303eb80b3f2b23c2e4e08d5edebef87bd4dcc9b"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_d13712b30d5a/pack_002.jpg",
+      "exists": true,
+      "sha256": "e42abeffd70f1d8175ebf5746a6b06253e56398ffb99c007f204dcd20c30b5fa"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_d13712b30d5a/pack_003.jpg",
+      "exists": true,
+      "sha256": "1bf3b3ed363657b36df2b8b07913f186186bde725221f37a7912b6138e8de97a"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_d13712b30d5a/pack_004.jpg",
+      "exists": true,
+      "sha256": "6eeb4c6a72c892b30c32949d85dfb5cf10a0a3c582d652f6837b451ccf97d372"
+    },
+    {
+      "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/needle_32/inspect_d13712b30d5a/pack_005.jpg",
+      "exists": true,
+      "sha256": "977983688476e6acbf4039bcea9ece719f92b93319dbe2d8ed4d88f99adbc279"
+    }
+  ]
+}

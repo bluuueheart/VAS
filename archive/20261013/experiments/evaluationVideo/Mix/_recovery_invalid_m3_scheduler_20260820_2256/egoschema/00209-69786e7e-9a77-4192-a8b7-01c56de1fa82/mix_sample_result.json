@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00209:69786e7e-9a77-4192-a8b7-01c56de1fa82",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C uses her right hand to hold the pruning shears and her left hand to hold the lemons.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00209-69786e7e-9a77-4192-a8b7-01c56de1fa82",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00209-69786e7e-9a77-4192-a8b7-01c56de1fa82/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00209-69786e7e-9a77-4192-a8b7-01c56de1fa82/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00209-69786e7e-9a77-4192-a8b7-01c56de1fa82/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/69786e7e-9a77-4192-a8b7-01c56de1fa82.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/69786e7e-9a77-4192-a8b7-01c56de1fa82.mp4",
+  "question_block": "Question: What is the primary method used by c to handle both the lemons and the pruning shears, and why might this method be advantageous in achieving her goals?\nOptions:\n(A) C skillfully uses her dominant right hand to securely hold the lemons, and her left hand to firmly grip the pruning shears.\n(B) C uses her right hand to hold the pruning shears and her left hand to hold the lemons.\n(C) Carefully, c skillfully employs both hands to firmly hold the pruning shears, ready for usage.\n(D) Carefully, c utilizes both hands to firmly hold the lemons in place.\n(E) C does not use her hands at all.",
+  "options": [
+    "C skillfully uses her dominant right hand to securely hold the lemons, and her left hand to firmly grip the pruning shears.",
+    "C uses her right hand to hold the pruning shears and her left hand to hold the lemons.",
+    "Carefully, c skillfully employs both hands to firmly hold the pruning shears, ready for usage.",
+    "Carefully, c utilizes both hands to firmly hold the lemons in place.",
+    "C does not use her hands at all."
+  ],
+  "official_meta": {
+    "question_index": "00209",
+    "video_id": "69786e7e-9a77-4192-a8b7-01c56de1fa82",
+    "source_index": 209
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:01.107793Z"
+}

@@ -1,0 +1,55 @@
+{
+  "kind": "query_run",
+  "layout_version": 2,
+  "status": "completed",
+  "run_id": "20260923-112252-608965_27443",
+  "created_at": "2026-09-23T11:22:52.625523Z",
+  "video_path": "/gemini/data-1/datasets/egoschema/videos/0074f737-11cb-497d-8d07-77c3a8127391.mp4",
+  "video_slug": "0074f737-11cb-497d-8d07-77c3a8127391-4a807abe",
+  "query": "Dataset: EgoSchema\nCategory: subset\n\nQuestion: Taking into account all the actions performed by c, what can you deduce about the primary objective and focus within the video content?\nOptions:\n(A) C is cooking.\n(B) C is doing laundry.\n(C) C is cleaning the kitchen.\n(D) C is cleaning dishes.\n(E) C is cleaning the bathroom.\n\nReply with exactly one best option in the format \"(A) option text\".",
+  "query_slug": "dataset-egoschema-category-subset-question-taking-into-accou",
+  "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391",
+  "query_group_dir": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391",
+  "run_workspace": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391",
+  "shared_preprocess_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache",
+  "tool_library_baseline": {
+    "baseline_id": "snapshot_000",
+    "path": "",
+    "status": "not_configured"
+  },
+  "input_contract": {
+    "video": "official_three_minute_clip",
+    "question": "official_question_and_five_options",
+    "temporal_crop": false,
+    "timestamp_input": "none",
+    "audio": "preserved",
+    "audio_transcript": "included",
+    "external_subtitles": false,
+    "audio_track": "preserved",
+    "audio_transcript_allowed": true,
+    "annotation_fields_excluded": [
+      "answer",
+      "ground_truth",
+      "ground_truth_option",
+      "time_reference",
+      "evaluator_output"
+    ]
+  },
+  "directories": {
+    "inputs": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/inputs",
+    "logs": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/logs",
+    "results": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/results",
+    "processed": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/processed/0074f737-11cb-497d-8d07-77c3a8127391",
+    "cache": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/_cache/0074f737-11cb-497d-8d07-77c3a8127391"
+  },
+  "files": {
+    "request": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/inputs/request.json",
+    "run_log": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/logs/run.log",
+    "raw_trace_jsonl": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/logs/raw_llm_trace.jsonl",
+    "run_result": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/results/run_result.json",
+    "error": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/results/error.json"
+  },
+  "updated_at": "2026-09-23T11:28:11.161695Z",
+  "success": true,
+  "processed_output_dir": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/processed/0074f737-11cb-497d-8d07-77c3a8127391"
+}

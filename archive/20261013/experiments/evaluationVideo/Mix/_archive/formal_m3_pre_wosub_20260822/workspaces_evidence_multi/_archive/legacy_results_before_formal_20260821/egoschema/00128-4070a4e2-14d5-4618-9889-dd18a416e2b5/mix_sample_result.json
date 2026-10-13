@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00128:4070a4e2-14d5-4618-9889-dd18a416e2b5",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is creating a piece of art by using powder paint to draw on the floor.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00128-4070a4e2-14d5-4618-9889-dd18a416e2b5",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00128-4070a4e2-14d5-4618-9889-dd18a416e2b5/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00128-4070a4e2-14d5-4618-9889-dd18a416e2b5/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00128-4070a4e2-14d5-4618-9889-dd18a416e2b5/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/4070a4e2-14d5-4618-9889-dd18a416e2b5.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/4070a4e2-14d5-4618-9889-dd18a416e2b5.mp4",
+  "question_block": "Question: How would you characterize the general progression of c's actions throughout the video, and what might have motivated these actions?\nOptions:\n(A) Currently, c is happily playing an entertaining game of hopscotch outdoors.\n(B) Currently, c is creating quite a significant mess around.\n(C) C is trying to communicate something.\n(D) C is creating a piece of art by using powder paint to draw on the floor.\n(E) Currently, c is diligently practicing and improving their handwriting skills.",
+  "options": [
+    "Currently, c is happily playing an entertaining game of hopscotch outdoors.",
+    "Currently, c is creating quite a significant mess around.",
+    "C is trying to communicate something.",
+    "C is creating a piece of art by using powder paint to draw on the floor.",
+    "Currently, c is diligently practicing and improving their handwriting skills."
+  ],
+  "official_meta": {
+    "question_index": "00128",
+    "video_id": "4070a4e2-14d5-4618-9889-dd18a416e2b5",
+    "source_index": 128
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:26:40.433029Z"
+}

@@ -1,0 +1,44 @@
+{
+  "sample_uid": "lvbench:entity-recognition:4:63",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "ground_truth": "1",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) 1",
+  "elapsed_seconds": 57.305,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_ablation_roles/reflector/lvbench/entity-recognition-00004-63",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_ablation_roles/reflector/lvbench/entity-recognition-00004-63/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_ablation_roles/reflector/lvbench/entity-recognition-00004-63/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_ablation_roles/reflector/lvbench/entity-recognition-00004-63/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: How many sticks does the protagonist put in the incense burner?\nOptions:\n(A) 3\n(B) 2\n(C) 5\n(D) 1",
+  "options": [
+    "3",
+    "2",
+    "5",
+    "1"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "cartoon",
+    "time_reference": "10:43-10:50",
+    "time_reference_used_for_inference": false,
+    "video_key": "Cm73ma6Ibcs",
+    "source_index": 4
+  },
+  "updated_at": "2026-08-22T18:06:30.991686Z"
+}

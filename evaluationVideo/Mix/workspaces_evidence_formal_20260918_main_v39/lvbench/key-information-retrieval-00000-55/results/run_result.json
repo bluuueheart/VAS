@@ -1,0 +1,1060 @@
+{
+  "video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "query": "Dataset: LVBench\nCategory: key information retrieval\n\nQuestion: What year appears in the opening caption of the video?\nOptions:\n(A) 1636\n(B) 1366\n(C) 1363\n(D) 1633\n\nReply with exactly one best option in the format \"(A) option text\".",
+  "workspace": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/key-information-retrieval-00000-55",
+  "generated_at": "2026-09-19T08:14:07.127732Z",
+  "success": true,
+  "preprocessing": {
+    "video_name": "Cm73ma6Ibcs",
+    "num_segments": 122,
+    "processed_output_dir": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/processed/Cm73ma6Ibcs",
+    "segment_index_sample": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  "agent": {
+    "final_answer": "(D) 1633",
+    "trajectory": {
+      "trajectory_id": "trajectory_b55bf1df7e764df9b19be75152371e6b",
+      "registry_snapshot_id": "snapshot_000",
+      "task_id": "task_778e940b",
+      "goal": "Dataset: LVBench\nCategory: key information retrieval\n\nQuestion: What year appears in the opening caption of the video?\nOptions:\n(A) 1636\n(B) 1366\n(C) 1363\n(D) 1633\n\nReply with exactly one best option in the format \"(A) option text\".",
+      "depth": 0,
+      "steps": [
+        {
+          "step_id": 1,
+          "depth": 0,
+          "thought": "Retrieved captions don't mention years; need to visually inspect the opening frames for text containing a year.",
+          "plan": "Inspect early video frames (0-60s) to locate opening caption text and read the year.",
+          "action": "Parallel",
+          "action_args": {
+            "batch": [
+              {
+                "name": "Inspect_Frame",
+                "args": {
+                  "t_start": 0,
+                  "t_end": 60,
+                  "density": 5,
+                  "__raw_params_declared__": true,
+                  "__raw_param_keys__": [
+                    "t_start",
+                    "t_end",
+                    "density"
+                  ]
+                }
+              }
+            ]
+          },
+          "observation": "image_timestamps=[2.5, 7.5, 12.5, 17.5, 22.5, 27.5, 32.5, 37.5, 42.5, 47.5, 52.5, 57.5]",
+          "observation_items": [
+            {
+              "tool": "Inspect_Frame",
+              "result": "image_timestamps=[2.5, 7.5, 12.5, 17.5, 22.5, 27.5, 32.5, 37.5, 42.5, 47.5, 52.5, 57.5]",
+              "image_evidence": [
+                {
+                  "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_904f28831b87/pack_000.jpg",
+                  "sample_times": [
+                    2.5,
+                    7.5,
+                    12.5,
+                    17.5
+                  ],
+                  "pack_mode": "4up"
+                },
+                {
+                  "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_904f28831b87/pack_001.jpg",
+                  "sample_times": [
+                    22.5,
+                    27.5,
+                    32.5,
+                    37.5
+                  ],
+                  "pack_mode": "4up"
+                },
+                {
+                  "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/planner_evidence/Cm73ma6Ibcs/inspect_904f28831b87/pack_002.jpg",
+                  "sample_times": [
+                    42.5,
+                    47.5,
+                    52.5,
+                    57.5
+                  ],
+                  "pack_mode": "4up"
+                }
+              ],
+              "image_timestamps": [
+                2.5,
+                7.5,
+                12.5,
+                17.5,
+                22.5,
+                27.5,
+                32.5,
+                37.5,
+                42.5,
+                47.5,
+                52.5,
+                57.5
+              ],
+              "density": 5.0,
+              "t_start": 0.0,
+              "t_end": 60.0,
+              "status": "success"
+            }
+          ],
+          "timestamp": "2026-09-19T08:12:59.322853Z",
+          "is_recursive": true,
+          "sub_trajectory": null,
+          "sub_trajectories": null
+        },
+        {
+          "step_id": 2,
+          "depth": 0,
+          "thought": "Visual inspection confirmed the opening caption at 2.5s reads 'In 1633...', matching option (D).",
+          "plan": "Submit final answer with verified evidence.",
+          "action": "Finish",
+          "action_args": {
+            "answer": "(D) 1633",
+            "chain_complete": true,
+            "completion_basis": "visual->answer"
+          },
+          "observation": "(D) 1633",
+          "observation_items": [
+            {
+              "tool": "Finish",
+              "status": "success",
+              "result": "(D) 1633"
+            }
+          ],
+          "timestamp": "2026-09-19T08:13:42.194982Z",
+          "is_recursive": false,
+          "sub_trajectory": null,
+          "sub_trajectories": null
+        }
+      ],
+      "final_answer": "(D) 1633",
+      "success": true,
+      "error_message": null,
+      "debug_events": [
+        {
+          "type": "agent_kernel_contract",
+          "event_type": "AgentKernelContractEvent",
+          "agent_role": "workflow",
+          "roles": {
+            "kernel_id": "55f99d0f321a766d",
+            "kernel_provider": "transformers",
+            "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "roles": {
+              "planner": {
+                "agent_role": "planner",
+                "provider_class": "TransformersProvider",
+                "model_role": "planner",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "vlm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "planner_prompts",
+                "structured_contract": "planner_react_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "tool_orchestration_agent",
+                  "kernel_modality": "vlm",
+                  "input_contract": "goal + trajectory + registered tool observations + optional frames",
+                  "decision_authority": "select executable tool calls and propose Finish",
+                  "delegates_to": [
+                    "observer",
+                    "reflector"
+                  ]
+                }
+              },
+              "observer": {
+                "agent_role": "observer",
+                "provider_class": "TransformersProvider",
+                "model_role": "observer",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "vlm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "four_role_prompts",
+                "structured_contract": "observer_dispatch_or_evidence_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "execution_and_evidence_agent",
+                  "kernel_modality": "vlm",
+                  "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+                  "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+                  "delegates_to": [
+                    "planner"
+                  ]
+                }
+              },
+              "reflector": {
+                "agent_role": "reflector",
+                "provider_class": "TransformersProvider",
+                "model_role": "reflector",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "llm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "four_role_prompts",
+                "structured_contract": "reflector_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "evidence_judgment_agent",
+                  "kernel_modality": "llm",
+                  "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+                  "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+                  "delegates_to": [
+                    "planner"
+                  ]
+                }
+              },
+              "evolver": {
+                "agent_role": "evolver",
+                "provider_class": "TransformersProvider",
+                "model_role": "evolver",
+                "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+                "modality": "llm",
+                "independent_provider_view": true,
+                "independent_prompt": true,
+                "prompt_source": "four_role_prompts",
+                "structured_contract": "evolver_json",
+                "llm_kernel": true,
+                "agent_definition": {
+                  "agent_type": "meta_evolution_agent",
+                  "kernel_modality": "llm",
+                  "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+                  "decision_authority": "attribute failures, analyze dependencies, and propose bounded coordinated replay-gated harness mutations",
+                  "delegates_to": [
+                    "replay_gate"
+                  ]
+                }
+              }
+            },
+            "weights_shared_for_memory": true,
+            "role_order": [
+              "planner",
+              "observer",
+              "reflector",
+              "evolver"
+            ]
+          },
+          "contract": "four_independent_llm_vlm_roles",
+          "disabled_online_roles": [],
+          "active_online_roles": [
+            "planner",
+            "observer",
+            "reflector"
+          ]
+        },
+        {
+          "type": "runtime_checkpoint",
+          "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/key-information-retrieval-00000-55/logs/runtime_checkpoints/turn_001.json",
+          "iteration": 0,
+          "prefix_steps": 0,
+          "sha256": "a019564dccc6f9790fa3dbceb7b847d2411988d0919a3f1b78471f0a081f1687"
+        },
+        {
+          "type": "llm_iteration",
+          "agent_role": "planner",
+          "kernel": {
+            "agent_role": "planner",
+            "provider_class": "TransformersProvider",
+            "model_role": "planner",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "planner_prompts",
+            "structured_contract": "planner_react_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "tool_orchestration_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "goal + trajectory + registered tool observations + optional frames",
+              "decision_authority": "select executable tool calls and propose Finish",
+              "delegates_to": [
+                "observer",
+                "reflector"
+              ]
+            }
+          },
+          "depth": 0,
+          "iteration": 1,
+          "response": "{\n    \"Thought\": \"Retrieved captions don't mention years; need to visually inspect the opening frames for text containing a year.\",\n    \"Plan\": \"Inspect early video frames (0-60s) to locate opening caption text and read the year.\",\n    \"Actions\": [\n        {\n            \"tool\": \"Inspect_Frame\",\n            \"params\": {\n                \"t_start\": 0,\n                \"t_end\": 60,\n                \"density\": 5\n            }\n        }\n    ]\n}",
+          "raw_response_chars": 439,
+          "response_normalized": false,
+          "parsed_plan": "Inspect early video frames (0-60s) to locate opening caption text and read the year.",
+          "parsed_action": "Parallel",
+          "parsed_action_args": {
+            "batch": [
+              {
+                "name": "Inspect_Frame",
+                "args": {
+                  "t_start": 0,
+                  "t_end": 60,
+                  "density": 5,
+                  "__raw_params_declared__": true,
+                  "__raw_param_keys__": [
+                    "t_start",
+                    "t_end",
+                    "density"
+                  ]
+                }
+              }
+            ]
+          },
+          "thought_preview": "Retrieved captions don't mention years; need to visually inspect the opening frames for text containing a year.",
+          "parse_success": true,
+          "parse_mode": "action"
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ObserverAgentTurnEvent",
+          "agent_role": "observer",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "observer",
+            "provider_class": "TransformersProvider",
+            "model_role": "observer",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "observer_dispatch_or_evidence_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "execution_and_evidence_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+              "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "3ae080b817750fda",
+          "response": "{\n  \"dispatch_decision\": \"execute\",\n  \"executable_action\": {\n    \"tool\": \"Inspect_Frame\",\n    \"params\": {\n      \"t_start\": 0,\n      \"t_end\": 60,\n      \"density\": 5\n    }\n  },\n  \"reason\": \"The planner has resolved a route to visually inspect the opening frames (0-60s) of the video to find the year in the caption. The parameters are valid and the tool is available. Execution is required to retrieve the visual evidence.\",\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "dispatch_decision": "execute",
+            "executable_action": {
+              "tool": "Inspect_Frame",
+              "params": {
+                "t_start": 0,
+                "t_end": 60,
+                "density": 5
+              }
+            },
+            "reason": "The planner has resolved a route to visually inspect the opening frames (0-60s) of the video to find the year in the caption. The parameters are valid and the tool is available. Execution is required to retrieve the visual evidence.",
+            "confidence": 1.0
+          },
+          "initial_response": "",
+          "schema_retry_count": 0,
+          "contract_mode": "dispatch",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "text",
+          "visual_item_count": 0,
+          "elapsed_seconds": 7.239822,
+          "depth": 0,
+          "iteration": 1,
+          "phase": "dispatch",
+          "planner_action_name": "Inspect_Frame",
+          "planner_action_args": {
+            "t_start": 0,
+            "t_end": 60,
+            "density": 5,
+            "__raw_params_declared__": true,
+            "__raw_param_keys__": [
+              "t_start",
+              "t_end",
+              "density"
+            ]
+          },
+          "resolved_tool": "Inspect_Frame",
+          "dispatch_decision": "execute",
+          "dispatch_selected_tool": "Inspect_Frame",
+          "dispatch_applied": true
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ObserverAgentTurnEvent",
+          "agent_role": "observer",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "observer",
+            "provider_class": "TransformersProvider",
+            "model_role": "observer",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "observer_dispatch_or_evidence_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "execution_and_evidence_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+              "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "621312e619e2354f",
+          "response": "{\n  \"observation_quality\": \"sufficient\",\n  \"evidence_updates\": [\n    {\n      \"claim_id\": \"year_in_opening_caption\",\n      \"scope\": \"qualifier\",\n      \"label\": \"year\",\n      \"target\": \"opening caption\",\n      \"relation\": \"contains\",\n      \"direction\": \"exact\",\n      \"qualifiers\": [\"opening\"],\n      \"observed_value\": \"1633\",\n      \"value\": \"1633\",\n      \"citation\": \"pack_000.jpg (timestamp 2.5s)\",\n      \"source_tool\": \"Inspect_Frame\",\n      \"uncertainty\": \"none\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    }\n  ],\n  \"claim_gaps\": [],\n  \"recommended_action\": {\n    \"kind\": \"finish\",\n    \"reason\": \"The opening caption at timestamp 2.5s clearly displays the year '1633', which matches option (A).\",\n    \"tool_hint\": \"\",\n    \"params\": {}\n  },\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "observation_quality": "sufficient",
+            "evidence_updates": [
+              {
+                "claim_id": "year_in_opening_caption",
+                "scope": "qualifier",
+                "label": "year",
+                "target": "opening caption",
+                "relation": "contains",
+                "direction": "exact",
+                "qualifiers": [
+                  "opening"
+                ],
+                "observed_value": "1633",
+                "value": "1633",
+                "citation": "pack_000.jpg (timestamp 2.5s)",
+                "source_tool": "Inspect_Frame",
+                "uncertainty": "none",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              }
+            ],
+            "claim_gaps": [],
+            "recommended_action": {
+              "kind": "finish",
+              "reason": "The opening caption at timestamp 2.5s clearly displays the year '1633', which matches option (A).",
+              "tool_hint": "",
+              "params": {}
+            },
+            "confidence": 1.0
+          },
+          "initial_response": "",
+          "schema_retry_count": 0,
+          "contract_mode": "default",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "multimodal",
+          "visual_item_count": 3,
+          "elapsed_seconds": 14.02441,
+          "depth": 0,
+          "iteration": 1,
+          "observed_tools": [
+            "Parallel"
+          ]
+        },
+        {
+          "type": "runtime_checkpoint",
+          "path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/lvbench/key-information-retrieval-00000-55/logs/runtime_checkpoints/turn_002.json",
+          "iteration": 1,
+          "prefix_steps": 1,
+          "sha256": "1e616f263418173651cb84e3211ebb563df9f77eeced61ea9a9a92bba5fd95ea"
+        },
+        {
+          "type": "llm_iteration",
+          "agent_role": "planner",
+          "kernel": {
+            "agent_role": "planner",
+            "provider_class": "TransformersProvider",
+            "model_role": "planner",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "planner_prompts",
+            "structured_contract": "planner_react_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "tool_orchestration_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "goal + trajectory + registered tool observations + optional frames",
+              "decision_authority": "select executable tool calls and propose Finish",
+              "delegates_to": [
+                "observer",
+                "reflector"
+              ]
+            }
+          },
+          "depth": 0,
+          "iteration": 2,
+          "response": "{\n    \"Thought\": \"Visual inspection confirmed the opening caption at 2.5s reads 'In 1633...', matching option (D).\",\n    \"Plan\": \"Submit final answer with verified evidence.\",\n    \"Evidence\": [\n        {\n            \"claim_id\": \"year_in_opening_caption\",\n            \"scope\": \"qualifier\",\n            \"label\": \"year\",\n            \"target\": \"opening caption\",\n            \"relation\": \"contains\",\n            \"direction\": \"exact\",\n            \"qualifiers\": [\"opening\"],\n            \"observed_value\": \"1633\",\n            \"value\": \"1633\",\n            \"citation\": \"pack_000.jpg (timestamp 2.5s)\",\n            \"source_tool\": \"Inspect_Frame\",\n            \"uncertainty\": \"none\",\n            \"evidence_status\": \"verified\",\n            \"logical_conflict\": false\n        }\n    ],\n    \"Finish\": {\n        \"chain_complete\": true,\n        \"completion_basis\": \"visual->answer\",\n        \"answer\": \"(D) 1633\"\n    }\n}",
+          "raw_response_chars": 899,
+          "response_normalized": false,
+          "parsed_plan": "Submit final answer with verified evidence.",
+          "parsed_action": "Finish",
+          "parsed_action_args": {
+            "answer": "(D) 1633",
+            "chain_complete": true,
+            "completion_basis": "visual->answer"
+          },
+          "thought_preview": "Visual inspection confirmed the opening caption at 2.5s reads 'In 1633...', matching option (D).",
+          "parse_success": true,
+          "parse_mode": "action"
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ReflectorAgentTurnEvent",
+          "agent_role": "reflector",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "reflector",
+            "provider_class": "TransformersProvider",
+            "model_role": "reflector",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "llm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "reflector_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "evidence_judgment_agent",
+              "kernel_modality": "llm",
+              "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+              "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "984f7657ec4aab09",
+          "response": "{\n  \"decision\": \"accept\",\n  \"can_finish\": true,\n  \"claim_assessment\": [\n    {\n      \"claim_id\": \"year_in_opening_caption\",\n      \"status\": \"supported\",\n      \"reason\": \"The evidence from pack_000.jpg (timestamp 2.5s) directly shows the opening caption text 'IN 1633, JAPAN CLOSED ITS BORDERS TO THE OUTSIDE WORLD.' This provides a direct, grounded observation that the year appearing in the opening caption is 1633, which matches option (D).\"\n    }\n  ],\n  \"missing_information\": [],\n  \"unresolved_claims\": [],\n  \"evidence_assessment\": \"The evidence is sufficient. The visual evidence from the first frame (pack_000.jpg) at timestamp 2.5s clearly displays the opening caption containing the year '1633'. This directly answers the question. No further evidence is needed.\",\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "decision": "accept",
+            "can_finish": true,
+            "claim_assessment": [
+              {
+                "claim_id": "year_in_opening_caption",
+                "status": "supported",
+                "reason": "The evidence from pack_000.jpg (timestamp 2.5s) directly shows the opening caption text 'IN 1633, JAPAN CLOSED ITS BORDERS TO THE OUTSIDE WORLD.' This provides a direct, grounded observation that the year appearing in the opening caption is 1633, which matches option (D)."
+              }
+            ],
+            "missing_information": [],
+            "unresolved_claims": [],
+            "evidence_assessment": "The evidence is sufficient. The visual evidence from the first frame (pack_000.jpg) at timestamp 2.5s clearly displays the opening caption containing the year '1633'. This directly answers the question. No further evidence is needed.",
+            "confidence": 1.0
+          },
+          "initial_response": "",
+          "schema_retry_count": 0,
+          "contract_mode": "default",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "multimodal",
+          "visual_item_count": 3,
+          "elapsed_seconds": 12.473575,
+          "depth": 0,
+          "iteration": 2,
+          "proposed_answer": "(D) 1633"
+        },
+        {
+          "progress_score": 0.8,
+          "claim_coverage": 1.0,
+          "direct_grounding": 1.0,
+          "contradiction_score": 0.0,
+          "cross_modal_support": 0.0,
+          "can_finish": true,
+          "premise_mismatch": false,
+          "option_mismatch": false,
+          "missing_information": [],
+          "unresolved_claims": [],
+          "claim_contract": {
+            "status": "pass",
+            "required": [
+              "dynamic_relation"
+            ],
+            "satisfied": {
+              "dynamic_relation": true
+            },
+            "missing": [],
+            "verified_claim_count": 1,
+            "contract_version": 1
+          },
+          "feedback": "Evidence verifier accepted termination.",
+          "verification_source": "deterministic_safety_gate",
+          "type": "verifier_decision",
+          "event_type": "VerifierDecisionEvent",
+          "depth": 0,
+          "iteration": 2,
+          "reflector_agent_status": "success",
+          "reflector_agent_schema_valid": true,
+          "reflector_agent_decision": "accept",
+          "reflector_agent_can_finish": true,
+          "reflector_agent_payload": {
+            "decision": "accept",
+            "can_finish": true,
+            "claim_assessment": [
+              {
+                "claim_id": "year_in_opening_caption",
+                "status": "supported",
+                "reason": "The evidence from pack_000.jpg (timestamp 2.5s) directly shows the opening caption text 'IN 1633, JAPAN CLOSED ITS BORDERS TO THE OUTSIDE WORLD.' This provides a direct, grounded observation that the year appearing in the opening caption is 1633, which matches option (D)."
+              }
+            ],
+            "missing_information": [],
+            "unresolved_claims": [],
+            "evidence_assessment": "The evidence is sufficient. The visual evidence from the first frame (pack_000.jpg) at timestamp 2.5s clearly displays the opening caption containing the year '1633'. This directly answers the question. No further evidence is needed.",
+            "confidence": 1.0
+          }
+        },
+        {
+          "type": "agent_llm_turn",
+          "event_type": "ObserverAgentTurnEvent",
+          "agent_role": "observer",
+          "status": "success",
+          "schema_valid": true,
+          "kernel": {
+            "agent_role": "observer",
+            "provider_class": "TransformersProvider",
+            "model_role": "observer",
+            "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+            "modality": "vlm",
+            "independent_provider_view": true,
+            "independent_prompt": true,
+            "prompt_source": "four_role_prompts",
+            "structured_contract": "observer_dispatch_or_evidence_json",
+            "llm_kernel": true,
+            "agent_definition": {
+              "agent_type": "execution_and_evidence_agent",
+              "kernel_modality": "vlm",
+              "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+              "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+              "delegates_to": [
+                "planner"
+              ]
+            }
+          },
+          "request_digest": "847fc693ad76e668",
+          "response": "{\n  \"observation_quality\": \"sufficient\",\n  \"evidence_updates\": [\n    {\n      \"claim_id\": \"year_in_opening_caption\",\n      \"scope\": \"qualifier\",\n      \"label\": \"year\",\n      \"target\": \"opening caption\",\n      \"relation\": \"contains\",\n      \"direction\": \"exact\",\n      \"qualifiers\": [\"opening\"],\n      \"observed_value\": \"1633\",\n      \"value\": \"1633\",\n      \"citation\": \"pack_000.jpg (timestamp 2.5s)\",\n      \"source_tool\": \"Inspect_Frame\",\n      \"uncertainty\": \"none\",\n      \"evidence_status\": \"verified\",\n      \"logical_conflict\": false\n    }\n  ],\n  \"claim_gaps\": [],\n  \"recommended_action\": {\n    \"kind\": \"finish\",\n    \"reason\": \"The visual evidence from the opening frame (2.5s) explicitly shows the year '1633' in the caption, matching option (D). The task is complete.\",\n    \"tool_hint\": \"Finish\",\n    \"params\": {\n      \"answer\": \"(D) 1633\",\n      \"chain_complete\": true,\n      \"completion_basis\": \"visual->answer\"\n    }\n  },\n  \"confidence\": 1.0\n}",
+          "response_payload": {
+            "observation_quality": "sufficient",
+            "evidence_updates": [
+              {
+                "claim_id": "year_in_opening_caption",
+                "scope": "qualifier",
+                "label": "year",
+                "target": "opening caption",
+                "relation": "contains",
+                "direction": "exact",
+                "qualifiers": [
+                  "opening"
+                ],
+                "observed_value": "1633",
+                "value": "1633",
+                "citation": "pack_000.jpg (timestamp 2.5s)",
+                "source_tool": "Inspect_Frame",
+                "uncertainty": "none",
+                "evidence_status": "verified",
+                "logical_conflict": false
+              }
+            ],
+            "claim_gaps": [],
+            "recommended_action": {
+              "kind": "finish",
+              "reason": "The visual evidence from the opening frame (2.5s) explicitly shows the year '1633' in the caption, matching option (D). The task is complete.",
+              "tool_hint": "Finish",
+              "params": {
+                "answer": "(D) 1633",
+                "chain_complete": true,
+                "completion_basis": "visual->answer"
+              }
+            },
+            "confidence": 1.0
+          },
+          "initial_response": "{\n  \"dispatch_decision\": \"reject\",\n  \"executable_action\": null,\n  \"reason\": \"The task phase is 'evidence' (implied by the presence of observation_items and the goal to retrieve key information), not 'dispatch'. The Planner has already executed the necessary visual inspection (Inspect_Frame at 2.5s) and submitted a final answer via the Finish tool. The evidence confirms the year is 1633. No further observation action is required or executable by the Observer Agent in this context; the task is complete.\",\n  \"confidence\": 1.0\n}",
+          "schema_retry_count": 1,
+          "contract_mode": "default",
+          "system_directive_applied": false,
+          "error": "",
+          "input_modality": "text",
+          "visual_item_count": 0,
+          "elapsed_seconds": 23.149478,
+          "depth": 0,
+          "iteration": 2,
+          "observed_tools": [
+            "Finish"
+          ]
+        }
+      ],
+      "start_time": "2026-09-19T08:12:04.735094Z",
+      "end_time": "2026-09-19T08:14:05.345650Z",
+      "started_at": "2026-09-19T08:12:04.735094Z",
+      "finished_at": "2026-09-19T08:14:05.345650Z",
+      "duration_seconds": 120.610556
+    }
+  },
+  "metrics": {
+    "tool_usage_layers": {
+      "planner_proposed": {
+        "tool_usage_summary": {
+          "Inspect_Frame": 1
+        },
+        "unique_tools": [
+          "Inspect_Frame"
+        ],
+        "unique_tool_count": 1,
+        "tool_type_counts": {
+          "base": 1
+        },
+        "capability_tier_counts": {
+          "production": 1
+        },
+        "tool_family_counts": {
+          "visual": 1
+        },
+        "unique_tool_type_counts": {
+          "base": 1
+        },
+        "unique_capability_tier_counts": {
+          "production": 1
+        },
+        "base_meta_coverage": {
+          "base_used": true,
+          "meta_used": false,
+          "coverage_ratio": 0.5
+        }
+      },
+      "subagent_rewritten": {
+        "tool_usage_summary": {},
+        "unique_tools": [],
+        "unique_tool_count": 0,
+        "tool_type_counts": {},
+        "capability_tier_counts": {},
+        "tool_family_counts": {},
+        "unique_tool_type_counts": {},
+        "unique_capability_tier_counts": {},
+        "base_meta_coverage": {
+          "base_used": false,
+          "meta_used": false,
+          "coverage_ratio": 0.0
+        }
+      },
+      "runtime_executed": {
+        "tool_usage_summary": {
+          "Inspect_Frame": 1
+        },
+        "unique_tools": [
+          "Inspect_Frame"
+        ],
+        "unique_tool_count": 1,
+        "tool_type_counts": {
+          "base": 1
+        },
+        "capability_tier_counts": {
+          "production": 1
+        },
+        "tool_family_counts": {
+          "visual": 1
+        },
+        "unique_tool_type_counts": {
+          "base": 1
+        },
+        "unique_capability_tier_counts": {
+          "production": 1
+        },
+        "base_meta_coverage": {
+          "base_used": true,
+          "meta_used": false,
+          "coverage_ratio": 0.5
+        }
+      }
+    },
+    "tool_usage_summary": {
+      "Inspect_Frame": 1
+    },
+    "unique_tools": [
+      "Inspect_Frame"
+    ],
+    "tool_family_counts": {
+      "visual": 1
+    },
+    "tool_type_counts": {
+      "base": 1
+    },
+    "capability_tier_counts": {
+      "production": 1
+    },
+    "runtime_tool_call_count": 1,
+    "runtime_execution_steps": 1,
+    "planner_iterations": 2,
+    "subagent_iterations": 0,
+    "four_agent_kernel_contract": {
+      "kernel_id": "55f99d0f321a766d",
+      "kernel_provider": "transformers",
+      "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+      "roles": {
+        "planner": {
+          "agent_role": "planner",
+          "provider_class": "TransformersProvider",
+          "model_role": "planner",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "vlm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "planner_prompts",
+          "structured_contract": "planner_react_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "tool_orchestration_agent",
+            "kernel_modality": "vlm",
+            "input_contract": "goal + trajectory + registered tool observations + optional frames",
+            "decision_authority": "select executable tool calls and propose Finish",
+            "delegates_to": [
+              "observer",
+              "reflector"
+            ]
+          }
+        },
+        "observer": {
+          "agent_role": "observer",
+          "provider_class": "TransformersProvider",
+          "model_role": "observer",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "vlm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "four_role_prompts",
+          "structured_contract": "observer_dispatch_or_evidence_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "execution_and_evidence_agent",
+            "kernel_modality": "vlm",
+            "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+            "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+            "delegates_to": [
+              "planner"
+            ]
+          }
+        },
+        "reflector": {
+          "agent_role": "reflector",
+          "provider_class": "TransformersProvider",
+          "model_role": "reflector",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "llm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "four_role_prompts",
+          "structured_contract": "reflector_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "evidence_judgment_agent",
+            "kernel_modality": "llm",
+            "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+            "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+            "delegates_to": [
+              "planner"
+            ]
+          }
+        },
+        "evolver": {
+          "agent_role": "evolver",
+          "provider_class": "TransformersProvider",
+          "model_role": "evolver",
+          "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "modality": "llm",
+          "independent_provider_view": true,
+          "independent_prompt": true,
+          "prompt_source": "four_role_prompts",
+          "structured_contract": "evolver_json",
+          "llm_kernel": true,
+          "agent_definition": {
+            "agent_type": "meta_evolution_agent",
+            "kernel_modality": "llm",
+            "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+            "decision_authority": "attribute failures, analyze dependencies, and propose bounded coordinated replay-gated harness mutations",
+            "delegates_to": [
+              "replay_gate"
+            ]
+          }
+        }
+      },
+      "weights_shared_for_memory": true,
+      "role_order": [
+        "planner",
+        "observer",
+        "reflector",
+        "evolver"
+      ]
+    },
+    "four_agent_active_online_roles": [
+      "planner",
+      "observer",
+      "reflector"
+    ],
+    "four_agent_disabled_online_roles": [],
+    "four_agent_role_turns": {
+      "planner": 2,
+      "observer": 3,
+      "reflector": 1,
+      "evolver": 0
+    },
+    "four_agent_role_skips": {
+      "observer": 0,
+      "reflector": 0,
+      "evolver": 0
+    },
+    "four_agent_role_schema_pass": {
+      "planner": true,
+      "observer": true,
+      "reflector": true,
+      "evolver": false
+    },
+    "delegated_root_steps": 0,
+    "decomposed_root_steps": 0,
+    "subagent_decomposition_rate": 0.0,
+    "parallel_concrete_batches": 0,
+    "parallel_concrete_batch_rate": 0.0,
+    "acceptance_metrics": {
+      "runtime_tool_call_count": 1,
+      "runtime_execution_steps": 1,
+      "runtime_tools_executed": true,
+      "unique_runtime_tools_count": 1,
+      "unique_runtime_tools_gte_4": false,
+      "runtime_base_meta_coverage": {
+        "base_used": true,
+        "meta_used": false,
+        "coverage_ratio": 0.5
+      }
+    },
+    "timing_breakdown_seconds": {
+      "observer.dispatch_llm_generate_seconds": 7.239822,
+      "observer.llm_generate_seconds": 37.173888,
+      "planner.llm_generate_seconds": 56.86132,
+      "preprocess.total_seconds": 0.258484,
+      "query.grounding_context_seconds": 304.128838,
+      "query.registry_init_seconds": 0.182543,
+      "query.solve_seconds": 120.610843,
+      "query.total_seconds": 425.494663,
+      "reflector.llm_generate_seconds": 12.473575,
+      "runtime_load.grounding_embedder_seconds": 0.001797,
+      "runtime_load.provider_planner_seconds": 784.821947,
+      "runtime_load.qwen3_vl_embedding_seconds": 258.896944
+    },
+    "cache_stats": {
+      "provider.planner.miss": 1,
+      "preprocess.output_dir.hit": 1,
+      "grounding_embedder.miss": 1,
+      "grounding_embedding_vector.miss": 223,
+      "qwen3_vl_embedding_runtime.miss": 1,
+      "grounding_embedder.hit": 222,
+      "provider.planner.hit": 1
+    },
+    "gpu_telemetry": {
+      "status": "ok",
+      "sample_count": 608,
+      "interval_s": 2.0,
+      "gpu_count": 1,
+      "avg_utilization_percent": 2.91,
+      "peak_utilization_percent": 81.0,
+      "peak_memory_used_gib": 25.031,
+      "peak_memory_percent": 31.649,
+      "per_gpu": {
+        "0": {
+          "sample_count": 608,
+          "avg_utilization_percent": 2.91,
+          "peak_utilization_percent": 81.0,
+          "peak_memory_used_gib": 25.031
+        }
+      }
+    },
+    "active_video_names": [
+      "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+      "Cm73ma6Ibcs",
+      "Cm73ma6Ibcs.mp4"
+    ],
+    "tool_library": {
+      "baseline_id": "toolbase_71ae508acd56119c2086",
+      "baseline_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260918_main_v39/_audit/tool_library_baseline.json",
+      "baseline_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+      "baseline_source_digest": "e5b2eb8dde1afa89e55fd3b2c973875abb643b69a8e3c3603208f86500ce6ed1",
+      "active_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+      "active_source_digest": "e5b2eb8dde1afa89e55fd3b2c973875abb643b69a8e3c3603208f86500ce6ed1",
+      "active_tool_count": 15,
+      "schema_match": true,
+      "source_match": true,
+      "added_tools": [],
+      "removed_tools": [],
+      "scoped_hidden_tools": [],
+      "changed_tools": [],
+      "scoped_schema_match": true,
+      "active_tools": [
+        "Aggregation",
+        "Clean_Results",
+        "Crop",
+        "Filtering",
+        "Fold_Memory",
+        "Inspect_Frame",
+        "Keyword_Retrieve",
+        "Python_Executor",
+        "Segment_Retrieve",
+        "Semantic_Retrieve",
+        "Tool_Search",
+        "Video_Clip_QA",
+        "Video_Summary",
+        "Zoom_in",
+        "asr"
+      ]
+    },
+    "evolution_harness": {
+      "enabled": false,
+      "status": "baseline",
+      "snapshot_id": "snapshot_000",
+      "snapshot_path": "",
+      "policy_digest": "baseline",
+      "base_tool_library_baseline_id": "",
+      "operations_applied": [],
+      "registry_mutations_applied": [],
+      "tool_overrides": {},
+      "snapshot_loaded": false,
+      "snapshot_application_proven": false,
+      "snapshot_application_proof": {
+        "snapshot_loaded": false,
+        "runtime_hook_applied": false,
+        "operation_count": 0,
+        "missing_operations": [],
+        "proof_scope": "runtime_boundary_attestation",
+        "requires_fresh_inference": false,
+        "source_application": {
+          "applied": false,
+          "targets": []
+        }
+      },
+      "mutation_declared": false,
+      "mutation_applied": false
+    },
+    "benchmark_input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "included",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded",
+      "audio_track": "preserved",
+      "audio_transcript_allowed": true,
+      "temporal_crop": false,
+      "annotation_fields_excluded": [
+        "answer",
+        "ground_truth",
+        "ground_truth_option",
+        "time_reference",
+        "evaluator_output"
+      ],
+      "audio_track_policy": "preserved",
+      "audio_transcript_policy": "included"
+    }
+  }
+}

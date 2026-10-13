@@ -1,0 +1,9 @@
+{
+  "production_functions_ast_loaded": true,
+  "historical_fabricated_asset_accepted": false,
+  "positive_and_negative_asset_regression_passed": true,
+  "limitations": [
+    "Window-only citations and full observation identity binding remain to be repaired.",
+    "Full imported verifier suite still running."
+  ]
+}

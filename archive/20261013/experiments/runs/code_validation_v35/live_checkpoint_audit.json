@@ -1,0 +1,50 @@
+{
+  "scope": "real GPU trajectory checkpoint capture and file restore; no suffix inference claimed",
+  "checkpoints": [
+    {
+      "path": "evaluationVideo/Mix/workspaces_evidence_regression_20260914_v35/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/logs/runtime_checkpoints/turn_001.json",
+      "version": 2,
+      "iteration": 0,
+      "prefix_steps": 0,
+      "state_fields": 67,
+      "frozen_files": 1,
+      "artifact_restore_verified": true
+    },
+    {
+      "path": "evaluationVideo/Mix/workspaces_evidence_regression_20260914_v35/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/logs/runtime_checkpoints/turn_002.json",
+      "version": 2,
+      "iteration": 1,
+      "prefix_steps": 1,
+      "state_fields": 67,
+      "frozen_files": 1,
+      "artifact_restore_verified": true
+    },
+    {
+      "path": "evaluationVideo/Mix/workspaces_evidence_regression_20260914_v35/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/logs/runtime_checkpoints/turn_003.json",
+      "version": 2,
+      "iteration": 2,
+      "prefix_steps": 2,
+      "state_fields": 67,
+      "frozen_files": 1,
+      "artifact_restore_verified": true
+    },
+    {
+      "path": "evaluationVideo/Mix/workspaces_evidence_regression_20260914_v35/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/logs/runtime_checkpoints/turn_004.json",
+      "version": 2,
+      "iteration": 3,
+      "prefix_steps": 3,
+      "state_fields": 67,
+      "frozen_files": 1,
+      "artifact_restore_verified": true
+    },
+    {
+      "path": "evaluationVideo/Mix/workspaces_evidence_regression_20260914_v35/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/logs/runtime_checkpoints/turn_005.json",
+      "version": 2,
+      "iteration": 4,
+      "prefix_steps": 4,
+      "state_fields": 67,
+      "frozen_files": 1,
+      "artifact_restore_verified": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00216:6dd07731-937c-4b63-b296-0a947ffe6996",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C repeatedly picks up and puts down objects, such as the laptop, cables, and charger. this suggests that c is trying to decide what to pack and how to pack it.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00216-6dd07731-937c-4b63-b296-0a947ffe6996",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00216-6dd07731-937c-4b63-b296-0a947ffe6996/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00216-6dd07731-937c-4b63-b296-0a947ffe6996/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00216-6dd07731-937c-4b63-b296-0a947ffe6996/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/6dd07731-937c-4b63-b296-0a947ffe6996.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/6dd07731-937c-4b63-b296-0a947ffe6996.mp4",
+  "question_block": "Question: Can you identify a recurring pattern in c's actions and explain its significance in the context of the video?\nOptions:\n(A) Casually, c repeatedly glances and looks around the room, which strongly suggests that c is attempting to locate or find something.\n(B) C repeatedly moves around the room, which suggests that c is trying to get comfortable.\n(C) Frequently, c repeatedly utilizes the laptop, clearly indicating that c is diligently attempting to complete and finish work.\n(D) C repeatedly picks up and puts down objects, such as the laptop, cables, and charger. this suggests that c is trying to decide what to pack and how to pack it.\n(E) C persistently and repeatedly covers the pen, which strongly suggests that c is apparently attempting to hide something.",
+  "options": [
+    "Casually, c repeatedly glances and looks around the room, which strongly suggests that c is attempting to locate or find something.",
+    "C repeatedly moves around the room, which suggests that c is trying to get comfortable.",
+    "Frequently, c repeatedly utilizes the laptop, clearly indicating that c is diligently attempting to complete and finish work.",
+    "C repeatedly picks up and puts down objects, such as the laptop, cables, and charger. this suggests that c is trying to decide what to pack and how to pack it.",
+    "C persistently and repeatedly covers the pen, which strongly suggests that c is apparently attempting to hide something."
+  ],
+  "official_meta": {
+    "question_index": "00216",
+    "video_id": "6dd07731-937c-4b63-b296-0a947ffe6996",
+    "source_index": 216
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:31.078509Z"
+}

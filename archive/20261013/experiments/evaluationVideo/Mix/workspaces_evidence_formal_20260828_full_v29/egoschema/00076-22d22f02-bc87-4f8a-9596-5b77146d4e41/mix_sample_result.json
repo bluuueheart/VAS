@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00076:22d22f02-bc87-4f8a-9596-5b77146d4e41",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 15,
+  "iter_num": 14,
+  "tool_success_rate": 0.8,
+  "successful_tool_calls": 12,
+  "planner_iterations": 14,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "The significant change that happens in the transition from the first half to the second half of the video is that c finishes preparing the cake and starts serving it.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 4277.523,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00076-22d22f02-bc87-4f8a-9596-5b77146d4e41",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00076-22d22f02-bc87-4f8a-9596-5b77146d4e41/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00076-22d22f02-bc87-4f8a-9596-5b77146d4e41/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00076-22d22f02-bc87-4f8a-9596-5b77146d4e41/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/22d22f02-bc87-4f8a-9596-5b77146d4e41.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/22d22f02-bc87-4f8a-9596-5b77146d4e41.mp4",
+  "question_block": "Question: What significant change happens in the transition from the first half to the second half of the video, and how does that influence the focus of c's actions?\nOptions:\n(A) The significant change that happens in the transition from the first half to the second half of the video is that c changes clothes.\n(B) The significant change occurring in the transition from the first half to the second half of the video involves c moving to a completely different room.\n(C) The significant change that happens in the transition from the first half to the second half of the video is that c finishes preparing the cake and starts serving it.\n(D) The notable and significant change occurring in the transition from the first half to the second half of the video involves c beginning to utilize a different tool.\n(E) In the video, the substantial change occurring during the transition from the initial half to the latter half is that character c begins engaging with another individual.",
+  "options": [
+    "The significant change that happens in the transition from the first half to the second half of the video is that c changes clothes.",
+    "The significant change occurring in the transition from the first half to the second half of the video involves c moving to a completely different room.",
+    "The significant change that happens in the transition from the first half to the second half of the video is that c finishes preparing the cake and starts serving it.",
+    "The notable and significant change occurring in the transition from the first half to the second half of the video involves c beginning to utilize a different tool.",
+    "In the video, the substantial change occurring during the transition from the initial half to the latter half is that character c begins engaging with another individual."
+  ],
+  "official_meta": {
+    "question_index": "00076",
+    "video_id": "22d22f02-bc87-4f8a-9596-5b77146d4e41",
+    "resolved_video_stem": "22d22f02-bc87-4f8a-9596-5b77146d4e41",
+    "video_mapping_verified": true,
+    "source_index": 76,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-09T19:31:18.042654Z"
+}

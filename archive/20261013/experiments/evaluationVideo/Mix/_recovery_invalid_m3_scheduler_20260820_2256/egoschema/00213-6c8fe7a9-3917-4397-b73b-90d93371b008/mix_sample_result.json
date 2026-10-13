@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00213:6c8fe7a9-3917-4397-b73b-90d93371b008",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C drilled the plank on the stair railing with the drill driver, then placed the plank on the stair railing and drove in the wood screws with the drill driver.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00213-6c8fe7a9-3917-4397-b73b-90d93371b008",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00213-6c8fe7a9-3917-4397-b73b-90d93371b008/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00213-6c8fe7a9-3917-4397-b73b-90d93371b008/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00213-6c8fe7a9-3917-4397-b73b-90d93371b008/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/6c8fe7a9-3917-4397-b73b-90d93371b008.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/6c8fe7a9-3917-4397-b73b-90d93371b008.mp4",
+  "question_block": "Question: What were the primary steps c followed to attach the planks to the stair railing? consider summarizing the entire process, including the tools used and any changes in his approach.\nOptions:\n(A) C drilled the plank on the stair railing with the drill driver, then placed the plank on the stair railing and drove in the wood screws with the hammer.\n(B) Carefully, c drilled the plank on the stair railing with the hammer, after that, c placed the plank on the stair railing meticulously and drove in the wood screws securely with the drill driver.\n(C) Carefully, c placed the wooden plank on the stair railing, then firmly drilled the plank onto the stair railing utilizing the drill driver, and finally drove in the wood screws using the hammer.\n(D) Carefully, c placed the sturdy plank on the stair railing, then firmly drilled the wooden plank onto the stair railing using the hammer, and finally drove in the wood screws with the dependable drill driver.\n(E) C drilled the plank on the stair railing with the drill driver, then placed the plank on the stair railing and drove in the wood screws with the drill driver.",
+  "options": [
+    "C drilled the plank on the stair railing with the drill driver, then placed the plank on the stair railing and drove in the wood screws with the hammer.",
+    "Carefully, c drilled the plank on the stair railing with the hammer, after that, c placed the plank on the stair railing meticulously and drove in the wood screws securely with the drill driver.",
+    "Carefully, c placed the wooden plank on the stair railing, then firmly drilled the plank onto the stair railing utilizing the drill driver, and finally drove in the wood screws using the hammer.",
+    "Carefully, c placed the sturdy plank on the stair railing, then firmly drilled the wooden plank onto the stair railing using the hammer, and finally drove in the wood screws with the dependable drill driver.",
+    "C drilled the plank on the stair railing with the drill driver, then placed the plank on the stair railing and drove in the wood screws with the drill driver."
+  ],
+  "official_meta": {
+    "question_index": "00213",
+    "video_id": "6c8fe7a9-3917-4397-b73b-90d93371b008",
+    "source_index": 213
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:19.908921Z"
+}

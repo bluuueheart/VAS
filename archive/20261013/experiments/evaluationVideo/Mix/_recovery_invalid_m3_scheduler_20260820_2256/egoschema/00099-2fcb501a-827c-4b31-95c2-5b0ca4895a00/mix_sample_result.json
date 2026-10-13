@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00099:2fcb501a-827c-4b31-95c2-5b0ca4895a00",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C sewed the cloth together and cut the excess fabric.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00099-2fcb501a-827c-4b31-95c2-5b0ca4895a00",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00099-2fcb501a-827c-4b31-95c2-5b0ca4895a00/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00099-2fcb501a-827c-4b31-95c2-5b0ca4895a00/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00099-2fcb501a-827c-4b31-95c2-5b0ca4895a00/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/2fcb501a-827c-4b31-95c2-5b0ca4895a00.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/2fcb501a-827c-4b31-95c2-5b0ca4895a00.mp4",
+  "question_block": "Question: In the video, what actions were repetitive (performed more than once) and why were these actions important in achieving the final outcome?\nOptions:\n(A) Carefully, c aligned the cloth accurately with the sewing machine for stitching.\n(B) C folded the cloth.\n(C) Carefully, c ironed the fabric cloth, ensuring its smoothness.\n(D) Carefully, c washed the cloth with utmost diligence.\n(E) C sewed the cloth together and cut the excess fabric.",
+  "options": [
+    "Carefully, c aligned the cloth accurately with the sewing machine for stitching.",
+    "C folded the cloth.",
+    "Carefully, c ironed the fabric cloth, ensuring its smoothness.",
+    "Carefully, c washed the cloth with utmost diligence.",
+    "C sewed the cloth together and cut the excess fabric."
+  ],
+  "official_meta": {
+    "question_index": "00099",
+    "video_id": "2fcb501a-827c-4b31-95c2-5b0ca4895a00",
+    "source_index": 99
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:46:25.167985Z"
+}

@@ -1,4 +1,7 @@
 """Retrieval and graph exploration tools."""
+
+from __future__ import annotations
+
 import hashlib
 import json
 import logging
@@ -8,10 +11,7 @@ import time
 from collections import defaultdict
 from contextlib import nullcontext
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
-
-import torch
-from transformers import AutoModel, AutoTokenizer
+from typing import Any, Dict, List, Mapping, Optional, Tuple
 
 from config.device_config import detect_device, initialize_device, get_accelerator_snapshot
 from config.settings import settings
@@ -27,6 +27,28 @@ from core.sidecar_pool import (
 from toolkit.base import BaseTool, enrich_tool_result, infer_primary_tool_type
 
 logger = logging.getLogger(__name__)
+
+
+def _torch_module() -> Any:
+    """Load torch only when a retrieval embedding operation actually runs.
+
+    Tool discovery and the immutable registry baseline need retrieval schemas,
+    not a tensor runtime.  Keeping this import lazy prevents the audit
+    preflight subprocess from importing the several-gigabyte CUDA/Transformers
+    stack before workers are admitted.
+    """
+
+    import torch
+
+    return torch
+
+
+def _transformer_model_classes() -> Tuple[Any, Any]:
+    """Load Transformers model classes only for local embedding inference."""
+
+    from transformers import AutoModel, AutoTokenizer
+
+    return AutoModel, AutoTokenizer
 _SEGMENT_COUNT_CACHE: Dict[str, int] = {}
 _TOOL_SEARCH_SCHEMA_CACHE: Dict[str, Dict[str, Any]] = {}
 _TIMESTAMPED_TRANSCRIPT_LINE_RE = re.compile(
@@ -45,6 +67,7 @@ def _align_hidden_and_attention_mask(
     *,
     source: str,
 ) -> Tuple[torch.Tensor, torch.Tensor]:
+    torch = _torch_module()
     aligned_hidden = hidden
     aligned_mask = attention_mask
     if aligned_hidden.shape[0] == aligned_mask.shape[0]:
@@ -64,6 +87,7 @@ def _align_hidden_and_attention_mask(
 
 
 def _preferred_text_embedding_dtype(device: str) -> torch.dtype:
+    torch = _torch_module()
     if str(device).startswith("cpu"):
         return torch.float32
     if str(device).startswith("cuda"):
@@ -76,6 +100,7 @@ def _preferred_text_embedding_dtype(device: str) -> torch.dtype:
 
 
 def _resolve_model_float_dtype(model: Any) -> torch.dtype:
+    torch = _torch_module()
     parameters = getattr(model, "parameters", None)
     if callable(parameters):
         try:
@@ -161,6 +186,83 @@ def _collect_searchable_segment_text(payload: Any) -> str:
     return " ".join(collected).strip()
 
 
+_SEMANTIC_RELEVANCE_STOPWORDS = {
+    "a", "an", "and", "are", "be", "by", "can", "does", "doing", "for",
+    "from", "he", "how", "in", "is", "it", "main", "of", "on", "or",
+    "person", "show", "the", "their", "this", "to", "video", "what", "with",
+    "woman", "man", "character", "thing", "scene", "there",
+}
+_SEMANTIC_TEXT_MODALITIES = {
+    "caption", "description", "transcript", "asr", "text", "graph", "ocr",
+}
+
+
+def _semantic_relevance_diagnostic(
+    *,
+    query: Any,
+    match: Dict[str, Any],
+    segment_payload: Dict[str, Any],
+) -> Dict[str, Any]:
+    """Separate text-grounded retrieval from an unverified visual candidate.
+
+    Dense image similarity is useful for localization, but it is not sufficient
+    to cite a segment as the answer-bearing evidence. In particular, a query
+    about a computer/hand can retrieve visually unrelated wildlife footage. A
+    text hit or a strong text-modality hit remains usable; visual-only hits are
+    returned as candidates that require Inspect_Frame/Video_Clip_QA.
+    """
+    query_tokens = {
+        token
+        for token in _tokenize_text(str(query or ""))
+        if token not in _SEMANTIC_RELEVANCE_STOPWORDS and len(token) > 1
+    }
+    content_tokens = set(_tokenize_text(_collect_searchable_segment_text(segment_payload)))
+    matched_tokens = sorted(query_tokens.intersection(content_tokens))
+    lexical_overlap = len(matched_tokens) / max(1, len(query_tokens))
+    similarity = float(match.get("similarity_score", 0.0) or 0.0)
+    modalities = {
+        str(value).strip().lower()
+        for value in (match.get("matched_modalities") or [])
+        if str(value).strip()
+    }
+    text_modality_hit = bool(modalities.intersection(_SEMANTIC_TEXT_MODALITIES))
+
+    if lexical_overlap >= 0.25:
+        label = "lexical_supported"
+        usable = True
+        evidence_strength = "text_grounded"
+        needs_visual_verification = False
+    elif text_modality_hit and similarity >= 0.42:
+        label = "dense_text_supported"
+        usable = True
+        evidence_strength = "dense_text_grounded"
+        needs_visual_verification = True
+    elif similarity >= 0.55:
+        label = "dense_visual_candidate"
+        usable = False
+        evidence_strength = "unverified_visual_candidate"
+        needs_visual_verification = True
+    else:
+        label = "low_signal"
+        usable = False
+        evidence_strength = "none"
+        needs_visual_verification = True
+
+    return {
+        "relevance_label": label,
+        "relevance_usable": usable,
+        "lexical_overlap": round(float(lexical_overlap), 4),
+        "matched_tokens": matched_tokens,
+        "similarity_score": round(similarity, 4),
+        "matched_modalities": sorted(modalities),
+        "evidence_strength": evidence_strength,
+        "needs_visual_verification": needs_visual_verification,
+        "recommended_next_tools": ["Inspect_Frame", "Video_Clip_QA"]
+        if needs_visual_verification
+        else [],
+    }
+
+
 def _time_to_seconds(value: Any) -> Optional[float]:
     if value is None:
         return None
@@ -201,6 +303,34 @@ def _parse_time_range(value: Any) -> Optional[Tuple[float, float]]:
     if start is None or end is None:
         return None
     return (min(start, end), max(start, end))
+
+
+def _extract_query_time_prior(query: Any) -> Optional[Tuple[float, float]]:
+    """Read the explicitly labelled benchmark localization prior, if present."""
+    text = str(query or "")
+    match = re.search(
+        r"(?:reference\s+time(?:\s+window)?|time_reference|time\s+prior)"
+        r"[^0-9]{0,120}"
+        r"(\d{1,3}(?::\d{2}(?::\d{2}(?:\.\d+)?)?)?)\s*[-–]\s*"
+        r"(\d{1,3}(?::\d{2}(?::\d{2}(?:\.\d+)?)?)?)",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if not match:
+        return None
+    start = _time_to_seconds(match.group(1))
+    end = _time_to_seconds(match.group(2))
+    if start is None or end is None:
+        return None
+    return (min(start, end), max(start, end))
+
+
+_SEMANTIC_FALLBACK_STOPWORDS = {
+    "a", "an", "and", "are", "be", "by", "can", "does", "doing", "for",
+    "from", "he", "how", "in", "is", "it", "main", "male", "of", "on",
+    "or", "person", "show", "the", "their", "this", "to", "video", "what",
+    "wear", "wearing", "with", "woman", "man", "character", "clothes", "clothing",
+}
 
 
 def _normalize_asr_entry(entry: Dict[str, Any]) -> Optional[Dict[str, Any]]:
@@ -412,39 +542,6 @@ def _serialize_for_prompt(value: Any, *, max_chars: int = 12000) -> str:
     if len(serialized) <= max_chars:
         return serialized
     return serialized[:max_chars] + "\n...[truncated]"
-
-
-def _fallback_evidence_verify_assessment(
-    *,
-    evidence_items: List[Dict[str, str]],
-    raw_model_text: str = "",
-) -> Dict[str, Any]:
-    verified_items = [item for item in evidence_items if item.get("evidence_status") == "verified"]
-    approximate_items = [item for item in evidence_items if item.get("evidence_status") == "approximate"]
-    missing_items = [item for item in evidence_items if item.get("evidence_status") == "missing"]
-
-    chain_complete = bool(evidence_items) and not approximate_items and not missing_items
-    can_finish = chain_complete
-    missing_evidence = [str(item.get("label") or "").strip() for item in (missing_items + approximate_items)]
-    recommendation = (
-        "Evidence chain looks complete; planner can finish if the final answer cites the verified evidence."
-        if can_finish
-        else "Evidence is still incomplete; planner should probe the missing or approximate slots before finishing."
-    )
-    if raw_model_text:
-        recommendation = f"{recommendation} Model note: {raw_model_text.strip()}"
-
-    return {
-        "chain_complete": chain_complete,
-        "can_finish": can_finish,
-        "overconfident": False,
-        "has_logic_issue": False,
-        "loop_risk": False,
-        "logic_issues": [],
-        "missing_evidence": _normalize_string_list(missing_evidence),
-        "recommendation": recommendation,
-        "confidence_level": "high" if can_finish else ("medium" if verified_items else "low"),
-    }
 
 
 def _build_evidence_verify_prompt(
@@ -1280,6 +1377,7 @@ def _score_tool_search_records(
     recent_tools: List[str],
     query_vec: torch.Tensor,
 ) -> List[Dict[str, Any]]:
+    torch = _torch_module()
     scored: List[Dict[str, Any]] = []
     for record in records:
         schema = dict(record.get("schema") or {})
@@ -1342,22 +1440,115 @@ def _interleave_tool_search_stages(
     return merged[: max(1, top_k)]
 
 
+def _explicit_tool_name_from_intent(intent_description: Any) -> str:
+    """Extract a planner-requested executable name from a routing intent."""
+    text = str(intent_description or "")
+    match = re.search(
+        r"\b(?:abstract[_ ]tool|target[_ ]tool|tool)\s*:\s*([A-Za-z][A-Za-z0-9_]*)",
+        text,
+        flags=re.IGNORECASE,
+    )
+    return str(match.group(1) or "").strip() if match else ""
+
+
+def _inject_explicit_tool_candidate(
+    *,
+    results: List[Dict[str, Any]],
+    all_tools: List[BaseTool],
+    intent_description: Any,
+    top_k: int,
+) -> List[Dict[str, Any]]:
+    """Keep an explicit tool request from being lost below semantic top-k."""
+    requested_name = _explicit_tool_name_from_intent(intent_description)
+    if not requested_name:
+        return results
+    normalized_requested = requested_name.lower()
+    matching_tool = next(
+        (
+            tool
+            for tool in all_tools
+            if str(getattr(tool, "name", "") or "").strip().lower() == normalized_requested
+        ),
+        None,
+    )
+    if matching_tool is None:
+        return results
+    if any(str(item.get("name", "")).strip().lower() == normalized_requested for item in results):
+        return results
+
+    schema = matching_tool.get_schema()
+    schema["tags"] = list(matching_tool.tags or [])
+    schema["tool_type"] = _infer_tool_type(matching_tool.tags)
+    schema["capability_tier"] = _infer_tool_capability_tier(matching_tool.tags)
+    schema["evaluation_ready"] = _is_evaluation_ready(matching_tool.tags)
+    schema["score"] = max(float(schema.get("score", 0.0) or 0.0), 1.0)
+    schema["final_score"] = max(float(schema.get("final_score", 0.0) or 0.0), 1.0)
+    schema["route_reason"] = f"exact_name_requested:{requested_name}->{matching_tool.name}"
+    schema["route_stage"] = "exact_name"
+    return [schema] + list(results)[: max(0, int(top_k) - 1)]
+
+
 def _get_cached_vector_store(video_dir: Path):
+    """Load a complete dense index; repair missing/corrupt indexes with embeddings."""
+    from filelock import FileLock
     from preprocessing.storage.vector_store import VideoSegmentVectorStore
+    import tempfile
+    import shutil
 
     vectors_path = video_dir / "vectors"
-    cache_key = str(vectors_path.resolve())
-    cached = runtime_session.get_cached_vector_store(cache_key)
-    if cached is not None:
-        runtime_session.record_cache("vector_store", True)
-        return cached
-
-    runtime_session.record_cache("vector_store", False)
-    started = time.perf_counter()
-    store = VideoSegmentVectorStore()
-    store.load(str(vectors_path))
-    runtime_session.record_timing("runtime_load.vector_store_seconds", time.perf_counter() - started)
-    return runtime_session.cache_vector_store(cache_key, store)
+    require_video = os.environ.get('TOOLSTAR_SEMANTIC_INDEX_VIDEO', '1').strip().lower() not in {'0', 'false', 'no', 'off'}
+    segments = _load_segments_payload(video_dir)
+    if not segments:
+        raise ValueError("Cannot index a video without persisted segments")
+    with FileLock(str(video_dir / '.dense_index.lock')):
+        metadata_path = vectors_path / 'metadata.json'
+        metadata_bytes = metadata_path.read_bytes() if metadata_path.is_file() else b''
+        cache_key = str(vectors_path.resolve()) + ':' + hashlib.sha256(metadata_bytes + str(require_video).encode()).hexdigest()
+        cached = runtime_session.get_cached_vector_store(cache_key)
+        if cached is not None and cached.document_count == len(segments):
+            runtime_session.record_cache("vector_store", True)
+            return cached
+        runtime_session.record_cache("vector_store", False)
+        started = time.perf_counter()
+        store = VideoSegmentVectorStore()
+        try:
+            metadata_payload = json.loads(metadata_bytes)
+            metadata = metadata_payload.get('metadata') if isinstance(metadata_payload, dict) else None
+            if not isinstance(metadata, list) or len(metadata) != len(segments) or not all(
+                isinstance(item, dict) and item.get('indexed_modalities')
+                and (not require_video or 'video' in item['indexed_modalities']) for item in metadata
+            ):
+                raise ValueError('Dense index metadata is incomplete')
+            store.load(str(vectors_path))
+            if store.document_count != len(segments):
+                raise ValueError('Dense index document count does not match segments')
+        except (OSError, ValueError, KeyError, RuntimeError, EOFError) as exc:
+            logger.warning('Rebuilding dense index for %s: %s', video_dir.name, exc)
+            store.index_segments(segments, video_dir.name, processed_root=str(video_dir))
+            if store.document_count != len(segments):
+                raise ValueError('Dense index repair did not index every segment')
+            staging = Path(tempfile.mkdtemp(prefix='.dense_index_', dir=video_dir))
+            previous = staging / 'previous'
+            replacement = staging / 'replacement'
+            try:
+                store.save(str(replacement))
+                built_metadata = json.loads((replacement / 'metadata.json').read_text())['metadata']
+                if require_video and not all('video' in item.get('indexed_modalities', []) for item in built_metadata):
+                    raise ValueError('Multimodal dense indexing requires real video embeddings for every segment')
+                if vectors_path.exists():
+                    os.replace(vectors_path, previous)
+                try:
+                    os.replace(replacement, vectors_path)
+                except BaseException:
+                    if previous.exists():
+                        os.replace(previous, vectors_path)
+                    raise
+            finally:
+                shutil.rmtree(staging, ignore_errors=True)
+            metadata_bytes = metadata_path.read_bytes()
+            cache_key = str(vectors_path.resolve()) + ':' + hashlib.sha256(metadata_bytes + str(require_video).encode()).hexdigest()
+        runtime_session.record_timing("runtime_load.vector_store_seconds", time.perf_counter() - started)
+        return runtime_session.cache_vector_store(cache_key, store)
 
 
 def _parse_segment_reference(segment_id: Optional[str]) -> Tuple[Optional[str], Optional[str], List[str]]:
@@ -1429,8 +1620,12 @@ def _ensure_knowledge_graph_payload(video_dir: Path) -> Dict[str, Any]:
 
 
 def _load_segment_graph_entities(video_dir: Path) -> Dict[str, List[str]]:
+    graph_path = video_dir / "knowledge_graph.json"
+    if not graph_path.exists():
+        return {}
     try:
-        kg = _ensure_knowledge_graph_payload(video_dir)
+        with graph_path.open("r", encoding="utf-8") as handle:
+            kg = json.load(handle) or {}
     except Exception as exc:
         logger.warning("Failed to load graph payload for %s: %s", video_dir, exc)
         return {}
@@ -1541,6 +1736,38 @@ def _segment_sort_key(entry: Dict[str, Any]) -> Tuple[float, float, str]:
     if parsed is None:
         return (float("inf"), float("inf"), str(entry.get("segment_ref", "")))
     return (float(parsed[0]), float(parsed[1]), str(entry.get("segment_ref", "")))
+
+
+def _build_candidate_probe_window(entry: Mapping[str, Any]) -> Optional[Dict[str, Any]]:
+    """Expose an executable full-segment probe for dense retrieval candidates.
+
+    A short probe around the first returned timestamp can miss a brief event
+    later in the same prepared segment.  Retrieval is not answer evidence, but
+    it does know the segment boundary; make that boundary explicit so the
+    Planner can ask Inspect_Frame/Video_Clip_QA to verify the whole candidate.
+    """
+    parsed = _parse_time_range(entry.get("time_range") or entry.get("time"))
+    if parsed is None:
+        return None
+    start, end = float(parsed[0]), float(parsed[1])
+    if end <= start:
+        return None
+    segment_ref = str(
+        entry.get("segment_ref")
+        or entry.get("segment_id")
+        or entry.get("id")
+        or ""
+    ).strip()
+    if not segment_ref:
+        return None
+    return {
+        "segment_ref": segment_ref,
+        "start_time": round(start, 3),
+        "end_time": round(end, 3),
+        "time_range": f"{start:.3f}-{end:.3f}",
+        "verification_required": True,
+        "recommended_tools": ["Inspect_Frame", "Video_Clip_QA"],
+    }
 
 
 def _build_segment_bundle(
@@ -1731,7 +1958,7 @@ class _ToolSearchEmbedder:
         self._service_model = _tool_search_embedding_service_model()
         self._service_base = _tool_search_embedding_service_base()
         self._service_enabled = _tool_search_embedding_service_enabled()
-        self._embedding_cache: Dict[str, torch.Tensor] = {}
+        self._embedding_cache: Dict[str, Any] = {}
         if self._service_enabled:
             if not self._service_base:
                 raise RuntimeError(
@@ -1767,6 +1994,7 @@ class _ToolSearchEmbedder:
     def _lazy_load(self) -> None:
         if self._model is not None and self._tokenizer is not None:
             return
+        torch = _torch_module()
         resolved_model_path = Path(self.model_path).expanduser()
         if not resolved_model_path.exists():
             raise FileNotFoundError(f"Local embedding model path not found: {resolved_model_path}")
@@ -1786,6 +2014,7 @@ class _ToolSearchEmbedder:
             with lock_context:
                 cached_runtime = runtime_session.get_cached_artifact(cache_key)
                 if cached_runtime is None:
+                    AutoModel, AutoTokenizer = _transformer_model_classes()
                     self._tokenizer = AutoTokenizer.from_pretrained(
                         model_path_str,
                         trust_remote_code=True,
@@ -1861,6 +2090,7 @@ class _ToolSearchEmbedder:
         return self._service_pool
 
     def _encode_via_service(self, text: str) -> torch.Tensor:
+        torch = _torch_module()
         with self._lazy_load_service().borrow() as (client, endpoint):
             if embeddings_api_marked_unhealthy(endpoint):
                 embedding = request_pooling_embedding(
@@ -1896,6 +2126,7 @@ class _ToolSearchEmbedder:
         return torch.nn.functional.normalize(vector, p=2, dim=0)
 
     def encode(self, text: str) -> torch.Tensor:
+        torch = _torch_module()
         normalized_text = (text or "").strip()
         if not normalized_text:
             return torch.zeros(1, dtype=torch.float32)
@@ -2134,6 +2365,12 @@ class ToolSearch(BaseTool):
                     meta_items=meta_results,
                     top_k=max(1, top_k),
                 )
+            results = _inject_explicit_tool_candidate(
+                results=results,
+                all_tools=all_tools,
+                intent_description=intent_description,
+                top_k=max(1, top_k),
+            )
             logger.info(
                 "Tool_Search semantic retrieval returned %d/%d tools for intent='%s' using %s (recent_tools=%s, tool_type=%s, stage2_meta=%s)",
                 len(results),
@@ -2145,37 +2382,8 @@ class ToolSearch(BaseTool):
                 _stage_two_meta_budget(normalized_type, features, top_k=max(1, top_k)),
             )
             return results
-        except Exception as e:
-            logger.warning(
-                "Tool_Search semantic retrieval failed (%s). Falling back to keyword matching.",
-                e,
-            )
-            words = [w for w in intent_description.lower().split() if w]
-            fallback_results = []
-            fallback_tool_pool = (
-                all_tools
-                if normalized_type == "all"
-                else [tool for tool in all_tools if _infer_tool_type(tool.tags) == normalized_type]
-            )
-            for tool in fallback_tool_pool:
-                desc = (tool.description or "").lower()
-                name = (tool.name or "").lower()
-                if any(word in desc or word in name for word in words):
-                    schema = tool.get_schema()
-                    schema["tags"] = list(tool.tags or [])
-                    schema["tool_type"] = _infer_tool_type(tool.tags)
-                    schema["capability_tier"] = _infer_tool_capability_tier(tool.tags)
-                    schema["evaluation_ready"] = _is_evaluation_ready(tool.tags)
-                    route_meta = _route_candidate_bonus(
-                        schema,
-                        intent_description=intent_description,
-                        recent_tools=recent_tools,
-                    )
-                    schema.update(route_meta)
-                    schema["final_score"] = round(float(route_meta.get("route_score", 0.0)) + float(route_meta.get("novelty_score", 0.0)), 4)
-                    fallback_results.append(schema)
-            fallback_results.sort(key=lambda item: float(item.get("final_score", 0.0)), reverse=True)
-            return _select_diverse_candidates(fallback_results, top_k=max(1, top_k))
+        except Exception as exc:
+            raise RuntimeError("Tool_Search semantic embedding/routing failed") from exc
 
 
 class QueryRewrite(BaseTool):
@@ -2651,7 +2859,10 @@ class SemanticRetrieve(BaseTool):
     description: str = (
         "Perform fuzzy semantic retrieval based on natural language description. "
         "Returns the retrieved segment's preprocessed evidence bundle, including caption, transcript, "
-        "timestamps, and cached frame images. Supports time-range constraints."
+        "timestamps, and cached frame images. Supports time-range constraints. Dense visual-only matches "
+        "are returned as unverified candidates and are not cited as answer evidence until Inspect_Frame "
+        "or Video_Clip_QA confirms them. Each candidate also exposes its full executable probe window; "
+        "verify that window before narrowing to a short timestamp."
     )
     tags: list = ["base", "retrieval", "semantic"]
     parameters: Dict[str, Any] = {
@@ -2713,11 +2924,20 @@ class SemanticRetrieve(BaseTool):
                 "time_range": time_range,
             }
             
-        # Parse time range
+        # Parse time range. For benchmark samples with an explicitly labelled
+        # localization prior, apply it even when the planner omitted the
+        # optional tool argument so a distant semantic hit cannot displace the
+        # dataset's scene locator.
+        effective_time_range = time_range
+        time_prior = None
+        if not effective_time_range:
+            time_prior = _extract_query_time_prior(runtime_session.get_active_query_text())
+            if time_prior is not None:
+                effective_time_range = f"{time_prior[0]:.3f}-{time_prior[1]:.3f}"
         time_filter = None
-        if time_range:
+        if effective_time_range:
             try:
-                parts = time_range.split('-')
+                parts = effective_time_range.split('-')
                 if len(parts) == 2:
                     # Handle HH:MM:SS or SS
                     def parse_time(t_str):
@@ -2730,16 +2950,14 @@ class SemanticRetrieve(BaseTool):
                     end = parse_time(parts[1])
                     time_filter = (start, end)
             except Exception as e:
-                logger.warning(f"Failed to parse time range {time_range}: {e}")
+                logger.warning(f"Failed to parse time range {effective_time_range}: {e}")
         
         for video_dir in _iter_scoped_video_dirs(video_hint):
-            vectors_path = video_dir / "vectors"
-            if not vectors_path.exists():
+            segments = _load_segments_payload(video_dir)
+            if not segments:
                 continue
-
             try:
                 store = _get_cached_vector_store(video_dir)
-                segments = _load_segments_payload(video_dir)
                 times_map = _load_segment_times_map(video_dir)
                 graph_entities = _load_segment_graph_entities(video_dir)
                 search_started = time.perf_counter()
@@ -2770,6 +2988,11 @@ class SemanticRetrieve(BaseTool):
                             "frame_paths": match.get("frame_paths", []),
                             "segment_aliases": match.get("segment_aliases", []),
                         }
+                    relevance = _semantic_relevance_diagnostic(
+                        query=query,
+                        match=match,
+                        segment_payload=seg_data,
+                    )
                     bundle = _build_segment_bundle(
                         video_dir,
                         raw_segment_id or segment_ref,
@@ -2784,6 +3007,13 @@ class SemanticRetrieve(BaseTool):
                             "similarity_score": float(match.get("similarity_score", 0.0) or 0.0),
                             "matched_modalities": list(match.get("matched_modalities") or []),
                             "modality_scores": dict(match.get("modality_scores") or {}),
+                            "relevance_label": relevance["relevance_label"],
+                            "relevance_usable": relevance["relevance_usable"],
+                            "lexical_overlap": relevance["lexical_overlap"],
+                            "matched_tokens": relevance["matched_tokens"],
+                            "evidence_strength": relevance["evidence_strength"],
+                            "needs_visual_verification": relevance["needs_visual_verification"],
+                            "recommended_next_tools": relevance["recommended_next_tools"],
                         },
                         text_hint=f"semantic {query}",
                     )
@@ -2800,7 +3030,52 @@ class SemanticRetrieve(BaseTool):
             )
         )
         if results:
-            limited = results[:top_k]
+            candidate_segments = results[:top_k]
+            candidate_probe_windows = [
+                window
+                for item in candidate_segments
+                for window in [_build_candidate_probe_window(item)]
+                if window is not None
+            ]
+            usable_results = [
+                item for item in results
+                if bool(item.get("relevance_usable", True))
+            ]
+            limited = usable_results[:top_k]
+            relevance_diagnostics = [
+                {
+                    "segment_ref": item.get("segment_ref"),
+                    "relevance_label": item.get("relevance_label", "unknown"),
+                    "similarity_score": item.get("similarity_score", 0.0),
+                    "lexical_overlap": item.get("lexical_overlap", 0.0),
+                    "matched_modalities": item.get("matched_modalities", []),
+                    "needs_visual_verification": bool(item.get("needs_visual_verification", False)),
+                }
+                for item in candidate_segments
+            ]
+            if not limited:
+                return enrich_tool_result(
+                    {
+                        "query": query,
+                        "time_range": time_range,
+                        "top_k": top_k,
+                        "resolved_video_scope": resolved_scope,
+                        "match_count": 0,
+                        "matched_segments": [],
+                        "candidate_segments": candidate_segments,
+                        "candidate_probe_windows": candidate_probe_windows,
+                        "relevance_diagnostics": relevance_diagnostics,
+                        "status": "no_valid_result",
+                        "time_prior_applied": time_prior is not None and not time_range,
+                        "recommended_next_tools": ["Inspect_Frame", "Video_Clip_QA"],
+                        "result": (
+                            f"Semantic_Retrieve produced {len(candidate_segments)} dense candidate segments for "
+                            f"'{query}', but none is text-grounded enough to cite. The candidates require direct "
+                            "visual verification; they are not answer evidence."
+                        ),
+                    },
+                    tool_name=self.name,
+                )
             payload = {
                 "query": query,
                 "time_range": time_range,
@@ -2808,8 +3083,22 @@ class SemanticRetrieve(BaseTool):
                 "resolved_video_scope": resolved_scope,
                 "match_count": len(limited),
                 "matched_segments": limited,
+                "candidate_segments": [
+                    item for item in candidate_segments
+                    if not bool(item.get("relevance_usable", True))
+                ],
+                "candidate_probe_windows": candidate_probe_windows,
+                "relevance_diagnostics": relevance_diagnostics,
                 "status": "success",
-                "result": f"Semantic_Retrieve found {len(limited)} relevant segments for '{query}'.",
+                "time_prior_applied": time_prior is not None and not time_range,
+                "result": (
+                    f"Semantic_Retrieve found {len(limited)} text-grounded segments for '{query}'."
+                    + (
+                        f" Withheld {len(candidate_segments) - len(limited)} dense-only candidates pending direct visual verification."
+                        if len(candidate_segments) > len(limited)
+                        else ""
+                    )
+                ),
             }
             return enrich_tool_result(payload, tool_name=self.name)
         if load_errors:
@@ -2818,18 +3107,19 @@ class SemanticRetrieve(BaseTool):
                 "details": load_errors,
                 "status": "error",
                 "query": query,
-                "time_range": time_range,
+                "time_range": effective_time_range,
                 "resolved_video_scope": resolved_scope,
             }
         return enrich_tool_result(
             {
                 "query": query,
-                "time_range": time_range,
+                "time_range": effective_time_range,
                 "top_k": top_k,
                 "resolved_video_scope": resolved_scope,
                 "match_count": 0,
                 "matched_segments": [],
                 "status": "no_valid_result",
+                "time_prior_applied": time_prior is not None and not time_range,
                 "result": "Semantic_Retrieve did not provide usable evidence. Planner should try another relevant tool, broaden/narrow the time range, or reformulate the probe.",
             },
             tool_name=self.name,
@@ -3087,67 +3377,32 @@ class EvidenceVerify(BaseTool):
             answer_draft=answer_text,
             verification_prompt=verify_instruction,
         )
-        fallback = _fallback_evidence_verify_assessment(evidence_items=evidence_items)
-
+        parsed = None
+        raw_text = ""
         try:
-            provider = get_llm_provider(
-                model_name=self.model_path,
-                model_role="subagent",
-            )
-            raw_response = provider.generate(
-                [{"role": "user", "content": prompt}],
-                temperature=0.0,
-                do_sample=False,
-                enable_thinking=False,
-                max_tokens=min(
-                    int(getattr(settings, "subagent_max_generation_tokens", 2048) or 2048),
-                    1024,
-                ),
-            )
+            provider = get_llm_provider(model_name=self.model_path, model_role="subagent")
+            messages = [{"role": "user", "content": prompt}]
+            for attempt in range(2):
+                raw_text = str(provider.generate(messages, temperature=0.0, do_sample=False,
+                    enable_thinking=False, max_tokens=min(
+                        int(getattr(settings, "subagent_max_generation_tokens", 2048) or 2048), 1024)) or '').strip()
+                parsed = _extract_first_json_payload(raw_text)
+                if isinstance(parsed, dict) and all(
+                    isinstance(parsed.get(key), bool) or str(parsed.get(key)).strip().lower() in {'true', 'false'}
+                    for key in ('chain_complete', 'can_finish')
+                ):
+                    break
+                parsed = None
+                messages = [{"role": "user", "content": prompt},
+                            {"role": "assistant", "content": raw_text},
+                            {"role": "user", "content": 'Return the actual assessment as a JSON object with explicit boolean chain_complete and can_finish. Preserve your evidence-based judgment; do not infer approval from supplied evidence labels.'}]
         except Exception as exc:
-            logger.warning("evidence_verify failed to call verification model: %s", exc)
-            return {
-                "status": "error",
-                "error": str(exc),
-                "chain_complete": fallback["chain_complete"],
-                "can_finish": fallback["can_finish"],
-                "overconfident": fallback["overconfident"],
-                "has_logic_issue": fallback["has_logic_issue"],
-                "loop_risk": fallback["loop_risk"],
-                "logic_issues": fallback["logic_issues"],
-                "missing_evidence": fallback["missing_evidence"],
-                "recommendation": "evidence_verify failed while calling the verification model.",
-                "result": "evidence_verify failed while calling the verification model.",
-            }
-
-        raw_text = str(raw_response or "").strip()
-        parsed = _extract_first_json_payload(raw_text)
-
-        if not isinstance(parsed, dict):
-            assessment = _fallback_evidence_verify_assessment(
-                evidence_items=evidence_items,
-                raw_model_text=raw_text,
-            )
-            return enrich_tool_result(
-                {
-                    "status": "success",
-                    "parse_status": "raw_text_fallback",
-                    "original_question": question,
-                    "evidence_count": len(evidence_items),
-                    "chain_complete": bool(assessment["chain_complete"]),
-                    "can_finish": bool(assessment["can_finish"]),
-                    "overconfident": bool(assessment["overconfident"]),
-                    "has_logic_issue": bool(assessment["has_logic_issue"]),
-                    "loop_risk": bool(assessment["loop_risk"]),
-                    "confidence_level": assessment["confidence_level"],
-                    "logic_issues": assessment["logic_issues"],
-                    "missing_evidence": assessment["missing_evidence"],
-                    "recommendation": assessment["recommendation"],
-                    "raw_assessment": raw_text,
-                    "result": assessment["recommendation"],
-                },
-                tool_name=self.name,
-            )
+            return {"status": "error", "error": str(exc), "chain_complete": False,
+                    "can_finish": False, "result": "Verification model execution failed."}
+        if parsed is None:
+            return {"status": "error", "parse_status": "invalid_schema", "raw_assessment": raw_text,
+                    "chain_complete": False, "can_finish": False,
+                    "result": "Verification model did not return a valid assessment after format repair."}
 
         logic_issues = _normalize_string_list(
             parsed.get("logic_issues")
@@ -3172,20 +3427,20 @@ class EvidenceVerify(BaseTool):
             "parse_status": "json",
             "original_question": question,
             "evidence_count": len(evidence_items),
-            "chain_complete": _coerce_bool(parsed.get("chain_complete"), fallback["chain_complete"]),
-            "can_finish": _coerce_bool(parsed.get("can_finish"), fallback["can_finish"]),
+            "chain_complete": _coerce_bool(parsed.get("chain_complete"), False),
+            "can_finish": _coerce_bool(parsed.get("can_finish"), False),
             "overconfident": _coerce_bool(parsed.get("overconfident"), False),
             "has_logic_issue": _coerce_bool(parsed.get("has_logic_issue"), bool(logic_issues)),
             "loop_risk": _coerce_bool(parsed.get("loop_risk"), False),
             "confidence_level": str(
                 parsed.get("confidence_level")
-                or fallback["confidence_level"]
-            ).strip() or fallback["confidence_level"],
+                or "unknown"
+            ).strip() or "unknown",
             "logic_issues": logic_issues,
             "missing_evidence": missing_evidence,
-            "recommendation": recommendation or fallback["recommendation"],
+            "recommendation": recommendation or "See the structured model assessment.",
             "parsed_json": parsed,
-            "result": recommendation or fallback["recommendation"],
+            "result": recommendation or "See the structured model assessment.",
         }
         return enrich_tool_result(normalized, tool_name=self.name)
 

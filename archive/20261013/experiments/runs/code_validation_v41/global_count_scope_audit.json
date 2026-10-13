@@ -1,0 +1,10 @@
+{
+  "kind": "global_count_scope_audit",
+  "accepted_prefix_as_whole_video": true,
+  "observed_window": [
+    0,
+    30
+  ],
+  "source_video_duration_seconds": 300,
+  "method": "Actual production function, synthetic scope counterexample; not a benchmark outcome."
+}

@@ -1,0 +1,96 @@
+{
+  "verified_at": "2026-10-13",
+  "revision_note": "These are verified download revisions, not a claim about the unknown original historical asset revisions.",
+  "assets": [
+    {
+      "name": "lvbench",
+      "repo_id": "lmms-eval/LVBench",
+      "repo_type": "dataset",
+      "revision": "a2ee023e44e4bc39c5f66442d63fee365370b4de",
+      "relative_dir": "datasets/LVBench",
+      "core": true,
+      "url": "https://huggingface.co/datasets/lmms-eval/LVBench"
+    },
+    {
+      "name": "videomme",
+      "repo_id": "lmms-eval/Video-MME",
+      "repo_type": "dataset",
+      "revision": "ead1408f75b618502df9a1d8e0950166bf0a2a0b",
+      "relative_dir": "datasets/Video-MME",
+      "core": true,
+      "url": "https://huggingface.co/datasets/lmms-eval/Video-MME"
+    },
+    {
+      "name": "egoschema",
+      "repo_id": "lmms-eval/egoschema",
+      "repo_type": "dataset",
+      "revision": "58350524ea7eb29c47000121f4f4b65eb6b4acb9",
+      "relative_dir": "datasets/egoschema",
+      "core": true,
+      "url": "https://huggingface.co/datasets/lmms-eval/egoschema"
+    },
+    {
+      "name": "mlvu",
+      "repo_id": "MLVU/MVLU",
+      "repo_type": "dataset",
+      "revision": "06ddc388aa34746b3abba77972b7a7dfd977f7a3",
+      "relative_dir": "datasets/MLVU",
+      "core": true,
+      "url": "https://huggingface.co/datasets/MLVU/MVLU"
+    },
+    {
+      "name": "longvideobench",
+      "repo_id": "longvideobench/LongVideoBench",
+      "repo_type": "dataset",
+      "revision": "60d1c89c1919a198b73be39c2babb213b29d6a5c",
+      "relative_dir": "datasets/LongVideoBench",
+      "core": false,
+      "url": "https://huggingface.co/datasets/longvideobench/LongVideoBench"
+    },
+    {
+      "name": "cgbench",
+      "repo_id": "CG-Bench/CG-Bench",
+      "repo_type": "dataset",
+      "revision": "a3be039f6ba85e022a749eca111b64ffcafadd1d",
+      "relative_dir": "datasets/CG-Bench",
+      "core": false,
+      "url": "https://huggingface.co/datasets/CG-Bench/CG-Bench"
+    },
+    {
+      "name": "Qwen3.5-9B",
+      "repo_id": "Qwen/Qwen3.5-9B",
+      "repo_type": "model",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "relative_dir": "models/Qwen/Qwen3.5-9B",
+      "core": true,
+      "url": "https://huggingface.co/Qwen/Qwen3.5-9B"
+    },
+    {
+      "name": "Qwen3-Embedding-0.6B",
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "repo_type": "model",
+      "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+      "relative_dir": "models/Qwen/Qwen3-Embedding-0.6B",
+      "core": true,
+      "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B"
+    },
+    {
+      "name": "Qwen3-VL-Embedding-2B",
+      "repo_id": "Qwen/Qwen3-VL-Embedding-2B",
+      "repo_type": "model",
+      "revision": "9f2f7e710d6d81056aa5c0a4f04764fec6bb7bda",
+      "relative_dir": "models/Qwen/Qwen3-VL-Embedding-2B",
+      "core": true,
+      "url": "https://huggingface.co/Qwen/Qwen3-VL-Embedding-2B"
+    },
+    {
+      "name": "faster-whisper-large-v3",
+      "repo_id": "Systran/faster-whisper-large-v3",
+      "repo_type": "model",
+      "revision": "edaa852ec7e145841d8ffdb056a99866b5f0a478",
+      "relative_dir": "models/Systran/faster-whisper-large-v3",
+      "core": true,
+      "url": "https://huggingface.co/Systran/faster-whisper-large-v3"
+    }
+  ]
+}

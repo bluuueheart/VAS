@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00012:057f8774-15c2-4e2e-b9fd-75f26d4b3b83",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "C",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "The woman is making dough.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(C) The woman is cooking food.",
+  "elapsed_seconds": 565.42,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00012-057f8774-15c2-4e2e-b9fd-75f26d4b3b83",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00012-057f8774-15c2-4e2e-b9fd-75f26d4b3b83/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00012-057f8774-15c2-4e2e-b9fd-75f26d4b3b83/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00012-057f8774-15c2-4e2e-b9fd-75f26d4b3b83/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/057f8774-15c2-4e2e-b9fd-75f26d4b3b83.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/057f8774-15c2-4e2e-b9fd-75f26d4b3b83.mp4",
+  "question_block": "Question: What is the overall objective of the woman's actions throughout the video and how do her actions contribute to that objective?\nOptions:\n(A) The woman is making a fire.\n(B) The woman is cleaning her house.\n(C) The woman is cooking food.\n(D) The woman is making dough.\n(E) The woman is taking a break.",
+  "options": [
+    "The woman is making a fire.",
+    "The woman is cleaning her house.",
+    "The woman is cooking food.",
+    "The woman is making dough.",
+    "The woman is taking a break."
+  ],
+  "official_meta": {
+    "question_index": "00012",
+    "video_id": "057f8774-15c2-4e2e-b9fd-75f26d4b3b83",
+    "resolved_video_stem": "057f8774-15c2-4e2e-b9fd-75f26d4b3b83",
+    "video_mapping_verified": true,
+    "source_index": 12,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-30T03:31:13.905190Z"
+}

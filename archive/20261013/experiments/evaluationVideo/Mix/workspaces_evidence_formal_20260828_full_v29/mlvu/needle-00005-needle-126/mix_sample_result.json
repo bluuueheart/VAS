@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:needle:5:needle-126",
+  "dataset_name": "mlvu",
+  "subset_name": "needle",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 9,
+  "iter_num": 11,
+  "tool_success_rate": 0.666667,
+  "successful_tool_calls": 6,
+  "planner_iterations": 11,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Azure blue",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) Azure blue",
+  "elapsed_seconds": 10204.945,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00005-needle-126",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00005-needle-126/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00005-needle-126/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/needle-00005-needle-126/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_126.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/2_needle/needle_126.mp4",
+  "question_block": "Question: What color is the water on the tropical beach in the video?\nOptions:\n(A) Dark blue\n(B) Clear\n(C) Green\n(D) Azure blue",
+  "options": [
+    "Dark blue",
+    "Clear",
+    "Green",
+    "Azure blue"
+  ],
+  "official_meta": {
+    "task_type": "needle",
+    "source_question_type": "findNeedle",
+    "prompt_task_type": "findNeedle",
+    "source_json": "2_needle.json",
+    "source_index": 5,
+    "video_subdir": "2_needle",
+    "video_relative_path": "2_needle/needle_126.mp4",
+    "resolved_video_stem": "needle_126",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-02T04:09:39.731805Z"
+}

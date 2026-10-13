@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00117:3993ba01-6a9f-49ad-b9f8-2e4083509c6e",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C and the woman are exploring the house and interacting with the objects inside.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00117-3993ba01-6a9f-49ad-b9f8-2e4083509c6e",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00117-3993ba01-6a9f-49ad-b9f8-2e4083509c6e/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00117-3993ba01-6a9f-49ad-b9f8-2e4083509c6e/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00117-3993ba01-6a9f-49ad-b9f8-2e4083509c6e/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/3993ba01-6a9f-49ad-b9f8-2e4083509c6e.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/3993ba01-6a9f-49ad-b9f8-2e4083509c6e.mp4",
+  "question_block": "Question: What might be the overall purpose of c and the woman's actions during the video, and how do these actions indicate their possible intentions or goals?\nOptions:\n(A) C and the woman are trying to find a way to escape the house.\n(B) C and the woman are trying to find a way to turn off the lights.\n(C) C and the woman are trying to find a way to open the door.\n(D) C and the woman are trying to find a way to get to the top of the stairs.\n(E) C and the woman are exploring the house and interacting with the objects inside.",
+  "options": [
+    "C and the woman are trying to find a way to escape the house.",
+    "C and the woman are trying to find a way to turn off the lights.",
+    "C and the woman are trying to find a way to open the door.",
+    "C and the woman are trying to find a way to get to the top of the stairs.",
+    "C and the woman are exploring the house and interacting with the objects inside."
+  ],
+  "official_meta": {
+    "question_index": "00117",
+    "video_id": "3993ba01-6a9f-49ad-b9f8-2e4083509c6e",
+    "source_index": 117
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:25:52.760344Z"
+}

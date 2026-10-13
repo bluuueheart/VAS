@@ -1,0 +1,37 @@
+{
+  "return_code": 0,
+  "queue_wait_seconds": 0.319101057946682,
+  "wall_seconds": 1637.327719077468,
+  "planned": 2,
+  "terminal": 2,
+  "correct": 1,
+  "rows": [
+    {
+      "sample_uid": "mlvu:order:0:order-126",
+      "status": "failed",
+      "acc": 0.0,
+      "accuracy_eligible": false,
+      "raw_final_answer": "Failed: reflector_execution_failed_without_valid_judgment.",
+      "elapsed_seconds": 189.624,
+      "tool_use_num": 1,
+      "iter_num": 1,
+      "result_path": "/gemini/code/Recovery/runs/baseline_closure_20260930/candidate_workspaces/mlvu/order-00000-order-126/mix_sample_result.json",
+      "run_result_path": "/gemini/code/Recovery/runs/baseline_closure_20260930/candidate_workspaces/mlvu/order-00000-order-126/results/run_result.json"
+    },
+    {
+      "sample_uid": "mlvu:topic-reasoning:0:awa-6",
+      "status": "completed",
+      "acc": 1.0,
+      "accuracy_eligible": true,
+      "raw_final_answer": "(A) Grassland",
+      "elapsed_seconds": 1167.349,
+      "tool_use_num": 3,
+      "iter_num": 2,
+      "result_path": "/gemini/code/Recovery/runs/baseline_closure_20260930/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6/mix_sample_result.json",
+      "run_result_path": "/gemini/code/Recovery/runs/baseline_closure_20260930/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6/results/run_result.json"
+    }
+  ],
+  "log": "/gemini/code/Recovery/runs/baseline_closure_20260930/candidate_worker.log",
+  "fresh_inference": true,
+  "evolution_benefit_proven": false
+}

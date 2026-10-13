@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00011:04c51dba-1dcb-4b8f-a62c-efc363561d7b",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 6,
+  "iter_num": 3,
+  "tool_success_rate": 0.833333,
+  "successful_tool_calls": 5,
+  "planner_iterations": 3,
+  "subagent_iterations": 0,
+  "predicted_label": "E",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C stirring the food in the pot.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [
+    "E"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(E) C stirring the food in the pot.",
+  "elapsed_seconds": 1458.546,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00011-04c51dba-1dcb-4b8f-a62c-efc363561d7b",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00011-04c51dba-1dcb-4b8f-a62c-efc363561d7b/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00011-04c51dba-1dcb-4b8f-a62c-efc363561d7b/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00011-04c51dba-1dcb-4b8f-a62c-efc363561d7b/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/04c51dba-1dcb-4b8f-a62c-efc363561d7b.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/04c51dba-1dcb-4b8f-a62c-efc363561d7b.mp4",
+  "question_block": "Question: Out of all the actions that took place, identify the most significant one related to food preparation and explain its importance in the context of the video.\nOptions:\n(A) C picking up the spoon from the pot lid.\n(B) C scraping food off the lid.\n(C) C placing the spoon on the white chopping board.\n(D) C eating remnants of food from the pot lid.\n(E) C stirring the food in the pot.",
+  "options": [
+    "C picking up the spoon from the pot lid.",
+    "C scraping food off the lid.",
+    "C placing the spoon on the white chopping board.",
+    "C eating remnants of food from the pot lid.",
+    "C stirring the food in the pot."
+  ],
+  "official_meta": {
+    "question_index": "00011",
+    "video_id": "04c51dba-1dcb-4b8f-a62c-efc363561d7b",
+    "resolved_video_stem": "04c51dba-1dcb-4b8f-a62c-efc363561d7b",
+    "video_mapping_verified": true,
+    "source_index": 11,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-29T23:33:30.283714Z"
+}

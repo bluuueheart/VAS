@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00231:7431615c-e482-4669-8d5e-1d916af17d4d",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is conducting an experiment to test the growth of seedlings.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00231-7431615c-e482-4669-8d5e-1d916af17d4d",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00231-7431615c-e482-4669-8d5e-1d916af17d4d/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00231-7431615c-e482-4669-8d5e-1d916af17d4d/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00231-7431615c-e482-4669-8d5e-1d916af17d4d/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/7431615c-e482-4669-8d5e-1d916af17d4d.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/7431615c-e482-4669-8d5e-1d916af17d4d.mp4",
+  "question_block": "Question: Describe the overarching process c is conducting in the laboratory, focusing on the purpose of their actions rather than the specific steps taken.\nOptions:\n(A) Currently, c is thoroughly cleaning and tidying the laboratory space.\n(B) C is preparing for a presentation.\n(C) Currently, person c is thoroughly inventorying supplies in stock.\n(D) C is conducting an experiment to test the growth of seedlings.\n(E) Currently, c is meticulously taking inventory of all the laboratory's essential equipment and tools.",
+  "options": [
+    "Currently, c is thoroughly cleaning and tidying the laboratory space.",
+    "C is preparing for a presentation.",
+    "Currently, person c is thoroughly inventorying supplies in stock.",
+    "C is conducting an experiment to test the growth of seedlings.",
+    "Currently, c is meticulously taking inventory of all the laboratory's essential equipment and tools."
+  ],
+  "official_meta": {
+    "question_index": "00231",
+    "video_id": "7431615c-e482-4669-8d5e-1d916af17d4d",
+    "source_index": 231
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:55:37.562221Z"
+}

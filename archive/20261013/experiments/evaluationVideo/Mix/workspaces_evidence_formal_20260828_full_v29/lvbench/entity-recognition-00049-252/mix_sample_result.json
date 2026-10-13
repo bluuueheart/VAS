@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:entity-recognition:49:252",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 2,
+  "iter_num": 4,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 2,
+  "planner_iterations": 4,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "3",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) 2",
+  "elapsed_seconds": 636.282,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00049-252",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00049-252/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00049-252/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00049-252/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/TJR1oYDDTwg.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/TJR1oYDDTwg.mp4",
+  "question_block": "Question: How many doors have colored lights at 00:29?\nOptions:\n(A) 2\n(B) 1\n(C) 3\n(D) 0",
+  "options": [
+    "2",
+    "1",
+    "3",
+    "0"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "cartoon",
+    "time_reference": "00:29-00:35",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "TJR1oYDDTwg",
+    "resolved_video_stem": "TJR1oYDDTwg",
+    "video_mapping_verified": true,
+    "source_index": 49
+  },
+  "updated_at": "2026-09-02T08:24:31.370005Z"
+}

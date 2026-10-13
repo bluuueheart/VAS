@@ -1,0 +1,57 @@
+{
+  "sample_uid": "videomme:law:061-1",
+  "dataset_name": "videomme",
+  "subset_name": "Law",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) 6",
+  "elapsed_seconds": 746.751,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/videomme/law-061-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/videomme/law-061-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/videomme/law-061-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/videomme/law-061-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/LCtOpCi5r2s.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/LCtOpCi5r2s.mp4",
+  "question_block": "Question: How many red flags appear in the video?\nOptions:\n(A) 7.\n(B) 6.\n(C) 8.\n(D) 5.",
+  "options": [
+    "A. 7.",
+    "B. 6.",
+    "C. 8.",
+    "D. 5."
+  ],
+  "official_meta": {
+    "video_id": "061",
+    "duration": "short",
+    "domain": "Knowledge",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Law",
+    "task_type": "Counting Problem",
+    "question_id": "061-1",
+    "question_index": 0,
+    "video_item_index": 60,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-24T23:17:58.905179Z"
+}

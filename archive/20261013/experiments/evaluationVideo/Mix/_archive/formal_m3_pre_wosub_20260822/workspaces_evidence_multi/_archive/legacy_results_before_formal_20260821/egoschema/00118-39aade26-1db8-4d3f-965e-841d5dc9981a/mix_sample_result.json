@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00118:39aade26-1db8-4d3f-965e-841d5dc9981a",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The tools used by c in the video were essential for achieving his goal.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00118-39aade26-1db8-4d3f-965e-841d5dc9981a",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00118-39aade26-1db8-4d3f-965e-841d5dc9981a/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00118-39aade26-1db8-4d3f-965e-841d5dc9981a/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00118-39aade26-1db8-4d3f-965e-841d5dc9981a/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/39aade26-1db8-4d3f-965e-841d5dc9981a.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/39aade26-1db8-4d3f-965e-841d5dc9981a.mp4",
+  "question_block": "Question: Assess the importance of the tools used by c in the video and explain how they contributed to achieving the overall purpose of the tasks performed.\nOptions:\n(A) The tools used by c in the video were essential for achieving his goal.\n(B) The tools used by c in the video were not essential for achieving his goal.\n(C) The tools used by c in the video were helpful but not essential for achieving his goal.\n(D) The tools used by c in the video were unnecessary for achieving his goal.\n(E) The tools used by c in the video were harmful for achieving his goal.",
+  "options": [
+    "The tools used by c in the video were essential for achieving his goal.",
+    "The tools used by c in the video were not essential for achieving his goal.",
+    "The tools used by c in the video were helpful but not essential for achieving his goal.",
+    "The tools used by c in the video were unnecessary for achieving his goal.",
+    "The tools used by c in the video were harmful for achieving his goal."
+  ],
+  "official_meta": {
+    "question_index": "00118",
+    "video_id": "39aade26-1db8-4d3f-965e-841d5dc9981a",
+    "source_index": 118
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:25:56.069917Z"
+}

@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "requested_tools": [
+    "Semantic_Retrieve",
+    "Segment_Retrieve",
+    "Inspect_Frame",
+    "Video_Clip_QA"
+  ],
+  "all_requested_tool_sources_present": true,
+  "inspect_frame_helper_present": true,
+  "all_snippets_exact_and_digests_valid": true,
+  "entries": [
+    {
+      "path": "toolkit/impl/retrieval.py",
+      "target": "Semantic_Retrieve",
+      "chars": 11000
+    },
+    {
+      "path": "toolkit/impl/retrieval.py",
+      "target": "Segment_Retrieve",
+      "chars": 5302
+    },
+    {
+      "path": "toolkit/impl/visual.py",
+      "target": "Video_Clip_QA",
+      "chars": 11000
+    },
+    {
+      "path": "toolkit/impl/visual.py",
+      "target": "Inspect_Frame",
+      "chars": 8699
+    },
+    {
+      "path": "toolkit/impl/visual.py",
+      "target": null,
+      "chars": 4360
+    },
+    {
+      "path": "config/agent_prompts.json",
+      "target": null,
+      "chars": 5178
+    }
+  ],
+  "limitation": "Source-input interface check, not evidence of model proposal quality or task gain."
+}

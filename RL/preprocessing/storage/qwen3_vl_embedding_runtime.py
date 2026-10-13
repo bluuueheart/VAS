@@ -1,19 +1,23 @@
 """Offline Qwen3-VL-Embedding runtime adapter for segment retrieval."""
 
 from __future__ import annotations
+import gc
 
 import json
 import logging
+import os
+import threading
 import time
 from contextlib import nullcontext
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, ClassVar, Dict, List, Optional, Tuple
 
-import torch
-import torch.nn.functional as F
-from transformers import AutoConfig, PretrainedConfig
-from transformers.modeling_outputs import ModelOutput
+# PyTorch and Transformers are intentionally loaded only when an embedding is
+# actually requested.  Worker cache hits and sparse-video grounding should not
+# pay the multimodal runtime import cost just to construct this adapter.
+torch = None  # type: ignore[assignment]
+_TRANSFORMER_COMPONENTS: Optional[Tuple[Any, Any, Any]] = None
 
 from config.device_config import (
     detect_device,
@@ -43,39 +47,28 @@ _VIDEO_METADATA_KEY_ALIASES = {
 _VIDEO_METADATA_ALLOWED_KEYS = frozenset({"fps", "duration", "total_num_frames"})
 
 
-class _Qwen3VLConfigCompat(PretrainedConfig):
-    model_type = "qwen3_vl"
-    keys_to_ignore_at_inference = ["past_key_values"]
-
-    def __init__(self, **kwargs: Any) -> None:
-        super().__init__(**kwargs)
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-
-
-def _register_qwen3_config_if_missing() -> None:
+def _resolve_positive_int_env(name: str, default: int) -> int:
+    raw_value = str(os.environ.get(name, "")).strip()
+    if not raw_value:
+        return int(default)
     try:
-        from transformers import AutoConfig as AutoConfigClass
-        from transformers.models.auto.configuration_auto import CONFIG_MAPPING
-    except Exception:
-        return
+        resolved = int(raw_value)
+    except (TypeError, ValueError):
+        logger.warning("Ignoring invalid %s=%r; using default=%s", name, raw_value, default)
+        return int(default)
+    if resolved <= 0:
+        logger.warning("Ignoring non-positive %s=%r; using default=%s", name, raw_value, default)
+        return int(default)
+    return resolved
 
-    try:
-        if hasattr(AutoConfigClass, "register"):
-            AutoConfigClass.register("qwen3_vl", _Qwen3VLConfigCompat)
-    except Exception:
-        pass
 
-    try:
-        if hasattr(CONFIG_MAPPING, "register"):
-            CONFIG_MAPPING.register("qwen3_vl", _Qwen3VLConfigCompat)
-    except Exception:
-        pass
+def _get_torch():
+    global torch
+    if torch is None:
+        import torch as torch_module
 
-    try:
-        CONFIG_MAPPING["qwen3_vl"] = _Qwen3VLConfigCompat
-    except Exception:
-        pass
+        torch = torch_module
+    return torch
 
 
 def _resolve_process_vision_info():
@@ -129,11 +122,12 @@ def _drop_none_mapping_values(payload: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def _normalize_processor_sequence_tensors(inputs: Dict[str, Any], *, source: str) -> Dict[str, Any]:
+    torch_module = _get_torch()
     normalized = dict(inputs or {})
     tracked_shapes: Dict[str, int] = {}
     for key in ("input_ids", "attention_mask", "token_type_ids", "mm_token_type_ids", "labels"):
         value = normalized.get(key)
-        if torch.is_tensor(value) and value.ndim >= 2:
+        if torch_module.is_tensor(value) and value.ndim >= 2:
             tracked_shapes[key] = int(value.shape[-1])
 
     if len(tracked_shapes) <= 1 or len(set(tracked_shapes.values())) == 1:
@@ -150,90 +144,146 @@ def _normalize_processor_sequence_tensors(inputs: Dict[str, Any], *, source: str
         common_length,
     )
     for key, value in list(normalized.items()):
-        if not torch.is_tensor(value) or value.ndim < 2:
+        if not torch_module.is_tensor(value) or value.ndim < 2:
             continue
         if key in tracked_shapes or key == "position_ids":
             normalized[key] = value[..., :common_length]
     return normalized
 
 
-@dataclass
-class _Qwen3VLForEmbeddingOutput(ModelOutput):
-    last_hidden_state: Optional[torch.FloatTensor] = None
-    attention_mask: Optional[torch.Tensor] = None
+def _ensure_transformer_components() -> Tuple[Any, Any, Any]:
+    """Load Transformers/Qwen classes only at the first real model request."""
+    global _TRANSFORMER_COMPONENTS
+    if _TRANSFORMER_COMPONENTS is not None:
+        return _TRANSFORMER_COMPONENTS
 
+    started = time.perf_counter()
+    logger.info("Loading Qwen3-VL-Embedding Python runtime components (lazy first-use import).")
+    _get_torch()
+    try:
+        from transformers import AutoConfig as AutoConfigClass
+        from transformers import PretrainedConfig
+        from transformers import Qwen3VLModel, Qwen3VLPreTrainedModel, Qwen3VLProcessor
+        from transformers.modeling_outputs import ModelOutput
+        from transformers.models.auto.configuration_auto import CONFIG_MAPPING
+    except Exception as exc:  # pragma: no cover - import depends on target runtime
+        raise RuntimeError(
+            "transformers is missing Qwen3VLModel/Qwen3VLProcessor support required by "
+            "Qwen/Qwen3-VL-Embedding-2B."
+        ) from exc
 
-_register_qwen3_config_if_missing()
+    class Qwen3VLConfigCompat(PretrainedConfig):
+        model_type = "qwen3_vl"
+        keys_to_ignore_at_inference = ["past_key_values"]
 
-try:
-    from transformers import Qwen3VLModel, Qwen3VLPreTrainedModel, Qwen3VLProcessor
-except Exception as exc:  # pragma: no cover - import depends on target runtime
-    raise RuntimeError(
-        "transformers is missing Qwen3VLModel/Qwen3VLProcessor support required by "
-        "Qwen/Qwen3-VL-Embedding-2B."
-    ) from exc
+        def __init__(self, **kwargs: Any) -> None:
+            super().__init__(**kwargs)
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
+    try:
+        if hasattr(AutoConfigClass, "register"):
+            AutoConfigClass.register("qwen3_vl", Qwen3VLConfigCompat)
+    except Exception:
+        pass
+    try:
+        if hasattr(CONFIG_MAPPING, "register"):
+            CONFIG_MAPPING.register("qwen3_vl", Qwen3VLConfigCompat)
+    except Exception:
+        pass
+    try:
+        CONFIG_MAPPING["qwen3_vl"] = Qwen3VLConfigCompat
+    except Exception:
+        pass
 
-class _ToolStarQwen3VLForEmbedding(Qwen3VLPreTrainedModel):
-    _checkpoint_conversion_mapping = {}
-    accepts_loss_kwargs = False
+    @dataclass
+    class Qwen3VLForEmbeddingOutput(ModelOutput):
+        last_hidden_state: Optional[Any] = None
+        attention_mask: Optional[Any] = None
 
-    def __init__(self, config) -> None:
-        super().__init__(config)
-        self.model = Qwen3VLModel(config)
-        self.post_init()
+    class ToolStarQwen3VLForEmbedding(Qwen3VLPreTrainedModel):
+        _checkpoint_conversion_mapping = {}
+        accepts_loss_kwargs = False
 
-    def get_input_embeddings(self):
-        return self.model.get_input_embeddings()
+        def __init__(self, config) -> None:
+            super().__init__(config)
+            self.model = Qwen3VLModel(config)
+            self.post_init()
 
-    def set_input_embeddings(self, value) -> None:
-        self.model.set_input_embeddings(value)
+        def get_input_embeddings(self):
+            return self.model.get_input_embeddings()
 
-    @property
-    def language_model(self):
-        return self.model.language_model
+        def set_input_embeddings(self, value) -> None:
+            self.model.set_input_embeddings(value)
 
-    @property
-    def visual(self):
-        return self.model.visual
+        @property
+        def language_model(self):
+            return self.model.language_model
 
-    def forward(
-        self,
-        input_ids: Optional[torch.LongTensor] = None,
-        attention_mask: Optional[torch.Tensor] = None,
-        position_ids: Optional[torch.LongTensor] = None,
-        past_key_values: Optional[Any] = None,
-        inputs_embeds: Optional[torch.FloatTensor] = None,
-        pixel_values: Optional[torch.Tensor] = None,
-        pixel_values_videos: Optional[torch.FloatTensor] = None,
-        image_grid_thw: Optional[torch.LongTensor] = None,
-        video_grid_thw: Optional[torch.LongTensor] = None,
-        cache_position: Optional[torch.LongTensor] = None,
-        **kwargs: Any,
-    ) -> _Qwen3VLForEmbeddingOutput:
-        outputs = self.model(
-            input_ids=input_ids,
-            pixel_values=pixel_values,
-            pixel_values_videos=pixel_values_videos,
-            image_grid_thw=image_grid_thw,
-            video_grid_thw=video_grid_thw,
-            position_ids=position_ids,
-            attention_mask=attention_mask,
-            past_key_values=past_key_values,
-            inputs_embeds=inputs_embeds,
-            cache_position=cache_position,
-            **kwargs,
-        )
-        return _Qwen3VLForEmbeddingOutput(
-            last_hidden_state=outputs.last_hidden_state,
-            attention_mask=attention_mask,
-        )
+        @property
+        def visual(self):
+            return self.model.visual
+
+        def forward(
+            self,
+            input_ids: Optional[Any] = None,
+            attention_mask: Optional[Any] = None,
+            position_ids: Optional[Any] = None,
+            past_key_values: Optional[Any] = None,
+            inputs_embeds: Optional[Any] = None,
+            pixel_values: Optional[Any] = None,
+            pixel_values_videos: Optional[Any] = None,
+            image_grid_thw: Optional[Any] = None,
+            video_grid_thw: Optional[Any] = None,
+            cache_position: Optional[Any] = None,
+            **kwargs: Any,
+        ) -> Any:
+            outputs = self.model(
+                input_ids=input_ids,
+                pixel_values=pixel_values,
+                pixel_values_videos=pixel_values_videos,
+                image_grid_thw=image_grid_thw,
+                video_grid_thw=video_grid_thw,
+                position_ids=position_ids,
+                attention_mask=attention_mask,
+                past_key_values=past_key_values,
+                inputs_embeds=inputs_embeds,
+                cache_position=cache_position,
+                **kwargs,
+            )
+            return Qwen3VLForEmbeddingOutput(
+                last_hidden_state=outputs.last_hidden_state,
+                attention_mask=attention_mask,
+            )
+
+    _TRANSFORMER_COMPONENTS = (AutoConfigClass, Qwen3VLProcessor, ToolStarQwen3VLForEmbedding)
+    logger.info(
+        "Qwen3-VL-Embedding Python runtime components ready in %.3fs.",
+        time.perf_counter() - started,
+    )
+    return _TRANSFORMER_COMPONENTS
 
 
 class Qwen3VLEmbeddingRuntimeEncoder:
     """Encodes text and segment clips with Qwen3-VL-Embedding-2B."""
 
+    @classmethod
+    def release_runtime_cache(cls) -> None:
+        """Release cached embedding weights when a larger model needs the GPU."""
+        cached_runtimes = list(cls._RUNTIME_CACHE.values())
+        cls._RUNTIME_CACHE.clear()
+        for cached_runtime in cached_runtimes:
+            model = cached_runtime.pop("model", None)
+            cached_runtime.pop("processor", None)
+            if model is not None:
+                del model
+        gc.collect()
+        torch_module = _get_torch()
+        if torch_module.cuda.is_available():
+            torch_module.cuda.empty_cache()
+
     _RUNTIME_CACHE: ClassVar[Dict[Tuple[str, str], Dict[str, Any]]] = {}
+    _RUNTIME_CACHE_LOCK: ClassVar[threading.Lock] = threading.Lock()
     DEFAULT_INSTRUCTION: ClassVar[str] = "Represent the user's input."
     QUERY_INSTRUCTION: ClassVar[str] = "Retrieve relevant video segments for the user's query."
     MAX_LENGTH: ClassVar[int] = 8192
@@ -277,7 +327,25 @@ class Qwen3VLEmbeddingRuntimeEncoder:
             )
         self.model = None
         self.processor = None
-        self._process_vision_info = _resolve_process_vision_info()
+        # qwen_vl_utils is only needed after the actual model request.  In
+        # particular, text-only query grounding should not import vision
+        # preprocessing while constructing a cache-hit worker.
+        self._process_vision_info = None
+        self.min_pixels = _resolve_positive_int_env(
+            "TOOLSTAR_QWEN3_VL_EMBEDDING_MIN_PIXELS",
+            self.MIN_PIXELS,
+        )
+        self.max_pixels = _resolve_positive_int_env(
+            "TOOLSTAR_QWEN3_VL_EMBEDDING_MAX_PIXELS",
+            self.MAX_PIXELS,
+        )
+        if self.max_pixels < self.min_pixels:
+            logger.warning(
+                "Qwen3-VL-Embedding max pixels (%s) is below min pixels (%s); using min pixels for both.",
+                self.max_pixels,
+                self.min_pixels,
+            )
+            self.max_pixels = self.min_pixels
 
     def _validate_checkpoint_layout(self, checkpoint_path: Path) -> Dict[str, Any]:
         config_path = checkpoint_path / "config.json"
@@ -354,20 +422,23 @@ class Qwen3VLEmbeddingRuntimeEncoder:
         return (settings.project_root / candidate).resolve()
 
     def _preferred_dtype(self) -> torch.dtype:
+        torch_module = _get_torch()
         if self.device == "cpu":
-            return torch.float32
+            return torch_module.float32
         if self.device == "cuda":
             try:
-                if torch.cuda.is_available() and torch.cuda.is_bf16_supported():
-                    return torch.bfloat16
+                if torch_module.cuda.is_available() and torch_module.cuda.is_bf16_supported():
+                    return torch_module.bfloat16
             except Exception:
                 pass
-        return torch.float16
+        return torch_module.float16
 
     def _load_process_vision_payload(
         self,
         conversations: List[List[Dict[str, Any]]],
     ) -> Tuple[Any, Any, Dict[str, Any]]:
+        if self._process_vision_info is None:
+            self._process_vision_info = _resolve_process_vision_info()
         kwargs = {
             "image_patch_size": 16,
             "return_video_metadata": True,
@@ -384,6 +455,8 @@ class Qwen3VLEmbeddingRuntimeEncoder:
         if self.model is not None and self.processor is not None:
             return
 
+        logger.info("Qwen3-VL-Embedding lazy load: importing model components.")
+        AutoConfigClass, Qwen3VLProcessorClass, ModelClass = _ensure_transformer_components()
         resolved_model_path = self._resolve_local_path(self.model_path)
         if not resolved_model_path.exists():
             raise FileNotFoundError(
@@ -391,7 +464,8 @@ class Qwen3VLEmbeddingRuntimeEncoder:
             )
         checkpoint_layout = self._validate_checkpoint_layout(resolved_model_path)
 
-        config = AutoConfig.from_pretrained(
+        logger.info("Qwen3-VL-Embedding lazy load: reading local config=%s", resolved_model_path / "config.json")
+        config = AutoConfigClass.from_pretrained(
             str(resolved_model_path),
             trust_remote_code=True,
             local_files_only=True,
@@ -405,56 +479,111 @@ class Qwen3VLEmbeddingRuntimeEncoder:
             )
 
         cache_key = (str(resolved_model_path), self.runtime_device)
-        cached_runtime = self._RUNTIME_CACHE.get(cache_key)
-        runtime_session.record_cache("qwen3_vl_embedding_runtime", cached_runtime is not None)
-        if cached_runtime is None:
-            started = time.perf_counter()
-            processor = Qwen3VLProcessor.from_pretrained(
-                str(resolved_model_path),
-                trust_remote_code=True,
-                local_files_only=True,
-                cache_dir=str(resolved_model_path),
-                padding_side="right",
-            )
-            model = _ToolStarQwen3VLForEmbedding.from_pretrained(
-                str(resolved_model_path),
-                trust_remote_code=True,
-                local_files_only=True,
-                cache_dir=str(resolved_model_path),
-            )
-            model.to(self.runtime_device)
-            preferred_dtype = self._preferred_dtype()
-            if preferred_dtype != torch.float32:
+        with self._RUNTIME_CACHE_LOCK:
+            # Tool execution may issue several Semantic_Retrieve calls in one
+            # Parallel step.  Re-check under the lock so they share one model
+            # instead of racing into duplicate GPU cold loads.
+            cached_runtime = self._RUNTIME_CACHE.get(cache_key)
+            runtime_session.record_cache("qwen3_vl_embedding_runtime", cached_runtime is not None)
+            if cached_runtime is None:
+                started = time.perf_counter()
+                logger.info("Qwen3-VL-Embedding lazy load: loading local processor.")
+                processor_started = time.perf_counter()
+                processor = Qwen3VLProcessorClass.from_pretrained(
+                    str(resolved_model_path),
+                    trust_remote_code=True,
+                    local_files_only=True,
+                    cache_dir=str(resolved_model_path),
+                    padding_side="right",
+                )
+                logger.info(
+                    "Qwen3-VL-Embedding processor ready in %.3fs.",
+                    time.perf_counter() - processor_started,
+                )
+                preferred_dtype = self._preferred_dtype()
+                model_kwargs = {
+                    "trust_remote_code": True,
+                    "local_files_only": True,
+                    "cache_dir": str(resolved_model_path),
+                    "torch_dtype": preferred_dtype,
+                    "low_cpu_mem_usage": True,
+                }
+                logger.info(
+                    "Loading Qwen3-VL-Embedding weights: device=%s dtype=%s low_cpu_mem_usage=%s model=%s",
+                    self.runtime_device,
+                    preferred_dtype,
+                    True,
+                    resolved_model_path,
+                )
+                weights_started = time.perf_counter()
                 try:
-                    model.to(dtype=preferred_dtype)
-                except Exception:
-                    logger.warning(
-                        "Qwen3-VL-Embedding runtime could not switch to %s on %s; keeping default dtype.",
-                        preferred_dtype,
-                        self.runtime_device,
+                    model = ModelClass.from_pretrained(
+                        str(resolved_model_path),
+                        **model_kwargs,
                     )
-            model.eval()
-            cached_runtime = {
-                "model": model,
-                "processor": processor,
-                "model_path": str(resolved_model_path),
-            }
-            self._RUNTIME_CACHE[cache_key] = cached_runtime
-            logger.info(
-                "Qwen3-VL-Embedding runtime initialized: device=%s visible_accelerators=%s model=%s weight_files=%s",
-                self.runtime_device,
-                self.accelerator_count,
-                resolved_model_path,
-                checkpoint_layout["weight_files"],
-            )
-            logger.info(
-                "Qwen3-VL-Embedding accelerator snapshot: %s",
-                get_accelerator_snapshot(self.device),
-            )
-            runtime_session.record_timing(
-                "runtime_load.qwen3_vl_embedding_seconds",
-                time.perf_counter() - started,
-            )
+                except TypeError as exc:
+                    # Keep compatibility with older Transformers versions that
+                    # do not expose low_cpu_mem_usage on custom model classes.
+                    if "low_cpu_mem_usage" not in str(exc):
+                        raise
+                    model_kwargs.pop("low_cpu_mem_usage", None)
+                    model = ModelClass.from_pretrained(
+                        str(resolved_model_path),
+                        **model_kwargs,
+                    )
+                logger.info(
+                    "Qwen3-VL-Embedding weights materialized in %.3fs.",
+                    time.perf_counter() - weights_started,
+                )
+                device_move_started = time.perf_counter()
+                logger.info(
+                    "Qwen3-VL-Embedding moving model to device=%s.",
+                    self.runtime_device,
+                )
+                model.to(self.runtime_device)
+                logger.info(
+                    "Qwen3-VL-Embedding model moved to device in %.3fs.",
+                    time.perf_counter() - device_move_started,
+                )
+                if preferred_dtype != torch.float32 and getattr(model, "dtype", preferred_dtype) != preferred_dtype:
+                    try:
+                        dtype_move_started = time.perf_counter()
+                        model.to(dtype=preferred_dtype)
+                        logger.info(
+                            "Qwen3-VL-Embedding dtype cast to %s in %.3fs.",
+                            preferred_dtype,
+                            time.perf_counter() - dtype_move_started,
+                        )
+                    except Exception:
+                        logger.warning(
+                            "Qwen3-VL-Embedding runtime could not switch to %s on %s; keeping default dtype.",
+                            preferred_dtype,
+                            self.runtime_device,
+                        )
+                model.eval()
+                cached_runtime = {
+                    "model": model,
+                    "processor": processor,
+                    "model_path": str(resolved_model_path),
+                }
+                self._RUNTIME_CACHE[cache_key] = cached_runtime
+                logger.info(
+                    "Qwen3-VL-Embedding runtime initialized: device=%s visible_accelerators=%s model=%s weight_files=%s min_pixels=%s max_pixels=%s",
+                    self.runtime_device,
+                    self.accelerator_count,
+                    resolved_model_path,
+                    checkpoint_layout["weight_files"],
+                    self.min_pixels,
+                    self.max_pixels,
+                )
+                logger.info(
+                    "Qwen3-VL-Embedding accelerator snapshot: %s",
+                    get_accelerator_snapshot(self.device),
+                )
+                runtime_session.record_timing(
+                    "runtime_load.qwen3_vl_embedding_seconds",
+                    time.perf_counter() - started,
+                )
 
         self.model = cached_runtime["model"]
         self.processor = cached_runtime["processor"]
@@ -498,8 +627,8 @@ class Qwen3VLEmbeddingRuntimeEncoder:
                 {
                     "type": "image",
                     "image": self._as_file_uri(image_value),
-                    "min_pixels": self.MIN_PIXELS,
-                    "max_pixels": self.MAX_PIXELS,
+                    "min_pixels": self.min_pixels,
+                    "max_pixels": self.max_pixels,
                 }
             )
 
@@ -521,6 +650,7 @@ class Qwen3VLEmbeddingRuntimeEncoder:
         ]
 
     def _prepare_inputs(self, conversations: List[List[Dict[str, Any]]]) -> Dict[str, Any]:
+        torch_module = _get_torch()
         self._lazy_load()
         text = self.processor.apply_chat_template(
             conversations,
@@ -573,7 +703,7 @@ class Qwen3VLEmbeddingRuntimeEncoder:
         )
         if videos is not None and (
             "video_grid_thw" not in inputs
-            or not torch.is_tensor(inputs["video_grid_thw"])
+            or not torch_module.is_tensor(inputs["video_grid_thw"])
             or inputs["video_grid_thw"].numel() == 0
         ):
             raise RuntimeError(
@@ -585,11 +715,12 @@ class Qwen3VLEmbeddingRuntimeEncoder:
         for key, value in dict(inputs or {}).items():
             if value is None:
                 continue
-            prepared[key] = value.to(self.model.device) if torch.is_tensor(value) else value
+            prepared[key] = value.to(self.model.device) if torch_module.is_tensor(value) else value
         return prepared
 
     @staticmethod
     def _pool_last_token(hidden_state: torch.Tensor, attention_mask: torch.Tensor) -> torch.Tensor:
+        torch_module = _get_torch()
         if hidden_state.shape[0] != attention_mask.shape[0]:
             common_batch = min(int(hidden_state.shape[0]), int(attention_mask.shape[0]))
             logger.warning(
@@ -615,22 +746,80 @@ class Qwen3VLEmbeddingRuntimeEncoder:
         flipped_mask = attention_mask.flip(dims=[1])
         last_one_positions = flipped_mask.argmax(dim=1)
         cols = attention_mask.shape[1] - last_one_positions - 1
-        rows = torch.arange(hidden_state.shape[0], device=hidden_state.device)
+        rows = torch_module.arange(hidden_state.shape[0], device=hidden_state.device)
         return hidden_state[rows, cols]
 
-    def _encode_conversations(self, conversations: List[List[Dict[str, Any]]]) -> torch.Tensor:
+    def _unload_runtime_for_device_fallback(self) -> None:
+        """Release this encoder's cached CUDA model before a CPU retry."""
+        for cache_key, cached_runtime in list(self._RUNTIME_CACHE.items()):
+            if cached_runtime.get("model") is self.model:
+                self._RUNTIME_CACHE.pop(cache_key, None)
+        self.model = None
+        self.processor = None
+        gc.collect()
+        torch_module = _get_torch()
+        if torch_module.cuda.is_available():
+            torch_module.cuda.empty_cache()
+
+    @staticmethod
+    def _is_cudnn_runtime_error(error: BaseException) -> bool:
+        return "cudnn" in str(error or "").lower()
+
+    def _encode_conversations(
+        self,
+        conversations: List[List[Dict[str, Any]]],
+        *,
+        _allow_cpu_fallback: bool = True,
+        _allow_cudnn_disabled_retry: bool = True,
+    ) -> torch.Tensor:
+        torch_module = _get_torch()
+        logger.info("Qwen3-VL-Embedding encode: waiting for accelerator slot.")
         lock_context = self._accelerator_lock if self._accelerator_lock is not None else nullcontext()
-        with lock_context:
-            self._lazy_load()
-            inputs = self._prepare_inputs(conversations)
-            with torch.no_grad():
-                outputs = self.model(**inputs)
-                embeddings = self._pool_last_token(
-                    outputs.last_hidden_state,
-                    inputs["attention_mask"],
+        try:
+            with lock_context:
+                logger.info("Qwen3-VL-Embedding encode: accelerator slot acquired.")
+                self._lazy_load()
+                inputs = self._prepare_inputs(conversations)
+                with torch_module.no_grad():
+                    outputs = self.model(**inputs)
+                    embeddings = self._pool_last_token(
+                        outputs.last_hidden_state,
+                        inputs["attention_mask"],
+                    )
+                    embeddings = torch_module.nn.functional.normalize(embeddings, p=2, dim=-1)
+        except Exception as exc:
+            is_cudnn_failure = self.device == "cuda" and self._is_cudnn_runtime_error(exc)
+            if not is_cudnn_failure:
+                raise
+            if _allow_cudnn_disabled_retry:
+                logger.warning(
+                    "Qwen3-VL-Embedding CUDA execution failed with cuDNN; disabling cuDNN and retrying on GPU: %s",
+                    exc,
                 )
-                embeddings = F.normalize(embeddings, p=2, dim=-1)
-        vector = embeddings[0].detach().to(device="cpu", dtype=torch.float32)
+                self._unload_runtime_for_device_fallback()
+                torch_module.backends.cudnn.enabled = False
+                return self._encode_conversations(
+                    conversations,
+                    _allow_cpu_fallback=_allow_cpu_fallback,
+                    _allow_cudnn_disabled_retry=False,
+                )
+            if not _allow_cpu_fallback:
+                raise
+            logger.warning(
+                "Qwen3-VL-Embedding CUDA execution failed with cuDNN; retrying this encoder on CPU: %s",
+                exc,
+            )
+            self._unload_runtime_for_device_fallback()
+            self.device = "cpu"
+            self.runtime_device = "cpu"
+            self.accelerator_count = 0
+            self._accelerator_lock = None
+            return self._encode_conversations(
+                conversations,
+                _allow_cpu_fallback=False,
+                _allow_cudnn_disabled_retry=False,
+            )
+        vector = embeddings[0].detach().to(device="cpu", dtype=torch_module.float32)
         if vector.ndim != 1:
             vector = vector.reshape(-1)
         return vector

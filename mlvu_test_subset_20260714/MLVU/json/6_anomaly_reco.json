@@ -1,0 +1,15 @@
+[
+  {
+    "video": "surveil_20.mp4",
+    "duration": 485.17,
+    "question": "Does this surveillance footage contain any anomalies? If yes, which kind of anomaly?",
+    "candidates": [
+      "RoadAccidents",
+      "Shooting",
+      "Shoplifting",
+      "Assault"
+    ],
+    "answer": "Shoplifting",
+    "question_type": "anomaly_reco"
+  }
+]

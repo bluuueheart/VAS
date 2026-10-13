@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00030:0b4529ac-5a4e-4d30-b6b6-c6504c509c0c",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's behavior evolved throughout the video as he became more and more engaged with his work. he started out by looking at the laptop and typing on it, but then he started to take notes and draw on the ipad. he also took a break to drink some coffee and adjust the camera.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00030-0b4529ac-5a4e-4d30-b6b6-c6504c509c0c",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00030-0b4529ac-5a4e-4d30-b6b6-c6504c509c0c/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00030-0b4529ac-5a4e-4d30-b6b6-c6504c509c0c/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00030-0b4529ac-5a4e-4d30-b6b6-c6504c509c0c/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0b4529ac-5a4e-4d30-b6b6-c6504c509c0c.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0b4529ac-5a4e-4d30-b6b6-c6504c509c0c.mp4",
+  "question_block": "Question: How did c's behavior evolve throughout the video, and what stages of engagement with the tasks can you identify?\nOptions:\n(A) During the video, c's behavior gradually evolved as he became increasingly bored. initially, he began by looking at the laptop and typing on it; however, he soon started to fidget and look around the office space. additionally, he took a short break to drink some coffee and adjust the camera's position.\n(B) C's behavior evolved throughout the video as he became more and more frustrated. he started out by looking at the laptop and typing on it, but then he started to make mistakes and erase his work. he also took a break to drink some coffee and adjust the camera.\n(C) C's behavior evolved throughout the video as he became more and more engaged with his work. he started out by looking at the laptop and typing on it, but then he started to take notes and draw on the ipad. he also took a break to drink some coffee and adjust the camera.\n(D) C's behavior evolved throughout the video as he became more and more excited. he started out by looking at the laptop and typing on it, but then he started to smile and laugh. he also took a break to drink some coffee and adjust the camera.\n(E) Gradually, c's behavior evolved throughout the video as he became increasingly exhausted. initially, he started out by attentively looking at the laptop and typing on it, but eventually he began to yawn and stretch. he also took a brief break to drink some coffee and adjust the camera's position.",
+  "options": [
+    "During the video, c's behavior gradually evolved as he became increasingly bored. initially, he began by looking at the laptop and typing on it; however, he soon started to fidget and look around the office space. additionally, he took a short break to drink some coffee and adjust the camera's position.",
+    "C's behavior evolved throughout the video as he became more and more frustrated. he started out by looking at the laptop and typing on it, but then he started to make mistakes and erase his work. he also took a break to drink some coffee and adjust the camera.",
+    "C's behavior evolved throughout the video as he became more and more engaged with his work. he started out by looking at the laptop and typing on it, but then he started to take notes and draw on the ipad. he also took a break to drink some coffee and adjust the camera.",
+    "C's behavior evolved throughout the video as he became more and more excited. he started out by looking at the laptop and typing on it, but then he started to smile and laugh. he also took a break to drink some coffee and adjust the camera.",
+    "Gradually, c's behavior evolved throughout the video as he became increasingly exhausted. initially, he started out by attentively looking at the laptop and typing on it, but eventually he began to yawn and stretch. he also took a brief break to drink some coffee and adjust the camera's position."
+  ],
+  "official_meta": {
+    "question_index": "00030",
+    "video_id": "0b4529ac-5a4e-4d30-b6b6-c6504c509c0c",
+    "source_index": 30
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:19:36.334520Z"
+}

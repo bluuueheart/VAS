@@ -1,0 +1,51 @@
+{
+  "kind": "online_evolution_state",
+  "layout_version": 1,
+  "updated_at": "2026-09-14T16:19:45.079139Z",
+  "enabled": true,
+  "status": "closed",
+  "active_snapshot_id": "snapshot_000",
+  "active_snapshot_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260914_v36/_evolution_audit/active_snapshot.json",
+  "record_count": 8,
+  "last_trigger_count": 8,
+  "pending_cycle": false,
+  "pending_candidate": {},
+  "monitor": {},
+  "last_monitor_count": 0,
+  "inflight": {},
+  "cycle_count": 4,
+  "cycles": [
+    {
+      "cycle_index": 1,
+      "status": "no_candidate",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "",
+      "completed_at": "2026-09-14T10:31:46.355442Z"
+    },
+    {
+      "cycle_index": 2,
+      "status": "no_candidate",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "",
+      "completed_at": "2026-09-14T11:43:18.913304Z"
+    },
+    {
+      "cycle_index": null,
+      "status": "cycle_process_failed",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "",
+      "completed_at": "2026-09-14T14:56:52.827516Z"
+    },
+    {
+      "cycle_index": 4,
+      "status": "no_candidate",
+      "gate_status": null,
+      "published": false,
+      "snapshot_id": "",
+      "completed_at": "2026-09-14T16:19:44.433593Z"
+    }
+  ]
+}

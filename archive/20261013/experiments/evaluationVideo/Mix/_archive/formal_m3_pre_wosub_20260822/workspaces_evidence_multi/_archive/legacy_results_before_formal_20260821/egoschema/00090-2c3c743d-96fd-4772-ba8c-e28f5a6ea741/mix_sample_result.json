@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00090:2c3c743d-96fd-4772-ba8c-e28f5a6ea741",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The two primary activities involving cards and dice are shuffling and dealing.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00090-2c3c743d-96fd-4772-ba8c-e28f5a6ea741",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00090-2c3c743d-96fd-4772-ba8c-e28f5a6ea741/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00090-2c3c743d-96fd-4772-ba8c-e28f5a6ea741/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00090-2c3c743d-96fd-4772-ba8c-e28f5a6ea741/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/2c3c743d-96fd-4772-ba8c-e28f5a6ea741.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/2c3c743d-96fd-4772-ba8c-e28f5a6ea741.mp4",
+  "question_block": "Question: In this video, there are two primary activities involving cards and dice. summarize these activities and how they are related.\nOptions:\n(A) In gaming, the two primary activities frequently involving cards and dice consist of rolling and throwing actions.\n(B) In recreational games, the two primary activities involving cards and dice typically consist of counting and adding numbers.\n(C) In gaming, the two primary activities involving playing cards and dice are typically matching and sorting for various games.\n(D) The two primary activities involving cards and dice are drawing and painting.\n(E) The two primary activities involving cards and dice are shuffling and dealing.",
+  "options": [
+    "In gaming, the two primary activities frequently involving cards and dice consist of rolling and throwing actions.",
+    "In recreational games, the two primary activities involving cards and dice typically consist of counting and adding numbers.",
+    "In gaming, the two primary activities involving playing cards and dice are typically matching and sorting for various games.",
+    "The two primary activities involving cards and dice are drawing and painting.",
+    "The two primary activities involving cards and dice are shuffling and dealing."
+  ],
+  "official_meta": {
+    "question_index": "00090",
+    "video_id": "2c3c743d-96fd-4772-ba8c-e28f5a6ea741",
+    "source_index": 90
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:23:51.232806Z"
+}

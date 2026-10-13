@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00058:1c1c9e3b-2392-4de9-a0cf-3d53ef302353",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 2,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 2,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "E",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Playing cards",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [
+    "E"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(E) Playing cards",
+  "elapsed_seconds": 627.006,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00058-1c1c9e3b-2392-4de9-a0cf-3d53ef302353",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00058-1c1c9e3b-2392-4de9-a0cf-3d53ef302353/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00058-1c1c9e3b-2392-4de9-a0cf-3d53ef302353/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00058-1c1c9e3b-2392-4de9-a0cf-3d53ef302353/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/1c1c9e3b-2392-4de9-a0cf-3d53ef302353.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/1c1c9e3b-2392-4de9-a0cf-3d53ef302353.mp4",
+  "question_block": "Question: Based on the evolving interactions between the man and c, what is the overarching activity they are engaged in throughout the video?\nOptions:\n(A) Having a conversation\n(B) Eating lunch\n(C) Working on a project\n(D) Watching a movie\n(E) Playing cards",
+  "options": [
+    "Having a conversation",
+    "Eating lunch",
+    "Working on a project",
+    "Watching a movie",
+    "Playing cards"
+  ],
+  "official_meta": {
+    "question_index": "00058",
+    "video_id": "1c1c9e3b-2392-4de9-a0cf-3d53ef302353",
+    "resolved_video_stem": "1c1c9e3b-2392-4de9-a0cf-3d53ef302353",
+    "video_mapping_verified": true,
+    "source_index": 58,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-07T02:54:47.610241Z"
+}

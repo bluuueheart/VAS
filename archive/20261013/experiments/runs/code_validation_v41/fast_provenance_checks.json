@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "tests_run": 9,
+  "scope": "Actual production functions and extracted regression methods; not full runtime inference.",
+  "source_hashes": {
+    "RL/evolution/provenance.py": "ea38829e08759edb2d5f9a2170dd3043caf9ecebab20142a2def384c7cdeaaab",
+    "RL/evolution/verifier.py": "555c4ed752117282e90e3e4a9f9e9edbd3319b5cc7c9c4fde2273475d164ce29",
+    "RL/planner/engine.py": "721c658d51d50f11341bd46975c085c7731e498dfef1244bdce9866a8ffa1c99",
+    "RL/evolution/test_verifier_boundaries.py": "f4b2b65f30e2c66061ffbe3333a9e1db34d92e303f5e32202a92ffd23f371e83"
+  }
+}

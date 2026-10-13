@@ -1,0 +1,92 @@
+{
+  "source_manifest_files": 111,
+  "source_drift_after_run": [],
+  "historical_frozen_results": [
+    {
+      "uid": "mlvu:count:0:count-126",
+      "metrics_unchanged": true,
+      "run_unchanged": true
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "metrics_unchanged": true,
+      "run_unchanged": true
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "metrics_unchanged": true,
+      "run_unchanged": true
+    },
+    {
+      "uid": "videomme:biology-medicine:021-1",
+      "metrics_unchanged": true,
+      "run_unchanged": true
+    },
+    {
+      "uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "metrics_unchanged": true,
+      "run_unchanged": true
+    },
+    {
+      "uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+      "metrics_unchanged": true,
+      "run_unchanged": true
+    },
+    {
+      "uid": "mlvu:needle:0:needle-32",
+      "metrics_unchanged": true,
+      "run_unchanged": true
+    },
+    {
+      "uid": "mlvu:topic-reasoning:0:awa-6",
+      "metrics_unchanged": true,
+      "run_unchanged": true
+    },
+    {
+      "uid": "lvbench:entity-recognition:4:63",
+      "metrics_unchanged": true,
+      "run_unchanged": true
+    },
+    {
+      "uid": "lvbench:key-information-retrieval:0:55",
+      "metrics_unchanged": true,
+      "run_unchanged": true
+    },
+    {
+      "uid": "mlvu:anomaly-reco:0:surveil-20",
+      "metrics_unchanged": true,
+      "run_unchanged": true
+    },
+    {
+      "uid": "videomme:astronomy:041-1",
+      "metrics_unchanged": true,
+      "run_unchanged": true
+    }
+  ],
+  "fresh_cases": [
+    {
+      "uid": "mlvu:order:0:order-126",
+      "status": "failed",
+      "acc": 0.0,
+      "trajectory_id": "trajectory_8ce31c1c3a774210a1718fe7e81264db",
+      "answer": "Failed: reflector_execution_failed_without_valid_judgment.",
+      "elapsed_seconds": 189.624,
+      "trajectory_seconds": 185.296493,
+      "run_sha256": "a9198725ed8fc6e9b736b29da32db86126cb87b2a42173ad7358d4c0ace2e141"
+    },
+    {
+      "uid": "mlvu:topic-reasoning:0:awa-6",
+      "status": "completed",
+      "acc": 1.0,
+      "trajectory_id": "trajectory_5aa1b40714b747799283ddb5f7cc0d98",
+      "answer": "(A) Grassland",
+      "elapsed_seconds": 1167.349,
+      "trajectory_seconds": 170.837262,
+      "run_sha256": "da66ce10925f84025b2f1ce06ef996a8f8d4f8750e82b9af18ca86fd241940e3"
+    }
+  ],
+  "all_attempt_accuracy": 0.5,
+  "completion_rate": 0.5,
+  "completed_only_accuracy": 1.0,
+  "scope": "Two prespecified development cases; no population inference; one new run, not repeated fresh-run determinism proof."
+}

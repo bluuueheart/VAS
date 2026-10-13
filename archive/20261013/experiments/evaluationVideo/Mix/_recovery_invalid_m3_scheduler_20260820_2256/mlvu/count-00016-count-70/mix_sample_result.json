@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:count:16:count-70",
+  "dataset_name": "mlvu",
+  "subset_name": "count",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "5",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/count-00016-count-70",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/count-00016-count-70/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/count-00016-count-70/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/count-00016-count-70/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/4_count/count_70.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/4_count/count_70.mp4",
+  "question_block": "Question: In this video, how many instances are there of the 'cleaning toilet' action scene in total?\nOptions:\n(A) 5\n(B) 6\n(C) 3\n(D) 0",
+  "options": [
+    "5",
+    "6",
+    "3",
+    "0"
+  ],
+  "official_meta": {
+    "task_type": "count",
+    "source_json": "4_count.json",
+    "source_index": 16,
+    "video_subdir": "4_count",
+    "video_relative_path": "4_count/count_70.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:51:38.114293Z"
+}

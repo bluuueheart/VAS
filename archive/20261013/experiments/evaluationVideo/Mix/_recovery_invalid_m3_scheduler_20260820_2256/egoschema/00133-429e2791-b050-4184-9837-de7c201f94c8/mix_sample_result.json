@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00133:429e2791-b050-4184-9837-de7c201f94c8",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's actions in the video are important because they show how a customer interacts with a cashier at a store. she places her items on the counter, the cashier fills the cash register machine and packages her items, and she pays for her items and leaves.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00133-429e2791-b050-4184-9837-de7c201f94c8",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00133-429e2791-b050-4184-9837-de7c201f94c8/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00133-429e2791-b050-4184-9837-de7c201f94c8/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00133-429e2791-b050-4184-9837-de7c201f94c8/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/429e2791-b050-4184-9837-de7c201f94c8.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/429e2791-b050-4184-9837-de7c201f94c8.mp4",
+  "question_block": "Question: Considering the entire video, discuss the overall importance of c's actions in the context of the scene, and identify any potential motivations behind those actions.\nOptions:\n(A) In the video, c's actions are crucial as they demonstrate how a customer effectively engages with a restaurant's waiter. indeed, she places her order, the waiter dutifully fulfills it and delivers her meal, after which she pays for the food and departs.\n(B) In the video, c's actions hold significance as they demonstrate a typical customer interacting with a medical professional at a hospital setting. she explains her symptoms, the doctor assesses her condition and provides a diagnosis, finally, she covers the cost for her session and exits.\n(C) C's actions in the video are important because they show how a customer interacts with a police officer at a police station. she reports a crime, the police officer takes her statement and investigates the crime, and she thanks the police officer and leaves.\n(D) C's actions in the video are important because they show how a customer interacts with a cashier at a store. she places her items on the counter, the cashier fills the cash register machine and packages her items, and she pays for her items and leaves.\n(E) C's actions in the video are important because they illustrate how a customer interacts with a teacher at a school setting. she inquires by asking a question, the teacher responds by answering her question, and she expresses gratitude by thanking the teacher before departing.",
+  "options": [
+    "In the video, c's actions are crucial as they demonstrate how a customer effectively engages with a restaurant's waiter. indeed, she places her order, the waiter dutifully fulfills it and delivers her meal, after which she pays for the food and departs.",
+    "In the video, c's actions hold significance as they demonstrate a typical customer interacting with a medical professional at a hospital setting. she explains her symptoms, the doctor assesses her condition and provides a diagnosis, finally, she covers the cost for her session and exits.",
+    "C's actions in the video are important because they show how a customer interacts with a police officer at a police station. she reports a crime, the police officer takes her statement and investigates the crime, and she thanks the police officer and leaves.",
+    "C's actions in the video are important because they show how a customer interacts with a cashier at a store. she places her items on the counter, the cashier fills the cash register machine and packages her items, and she pays for her items and leaves.",
+    "C's actions in the video are important because they illustrate how a customer interacts with a teacher at a school setting. she inquires by asking a question, the teacher responds by answering her question, and she expresses gratitude by thanking the teacher before departing."
+  ],
+  "official_meta": {
+    "question_index": "00133",
+    "video_id": "429e2791-b050-4184-9837-de7c201f94c8",
+    "source_index": 133
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:48:30.477688Z"
+}

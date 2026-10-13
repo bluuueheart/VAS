@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:handicraft:221-1",
+  "dataset_name": "videomme",
+  "subset_name": "Handicraft",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 3,
+  "iter_num": 5,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 3,
+  "planner_iterations": 5,
+  "subagent_iterations": 0,
+  "predicted_label": "D",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(D) Hammer",
+  "elapsed_seconds": 974.404,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/handicraft-221-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/handicraft-221-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/handicraft-221-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/handicraft-221-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/c9oXTCVcTSE.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/c9oXTCVcTSE.mp4",
+  "question_block": "Question: As depicted in the video, which tool is not necessary to make a rubber band car?\nOptions:\n(A) Straw.\n(B) Pencil.\n(C) Scissors.\n(D) Hammer.",
+  "options": [
+    "A. Straw.",
+    "B. Pencil.",
+    "C. Scissors.",
+    "D. Hammer."
+  ],
+  "official_meta": {
+    "video_id": "221",
+    "video_external_id": "c9oXTCVcTSE",
+    "resolved_video_stem": "c9oXTCVcTSE",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Life Record",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Handicraft",
+    "task_type": "Object Recognition",
+    "question_id": "221-1",
+    "question_index": 0,
+    "video_item_index": 220,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-31T19:21:33.112362Z"
+}

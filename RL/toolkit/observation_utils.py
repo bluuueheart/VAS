@@ -106,8 +106,24 @@ _PLANNER_VISUAL_RESULT_KEYS = (
 _PLANNER_RESULT_ONLY_TOOL_NAMES = {"Video_Clip_QA"}
 _PLANNER_VISUAL_TEXT_KEYS = (
     "tool",
+    "answer",
+    "answer_value",
+    "observed_value",
     "description",
     "action_description",
+    "findings",
+    "target",
+    "source",
+    "relation",
+    "direction",
+    "qualifiers",
+    "uncertainty",
+    "negation",
+    "order",
+    "sequence",
+    "before",
+    "during",
+    "after",
     "dominant_emotion",
     "emotion_scores",
     "modalities_analyzed",
@@ -116,6 +132,8 @@ _PLANNER_VISUAL_TEXT_KEYS = (
     "confidence",
     "density",
     "duration",
+    "source_video_duration_seconds",
+    "source_video_path",
     "mode",
     "timestamp",
     "t_start",
@@ -160,8 +178,8 @@ def _truncate_text(value: Any, max_chars: int) -> str:
 
 def infer_observation_status(payload: Any, default: str = "success") -> str:
     if isinstance(payload, dict):
-        status = str(payload.get("status", "")).strip().lower()
-        if status in {"success", "error", "no_valid_result"}:
+        status = str(payload.get("status") or "").strip().lower()
+        if status:
             return status
         if payload.get("error"):
             return "error"
@@ -316,6 +334,16 @@ def _compact_item_dict(payload: Dict[str, Any], aggressive: bool = False) -> Dic
         "label",
         "value",
         "citation",
+        "claim_id",
+        "scope",
+        "target",
+        "source",
+        "relation",
+        "direction",
+        "qualifiers",
+        "observed_value",
+        "uncertainty",
+        "negation",
         "evidence_status",
         "segment_id",
         "segment_ref",
@@ -374,7 +402,7 @@ def _compact_dict(payload: Dict[str, Any], aggressive: bool = False, depth: int 
                 break
 
     if "status" in payload:
-        compacted["status"] = infer_observation_status(payload, default=str(payload.get("status", "success")))
+        compacted["status"] = infer_observation_status(payload, default=str(payload.get("status") or "success"))
 
     for key in _PREFERRED_META_KEYS:
         if key in compacted or key not in payload:
@@ -508,8 +536,7 @@ def _compact_result_only_planner_payload(payload: Any, tool_name: str = "") -> O
         or summarize_tool_result(payload, tool_name=tool_name),
     }
     status = infer_observation_status(payload)
-    if status != "success":
-        compact_payload["status"] = status
+    compact_payload["status"] = status
     if payload.get("error") not in (None, ""):
         compact_payload["error"] = str(payload.get("error")).strip()
     if status != "success" and payload.get("warning") not in (None, ""):
@@ -608,8 +635,7 @@ def _compact_visual_planner_payload(payload: Any, tool_name: str = "") -> Option
         compact_payload[key] = _compact_value(value, aggressive=True, depth=1)
 
     status = infer_observation_status(payload)
-    if status != "success":
-        compact_payload["status"] = status
+    compact_payload["status"] = status
     if status != "success" and payload.get("error") not in (None, ""):
         compact_payload["error"] = str(payload.get("error")).strip()
     if status != "success" and payload.get("warning") not in (None, ""):
@@ -627,7 +653,7 @@ def build_planner_observation_record(
     planner_payload = _build_planner_payload(normalized, tool_name=tool_name)
     inferred_status = infer_observation_status(planner_payload)
     final_status = str(status or inferred_status).strip().lower() or "success"
-    if final_status == "success" and inferred_status in {"error", "no_valid_result"}:
+    if final_status == "success" and inferred_status != "success":
         final_status = inferred_status
 
     if _preserve_full_observations_enabled() or _should_preserve_full_result_for_tool(tool_name):
@@ -645,8 +671,7 @@ def build_planner_observation_record(
 
         if not isinstance(record.get("result"), str) or not str(record.get("result", "")).strip():
             record["result"] = extract_planner_result_text(planner_payload, tool_name=tool_name)
-        if final_status != "success":
-            record["status"] = final_status
+        record["status"] = final_status
         return record
 
     candidate_payloads: List[Any] = [planner_payload]
@@ -684,10 +709,7 @@ def build_planner_observation_record(
 
         if not isinstance(record.get("result"), str) or not str(record.get("result", "")).strip():
             record["result"] = extract_planner_result_text(candidate, tool_name=tool_name)
-        if final_status != "success":
-            record["status"] = final_status
-        else:
-            record.pop("status", None)
+        record["status"] = final_status
 
         if _serialized_size(record) <= max_chars:
             return record
@@ -696,8 +718,7 @@ def build_planner_observation_record(
         "tool": tool_name,
         "result": _truncate_text(extract_planner_result_text(planner_payload, tool_name=tool_name), max_chars=max(200, max_chars - 80)),
     }
-    if final_status != "success":
-        fallback["status"] = final_status
+    fallback["status"] = final_status
     return fallback
 
 
@@ -782,7 +803,7 @@ def build_observation_record(
         max_chars=max_chars,
     )
     final_status = str(status or inferred_status or "success")
-    if final_status == "success" and inferred_status in {"error", "no_valid_result"}:
+    if final_status == "success" and inferred_status != "success":
         final_status = inferred_status
     preserve_more = _preserve_full_observations_enabled()
     if preserve_more:
@@ -921,7 +942,7 @@ def build_parallel_observation(
             max_chars=1400,
         )
         final_status = str(item_status or inferred_status or "success")
-        if final_status == "success" and inferred_status in {"error", "no_valid_result"}:
+        if final_status == "success" and inferred_status != "success":
             final_status = inferred_status
         if final_status != "success":
             failed += 1

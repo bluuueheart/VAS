@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:event-understanding:20:117",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "She picks up things on the ground on her own",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00020-117",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00020-117/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00020-117/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/event-understanding-00020-117/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/q01CUy_gwdU.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/q01CUy_gwdU.mp4",
+  "question_block": "Question: What does the woman in red do after she collides with the man?\nOptions:\n(A) She picks up things on the ground on her own and throws them away\n(B) She picks up things on the ground with the man\n(C) She picks up things on the ground on her own\n(D) She picks up things on the ground with a passerby",
+  "options": [
+    "She picks up things on the ground on her own and throws them away",
+    "She picks up things on the ground with the man",
+    "She picks up things on the ground on her own",
+    "She picks up things on the ground with a passerby"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "02:52-03:08",
+    "video_key": "q01CUy_gwdU",
+    "source_index": 20
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:43:35.271931Z"
+}

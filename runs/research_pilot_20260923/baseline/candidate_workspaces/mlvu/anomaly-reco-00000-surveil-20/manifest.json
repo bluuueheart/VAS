@@ -1,0 +1,55 @@
+{
+  "kind": "query_run",
+  "layout_version": 2,
+  "status": "completed",
+  "run_id": "20260923-115635-775637_27443",
+  "created_at": "2026-09-23T11:56:35.791659Z",
+  "video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/6_anomaly_reco/surveil_20.mp4",
+  "video_slug": "surveil-20-d9310fd7",
+  "query": "MLVU Task Type: anomaly_reco\n\nQuestion: Does this surveillance footage contain any anomalies? If yes, which kind of anomaly?\nOptions:\n(A) RoadAccidents\n(B) Shooting\n(C) Shoplifting\n(D) Assault\n\nReply with exactly one best option in the format \"(A) option text\".",
+  "query_slug": "mlvu-task-type-anomaly-reco-question-does-this-surveillance-",
+  "workspace_root": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/anomaly-reco-00000-surveil-20",
+  "query_group_dir": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/anomaly-reco-00000-surveil-20",
+  "run_workspace": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/anomaly-reco-00000-surveil-20",
+  "shared_preprocess_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache",
+  "tool_library_baseline": {
+    "baseline_id": "snapshot_000",
+    "path": "",
+    "status": "not_configured"
+  },
+  "input_contract": {
+    "video": "official_preclipped_task_video",
+    "question": "official_question_and_candidates",
+    "temporal_crop": false,
+    "timestamp_input": "none",
+    "audio": "preserved",
+    "audio_transcript": "included",
+    "external_subtitles": false,
+    "audio_track": "preserved",
+    "audio_transcript_allowed": true,
+    "annotation_fields_excluded": [
+      "answer",
+      "ground_truth",
+      "ground_truth_option",
+      "time_reference",
+      "evaluator_output"
+    ]
+  },
+  "directories": {
+    "inputs": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/anomaly-reco-00000-surveil-20/inputs",
+    "logs": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/anomaly-reco-00000-surveil-20/logs",
+    "results": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/anomaly-reco-00000-surveil-20/results",
+    "processed": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/processed/surveil_20",
+    "cache": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/_cache/surveil_20"
+  },
+  "files": {
+    "request": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/anomaly-reco-00000-surveil-20/inputs/request.json",
+    "run_log": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/anomaly-reco-00000-surveil-20/logs/run.log",
+    "raw_trace_jsonl": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/anomaly-reco-00000-surveil-20/logs/raw_llm_trace.jsonl",
+    "run_result": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/anomaly-reco-00000-surveil-20/results/run_result.json",
+    "error": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/anomaly-reco-00000-surveil-20/results/error.json"
+  },
+  "updated_at": "2026-09-23T12:02:54.908019Z",
+  "success": true,
+  "processed_output_dir": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260826_full_v26/_shared_cache/processed/surveil_20"
+}

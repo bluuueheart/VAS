@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00073:2297b62e-33bc-4910-8d80-e304526b537d",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 8,
+  "iter_num": 10,
+  "tool_success_rate": 0.875,
+  "successful_tool_calls": 7,
+  "planner_iterations": 10,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C folds the dress, places it on the ironing board, irons it, and then folds it again.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [
+    "E"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) C folds the dress, places it on the ironing board, and then packs it.",
+  "elapsed_seconds": 2731.627,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00073-2297b62e-33bc-4910-8d80-e304526b537d",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00073-2297b62e-33bc-4910-8d80-e304526b537d/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00073-2297b62e-33bc-4910-8d80-e304526b537d/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00073-2297b62e-33bc-4910-8d80-e304526b537d/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/2297b62e-33bc-4910-8d80-e304526b537d.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/2297b62e-33bc-4910-8d80-e304526b537d.mp4",
+  "question_block": "Question: Summarize the steps taken by c to complete the tasks in this video. don't list every action narrated, but rather focus on major components and how they're executed.\nOptions:\n(A) C folds the dress, places it on the ironing board, and then hangs it up.\n(B) C folds the dress, places it on the ironing board, and then packs it.\n(C) C folds the dress, places it on the ironing board, and then washes it.\n(D) C folds the dress, places it on the ironing board, and then irons it and hangs it up.\n(E) C folds the dress, places it on the ironing board, irons it, and then folds it again.",
+  "options": [
+    "C folds the dress, places it on the ironing board, and then hangs it up.",
+    "C folds the dress, places it on the ironing board, and then packs it.",
+    "C folds the dress, places it on the ironing board, and then washes it.",
+    "C folds the dress, places it on the ironing board, and then irons it and hangs it up.",
+    "C folds the dress, places it on the ironing board, irons it, and then folds it again."
+  ],
+  "official_meta": {
+    "question_index": "00073",
+    "video_id": "2297b62e-33bc-4910-8d80-e304526b537d",
+    "resolved_video_stem": "2297b62e-33bc-4910-8d80-e304526b537d",
+    "video_mapping_verified": true,
+    "source_index": 73,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-09T09:03:31.643509Z"
+}

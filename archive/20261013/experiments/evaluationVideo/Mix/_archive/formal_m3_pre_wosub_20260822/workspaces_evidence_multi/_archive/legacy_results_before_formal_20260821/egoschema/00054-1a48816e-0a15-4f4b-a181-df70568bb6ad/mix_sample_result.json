@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00054:1a48816e-0a15-4f4b-a181-df70568bb6ad",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C and the man were assembling a railing. c was responsible for gathering the tools and materials, while the man was responsible for welding the railing together.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00054-1a48816e-0a15-4f4b-a181-df70568bb6ad",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00054-1a48816e-0a15-4f4b-a181-df70568bb6ad/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00054-1a48816e-0a15-4f4b-a181-df70568bb6ad/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00054-1a48816e-0a15-4f4b-a181-df70568bb6ad/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/1a48816e-0a15-4f4b-a181-df70568bb6ad.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/1a48816e-0a15-4f4b-a181-df70568bb6ad.mp4",
+  "question_block": "Question: What was the main purpose of the actions performed by both c and the man throughout the video, and how did their roles differ?\nOptions:\n(A) Casually, c and the man were enjoying a friendly game of catch. skillfully, c was tossing the railing towards the man, and the man was expertly catching it.\n(B) Industriously, c and the man were diligently working together on a construction project. skillfully, c was building the sturdy frame of a house, while the man was carefully putting up the strong walls.\n(C) In the garage, c and the man were diligently working on a car together. enthusiastically, c was changing the vehicle's oil, while the man was expertly changing its tires.\n(D) C and the man were assembling a railing. c was responsible for gathering the tools and materials, while the man was responsible for welding the railing together.\n(E) C and the man were working on a boat. c was painting the hull, and the man was fixing the engine.",
+  "options": [
+    "Casually, c and the man were enjoying a friendly game of catch. skillfully, c was tossing the railing towards the man, and the man was expertly catching it.",
+    "Industriously, c and the man were diligently working together on a construction project. skillfully, c was building the sturdy frame of a house, while the man was carefully putting up the strong walls.",
+    "In the garage, c and the man were diligently working on a car together. enthusiastically, c was changing the vehicle's oil, while the man was expertly changing its tires.",
+    "C and the man were assembling a railing. c was responsible for gathering the tools and materials, while the man was responsible for welding the railing together.",
+    "C and the man were working on a boat. c was painting the hull, and the man was fixing the engine."
+  ],
+  "official_meta": {
+    "question_index": "00054",
+    "video_id": "1a48816e-0a15-4f4b-a181-df70568bb6ad",
+    "source_index": 54
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:21:40.997018Z"
+}

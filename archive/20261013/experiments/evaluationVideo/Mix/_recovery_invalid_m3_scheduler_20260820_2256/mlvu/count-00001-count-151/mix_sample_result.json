@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:count:1:count-151",
+  "dataset_name": "mlvu",
+  "subset_name": "count",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "2",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/count-00001-count-151",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/count-00001-count-151/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/count-00001-count-151/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/count-00001-count-151/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/4_count/count_151.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/4_count/count_151.mp4",
+  "question_block": "Question: In this video, how many times does the scene of the 'shredding paper' action appear in total?\nOptions:\n(A) 3\n(B) 2\n(C) 1\n(D) 6",
+  "options": [
+    "3",
+    "2",
+    "1",
+    "6"
+  ],
+  "official_meta": {
+    "task_type": "count",
+    "source_json": "4_count.json",
+    "source_index": 1,
+    "video_subdir": "4_count",
+    "video_relative_path": "4_count/count_151.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:43:09.854829Z"
+}

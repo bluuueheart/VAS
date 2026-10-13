@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-09-20T23:08:26.345477",
+  "runtime_release": "v40",
+  "manifest_sha256": "4a82c3e129cf05a7ef623c2c59f66f80a2001098032f0084c988dfe33c3d8151",
+  "live_validation_status": "passed",
+  "processes": [
+    {
+      "pid": 175745,
+      "command": "/gemini/code/bin/python3.11 evaluationVideo/Mix/run_mix_batch.py --config evaluationVideo/Mix/mix_config_evidence_multi.json ",
+      "environment": {
+        "TOOLSTAR_SEMANTIC_INDEX_VIDEO": "1",
+        "TOOLSTAR_DISABLE_LOCAL_VECTOR_INDEX": "0",
+        "ONLINE_EVOLUTION": "1",
+        "ONLINE_EVOLUTION_TRIGGER_EVERY": "2",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "MIX_WORKSPACE_ROOT": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260920_main_v40",
+        "ONLINE_EVOLUTION_GROUP_SIZE": "2",
+        "MIX_PAIRED_ABLATIONS": "0"
+      }
+    }
+  ],
+  "new_main_result_claimed": false
+}

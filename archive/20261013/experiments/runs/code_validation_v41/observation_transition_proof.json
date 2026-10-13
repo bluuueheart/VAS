@@ -1,0 +1,32 @@
+{
+  "before": {
+    "evidence_revision": 0,
+    "finish_pending": false,
+    "ledger_slots": [
+      {
+        "claim_id": "cup",
+        "label": "cup location",
+        "value": "on table",
+        "source_tool": "Inspect_Frame",
+        "citation": "frame.jpg",
+        "evidence_status": "verified",
+        "uncertainty": "none"
+      }
+    ]
+  },
+  "after": {
+    "evidence_revision": 1,
+    "finish_pending": true,
+    "ledger_slots": [
+      {
+        "claim_id": "cup",
+        "label": "cup location",
+        "value": "on table",
+        "source_tool": "Inspect_Frame",
+        "citation": "frame.jpg",
+        "evidence_status": "verified",
+        "uncertainty": "none"
+      }
+    ]
+  }
+}

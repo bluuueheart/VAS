@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00139:45fd8bca-c836-4601-b2c8-cc2a08cf8f86",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's primary goal in the scene is to clean the floor. the objects being moved (the chair, stool, and dining table) are in the way of c's cleaning efforts, so she moves them out of the way.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00139-45fd8bca-c836-4601-b2c8-cc2a08cf8f86",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00139-45fd8bca-c836-4601-b2c8-cc2a08cf8f86/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00139-45fd8bca-c836-4601-b2c8-cc2a08cf8f86/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00139-45fd8bca-c836-4601-b2c8-cc2a08cf8f86/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/45fd8bca-c836-4601-b2c8-cc2a08cf8f86.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/45fd8bca-c836-4601-b2c8-cc2a08cf8f86.mp4",
+  "question_block": "Question: Based on the entire video, what can you infer about c's primary goal in the scene, and how did the objects being moved relate to that goal?\nOptions:\n(A) In the scene, c's primary objective or goal is to systematically rearrange the furniture items. the objects being moved, which include the chair, stool, and dining table, are being repositioned to new, designated locations within the room.\n(B) C's main objective in the scene is obtaining exercise. relocating the objects around the room serves as an ideal method for acquiring some exercise.\n(C) C's primary goal in the scene is essentially to create a mess. actively moving various objects around the room serves as an effective method to make a mess.\n(D) C's primary goal in the scene is to play a game. moving the objects around the room is a good way to play a game.\n(E) C's primary goal in the scene is to clean the floor. the objects being moved (the chair, stool, and dining table) are in the way of c's cleaning efforts, so she moves them out of the way.",
+  "options": [
+    "In the scene, c's primary objective or goal is to systematically rearrange the furniture items. the objects being moved, which include the chair, stool, and dining table, are being repositioned to new, designated locations within the room.",
+    "C's main objective in the scene is obtaining exercise. relocating the objects around the room serves as an ideal method for acquiring some exercise.",
+    "C's primary goal in the scene is essentially to create a mess. actively moving various objects around the room serves as an effective method to make a mess.",
+    "C's primary goal in the scene is to play a game. moving the objects around the room is a good way to play a game.",
+    "C's primary goal in the scene is to clean the floor. the objects being moved (the chair, stool, and dining table) are in the way of c's cleaning efforts, so she moves them out of the way."
+  ],
+  "official_meta": {
+    "question_index": "00139",
+    "video_id": "45fd8bca-c836-4601-b2c8-cc2a08cf8f86",
+    "source_index": 139
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:48:59.784094Z"
+}

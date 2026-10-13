@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:plotqa:8:tomjerry-7",
+  "dataset_name": "mlvu",
+  "subset_name": "plotQA",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "To avoid the bee",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00008-tomjerry-7",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00008-tomjerry-7/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00008-tomjerry-7/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00008-tomjerry-7/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/tomjerry_7.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/tomjerry_7.mp4",
+  "question_block": "Question: Why does the cartoon mouse hide in the water?\nOptions:\n(A) To learn swimming\n(B) To avoid the bee\n(C) To hide from the cartoon dog\n(D) For fun",
+  "options": [
+    "To learn swimming",
+    "To avoid the bee",
+    "To hide from the cartoon dog",
+    "For fun"
+  ],
+  "official_meta": {
+    "task_type": "plotQA",
+    "source_json": "1_plotQA.json",
+    "source_index": 8,
+    "video_subdir": "1_plotQA",
+    "video_relative_path": "1_plotQA/tomjerry_7.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:43:40.039416Z"
+}

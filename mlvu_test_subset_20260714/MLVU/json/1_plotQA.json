@@ -1,0 +1,41 @@
+[
+  {
+    "video": "movie101_66.mp4",
+    "duration": 246,
+    "question": "What color is the main male character in the video?",
+    "candidates": [
+      "Yellow",
+      "Red",
+      "Green",
+      "Blue"
+    ],
+    "answer": "Yellow",
+    "question_type": "plotQA"
+  },
+  {
+    "video": "xiaoliyu_6.mp4",
+    "duration": 400,
+    "question": "How did the cartoon jellyfish leave the mire?",
+    "candidates": [
+      "Carried by the cartoon shrimp",
+      "Carried by the cartoon turtle",
+      "Carried by the cartoon catfish",
+      "Carried by the cartoon seahorse"
+    ],
+    "answer": "Carried by the cartoon turtle",
+    "question_type": "plotQA"
+  },
+  {
+    "video": "movie101_63.mp4",
+    "duration": 748,
+    "question": "At the beginning of the video, what kind of vehicle is the man riding?",
+    "candidates": [
+      "Camel cart",
+      "Donkey cart",
+      "Horse carriage",
+      "Ox cart"
+    ],
+    "answer": "Ox cart",
+    "question_type": "plotQA"
+  }
+]

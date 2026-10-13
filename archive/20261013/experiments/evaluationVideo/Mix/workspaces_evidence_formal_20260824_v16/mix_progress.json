@@ -1,0 +1,46 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-08-24T00:24:59.027031Z",
+  "records": {
+    "mlvu:needle:0:needle-32": {
+      "sample_uid": "mlvu:needle:0:needle-32",
+      "dataset_name": "mlvu",
+      "subset_name": "needle",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 7,
+      "iter_num": 11,
+      "tool_success_rate": 0.857143,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_v16/mlvu/needle-00000-needle-32/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_v16/mlvu/needle-00000-needle-32",
+      "updated_at": "2026-08-23T23:02:41.747272Z"
+    },
+    "videomme:humanity-history:001-1": {
+      "sample_uid": "videomme:humanity-history:001-1",
+      "dataset_name": "videomme",
+      "subset_name": "Humanity & History",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 5,
+      "iter_num": 6,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_v16/videomme/humanity-history-001-1/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_v16/videomme/humanity-history-001-1",
+      "updated_at": "2026-08-23T23:54:30.128278Z"
+    },
+    "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391": {
+      "sample_uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 1,
+      "iter_num": 2,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_v16/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_v16/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391",
+      "updated_at": "2026-08-24T00:24:59.026950Z"
+    }
+  }
+}

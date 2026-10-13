@@ -1,0 +1,5 @@
+Using Orion CUDA proxy runtime: /opt/orion/orion_runtime/gpu/cuda/orion-cuda-12.3
+2026-07-24 02:35:12,333 - WARNING - Skipping unavailable MLVU subset task_type=count: annotation file is missing: /gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/json/4_count.json
+2026-07-24 02:35:12,511 - INFO - Mix batch execution resolved parallel_samples=1 visible_cuda_devices=['0'] selected_samples=8
+2026-07-24 02:35:12,511 - INFO - Resume [mlvu 0/8]
+2026-07-24 02:35:12,511 - INFO - Launching sample 1/8 sample_uid=mlvu:plotqa:0:movie101-66 launcher_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_final10_20260724_visualfallback/mlvu/plotqa-00000-movie101-66/launcher.log

@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00165:5194fe97-3fbc-4e3a-860b-4eb7fac7482b",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is trying to fix a metal frame into a tile.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00165-5194fe97-3fbc-4e3a-860b-4eb7fac7482b",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00165-5194fe97-3fbc-4e3a-860b-4eb7fac7482b/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00165-5194fe97-3fbc-4e3a-860b-4eb7fac7482b/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00165-5194fe97-3fbc-4e3a-860b-4eb7fac7482b/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/5194fe97-3fbc-4e3a-860b-4eb7fac7482b.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/5194fe97-3fbc-4e3a-860b-4eb7fac7482b.mp4",
+  "question_block": "Question: Instead of listing individual details, what is the overarching objective c is trying to achieve in this video, considering all the actions taken with the electric drill and the metal frame?\nOptions:\n(A) C is trying to remove tile residues from the hole saw of the electric drill.\n(B) C is trying to hold the electric drill in both hands.\n(C) C is trying to drill into the hole in the tile with the electric drill in both hands.\n(D) C is trying to place the electric drill in both hands on the tile.\n(E) C is trying to fix a metal frame into a tile.",
+  "options": [
+    "C is trying to remove tile residues from the hole saw of the electric drill.",
+    "C is trying to hold the electric drill in both hands.",
+    "C is trying to drill into the hole in the tile with the electric drill in both hands.",
+    "C is trying to place the electric drill in both hands on the tile.",
+    "C is trying to fix a metal frame into a tile."
+  ],
+  "official_meta": {
+    "question_index": "00165",
+    "video_id": "5194fe97-3fbc-4e3a-860b-4eb7fac7482b",
+    "source_index": 165
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:50:51.566351Z"
+}

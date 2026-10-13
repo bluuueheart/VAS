@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00057:1bf1fdea-6f44-4d3a-b5c0-6852aaada71b",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The key turning points or crucial moments in the video are when c tackles the ball.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00057-1bf1fdea-6f44-4d3a-b5c0-6852aaada71b",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00057-1bf1fdea-6f44-4d3a-b5c0-6852aaada71b/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00057-1bf1fdea-6f44-4d3a-b5c0-6852aaada71b/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00057-1bf1fdea-6f44-4d3a-b5c0-6852aaada71b/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/1bf1fdea-6f44-4d3a-b5c0-6852aaada71b.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/1bf1fdea-6f44-4d3a-b5c0-6852aaada71b.mp4",
+  "question_block": "Question: From the video, identify the key turning points or crucial moments and explain why you think these events are the most important.\nOptions:\n(A) The key turning points or crucial moments in the video are when c walks, jogs, and kicks the ball.\n(B) The key turning points or crucial moments in the video are when c walks, sits, and stands.\n(C) The key turning points or crucial moments in the video are when c tackles the ball.\n(D) The key turning points or crucial moments in the video are when c walks, puts his hands on his knees, and lifts his hands.\n(E) The key turning points or crucial moments in the video are when c walks, adjusts the camera, and gestures with his hands.",
+  "options": [
+    "The key turning points or crucial moments in the video are when c walks, jogs, and kicks the ball.",
+    "The key turning points or crucial moments in the video are when c walks, sits, and stands.",
+    "The key turning points or crucial moments in the video are when c tackles the ball.",
+    "The key turning points or crucial moments in the video are when c walks, puts his hands on his knees, and lifts his hands.",
+    "The key turning points or crucial moments in the video are when c walks, adjusts the camera, and gestures with his hands."
+  ],
+  "official_meta": {
+    "question_index": "00057",
+    "video_id": "1bf1fdea-6f44-4d3a-b5c0-6852aaada71b",
+    "source_index": 57
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:44:46.716841Z"
+}

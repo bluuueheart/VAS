@@ -1,0 +1,7 @@
+{
+  "mix_config_path": "../evaluationVideo/Mix/mix_config_multi.json",
+  "workspace_root": "",
+  "progress_path": "",
+  "output_dir": "./out/mix_multi",
+  "figure_prefix": "mix_multi"
+}

@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:entity-recognition:60:273",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 2,
+  "iter_num": 3,
+  "tool_success_rate": 0.5,
+  "successful_tool_calls": 1,
+  "planner_iterations": 3,
+  "subagent_iterations": 0,
+  "predicted_label": "C",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "The prince plays the drum set and the princess plays the guitar",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(C) The prince is playing the guitar and the princess is playing the piano",
+  "elapsed_seconds": 700.445,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00060-273",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00060-273/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00060-273/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00060-273/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/TJR1oYDDTwg.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/TJR1oYDDTwg.mp4",
+  "question_block": "Question: What instruments do the prince and princess play respectively during the performance?\nOptions:\n(A) Both the prince and the princess are playing the guitar\n(B) The prince is playing the guitar and the princess is playing the drum set\n(C) The prince is playing the guitar and the princess is playing the piano\n(D) The prince plays the drum set and the princess plays the guitar",
+  "options": [
+    "Both the prince and the princess are playing the guitar",
+    "The prince is playing the guitar and the princess is playing the drum set",
+    "The prince is playing the guitar and the princess is playing the piano",
+    "The prince plays the drum set and the princess plays the guitar"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "cartoon",
+    "time_reference": "20:04-20:13",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "TJR1oYDDTwg",
+    "resolved_video_stem": "TJR1oYDDTwg",
+    "video_mapping_verified": true,
+    "source_index": 60
+  },
+  "updated_at": "2026-09-05T16:40:23.393966Z"
+}

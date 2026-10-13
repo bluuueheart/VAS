@@ -22,6 +22,7 @@ from moviepy.video.io.VideoFileClip import VideoFileClip
 
 from config.settings import settings
 from core.llm.base import is_accelerator_fatal_error
+from core.qwen_runtime import disable_qwen35_fused_kernels_if_requested
 from core.sidecar_pool import format_endpoint_list
 from toolkit.impl.visual_prompts import (
     looks_like_truncated_video_clip_qa_answer,
@@ -48,13 +49,55 @@ DEFAULT_VISUAL_CAPTION_PROMPT = (
 _CAPTION_MAX_SENTENCES = 4
 _CAPTION_MAX_WORDS = 80
 _CAPTION_MAX_CHARS = 420
-_CAPTION_DEFAULT_MAX_NEW_TOKENS = 256
+
+
+def _resolve_caption_max_new_tokens() -> int:
+    """Resolve the compact-caption token budget without changing other QA budgets.
+
+    The Orion-safe Torch fallback is substantially slower than the fused Qwen
+    kernels during autoregressive decoding.  Keep the historical 256-token
+    default, but allow a batch caller to choose a smaller, still grounded
+    caption budget while retaining the same OOM retry and cache semantics.
+    """
+    raw_value = os.environ.get("TOOLSTAR_CAPTION_MAX_NEW_TOKENS", "256")
+    try:
+        return max(1, int(raw_value))
+    except (TypeError, ValueError):
+        logger.warning(
+            "Ignoring invalid TOOLSTAR_CAPTION_MAX_NEW_TOKENS=%r; using 256.",
+            raw_value,
+        )
+        return 256
+
+
+_CAPTION_DEFAULT_MAX_NEW_TOKENS = _resolve_caption_max_new_tokens()
 _CAPTION_DEFAULT_MAX_FRAMES = 8
+
+
+def _resolve_caption_max_frames() -> int:
+    """Resolve the bounded frame budget used only for semantic captions.
+
+    Segment frame assets remain complete and are persisted separately for
+    retrieval/Video_Clip_QA.  This budget limits the expensive caption prompt
+    while keeping every caption grounded in real sampled visual frames.
+    """
+    raw_value = os.environ.get("TOOLSTAR_CAPTION_MAX_FRAMES", str(_CAPTION_DEFAULT_MAX_FRAMES))
+    try:
+        return max(1, min(8, int(raw_value)))
+    except (TypeError, ValueError):
+        logger.warning(
+            "Ignoring invalid TOOLSTAR_CAPTION_MAX_FRAMES=%r; using %d.",
+            raw_value,
+            _CAPTION_DEFAULT_MAX_FRAMES,
+        )
+        return _CAPTION_DEFAULT_MAX_FRAMES
+
+
 _CAPTION_OOM_RETRY_PLANS: Tuple[Tuple[str, Optional[int], float, int, bool], ...] = (
     ("default", None, 1.0, _CAPTION_DEFAULT_MAX_NEW_TOKENS, True),
-    ("reduced_frames", 6, 0.75, 192, True),
-    ("compact_frames", 4, 0.5, 128, False),
-    ("minimal_frames", 2, 0.35, 96, False),
+    ("reduced_frames", 6, 0.75, min(_CAPTION_DEFAULT_MAX_NEW_TOKENS, 192), True),
+    ("compact_frames", 4, 0.5, min(_CAPTION_DEFAULT_MAX_NEW_TOKENS, 128), False),
+    ("minimal_frames", 2, 0.35, min(_CAPTION_DEFAULT_MAX_NEW_TOKENS, 96), False),
 )
 _MIN_FRAME_EDGE = 28
 _BICUBIC_RESAMPLE = getattr(getattr(Image, "Resampling", Image), "BICUBIC")
@@ -206,6 +249,16 @@ def _is_low_information_caption_text(text: Any) -> bool:
     if not normalized:
         return True
     if _is_placeholder_caption_text(normalized):
+        return True
+
+    # Qwen can occasionally answer the instruction itself instead of describing
+    # the frames.  Treat these prompt-leak responses as invalid so the caller
+    # retries the segment with the single-segment fallback path.
+    if re.search(
+        r"^i (?:need|want|should|must) to (?:avoid|not)\b|"
+        r"^(?:as an ai|i (?:cannot|can't|can not))\b",
+        normalized,
+    ):
         return True
 
     content_chars = re.sub(r"[\W_]+", "", normalized, flags=re.UNICODE)
@@ -374,10 +427,24 @@ def _patch_transformers_flash_attention_compat() -> None:
     )
 
 
+def _disable_qwen_fused_kernels_if_requested() -> None:
+    """Disable Qwen3.5 Triton/CUDA fast paths on runtimes with unstable JIT support.
+
+    Qwen3.5's native Transformers implementation opportunistically imports
+    ``causal_conv1d`` and ``flash-linear-attention``.  The latter uses Triton
+    kernels for the gated-delta layers, while the former and the fused gated
+    RMSNorm are also compiled extensions.  On the Orion CUDA proxy these
+    kernels can abort the whole process inside LLVM instead of raising a
+    catchable Python exception.  Keep this opt-in so regular CUDA installations
+    retain the faster path.
+    """
+    disable_qwen35_fused_kernels_if_requested(transformers_module=globals().get("transformers"))
+
+
 class VisualProcessor:
     """Handles visual captioning and feature extraction for video segments."""
 
-    CAPTION_CACHE_VERSION = 4
+    CAPTION_CACHE_VERSION = 5
     _RUNTIME_CACHE: ClassVar[Dict[Tuple[str, str, str, str], Dict[str, Any]]] = {}
     
     def __init__(
@@ -427,6 +494,18 @@ class VisualProcessor:
         self.model_path = model_path or resolved_default_path
         self.device = device
         self.runtime_device = self._resolve_process_local_runtime_device(device)
+        disable_cudnn = os.environ.get("TOOLSTAR_DISABLE_CUDNN", "").strip().lower()
+        if disable_cudnn in {"1", "true", "yes", "on"}:
+            # The Orion CUDA proxy can abort inside its cuDNN runtime-compiled
+            # engine path with an LLVM MemoryBuffer assertion.  Keep this
+            # opt-in so non-Orion training/inference entry points retain the
+            # normal cuDNN path.
+            torch.backends.cudnn.enabled = False
+            os.environ.setdefault("TORCH_CUDNN_V8_API_DISABLED", "1")
+            logger.warning(
+                "Disabled cuDNN for the visual caption runtime via TOOLSTAR_DISABLE_CUDNN."
+            )
+        _disable_qwen_fused_kernels_if_requested()
         _, detected_device_count = detect_device()
         self.accelerator_count = detected_device_count or 0
         valid_device_maps = ("auto", "balanced", "sequential")
@@ -476,6 +555,7 @@ class VisualProcessor:
         self._process_vision_info = None
         self._active_cache_key: Optional[Tuple[str, str, str, str]] = None
         self._unsupported_optional_generation_input_keys: Set[str] = set()
+        self._last_qwen_load_error: Optional[str] = None
         self._accelerator_context_poisoned = False
         self.require_local = require_local
         self._accelerator_lock = accelerator_lock
@@ -1218,12 +1298,19 @@ class VisualProcessor:
         message = str(error or "").lower()
         return "out of memory" in message or "ran out of memory" in message
 
+    @classmethod
+    def _is_accelerator_runtime_error(cls, error: BaseException) -> bool:
+        """Identify recoverable local CUDA/cuDNN failures during captioning."""
+        message = str(error or "").lower()
+        return any(marker in message for marker in ("cudnn", "cuda error", "cuda kernel"))
+
     def _generate_segment_caption_with_oom_retry(self, frames: List[Image.Image]) -> str:
         if not frames:
             return ""
 
         _, base_max_pixels = self._get_vision_pixel_bounds()
         last_error: Optional[Exception] = None
+        last_invalid_caption = ""
         seen_attempts: set[Tuple[int, int, int, int]] = set()
 
         for attempt_idx, (label, max_frames, pixel_ratio, max_new_tokens, use_cache) in enumerate(
@@ -1251,12 +1338,20 @@ class VisualProcessor:
                         max_new_tokens,
                         use_cache,
                     )
-                return self._generate_caption(
+                caption = self._generate_caption(
                     attempt_frames,
                     "",
                     allow_text_only_fallback=False,
                     max_new_tokens_override=max_new_tokens,
                     use_cache_override=use_cache,
+                )
+                normalized_caption = _compact_segment_caption(caption)
+                if normalized_caption and not _is_low_information_caption_text(normalized_caption):
+                    return normalized_caption
+                last_invalid_caption = normalized_caption
+                logger.warning(
+                    "Segment caption attempt %s returned empty or low-information text; retrying with the next plan.",
+                    label,
                 )
             except Exception as exc:
                 if not self._is_out_of_memory_error(exc):
@@ -1272,7 +1367,7 @@ class VisualProcessor:
 
         if last_error is not None:
             raise last_error
-        return ""
+        return last_invalid_caption
 
     def _build_local_video_metadata_fallback(
         self,
@@ -2074,6 +2169,8 @@ class VisualProcessor:
         if transformers is None:
             return False
 
+        self._last_qwen_load_error = None
+
         qwen3_cls = None
         class_names = self._select_qwen3_transformers_class_names(self._loaded_config_dict)
         for class_name in class_names:
@@ -2165,6 +2262,7 @@ class VisualProcessor:
                     )
                     exc = retry_exc
             logger.warning(f"Transformers Qwen3-VL loading failed: {exc}")
+            self._last_qwen_load_error = str(exc)
             self._model = None
             self._processor = None
             return False
@@ -2275,11 +2373,15 @@ class VisualProcessor:
                     self._active_cache_key = cache_key
                     self._cache_loaded_runtime(cache_key)
                     return
-                raise RuntimeError(
+                load_detail = str(self._last_qwen_load_error or "").strip()
+                message = (
                     "Unable to load the local Qwen3/Qwen3.5 checkpoint with an exact architecture class. "
-                    "Install a transformers build that provides the class named by config.architectures "
-                    "(for Qwen3.5 this must be Qwen3_5ForConditionalGeneration)."
+                    "The configured architecture is Qwen3_5ForConditionalGeneration; "
+                    "check the underlying runtime error before changing transformers."
                 )
+                if load_detail:
+                    message += f" Underlying load error: {load_detail}"
+                raise RuntimeError(message)
 
             if AutoProcessor is None:
                 raise RuntimeError("transformers AutoProcessor not available")
@@ -2575,8 +2677,14 @@ class VisualProcessor:
         return f"data:image/jpeg;base64,{encoded}"
 
     def _caption_cache_model_fingerprint(self) -> str:
-        """Bind cached captions to the active multimodal checkpoint."""
-        return str(self.model_path or self.model_name or "").strip()
+        """Bind cached captions to the checkpoint and caption sampling contract."""
+        return "|".join(
+            (
+                str(self.model_path or self.model_name or "").strip(),
+                f"max_frames={_resolve_caption_max_frames()}",
+                f"max_new_tokens={_CAPTION_DEFAULT_MAX_NEW_TOKENS}",
+            )
+        )
     
     def caption_segments(
         self,
@@ -2635,27 +2743,167 @@ class VisualProcessor:
                 "A text-only checkpoint cannot produce planner-grounding captions."
             )
 
+        try:
+            caption_batch_size = max(1, int(os.environ.get("TOOLSTAR_CAPTION_BATCH_SIZE", "1") or 1))
+        except (TypeError, ValueError):
+            caption_batch_size = 1
+        use_caption_batch = caption_batch_size > 1 and self._is_qwen_family_model()
+        if use_caption_batch:
+            logger.info(
+                "Using opt-in visual caption batching: video=%s batch_size=%s max_frames=%s max_new_tokens=%s pending_segments=%s.",
+                video_name,
+                caption_batch_size,
+                _resolve_caption_max_frames(),
+                _CAPTION_DEFAULT_MAX_NEW_TOKENS,
+                len(pending_indices),
+            )
+        caption_max_frames = _resolve_caption_max_frames()
+
+        caption_runtime_unavailable = False
+
+        def _caption_one(
+            index: str,
+            video_frames: List[Image.Image],
+            timestamp_text: str,
+        ) -> Tuple[str, bool]:
+            nonlocal caption_runtime_unavailable
+            accelerator_caption_failure = False
+            if caption_runtime_unavailable:
+                accelerator_caption_failure = True
+                caption = f"Visual frames available for direct inspection at {timestamp_text}."
+            else:
+                try:
+                    caption = _compact_segment_caption(
+                        self._generate_segment_caption_with_oom_retry(video_frames)
+                    )
+                except Exception as exc:
+                    if not self._is_accelerator_runtime_error(exc):
+                        raise
+                    caption_runtime_unavailable = True
+                    accelerator_caption_failure = True
+                    caption = f"Visual frames available for direct inspection at {timestamp_text}."
+                    logger.warning(
+                        "Caption accelerator failed for video=%s segment=%s; preserving frame evidence "
+                        "and continuing without semantic captions for the remaining segments: %s",
+                        video_name,
+                        index,
+                        exc,
+                    )
+            caption = str(caption or "").strip()
+            if (
+                not caption
+                or _is_low_information_caption_text(caption)
+            ) and not accelerator_caption_failure:
+                raise RuntimeError(
+                    "Preprocessing caption generation returned an invalid visual caption. "
+                    f"video={video_name!r}, segment_id={index!r}, model_path={self.model_path!r}. "
+                    "Planner grounding requires a real visually grounded caption, not empty, placeholder, or punctuation-only text."
+                )
+            return caption, accelerator_caption_failure
+
         with VideoFileClip(video_path) as video:
-            for index in tqdm(
-                pending_indices,
+            progress = tqdm(
+                total=len(pending_indices),
                 desc=f"Captioning {video_name}",
                 **self._build_tqdm_kwargs(),
-            ):
-                frame_times = segment_times_info[index]["frame_times"]
-                video_frames = self.encode_video_frames(video, frame_times)
-                caption = _compact_segment_caption(
-                    self._generate_segment_caption_with_oom_retry(video_frames)
-                )
-                if (
-                    not caption.strip()
-                    or _is_low_information_caption_text(caption)
-                ):
-                    raise RuntimeError(
-                        "Preprocessing caption generation returned an invalid visual caption. "
-                        f"video={video_name!r}, segment_id={index!r}, model_path={self.model_path!r}. "
-                        "Planner grounding requires a real visually grounded caption, not empty, placeholder, or punctuation-only text."
-                    )
-                captions[index] = caption.strip()
+            )
+            try:
+                for batch_start in range(0, len(pending_indices), caption_batch_size if use_caption_batch else 1):
+                    batch_indices = pending_indices[
+                        batch_start : batch_start + (caption_batch_size if use_caption_batch else 1)
+                    ]
+                    batch_frames: List[List[Image.Image]] = []
+                    batch_timestamps: Dict[str, str] = {}
+                    for index in batch_indices:
+                        frame_times = np.asarray(segment_times_info[index]["frame_times"], dtype=float)
+                        if frame_times.size > caption_max_frames:
+                            selected_positions = np.linspace(
+                                0,
+                                frame_times.size - 1,
+                                num=caption_max_frames,
+                                dtype=int,
+                            )
+                            frame_times = frame_times[selected_positions]
+                        batch_frames.append(self.encode_video_frames(video, frame_times))
+                        batch_timestamps[index] = ", ".join(
+                            f"{float(time):.3f}s" for time in frame_times
+                        )
+
+                    generated_batch: Optional[List[str]] = None
+                    if len(batch_indices) > 1 and not caption_runtime_unavailable:
+                        try:
+                            generated_batch = self._generate_caption_batch(
+                                batch_frames,
+                                # Keep batched generation aligned with the
+                                # single-segment retry plan.  The global Qwen
+                                # generation config allows 2048 tokens, which
+                                # is useful for QA but unnecessarily expensive
+                                # for compact preprocessing captions.
+                                max_new_tokens_override=_CAPTION_DEFAULT_MAX_NEW_TOKENS,
+                                use_cache_override=True,
+                            )
+                            if len(generated_batch) != len(batch_indices):
+                                raise RuntimeError(
+                                    "Caption batch returned an unexpected number of outputs: "
+                                    f"expected={len(batch_indices)} actual={len(generated_batch)}"
+                                )
+                        except Exception as exc:
+                            generated_batch = None
+                            if self._is_accelerator_runtime_error(exc):
+                                caption_runtime_unavailable = True
+                                logger.warning(
+                                    "Caption batch accelerator failed for video=%s segments=%s; preserving frame evidence "
+                                    "and continuing without semantic captions: %s",
+                                    video_name,
+                                    batch_indices,
+                                    exc,
+                                )
+                            else:
+                                logger.warning(
+                                    "Caption batch failed for video=%s segments=%s; retrying each segment individually: %s",
+                                    video_name,
+                                    batch_indices,
+                                    exc,
+                                )
+                            self._clear_accelerator_cache()
+
+                    for item_index, index in enumerate(batch_indices):
+                        caption: str
+                        accelerator_caption_failure: bool
+                        batch_caption = (
+                            _compact_segment_caption(generated_batch[item_index])
+                            if generated_batch is not None
+                            else ""
+                        )
+                        if batch_caption and not _is_low_information_caption_text(batch_caption):
+                            caption = batch_caption
+                            accelerator_caption_failure = False
+                        else:
+                            caption, accelerator_caption_failure = _caption_one(
+                                index,
+                                batch_frames[item_index],
+                                batch_timestamps[index],
+                            )
+                        if (
+                            not caption
+                            or _is_low_information_caption_text(caption)
+                        ) and not accelerator_caption_failure:
+                            raise RuntimeError(
+                                "Preprocessing caption generation returned an invalid visual caption. "
+                                f"video={video_name!r}, segment_id={index!r}, model_path={self.model_path!r}. "
+                                "Planner grounding requires a real visually grounded caption, not empty, placeholder, or punctuation-only text."
+                            )
+                        captions[index] = caption.strip()
+                        # Persist after every segment so a worker interruption can
+                        # resume visual captioning from the last completed segment
+                        # instead of restarting the whole video.  The cache writer
+                        # uses a same-directory temporary file and os.replace, so a
+                        # killed worker cannot leave a half-written captions.json.
+                        if cache_file:
+                            self._save_cached_captions(cache_file, captions, segment_index2name)
+                        progress.update(1)
+            finally:
+                progress.close()
 
         if cache_file:
             self._save_cached_captions(cache_file, captions, segment_index2name)
@@ -2723,6 +2971,7 @@ class VisualProcessor:
         allow_text_only_fallback: bool = True,
         max_new_tokens_override: Optional[int] = None,
         use_cache_override: Optional[bool] = None,
+        _allow_eager_attention_retry: bool = True,
     ) -> str:
         """
         Generate caption for a video segment.
@@ -3024,6 +3273,35 @@ class VisualProcessor:
                     generation_kwargs=generation_kwargs,
                     error=generate_error,
                 )
+            except Exception as generate_error:
+                cudnn_failure = "cudnn" in str(generate_error or "").lower()
+                if (
+                    not cudnn_failure
+                    and _allow_eager_attention_retry
+                    and self._can_retry_video_qa_with_eager_attention()
+                ):
+                    original_attn_implementation = self.attn_implementation
+                    logger.warning(
+                        "Reloading caption runtime with attn_implementation='eager' after multimodal generation instability."
+                    )
+                    self.unload_model(clear_runtime_cache=True)
+                    self.attn_implementation = "eager"
+                    try:
+                        self._load_model()
+                        return self._generate_caption(
+                            frames,
+                            transcript,
+                            query_template=query_template,
+                            allow_text_only_fallback=allow_text_only_fallback,
+                            max_new_tokens_override=max_new_tokens_override,
+                            use_cache_override=use_cache_override,
+                            _allow_eager_attention_retry=False,
+                        )
+                    except Exception:
+                        self.unload_model(clear_runtime_cache=True)
+                        self.attn_implementation = original_attn_implementation
+                        raise
+                raise
             if generated_ids is None:
                 logger.warning("Model returned None from generate(); returning empty caption.")
                 return ""
@@ -3071,6 +3349,185 @@ class VisualProcessor:
             if not allow_text_only_fallback:
                 raise
             return ""
+
+    def _generate_caption_batch(
+        self,
+        frames_batch: List[List[Image.Image]],
+        query_template: Optional[str] = None,
+        max_new_tokens_override: Optional[int] = None,
+        use_cache_override: Optional[bool] = None,
+    ) -> List[str]:
+        """Generate independent visual captions in one multimodal batch.
+
+        This is an opt-in performance path for the local Qwen runtime.  The
+        normal segment loop remains single-item and is deliberately kept as
+        the fallback because some processors do not preserve image-to-text
+        grouping when multiple conversations are passed at once.
+        """
+        if not frames_batch:
+            return []
+        if self._model is None or self._processor is None:
+            raise RuntimeError("Caption model is not loaded.")
+        if not self._is_qwen_family_model():
+            raise RuntimeError("Caption batch path currently requires a Qwen-family multimodal model.")
+
+        query = DEFAULT_VISUAL_CAPTION_PROMPT if query_template is None else query_template.format(transcript="")
+        safe_batches: List[List[Image.Image]] = []
+        prompt_messages: List[List[Dict[str, Any]]] = []
+        prompt_texts: List[str] = []
+        for frame_group_index, frames in enumerate(frames_batch):
+            safe_frames: List[Image.Image] = []
+            for frame_index, frame in enumerate(frames):
+                normalized = self._normalize_frame_to_rgb(frame, frame_index)
+                if normalized is not None:
+                    safe_frames.append(normalized)
+            if not safe_frames:
+                raise RuntimeError(f"No valid frames for caption batch item {frame_group_index}.")
+            content: List[Dict[str, Any]] = [{"type": "image"} for _ in safe_frames]
+            content.append({"type": "text", "text": query})
+            messages = [{"role": "user", "content": content}]
+            safe_batches.append(safe_frames)
+            prompt_messages.append(messages)
+            prompt_texts.append(self._render_prompt_text(messages, len(safe_frames), query))
+
+        processor_inputs: Optional[Dict[str, Any]] = None
+        last_qwen_error: Optional[Exception] = None
+        process_vision_info = self._resolve_process_vision_info()
+        for use_base64 in (True, False):
+            qwen_messages_batch: List[List[Dict[str, Any]]] = []
+            for safe_frames in safe_batches:
+                qwen_content: List[Dict[str, Any]] = []
+                for frame in safe_frames:
+                    image_value: Any = (
+                        self._pil_to_base64_data_url(frame) if use_base64 else frame
+                    )
+                    qwen_content.append({"type": "image", "image": image_value})
+                qwen_content.append({"type": "text", "text": query})
+                qwen_messages_batch.append([{"role": "user", "content": qwen_content}])
+            try:
+                qwen_texts: List[str] = []
+                thinking_flag = False
+                generation_config = self._get_generation_config()
+                thinking_flag = bool(generation_config.get("enable_thinking", False))
+                for qwen_messages in qwen_messages_batch:
+                    try:
+                        qwen_texts.append(
+                            self._processor.apply_chat_template(
+                                qwen_messages,
+                                tokenize=False,
+                                add_generation_prompt=True,
+                                chat_template_kwargs={"enable_thinking": thinking_flag},
+                            )
+                        )
+                    except TypeError:
+                        qwen_texts.append(
+                            self._processor.apply_chat_template(
+                                qwen_messages,
+                                tokenize=False,
+                                add_generation_prompt=True,
+                                enable_thinking=thinking_flag,
+                            )
+                        )
+                image_inputs, video_inputs = process_vision_info(qwen_messages_batch)
+                processor_inputs = self._processor(
+                    text=qwen_texts,
+                    images=image_inputs,
+                    videos=video_inputs,
+                    padding=True,
+                    return_tensors="pt",
+                )
+                processor_inputs = self._move_inputs_to_generation_device(processor_inputs)
+                break
+            except Exception as qwen_error:
+                last_qwen_error = qwen_error
+                logger.debug(
+                    "Official Qwen batch vision path failed (base64=%s): %s",
+                    use_base64,
+                    qwen_error,
+                )
+
+        if processor_inputs is None:
+            # Keep a compatibility fallback for processors that expose an
+            # image processor but do not accept the qwen_vl_utils batch shape.
+            try:
+                flat_images = [frame for group in safe_batches for frame in group]
+                processor_inputs = self._processor(
+                    text=prompt_texts,
+                    images=flat_images,
+                    padding=True,
+                    return_tensors="pt",
+                )
+                processor_inputs = self._move_inputs_to_generation_device(processor_inputs)
+            except Exception as processor_error:
+                if last_qwen_error is not None:
+                    raise RuntimeError(
+                        "Both official Qwen batch processing and compatibility batch processing failed."
+                    ) from last_qwen_error
+                raise processor_error
+
+        generation_config = self._get_generation_config()
+        generation_kwargs: Dict[str, Any] = {
+            "max_new_tokens": int(
+                max_new_tokens_override
+                if max_new_tokens_override is not None
+                else generation_config.get("max_new_tokens", 2048)
+            ),
+        }
+        pad_token_id = self._resolve_pad_token_id()
+        if pad_token_id is not None:
+            generation_kwargs["pad_token_id"] = pad_token_id
+        if use_cache_override is not None:
+            generation_kwargs["use_cache"] = bool(use_cache_override)
+        temperature = generation_config.get("temperature")
+        top_p = generation_config.get("top_p")
+        top_k = generation_config.get("top_k")
+        min_p = generation_config.get("min_p")
+        repetition_penalty = generation_config.get("repetition_penalty")
+        if temperature is not None and float(temperature) > 0:
+            generation_kwargs["do_sample"] = True
+            generation_kwargs["temperature"] = temperature
+        else:
+            generation_kwargs["do_sample"] = False
+        if top_p is not None:
+            generation_kwargs["top_p"] = top_p
+        if top_k is not None:
+            generation_kwargs["top_k"] = top_k
+        if min_p is not None:
+            generation_kwargs["min_p"] = min_p
+        if repetition_penalty is not None:
+            generation_kwargs["repetition_penalty"] = repetition_penalty
+
+        processor_inputs = _normalize_processor_sequence_tensors(
+            dict(processor_inputs or {}),
+            source="visual_processor.caption_generate_batch",
+        )
+        processor_inputs = self._move_inputs_to_generation_device(processor_inputs)
+        if self._should_apply_multimodal_generation_stability_guard(processor_inputs):
+            self._apply_caption_multimodal_generation_stability_guard(generation_kwargs)
+        generated_ids = self._generate_with_accelerator_lock(processor_inputs, generation_kwargs)
+        if generated_ids is None:
+            return [""] * len(safe_batches)
+        if isinstance(generated_ids, torch.Tensor) and generated_ids.ndim == 1:
+            generated_ids = generated_ids.unsqueeze(0)
+
+        input_ids = processor_inputs.get("input_ids") if isinstance(processor_inputs, dict) else None
+        generated_ids_trimmed: List[Any] = []
+        for item_index, output_ids in enumerate(generated_ids):
+            if torch.is_tensor(input_ids) and item_index < int(input_ids.shape[0]):
+                generated_ids_trimmed.append(output_ids[len(input_ids[item_index]) :])
+            else:
+                generated_ids_trimmed.append(output_ids)
+        decoded_outputs = self._processor.batch_decode(
+            generated_ids_trimmed,
+            skip_special_tokens=True,
+            clean_up_tokenization_spaces=False,
+        )
+        captions = [
+            _compact_segment_caption(output)
+            for output in list(decoded_outputs or [])
+        ]
+        captions.extend([""] * max(0, len(safe_batches) - len(captions)))
+        return captions[: len(safe_batches)]
 
     def _fallback_caption(self, frames: List[Image.Image], transcript: str) -> str:
         """Build a deterministic non-empty caption when VLM generation fails."""

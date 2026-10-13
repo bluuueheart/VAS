@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:event-understanding:23:123",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 11,
+  "iter_num": 18,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 11,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "They walk for a while and then sit down at the patio of a coffee shop. She eats, drinks, and smokes while the man stares at her. She then sits near a rive",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 6114.921,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00023-123",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00023-123/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00023-123/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00023-123/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/q01CUy_gwdU.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/q01CUy_gwdU.mp4",
+  "question_block": "Question: What best summarizes the first half of the events when the woman and the man meet for the third time?\nOptions:\n(A) They walk for a while and then sit down at the patio of a coffee shop. She eats, drinks, and smokes while the man stares at her. She goes to a beach\n(B) They walk for a while and then sit down at the patio of a coffee shop. She eats, drinks, and smokes while the man reads a book. He then leaves\n(C) They walk for a while and then sit down at the patio of a coffee shop. She eats, drinks, and smokes while the man stares at her. She then sits near a rive\n(D) They walk for a while and then sit down at the patio of a coffee shop. She eats, drinks, and smokes while the man stares at her. He then leaves",
+  "options": [
+    "They walk for a while and then sit down at the patio of a coffee shop. She eats, drinks, and smokes while the man stares at her. She goes to a beach",
+    "They walk for a while and then sit down at the patio of a coffee shop. She eats, drinks, and smokes while the man reads a book. He then leaves",
+    "They walk for a while and then sit down at the patio of a coffee shop. She eats, drinks, and smokes while the man stares at her. She then sits near a rive",
+    "They walk for a while and then sit down at the patio of a coffee shop. She eats, drinks, and smokes while the man stares at her. He then leaves"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "06:26-07:04",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "q01CUy_gwdU",
+    "resolved_video_stem": "q01CUy_gwdU",
+    "video_mapping_verified": true,
+    "source_index": 23
+  },
+  "updated_at": "2026-09-03T07:35:49.716711Z"
+}

@@ -1,0 +1,221 @@
+{
+  "complete": false,
+  "main_restart_authorized_after_validation": true,
+  "F03": {
+    "status": "implemented_regressions_passed_fresh_task_pending",
+    "implemented": "Explicit image filenames must all exist in successful observations of the declared source tool; supports multiple observations and nested result image evidence.",
+    "proof": "source_asset_binding_proof.json",
+    "remaining": [
+      "Fresh full-task runtime validation of source identities and evidence merging."
+    ],
+    "imported_verifier_tests_passed": 25,
+    "temporal_scope": "Implemented structured timestamp/window coverage and effective-range precedence; 35 combined temporal/semantic/checkpoint regressions pass.",
+    "citation_binding": {
+      "status": "targeted_tests_passed",
+      "tests": 28,
+      "log": "citation_binding_tests.log",
+      "implemented": "Cited seconds/clock timestamps now checked against actual successful observation scope; absent temporal metadata is not proof.",
+      "remaining": "Fresh full-task integration validation."
+    },
+    "packed_frame_scope": "Nested sample_times and observation identity compatibility included in passing 171-test regression.",
+    "observation_references": {
+      "status": "implemented_targeted_checks_passed",
+      "runtime_binding": "Observer and native fallback outputs receive runtime-derived observation identities, checked against successful records.",
+      "ledger": "Extraction preserves source references; merge unions support references; repeated identity does not add a new source.",
+      "targeted_checks": 9,
+      "limitations": "Production-function checks and imported regressions pass; fresh full-task validation pending.",
+      "proof": "fast_provenance_checks.json",
+      "compatibility": "Source identity survives dictionary/text native-result rendering and excludes Parallel/System/Assistant_Note wrappers."
+    }
+  },
+  "F05": {
+    "status": "real_complete_trajectory_review_passed",
+    "proof": "live_reflector_review.json",
+    "tests": 8,
+    "analysis_prompt_source_context": "Reflector analysis prompt is now included in Evolver source_context alongside online Reflector and Observer prompts.",
+    "second_live_failure": "Malformed nested JSON quotation; parser position now supplied in format repair and short source-text quotations requested.",
+    "attempt_002_archive": "live_attempt_002",
+    "third_live_failure": "Event indices incorrectly cited as execution step IDs; repair now reports specific invalid IDs and all quote errors. Event-only findings can use empty step_ids with verified event quotes.",
+    "attempt_003_archive": "live_attempt_003",
+    "current_attempt": 4,
+    "diagnosis_quality_audit": "reflector_diagnosis_quality_audit.json",
+    "remaining": "Causal quality of final diagnoses requires execution validation; literal quotes alone do not establish framework defects."
+  },
+  "verifier_regression_process": {
+    "session_id": 11805,
+    "pid": 188528,
+    "log": "verifier_boundaries_tests.log",
+    "state_at_last_observation": "completed",
+    "exit_code": 0,
+    "tests_passed": 25
+  },
+  "framework_regressions": {
+    "status": "passed",
+    "test_count": 171,
+    "log": "final_regression.log",
+    "scope": "Evolution, replay, runtime checkpoint, verifier, role contracts, evidence progress, request validation, visual sampling, observation status, retrieval, dense index and Mix dataset/reward/ablation audit.",
+    "limitations": "Unit/regression coverage; not a fresh model-driven evolution closed-loop or benchmark accuracy result.",
+    "subsequent_change": "Video_Clip_QA duration export passed 21 related tests in duration_export_tests.log."
+  },
+  "F07": {
+    "status": "partial",
+    "implemented": "Static attributes no longer require duplicate observations solely by keyword. Counting, comparison, identity, rationale and temporal gates retained.",
+    "frozen_boundary_comparison": {
+      "total": 57,
+      "newly_accepted_correct_candidates": 1,
+      "newly_accepted_incorrect_candidates": 0,
+      "other_decision_changes": 0,
+      "proof": "repaired_verifier_boundaries.json"
+    },
+    "limitations": "Frozen evidence and regressions only; no fresh accuracy or evolution gain demonstrated.",
+    "retrieval_visual_source": {
+      "implemented": "Actual returned images, including retrieval images, count as visual observations; text-only hints cannot veto later grounded counts.",
+      "targeted_tests": "retrieval_visual_tests.log",
+      "asset_time_coupling": "A cited image cannot borrow the temporal scope of an unrelated same-tool call."
+    }
+  },
+  "F04": {
+    "status": "real_online_and_full_review_passed",
+    "actual_online_seconds": 40.95057,
+    "production_timeout_seconds": 180,
+    "online_steps_seen": 10,
+    "attempt_001_archive": "live_attempt_001",
+    "failure": "Redundant evidence field had structured quotes instead of prose; required evidence_quotes were present.",
+    "repair": "Optional duplicate evidence prose removed from mandatory schema; exact evidence_quotes and original-record checks remain required."
+  },
+  "F12": {
+    "status": "enabled_suppression_regressions_passed_fresh_pair_pending",
+    "changes": [
+      "Disabled recovery candidates use historical actual routes for preflight rather than their own impossible activation condition.",
+      "Replay starts at the first turn for suppression candidates.",
+      "Fresh baseline and candidate traces are paired by sample UID.",
+      "Candidate must execute the original retrieval after comparable failures; absent events alone cannot prove suppression.",
+      "Engine emits suppression decision only after actual original-tool execution."
+    ],
+    "remaining": [
+      "Real paired execution validation."
+    ],
+    "regression_log": "enabled_suppression_tests.log",
+    "runtime_event_checks": "2 production-function/branch positive-negative tests passed, including executed=false and blocked modes.",
+    "tests_passed": 60
+  },
+  "framework_regressions_latest": {
+    "status": "running",
+    "session_id": 10795,
+    "log": "current_complete_regression.log"
+  },
+  "F06": {
+    "status": "real_withdrawal_unexplained_contract_strengthened",
+    "script": "live_evolver_validate.py",
+    "publication": false,
+    "requirements_remaining": [
+      "Complete source-validated real Reflector review",
+      "Actual Evolver proposal validation",
+      "Fresh candidate load and paired execution",
+      "Representative failed and normal case validation"
+    ],
+    "paired_replay_script": "live_candidate_replay.py",
+    "model_reuse": "Real Evolver validation now runs after successful review using the already loaded suite.",
+    "proof": "live_evolver_validation.json",
+    "root_cause": "Prompt example contradicted expected_effect object contract and did not give exact executable source edit field names.",
+    "semantic_constraint": "A split-window plan without backend execution cannot claim tool success.",
+    "attempt_001_archive": "live_evolver_attempt_001",
+    "paired_replay_config": "validation_mix_config.json",
+    "attempt_002": "valid JSON no_mutation without reason; initial proposal still fabricated success for unexecuted split plan",
+    "remaining": [
+      "Verify meaningful withdrawal/proposal with current contract",
+      "Reject candidate success claims without backend execution",
+      "Fresh source load and paired validation"
+    ]
+  },
+  "F13": {
+    "status": "implemented_and_targeted_test_passed",
+    "proof": "request_validation_latest.log",
+    "tests": "Actual fallback branch preserves integer, decimal and numeric-array time windows.",
+    "scope": "This disabled GPU semantic retrieval path was not active in historical main failures."
+  },
+  "F08": {
+    "status": "implemented_targeted_tests_passed_full_replay_pending",
+    "proof": "request_validation_latest.log",
+    "change": "Reject known duplicate execution before Observer dispatch, mark handled to prevent delegation."
+  },
+  "F09": {
+    "status": "implemented_targeted_tests_passed",
+    "proof": "request_validation_latest.log",
+    "change": "Shared window validation used by dispatch and Video_Clip_QA; configured limit exposed in description."
+  },
+  "F01": {
+    "status": "implemented_control_flow_tests_passed",
+    "proof": "evidence_progress_latest.log",
+    "change": "Evidence revision committed after Observer/native fallback merge; repeated grounded content does not advance revision."
+  },
+  "F02": {
+    "status": "implemented_control_flow_tests_passed",
+    "proof": "evidence_progress_latest.log",
+    "change": "Recovery budget applies from first recovery turn; all probe turns usable; exhaustion stops before new generation."
+  },
+  "F10": {
+    "status": "implemented_role_regressions_passed",
+    "proof": "role_binding_repair_tests.log",
+    "change": "Reflector decision and can_finish must agree."
+  },
+  "F11": {
+    "status": "implemented_control_flow_tests_passed",
+    "proof": "evidence_progress_latest.log",
+    "change": "Role execution/schema failure terminates with explicit role failure, not another visual probe; failed non-evidence tools skip Observer perception."
+  },
+  "F14": {
+    "status": "implemented_export_regressions_passed",
+    "implemented": "Whole-video count requires real source duration; Inspect_Frame and Video_Clip_QA export full-source duration, never processed-segment duration.",
+    "real_media_duration": 485.17,
+    "source_duration_export_tests": "duration_export_tests.log",
+    "export_tests_passed": 21
+  },
+  "latest_validation": {
+    "main_experiment": "stopped",
+    "global_scope_role_tests": {
+      "passed": 37,
+      "log": "global_scope_role_tests.log"
+    },
+    "event_reference_tests": {
+      "passed": 11,
+      "log": "event_reference_tests.log"
+    },
+    "full_regression": {
+      "status": "passed",
+      "tests": 171,
+      "log": "final_regression.log",
+      "subsequent_change": "Video_Clip_QA source duration export; separate tests pending"
+    },
+    "live_attempt_004": "Reflector passed all 11 batches and synthesis; Evolver schema failed; process exited",
+    "evolution_benefit": "not demonstrated",
+    "frozen_boundary_recheck": {
+      "total": 57,
+      "changed": 1,
+      "newly_accepted_correct": 1,
+      "newly_accepted_wrong": 0,
+      "not_fresh_accuracy": true
+    },
+    "event_reference_role_tests": {
+      "status": "passed",
+      "tests": 22,
+      "log": "event_reference_role_tests.log"
+    },
+    "duration_export_tests": {
+      "status": "passed",
+      "tests": 21,
+      "log": "duration_export_tests.log"
+    },
+    "evolver_contract_tests": {
+      "status": "passed",
+      "tests": 23,
+      "log": "evolver_contract_tests.log"
+    },
+    "framework_cases": "running via queue; independent normal/failure cases, not main experiment"
+  },
+  "restart_launcher": {
+    "path": "start_main.sh",
+    "state": "prepared_not_executed",
+    "gate": "restart_gate.json absent; main remains stopped"
+  }
+}

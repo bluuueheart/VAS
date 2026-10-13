@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00240:7a8cd905-114c-430d-b058-0a0b8a4d0111",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The main goal of the video is to create a model out of clay. the most crucial steps in achieving this goal are shaping the clay, stitching it together, and dipping it in glue.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00240-7a8cd905-114c-430d-b058-0a0b8a4d0111",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00240-7a8cd905-114c-430d-b058-0a0b8a4d0111/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00240-7a8cd905-114c-430d-b058-0a0b8a4d0111/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00240-7a8cd905-114c-430d-b058-0a0b8a4d0111/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/7a8cd905-114c-430d-b058-0a0b8a4d0111.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/7a8cd905-114c-430d-b058-0a0b8a4d0111.mp4",
+  "question_block": "Question: From the series of actions, determine the main goal of the video and highlight the steps that were most crucial in achieving that goal.\nOptions:\n(A) The main goal of the video is to create a design out of clay. the most crucial steps in achieving this goal are scratching the clay, filling in the scratches, and creating a design.\n(B) The main goal of the video is to create a piece of art out of clay. the most crucial steps in achieving this goal are cutting the clay, sticking the pieces together, and creating a design.\n(C) The main goal of the video is to create a snack out of clay. the most crucial steps in achieving this goal are poking the clay, filling in the holes, and making the clay edible.\n(D) The main goal of the video is to create a toy out of clay. the most crucial steps in achieving this goal are rolling the clay, sticking the ball together, and making the ball comfortable to hold.\n(E) The main goal of the video is to create a model out of clay. the most crucial steps in achieving this goal are shaping the clay, stitching it together, and dipping it in glue.",
+  "options": [
+    "The main goal of the video is to create a design out of clay. the most crucial steps in achieving this goal are scratching the clay, filling in the scratches, and creating a design.",
+    "The main goal of the video is to create a piece of art out of clay. the most crucial steps in achieving this goal are cutting the clay, sticking the pieces together, and creating a design.",
+    "The main goal of the video is to create a snack out of clay. the most crucial steps in achieving this goal are poking the clay, filling in the holes, and making the clay edible.",
+    "The main goal of the video is to create a toy out of clay. the most crucial steps in achieving this goal are rolling the clay, sticking the ball together, and making the ball comfortable to hold.",
+    "The main goal of the video is to create a model out of clay. the most crucial steps in achieving this goal are shaping the clay, stitching it together, and dipping it in glue."
+  ],
+  "official_meta": {
+    "question_index": "00240",
+    "video_id": "7a8cd905-114c-430d-b058-0a0b8a4d0111",
+    "source_index": 240
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:56:13.594303Z"
+}

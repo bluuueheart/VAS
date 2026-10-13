@@ -1,0 +1,14 @@
+phase=final_code_regression
+................F.........................
+======================================================================
+FAIL: test_complete_summary_sequence_supports_absent_negative_option (evolution.test_replay.DynamicEvidenceVerifierTest.test_complete_summary_sequence_supports_absent_negative_option)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/gemini/code/export_packages/extracted/RL/evolution/test_replay.py", line 849, in test_complete_summary_sequence_supports_absent_negative_option
+    self.assertTrue(result.can_finish, result)
+AssertionError: False is not true : progress_score=1.0 claim_coverage=1.0 direct_grounding=1.0 contradiction_score=0.0 cross_modal_support=1.0 can_finish=False premise_mismatch=False option_mismatch=False missing_information=['direct dynamic Video_Clip_QA result supporting the selected action'] unresolved_claims=['claim contract missing: dynamic_relation'] claim_contract={'status': 'blocked', 'required': ['dynamic_relation', 'comparison', 'qualifier', 'evidence_redundancy'], 'satisfied': {'dynamic_relation': False, 'comparison': True, 'qualifier': True, 'evidence_redundancy': True}, 'missing': ['dynamic_relation'], 'verified_claim_count': 1, 'contract_version': 1} feedback='Evidence verifier rejected termination; acquire or reconcile: direct dynamic Video_Clip_QA result supporting the selected action, claim contract missing: dynamic_relation'
+
+----------------------------------------------------------------------
+Ran 42 tests in 0.207s
+
+FAILED (failures=1)

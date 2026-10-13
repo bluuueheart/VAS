@@ -1,0 +1,33 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-08-22T17:37:48.706491Z",
+  "records": {
+    "lvbench:entity-recognition:4:63": {
+      "sample_uid": "lvbench:entity-recognition:4:63",
+      "dataset_name": "lvbench",
+      "subset_name": "entity recognition",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 1,
+      "iter_num": 2,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00004-63/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00004-63",
+      "updated_at": "2026-08-22T17:37:48.653721Z"
+    },
+    "lvbench:entity-recognition:16:83": {
+      "sample_uid": "lvbench:entity-recognition:16:83",
+      "dataset_name": "lvbench",
+      "subset_name": "entity recognition",
+      "status": "wrong",
+      "acc": 0.0,
+      "tool_use_num": 1,
+      "iter_num": 2,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00016-83/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00016-83",
+      "updated_at": "2026-08-22T17:37:48.706440Z"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "video": "AWA-6.mp4",
+    "duration": 450.0,
+    "question": "What is the main background of the video?",
+    "candidates": [
+      "Grassland",
+      "Lake",
+      "Ocean",
+      "Desert"
+    ],
+    "answer": "Grassland",
+    "question_type": "topic_reasoning"
+  }
+]

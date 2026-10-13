@@ -1,0 +1,57 @@
+{
+  "sample_uid": "videomme:animation:091-1",
+  "dataset_name": "videomme",
+  "subset_name": "Animation",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 2,
+  "iter_num": 16,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 2,
+  "planner_iterations": 16,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "D",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (planner_recovery_exhausted_without_verifiable_finish)",
+  "elapsed_seconds": 1501.921,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/videomme/animation-091-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/videomme/animation-091-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/videomme/animation-091-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v21/videomme/animation-091-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/_aVHf_jmWk8.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/_aVHf_jmWk8.mp4",
+  "question_block": "Question: How does the girl feel in this video?\nOptions:\n(A) Positive.\n(B) Happy.\n(C) Angry.\n(D) Sad.",
+  "options": [
+    "A. Positive.",
+    "B. Happy.",
+    "C. Angry.",
+    "D. Sad."
+  ],
+  "official_meta": {
+    "video_id": "091",
+    "duration": "short",
+    "domain": "Film & Television",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Animation",
+    "task_type": "Action Recognition",
+    "question_id": "091-1",
+    "question_index": 0,
+    "video_item_index": 90,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-25T23:53:21.904629Z"
+}

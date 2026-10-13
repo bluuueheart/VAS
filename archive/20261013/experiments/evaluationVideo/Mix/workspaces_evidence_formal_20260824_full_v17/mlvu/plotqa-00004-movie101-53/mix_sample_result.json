@@ -1,0 +1,52 @@
+{
+  "sample_uid": "mlvu:plotqa:4:movie101-53",
+  "dataset_name": "mlvu",
+  "subset_name": "plotQA",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The man in the blue jacket takes off the woman's wig",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 2.034,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/mlvu/plotqa-00004-movie101-53",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/mlvu/plotqa-00004-movie101-53/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/mlvu/plotqa-00004-movie101-53/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/mlvu/plotqa-00004-movie101-53/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/movie101_53.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/movie101_53.mp4",
+  "question_block": "Question: At the beginning of the video, why does the woman in red change from long hair to short hair?\nOptions:\n(A) The woman takes off her own wig\n(B) The woman cuts her own hair\n(C) The man in the blue jacket takes off the woman's wig\n(D) The man in the blue jacket cuts the woman's hair short",
+  "options": [
+    "The woman takes off her own wig",
+    "The woman cuts her own hair",
+    "The man in the blue jacket takes off the woman's wig",
+    "The man in the blue jacket cuts the woman's hair short"
+  ],
+  "official_meta": {
+    "task_type": "plotQA",
+    "source_json": "1_plotQA.json",
+    "source_index": 4,
+    "video_subdir": "1_plotQA",
+    "video_relative_path": "1_plotQA/movie101_53.mp4",
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "error": "Unable to load the local Qwen3/Qwen3.5 checkpoint with an exact architecture class. Install a transformers build that provides the class named by config.architectures (for Qwen3.5 this must be Qwen3_5ForConditionalGeneration).",
+  "updated_at": "2026-08-24T13:06:20.529736Z"
+}

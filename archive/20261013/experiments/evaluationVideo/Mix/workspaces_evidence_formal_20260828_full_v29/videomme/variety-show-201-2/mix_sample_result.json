@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:variety-show:201-2",
+  "dataset_name": "videomme",
+  "subset_name": "Variety Show",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 6,
+  "iter_num": 18,
+  "tool_success_rate": 0.666667,
+  "successful_tool_calls": 4,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "C",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: finish_recovery_budget_exhausted_after_repeated_finish_rejection.",
+  "elapsed_seconds": 3528.726,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/variety-show-201-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/variety-show-201-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/variety-show-201-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/variety-show-201-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/k74LDvXSnHM.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/k74LDvXSnHM.mp4",
+  "question_block": "Question: What caused the sudden fall of the woman in the video?\nOptions:\n(A) She twisted her ankle.\n(B) She was tripped.\n(C) She was scared by a prank.\n(D) Cannot be determined.",
+  "options": [
+    "A. She twisted her ankle.",
+    "B. She was tripped.",
+    "C. She was scared by a prank.",
+    "D. Cannot be determined."
+  ],
+  "official_meta": {
+    "video_id": "201",
+    "video_external_id": "k74LDvXSnHM",
+    "resolved_video_stem": "k74LDvXSnHM",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Artistic Performance",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Variety Show",
+    "task_type": "Action Reasoning",
+    "question_id": "201-2",
+    "question_index": 1,
+    "video_item_index": 200,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-05T13:37:44.448672Z"
+}

@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:other-sports:171-1",
+  "dataset_name": "videomme",
+  "subset_name": "Other Sports",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) In 2016.",
+  "elapsed_seconds": 290.664,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/other-sports-171-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/other-sports-171-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/other-sports-171-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/other-sports-171-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/FsLaTZmP6Uw.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/FsLaTZmP6Uw.mp4",
+  "question_block": "Question: When was the game hosted?\nOptions:\n(A) In 2012.\n(B) In 2016.\n(C) In 2020.\n(D) In 2024.",
+  "options": [
+    "A. In 2012.",
+    "B. In 2016.",
+    "C. In 2020.",
+    "D. In 2024."
+  ],
+  "official_meta": {
+    "video_id": "171",
+    "video_external_id": "FsLaTZmP6Uw",
+    "resolved_video_stem": "FsLaTZmP6Uw",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Sports Competition",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Other Sports",
+    "task_type": "Temporal Perception",
+    "question_id": "171-1",
+    "question_index": 0,
+    "video_item_index": 170,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-30T21:17:28.672317Z"
+}

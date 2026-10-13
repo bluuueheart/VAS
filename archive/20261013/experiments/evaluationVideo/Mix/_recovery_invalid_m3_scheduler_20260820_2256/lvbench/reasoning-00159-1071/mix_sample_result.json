@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:reasoning:159:1071",
+  "dataset_name": "lvbench",
+  "subset_name": "reasoning",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Teacher-student relationship",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/reasoning-00159-1071",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/reasoning-00159-1071/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/reasoning-00159-1071/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/reasoning-00159-1071/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/xi6r3hZe5Tg.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/xi6r3hZe5Tg.mp4",
+  "question_block": "Question: What is the relationship between the lady in blue clothes and the kid in yellow clothes?\nOptions:\n(A) Friendship\n(B) Stranger relationship\n(C) Mother-child relationship\n(D) Teacher-student relationship",
+  "options": [
+    "Friendship",
+    "Stranger relationship",
+    "Mother-child relationship",
+    "Teacher-student relationship"
+  ],
+  "official_meta": {
+    "question_type": "reasoning",
+    "video_type": "documentary",
+    "time_reference": "34:00-35:00",
+    "video_key": "xi6r3hZe5Tg",
+    "source_index": 159
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:17.805958Z"
+}

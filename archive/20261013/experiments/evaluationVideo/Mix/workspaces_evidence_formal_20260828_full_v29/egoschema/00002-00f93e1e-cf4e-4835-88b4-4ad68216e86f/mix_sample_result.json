@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00002:00f93e1e-cf4e-4835-88b4-4ad68216e86f",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 3,
+  "iter_num": 3,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 3,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "The overarching theme of the video is that people can be both engaged in challenging activities and enjoying leisurely activities at the same time. the video shows that it is possible to be both productive and relaxed, and that it is important to find a balance between the two.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) The overarching central theme presented in the video is that individuals can be both sociable and independent simultaneously. the visual content demonstrates that it is entirely possible to be both connected to others meaningfully and to savor solitary moments, emphasizing that it is crucial to find a harmonious balance between these two aspects.",
+  "elapsed_seconds": 202.53,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00002-00f93e1e-cf4e-4835-88b4-4ad68216e86f",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00002-00f93e1e-cf4e-4835-88b4-4ad68216e86f/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00002-00f93e1e-cf4e-4835-88b4-4ad68216e86f/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00002-00f93e1e-cf4e-4835-88b4-4ad68216e86f/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/00f93e1e-cf4e-4835-88b4-4ad68216e86f.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/00f93e1e-cf4e-4835-88b4-4ad68216e86f.mp4",
+  "question_block": "Question: What is the overarching theme of the video, considering the activities performed by both characters?\nOptions:\n(A) The overarching central theme presented in the video is that individuals can be both sociable and independent simultaneously. the visual content demonstrates that it is entirely possible to be both connected to others meaningfully and to savor solitary moments, emphasizing that it is crucial to find a harmonious balance between these two aspects.\n(B) The overarching theme of the video is that people can be both engaged in challenging activities and enjoying leisurely activities at the same time. the video shows that it is possible to be both productive and relaxed, and that it is important to find a balance between the two.\n(C) The primary, overarching theme presented in the video emphasizes that individuals can truly be both creative and practical simultaneously. the enlightening video demonstrates the realistic possibility of being both highly imaginative and remarkably efficient, while stressing the significance of discovering an equilibrium between these two essential aspects.\n(D) The overarching theme of the video is that people can be both ambitious and humble. the video shows that it is possible to be both driven and modest, and that it is important to find a balance between the two.\n(E) The primary overarching theme presented in the video is that individuals can simultaneously possess and exhibit both intelligence and emotional aspects. effectively, the video demonstrates that the coexistence of rational and intuitive qualities is feasible, emphasizing the significance of establishing equilibrium between these two crucial elements.",
+  "options": [
+    "The overarching central theme presented in the video is that individuals can be both sociable and independent simultaneously. the visual content demonstrates that it is entirely possible to be both connected to others meaningfully and to savor solitary moments, emphasizing that it is crucial to find a harmonious balance between these two aspects.",
+    "The overarching theme of the video is that people can be both engaged in challenging activities and enjoying leisurely activities at the same time. the video shows that it is possible to be both productive and relaxed, and that it is important to find a balance between the two.",
+    "The primary, overarching theme presented in the video emphasizes that individuals can truly be both creative and practical simultaneously. the enlightening video demonstrates the realistic possibility of being both highly imaginative and remarkably efficient, while stressing the significance of discovering an equilibrium between these two essential aspects.",
+    "The overarching theme of the video is that people can be both ambitious and humble. the video shows that it is possible to be both driven and modest, and that it is important to find a balance between the two.",
+    "The primary overarching theme presented in the video is that individuals can simultaneously possess and exhibit both intelligence and emotional aspects. effectively, the video demonstrates that the coexistence of rational and intuitive qualities is feasible, emphasizing the significance of establishing equilibrium between these two crucial elements."
+  ],
+  "official_meta": {
+    "question_index": "00002",
+    "video_id": "00f93e1e-cf4e-4835-88b4-4ad68216e86f",
+    "resolved_video_stem": "00f93e1e-cf4e-4835-88b4-4ad68216e86f",
+    "video_mapping_verified": true,
+    "source_index": 2,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-28T09:35:15.618218Z"
+}

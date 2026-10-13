@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00189:5fa41401-fc83-40d7-bbed-ff04dc83704e",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The primary activity throughout the video is painting a wardrobe. the coconut shell is used to hold the paint.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00189-5fa41401-fc83-40d7-bbed-ff04dc83704e",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00189-5fa41401-fc83-40d7-bbed-ff04dc83704e/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00189-5fa41401-fc83-40d7-bbed-ff04dc83704e/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00189-5fa41401-fc83-40d7-bbed-ff04dc83704e/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/5fa41401-fc83-40d7-bbed-ff04dc83704e.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/5fa41401-fc83-40d7-bbed-ff04dc83704e.mp4",
+  "question_block": "Question: Summarize the primary activity throughout the video and describe the significance of the coconut shell in that activity.\nOptions:\n(A) The primary activity throughout the video is painting a wardrobe. the coconut shell is used to hold the paint.\n(B) The primary activity throughout the video is sitting in a chair. the coconut shell is used to hold the chair.\n(C) The primary activity throughout the video is standing up and sitting down. the coconut shell is used to hold the person's balance.\n(D) The primary activity throughout the video is kicking a chair. the coconut shell is used to hold the person's foot.\n(E) The primary activity throughout the video is turning a paintbrush. the coconut shell is used to hold the paintbrush.",
+  "options": [
+    "The primary activity throughout the video is painting a wardrobe. the coconut shell is used to hold the paint.",
+    "The primary activity throughout the video is sitting in a chair. the coconut shell is used to hold the chair.",
+    "The primary activity throughout the video is standing up and sitting down. the coconut shell is used to hold the person's balance.",
+    "The primary activity throughout the video is kicking a chair. the coconut shell is used to hold the person's foot.",
+    "The primary activity throughout the video is turning a paintbrush. the coconut shell is used to hold the paintbrush."
+  ],
+  "official_meta": {
+    "question_index": "00189",
+    "video_id": "5fa41401-fc83-40d7-bbed-ff04dc83704e",
+    "source_index": 189
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:31.243217Z"
+}

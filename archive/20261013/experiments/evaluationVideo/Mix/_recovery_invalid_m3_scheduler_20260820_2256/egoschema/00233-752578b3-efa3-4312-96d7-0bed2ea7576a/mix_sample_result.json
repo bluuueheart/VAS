@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00233:752578b3-efa3-4312-96d7-0bed2ea7576a",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is trying to create a painting.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00233-752578b3-efa3-4312-96d7-0bed2ea7576a",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00233-752578b3-efa3-4312-96d7-0bed2ea7576a/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00233-752578b3-efa3-4312-96d7-0bed2ea7576a/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00233-752578b3-efa3-4312-96d7-0bed2ea7576a/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/752578b3-efa3-4312-96d7-0bed2ea7576a.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/752578b3-efa3-4312-96d7-0bed2ea7576a.mp4",
+  "question_block": "Question: What is the overall objective that c is trying to achieve throughout these actions in the video, and how do the different steps contribute to this objective?\nOptions:\n(A) C is trying to clean her laptop.\n(B) C is trying to organize her supplies.\n(C) C is trying to make a cup of tea.\n(D) C is trying to create a painting.\n(E) C is trying to answer a phone call.",
+  "options": [
+    "C is trying to clean her laptop.",
+    "C is trying to organize her supplies.",
+    "C is trying to make a cup of tea.",
+    "C is trying to create a painting.",
+    "C is trying to answer a phone call."
+  ],
+  "official_meta": {
+    "question_index": "00233",
+    "video_id": "752578b3-efa3-4312-96d7-0bed2ea7576a",
+    "source_index": 233
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:55:43.122871Z"
+}

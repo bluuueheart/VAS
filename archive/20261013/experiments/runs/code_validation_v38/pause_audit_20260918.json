@@ -1,0 +1,54 @@
+{
+  "decision": "keep_paused",
+  "main_results": [
+    {
+      "sample_uid": "lvbench:entity-recognition:4:63",
+      "status": "failed",
+      "acc": 0.0,
+      "paired_pending": false,
+      "path": "evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/lvbench/entity-recognition-00004-63/mix_sample_result.json"
+    },
+    {
+      "sample_uid": "videomme:humanity-history:001-1",
+      "status": "failed",
+      "acc": 0.0,
+      "paired_pending": false,
+      "path": "evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/videomme/humanity-history-001-1/mix_sample_result.json"
+    },
+    {
+      "sample_uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+      "status": "failed",
+      "acc": 0.0,
+      "paired_pending": true,
+      "path": "evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/mix_sample_result.json"
+    }
+  ],
+  "completed_bundle_count": 2,
+  "ablation_result_count": 40,
+  "ablation_status_counts": {
+    "failed": 36,
+    "completed": 3,
+    "wrong": 1
+  },
+  "evolver": {
+    "record_count": 2,
+    "cycle_count": 1,
+    "active_snapshot_id": "snapshot_000",
+    "cycles": [
+      {
+        "cycle_index": 1,
+        "status": "local_repair_not_proven",
+        "gate_status": null,
+        "published": false,
+        "snapshot_id": "snapshot_7d60304e011d44fd",
+        "completed_at": "2026-09-18T03:26:43.127264Z"
+      }
+    ]
+  },
+  "blocking_findings": [
+    "Inspect_Frame observation contains real image paths and timestamps but no status; verifier.py:232 requires explicit success, so source evidence is rejected.",
+    "All three main trajectories end with planner_recovery_exhausted_without_verifiable_finish; EgoSchema without Reflector succeeds. This is diagnostic evidence, not a statistically established component effect."
+  ],
+  "experiment_resumed": false,
+  "code_modified": false
+}

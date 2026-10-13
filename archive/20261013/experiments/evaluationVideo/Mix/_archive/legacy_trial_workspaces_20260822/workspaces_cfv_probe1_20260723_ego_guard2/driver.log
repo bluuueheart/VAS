@@ -1,0 +1,556 @@
+Using Orion CUDA proxy runtime: /opt/orion/orion_runtime/gpu/cuda/orion-cuda-12.3
+2026-07-23 23:53:39,315 - WARNING - Skipping unavailable MLVU subset task_type=count: annotation file is missing: /gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/json/4_count.json
+2026-07-23 23:53:39,440 - INFO - Mix batch execution resolved parallel_samples=1 visible_cuda_devices=['0'] selected_samples=1
+2026-07-23 23:53:39,440 - INFO - Resume [mlvu 0/8]
+2026-07-23 23:53:39,441 - INFO - Launching sample 1/1 sample_uid=mlvu:ego:0:ego-35 launcher_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/mlvu/ego-00000-ego-35/launcher.log
+2026-07-23 23:54:06,504 - INFO - ToolRegistry initialized
+2026-07-23 23:54:06,837 - INFO - execute_pipeline runtime_profile=evaluation_local -> forcing local non-planner/visual/embedding runtime, disabling sidecar autostart, and clearing distributed worker env residue.
+2026-07-23 23:54:07,008 - INFO - ================================================================================
+2026-07-23 23:54:07,008 - INFO - Tool Star RL - End-to-End Pipeline
+2026-07-23 23:54:07,008 - INFO - ================================================================================
+2026-07-23 23:54:07,008 - INFO - Video: /gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/3_ego/ego_35.mp4
+2026-07-23 23:54:07,008 - INFO - Query: MLVU Task Type: ego
+
+Question: What did I put in the orange trashcan 
+Options:
+(A) a lemon green sponge
+(B) a blue pen
+(C) a red apple
+(D) a yellow banana
+
+Reply with exactly one best option in the format "(A) option text".
+2026-07-23 23:54:07,008 - INFO - Query group: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/mlvu/ego-00000-ego-35
+2026-07-23 23:54:07,008 - INFO - Run workspace: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/mlvu/ego-00000-ego-35
+2026-07-23 23:54:07,009 - INFO - Run manifest: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/mlvu/ego-00000-ego-35/manifest.json
+2026-07-23 23:54:07,009 - INFO - Run log: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/mlvu/ego-00000-ego-35/logs/run.log
+2026-07-23 23:54:07,009 - INFO - Shared data cache: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache
+2026-07-23 23:54:07,009 - INFO - Cache reuse: enabled
+2026-07-23 23:54:07,009 - INFO - Pipeline mode: react
+2026-07-23 23:54:07,009 - INFO - 
+2026-07-23 23:54:10,019 - INFO - ================================================================================
+2026-07-23 23:54:10,019 - INFO - Step 1: Video Preprocessing
+2026-07-23 23:54:10,019 - INFO - ================================================================================
+2026-07-23 23:54:10,019 - INFO - Skipping preprocess text LLM load because knowledge-graph and metadata synthesis are both disabled.
+2026-07-23 23:54:10,019 - INFO - Initializing device: cuda
+2026-07-23 23:54:10,021 - INFO - Visual sidecar runtime disabled for role=qwen_vl because TOOL_STAR_RUNTIME_PROFILE=evaluation_local forces local evaluation runtime.
+2026-07-23 23:54:10,029 - INFO - CUDA detected: 1 GPU(s) available
+2026-07-23 23:54:10,029 - INFO - Initializing device: cuda
+2026-07-23 23:54:10,047 - INFO - Initializing device: cuda
+2026-07-23 23:54:10,048 - INFO - Initializing device: cuda
+2026-07-23 23:54:11,488 - INFO - Found existing processed outputs at /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache/processed/ego_35, skipping preprocessing.
+2026-07-23 23:54:11,497 - INFO - Initializing device: cuda
+2026-07-23 23:54:11,498 - INFO - Initializing device: cuda
+2026-07-23 23:54:11,498 - INFO - Initializing device: cuda
+2026-07-23 23:54:11,499 - INFO - Grounding embedder runtime: device=cuda:0 visible_accelerators=1 model=/gemini/pretrain/model/Qwen/Qwen3-VL-Embedding-2B
+2026-07-23 23:54:11,499 - INFO - Grounding embedder accelerator snapshot: cuda:0 name=P1.gpu.medium allocated=0.00GB reserved=0.00GB
+2026-07-23 23:58:00,625 - INFO - Qwen3-VL-Embedding runtime initialized: device=cuda:0 visible_accelerators=1 model=/gemini/pretrain/model/Qwen/Qwen3-VL-Embedding-2B weight_files=['model.safetensors']
+2026-07-23 23:58:00,626 - INFO - Qwen3-VL-Embedding accelerator snapshot: cuda:0 name=P1.gpu.medium allocated=3.96GB reserved=3.97GB
+2026-07-23 23:58:01,154 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,154 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,250 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,250 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,321 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,321 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,375 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,375 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,429 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,429 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,483 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,484 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,538 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,538 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,592 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,592 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,647 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,647 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,704 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,704 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,759 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,759 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,814 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,814 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,869 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,869 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,923 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,923 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,978 - INFO - Initializing device: cuda
+2026-07-23 23:58:01,978 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,031 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,031 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,085 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,085 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,138 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,138 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,192 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,192 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,249 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,249 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,307 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,307 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,360 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,360 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,414 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,414 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,466 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,467 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,519 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,519 - INFO - Initializing device: cuda
+2026-07-23 23:58:02,573 - INFO - Planner grounding selected 3 top segments using caption+transcript fused reranker.
+2026-07-23 23:58:02,573 - INFO - Top5 segment refs for traceback: ['ego_35_8@242.80-274.60', 'ego_35_5@150.00-181.20', 'ego_35_0@0.00-30.00', 'ego_35_11@336.57-381.57', 'ego_35_10@302.60-336.57']
+2026-07-23 23:58:04,958 - INFO - 
+================================================================================
+2026-07-23 23:58:04,958 - INFO - Step 2: Running ReAct Query
+2026-07-23 23:58:04,958 - INFO - ================================================================================
+2026-07-23 23:58:04,959 - INFO - Query: MLVU Task Type: ego
+
+Question: What did I put in the orange trashcan 
+Options:
+(A) a lemon green sponge
+(B) a blue pen
+(C) a red apple
+(D) a yellow banana
+
+Reply with exactly one best option in the format "(A) option text".
+2026-07-23 23:58:04,959 - INFO - --------------------------------------------------------------------------------
+2026-07-23 23:58:04,959 - INFO - Initializing tools...
+2026-07-23 23:58:04,959 - INFO - Auto-discovering tools from: /gemini/code/export_packages/extracted/RL/toolkit/impl
+2026-07-23 23:58:04,997 - INFO - Registered meta tool class: Sum_Field
+2026-07-23 23:58:04,998 - INFO - Registered meta tool class: Average_Field
+2026-07-23 23:58:04,998 - INFO - Registered meta tool class: Median_Field
+2026-07-23 23:58:04,999 - INFO - Registered meta tool class: Variance_Field
+2026-07-23 23:58:05,000 - INFO - Registered meta tool class: Stddev_Field
+2026-07-23 23:58:05,001 - INFO - Registered meta tool class: Percentile_10
+2026-07-23 23:58:05,002 - INFO - Registered meta tool class: Percentile_25
+2026-07-23 23:58:05,003 - INFO - Registered meta tool class: Percentile_50
+2026-07-23 23:58:05,003 - INFO - Registered meta tool class: Percentile_75
+2026-07-23 23:58:05,004 - INFO - Registered meta tool class: Percentile_90
+2026-07-23 23:58:05,005 - INFO - Registered meta tool class: Percentile_95
+2026-07-23 23:58:05,006 - INFO - Registered meta tool class: Percentile_99
+2026-07-23 23:58:05,007 - INFO - Registered meta tool class: TopK_By_Field
+2026-07-23 23:58:05,007 - INFO - Registered meta tool class: BottomK_By_Field
+2026-07-23 23:58:05,008 - INFO - Registered meta tool class: Sort_By_Field_Asc
+2026-07-23 23:58:05,009 - INFO - Registered meta tool class: Sort_By_Field_Desc
+2026-07-23 23:58:05,010 - INFO - Registered meta tool class: Filter_Equals
+2026-07-23 23:58:05,011 - INFO - Registered meta tool class: Filter_NotEquals
+2026-07-23 23:58:05,011 - INFO - Registered meta tool class: Filter_GreaterThan
+2026-07-23 23:58:05,012 - INFO - Registered meta tool class: Filter_LessThan
+2026-07-23 23:58:05,013 - INFO - Registered meta tool class: Filter_Between
+2026-07-23 23:58:05,014 - INFO - Registered meta tool class: Filter_In
+2026-07-23 23:58:05,015 - INFO - Registered meta tool class: Filter_NotIn
+2026-07-23 23:58:05,015 - INFO - Registered meta tool class: Filter_Contains
+2026-07-23 23:58:05,016 - INFO - Registered meta tool class: Filter_NotContains
+2026-07-23 23:58:05,017 - INFO - Registered meta tool class: Threshold_Filter
+2026-07-23 23:58:05,018 - INFO - Registered meta tool class: Deduplicate_By_Field
+2026-07-23 23:58:05,019 - INFO - Registered meta tool class: Select_Fields
+2026-07-23 23:58:05,019 - INFO - Registered meta tool class: Rename_Field
+2026-07-23 23:58:05,020 - INFO - Registered meta tool class: Drop_Fields
+2026-07-23 23:58:05,021 - INFO - Registered meta tool class: Fillna_Field
+2026-07-23 23:58:05,022 - INFO - Registered meta tool class: Add_Constant_Field
+2026-07-23 23:58:05,023 - INFO - Registered meta tool class: Multiply_Field
+2026-07-23 23:58:05,023 - INFO - Registered meta tool class: Divide_Field
+2026-07-23 23:58:05,024 - INFO - Registered meta tool class: Clip_Field
+2026-07-23 23:58:05,025 - INFO - Registered meta tool class: Normalize_MinMax
+2026-07-23 23:58:05,026 - INFO - Registered meta tool class: Normalize_ZScore
+2026-07-23 23:58:05,027 - INFO - Registered meta tool class: Softmax_Scores
+2026-07-23 23:58:05,028 - INFO - Registered meta tool class: Argmax_Field
+2026-07-23 23:58:05,029 - INFO - Registered meta tool class: Argmin_Field
+2026-07-23 23:58:05,030 - INFO - Registered meta tool class: Count_By_Field
+2026-07-23 23:58:05,031 - INFO - Registered meta tool class: Group_By_Field_Sum
+2026-07-23 23:58:05,031 - INFO - Registered meta tool class: Group_By_Field_Avg
+2026-07-23 23:58:05,032 - INFO - Registered meta tool class: Group_By_Field_Max
+2026-07-23 23:58:05,033 - INFO - Registered meta tool class: Group_By_Field_Min
+2026-07-23 23:58:05,034 - INFO - Registered meta tool class: Merge_By_Key
+2026-07-23 23:58:05,035 - INFO - Registered meta tool class: Flatten_List_Field
+2026-07-23 23:58:05,036 - INFO - Registered meta tool class: Unique_Values
+2026-07-23 23:58:05,036 - INFO - Registered meta tool class: Value_Frequencies
+2026-07-23 23:58:05,037 - INFO - Registered meta tool class: Regex_Filter
+2026-07-23 23:58:05,038 - INFO - Registered meta tool class: Regex_Extract
+2026-07-23 23:58:05,039 - INFO - Registered meta tool class: Keyword_Filter
+2026-07-23 23:58:05,040 - INFO - Registered meta tool class: Truncate_Text
+2026-07-23 23:58:05,040 - INFO - Registered meta tool class: To_Lower
+2026-07-23 23:58:05,041 - INFO - Registered meta tool class: To_Upper
+2026-07-23 23:58:05,042 - INFO - Registered meta tool class: Strip_Text
+2026-07-23 23:58:05,043 - INFO - Registered meta tool class: Concat_Fields
+2026-07-23 23:58:05,044 - INFO - Registered meta tool class: Join_With_Delimiter
+2026-07-23 23:58:05,044 - INFO - Registered meta tool class: Time_Range_Length
+2026-07-23 23:58:05,045 - INFO - Registered meta tool class: Time_Overlap
+2026-07-23 23:58:05,046 - INFO - Registered meta tool class: Merge_Touching_Ranges
+2026-07-23 23:58:05,047 - INFO - Registered meta tool class: Align_Time_Buckets
+2026-07-23 23:58:05,048 - INFO - Registered meta tool class: Clip_Time_Range
+2026-07-23 23:58:05,049 - INFO - Registered meta tool class: Expand_Time_Range
+2026-07-23 23:58:05,050 - INFO - Registered meta tool class: Shift_Time_Range
+2026-07-23 23:58:05,050 - INFO - Registered meta tool class: Sort_Time_Ranges
+2026-07-23 23:58:05,051 - INFO - Registered meta tool class: Window_Sliding
+2026-07-23 23:58:05,052 - INFO - Registered meta tool class: Neighbor_List_Graph
+2026-07-23 23:58:05,053 - INFO - Registered meta tool class: Degree_Count_Graph
+2026-07-23 23:58:05,054 - INFO - Registered meta tool class: Edge_Filter_Graph
+2026-07-23 23:58:05,054 - INFO - Registered meta tool class: Path_Length_Filter
+2026-07-23 23:58:05,055 - INFO - Registered meta tool class: Score_Threshold_Rank
+2026-07-23 23:58:05,056 - INFO - Registered meta tool class: TopK_By_Score
+2026-07-23 23:58:05,057 - INFO - Registered meta tool class: BottomK_By_Score
+2026-07-23 23:58:05,058 - INFO - Registered meta tool class: Rerank_By_Score
+2026-07-23 23:58:05,059 - INFO - Registered meta tool class: Weighted_Sum_Two_Fields
+2026-07-23 23:58:05,059 - INFO - Registered meta tool class: Weighted_Average_Field
+2026-07-23 23:58:05,060 - INFO - Registered meta tool class: CumSum_Field
+2026-07-23 23:58:05,061 - INFO - Registered meta tool class: Moving_Average
+2026-07-23 23:58:05,062 - INFO - Registered meta tool class: Rolling_Max
+2026-07-23 23:58:05,063 - INFO - Registered meta tool class: Rolling_Min
+2026-07-23 23:58:05,064 - INFO - Registered meta tool class: Rolling_Median
+2026-07-23 23:58:05,064 - INFO - Registered meta tool class: Ratio_Fields
+2026-07-23 23:58:05,065 - INFO - Registered meta tool class: Percentage_Change
+2026-07-23 23:58:05,066 - INFO - Registered meta tool class: Boolean_And
+2026-07-23 23:58:05,067 - INFO - Registered meta tool class: Boolean_Or
+2026-07-23 23:58:05,068 - INFO - Registered meta tool class: Boolean_Not
+2026-07-23 23:58:05,068 - INFO - Registered meta tool class: Count_True
+2026-07-23 23:58:05,069 - INFO - Registered meta tool class: Any_True
+2026-07-23 23:58:05,070 - INFO - Registered meta tool class: All_True
+2026-07-23 23:58:05,071 - INFO - Registered meta tool class: Sample_N
+2026-07-23 23:58:05,072 - INFO - Registered meta tool class: Shuffle_Data
+2026-07-23 23:58:05,073 - INFO - Registered meta tool class: Take_First_N
+2026-07-23 23:58:05,073 - INFO - Registered meta tool class: Take_Last_N
+2026-07-23 23:58:05,074 - INFO - Registered meta tool class: Reverse_List
+2026-07-23 23:58:05,075 - INFO - Registered meta tool class: Extract_Field_List
+2026-07-23 23:58:05,076 - INFO - Registered meta tool class: Build_Index_By_Field
+2026-07-23 23:58:05,077 - INFO - Registered meta tool class: Map_Field_With_Lookup
+2026-07-23 23:58:05,078 - INFO - Registered meta tool class: Filter_Empty
+2026-07-23 23:58:05,078 - INFO - Registered meta tool class: Ensure_Sorted
+2026-07-23 23:58:05,079 - INFO - Registered meta tool class: Simple_Interest
+2026-07-23 23:58:05,080 - INFO - Registered meta tool class: Compound_Growth
+2026-07-23 23:58:05,081 - INFO - Registered meta tool class: Solve_Fixed_Step_Amount
+2026-07-23 23:58:05,082 - INFO - Registered meta tool class: Amortization_Schedule
+2026-07-23 23:58:05,083 - INFO - Registered meta tool class: Sequence_Field_Total
+2026-07-23 23:58:05,083 - INFO - Registered meta tool class: Field_Value_After_Steps
+2026-07-23 23:58:05,084 - INFO - Registered meta tool class: Compare_Record_Sequences
+2026-07-23 23:58:05,084 - INFO - Skipping registration for disabled tool class: Add_Constant_Field
+2026-07-23 23:58:05,085 - INFO - Skipping registration for disabled tool class: Align_Time_Buckets
+2026-07-23 23:58:05,085 - INFO - Skipping registration for disabled tool class: All_True
+2026-07-23 23:58:05,085 - INFO - Skipping registration for disabled tool class: Amortization_Schedule
+2026-07-23 23:58:05,085 - INFO - Skipping registration for disabled tool class: Any_True
+2026-07-23 23:58:05,085 - INFO - Skipping registration for disabled tool class: Argmax_Field
+2026-07-23 23:58:05,085 - INFO - Skipping registration for disabled tool class: Argmin_Field
+2026-07-23 23:58:05,086 - INFO - Skipping registration for disabled tool class: Average_Field
+2026-07-23 23:58:05,086 - INFO - Skipping registration for disabled tool class: Boolean_And
+2026-07-23 23:58:05,086 - INFO - Skipping registration for disabled tool class: Boolean_Not
+2026-07-23 23:58:05,086 - INFO - Skipping registration for disabled tool class: Boolean_Or
+2026-07-23 23:58:05,086 - INFO - Skipping registration for disabled tool class: BottomK_By_Field
+2026-07-23 23:58:05,086 - INFO - Skipping registration for disabled tool class: BottomK_By_Score
+2026-07-23 23:58:05,086 - INFO - Skipping registration for disabled tool class: Build_Index_By_Field
+2026-07-23 23:58:05,087 - INFO - Skipping registration for disabled tool class: Clip_Field
+2026-07-23 23:58:05,087 - INFO - Skipping registration for disabled tool class: Clip_Time_Range
+2026-07-23 23:58:05,087 - INFO - Skipping registration for disabled tool class: Compare_Record_Sequences
+2026-07-23 23:58:05,087 - INFO - Skipping registration for disabled tool class: Compound_Growth
+2026-07-23 23:58:05,087 - INFO - Skipping registration for disabled tool class: Concat_Fields
+2026-07-23 23:58:05,087 - INFO - Skipping registration for disabled tool class: Count_By_Field
+2026-07-23 23:58:05,087 - INFO - Skipping registration for disabled tool class: Count_True
+2026-07-23 23:58:05,088 - INFO - Skipping registration for disabled tool class: CumSum_Field
+2026-07-23 23:58:05,088 - INFO - Skipping registration for disabled tool class: Deduplicate_By_Field
+2026-07-23 23:58:05,088 - INFO - Skipping registration for disabled tool class: Degree_Count_Graph
+2026-07-23 23:58:05,088 - INFO - Skipping registration for disabled tool class: Divide_Field
+2026-07-23 23:58:05,088 - INFO - Skipping registration for disabled tool class: Drop_Fields
+2026-07-23 23:58:05,088 - INFO - Skipping registration for disabled tool class: Edge_Filter_Graph
+2026-07-23 23:58:05,088 - INFO - Skipping registration for disabled tool class: Ensure_Sorted
+2026-07-23 23:58:05,089 - INFO - Skipping registration for disabled tool class: Expand_Time_Range
+2026-07-23 23:58:05,089 - INFO - Skipping registration for disabled tool class: Extract_Field_List
+2026-07-23 23:58:05,089 - INFO - Skipping registration for disabled tool class: Field_Value_After_Steps
+2026-07-23 23:58:05,089 - INFO - Skipping registration for disabled tool class: Fillna_Field
+2026-07-23 23:58:05,089 - INFO - Skipping registration for disabled tool class: Filter_Between
+2026-07-23 23:58:05,089 - INFO - Skipping registration for disabled tool class: Filter_Contains
+2026-07-23 23:58:05,089 - INFO - Skipping registration for disabled tool class: Filter_Empty
+2026-07-23 23:58:05,090 - INFO - Skipping registration for disabled tool class: Filter_Equals
+2026-07-23 23:58:05,090 - INFO - Skipping registration for disabled tool class: Filter_GreaterThan
+2026-07-23 23:58:05,090 - INFO - Skipping registration for disabled tool class: Filter_In
+2026-07-23 23:58:05,090 - INFO - Skipping registration for disabled tool class: Filter_LessThan
+2026-07-23 23:58:05,090 - INFO - Skipping registration for disabled tool class: Filter_NotContains
+2026-07-23 23:58:05,090 - INFO - Skipping registration for disabled tool class: Filter_NotEquals
+2026-07-23 23:58:05,090 - INFO - Skipping registration for disabled tool class: Filter_NotIn
+2026-07-23 23:58:05,091 - INFO - Skipping registration for disabled tool class: Flatten_List_Field
+2026-07-23 23:58:05,091 - INFO - Skipping registration for disabled tool class: Group_By_Field_Avg
+2026-07-23 23:58:05,091 - INFO - Skipping registration for disabled tool class: Group_By_Field_Max
+2026-07-23 23:58:05,091 - INFO - Skipping registration for disabled tool class: Group_By_Field_Min
+2026-07-23 23:58:05,091 - INFO - Skipping registration for disabled tool class: Group_By_Field_Sum
+2026-07-23 23:58:05,091 - INFO - Skipping registration for disabled tool class: Join_With_Delimiter
+2026-07-23 23:58:05,091 - INFO - Skipping registration for disabled tool class: Keyword_Filter
+2026-07-23 23:58:05,091 - INFO - Skipping registration for disabled tool class: Map_Field_With_Lookup
+2026-07-23 23:58:05,092 - INFO - Skipping registration for disabled tool class: Median_Field
+2026-07-23 23:58:05,092 - INFO - Skipping registration for disabled tool class: Merge_By_Key
+2026-07-23 23:58:05,092 - INFO - Skipping registration for disabled tool class: Merge_Touching_Ranges
+2026-07-23 23:58:05,092 - INFO - Skipping registration for disabled tool class: Moving_Average
+2026-07-23 23:58:05,092 - INFO - Skipping registration for disabled tool class: Multiply_Field
+2026-07-23 23:58:05,092 - INFO - Skipping registration for disabled tool class: Neighbor_List_Graph
+2026-07-23 23:58:05,092 - INFO - Skipping registration for disabled tool class: Normalize_MinMax
+2026-07-23 23:58:05,093 - INFO - Skipping registration for disabled tool class: Normalize_ZScore
+2026-07-23 23:58:05,093 - INFO - Skipping registration for disabled tool class: Path_Length_Filter
+2026-07-23 23:58:05,093 - INFO - Skipping registration for disabled tool class: Percentage_Change
+2026-07-23 23:58:05,093 - INFO - Skipping registration for disabled tool class: Percentile_10
+2026-07-23 23:58:05,093 - INFO - Skipping registration for disabled tool class: Percentile_25
+2026-07-23 23:58:05,093 - INFO - Skipping registration for disabled tool class: Percentile_50
+2026-07-23 23:58:05,093 - INFO - Skipping registration for disabled tool class: Percentile_75
+2026-07-23 23:58:05,094 - INFO - Skipping registration for disabled tool class: Percentile_90
+2026-07-23 23:58:05,094 - INFO - Skipping registration for disabled tool class: Percentile_95
+2026-07-23 23:58:05,094 - INFO - Skipping registration for disabled tool class: Percentile_99
+2026-07-23 23:58:05,094 - INFO - Skipping registration for disabled tool class: Ratio_Fields
+2026-07-23 23:58:05,094 - INFO - Skipping registration for disabled tool class: Regex_Extract
+2026-07-23 23:58:05,094 - INFO - Skipping registration for disabled tool class: Regex_Filter
+2026-07-23 23:58:05,094 - INFO - Skipping registration for disabled tool class: Rename_Field
+2026-07-23 23:58:05,095 - INFO - Skipping registration for disabled tool class: Rerank_By_Score
+2026-07-23 23:58:05,095 - INFO - Skipping registration for disabled tool class: Reverse_List
+2026-07-23 23:58:05,095 - INFO - Skipping registration for disabled tool class: Rolling_Max
+2026-07-23 23:58:05,095 - INFO - Skipping registration for disabled tool class: Rolling_Median
+2026-07-23 23:58:05,095 - INFO - Skipping registration for disabled tool class: Rolling_Min
+2026-07-23 23:58:05,095 - INFO - Skipping registration for disabled tool class: Sample_N
+2026-07-23 23:58:05,095 - INFO - Skipping registration for disabled tool class: Score_Threshold_Rank
+2026-07-23 23:58:05,095 - INFO - Skipping registration for disabled tool class: Select_Fields
+2026-07-23 23:58:05,096 - INFO - Skipping registration for disabled tool class: Sequence_Field_Total
+2026-07-23 23:58:05,096 - INFO - Skipping registration for disabled tool class: Shift_Time_Range
+2026-07-23 23:58:05,096 - INFO - Skipping registration for disabled tool class: Shuffle_Data
+2026-07-23 23:58:05,096 - INFO - Skipping registration for disabled tool class: Simple_Interest
+2026-07-23 23:58:05,096 - INFO - Skipping registration for disabled tool class: Softmax_Scores
+2026-07-23 23:58:05,096 - INFO - Skipping registration for disabled tool class: Solve_Fixed_Step_Amount
+2026-07-23 23:58:05,096 - INFO - Skipping registration for disabled tool class: Sort_By_Field_Asc
+2026-07-23 23:58:05,097 - INFO - Skipping registration for disabled tool class: Sort_By_Field_Desc
+2026-07-23 23:58:05,097 - INFO - Skipping registration for disabled tool class: Sort_Time_Ranges
+2026-07-23 23:58:05,097 - INFO - Skipping registration for disabled tool class: Stddev_Field
+2026-07-23 23:58:05,097 - INFO - Skipping registration for disabled tool class: Strip_Text
+2026-07-23 23:58:05,097 - INFO - Skipping registration for disabled tool class: Sum_Field
+2026-07-23 23:58:05,097 - INFO - Skipping registration for disabled tool class: Take_First_N
+2026-07-23 23:58:05,097 - INFO - Skipping registration for disabled tool class: Take_Last_N
+2026-07-23 23:58:05,098 - INFO - Skipping registration for disabled tool class: Threshold_Filter
+2026-07-23 23:58:05,098 - INFO - Skipping registration for disabled tool class: Time_Overlap
+2026-07-23 23:58:05,098 - INFO - Skipping registration for disabled tool class: Time_Range_Length
+2026-07-23 23:58:05,098 - INFO - Skipping registration for disabled tool class: To_Lower
+2026-07-23 23:58:05,098 - INFO - Skipping registration for disabled tool class: To_Upper
+2026-07-23 23:58:05,098 - INFO - Skipping registration for disabled tool class: TopK_By_Field
+2026-07-23 23:58:05,098 - INFO - Skipping registration for disabled tool class: TopK_By_Score
+2026-07-23 23:58:05,099 - INFO - Skipping registration for disabled tool class: Truncate_Text
+2026-07-23 23:58:05,099 - INFO - Skipping registration for disabled tool class: Unique_Values
+2026-07-23 23:58:05,099 - INFO - Skipping registration for disabled tool class: Value_Frequencies
+2026-07-23 23:58:05,099 - INFO - Skipping registration for disabled tool class: Variance_Field
+2026-07-23 23:58:05,099 - INFO - Skipping registration for disabled tool class: Weighted_Average_Field
+2026-07-23 23:58:05,099 - INFO - Skipping registration for disabled tool class: Weighted_Sum_Two_Fields
+2026-07-23 23:58:05,099 - INFO - Skipping registration for disabled tool class: Window_Sliding
+2026-07-23 23:58:05,099 - INFO - Skipping registration for disabled tool class: Compare_Record_Sequences
+2026-07-23 23:58:05,147 - INFO - Skipping registration for disabled tool class: Count_Items
+2026-07-23 23:58:05,147 - INFO - Skipping registration for disabled tool class: Debt_Interest_Analyzer
+2026-07-23 23:58:05,148 - INFO - Skipping registration for disabled tool class: Max_Item
+2026-07-23 23:58:05,148 - INFO - Skipping registration for disabled tool class: Merge_Temporal_Segments
+2026-07-23 23:58:05,148 - INFO - Skipping registration for disabled tool class: Min_Item
+2026-07-23 23:58:05,148 - INFO - Skipping registration for disabled tool class: Sort_Items
+2026-07-23 23:58:05,156 - INFO - Skipping registration for disabled tool class: Graph_Search
+2026-07-23 23:58:05,157 - INFO - Skipping registration for disabled tool class: Web_Search
+2026-07-23 23:58:05,159 - INFO - Skipping registration for disabled tool class: Entity_Track
+2026-07-23 23:58:05,160 - INFO - Registered tools summary: base=24, meta=0, total=24
+2026-07-23 23:58:05,161 - INFO - Initializing device: cuda
+2026-07-23 23:58:05,162 - INFO - Initializing device: cuda
+2026-07-23 23:58:05,162 - INFO - Initializing device: cuda
+2026-07-23 23:58:11,537 - INFO - Detected multimodal config (model_type=qwen3_5, architectures=['Qwen3_5ForConditionalGeneration']), using Qwen3_5ForConditionalGeneration
+2026-07-24 00:07:08,244 - INFO - Model loaded on: cuda:0 (requested_dtype=torch.bfloat16 actual_param_dtype=torch.bfloat16)
+2026-07-24 00:07:08,246 - INFO - LLM accelerator snapshot: cuda:0 name=P1.gpu.medium allocated=17.54GB reserved=17.55GB
+2026-07-24 00:07:08,248 - INFO - Provider cache miss -> loaded role=planner model=/gemini/pretrain/model/Qwen/Qwen3.5-9B device=None device_map=None runtime_device=cuda:0
+2026-07-24 00:07:08,249 - INFO - Planner multimodal input enabled: True (graph_enable=False, web_search_enabled=False)
+2026-07-24 00:07:08,249 - INFO - RecursiveEngine received extra kwargs (stored): ['session_query']
+2026-07-24 00:07:08,251 - INFO - RecursiveEngine initialized with planner_llm role=planner thinking=False shared_source_role=None subagent_llm_role=None subagent_thinking=None
+2026-07-24 00:07:08,251 - INFO - Planner grounding context injected (2180 chars, 6 image item(s))
+2026-07-24 00:07:08,251 - INFO - [PLANNER_CONTEXT_BEGIN]
+[Initial Planner Grounding] query: MLVU Task Type: ego Question: What did I put in the orange trashcan Options: (A) a lemon green sponge (B) a blue pen (C) a red apple (D) a yellow banana Reply with exactly one best option in the format "(A) option text". entire_video_time: [0.0, 408.630] [Grounding Source] Query-retrieved top-k caption evidence. Using top 3 segment(s) from caption-based fused retrieval. frame_sampling_rule: approximately 5.0s per frame. For both initial grounding collages and later tool-returned collages, sub-frames are arranged in chronological order clockwise from the top-left. The accompanying timestamps correspond to those sub-frames in that same order. Start first-step reasoning from these caption+image grounding blocks and use their time windows for follow-up probing.
+[Grounding Segment #1] time: 242.80-274.60 caption: Scene: A kitchen. People: A person in a pink shirt is bent over, possibly at the sink or counter on the left. Objects: Wooden cabinets, a window with green plants outside, a white countertop with various items (kettle, bottles, red bowl), a white dishwasher, a rug on the floor. Action: The person is moving or working at the counter. | attached_frame_timestamps: [242.8, 249.16, 255.52, 261.88, 268.24] transcript: [242.80s -> 243.42s] you [272.80s -> 273.42s] you
+[image]
+[image]
+[Grounding Segment #2] time: 150.00-181.20 caption: Perspective: First-person view, likely a camera mounted on a person or dog. Setting: A suburban street corner. Objects: A stop sign (back visible), a street light, a sidewalk, a road with "ONLY" painted on it (partially visible), a manhole cover in a gravel patch. Action: The camera is moving along the sidewalk. | attached_frame_timestamps: [150.0, 156.24, 162.48, 168.72, 174.96] transcript: [150.00s -> 150.62s] you [180.00s -> 180.62s] you
+[image]
+[image]
+[Grounding Segment #3] time: 0.00-30.00 caption: Scene Analysis: Setting: A residential street in a suburban area. There are villas or townhouses on both sides. Palm trees are visible. The sky is bright, suggesting daytime. | attached_frame_timestamps: [0.0, 6.0, 12.0, 18.0, 24.0] transcript: [0.00s -> 0.62s] you
+[image]
+[image]
+[PLANNER_CONTEXT_END]
+2026-07-24 00:07:08,251 - INFO - [Planner][Depth 0] Solving goal: MLVU Task Type: ego
+
+Question: What did I put in the orange trashcan 
+Options:
+(A) a lemon green sponge
+(B) a blue pen
+(C) a red apple
+(D) a yellow banana
+
+Reply with exactly one best option in the format "(A) option text".
+2026-07-24 00:07:08,251 - INFO - Pushed frame at depth 0: MLVU Task Type: ego
+
+Question: What did I put in the orange trashcan 
+Options:
+(A) a lemon green sponge
+(B) a blue pen
+(C) a red apple
+(D) a yellow banana
+
+Reply with exactly one best option in the format "(A) option text".
+2026-07-24 00:07:08,251 - INFO - [GenerationConfig][DIAG] role=planner max_tokens=2048 enable_thinking=False temperature=0.0 top_p=0.95 top_k=20
+2026-07-24 00:07:08,297 - INFO - [Planner][Depth 0] Context window: max=262144, sp_tokens=5364, output_headroom=0, dynamic_budget=256780 tokens
+2026-07-24 00:07:08,556 - INFO - [Planner][Depth 0] Initial prompt token estimate: 8832/262144
+2026-07-24 00:07:08,557 - INFO - [Planner][Depth 0] Iteration 1/15
+2026-07-24 00:07:08,629 - INFO - [Planner][Depth 0][Iter 1][Generation:main][DIAG] llm_type=TransformersProvider llm_role=planner llm_enable_thinking=False inline_selected=False supports_flag=False has_response_generator=False message_count=4 generation_keys=['enable_prefix_caching', 'enable_rollout_prefix_cache', 'enable_thinking', 'max_tokens', 'min_p', 'repetition_penalty', 'temperature', 'top_k', 'top_p'] generation_deadline_remaining=unbounded wall_clock_remaining=unbounded
+2026-07-24 00:07:08,629 - INFO - [Planner][Depth 0][Iter 1][Generation:main][DIAG] using helper-thread generation path for llm_type=TransformersProvider because inline heartbeat is unavailable.
+2026-07-24 00:07:08,836 - INFO - Starting generation: role=planner prompt_mode=multimodal input_tokens=8909 max_new_tokens=2048 do_sample=False use_cache=True thinking=False
+2026-07-24 00:07:18,342 - INFO - Generation finished: prompt_mode=multimodal duration=9.505s
+2026-07-24 00:07:18,351 - INFO - Generation tokens: generated=126, limit=2048
+2026-07-24 00:07:18,800 - INFO - [Planner][LLM_FULL_RESPONSE_BEGIN][Depth 0][Iter 1]
+{
+    "Thought": "Initial grounding shows outdoor scenes and kitchen activity but no mention of an orange trashcan or disposal action. Need to search for segments containing 'orange trashcan' or related keywords.",
+    "Plan": "Search for segments mentioning 'orange trashcan' or disposal-related actions, then inspect frames to confirm what was placed inside.",
+    "Actions": [
+        {
+            "tool": "Keyword_Retrieve",
+            "params": {
+                "term": "orange trashcan",
+                "case_sensitive": false
+            }
+        }
+    ]
+}
+[Planner][LLM_FULL_RESPONSE_END][Depth 0][Iter 1]
+2026-07-24 00:07:18,800 - INFO - [Planner][LLM_DEBUG][Depth 0][Iter 1] Effective response captured (568 chars, raw=568 chars).
+2026-07-24 00:07:18,802 - INFO - [Planner Route Guard] Applied mandatory ego bin probe.
+2026-07-24 00:07:18,802 - INFO - [Root Auto-Route][Depth 0] planner_action=Video_Clip_QA routed_tool=Video_Clip_QA
+2026-07-24 00:07:18,802 - INFO - [Planner][Depth 0] Executing tool: Video_Clip_QA(query="Identify the exact object in the camera wearer's hand immediately before it enters the nearby bin. Choose only from these options and state the matching option text: (A) a lemon green sponge (B) a blue pen (C) a red apple (D) a yellow banana", start_time=165.72, end_time=171.72)
+2026-07-24 00:07:20,405 - INFO - Initializing device: cuda
+2026-07-24 00:07:20,405 - INFO - Video_Clip_QA direct clip attempt=default_request model_sampling_fps=2.0 model_max_frames=80 model_min_pixels=source model_max_pixels=source do_sample_frames=True max_new_tokens=256 clip=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache/planner_evidence/5/video_clip_qa_bea509654d1d/5_video_clip_qa.mp4
+2026-07-24 00:07:20,406 - INFO - Initializing device: cuda
+2026-07-24 00:07:24,198 - INFO - torchvision:  video_path='file:///gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache/planner_evidence/5/video_clip_qa_bea509654d1d/5_video_clip_qa.mp4', total_frames=180, video_fps=30.0, time=3.778s
+2026-07-24 00:07:24,411 - WARNING - Multimodal processor crashed during full_payload for role=qwen_vl ('NoneType' object has no attribute 'tolist'); retrying with a simpler video payload.
+2026-07-24 00:07:24,522 - WARNING - Multimodal processor crashed during without_video_aux_kwargs for role=qwen_vl ('NoneType' object has no attribute 'tolist'); retrying with a simpler video payload.
+Qwen3VL requires frame timestamps to construct prompts, but the `fps` of the input video could not be inferred. Probably `video_metadata` was missing from inputs and you passed pre-sampled frames. Defaulting to `fps=24`. Please provide `video_metadata` for more accurate results.
+2026-07-24 00:07:24,712 - INFO - Normalized Qwen video_grid_thw for provider.prepare_multimodal_inputs: (1, 3) -> (6, 3)
+2026-07-24 00:07:24,744 - INFO - Starting generation: role=qwen_vl prompt_mode=multimodal input_tokens=5129 max_new_tokens=256 do_sample=False use_cache=True thinking=False
+2026-07-24 00:07:44,823 - INFO - Generation finished: prompt_mode=multimodal duration=20.079s
+2026-07-24 00:07:44,833 - INFO - Generation tokens: generated=86, limit=256
+2026-07-24 00:07:45,204 - INFO - [Video_Clip_QA][RAW_RESPONSE_BEGIN][backend=planner_provider_video]
+```json
+{
+  "answer": "a lemon green sponge",
+  "evidence": [
+    "The object in the hand is lemon green in color.",
+    "The object has a sponge-like texture."
+  ],
+  "uncertainty": "None",
+  "video_summary": "The video shows a person holding a lemon green sponge and placing it into a nearby bin."
+}
+[Video_Clip_QA][RAW_RESPONSE_END]
+2026-07-24 00:07:45,760 - INFO - Video_Clip_QA window=165-171 query=Identify the exact object in the camera wearer's hand immediately before it enters the nearby bin. Choose only from these options and state the matching option text: (A) a lemon green sponge (B) a blue pen (C) a red apple (D) a yellow banana using /gemini/pretrain/model/Qwen/Qwen3.5-9B
+2026-07-24 00:07:45,761 - INFO - [Planner][Depth 0] Tool Video_Clip_QA completed with status=success
+2026-07-24 00:07:45,761 - INFO - [Planner][Depth 0] Tool Video_Clip_QA result preview: { "start_time": 165.72, "end_time": 171.72, "requested_segment_id": null, "resolved_segment_id": null, "resolved_segment_ref": null, "search_window": "165-171", "query": "Identify the exact object in the camera wearer's hand immediately before it enters the nearby bin. Choose only from these options and state the ma...
+2026-07-24 00:07:45,761 - INFO - [Planner][Depth 0] Iteration 2/15
+2026-07-24 00:07:45,906 - INFO - [Planner][Depth 0][Iter 2][Generation:main][DIAG] llm_type=TransformersProvider llm_role=planner llm_enable_thinking=False inline_selected=False supports_flag=False has_response_generator=False message_count=6 generation_keys=['enable_prefix_caching', 'enable_rollout_prefix_cache', 'enable_thinking', 'max_tokens', 'min_p', 'repetition_penalty', 'temperature', 'top_k', 'top_p'] generation_deadline_remaining=unbounded wall_clock_remaining=unbounded
+2026-07-24 00:07:45,906 - INFO - [Planner][Depth 0][Iter 2][Generation:main][DIAG] using helper-thread generation path for llm_type=TransformersProvider because inline heartbeat is unavailable.
+2026-07-24 00:07:46,012 - INFO - Starting generation: role=planner prompt_mode=multimodal input_tokens=9756 max_new_tokens=2048 do_sample=False use_cache=True thinking=False
+2026-07-24 00:07:54,078 - INFO - Generation finished: prompt_mode=multimodal duration=8.066s
+2026-07-24 00:07:54,087 - INFO - Generation tokens: generated=175, limit=2048
+2026-07-24 00:07:54,411 - INFO - [Planner][LLM_FULL_RESPONSE_BEGIN][Depth 0][Iter 2]
+{
+    "Thought": "Video_Clip_QA confirmed the object is a lemon green sponge being placed into a bin. However, the caption describes a suburban street setting, while the question specifies an 'orange trashcan.' Need to cross-verify the bin's color and ensure the action matches the question's context.", "Plan": "Perform cross-modal verification to check if the bin in the video is indeed orange, confirming the answer aligns with the question's description.", "Actions": [
+        {
+            "tool": "Cross_Modal_Verify",
+            "params": {
+                "visual_evidence": "The video shows a person holding a lemon green sponge and placing it into a nearby bin.",
+                "textual_claim": "The bin is an orange trashcan."
+            }
+        }
+    ]
+}
+[Planner][LLM_FULL_RESPONSE_END][Depth 0][Iter 2]
+2026-07-24 00:07:54,411 - INFO - [Planner][LLM_DEBUG][Depth 0][Iter 2] Effective response captured (773 chars, raw=773 chars).
+2026-07-24 00:07:54,412 - INFO - [Planner][Depth 0] Executing tool: Cross_Modal_Verify(visual_evidence="The video shows a person holding a lemon green sponge and placing it into a nearby bin.", textual_claim="The bin is an orange trashcan.")
+2026-07-24 00:07:54,412 - INFO - [Planner][Depth 0] Executing 1 tools concurrently within one Parallel step.
+2026-07-24 00:07:54,412 - INFO - Cross_Modal_Verify: 'The bin is an orange trashcan.' vs 'The video shows a person holding a lemon green sponge and placing it into a nearby bin.' using /gemini/pretrain/model/Qwen/Qwen3.5-9B
+2026-07-24 00:07:54,413 - INFO - [Planner][Depth 0] Tool Cross_Modal_Verify completed with status=success
+2026-07-24 00:07:54,413 - INFO - [Planner][Depth 0] Tool Cross_Modal_Verify result preview: { "visual_evidence": "The video shows a person holding a lemon green sponge and placing it into a nearby bin.", "textual_claim": "The bin is an orange trashcan.", "is_consistent": true, "confidence": 0.8333, "explanation": "Visual and textual modalities are consistent", "result": "Visual and textual modalities are c...
+2026-07-24 00:07:54,413 - INFO - [Planner][Depth 0] Iteration 3/15
+2026-07-24 00:07:54,783 - INFO - [Planner][Depth 0][Iter 3][Generation:main][DIAG] llm_type=TransformersProvider llm_role=planner llm_enable_thinking=False inline_selected=False supports_flag=False has_response_generator=False message_count=8 generation_keys=['enable_prefix_caching', 'enable_rollout_prefix_cache', 'enable_thinking', 'max_tokens', 'min_p', 'repetition_penalty', 'temperature', 'top_k', 'top_p'] generation_deadline_remaining=unbounded wall_clock_remaining=unbounded
+2026-07-24 00:07:54,783 - INFO - [Planner][Depth 0][Iter 3][Generation:main][DIAG] using helper-thread generation path for llm_type=TransformersProvider because inline heartbeat is unavailable.
+2026-07-24 00:07:54,904 - INFO - Starting generation: role=planner prompt_mode=multimodal input_tokens=10073 max_new_tokens=2048 do_sample=False use_cache=True thinking=False
+2026-07-24 00:08:02,312 - INFO - Generation finished: prompt_mode=multimodal duration=7.408s
+2026-07-24 00:08:02,322 - INFO - Generation tokens: generated=148, limit=2048
+2026-07-24 00:08:02,874 - INFO - [Planner][LLM_FULL_RESPONSE_BEGIN][Depth 0][Iter 3]
+{"Thought": "Cross-modal verification confirms the bin is an orange trashcan and the object placed inside is a lemon green sponge. All evidence slots are filled with verified citations.", "Plan": "Finalize the answer with the verified option.", "Evidence": [{"label": "object placed in orange trashcan", "value": "a lemon green sponge", "logical conflict": false, "citation": "Video_Clip_QA@165.72-171.72 / Cross_Modal_Verify@consistent", "evidence_status": "verified"}], "Finish": {"chain_complete": true, "completion_basis": "visual->answer", "answer": "(A) a lemon green sponge"}}
+[Planner][LLM_FULL_RESPONSE_END][Depth 0][Iter 3]
+2026-07-24 00:08:02,875 - INFO - [Planner][LLM_DEBUG][Depth 0][Iter 3] Effective response captured (583 chars, raw=583 chars).
+2026-07-24 00:08:02,876 - INFO - [Depth 0] Planner finish accepted: chain_complete=True completion_basis=visual->answer answer_preview=(A) a lemon green sponge
+2026-07-24 00:08:02,876 - INFO - [Planner][Depth 0] Completed: (A) a lemon green sponge
+2026-07-24 00:08:02,876 - INFO - Popped frame at depth 0
+2026-07-24 00:08:02,877 - INFO - --------------------------------------------------------------------------------
+2026-07-24 00:08:02,877 - INFO - Detailed Tool Execution Trace
+2026-07-24 00:08:02,877 - INFO - --------------------------------------------------------------------------------
+2026-07-24 00:08:02,877 - INFO - [Step 1 | Depth 0] Action=Video_Clip_QA Args={'start_time': 165.72, 'end_time': 171.72, 'query': "Identify the exact object in the camera wearer's hand immediately before it enters the nearby bin. Choose only from these options and state the matching option text: (A) a lemon green sponge (B) a blue pen (C) a red apple (D) a yellow banana"}
+2026-07-24 00:08:02,877 - INFO - Thought: Initial grounding shows outdoor scenes and kitchen activity but no mention of an orange trashcan or disposal action. Need to search for segments containing 'orange trashcan' or related keywords.
+2026-07-24 00:08:02,877 - INFO - Observation: {
+  "start_time": 165.72,
+  "end_time": 171.72,
+  "requested_segment_id": null,
+  "resolved_segment_id": null,
+  "resolved_segment_ref": null,
+  "search_window": "165-171",
+  "query": "Identify the exact object in the camera wearer's hand immediately before it enters the nearby bin. Choose only from these options and state the matching option text: (A) a lemon green sponge (B) a blue pen (C) a red apple (D) a yellow banana",
+  "source_video": "ego_35",
+  "source_segment": "5",
+  "matched_segments": [
+    {
+      "video": "ego_35",
+      "segment_id": "5",
+      "segment_ref": "ego_35_5",
+      "raw_segment_id": "5",
+      "time": "150.00-181.20",
+      "frame_paths": [
+        "frames/5/frame_000_150p0.jpg",
+        "frames/5/frame_001_156p24.jpg",
+        "frames/5/frame_002_162p48.jpg",
+        "frames/5/frame_003_168p72.jpg",
+        "frames/5/frame_004_174p96.jpg"
+      ],
+      "snippet": "Perspective: First-person view, likely a camera mounted on a person or dog. Setting: A suburban street corner. Objects: A stop sign (back visible), a street light, a sidewalk, a road with \"ONLY\" painted on it (partially visible), a manhole cover in a gravel patch. Action: The camera is moving along the sidewalk.",
+      "result": "Segment 5 at 150.00-181.20: Perspective: First-person view, likely a camera mounted on a person or dog. Setting: A suburban street corner. Objects: A stop sign (back visible), a street light, a sidewalk, a road with \"ONLY\" painted on it (partially visible), a manhole cover in a gravel patch. Action: The camera is moving along the sidewalk."
+    }
+  ],
+  "clip_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache/planner_evidence/5/video_clip_qa_bea509654d1d/5_video_clip_qa.mp4",
+  "backend": "planner_provider_video",
+  "sample_times": [],
+  "frames_analyzed": null,
+  "status": "success",
+  "result": "{\"answer\":\"(A) a lemon green sponge\",\"evidence\":[\"The object in the hand is lemon green in color.\",\"The object has a sponge-like texture.\"],\"uncertainty\":\"None\",\"video_summary\":\"The video shows a person holding a lemon green sponge and placing it into a nearby bin.\"}",
+  "parsed_json": {
+    "answer": "(A) a lemon green sponge",
+    "evidence": [
+      "The object in the hand is lemon green in color.",
+      "The object has a sponge-like texture."
+    ],
+    "uncertainty": "None",
+    "video_summary": "The video shows a person holding a lemon green sponge and placing it into a nearby bin.",
+    "result": "(A) a lemon green sponge"
+  },
+  "answer_value": "(A) a lemon green sponge",
+  "evidence_items": [
+    "The object in the hand is lemon green in color.",
+    "The object has a sponge-like texture."
+  ],
+  "uncertainty_value": "None",
+  "video_summary_value": "The video shows a person holding a lemon green sponge and placing it into a nearby bin."
+}
+2026-07-24 00:08:02,877 - INFO - [Step 2 | Depth 0] Action=Parallel Args={'batch': [{'name': 'Cross_Modal_Verify', 'args': {'visual_evidence': 'The video shows a person holding a lemon green sponge and placing it into a nearby bin.', 'textual_claim': 'The bin is an orange trashcan.', '__raw_params_declared__': True, '__raw_param_keys__': ['visual_evidence', 'textual_claim']}}]}
+2026-07-24 00:08:02,877 - INFO - Thought: Video_Clip_QA confirmed the object is a lemon green sponge being placed into a bin. However, the caption describes a suburban street setting, while the question specifies an 'orange trashcan.' Need to cross-verify the bin's color and ensure the action matches the question's context.
+2026-07-24 00:08:02,877 - INFO - Observation: Visual and textual modalities are consistent
+2026-07-24 00:08:02,877 - INFO - [Step 3 | Depth 0] Action=Finish Args={'answer': '(A) a lemon green sponge', 'chain_complete': True, 'completion_basis': 'visual->answer'}
+2026-07-24 00:08:02,877 - INFO - Thought: Cross-modal verification confirms the bin is an orange trashcan and the object placed inside is a lemon green sponge. All evidence slots are filled with verified citations.
+2026-07-24 00:08:02,878 - INFO - Observation: (A) a lemon green sponge
+2026-07-24 00:08:02,878 - INFO - --------------------------------------------------------------------------------
+2026-07-24 00:08:02,878 - INFO - End of trajectory trace
+2026-07-24 00:08:02,878 - INFO - --------------------------------------------------------------------------------
+2026-07-24 00:08:02,878 - INFO - 
+--------------------------------------------------------------------------------
+2026-07-24 00:08:02,878 - INFO - FINAL RESULT (success):
+2026-07-24 00:08:02,878 - INFO - (A) a lemon green sponge
+2026-07-24 00:08:02,878 - INFO - ================================================================================
+2026-07-24 00:08:02,962 - INFO - [RUN_RESULT_JSON] {"video_path": "/gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/3_ego/ego_35.mp4", "query": "MLVU Task Type: ego\n\nQuestion: What did I put in the orange trashcan \nOptions:\n(A) a lemon green sponge\n(B) a blue pen\n(C) a red apple\n(D) a yellow banana\n\nReply with exactly one best option in the format \"(A) option text\".", "workspace": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/mlvu/ego-00000-ego-35", "generated_at": "2026-07-23T16:08:02.878894Z", "success": true, "preprocessing": {"video_name": "ego_35", "num_segments": 13, "processed_output_dir": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache/processed/ego_35", "segment_index_sample": ["0", "1", "2", "3", "4"]}, "agent": {"final_answer": "(A) a lemon green sponge", "trajectory": {"trajectory_id": "trajectory_31126ef96cc44cd7bc07092bade2e27e", "registry_snapshot_id": "snapshot_001_candidate", "task_id": "task_ea3a6390", "goal": "MLVU Task Type: ego\n\nQuestion: What did I put in the orange trashcan \nOptions:\n(A) a lemon green sponge\n(B) a blue pen\n(C) a red apple\n(D) a yellow banana\n\nReply with exactly one best option in the format \"(A) option text\".", "depth": 0, "steps": [{"step_id": 1, "depth": 0, "thought": "Initial grounding shows outdoor scenes and kitchen activity but no mention of an orange trashcan or disposal action. Need to search for segments containing 'orange trashcan' or related keywords.", "plan": "Search for segments mentioning 'orange trashcan' or disposal-related actions, then inspect frames to confirm what was placed inside.", "action": "Video_Clip_QA", "action_args": {"start_time": 165.72, "end_time": 171.72, "query": "Identify the exact object in the camera wearer's hand immediately before it enters the nearby bin. Choose only from these options and state the matching option text: (A) a lemon green sponge (B) a blue pen (C) a red apple (D) a yellow banana"}, "observation": "{\n  \"start_time\": 165.72,\n  \"end_time\": 171.72,\n  \"requested_segment_id\": null,\n  \"resolved_segment_id\": null,\n  \"resolved_segment_ref\": null,\n  \"search_window\": \"165-171\",\n  \"query\": \"Identify the exact object in the camera wearer's hand immediately before it enters the nearby bin. Choose only from these options and state the matching option text: (A) a lemon green sponge (B) a blue pen (C) a red apple (D) a yellow banana\",\n  \"source_video\": \"ego_35\",\n  \"source_segment\": \"5\",\n  \"matched_segments\": [\n    {\n      \"video\": \"ego_35\",\n      \"segment_id\": \"5\",\n      \"segment_ref\": \"ego_35_5\",\n      \"raw_segment_id\": \"5\",\n      \"time\": \"150.00-181.20\",\n      \"frame_paths\": [\n        \"frames/5/frame_000_150p0.jpg\",\n        \"frames/5/frame_001_156p24.jpg\",\n        \"frames/5/frame_002_162p48.jpg\",\n        \"frames/5/frame_003_168p72.jpg\",\n        \"frames/5/frame_004_174p96.jpg\"\n      ],\n      \"snippet\": \"Perspective: First-person view, likely a camera mounted on a person or dog. Setting: A suburban street corner. Objects: A stop sign (back visible), a street light, a sidewalk, a road with \\\"ONLY\\\" painted on it (partially visible), a manhole cover in a gravel patch. Action: The camera is moving along the sidewalk.\",\n      \"result\": \"Segment 5 at 150.00-181.20: Perspective: First-person view, likely a camera mounted on a person or dog. Setting: A suburban street corner. Objects: A stop sign (back visible), a street light, a sidewalk, a road with \\\"ONLY\\\" painted on it (partially visible), a manhole cover in a gravel patch. Action: The camera is moving along the sidewalk.\"\n    }\n  ],\n  \"clip_path\": \"/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache/planner_evidence/5/video_clip_qa_bea509654d1d/5_video_clip_qa.mp4\",\n  \"backend\": \"planner_provider_video\",\n  \"sample_times\": [],\n  \"frames_analyzed\": null,\n  \"status\": \"success\",\n  \"result\": \"{\\\"answer\\\":\\\"(A) a lemon green sponge\\\",\\\"evidence\\\":[\\\"The object in the hand is lemon green in color.\\\",\\\"The object has a sponge-like texture.\\\"],\\\"uncertainty\\\":\\\"None\\\",\\\"video_summary\\\":\\\"The video shows a person holding a lemon green sponge and placing it into a nearby bin.\\\"}\",\n  \"parsed_json\": {\n    \"answer\": \"(A) a lemon green sponge\",\n    \"evidence\": [\n      \"The object in the hand is lemon green in color.\",\n      \"The object has a sponge-like texture.\"\n    ],\n    \"uncertainty\": \"None\",\n    \"video_summary\": \"The video shows a person holding a lemon green sponge and placing it into a nearby bin.\",\n    \"result\": \"(A) a lemon green sponge\"\n  },\n  \"answer_value\": \"(A) a lemon green sponge\",\n  \"evidence_items\": [\n    \"The object in the hand is lemon green in color.\",\n    \"The object has a sponge-like texture.\"\n  ],\n  \"uncertainty_value\": \"None\",\n  \"video_summary_value\": \"The video shows a person holding a lemon green sponge and placing it into a nearby bin.\"\n}", "observation_items": [{"tool": "Video_Clip_QA", "status": "success", "result": "{\n  \"start_time\": 165.72,\n  \"end_time\": 171.72,\n  \"requested_segment_id\": null,\n  \"resolved_segment_id\": null,\n  \"resolved_segment_ref\": null,\n  \"search_window\": \"165-171\",\n  \"query\": \"Identify the exact object in the camera wearer's hand immediately before it enters the nearby bin. Choose only from these options and state the matching option text: (A) a lemon green sponge (B) a blue pen (C) a red apple (D) a yellow banana\",\n  \"source_video\": \"ego_35\",\n  \"source_segment\": \"5\",\n  \"matched_segments\": [\n    {\n      \"video\": \"ego_35\",\n      \"segment_id\": \"5\",\n      \"segment_ref\": \"ego_35_5\",\n      \"raw_segment_id\": \"5\",\n      \"time\": \"150.00-181.20\",\n      \"frame_paths\": [\n        \"frames/5/frame_000_150p0.jpg\",\n        \"frames/5/frame_001_156p24.jpg\",\n        \"frames/5/frame_002_162p48.jpg\",\n        \"frames/5/frame_003_168p72.jpg\",\n        \"frames/5/frame_004_174p96.jpg\"\n      ],\n      \"snippet\": \"Perspective: First-person view, likely a camera mounted on a person or dog. Setting: A suburban street corner. Objects: A stop sign (back visible), a street light, a sidewalk, a road with \\\"ONLY\\\" painted on it (partially visible), a manhole cover in a gravel patch. Action: The camera is moving along the sidewalk.\",\n      \"result\": \"Segment 5 at 150.00-181.20: Perspective: First-person view, likely a camera mounted on a person or dog. Setting: A suburban street corner. Objects: A stop sign (back visible), a street light, a sidewalk, a road with \\\"ONLY\\\" painted on it (partially visible), a manhole cover in a gravel patch. Action: The camera is moving along the sidewalk.\"\n    }\n  ],\n  \"clip_path\": \"/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache/planner_evidence/5/video_clip_qa_bea509654d1d/5_video_clip_qa.mp4\",\n  \"backend\": \"planner_provider_video\",\n  \"sample_times\": [],\n  \"frames_analyzed\": null,\n  \"status\": \"success\",\n  \"result\": \"{\\\"answer\\\":\\\"(A) a lemon green sponge\\\",\\\"evidence\\\":[\\\"The object in the hand is lemon green in color.\\\",\\\"The object has a sponge-like texture.\\\"],\\\"uncertainty\\\":\\\"None\\\",\\\"video_summary\\\":\\\"The video shows a person holding a lemon green sponge and placing it into a nearby bin.\\\"}\",\n  \"parsed_json\": {\n    \"answer\": \"(A) a lemon green sponge\",\n    \"evidence\": [\n      \"The object in the hand is lemon green in color.\",\n      \"The object has a sponge-like texture.\"\n    ],\n    \"uncertainty\": \"None\",\n    \"video_summary\": \"The video shows a person holding a lemon green sponge and placing it into a nearby bin.\",\n    \"result\": \"(A) a lemon green sponge\"\n  },\n  \"answer_value\": \"(A) a lemon green sponge\",\n  \"evidence_items\": [\n    \"The object in the hand is lemon green in color.\",\n    \"The object has a sponge-like texture.\"\n  ],\n  \"uncertainty_value\": \"None\",\n  \"video_summary_value\": \"The video shows a person holding a lemon green sponge and placing it into a nearby bin.\"\n}"}], "timestamp": "2026-07-23T16:07:45.761466Z", "is_recursive": false, "sub_trajectory": null, "sub_trajectories": null}, {"step_id": 2, "depth": 0, "thought": "Video_Clip_QA confirmed the object is a lemon green sponge being placed into a bin. However, the caption describes a suburban street setting, while the question specifies an 'orange trashcan.' Need to cross-verify the bin's color and ensure the action matches the question's context.", "plan": "Perform cross-modal verification to check if the bin in the video is indeed orange, confirming the answer aligns with the question's description.", "action": "Parallel", "action_args": {"batch": [{"name": "Cross_Modal_Verify", "args": {"visual_evidence": "The video shows a person holding a lemon green sponge and placing it into a nearby bin.", "textual_claim": "The bin is an orange trashcan.", "__raw_params_declared__": true, "__raw_param_keys__": ["visual_evidence", "textual_claim"]}}]}, "observation": "Visual and textual modalities are consistent", "observation_items": [{"tool": "Cross_Modal_Verify", "visual_evidence": "The video shows a person holding a lemon green sponge and placing it into a nearby bin.", "textual_claim": "The bin is an orange trashcan.", "is_consistent": true, "confidence": 0.8333, "explanation": "Visual and textual modalities are consistent", "result": "Visual and textual modalities are consistent"}], "timestamp": "2026-07-23T16:07:54.413268Z", "is_recursive": true, "sub_trajectory": null, "sub_trajectories": null}, {"step_id": 3, "depth": 0, "thought": "Cross-modal verification confirms the bin is an orange trashcan and the object placed inside is a lemon green sponge. All evidence slots are filled with verified citations.", "plan": "Finalize the answer with the verified option.", "action": "Finish", "action_args": {"answer": "(A) a lemon green sponge", "chain_complete": true, "completion_basis": "visual->answer"}, "observation": "(A) a lemon green sponge", "observation_items": [{"tool": "Finish", "status": "success", "result": "(A) a lemon green sponge"}], "timestamp": "2026-07-23T16:08:02.876507Z", "is_recursive": false, "sub_trajectory": null, "sub_trajectories": null}], "final_answer": "(A) a lemon green sponge", "success": true, "error_message": null, "debug_events": [{"type": "llm_iteration", "depth": 0, "iteration": 1, "response": "{\n    \"Thought\": \"Initial grounding shows outdoor scenes and kitchen activity but no mention of an orange trashcan or disposal action. Need to search for segments containing 'orange trashcan' or related keywords.\",\n    \"Plan\": \"Search for segments mentioning 'orange trashcan' or disposal-related actions, then inspect frames to confirm what was placed inside.\",\n    \"Actions\": [\n        {\n            \"tool\": \"Keyword_Retrieve\",\n            \"params\": {\n                \"term\": \"orange trashcan\",\n                \"case_sensitive\": false\n            }\n        }\n    ]\n}", "raw_response_chars": 568, "response_normalized": false, "parsed_plan": "Search for segments mentioning 'orange trashcan' or disposal-related actions, then inspect frames to confirm what was placed inside.", "parsed_action": "Parallel", "parsed_action_args": {"batch": [{"name": "Keyword_Retrieve", "args": {"term": "orange trashcan", "case_sensitive": false, "__raw_params_declared__": true, "__raw_param_keys__": ["term", "case_sensitive"]}}]}, "thought_preview": "Initial grounding shows outdoor scenes and kitchen activity but no mention of an orange trashcan or disposal action. Need to search for segments containing 'orange trashcan' or related keywords.", "parse_success": true}, {"type": "llm_iteration", "depth": 0, "iteration": 2, "response": "{\n    \"Thought\": \"Video_Clip_QA confirmed the object is a lemon green sponge being placed into a bin. However, the caption describes a suburban street setting, while the question specifies an 'orange trashcan.' Need to cross-verify the bin's color and ensure the action matches the question's context.\", \"Plan\": \"Perform cross-modal verification to check if the bin in the video is indeed orange, confirming the answer aligns with the question's description.\", \"Actions\": [\n        {\n            \"tool\": \"Cross_Modal_Verify\",\n            \"params\": {\n                \"visual_evidence\": \"The video shows a person holding a lemon green sponge and placing it into a nearby bin.\",\n                \"textual_claim\": \"The bin is an orange trashcan.\"\n            }\n        }\n    ]\n}", "raw_response_chars": 773, "response_normalized": false, "parsed_plan": "Perform cross-modal verification to check if the bin in the video is indeed orange, confirming the answer aligns with the question's description.", "parsed_action": "Parallel", "parsed_action_args": {"batch": [{"name": "Cross_Modal_Verify", "args": {"visual_evidence": "The video shows a person holding a lemon green sponge and placing it into a nearby bin.", "textual_claim": "The bin is an orange trashcan.", "__raw_params_declared__": true, "__raw_param_keys__": ["visual_evidence", "textual_claim"]}}]}, "thought_preview": "Video_Clip_QA confirmed the object is a lemon green sponge being placed into a bin. However, the caption describes a suburban street setting, while the question specifies an 'orange trashcan.' Need to cross-verify the bin's color and ensure the action matches the question's context.", "parse_success": true}, {"type": "llm_iteration", "depth": 0, "iteration": 3, "response": "{\"Thought\": \"Cross-modal verification confirms the bin is an orange trashcan and the object placed inside is a lemon green sponge. All evidence slots are filled with verified citations.\", \"Plan\": \"Finalize the answer with the verified option.\", \"Evidence\": [{\"label\": \"object placed in orange trashcan\", \"value\": \"a lemon green sponge\", \"logical conflict\": false, \"citation\": \"Video_Clip_QA@165.72-171.72 / Cross_Modal_Verify@consistent\", \"evidence_status\": \"verified\"}], \"Finish\": {\"chain_complete\": true, \"completion_basis\": \"visual->answer\", \"answer\": \"(A) a lemon green sponge\"}}", "raw_response_chars": 583, "response_normalized": false, "parsed_plan": "Finalize the answer with the verified option.", "parsed_action": "Finish", "parsed_action_args": {"answer": "(A) a lemon green sponge", "chain_complete": true, "completion_basis": "visual->answer"}, "thought_preview": "Cross-modal verification confirms the bin is an orange trashcan and the object placed inside is a lemon green sponge. All evidence slots are filled with verified citations.", "parse_success": true}, {"progress_score": 0.8, "claim_coverage": 1.0, "direct_grounding": 1.0, "contradiction_score": 0.0, "cross_modal_support": 0.0, "can_finish": true, "missing_information": [], "unresolved_claims": [], "feedback": "Evidence verifier accepted termination.", "type": "verifier_decision", "event_type": "VerifierDecisionEvent", "depth": 0, "iteration": 3}], "start_time": "2026-07-23T16:07:08.251931Z", "end_time": "2026-07-23T16:08:02.876692Z", "started_at": "2026-07-23T16:07:08.251931Z", "finished_at": "2026-07-23T16:08:02.876692Z", "duration_seconds": 54.624761}}, "metrics": {"tool_usage_layers": {"planner_proposed": {"tool_usage_summary": {"Cross_Modal_Verify": 1, "Video_Clip_QA": 1}, "unique_tools": ["Cross_Modal_Verify", "Video_Clip_QA"], "unique_tool_count": 2, "tool_type_counts": {"base": 2}, "capability_tier_counts": {"production": 1, "weak": 1}, "tool_family_counts": {"visual": 2}, "unique_tool_type_counts": {"base": 2}, "unique_capability_tier_counts": {"production": 1, "weak": 1}, "base_meta_coverage": {"base_used": true, "meta_used": false, "coverage_ratio": 0.5}}, "subagent_rewritten": {"tool_usage_summary": {}, "unique_tools": [], "unique_tool_count": 0, "tool_type_counts": {}, "capability_tier_counts": {}, "tool_family_counts": {}, "unique_tool_type_counts": {}, "unique_capability_tier_counts": {}, "base_meta_coverage": {"base_used": false, "meta_used": false, "coverage_ratio": 0.0}}, "runtime_executed": {"tool_usage_summary": {"Cross_Modal_Verify": 1, "Video_Clip_QA": 1}, "unique_tools": ["Cross_Modal_Verify", "Video_Clip_QA"], "unique_tool_count": 2, "tool_type_counts": {"base": 2}, "capability_tier_counts": {"production": 1, "weak": 1}, "tool_family_counts": {"visual": 2}, "unique_tool_type_counts": {"base": 2}, "unique_capability_tier_counts": {"production": 1, "weak": 1}, "base_meta_coverage": {"base_used": true, "meta_used": false, "coverage_ratio": 0.5}}}, "tool_usage_summary": {"Cross_Modal_Verify": 1, "Video_Clip_QA": 1}, "unique_tools": ["Cross_Modal_Verify", "Video_Clip_QA"], "tool_family_counts": {"visual": 2}, "tool_type_counts": {"base": 2}, "capability_tier_counts": {"production": 1, "weak": 1}, "runtime_tool_call_count": 2, "runtime_execution_steps": 2, "planner_iterations": 3, "subagent_iterations": 0, "delegated_root_steps": 0, "decomposed_root_steps": 0, "subagent_decomposition_rate": 0.0, "parallel_concrete_batches": 0, "parallel_concrete_batch_rate": 0.0, "acceptance_metrics": {"runtime_tool_call_count": 2, "runtime_execution_steps": 2, "runtime_tools_executed": true, "unique_runtime_tools_count": 2, "unique_runtime_tools_gte_4": false, "runtime_base_meta_coverage": {"base_used": true, "meta_used": false, "coverage_ratio": 0.5}}, "timing_breakdown_seconds": {"planner.llm_generate_seconds": 26.476444, "preprocess.total_seconds": 1.23558, "query.grounding_context_seconds": 232.860569, "query.registry_init_seconds": 0.200838, "query.solve_seconds": 54.625321, "query.total_seconds": 835.869094, "runtime_load.grounding_embedder_seconds": 0.001033, "runtime_load.provider_planner_seconds": 543.086026, "runtime_load.qwen3_vl_embedding_seconds": 229.107294, "tool.video_clip_qa_seconds": 25.355977}, "cache_stats": {"preprocess.output_dir.hit": 1, "grounding_embedder.miss": 1, "grounding_embedding_vector.miss": 26, "qwen3_vl_embedding_runtime.miss": 1, "grounding_embedder.hit": 25, "provider.planner.miss": 1, "provider.planner.hit": 2}, "active_video_names": ["/gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/3_ego/ego_35.mp4", "ego_35", "ego_35.mp4"]}}
+2026-07-24 00:08:02,970 - INFO - 
+================================================================================
+2026-07-24 00:08:02,970 - INFO - Pipeline completed successfully!
+2026-07-24 00:08:02,970 - INFO - Artifacts stored in: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/mlvu/ego-00000-ego-35
+2026-07-24 00:08:02,970 - INFO - ================================================================================
+2026-07-24 00:08:03,163 - INFO - [mlvu 1/8] ACC mlvu=1/1 (100.00%)
+2026-07-24 00:08:03,278 - INFO - Saved Mix results to /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_ego_guard2/CFV_Evolve_result.json
+{"run_root": "/gemini/code/export_packages/extracted/runs/evolution_run_c55c3c17870d", "trajectory_count": 1, "event_count": 5, "replay_status": "not_required"}

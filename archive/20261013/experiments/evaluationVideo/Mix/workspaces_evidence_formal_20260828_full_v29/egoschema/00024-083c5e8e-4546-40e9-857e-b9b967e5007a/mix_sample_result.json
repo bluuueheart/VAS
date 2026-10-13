@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00024:083c5e8e-4546-40e9-857e-b9b967e5007a",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 12,
+  "iter_num": 21,
+  "tool_success_rate": 0.583333,
+  "successful_tool_calls": 7,
+  "planner_iterations": 21,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "C interacted with the laptop's motherboard, chips, and wires. the overarching goal of this sequence was to remove the motherboard from the laptop.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 6649.34,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00024-083c5e8e-4546-40e9-857e-b9b967e5007a",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00024-083c5e8e-4546-40e9-857e-b9b967e5007a/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00024-083c5e8e-4546-40e9-857e-b9b967e5007a/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00024-083c5e8e-4546-40e9-857e-b9b967e5007a/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/083c5e8e-4546-40e9-857e-b9b967e5007a.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/083c5e8e-4546-40e9-857e-b9b967e5007a.mp4",
+  "question_block": "Question: What are the primary components that c interacted with while working on the laptop and what was the overarching goal of this sequence?\nOptions:\n(A) C interacted with the laptop's screen, keyboard, and mouse. the overarching goal of this sequence was to clean the laptop.\n(B) C interacted with the laptop's battery, hard drive, and optical drive. the overarching goal of this sequence was to upgrade the laptop's components.\n(C) C interacted with the laptop's case, bezel, and keyboard deck. the overarching goal of this sequence was to repair the laptop.\n(D) C interacted with the laptop's motherboard, chips, and wires. the overarching goal of this sequence was to remove the motherboard from the laptop.\n(E) C interacted with the laptop's power button, volume buttons, and sleep button. the overarching goal of this sequence was to configure the laptop's settings.",
+  "options": [
+    "C interacted with the laptop's screen, keyboard, and mouse. the overarching goal of this sequence was to clean the laptop.",
+    "C interacted with the laptop's battery, hard drive, and optical drive. the overarching goal of this sequence was to upgrade the laptop's components.",
+    "C interacted with the laptop's case, bezel, and keyboard deck. the overarching goal of this sequence was to repair the laptop.",
+    "C interacted with the laptop's motherboard, chips, and wires. the overarching goal of this sequence was to remove the motherboard from the laptop.",
+    "C interacted with the laptop's power button, volume buttons, and sleep button. the overarching goal of this sequence was to configure the laptop's settings."
+  ],
+  "official_meta": {
+    "question_index": "00024",
+    "video_id": "083c5e8e-4546-40e9-857e-b9b967e5007a",
+    "resolved_video_stem": "083c5e8e-4546-40e9-857e-b9b967e5007a",
+    "video_mapping_verified": true,
+    "source_index": 24,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-01T07:52:03.821740Z"
+}

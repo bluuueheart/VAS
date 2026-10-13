@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00080:249a0fc4-ccf4-4e6f-9ca5-29f11cf5e1ad",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C is trying to attach tile backer washers to the tile backer board.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) Currently, c is attempting to carefully drill holes into the tile backer board's surface.",
+  "elapsed_seconds": 770.148,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00080-249a0fc4-ccf4-4e6f-9ca5-29f11cf5e1ad",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00080-249a0fc4-ccf4-4e6f-9ca5-29f11cf5e1ad/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00080-249a0fc4-ccf4-4e6f-9ca5-29f11cf5e1ad/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00080-249a0fc4-ccf4-4e6f-9ca5-29f11cf5e1ad/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/249a0fc4-ccf4-4e6f-9ca5-29f11cf5e1ad.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/249a0fc4-ccf4-4e6f-9ca5-29f11cf5e1ad.mp4",
+  "question_block": "Question: How would you summarize the primary objective c is trying to achieve throughout the video in one sentence, considering the recurring drilling and removing actions they performed?\nOptions:\n(A) Currently, c is attempting to carefully drill holes into the tile backer board's surface.\n(B) C is attempting to carefully take off tile backer washers that are located on the tile backer board.\n(C) C is trying to attach tile backer washers to the tile backer board.\n(D) C is trying to clean the tile backer board.\n(E) Currently, c is attempting to carefully paint the tile backer board surface.",
+  "options": [
+    "Currently, c is attempting to carefully drill holes into the tile backer board's surface.",
+    "C is attempting to carefully take off tile backer washers that are located on the tile backer board.",
+    "C is trying to attach tile backer washers to the tile backer board.",
+    "C is trying to clean the tile backer board.",
+    "Currently, c is attempting to carefully paint the tile backer board surface."
+  ],
+  "official_meta": {
+    "question_index": "00080",
+    "video_id": "249a0fc4-ccf4-4e6f-9ca5-29f11cf5e1ad",
+    "resolved_video_stem": "249a0fc4-ccf4-4e6f-9ca5-29f11cf5e1ad",
+    "video_mapping_verified": true,
+    "source_index": 80,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-10T07:58:18.631414Z"
+}

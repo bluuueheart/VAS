@@ -1,0 +1,49 @@
+lvbench:entity-recognition:4:63 failed stale revision 2 uncounted recovery 2
+videomme:humanity-history:001-1 failed stale revision 3 uncounted recovery 7
+egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391 completed stale revision 1 uncounted recovery 0
+mlvu:plotqa:0:movie101-66 completed stale revision 3 uncounted recovery 4
+lvbench:event-understanding:1:56 completed stale revision 2 uncounted recovery 4
+videomme:literature-art:011-1 completed stale revision 1 uncounted recovery 0
+egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e failed stale revision 3 uncounted recovery 6
+mlvu:needle:0:needle-32 failed stale revision 4 uncounted recovery 6
+lvbench:entity-recognition:6:67 failed stale revision 4 uncounted recovery 7
+videomme:biology-medicine:021-1 completed stale revision 1 uncounted recovery 0
+egoschema:00002:00f93e1e-cf4e-4835-88b4-4ad68216e86f wrong stale revision 2 uncounted recovery 0
+mlvu:ego:0:ego-35 failed stale revision 0 uncounted recovery 7
+lvbench:event-understanding:3:62 failed stale revision 2 uncounted recovery 3
+videomme:finance-commerce:031-1 completed stale revision 1 uncounted recovery 0
+egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518 failed stale revision 3 uncounted recovery 5
+mlvu:plotqa:1:xiaoliyu-6 wrong stale revision 1 uncounted recovery 0
+lvbench:key-information-retrieval:0:55 completed stale revision 1 uncounted recovery 0
+videomme:astronomy:041-1 completed stale revision 1 uncounted recovery 3
+egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212 failed stale revision 3 uncounted recovery 3
+mlvu:topic-reasoning:0:awa-6 completed stale revision 1 uncounted recovery 1
+lvbench:entity-recognition:11:75 wrong stale revision 1 uncounted recovery 2
+videomme:geography:051-1 failed stale revision 4 uncounted recovery 7
+egoschema:00005:01a144a5-24d2-4a5a-af01-1f318d674bed failed stale revision 5 uncounted recovery 10
+mlvu:order:0:order-126 completed stale revision 5 uncounted recovery 7
+lvbench:event-understanding:7:68 failed stale revision 3 uncounted recovery 2
+videomme:law:061-1 failed stale revision 3 uncounted recovery 7
+egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf failed stale revision 0 uncounted recovery 4
+mlvu:count:0:count-126 failed stale revision 0 uncounted recovery 6
+lvbench:reasoning:5:65 failed stale revision 5 uncounted recovery 7
+videomme:life-tip:071-1 completed stale revision 4 uncounted recovery 8
+egoschema:00007:02925d7a-a5db-4127-8c31-b232e78b684d completed stale revision 1 uncounted recovery 0
+mlvu:anomaly-reco:0:surveil-20 failed stale revision 1 uncounted recovery 6
+{
+  "cases": 32,
+  "status_counts": {
+    "failed": 17,
+    "completed": 12,
+    "wrong": 3
+  },
+  "stale_revision_transitions": 71,
+  "stale_revision_cases": 29,
+  "uncounted_recovery_cases": 24,
+  "problem_step_counts": {
+    "window_limit": 8,
+    "duplicate_call": 21,
+    "finish_without_progress": 15
+  },
+  "scope": "All recorded cases; state-transition counts are not proof that each defect caused the final outcome."
+}

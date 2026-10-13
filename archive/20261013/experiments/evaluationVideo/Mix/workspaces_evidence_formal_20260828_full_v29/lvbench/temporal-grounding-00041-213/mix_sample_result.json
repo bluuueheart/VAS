@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:temporal-grounding:41:213",
+  "dataset_name": "lvbench",
+  "subset_name": "temporal grounding",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Blue",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) Green",
+  "elapsed_seconds": 298.024,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/temporal-grounding-00041-213",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/temporal-grounding-00041-213/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/temporal-grounding-00041-213/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/temporal-grounding-00041-213/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/28CIeC8cZks.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/28CIeC8cZks.mp4",
+  "question_block": "Question: What color light is emanating from the woman's arm at 36:05 in the video?\nOptions:\n(A) Green\n(B) Red\n(C) Yellow\n(D) Blue",
+  "options": [
+    "Green",
+    "Red",
+    "Yellow",
+    "Blue"
+  ],
+  "official_meta": {
+    "question_type": "temporal grounding",
+    "video_type": "cartoon",
+    "time_reference": "36:05-36:15",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "28CIeC8cZks",
+    "resolved_video_stem": "28CIeC8cZks",
+    "video_mapping_verified": true,
+    "source_index": 41
+  },
+  "updated_at": "2026-09-05T12:38:55.683708Z"
+}

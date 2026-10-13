@@ -1,0 +1,52 @@
+{
+  "sample_uid": "mlvu:anomaly-reco:0:surveil-20",
+  "dataset_name": "mlvu",
+  "subset_name": "anomaly_reco",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Shoplifting",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 74.548,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/mlvu/anomaly-reco-00000-surveil-20",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/mlvu/anomaly-reco-00000-surveil-20/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/mlvu/anomaly-reco-00000-surveil-20/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/mlvu/anomaly-reco-00000-surveil-20/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/6_anomaly_reco/surveil_20.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/6_anomaly_reco/surveil_20.mp4",
+  "question_block": "Question: Does this surveillance footage contain any anomalies? If yes, which kind of anomaly?\nOptions:\n(A) RoadAccidents\n(B) Shooting\n(C) Shoplifting\n(D) Assault",
+  "options": [
+    "RoadAccidents",
+    "Shooting",
+    "Shoplifting",
+    "Assault"
+  ],
+  "official_meta": {
+    "task_type": "anomaly_reco",
+    "source_json": "6_anomaly_reco.json",
+    "source_index": 0,
+    "video_subdir": "6_anomaly_reco",
+    "video_relative_path": "6_anomaly_reco/surveil_20.mp4",
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "error": "Unable to load the local Qwen3/Qwen3.5 checkpoint with an exact architecture class. Install a transformers build that provides the class named by config.architectures (for Qwen3.5 this must be Qwen3_5ForConditionalGeneration).",
+  "updated_at": "2026-08-24T11:29:08.711991Z"
+}

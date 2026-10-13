@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00072:22627b14-0f17-4a45-9661-5ac979e0a4c2",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is painting a piece of furniture. the repetitive actions are necessary to ensure that the paint is applied evenly.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00072-22627b14-0f17-4a45-9661-5ac979e0a4c2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00072-22627b14-0f17-4a45-9661-5ac979e0a4c2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00072-22627b14-0f17-4a45-9661-5ac979e0a4c2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00072-22627b14-0f17-4a45-9661-5ac979e0a4c2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/22627b14-0f17-4a45-9661-5ac979e0a4c2.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/22627b14-0f17-4a45-9661-5ac979e0a4c2.mp4",
+  "question_block": "Question: Determine the primary purpose of c's actions in the video, and explain the importance of the repetitive actions involved in this process.\nOptions:\n(A) In the kitchen, c is diligently making a cup of coffee. the repetitive actions, or steps, are necessary to ensure that the coffee concoction is mixed evenly throughout.\n(B) C is stirring a pot of soup. the repetitive actions are necessary to ensure that the soup is cooked evenly.\n(C) C is painting a piece of furniture. the repetitive actions are necessary to ensure that the paint is applied evenly.\n(D) C is diligently washing dishes. the repetitive actions performed are extremely necessary to ensure that every single dish is thoroughly clean.\n(E) Currently, c is diligently brushing his teeth. these repetitive actions are crucial and necessary to effectively ensure that his teeth remain ultimately clean and healthy.",
+  "options": [
+    "In the kitchen, c is diligently making a cup of coffee. the repetitive actions, or steps, are necessary to ensure that the coffee concoction is mixed evenly throughout.",
+    "C is stirring a pot of soup. the repetitive actions are necessary to ensure that the soup is cooked evenly.",
+    "C is painting a piece of furniture. the repetitive actions are necessary to ensure that the paint is applied evenly.",
+    "C is diligently washing dishes. the repetitive actions performed are extremely necessary to ensure that every single dish is thoroughly clean.",
+    "Currently, c is diligently brushing his teeth. these repetitive actions are crucial and necessary to effectively ensure that his teeth remain ultimately clean and healthy."
+  ],
+  "official_meta": {
+    "question_index": "00072",
+    "video_id": "22627b14-0f17-4a45-9661-5ac979e0a4c2",
+    "source_index": 72
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=255 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-22T18:55:10.018374Z"
+}

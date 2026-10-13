@@ -1,0 +1,54 @@
+{
+  "sample_uid": "lvbench:event-understanding:3:62",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 6,
+  "iter_num": 7,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 6,
+  "planner_iterations": 7,
+  "subagent_iterations": 0,
+  "predicted_label": "C",
+  "ground_truth": "The protagonist cuts off two fingers of the man with the gun with her sword",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(C) The protagonist impales the man with the gun with her word",
+  "elapsed_seconds": 2087.095,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/lvbench/event-understanding-00003-62",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/lvbench/event-understanding-00003-62/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/lvbench/event-understanding-00003-62/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/lvbench/event-understanding-00003-62/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/Cm73ma6Ibcs.mp4",
+  "question_block": "Question: What does the protagonist do when the man with the gun keeps approaching her?\nOptions:\n(A) The protagonist cuts off the hand of the man with the gun with her sword\n(B) The protagonist cuts off two fingers of the man with the gun with her sword\n(C) The protagonist impales the man with the gun with her word\n(D) The protagonist breaks the windows with her sword and flees",
+  "options": [
+    "The protagonist cuts off the hand of the man with the gun with her sword",
+    "The protagonist cuts off two fingers of the man with the gun with her sword",
+    "The protagonist impales the man with the gun with her word",
+    "The protagonist breaks the windows with her sword and flees"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "06:04-06:17",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "Cm73ma6Ibcs",
+    "source_index": 3
+  },
+  "updated_at": "2026-08-24T20:09:13.587628Z"
+}

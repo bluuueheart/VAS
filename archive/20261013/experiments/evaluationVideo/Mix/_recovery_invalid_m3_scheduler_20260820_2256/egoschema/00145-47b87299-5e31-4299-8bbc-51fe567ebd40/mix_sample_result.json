@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00145:47b87299-5e31-4299-8bbc-51fe567ebd40",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is trying to win the card game.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00145-47b87299-5e31-4299-8bbc-51fe567ebd40",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00145-47b87299-5e31-4299-8bbc-51fe567ebd40/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00145-47b87299-5e31-4299-8bbc-51fe567ebd40/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00145-47b87299-5e31-4299-8bbc-51fe567ebd40/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/47b87299-5e31-4299-8bbc-51fe567ebd40.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/47b87299-5e31-4299-8bbc-51fe567ebd40.mp4",
+  "question_block": "Question: What could be the primary reason behind a series of actions c performs with cards, such as collecting, shuffling, dropping, and exchanging them with the person?\nOptions:\n(A) C is trying to impress the person.\n(B) C is trying to win the card game.\n(C) C is trying to teach the person how to play cards.\n(D) C is trying to pass the time.\n(E) C is trying to make the person laugh.",
+  "options": [
+    "C is trying to impress the person.",
+    "C is trying to win the card game.",
+    "C is trying to teach the person how to play cards.",
+    "C is trying to pass the time.",
+    "C is trying to make the person laugh."
+  ],
+  "official_meta": {
+    "question_index": "00145",
+    "video_id": "47b87299-5e31-4299-8bbc-51fe567ebd40",
+    "source_index": 145
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:49:26.758069Z"
+}

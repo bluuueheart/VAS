@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00014:05defeef-40bd-4b08-b341-72879a6cf63e",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is molding bricks with mortar and wet clay.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00014-05defeef-40bd-4b08-b341-72879a6cf63e",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00014-05defeef-40bd-4b08-b341-72879a6cf63e/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00014-05defeef-40bd-4b08-b341-72879a6cf63e/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00014-05defeef-40bd-4b08-b341-72879a6cf63e/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/05defeef-40bd-4b08-b341-72879a6cf63e.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/05defeef-40bd-4b08-b341-72879a6cf63e.mp4",
+  "question_block": "Question: What is the overall process and purpose of the actions performed by c in the video?\nOptions:\n(A) C is molding bricks with mortar and wet clay.\n(B) Currently, c is diligently working on constructing a wall.\n(C) Currently, artist c is diligently working on creating a unique sculpture.\n(D) Currently, young c is actively playing and having fun with mud.\n(E) C is doing a science experiment.",
+  "options": [
+    "C is molding bricks with mortar and wet clay.",
+    "Currently, c is diligently working on constructing a wall.",
+    "Currently, artist c is diligently working on creating a unique sculpture.",
+    "Currently, young c is actively playing and having fun with mud.",
+    "C is doing a science experiment."
+  ],
+  "official_meta": {
+    "question_index": "00014",
+    "video_id": "05defeef-40bd-4b08-b341-72879a6cf63e",
+    "source_index": 14
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=255 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-22T18:52:02.617726Z"
+}

@@ -1,0 +1,10 @@
+run_id=evolution_run_60e05cd3db1b
+trajectory_count=1
+diagnosis_count=1
+verification_accepted=1/1
+accepted_correct=0
+accepted_wrong=1
+replay_groups={"held_out": [], "neighbor": [], "regression": [], "trigger": ["trajectory_bc3c7d5a0ae340da84a19e2d2530d0ea"]}
+candidate_snapshot=snapshot_97e92e80a100
+replay_status=pending
+diagnosis=answer_synthesis confidence=0.80 root_cause=The final option was inconsistent with the collected trajectory evidence.

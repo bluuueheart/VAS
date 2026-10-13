@@ -1,0 +1,44 @@
+{
+  "run_id": "evolution_run_adb829a07f3f",
+  "trajectory_count": 1,
+  "event_count": 9,
+  "diagnoses": [],
+  "verifications": [
+    {
+      "trajectory_id": "trajectory_058cd71dca12455f9ced67bf9c5e57a5",
+      "sample_uid": "lvbench:entity-recognition:4:63",
+      "answer_score": 1.0,
+      "sample_status": "completed",
+      "held_out": false,
+      "progress_score": 1.0,
+      "claim_coverage": 1.0,
+      "direct_grounding": 1.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 1.0,
+      "can_finish": true,
+      "missing_information": [],
+      "unresolved_claims": [],
+      "feedback": "Evidence verifier accepted termination."
+    }
+  ],
+  "evolution_intent": null,
+  "candidate_snapshot": null,
+  "replay_groups": {
+    "trigger": [],
+    "neighbor": [],
+    "regression": [
+      "trajectory_058cd71dca12455f9ced67bf9c5e57a5"
+    ],
+    "held_out": []
+  },
+  "replay_status": "not_required",
+  "candidate_replay_status": "not_required",
+  "batch_metrics": {
+    "accuracy": 1.0,
+    "mean_latency_seconds": 3280.277,
+    "invalid_call_rate": 0.166667
+  },
+  "source_paths": [
+    "evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00004-63/results/run_result.json"
+  ]
+}

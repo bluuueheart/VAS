@@ -4,6 +4,7 @@ Extracts transcripts from video audio using Whisper.
 """
 import ctypes
 import ctypes.util
+import gc
 import inspect
 import json
 import logging
@@ -119,6 +120,21 @@ class ASRProcessor:
                 slot_key=resolve_local_accelerator_slot_key("cuda:0" if self.device == "cuda" else self.device),
                 enabled=self.device == "cuda",
             )
+
+    def unload_model(self) -> None:
+        """Release Whisper before a vision model claims the same GPU."""
+        model = self._model
+        self._model = None
+        for key, cached in list(self._RUNTIME_CACHE.items()):
+            if cached is model:
+                self._RUNTIME_CACHE.pop(key, None)
+        gc.collect()
+        if self.device == "cuda":
+            try:
+                import torch
+                torch.cuda.empty_cache()
+            except Exception:
+                pass
     
     def _resolve_cudnn_paths(self, provided: Optional[List[str]]) -> List[str]:
         """Merge explicit paths with env var CUDNN_LIBRARY_PATHS and system paths."""
@@ -413,15 +429,52 @@ class ASRProcessor:
                     pass
 
     def _build_transcribe_kwargs(self) -> Dict[str, Any]:
+        """Build a reproducible ASR decode contract.
+
+        Full-video ASR is preprocessing used for timestamp segmentation, not
+        the final answer generator.  The formal Mix config can therefore use
+        a bounded beam/VAD policy without disabling source audio or replacing
+        ASR with a placeholder.  Unconfigured callers retain the historical
+        faster-whisper defaults for compatibility.
+        """
         transcribe_kwargs: Dict[str, Any] = {"language": "en"}
-        if self.device == "cpu":
-            transcribe_kwargs.update(
-                {
-                    "beam_size": 1,
-                    "best_of": 1,
-                    "condition_on_previous_text": False,
-                }
-            )
+
+        def _env_int(name: str, default: Optional[int]) -> Optional[int]:
+            raw_value = str(os.environ.get(name) or "").strip()
+            if not raw_value:
+                return default
+            try:
+                return max(1, int(raw_value))
+            except (TypeError, ValueError):
+                logging.warning("Ignoring invalid %s=%r.", name, raw_value)
+                return default
+
+        def _env_bool(name: str, default: Optional[bool]) -> Optional[bool]:
+            raw_value = str(os.environ.get(name) or "").strip().lower()
+            if not raw_value:
+                return default
+            if raw_value in {"1", "true", "yes", "on"}:
+                return True
+            if raw_value in {"0", "false", "no", "off"}:
+                return False
+            logging.warning("Ignoring invalid %s=%r.", name, raw_value)
+            return default
+
+        beam_size = _env_int("TOOLSTAR_ASR_BEAM_SIZE", 1 if self.device == "cpu" else None)
+        best_of = _env_int("TOOLSTAR_ASR_BEST_OF", 1 if self.device == "cpu" else None)
+        condition_on_previous_text = _env_bool(
+            "TOOLSTAR_ASR_CONDITION_ON_PREVIOUS_TEXT",
+            False if self.device == "cpu" else None,
+        )
+        vad_filter = _env_bool("TOOLSTAR_ASR_VAD_FILTER", None)
+        if beam_size is not None:
+            transcribe_kwargs["beam_size"] = beam_size
+        if best_of is not None:
+            transcribe_kwargs["best_of"] = best_of
+        if condition_on_previous_text is not None:
+            transcribe_kwargs["condition_on_previous_text"] = condition_on_previous_text
+        if vad_filter is not None:
+            transcribe_kwargs["vad_filter"] = vad_filter
         return transcribe_kwargs
 
     def _transcribe_audio_file(self, audio_path: Path, time_offset: float = 0.0) -> List[Dict[str, Any]]:

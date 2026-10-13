@@ -1,0 +1,507 @@
+Using Orion CUDA proxy runtime: /opt/orion/orion_runtime/gpu/cuda/orion-cuda-12.3
+2026-07-24 03:20:49,238 - WARNING - Skipping unavailable MLVU subset task_type=count: annotation file is missing: /gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/json/4_count.json
+2026-07-24 03:20:49,357 - INFO - Mix batch execution resolved parallel_samples=1 visible_cuda_devices=['0'] selected_samples=2
+2026-07-24 03:20:49,357 - INFO - Resume [mlvu 0/8]
+2026-07-24 03:20:49,357 - INFO - Launching sample 1/2 sample_uid=mlvu:ego:0:ego-35 launcher_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r3/mlvu/ego-00000-ego-35/launcher.log
+2026-07-24 03:21:00,551 - INFO - ToolRegistry initialized
+2026-07-24 03:21:01,116 - INFO - execute_pipeline runtime_profile=evaluation_local -> forcing local non-planner/visual/embedding runtime, disabling sidecar autostart, and clearing distributed worker env residue.
+2026-07-24 03:21:01,953 - INFO - ================================================================================
+2026-07-24 03:21:01,954 - INFO - Tool Star RL - End-to-End Pipeline
+2026-07-24 03:21:01,954 - INFO - ================================================================================
+2026-07-24 03:21:01,954 - INFO - Video: /gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/3_ego/ego_35.mp4
+2026-07-24 03:21:01,954 - INFO - Query: MLVU Task Type: ego
+
+Question: What did I put in the orange trashcan 
+Options:
+(A) a lemon green sponge
+(B) a blue pen
+(C) a red apple
+(D) a yellow banana
+
+Reply with exactly one best option in the format "(A) option text".
+2026-07-24 03:21:01,954 - INFO - Query group: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r3/mlvu/ego-00000-ego-35
+2026-07-24 03:21:01,955 - INFO - Run workspace: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r3/mlvu/ego-00000-ego-35
+2026-07-24 03:21:01,955 - INFO - Run manifest: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r3/mlvu/ego-00000-ego-35/manifest.json
+2026-07-24 03:21:01,955 - INFO - Run log: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe2_20260724_generic_r3/mlvu/ego-00000-ego-35/logs/run.log
+2026-07-24 03:21:01,955 - INFO - Shared data cache: /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache
+2026-07-24 03:21:01,955 - INFO - Cache reuse: enabled
+2026-07-24 03:21:01,955 - INFO - Pipeline mode: react
+2026-07-24 03:21:01,955 - INFO - 
+2026-07-24 03:21:03,953 - INFO - ================================================================================
+2026-07-24 03:21:03,953 - INFO - Step 1: Video Preprocessing
+2026-07-24 03:21:03,954 - INFO - ================================================================================
+2026-07-24 03:21:03,954 - INFO - Skipping preprocess text LLM load because knowledge-graph and metadata synthesis are both disabled.
+2026-07-24 03:21:03,954 - INFO - Initializing device: cuda
+2026-07-24 03:21:03,955 - INFO - Visual sidecar runtime disabled for role=qwen_vl because TOOL_STAR_RUNTIME_PROFILE=evaluation_local forces local evaluation runtime.
+2026-07-24 03:21:03,959 - INFO - CUDA detected: 1 GPU(s) available
+2026-07-24 03:21:03,959 - INFO - Initializing device: cuda
+2026-07-24 03:21:03,976 - INFO - Initializing device: cuda
+2026-07-24 03:21:03,976 - INFO - Initializing device: cuda
+2026-07-24 03:21:05,855 - INFO - Found existing processed outputs at /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache/processed/ego_35, skipping preprocessing.
+2026-07-24 03:21:05,897 - INFO - Initializing device: cuda
+2026-07-24 03:21:05,897 - INFO - Initializing device: cuda
+2026-07-24 03:21:05,898 - INFO - Initializing device: cuda
+2026-07-24 03:21:05,899 - INFO - Grounding embedder runtime: device=cuda:0 visible_accelerators=1 model=/gemini/pretrain/model/Qwen/Qwen3-VL-Embedding-2B
+2026-07-24 03:21:05,899 - INFO - Grounding embedder accelerator snapshot: cuda:0 name=P1.gpu.medium allocated=0.00GB reserved=0.00GB
+2026-07-24 03:24:28,159 - INFO - Qwen3-VL-Embedding runtime initialized: device=cuda:0 visible_accelerators=1 model=/gemini/pretrain/model/Qwen/Qwen3-VL-Embedding-2B weight_files=['model.safetensors']
+2026-07-24 03:24:28,160 - INFO - Qwen3-VL-Embedding accelerator snapshot: cuda:0 name=P1.gpu.medium allocated=3.96GB reserved=3.97GB
+2026-07-24 03:24:28,888 - INFO - Initializing device: cuda
+2026-07-24 03:24:28,888 - INFO - Initializing device: cuda
+2026-07-24 03:24:28,975 - INFO - Initializing device: cuda
+2026-07-24 03:24:28,976 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,031 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,031 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,086 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,086 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,140 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,141 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,195 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,195 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,249 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,249 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,306 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,306 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,361 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,361 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,415 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,416 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,471 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,471 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,526 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,526 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,580 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,580 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,637 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,637 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,704 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,704 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,759 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,759 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,816 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,816 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,872 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,872 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,937 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,937 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,999 - INFO - Initializing device: cuda
+2026-07-24 03:24:29,999 - INFO - Initializing device: cuda
+2026-07-24 03:24:30,052 - INFO - Initializing device: cuda
+2026-07-24 03:24:30,052 - INFO - Initializing device: cuda
+2026-07-24 03:24:30,106 - INFO - Initializing device: cuda
+2026-07-24 03:24:30,107 - INFO - Initializing device: cuda
+2026-07-24 03:24:30,165 - INFO - Initializing device: cuda
+2026-07-24 03:24:30,165 - INFO - Initializing device: cuda
+2026-07-24 03:24:30,234 - INFO - Initializing device: cuda
+2026-07-24 03:24:30,234 - INFO - Initializing device: cuda
+2026-07-24 03:24:30,292 - INFO - Initializing device: cuda
+2026-07-24 03:24:30,292 - INFO - Initializing device: cuda
+2026-07-24 03:24:30,347 - INFO - Planner grounding selected 3 top segments using caption+transcript fused reranker.
+2026-07-24 03:24:30,347 - INFO - Top5 segment refs for traceback: ['ego_35_8@242.80-274.60', 'ego_35_5@150.00-181.20', 'ego_35_0@0.00-30.00', 'ego_35_11@336.57-381.57', 'ego_35_10@302.60-336.57']
+2026-07-24 03:24:32,813 - INFO - 
+================================================================================
+2026-07-24 03:24:32,814 - INFO - Step 2: Running ReAct Query
+2026-07-24 03:24:32,814 - INFO - ================================================================================
+2026-07-24 03:24:32,814 - INFO - Query: MLVU Task Type: ego
+
+Question: What did I put in the orange trashcan 
+Options:
+(A) a lemon green sponge
+(B) a blue pen
+(C) a red apple
+(D) a yellow banana
+
+Reply with exactly one best option in the format "(A) option text".
+2026-07-24 03:24:32,814 - INFO - --------------------------------------------------------------------------------
+2026-07-24 03:24:32,814 - INFO - Initializing tools...
+2026-07-24 03:24:32,814 - INFO - Auto-discovering tools from: /gemini/code/export_packages/extracted/RL/toolkit/impl
+2026-07-24 03:24:32,818 - INFO - Registered meta tool class: Sum_Field
+2026-07-24 03:24:32,819 - INFO - Registered meta tool class: Average_Field
+2026-07-24 03:24:32,820 - INFO - Registered meta tool class: Median_Field
+2026-07-24 03:24:32,821 - INFO - Registered meta tool class: Variance_Field
+2026-07-24 03:24:32,821 - INFO - Registered meta tool class: Stddev_Field
+2026-07-24 03:24:32,822 - INFO - Registered meta tool class: Percentile_10
+2026-07-24 03:24:32,823 - INFO - Registered meta tool class: Percentile_25
+2026-07-24 03:24:32,824 - INFO - Registered meta tool class: Percentile_50
+2026-07-24 03:24:32,825 - INFO - Registered meta tool class: Percentile_75
+2026-07-24 03:24:32,825 - INFO - Registered meta tool class: Percentile_90
+2026-07-24 03:24:32,826 - INFO - Registered meta tool class: Percentile_95
+2026-07-24 03:24:32,827 - INFO - Registered meta tool class: Percentile_99
+2026-07-24 03:24:32,828 - INFO - Registered meta tool class: TopK_By_Field
+2026-07-24 03:24:32,828 - INFO - Registered meta tool class: BottomK_By_Field
+2026-07-24 03:24:32,829 - INFO - Registered meta tool class: Sort_By_Field_Asc
+2026-07-24 03:24:32,830 - INFO - Registered meta tool class: Sort_By_Field_Desc
+2026-07-24 03:24:32,831 - INFO - Registered meta tool class: Filter_Equals
+2026-07-24 03:24:32,832 - INFO - Registered meta tool class: Filter_NotEquals
+2026-07-24 03:24:32,832 - INFO - Registered meta tool class: Filter_GreaterThan
+2026-07-24 03:24:32,833 - INFO - Registered meta tool class: Filter_LessThan
+2026-07-24 03:24:32,834 - INFO - Registered meta tool class: Filter_Between
+2026-07-24 03:24:32,835 - INFO - Registered meta tool class: Filter_In
+2026-07-24 03:24:32,836 - INFO - Registered meta tool class: Filter_NotIn
+2026-07-24 03:24:32,836 - INFO - Registered meta tool class: Filter_Contains
+2026-07-24 03:24:32,837 - INFO - Registered meta tool class: Filter_NotContains
+2026-07-24 03:24:32,838 - INFO - Registered meta tool class: Threshold_Filter
+2026-07-24 03:24:32,839 - INFO - Registered meta tool class: Deduplicate_By_Field
+2026-07-24 03:24:32,840 - INFO - Registered meta tool class: Select_Fields
+2026-07-24 03:24:32,840 - INFO - Registered meta tool class: Rename_Field
+2026-07-24 03:24:32,841 - INFO - Registered meta tool class: Drop_Fields
+2026-07-24 03:24:32,842 - INFO - Registered meta tool class: Fillna_Field
+2026-07-24 03:24:32,843 - INFO - Registered meta tool class: Add_Constant_Field
+2026-07-24 03:24:32,844 - INFO - Registered meta tool class: Multiply_Field
+2026-07-24 03:24:32,844 - INFO - Registered meta tool class: Divide_Field
+2026-07-24 03:24:32,845 - INFO - Registered meta tool class: Clip_Field
+2026-07-24 03:24:32,846 - INFO - Registered meta tool class: Normalize_MinMax
+2026-07-24 03:24:32,847 - INFO - Registered meta tool class: Normalize_ZScore
+2026-07-24 03:24:32,848 - INFO - Registered meta tool class: Softmax_Scores
+2026-07-24 03:24:32,849 - INFO - Registered meta tool class: Argmax_Field
+2026-07-24 03:24:32,850 - INFO - Registered meta tool class: Argmin_Field
+2026-07-24 03:24:32,851 - INFO - Registered meta tool class: Count_By_Field
+2026-07-24 03:24:32,851 - INFO - Registered meta tool class: Group_By_Field_Sum
+2026-07-24 03:24:32,852 - INFO - Registered meta tool class: Group_By_Field_Avg
+2026-07-24 03:24:32,853 - INFO - Registered meta tool class: Group_By_Field_Max
+2026-07-24 03:24:32,854 - INFO - Registered meta tool class: Group_By_Field_Min
+2026-07-24 03:24:32,855 - INFO - Registered meta tool class: Merge_By_Key
+2026-07-24 03:24:32,855 - INFO - Registered meta tool class: Flatten_List_Field
+2026-07-24 03:24:32,856 - INFO - Registered meta tool class: Unique_Values
+2026-07-24 03:24:32,857 - INFO - Registered meta tool class: Value_Frequencies
+2026-07-24 03:24:32,858 - INFO - Registered meta tool class: Regex_Filter
+2026-07-24 03:24:32,858 - INFO - Registered meta tool class: Regex_Extract
+2026-07-24 03:24:32,859 - INFO - Registered meta tool class: Keyword_Filter
+2026-07-24 03:24:32,860 - INFO - Registered meta tool class: Truncate_Text
+2026-07-24 03:24:32,861 - INFO - Registered meta tool class: To_Lower
+2026-07-24 03:24:32,861 - INFO - Registered meta tool class: To_Upper
+2026-07-24 03:24:32,862 - INFO - Registered meta tool class: Strip_Text
+2026-07-24 03:24:32,863 - INFO - Registered meta tool class: Concat_Fields
+2026-07-24 03:24:32,864 - INFO - Registered meta tool class: Join_With_Delimiter
+2026-07-24 03:24:32,865 - INFO - Registered meta tool class: Time_Range_Length
+2026-07-24 03:24:32,865 - INFO - Registered meta tool class: Time_Overlap
+2026-07-24 03:24:32,866 - INFO - Registered meta tool class: Merge_Touching_Ranges
+2026-07-24 03:24:32,867 - INFO - Registered meta tool class: Align_Time_Buckets
+2026-07-24 03:24:32,868 - INFO - Registered meta tool class: Clip_Time_Range
+2026-07-24 03:24:32,868 - INFO - Registered meta tool class: Expand_Time_Range
+2026-07-24 03:24:32,869 - INFO - Registered meta tool class: Shift_Time_Range
+2026-07-24 03:24:32,870 - INFO - Registered meta tool class: Sort_Time_Ranges
+2026-07-24 03:24:32,871 - INFO - Registered meta tool class: Window_Sliding
+2026-07-24 03:24:32,872 - INFO - Registered meta tool class: Neighbor_List_Graph
+2026-07-24 03:24:32,872 - INFO - Registered meta tool class: Degree_Count_Graph
+2026-07-24 03:24:32,873 - INFO - Registered meta tool class: Edge_Filter_Graph
+2026-07-24 03:24:32,874 - INFO - Registered meta tool class: Path_Length_Filter
+2026-07-24 03:24:32,875 - INFO - Registered meta tool class: Score_Threshold_Rank
+2026-07-24 03:24:32,875 - INFO - Registered meta tool class: TopK_By_Score
+2026-07-24 03:24:32,876 - INFO - Registered meta tool class: BottomK_By_Score
+2026-07-24 03:24:32,877 - INFO - Registered meta tool class: Rerank_By_Score
+2026-07-24 03:24:32,878 - INFO - Registered meta tool class: Weighted_Sum_Two_Fields
+2026-07-24 03:24:32,878 - INFO - Registered meta tool class: Weighted_Average_Field
+2026-07-24 03:24:32,879 - INFO - Registered meta tool class: CumSum_Field
+2026-07-24 03:24:32,880 - INFO - Registered meta tool class: Moving_Average
+2026-07-24 03:24:32,881 - INFO - Registered meta tool class: Rolling_Max
+2026-07-24 03:24:32,882 - INFO - Registered meta tool class: Rolling_Min
+2026-07-24 03:24:32,882 - INFO - Registered meta tool class: Rolling_Median
+2026-07-24 03:24:32,883 - INFO - Registered meta tool class: Ratio_Fields
+2026-07-24 03:24:32,884 - INFO - Registered meta tool class: Percentage_Change
+2026-07-24 03:24:32,885 - INFO - Registered meta tool class: Boolean_And
+2026-07-24 03:24:32,885 - INFO - Registered meta tool class: Boolean_Or
+2026-07-24 03:24:32,886 - INFO - Registered meta tool class: Boolean_Not
+2026-07-24 03:24:32,887 - INFO - Registered meta tool class: Count_True
+2026-07-24 03:24:32,888 - INFO - Registered meta tool class: Any_True
+2026-07-24 03:24:32,888 - INFO - Registered meta tool class: All_True
+2026-07-24 03:24:32,889 - INFO - Registered meta tool class: Sample_N
+2026-07-24 03:24:32,890 - INFO - Registered meta tool class: Shuffle_Data
+2026-07-24 03:24:32,891 - INFO - Registered meta tool class: Take_First_N
+2026-07-24 03:24:32,891 - INFO - Registered meta tool class: Take_Last_N
+2026-07-24 03:24:32,892 - INFO - Registered meta tool class: Reverse_List
+2026-07-24 03:24:32,893 - INFO - Registered meta tool class: Extract_Field_List
+2026-07-24 03:24:32,894 - INFO - Registered meta tool class: Build_Index_By_Field
+2026-07-24 03:24:32,895 - INFO - Registered meta tool class: Map_Field_With_Lookup
+2026-07-24 03:24:32,895 - INFO - Registered meta tool class: Filter_Empty
+2026-07-24 03:24:32,896 - INFO - Registered meta tool class: Ensure_Sorted
+2026-07-24 03:24:32,897 - INFO - Registered meta tool class: Simple_Interest
+2026-07-24 03:24:32,898 - INFO - Registered meta tool class: Compound_Growth
+2026-07-24 03:24:32,898 - INFO - Registered meta tool class: Solve_Fixed_Step_Amount
+2026-07-24 03:24:32,899 - INFO - Registered meta tool class: Amortization_Schedule
+2026-07-24 03:24:32,900 - INFO - Registered meta tool class: Sequence_Field_Total
+2026-07-24 03:24:32,901 - INFO - Registered meta tool class: Field_Value_After_Steps
+2026-07-24 03:24:32,902 - INFO - Registered meta tool class: Compare_Record_Sequences
+2026-07-24 03:24:32,902 - INFO - Skipping registration for disabled tool class: Add_Constant_Field
+2026-07-24 03:24:32,902 - INFO - Skipping registration for disabled tool class: Align_Time_Buckets
+2026-07-24 03:24:32,902 - INFO - Skipping registration for disabled tool class: All_True
+2026-07-24 03:24:32,902 - INFO - Skipping registration for disabled tool class: Amortization_Schedule
+2026-07-24 03:24:32,902 - INFO - Skipping registration for disabled tool class: Any_True
+2026-07-24 03:24:32,903 - INFO - Skipping registration for disabled tool class: Argmax_Field
+2026-07-24 03:24:32,903 - INFO - Skipping registration for disabled tool class: Argmin_Field
+2026-07-24 03:24:32,903 - INFO - Skipping registration for disabled tool class: Average_Field
+2026-07-24 03:24:32,903 - INFO - Skipping registration for disabled tool class: Boolean_And
+2026-07-24 03:24:32,903 - INFO - Skipping registration for disabled tool class: Boolean_Not
+2026-07-24 03:24:32,903 - INFO - Skipping registration for disabled tool class: Boolean_Or
+2026-07-24 03:24:32,903 - INFO - Skipping registration for disabled tool class: BottomK_By_Field
+2026-07-24 03:24:32,903 - INFO - Skipping registration for disabled tool class: BottomK_By_Score
+2026-07-24 03:24:32,903 - INFO - Skipping registration for disabled tool class: Build_Index_By_Field
+2026-07-24 03:24:32,904 - INFO - Skipping registration for disabled tool class: Clip_Field
+2026-07-24 03:24:32,904 - INFO - Skipping registration for disabled tool class: Clip_Time_Range
+2026-07-24 03:24:32,904 - INFO - Skipping registration for disabled tool class: Compare_Record_Sequences
+2026-07-24 03:24:32,904 - INFO - Skipping registration for disabled tool class: Compound_Growth
+2026-07-24 03:24:32,904 - INFO - Skipping registration for disabled tool class: Concat_Fields
+2026-07-24 03:24:32,904 - INFO - Skipping registration for disabled tool class: Count_By_Field
+2026-07-24 03:24:32,904 - INFO - Skipping registration for disabled tool class: Count_True
+2026-07-24 03:24:32,904 - INFO - Skipping registration for disabled tool class: CumSum_Field
+2026-07-24 03:24:32,905 - INFO - Skipping registration for disabled tool class: Deduplicate_By_Field
+2026-07-24 03:24:32,905 - INFO - Skipping registration for disabled tool class: Degree_Count_Graph
+2026-07-24 03:24:32,905 - INFO - Skipping registration for disabled tool class: Divide_Field
+2026-07-24 03:24:32,905 - INFO - Skipping registration for disabled tool class: Drop_Fields
+2026-07-24 03:24:32,905 - INFO - Skipping registration for disabled tool class: Edge_Filter_Graph
+2026-07-24 03:24:32,905 - INFO - Skipping registration for disabled tool class: Ensure_Sorted
+2026-07-24 03:24:32,905 - INFO - Skipping registration for disabled tool class: Expand_Time_Range
+2026-07-24 03:24:32,905 - INFO - Skipping registration for disabled tool class: Extract_Field_List
+2026-07-24 03:24:32,906 - INFO - Skipping registration for disabled tool class: Field_Value_After_Steps
+2026-07-24 03:24:32,906 - INFO - Skipping registration for disabled tool class: Fillna_Field
+2026-07-24 03:24:32,906 - INFO - Skipping registration for disabled tool class: Filter_Between
+2026-07-24 03:24:32,906 - INFO - Skipping registration for disabled tool class: Filter_Contains
+2026-07-24 03:24:32,906 - INFO - Skipping registration for disabled tool class: Filter_Empty
+2026-07-24 03:24:32,906 - INFO - Skipping registration for disabled tool class: Filter_Equals
+2026-07-24 03:24:32,906 - INFO - Skipping registration for disabled tool class: Filter_GreaterThan
+2026-07-24 03:24:32,906 - INFO - Skipping registration for disabled tool class: Filter_In
+2026-07-24 03:24:32,906 - INFO - Skipping registration for disabled tool class: Filter_LessThan
+2026-07-24 03:24:32,907 - INFO - Skipping registration for disabled tool class: Filter_NotContains
+2026-07-24 03:24:32,907 - INFO - Skipping registration for disabled tool class: Filter_NotEquals
+2026-07-24 03:24:32,907 - INFO - Skipping registration for disabled tool class: Filter_NotIn
+2026-07-24 03:24:32,907 - INFO - Skipping registration for disabled tool class: Flatten_List_Field
+2026-07-24 03:24:32,907 - INFO - Skipping registration for disabled tool class: Group_By_Field_Avg
+2026-07-24 03:24:32,907 - INFO - Skipping registration for disabled tool class: Group_By_Field_Max
+2026-07-24 03:24:32,907 - INFO - Skipping registration for disabled tool class: Group_By_Field_Min
+2026-07-24 03:24:32,907 - INFO - Skipping registration for disabled tool class: Group_By_Field_Sum
+2026-07-24 03:24:32,908 - INFO - Skipping registration for disabled tool class: Join_With_Delimiter
+2026-07-24 03:24:32,908 - INFO - Skipping registration for disabled tool class: Keyword_Filter
+2026-07-24 03:24:32,908 - INFO - Skipping registration for disabled tool class: Map_Field_With_Lookup
+2026-07-24 03:24:32,908 - INFO - Skipping registration for disabled tool class: Median_Field
+2026-07-24 03:24:32,908 - INFO - Skipping registration for disabled tool class: Merge_By_Key
+2026-07-24 03:24:32,908 - INFO - Skipping registration for disabled tool class: Merge_Touching_Ranges
+2026-07-24 03:24:32,908 - INFO - Skipping registration for disabled tool class: Moving_Average
+2026-07-24 03:24:32,908 - INFO - Skipping registration for disabled tool class: Multiply_Field
+2026-07-24 03:24:32,908 - INFO - Skipping registration for disabled tool class: Neighbor_List_Graph
+2026-07-24 03:24:32,909 - INFO - Skipping registration for disabled tool class: Normalize_MinMax
+2026-07-24 03:24:32,909 - INFO - Skipping registration for disabled tool class: Normalize_ZScore
+2026-07-24 03:24:32,909 - INFO - Skipping registration for disabled tool class: Path_Length_Filter
+2026-07-24 03:24:32,909 - INFO - Skipping registration for disabled tool class: Percentage_Change
+2026-07-24 03:24:32,909 - INFO - Skipping registration for disabled tool class: Percentile_10
+2026-07-24 03:24:32,909 - INFO - Skipping registration for disabled tool class: Percentile_25
+2026-07-24 03:24:32,909 - INFO - Skipping registration for disabled tool class: Percentile_50
+2026-07-24 03:24:32,909 - INFO - Skipping registration for disabled tool class: Percentile_75
+2026-07-24 03:24:32,909 - INFO - Skipping registration for disabled tool class: Percentile_90
+2026-07-24 03:24:32,910 - INFO - Skipping registration for disabled tool class: Percentile_95
+2026-07-24 03:24:32,910 - INFO - Skipping registration for disabled tool class: Percentile_99
+2026-07-24 03:24:32,910 - INFO - Skipping registration for disabled tool class: Ratio_Fields
+2026-07-24 03:24:32,910 - INFO - Skipping registration for disabled tool class: Regex_Extract
+2026-07-24 03:24:32,910 - INFO - Skipping registration for disabled tool class: Regex_Filter
+2026-07-24 03:24:32,910 - INFO - Skipping registration for disabled tool class: Rename_Field
+2026-07-24 03:24:32,910 - INFO - Skipping registration for disabled tool class: Rerank_By_Score
+2026-07-24 03:24:32,910 - INFO - Skipping registration for disabled tool class: Reverse_List
+2026-07-24 03:24:32,911 - INFO - Skipping registration for disabled tool class: Rolling_Max
+2026-07-24 03:24:32,911 - INFO - Skipping registration for disabled tool class: Rolling_Median
+2026-07-24 03:24:32,911 - INFO - Skipping registration for disabled tool class: Rolling_Min
+2026-07-24 03:24:32,911 - INFO - Skipping registration for disabled tool class: Sample_N
+2026-07-24 03:24:32,911 - INFO - Skipping registration for disabled tool class: Score_Threshold_Rank
+2026-07-24 03:24:32,911 - INFO - Skipping registration for disabled tool class: Select_Fields
+2026-07-24 03:24:32,911 - INFO - Skipping registration for disabled tool class: Sequence_Field_Total
+2026-07-24 03:24:32,911 - INFO - Skipping registration for disabled tool class: Shift_Time_Range
+2026-07-24 03:24:32,912 - INFO - Skipping registration for disabled tool class: Shuffle_Data
+2026-07-24 03:24:32,912 - INFO - Skipping registration for disabled tool class: Simple_Interest
+2026-07-24 03:24:32,912 - INFO - Skipping registration for disabled tool class: Softmax_Scores
+2026-07-24 03:24:32,912 - INFO - Skipping registration for disabled tool class: Solve_Fixed_Step_Amount
+2026-07-24 03:24:32,912 - INFO - Skipping registration for disabled tool class: Sort_By_Field_Asc
+2026-07-24 03:24:32,912 - INFO - Skipping registration for disabled tool class: Sort_By_Field_Desc
+2026-07-24 03:24:32,912 - INFO - Skipping registration for disabled tool class: Sort_Time_Ranges
+2026-07-24 03:24:32,912 - INFO - Skipping registration for disabled tool class: Stddev_Field
+2026-07-24 03:24:32,912 - INFO - Skipping registration for disabled tool class: Strip_Text
+2026-07-24 03:24:32,913 - INFO - Skipping registration for disabled tool class: Sum_Field
+2026-07-24 03:24:32,913 - INFO - Skipping registration for disabled tool class: Take_First_N
+2026-07-24 03:24:32,913 - INFO - Skipping registration for disabled tool class: Take_Last_N
+2026-07-24 03:24:32,913 - INFO - Skipping registration for disabled tool class: Threshold_Filter
+2026-07-24 03:24:32,913 - INFO - Skipping registration for disabled tool class: Time_Overlap
+2026-07-24 03:24:32,913 - INFO - Skipping registration for disabled tool class: Time_Range_Length
+2026-07-24 03:24:32,913 - INFO - Skipping registration for disabled tool class: To_Lower
+2026-07-24 03:24:32,913 - INFO - Skipping registration for disabled tool class: To_Upper
+2026-07-24 03:24:32,914 - INFO - Skipping registration for disabled tool class: TopK_By_Field
+2026-07-24 03:24:32,914 - INFO - Skipping registration for disabled tool class: TopK_By_Score
+2026-07-24 03:24:32,914 - INFO - Skipping registration for disabled tool class: Truncate_Text
+2026-07-24 03:24:32,914 - INFO - Skipping registration for disabled tool class: Unique_Values
+2026-07-24 03:24:32,914 - INFO - Skipping registration for disabled tool class: Value_Frequencies
+2026-07-24 03:24:32,914 - INFO - Skipping registration for disabled tool class: Variance_Field
+2026-07-24 03:24:32,914 - INFO - Skipping registration for disabled tool class: Weighted_Average_Field
+2026-07-24 03:24:32,914 - INFO - Skipping registration for disabled tool class: Weighted_Sum_Two_Fields
+2026-07-24 03:24:32,914 - INFO - Skipping registration for disabled tool class: Window_Sliding
+2026-07-24 03:24:32,915 - INFO - Skipping registration for disabled tool class: Compare_Record_Sequences
+2026-07-24 03:24:32,938 - INFO - Skipping registration for disabled tool class: Count_Items
+2026-07-24 03:24:32,939 - INFO - Skipping registration for disabled tool class: Debt_Interest_Analyzer
+2026-07-24 03:24:32,939 - INFO - Skipping registration for disabled tool class: Max_Item
+2026-07-24 03:24:32,939 - INFO - Skipping registration for disabled tool class: Merge_Temporal_Segments
+2026-07-24 03:24:32,939 - INFO - Skipping registration for disabled tool class: Min_Item
+2026-07-24 03:24:32,939 - INFO - Skipping registration for disabled tool class: Sort_Items
+2026-07-24 03:24:32,959 - INFO - Skipping registration for disabled tool class: Graph_Search
+2026-07-24 03:24:32,959 - INFO - Skipping registration for disabled tool class: Web_Search
+2026-07-24 03:24:33,000 - INFO - Skipping registration for disabled tool class: Entity_Track
+2026-07-24 03:24:33,001 - INFO - Registered tools summary: base=24, meta=0, total=24
+2026-07-24 03:24:33,002 - INFO - Initializing device: cuda
+2026-07-24 03:24:33,003 - INFO - Initializing device: cuda
+2026-07-24 03:24:33,003 - INFO - Initializing device: cuda
+2026-07-24 03:24:37,089 - INFO - Detected multimodal config (model_type=qwen3_5, architectures=['Qwen3_5ForConditionalGeneration']), using Qwen3_5ForConditionalGeneration
+2026-07-24 03:35:10,644 - INFO - Model loaded on: cuda:0 (requested_dtype=torch.bfloat16 actual_param_dtype=torch.bfloat16)
+2026-07-24 03:35:10,646 - INFO - LLM accelerator snapshot: cuda:0 name=P1.gpu.medium allocated=17.54GB reserved=17.55GB
+2026-07-24 03:35:10,647 - INFO - Provider cache miss -> loaded role=planner model=/gemini/pretrain/model/Qwen/Qwen3.5-9B device=None device_map=None runtime_device=cuda:0
+2026-07-24 03:35:10,648 - INFO - Planner multimodal input enabled: True (graph_enable=False, web_search_enabled=False)
+2026-07-24 03:35:10,648 - INFO - RecursiveEngine received extra kwargs (stored): ['session_query', 'planner_single_action_per_step']
+2026-07-24 03:35:10,650 - INFO - RecursiveEngine initialized with planner_llm role=planner thinking=False shared_source_role=None subagent_llm_role=None subagent_thinking=None
+2026-07-24 03:35:10,650 - INFO - Planner grounding context injected (2180 chars, 6 image item(s))
+2026-07-24 03:35:10,650 - INFO - [PLANNER_CONTEXT_BEGIN]
+[Initial Planner Grounding] query: MLVU Task Type: ego Question: What did I put in the orange trashcan Options: (A) a lemon green sponge (B) a blue pen (C) a red apple (D) a yellow banana Reply with exactly one best option in the format "(A) option text". entire_video_time: [0.0, 408.630] [Grounding Source] Query-retrieved top-k caption evidence. Using top 3 segment(s) from caption-based fused retrieval. frame_sampling_rule: approximately 5.0s per frame. For both initial grounding collages and later tool-returned collages, sub-frames are arranged in chronological order clockwise from the top-left. The accompanying timestamps correspond to those sub-frames in that same order. Start first-step reasoning from these caption+image grounding blocks and use their time windows for follow-up probing.
+[Grounding Segment #1] time: 242.80-274.60 caption: Scene: A kitchen. People: A person in a pink shirt is bent over, possibly at the sink or counter on the left. Objects: Wooden cabinets, a window with green plants outside, a white countertop with various items (kettle, bottles, red bowl), a white dishwasher, a rug on the floor. Action: The person is moving or working at the counter. | attached_frame_timestamps: [242.8, 249.16, 255.52, 261.88, 268.24] transcript: [242.80s -> 243.42s] you [272.80s -> 273.42s] you
+[image]
+[image]
+[Grounding Segment #2] time: 150.00-181.20 caption: Perspective: First-person view, likely a camera mounted on a person or dog. Setting: A suburban street corner. Objects: A stop sign (back visible), a street light, a sidewalk, a road with "ONLY" painted on it (partially visible), a manhole cover in a gravel patch. Action: The camera is moving along the sidewalk. | attached_frame_timestamps: [150.0, 156.24, 162.48, 168.72, 174.96] transcript: [150.00s -> 150.62s] you [180.00s -> 180.62s] you
+[image]
+[image]
+[Grounding Segment #3] time: 0.00-30.00 caption: Scene Analysis: Setting: A residential street in a suburban area. There are villas or townhouses on both sides. Palm trees are visible. The sky is bright, suggesting daytime. | attached_frame_timestamps: [0.0, 6.0, 12.0, 18.0, 24.0] transcript: [0.00s -> 0.62s] you
+[image]
+[image]
+[PLANNER_CONTEXT_END]
+2026-07-24 03:35:10,650 - INFO - [Planner][Depth 0] Solving goal: MLVU Task Type: ego
+
+Question: What did I put in the orange trashcan 
+Options:
+(A) a lemon green sponge
+(B) a blue pen
+(C) a red apple
+(D) a yellow banana
+
+Reply with exactly one best option in the format "(A) option text".
+2026-07-24 03:35:10,650 - INFO - Pushed frame at depth 0: MLVU Task Type: ego
+
+Question: What did I put in the orange trashcan 
+Options:
+(A) a lemon green sponge
+(B) a blue pen
+(C) a red apple
+(D) a yellow banana
+
+Reply with exactly one best option in the format "(A) option text".
+2026-07-24 03:35:10,650 - INFO - [GenerationConfig][DIAG] role=planner max_tokens=2048 enable_thinking=False temperature=0.0 top_p=0.95 top_k=20
+2026-07-24 03:35:10,673 - INFO - [Planner][Depth 0] Context window: max=262144, sp_tokens=5364, output_headroom=0, dynamic_budget=256780 tokens
+2026-07-24 03:35:10,942 - INFO - [Planner][Depth 0] Initial prompt token estimate: 8896/262144
+2026-07-24 03:35:10,943 - INFO - [Planner][Depth 0] Iteration 1/15
+2026-07-24 03:35:11,103 - INFO - [Planner][Depth 0][Iter 1][Generation:main][DIAG] llm_type=TransformersProvider llm_role=planner llm_enable_thinking=False inline_selected=False supports_flag=False has_response_generator=False message_count=6 generation_keys=['enable_prefix_caching', 'enable_rollout_prefix_cache', 'enable_thinking', 'max_tokens', 'min_p', 'repetition_penalty', 'temperature', 'top_k', 'top_p'] generation_deadline_remaining=unbounded wall_clock_remaining=unbounded
+2026-07-24 03:35:11,103 - INFO - [Planner][Depth 0][Iter 1][Generation:main][DIAG] using helper-thread generation path for llm_type=TransformersProvider because inline heartbeat is unavailable.
+2026-07-24 03:35:11,407 - INFO - Starting generation: role=planner prompt_mode=multimodal input_tokens=8973 max_new_tokens=2048 do_sample=False use_cache=True thinking=False
+2026-07-24 03:35:20,501 - INFO - Generation finished: prompt_mode=multimodal duration=9.094s
+2026-07-24 03:35:20,512 - INFO - Generation tokens: generated=142, limit=2048
+2026-07-24 03:35:20,834 - INFO - [Planner][LLM_RESPONSE_SANITIZED][Depth 0][Iter 1] preserved <think> blocks in logs while extracting effective JSON for execution (635 raw -> 635 log -> 627 effective chars). Full raw response is preserved in raw trace JSONL.
+2026-07-24 03:35:20,834 - INFO - [Planner][LLM_FULL_RESPONSE_BEGIN][Depth 0][Iter 1]
+```json
+{
+    "Thought": "Initial caption retrieval shows outdoor scenes and a kitchen but lacks specific mention of the orange trashcan or the disposal action. I need to perform a targeted semantic search to locate the specific event involving the orange trashcan.",
+    "Plan": "Perform a Semantic_Retrieve search specifically for 'orange trashcan' to find the relevant video segment containing the disposal action.",
+    "Actions": [
+        {
+            "tool": "Semantic_Retrieve",
+            "params": {
+                "query": "putting something in orange trashcan",
+                "top_k": 3
+            }
+        }
+    ]
+}
+[Planner][LLM_FULL_RESPONSE_END][Depth 0][Iter 1]
+2026-07-24 03:35:20,835 - INFO - [Planner][LLM_DEBUG][Depth 0][Iter 1] Effective response captured (627 chars, raw=635 chars).
+2026-07-24 03:35:20,836 - INFO - [Planner Runtime Fallback] Replaced GPU semantic retrieval with Inspect_Frame.
+2026-07-24 03:35:20,836 - INFO - [Planner][Depth 0] Executing tool: Inspect_Frame(t_start=0.0, t_end=90.0, density=4.0, query="Visual fallback for semantic request: putting something in orange trashcan")
+2026-07-24 03:35:20,836 - INFO - [Planner][Depth 0] Executing 1 tools concurrently within one Parallel step.
+2026-07-24 03:35:40,269 - INFO - Inspect_Frame probes=0.0-90.0
+2026-07-24 03:35:40,273 - INFO - [Planner][Depth 0] Tool Inspect_Frame completed with status=success
+2026-07-24 03:35:40,273 - INFO - [Planner][Depth 0] Tool Inspect_Frame result preview: { "result": "image_timestamps=[1.957, 5.87, 9.783, 13.696, 17.609, 21.522, 25.435, 29.348, 33.261, 37.174, 41.087, 45.0, 48.913, 52.826, 56.739, 60.652, 64.565, 68.478, 72.391, 76.304, 80.217, 84.13, 88.043]", "image_evidence": [ { "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shar...
+2026-07-24 03:35:40,300 - INFO - [Planner][Depth 0] Iteration 2/15
+2026-07-24 03:35:40,528 - INFO - [Planner][Depth 0][Iter 2][Generation:main][DIAG] llm_type=TransformersProvider llm_role=planner llm_enable_thinking=False inline_selected=False supports_flag=False has_response_generator=False message_count=8 generation_keys=['enable_prefix_caching', 'enable_rollout_prefix_cache', 'enable_thinking', 'max_tokens', 'min_p', 'repetition_penalty', 'temperature', 'top_k', 'top_p'] generation_deadline_remaining=unbounded wall_clock_remaining=unbounded
+2026-07-24 03:35:40,529 - INFO - [Planner][Depth 0][Iter 2][Generation:main][DIAG] using helper-thread generation path for llm_type=TransformersProvider because inline heartbeat is unavailable.
+2026-07-24 03:35:40,703 - INFO - Starting generation: role=planner prompt_mode=multimodal input_tokens=10825 max_new_tokens=2048 do_sample=False use_cache=True thinking=False
+2026-07-24 03:35:47,917 - INFO - Generation finished: prompt_mode=multimodal duration=7.213s
+2026-07-24 03:35:47,928 - INFO - Generation tokens: generated=156, limit=2048
+2026-07-24 03:35:48,251 - INFO - [Planner][LLM_FULL_RESPONSE_BEGIN][Depth 0][Iter 2]
+{"Thought": "The semantic retrieval returned frames showing a walk with a dog and some bins on the street, but none of the visible bins are orange, nor is there any action of putting something into a bin. The initial caption retrieval also showed a kitchen scene without an orange trashcan. I need to broaden my search to the entire video to find the specific event involving an orange trashcan.", "Plan": "Perform a broader Semantic_Retrieve search for 'trashcan' or 'bin' across the entire video duration to locate the relevant segment.", "Actions": [{"tool": "Semantic_Retrieve", "params": {"query": "person puts something in trashcan", "time_range": "0-408", "top_k": 3}}]}
+[Planner][LLM_FULL_RESPONSE_END][Depth 0][Iter 2]
+2026-07-24 03:35:48,252 - INFO - [Planner][LLM_DEBUG][Depth 0][Iter 2] Effective response captured (677 chars, raw=677 chars).
+2026-07-24 03:35:48,252 - INFO - [Planner Runtime Fallback] Replaced GPU semantic retrieval with Inspect_Frame.
+2026-07-24 03:35:48,252 - INFO - [Planner][Depth 0] Executing tool: Inspect_Frame(t_start=0.0, t_end=90.0, density=4.0, query="Visual fallback for semantic request: person puts something in trashcan")
+2026-07-24 03:35:48,253 - INFO - [Planner][Depth 0] Tool Inspect_Frame completed with status=error
+2026-07-24 03:35:48,253 - INFO - [Planner][Depth 0] Tool Inspect_Frame result preview: { "status": "error", "result": "Error: this exact tool call was already executed earlier in this run: Inspect_Frame(t_start=0.0, t_end=90.0, density=4.0, query=\"Visual fallback for semantic request: putting something in orange trashcan\"). You cannot execute the same tool with the same parameters twice. Choose a di...
+2026-07-24 03:35:48,254 - INFO - [Planner][Depth 0] Iteration 3/15
+2026-07-24 03:35:48,419 - INFO - [Planner][Depth 0][Iter 3][Generation:main][DIAG] llm_type=TransformersProvider llm_role=planner llm_enable_thinking=False inline_selected=False supports_flag=False has_response_generator=False message_count=10 generation_keys=['enable_prefix_caching', 'enable_rollout_prefix_cache', 'enable_thinking', 'max_tokens', 'min_p', 'repetition_penalty', 'temperature', 'top_k', 'top_p'] generation_deadline_remaining=unbounded wall_clock_remaining=unbounded
+2026-07-24 03:35:48,420 - INFO - [Planner][Depth 0][Iter 3][Generation:main][DIAG] using helper-thread generation path for llm_type=TransformersProvider because inline heartbeat is unavailable.
+2026-07-24 03:35:48,627 - INFO - Starting generation: role=planner prompt_mode=multimodal input_tokens=11332 max_new_tokens=2048 do_sample=False use_cache=True thinking=False
+2026-07-24 03:35:55,489 - INFO - Generation finished: prompt_mode=multimodal duration=6.862s
+2026-07-24 03:35:55,500 - INFO - Generation tokens: generated=142, limit=2048
+2026-07-24 03:35:55,806 - INFO - [Planner][LLM_FULL_RESPONSE_BEGIN][Depth 0][Iter 3]
+{"Thought":"The previous semantic retrieval for 'putting something in trashcan' returned outdoor walking scenes with bins, but no orange trashcan or disposal action. Since the tool was blocked due to duplicate execution, I need to try a different retrieval approach or directly inspect frames in a new time window to find the orange trashcan event.","Plan":"Use Keyword_Retrieve to search for 'orange trashcan' as a specific term, which might yield more precise results than the semantic search.","Actions":[{"tool":"Keyword_Retrieve","params":{"term":"orange trashcan","case_sensitive":false,"__raw_params_declared__":true,"__raw_param_keys__":["term","case_sensitive"]}}]}
+[Planner][LLM_FULL_RESPONSE_END][Depth 0][Iter 3]
+2026-07-24 03:35:55,806 - INFO - [Planner][LLM_DEBUG][Depth 0][Iter 3] Effective response captured (674 chars, raw=674 chars).
+2026-07-24 03:35:55,807 - INFO - [Planner][Depth 0] Executing tool: Keyword_Retrieve(term="orange trashcan", case_sensitive=false)
+2026-07-24 03:35:55,807 - INFO - [Planner][Depth 0] Executing 1 tools concurrently within one Parallel step.
+2026-07-24 03:35:55,810 - INFO - Keyword_Retrieve for term 'orange trashcan': found 0 matches
+2026-07-24 03:35:55,810 - INFO - [Planner][Depth 0] Recorded no_valid_result: Keyword_Retrieve reason={ "term": "orange trashcan", "case_sensitive": false, "resolved_video_scope": [ "/gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/3_ego/ego_35.mp4", "ego_35", "ego_35.mp4" ], "match_count": ...
+2026-07-24 03:35:55,810 - INFO - [Planner][Depth 0] Tool Keyword_Retrieve completed with status=no_valid_result
+2026-07-24 03:35:55,810 - INFO - [Planner][Depth 0] Tool Keyword_Retrieve result preview: { "term": "orange trashcan", "case_sensitive": false, "resolved_video_scope": [ "/gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/3_ego/ego_35.mp4", "ego_35", "ego_35.mp4" ], "match_count": 0, "matched_segments": [], "status": "no_valid_result", "result": "Keyword_Retrieve did not provide ...
+2026-07-24 03:35:55,811 - INFO - [Planner][Depth 0] Iteration 4/15
+2026-07-24 03:35:56,027 - INFO - [Planner][Depth 0][Iter 4][Generation:main][DIAG] llm_type=TransformersProvider llm_role=planner llm_enable_thinking=False inline_selected=False supports_flag=False has_response_generator=False message_count=12 generation_keys=['enable_prefix_caching', 'enable_rollout_prefix_cache', 'enable_thinking', 'max_tokens', 'min_p', 'repetition_penalty', 'temperature', 'top_k', 'top_p'] generation_deadline_remaining=unbounded wall_clock_remaining=unbounded
+2026-07-24 03:35:56,028 - INFO - [Planner][Depth 0][Iter 4][Generation:main][DIAG] using helper-thread generation path for llm_type=TransformersProvider because inline heartbeat is unavailable.
+2026-07-24 03:35:56,245 - INFO - Starting generation: role=planner prompt_mode=multimodal input_tokens=11837 max_new_tokens=2048 do_sample=False use_cache=True thinking=False
+2026-07-24 03:36:06,380 - INFO - Generation finished: prompt_mode=multimodal duration=10.135s
+2026-07-24 03:36:06,391 - INFO - Generation tokens: generated=211, limit=2048
+2026-07-24 03:36:06,759 - INFO - [Planner][LLM_FULL_RESPONSE_BEGIN][Depth 0][Iter 4]
+{"Thought": "Both semantic and keyword retrievals have failed to find the orange trashcan event. The initial caption retrieval showed a kitchen scene and outdoor walking scenes, neither mentioning an orange trashcan. I need to directly inspect frames in a specific time window to find the disposal action. Based on the video length (408.63s), I'll probe a mid-section window where such an action might occur.", "Plan": "Directly inspect frames in a mid-video time window (e.g., 200-250s) to visually locate the orange trashcan and the disposal action.", "Actions": [{"tool": "Inspect_Frame", "params": {"t_start": 200.0, "t_end": 250.0, "density": 5.0, "query": "person puts something in orange trashcan", "__raw_params_declared__": true, "__raw_param_keys__": ["t_start", "t_end", "density", "query"]}}]}
+[Planner][LLM_FULL_RESPONSE_END][Depth 0][Iter 4]
+2026-07-24 03:36:06,759 - INFO - [Planner][LLM_DEBUG][Depth 0][Iter 4] Effective response captured (805 chars, raw=805 chars).
+2026-07-24 03:36:06,760 - INFO - [Planner][Depth 0] Executing tool: Inspect_Frame(t_start=200.0, t_end=250.0, density=5.0, query="person puts something in orange trashcan")
+2026-07-24 03:36:06,760 - INFO - [Planner][Depth 0] Executing 1 tools concurrently within one Parallel step.
+2026-07-24 03:36:11,854 - INFO - Inspect_Frame probes=200.0-250.0
+2026-07-24 03:36:11,855 - INFO - [Planner][Depth 0] Tool Inspect_Frame completed with status=success
+2026-07-24 03:36:11,855 - INFO - [Planner][Depth 0] Tool Inspect_Frame result preview: { "result": "image_timestamps=[202.5, 207.5, 212.5, 217.5, 222.5, 227.5, 232.5, 237.5, 242.5, 247.5]", "image_evidence": [ { "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache/planner_evidence/ego_35/inspect_8c5cda8fd997/pack_000.jpg", "sample_times": [ 202.5, 207.5, 212.5,...
+2026-07-24 03:36:11,869 - INFO - [Planner][Depth 0] Iteration 5/15
+2026-07-24 03:36:12,034 - INFO - [Planner][Depth 0][Iter 5][Generation:main][DIAG] llm_type=TransformersProvider llm_role=planner llm_enable_thinking=False inline_selected=False supports_flag=False has_response_generator=False message_count=14 generation_keys=['enable_prefix_caching', 'enable_rollout_prefix_cache', 'enable_thinking', 'max_tokens', 'min_p', 'repetition_penalty', 'temperature', 'top_k', 'top_p'] generation_deadline_remaining=unbounded wall_clock_remaining=unbounded
+2026-07-24 03:36:12,034 - INFO - [Planner][Depth 0][Iter 5][Generation:main][DIAG] using helper-thread generation path for llm_type=TransformersProvider because inline heartbeat is unavailable.
+2026-07-24 03:36:12,211 - INFO - Starting generation: role=planner prompt_mode=multimodal input_tokens=12933 max_new_tokens=2048 do_sample=False use_cache=True thinking=False
+2026-07-24 03:36:20,825 - INFO - Generation finished: prompt_mode=multimodal duration=8.614s
+2026-07-24 03:36:20,836 - INFO - Generation tokens: generated=172, limit=2048
+2026-07-24 03:36:21,484 - INFO - [Planner][LLM_FULL_RESPONSE_BEGIN][Depth 0][Iter 5]
+{"Thought": "The inspected frames from 200-250s show indoor scenes (hallways, living rooms, kitchens) but no orange trashcan or disposal action. I need to probe another time window to find the event.", "Plan": "Inspect frames in a different time window (e.g., 300-350s) to continue searching for the orange trashcan disposal action.", "Actions": [{"tool": "Inspect_Frame", "params": {"t_start": 300.0, "t_end": 350.0, "density": 5.0, "query": "person puts something in orange trashcan", "__raw_params_declared__": true, "__raw_param_keys__": ["t_start", "t_end", "density", "query"]}}]}
+[Planner][LLM_FULL_RESPONSE_END][Depth 0][Iter 5]
+2026-07-24 03:36:21,484 - INFO - [Planner][LLM_DEBUG][Depth 0][Iter 5] Effective response captured (586 chars, raw=586 chars).
+2026-07-24 03:36:21,485 - INFO - [Planner][Depth 0] Executing tool: Inspect_Frame(t_start=300.0, t_end=350.0, density=5.0, query="person puts something in orange trashcan")
+2026-07-24 03:36:21,485 - INFO - [Planner][Depth 0] Executing 1 tools concurrently within one Parallel step.
+2026-07-24 03:36:27,734 - INFO - Inspect_Frame probes=300.0-350.0
+2026-07-24 03:36:27,736 - INFO - [Planner][Depth 0] Tool Inspect_Frame completed with status=success
+2026-07-24 03:36:27,736 - INFO - [Planner][Depth 0] Tool Inspect_Frame result preview: { "result": "image_timestamps=[302.5, 307.5, 312.5, 317.5, 322.5, 327.5, 332.5, 337.5, 342.5, 347.5]", "image_evidence": [ { "image": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache/planner_evidence/ego_35/inspect_6de48aca0905/pack_000.jpg", "sample_times": [ 302.5, 307.5, 312.5,...
+2026-07-24 03:36:27,749 - INFO - [Planner][Depth 0] Iteration 6/15
+2026-07-24 03:36:27,939 - INFO - [Planner][Depth 0][Iter 6][Generation:main][DIAG] llm_type=TransformersProvider llm_role=planner llm_enable_thinking=False inline_selected=False supports_flag=False has_response_generator=False message_count=16 generation_keys=['enable_prefix_caching', 'enable_rollout_prefix_cache', 'enable_thinking', 'max_tokens', 'min_p', 'repetition_penalty', 'temperature', 'top_k', 'top_p'] generation_deadline_remaining=unbounded wall_clock_remaining=unbounded
+2026-07-24 03:36:27,940 - INFO - [Planner][Depth 0][Iter 6][Generation:main][DIAG] using helper-thread generation path for llm_type=TransformersProvider because inline heartbeat is unavailable.
+2026-07-24 03:36:28,139 - INFO - Starting generation: role=planner prompt_mode=multimodal input_tokens=14018 max_new_tokens=2048 do_sample=False use_cache=True thinking=False
+2026-07-24 03:36:36,177 - INFO - Generation finished: prompt_mode=multimodal duration=8.037s
+2026-07-24 03:36:36,187 - INFO - Generation tokens: generated=159, limit=2048
+2026-07-24 03:36:36,510 - INFO - [Planner][LLM_FULL_RESPONSE_BEGIN][Depth 0][Iter 6]
+{"Thought": "Three Inspect_Frame calls have already been made without finding the orange trashcan event. I need to switch to a different tool. Since semantic and keyword retrievals failed, I'll try a broader semantic search with a different phrasing to see if it yields better results.", "Plan": "Perform a Semantic_Retrieve search with a different query focusing on 'trash' or 'waste' to potentially find the relevant segment.", "Actions": [{"tool": "Semantic_Retrieve", "params": {"query": "throwing away waste", "time_range": "0-408", "top_k": 3, "__raw_params_declared__": true, "__raw_param_keys": ["query", "time_range", "top_k"]}}]}
+[Planner][LLM_FULL_RESPONSE_END][Depth 0][Iter 6]
+2026-07-24 03:36:36,511 - INFO - [Planner][LLM_DEBUG][Depth 0][Iter 6] Effective response captured (639 chars, raw=639 chars).
+2026-07-24 03:36:36,511 - INFO - [Planner Runtime Fallback] Replaced GPU semantic retrieval with Inspect_Frame.
+2026-07-24 03:36:36,511 - INFO - [Planner][Depth 0] Executing tool: Inspect_Frame(t_start=0.0, t_end=90.0, density=4.0, query="Visual fallback for semantic request: throwing away waste")
+2026-07-24 03:36:36,512 - INFO - [Planner][Depth 0] Tool Inspect_Frame completed with status=error
+2026-07-24 03:36:36,512 - INFO - [Planner][Depth 0] Tool Inspect_Frame result preview: { "status": "error", "result": "Error: this exact tool call was already executed earlier in this run: Inspect_Frame(t_start=0.0, t_end=90.0, density=4.0, query=\"Visual fallback for semantic request: putting something in orange trashcan\"). You cannot execute the same tool with the same parameters twice. Choose a di...
+2026-07-24 03:36:36,512 - INFO - [Planner][Depth 0] Iteration 7/15
+2026-07-24 03:36:36,731 - INFO - [Planner][Depth 0][Iter 7][Generation:main][DIAG] llm_type=TransformersProvider llm_role=planner llm_enable_thinking=False inline_selected=False supports_flag=False has_response_generator=False message_count=18 generation_keys=['enable_prefix_caching', 'enable_rollout_prefix_cache', 'enable_thinking', 'max_tokens', 'min_p', 'repetition_penalty', 'temperature', 'top_k', 'top_p'] generation_deadline_remaining=unbounded wall_clock_remaining=unbounded
+2026-07-24 03:36:36,732 - INFO - [Planner][Depth 0][Iter 7][Generation:main][DIAG] using helper-thread generation path for llm_type=TransformersProvider because inline heartbeat is unavailable.
+2026-07-24 03:36:36,947 - INFO - Starting generation: role=planner prompt_mode=multimodal input_tokens=14493 max_new_tokens=2048 do_sample=False use_cache=True thinking=False
+2026-07-24 03:36:46,317 - INFO - Generation finished: prompt_mode=multimodal duration=9.369s
+2026-07-24 03:36:46,328 - INFO - Generation tokens: generated=191, limit=2048
+2026-07-24 03:36:46,673 - INFO - [Planner][LLM_FULL_RESPONSE_BEGIN][Depth 0][Iter 7]
+{"Thought": "I've exhausted Inspect_Frame calls (3 used) and both retrieval methods (semantic and keyword) have failed. I need to try a completely different approach. Let me use Video_Clip_QA to analyze a specific time window holistically, which might capture the disposal action even if individual frame inspections missed it.", "Plan": "Use Video_Clip_QA to analyze a mid-video segment (e.g., 250-300s) asking specifically about the orange trashcan disposal action.", "Actions": [{"tool": "Video_Clip_QA", "params": {"start_time": 250.0, "end_time": 300.0, "query": "What happens with the orange trashcan? Does anyone put anything in it?", "__raw_params_declared__": true, "__raw_param_keys": ["start_time", "end_time", "query"]}}]}
+[Planner][LLM_FULL_RESPONSE_END][Depth 0][Iter 7]
+2026-07-24 03:36:46,674 - INFO - [Planner][LLM_DEBUG][Depth 0][Iter 7] Effective response captured (734 chars, raw=734 chars).
+2026-07-24 03:36:46,675 - INFO - [Planner][Depth 0] Executing tool: Video_Clip_QA(query="What happens with the orange trashcan? Does anyone put anything in it?", start_time=250.0, end_time=300.0)
+2026-07-24 03:36:46,675 - INFO - [Planner][Depth 0] Executing 1 tools concurrently within one Parallel step.
+2026-07-24 03:37:06,102 - INFO - Initializing device: cuda
+2026-07-24 03:37:06,103 - INFO - Video_Clip_QA direct clip attempt=default_request model_sampling_fps=2.0 model_max_frames=80 model_min_pixels=source model_max_pixels=source do_sample_frames=True max_new_tokens=256 clip=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/_shared_cache/planner_evidence/ego_35/video_clip_qa_58611821d49d/ego_35_video_clip_qa.mp4
+2026-07-24 03:37:06,103 - INFO - Initializing device: cuda
+Terminated

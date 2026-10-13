@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00120:3a4f4d5c-c8fa-4bb1-8e80-7c22cab54116",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is trying to decide what clothes to wear.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00120-3a4f4d5c-c8fa-4bb1-8e80-7c22cab54116",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00120-3a4f4d5c-c8fa-4bb1-8e80-7c22cab54116/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00120-3a4f4d5c-c8fa-4bb1-8e80-7c22cab54116/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00120-3a4f4d5c-c8fa-4bb1-8e80-7c22cab54116/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/3a4f4d5c-c8fa-4bb1-8e80-7c22cab54116.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/3a4f4d5c-c8fa-4bb1-8e80-7c22cab54116.mp4",
+  "question_block": "Question: Keeping in mind the ability to compress information, what would be a concise explanation for the main objective and key decisions behind c's actions during the video?\nOptions:\n(A) C is diligently attempting to clean and wash the clothes thoroughly.\n(B) Currently, c is attempting to carefully fold and organize the clothes.\n(C) C is trying to decide what clothes to wear.\n(D) C is trying to iron the clothes.\n(E) Currently, c is attempting to carefully pack the clothes into luggage.",
+  "options": [
+    "C is diligently attempting to clean and wash the clothes thoroughly.",
+    "Currently, c is attempting to carefully fold and organize the clothes.",
+    "C is trying to decide what clothes to wear.",
+    "C is trying to iron the clothes.",
+    "Currently, c is attempting to carefully pack the clothes into luggage."
+  ],
+  "official_meta": {
+    "question_index": "00120",
+    "video_id": "3a4f4d5c-c8fa-4bb1-8e80-7c22cab54116",
+    "source_index": 120
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:26:08.233682Z"
+}

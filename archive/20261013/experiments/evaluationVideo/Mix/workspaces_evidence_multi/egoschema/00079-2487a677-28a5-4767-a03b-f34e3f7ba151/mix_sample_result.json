@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00079:2487a677-28a5-4767-a03b-f34e3f7ba151",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The person uses a sponge scourer, a steel scourer, and a tap to wash the plates. the sponge scourer is used to remove dirt and grime from the plates, while the steel scourer is used to remove tough stains. the tap is used to rinse the plates and to apply soap.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00079-2487a677-28a5-4767-a03b-f34e3f7ba151",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00079-2487a677-28a5-4767-a03b-f34e3f7ba151/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00079-2487a677-28a5-4767-a03b-f34e3f7ba151/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00079-2487a677-28a5-4767-a03b-f34e3f7ba151/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/2487a677-28a5-4767-a03b-f34e3f7ba151.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/2487a677-28a5-4767-a03b-f34e3f7ba151.mp4",
+  "question_block": "Question: In the video, describe and analyze the primary objects the person is using to wash various types of plates. what are their purposes, and how are they used differently depending on plate material or a specific task?\nOptions:\n(A) The person uses a sponge scourer, a steel scourer, and a dishwashing liquid to wash the plates. the sponge scourer is used to remove dirt and grime from the plates, while the steel scourer is used to remove tough stains. the dishwashing liquid is used to create suds, which help to loosen dirt and grime.\n(B) The person uses a sponge scourer, a steel scourer, and a dishwasher to wash the plates. the sponge scourer is used to remove dirt and grime from the plates, while the steel scourer is used to remove tough stains. the dishwasher is used to rinse the plates and to dry them.\n(C) The person uses a sponge scourer, a steel scourer, and a tap to wash the plates. the sponge scourer is used to remove dirt and grime from the plates, while the steel scourer is used to remove tough stains. the tap is used to rinse the plates and to apply soap.\n(D) The person uses a sponge scourer, a steel scourer, and a sink to wash the plates. the sponge scourer is used to remove dirt and grime from the plates, while the steel scourer is used to remove tough stains. the sink is used to rinse the plates and to drain them.\n(E) The person uses a sponge scourer, a steel scourer, and a bucket to wash the plates. the sponge scourer is used to remove dirt and grime from the plates, while the steel scourer is used to remove tough stains. the bucket is used to rinse the plates and to soak them.",
+  "options": [
+    "The person uses a sponge scourer, a steel scourer, and a dishwashing liquid to wash the plates. the sponge scourer is used to remove dirt and grime from the plates, while the steel scourer is used to remove tough stains. the dishwashing liquid is used to create suds, which help to loosen dirt and grime.",
+    "The person uses a sponge scourer, a steel scourer, and a dishwasher to wash the plates. the sponge scourer is used to remove dirt and grime from the plates, while the steel scourer is used to remove tough stains. the dishwasher is used to rinse the plates and to dry them.",
+    "The person uses a sponge scourer, a steel scourer, and a tap to wash the plates. the sponge scourer is used to remove dirt and grime from the plates, while the steel scourer is used to remove tough stains. the tap is used to rinse the plates and to apply soap.",
+    "The person uses a sponge scourer, a steel scourer, and a sink to wash the plates. the sponge scourer is used to remove dirt and grime from the plates, while the steel scourer is used to remove tough stains. the sink is used to rinse the plates and to drain them.",
+    "The person uses a sponge scourer, a steel scourer, and a bucket to wash the plates. the sponge scourer is used to remove dirt and grime from the plates, while the steel scourer is used to remove tough stains. the bucket is used to rinse the plates and to soak them."
+  ],
+  "official_meta": {
+    "question_index": "00079",
+    "video_id": "2487a677-28a5-4767-a03b-f34e3f7ba151",
+    "source_index": 79
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=255 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-22T18:55:29.714075Z"
+}

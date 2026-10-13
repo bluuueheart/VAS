@@ -1,0 +1,20 @@
+Using Orion CUDA proxy runtime: /opt/orion/orion_runtime/gpu/cuda/orion-cuda-12.3
+2026-08-25 21:09:20,659 - INFO - Video-MME subtitle mode=w/o sub.; external dataset subtitles are not loaded.
+2026-08-25 21:09:23,255 - WARNING - Skipped 2 malformed MLVU samples task_type=ego source_json=3_ego.json examples=['record_index=119 video=ego_26.mp4 error=MLVU candidates contain empty option slots at indices 2.', 'record_index=313 video=ego_81.mp4 error=MLVU candidates contain empty option slots at indices 3.']
+2026-08-25 21:09:23,969 - WARNING - Skipped 1 malformed MLVU samples task_type=plotQA source_json=1_plotQA.json examples=['record_index=23 video=movie101_5.mp4 error=MLVU candidates contain empty option slots at indices 0, 3.']
+2026-08-25 21:09:25,256 - WARNING - --force-rerun reset formal progress; archived legacy checkpoint at /gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v20/mix_progress_legacy_before_force_rerun.json
+2026-08-25 21:09:25,293 - INFO - Reusing immutable tool library baseline baseline_id=toolbase_cc5ef35ba06552434038 path=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260825_integrated_v20/_audit/tool_library_baseline.json
+2026-08-25 21:11:55,473 - INFO - Mix batch execution resolved parallel_samples=3 reuse_worker_samples=6920 asr_beam_size=1 asr_best_of=1 asr_condition_on_previous_text=False asr_vad_filter=True caption_batch_size=8 caption_max_frames=4 caption_max_new_tokens=128 visible_cuda_devices=['0'] selected_samples=6920
+2026-08-25 21:11:55,477 - INFO - Resume [lvbench 0/1549] | [videomme 0/2700] | [egoschema 0/500] | [mlvu 0/2171]
+2026-08-25 21:11:55,511 - INFO - Launching logical_worker_count=3 with persistent_model_worker_count=3; groups=[2307, 2308, 2305] device_pool=['0', '0', '0'] same_device_parallel=True admission_capacity=3 memory_guard=True min_free_gib=4.00 reserve_gib=6.00 startup_stagger_seconds=60.0
+2026-08-25 21:11:55,511 - INFO - Reusable parallel group 1/3 size=2307 first=lvbench:entity-recognition:4:63 last=videomme:multilingual:900-3 visible_cuda_device=0
+2026-08-25 21:11:55,512 - INFO - Staggering persistent worker startup before group 2/3 by 60.0s to reduce shared-model cold-load I/O contention.
+2026-08-25 21:11:57,445 - INFO - [AcceleratorQueue][MEMORY_GUARD] admitted name=mix_sample_worker_admission slot=gjob-dev-747337920889581568-taskrole1-0_cuda_0_sample_admission free_mib=80988 min_free_mib=4096 reserve_mib=6144 threshold_mib=10240 waited=0.317s
+2026-08-25 21:11:57,445 - INFO - Sample-worker GPU admission device=0 capacity=3 waited=0.329s; extra worker remains queued outside the GPU.
+2026-08-25 21:12:55,512 - INFO - Reusable parallel group 2/3 size=2308 first=videomme:humanity-history:001-1 last=videomme:exercise:890-3 visible_cuda_device=0
+2026-08-25 21:12:55,513 - INFO - Staggering persistent worker startup before group 3/3 by 60.0s to reduce shared-model cold-load I/O contention.
+2026-08-25 21:12:56,742 - INFO - [AcceleratorQueue][MEMORY_GUARD] admitted name=mix_sample_worker_admission slot=gjob-dev-747337920889581568-taskrole1-0_cuda_0_sample_admission free_mib=80988 min_free_mib=4096 reserve_mib=6144 threshold_mib=10240 waited=0.371s
+2026-08-25 21:12:56,742 - INFO - Sample-worker GPU admission device=0 capacity=3 waited=0.666s; extra worker remains queued outside the GPU.
+2026-08-25 21:13:55,513 - INFO - Reusable parallel group 3/3 size=2305 first=egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391 last=videomme:pet-animal:880-3 visible_cuda_device=0
+2026-08-25 21:13:57,038 - INFO - [AcceleratorQueue][MEMORY_GUARD] admitted name=mix_sample_worker_admission slot=gjob-dev-747337920889581568-taskrole1-0_cuda_0_sample_admission free_mib=80988 min_free_mib=4096 reserve_mib=6144 threshold_mib=10240 waited=0.435s
+2026-08-25 21:13:57,038 - INFO - Sample-worker GPU admission device=0 capacity=3 waited=1.011s; extra worker remains queued outside the GPU.

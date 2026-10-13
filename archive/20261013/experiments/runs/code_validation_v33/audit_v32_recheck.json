@@ -1,0 +1,4719 @@
+{
+  "kind": "mix_run_audit",
+  "generated_at": "2026-09-12T08:47:24.020030Z",
+  "config_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/mix_config_evidence_multi.json",
+  "workspaces_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32",
+  "expected_pipeline_mode": "react",
+  "audit_scope": {
+    "kind": "representative",
+    "requested_sample_uids": [
+      "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+      "lvbench:entity-recognition:16:83",
+      "videomme:acrobatics:211-1",
+      "mlvu:anomaly-reco:0:surveil-20",
+      "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+      "lvbench:entity-recognition:39:208",
+      "videomme:acrobatics:211-2",
+      "mlvu:ego:1:ego-36"
+    ],
+    "missing_requested_sample_uids": [],
+    "scope_contract_pass": true,
+    "full_inventory_count": 6920,
+    "scoped_record_count": 8
+  },
+  "videomme_scope": {
+    "dataset": "VideoMME",
+    "configured_subtitle_mode": "w/o sub.",
+    "expected_subtitle_mode": "w/o sub.",
+    "external_subtitles_allowed": false,
+    "config_contract_pass": true,
+    "inventory_question_count": 2,
+    "participated_metadata_mismatches": []
+  },
+  "inventory": {
+    "dataset_order": [
+      "lvbench",
+      "videomme",
+      "egoschema",
+      "mlvu"
+    ],
+    "counts_by_dataset": {
+      "egoschema": 2,
+      "lvbench": 2,
+      "mlvu": 2,
+      "videomme": 2
+    },
+    "total_expected": 8,
+    "duplicate_sample_uids": [],
+    "full_inventory_total_expected": 6920,
+    "full_inventory_duplicate_sample_uids": []
+  },
+  "summary_by_dataset": {
+    "egoschema": {
+      "total_expected": 2,
+      "status_counts": {
+        "completed": 1,
+        "failed": 1
+      },
+      "failure_class_counts": {
+        "actual_sample_failure": 1,
+        "participated": 1
+      },
+      "scheduler_worker_placeholder_count": 0,
+      "actual_sample_failure_count": 1,
+      "oom_failure_count": 0,
+      "oom_excluded_from_accuracy_count": 0,
+      "evidence_unanswerable_count": 0,
+      "participated": 1,
+      "attempted": 2,
+      "attempt_accuracy": 0.5,
+      "attempt_mean_elapsed_seconds": 1096.9455,
+      "attempt_samples_per_hour": 3.28184,
+      "runtime_metric_scope": "all_attempted_including_failed",
+      "accuracy_denominator": 1,
+      "accuracy": 1.0,
+      "mean_elapsed_seconds": 1096.9455,
+      "median_elapsed_seconds": 1096.9455,
+      "p95_elapsed_seconds": 1937.14185,
+      "total_tool_calls": 32,
+      "tool_calls_per_sample": 16,
+      "zero_tool_sample_count": 0,
+      "tool_success_rate": 0.75,
+      "invalid_call_rate": 0.15625,
+      "trajectory_protocol_pass": 1,
+      "evidence_can_finish": 1,
+      "evidence_contract_pass": 1,
+      "premise_mismatch_count": 0,
+      "workflow_contract_pass": 2,
+      "subagent_workflow_observed": 0,
+      "answer_leakage_contract_pass": 2,
+      "answer_leakage_contract_fail": 0,
+      "four_agent_contract_pass": 2,
+      "planner_observed": 2,
+      "observer_observed": 2,
+      "controlled_tool_rejections": 5,
+      "reflector_observed": 2,
+      "evolver_observed": 0,
+      "actual_video_clip_qa_calls": 1,
+      "semantic_retrieval_calls": 2,
+      "semantic_dense_successes": 2,
+      "semantic_lexical_fallbacks": 0,
+      "semantic_empty_index_diagnostics": 0,
+      "video_clip_qa_fallback_samples": 0,
+      "gpu_video_clip_qa_serialization_samples": 1,
+      "cache_stats": {
+        "grounding_embedder.hit": 12,
+        "grounding_embedder.miss": 1,
+        "grounding_embedding_vector.miss": 13,
+        "preprocess.output_dir.hit": 2,
+        "provider.planner.hit": 11,
+        "provider.planner.miss": 1,
+        "qwen3_vl_embedding_runtime.hit": 1,
+        "qwen3_vl_embedding_runtime.miss": 1,
+        "vector_store.hit": 1,
+        "vector_store.miss": 1
+      },
+      "log_marker_samples": 1,
+      "gpu_telemetry_observed_samples": 2,
+      "gpu_avg_utilization_percent": 23.1205,
+      "gpu_peak_utilization_percent": 81.0,
+      "gpu_peak_memory_used_gib": 25.375,
+      "tool_library_baseline_samples": 2,
+      "tool_library_schema_changed_samples": 0,
+      "tool_library_scope_hidden_samples": 0
+    },
+    "lvbench": {
+      "total_expected": 2,
+      "status_counts": {
+        "completed": 1,
+        "failed": 1
+      },
+      "failure_class_counts": {
+        "actual_sample_failure": 1,
+        "participated": 1
+      },
+      "scheduler_worker_placeholder_count": 0,
+      "actual_sample_failure_count": 1,
+      "oom_failure_count": 0,
+      "oom_excluded_from_accuracy_count": 0,
+      "evidence_unanswerable_count": 0,
+      "participated": 1,
+      "attempted": 2,
+      "attempt_accuracy": 0.5,
+      "attempt_mean_elapsed_seconds": 1785.1425,
+      "attempt_samples_per_hour": 2.016646,
+      "runtime_metric_scope": "all_attempted_including_failed",
+      "accuracy_denominator": 1,
+      "accuracy": 1.0,
+      "mean_elapsed_seconds": 1785.1425,
+      "median_elapsed_seconds": 1785.1425,
+      "p95_elapsed_seconds": 2276.50965,
+      "total_tool_calls": 39,
+      "tool_calls_per_sample": 19.5,
+      "zero_tool_sample_count": 0,
+      "tool_success_rate": 0.863636,
+      "invalid_call_rate": 0.076923,
+      "trajectory_protocol_pass": 1,
+      "evidence_can_finish": 2,
+      "evidence_contract_pass": 2,
+      "premise_mismatch_count": 0,
+      "workflow_contract_pass": 2,
+      "subagent_workflow_observed": 0,
+      "answer_leakage_contract_pass": 2,
+      "answer_leakage_contract_fail": 0,
+      "four_agent_contract_pass": 2,
+      "planner_observed": 2,
+      "observer_observed": 2,
+      "controlled_tool_rejections": 2,
+      "reflector_observed": 2,
+      "evolver_observed": 0,
+      "actual_video_clip_qa_calls": 2,
+      "semantic_retrieval_calls": 2,
+      "semantic_dense_successes": 2,
+      "semantic_lexical_fallbacks": 0,
+      "semantic_empty_index_diagnostics": 0,
+      "video_clip_qa_fallback_samples": 0,
+      "gpu_video_clip_qa_serialization_samples": 0,
+      "cache_stats": {
+        "grounding_embedder.hit": 427,
+        "grounding_embedding_vector.miss": 427,
+        "preprocess.output_dir.hit": 2,
+        "provider.planner.hit": 22,
+        "qwen3_vl_embedding_runtime.hit": 2,
+        "vector_store.miss": 2
+      },
+      "log_marker_samples": 0,
+      "gpu_telemetry_observed_samples": 2,
+      "gpu_avg_utilization_percent": 44.3115,
+      "gpu_peak_utilization_percent": 84.0,
+      "gpu_peak_memory_used_gib": 30.486,
+      "tool_library_baseline_samples": 2,
+      "tool_library_schema_changed_samples": 0,
+      "tool_library_scope_hidden_samples": 0
+    },
+    "mlvu": {
+      "total_expected": 2,
+      "status_counts": {
+        "completed": 1,
+        "failed": 1
+      },
+      "failure_class_counts": {
+        "actual_sample_failure": 1,
+        "participated": 1
+      },
+      "scheduler_worker_placeholder_count": 0,
+      "actual_sample_failure_count": 1,
+      "oom_failure_count": 0,
+      "oom_excluded_from_accuracy_count": 0,
+      "evidence_unanswerable_count": 0,
+      "participated": 1,
+      "attempted": 2,
+      "attempt_accuracy": 0.5,
+      "attempt_mean_elapsed_seconds": 1346.362,
+      "attempt_samples_per_hour": 2.673872,
+      "runtime_metric_scope": "all_attempted_including_failed",
+      "accuracy_denominator": 1,
+      "accuracy": 1.0,
+      "mean_elapsed_seconds": 1346.362,
+      "median_elapsed_seconds": 1346.362,
+      "p95_elapsed_seconds": 1510.963,
+      "total_tool_calls": 51,
+      "tool_calls_per_sample": 25.5,
+      "zero_tool_sample_count": 0,
+      "tool_success_rate": 0.793103,
+      "invalid_call_rate": 0.117647,
+      "trajectory_protocol_pass": 1,
+      "evidence_can_finish": 1,
+      "evidence_contract_pass": 1,
+      "premise_mismatch_count": 1,
+      "workflow_contract_pass": 2,
+      "subagent_workflow_observed": 0,
+      "answer_leakage_contract_pass": 2,
+      "answer_leakage_contract_fail": 0,
+      "four_agent_contract_pass": 2,
+      "planner_observed": 2,
+      "observer_observed": 2,
+      "controlled_tool_rejections": 5,
+      "reflector_observed": 2,
+      "evolver_observed": 0,
+      "actual_video_clip_qa_calls": 2,
+      "semantic_retrieval_calls": 4,
+      "semantic_dense_successes": 3,
+      "semantic_lexical_fallbacks": 0,
+      "semantic_empty_index_diagnostics": 0,
+      "video_clip_qa_fallback_samples": 0,
+      "gpu_video_clip_qa_serialization_samples": 1,
+      "cache_stats": {
+        "grounding_embedder.hit": 52,
+        "grounding_embedding_vector.miss": 52,
+        "preprocess.output_dir.hit": 2,
+        "provider.planner.hit": 26,
+        "qwen3_vl_embedding_runtime.hit": 2,
+        "tool_search_embedder.hit": 1,
+        "tool_search_embedder.miss": 1,
+        "tool_search_schema_index.miss": 1,
+        "vector_store.hit": 2,
+        "vector_store.miss": 2
+      },
+      "log_marker_samples": 1,
+      "gpu_telemetry_observed_samples": 2,
+      "gpu_avg_utilization_percent": 42.4665,
+      "gpu_peak_utilization_percent": 83.0,
+      "gpu_peak_memory_used_gib": 27.795,
+      "tool_library_baseline_samples": 2,
+      "tool_library_schema_changed_samples": 0,
+      "tool_library_scope_hidden_samples": 0
+    },
+    "videomme": {
+      "total_expected": 2,
+      "status_counts": {
+        "completed": 1,
+        "failed": 1
+      },
+      "failure_class_counts": {
+        "actual_sample_failure": 1,
+        "participated": 1
+      },
+      "scheduler_worker_placeholder_count": 0,
+      "actual_sample_failure_count": 1,
+      "oom_failure_count": 0,
+      "oom_excluded_from_accuracy_count": 0,
+      "evidence_unanswerable_count": 0,
+      "participated": 1,
+      "attempted": 2,
+      "attempt_accuracy": 0.5,
+      "attempt_mean_elapsed_seconds": 778.1035,
+      "attempt_samples_per_hour": 4.626634,
+      "runtime_metric_scope": "all_attempted_including_failed",
+      "accuracy_denominator": 1,
+      "accuracy": 1.0,
+      "mean_elapsed_seconds": 778.1035,
+      "median_elapsed_seconds": 778.1035,
+      "p95_elapsed_seconds": 1378.92145,
+      "total_tool_calls": 19,
+      "tool_calls_per_sample": 9.5,
+      "zero_tool_sample_count": 0,
+      "tool_success_rate": 0.727273,
+      "invalid_call_rate": 0.157895,
+      "trajectory_protocol_pass": 1,
+      "evidence_can_finish": 1,
+      "evidence_contract_pass": 1,
+      "premise_mismatch_count": 0,
+      "workflow_contract_pass": 2,
+      "subagent_workflow_observed": 0,
+      "answer_leakage_contract_pass": 2,
+      "answer_leakage_contract_fail": 0,
+      "four_agent_contract_pass": 1,
+      "planner_observed": 2,
+      "observer_observed": 2,
+      "controlled_tool_rejections": 1,
+      "reflector_observed": 2,
+      "evolver_observed": 0,
+      "actual_video_clip_qa_calls": 1,
+      "semantic_retrieval_calls": 0,
+      "semantic_dense_successes": 0,
+      "semantic_lexical_fallbacks": 0,
+      "semantic_empty_index_diagnostics": 0,
+      "video_clip_qa_fallback_samples": 0,
+      "gpu_video_clip_qa_serialization_samples": 0,
+      "cache_stats": {
+        "preprocess.output_dir.hit": 2,
+        "provider.planner.hit": 14
+      },
+      "log_marker_samples": 0,
+      "gpu_telemetry_observed_samples": 2,
+      "gpu_avg_utilization_percent": 41.0275,
+      "gpu_peak_utilization_percent": 82.0,
+      "gpu_peak_memory_used_gib": 25.492,
+      "tool_library_baseline_samples": 2,
+      "tool_library_schema_changed_samples": 0,
+      "tool_library_scope_hidden_samples": 0
+    }
+  },
+  "summary_total": {
+    "total_expected": 8,
+    "status_counts": {
+      "completed": 4,
+      "failed": 4
+    },
+    "failure_class_counts": {
+      "actual_sample_failure": 4,
+      "participated": 4
+    },
+    "scheduler_worker_placeholder_count": 0,
+    "actual_sample_failure_count": 4,
+    "oom_failure_count": 0,
+    "oom_excluded_from_accuracy_count": 0,
+    "evidence_unanswerable_count": 0,
+    "participated": 4,
+    "attempted": 8,
+    "attempt_accuracy": 0.5,
+    "attempt_mean_elapsed_seconds": 1251.638375,
+    "attempt_samples_per_hour": 2.87623,
+    "runtime_metric_scope": "all_attempted_including_failed",
+    "accuracy_denominator": 4,
+    "accuracy": 1.0,
+    "mean_elapsed_seconds": 1251.638375,
+    "median_elapsed_seconds": 1342.429,
+    "p95_elapsed_seconds": 2225.89285,
+    "total_tool_calls": 141,
+    "tool_calls_per_sample": 17.625,
+    "zero_tool_sample_count": 0,
+    "tool_success_rate": 0.792683,
+    "invalid_call_rate": 0.120567,
+    "trajectory_protocol_pass": 4,
+    "evidence_can_finish": 5,
+    "evidence_contract_pass": 5,
+    "premise_mismatch_count": 1,
+    "workflow_contract_pass": 8,
+    "subagent_workflow_observed": 0,
+    "answer_leakage_contract_pass": 8,
+    "answer_leakage_contract_fail": 0,
+    "four_agent_contract_pass": 7,
+    "planner_observed": 8,
+    "observer_observed": 8,
+    "controlled_tool_rejections": 13,
+    "reflector_observed": 8,
+    "evolver_observed": 0,
+    "actual_video_clip_qa_calls": 6,
+    "semantic_retrieval_calls": 8,
+    "semantic_dense_successes": 7,
+    "semantic_lexical_fallbacks": 0,
+    "semantic_empty_index_diagnostics": 0,
+    "video_clip_qa_fallback_samples": 0,
+    "gpu_video_clip_qa_serialization_samples": 2,
+    "cache_stats": {
+      "grounding_embedder.hit": 491,
+      "grounding_embedder.miss": 1,
+      "grounding_embedding_vector.miss": 492,
+      "preprocess.output_dir.hit": 8,
+      "provider.planner.hit": 73,
+      "provider.planner.miss": 1,
+      "qwen3_vl_embedding_runtime.hit": 5,
+      "qwen3_vl_embedding_runtime.miss": 1,
+      "tool_search_embedder.hit": 1,
+      "tool_search_embedder.miss": 1,
+      "tool_search_schema_index.miss": 1,
+      "vector_store.hit": 3,
+      "vector_store.miss": 5
+    },
+    "log_marker_samples": 2,
+    "gpu_telemetry_observed_samples": 8,
+    "gpu_avg_utilization_percent": 37.7315,
+    "gpu_peak_utilization_percent": 84.0,
+    "gpu_peak_memory_used_gib": 30.486,
+    "tool_library_baseline_samples": 8,
+    "tool_library_schema_changed_samples": 0,
+    "tool_library_scope_hidden_samples": 0
+  },
+  "aggregate_consistency": {
+    "scope_kind": "representative",
+    "scope_filtered_out_of_scope_records": true,
+    "progress_file_present": true,
+    "progress_record_count": 8,
+    "progress_participated_count": 4,
+    "progress_participated_count_all": 4,
+    "result_aggregate_present": true,
+    "result_aggregate_count": 4,
+    "result_aggregate_count_in_scope": 4,
+    "result_aggregate_count_all": 4,
+    "official_videomme_present": true,
+    "official_videomme_count": 900,
+    "expected_count": 8,
+    "per_sample_participated_count": 4,
+    "participated_missing_from_progress": [],
+    "progress_extra_uids": [],
+    "participated_missing_from_aggregate": [],
+    "aggregate_extra_uids": []
+  },
+  "evolution_reports": {},
+  "evolution_summary": {
+    "status": "not_run",
+    "report_count": 0,
+    "sample_count_with_evolution": 0,
+    "sample_count_with_any_sample_uid_report": 0,
+    "stale_evolution_report_count": 0,
+    "replay_status_counts": {},
+    "candidate_replay_status_counts": {},
+    "replay_status_consistent_count": 0,
+    "accepted_replay_count": 0,
+    "evolver_llm_schema_pass_count": 0,
+    "evolver_llm_contract_pass": false,
+    "evolution_protocol_pass": false
+  },
+  "tool_coverage": {
+    "declared_base_tool_count": 15,
+    "immutable_baseline_tool_count": 15,
+    "unsupported_edge_tools_in_baseline": [],
+    "unsupported_edge_tools_observed": [],
+    "unsupported_edge_tool_registry_contract_pass": true,
+    "observed_runtime_tool_count": 7,
+    "active_registry_count_from_logs": 15,
+    "active_registry_names_inferred": [
+      "Aggregation",
+      "Clean_Results",
+      "Crop",
+      "Filtering",
+      "Fold_Memory",
+      "Inspect_Frame",
+      "Keyword_Retrieve",
+      "Python_Executor",
+      "Segment_Retrieve",
+      "Semantic_Retrieve",
+      "Tool_Search",
+      "Video_Clip_QA",
+      "Video_Summary",
+      "Zoom_in",
+      "asr"
+    ],
+    "disabled_or_hidden_names_inferred": [],
+    "unregistered_observed_names": [],
+    "observed_execution_count": 82,
+    "tools": {
+      "Aggregation": {
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": false,
+        "normal_execution_contract_pass": false,
+        "coverage_status": "registered_not_exercised",
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": null
+      },
+      "Clean_Results": {
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": false,
+        "normal_execution_contract_pass": false,
+        "coverage_status": "registered_not_exercised",
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": null
+      },
+      "Crop": {
+        "call_count": 1,
+        "success_count": 1,
+        "controlled_rejection_count": 0,
+        "error_count": 0,
+        "unknown_count": 0,
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "sample_uids": [
+          "lvbench:entity-recognition:39:208"
+        ],
+        "evidence_paths": [
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00039-208/results/run_result.json"
+        ],
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": true,
+        "normal_execution_contract_pass": true,
+        "coverage_status": "observed_and_checked",
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": 0.0
+      },
+      "Filtering": {
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": false,
+        "normal_execution_contract_pass": false,
+        "coverage_status": "registered_not_exercised",
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": null
+      },
+      "Fold_Memory": {
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": false,
+        "normal_execution_contract_pass": false,
+        "coverage_status": "registered_not_exercised",
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": null
+      },
+      "Inspect_Frame": {
+        "call_count": 30,
+        "success_count": 28,
+        "controlled_rejection_count": 2,
+        "error_count": 0,
+        "unknown_count": 0,
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "sample_uids": [
+          "lvbench:entity-recognition:16:83",
+          "lvbench:entity-recognition:39:208",
+          "videomme:acrobatics:211-1",
+          "videomme:acrobatics:211-2",
+          "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+          "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+          "mlvu:ego:1:ego-36",
+          "mlvu:anomaly-reco:0:surveil-20"
+        ],
+        "evidence_paths": [
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00016-83/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00039-208/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/videomme/acrobatics-211-1/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/videomme/acrobatics-211-2/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/ego-00001-ego-36/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/anomaly-reco-00000-surveil-20/results/run_result.json"
+        ],
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": true,
+        "normal_execution_contract_pass": true,
+        "coverage_status": "observed_and_checked",
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": 0.0
+      },
+      "Keyword_Retrieve": {
+        "call_count": 2,
+        "success_count": 2,
+        "controlled_rejection_count": 0,
+        "error_count": 0,
+        "unknown_count": 0,
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "sample_uids": [
+          "mlvu:ego:1:ego-36"
+        ],
+        "evidence_paths": [
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/ego-00001-ego-36/results/run_result.json"
+        ],
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": true,
+        "normal_execution_contract_pass": true,
+        "coverage_status": "observed_and_checked",
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": 0.0
+      },
+      "Python_Executor": {
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": false,
+        "normal_execution_contract_pass": false,
+        "coverage_status": "registered_not_exercised",
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": null
+      },
+      "Segment_Retrieve": {
+        "call_count": 3,
+        "success_count": 3,
+        "controlled_rejection_count": 0,
+        "error_count": 0,
+        "unknown_count": 0,
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "sample_uids": [
+          "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf"
+        ],
+        "evidence_paths": [
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/results/run_result.json"
+        ],
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": true,
+        "normal_execution_contract_pass": true,
+        "coverage_status": "observed_and_checked",
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": 0.0
+      },
+      "Semantic_Retrieve": {
+        "call_count": 8,
+        "success_count": 7,
+        "controlled_rejection_count": 1,
+        "error_count": 0,
+        "unknown_count": 0,
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "sample_uids": [
+          "lvbench:entity-recognition:16:83",
+          "lvbench:entity-recognition:39:208",
+          "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+          "mlvu:ego:1:ego-36",
+          "mlvu:anomaly-reco:0:surveil-20"
+        ],
+        "evidence_paths": [
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00016-83/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00039-208/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/ego-00001-ego-36/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/anomaly-reco-00000-surveil-20/results/run_result.json"
+        ],
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": true,
+        "normal_execution_contract_pass": true,
+        "coverage_status": "observed_and_checked",
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": 0.0
+      },
+      "Tool_Search": {
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": false,
+        "normal_execution_contract_pass": false,
+        "coverage_status": "registered_not_exercised",
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": null
+      },
+      "Video_Clip_QA": {
+        "call_count": 34,
+        "success_count": 24,
+        "controlled_rejection_count": 6,
+        "error_count": 4,
+        "unknown_count": 0,
+        "timing_seconds_total": 336.932804,
+        "timing_sample_count": 6,
+        "sample_uids": [
+          "lvbench:entity-recognition:16:83",
+          "lvbench:entity-recognition:39:208",
+          "videomme:acrobatics:211-1",
+          "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+          "mlvu:ego:1:ego-36",
+          "mlvu:anomaly-reco:0:surveil-20"
+        ],
+        "evidence_paths": [
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00016-83/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00039-208/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/videomme/acrobatics-211-1/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/ego-00001-ego-36/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/anomaly-reco-00000-surveil-20/results/run_result.json"
+        ],
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": true,
+        "normal_execution_contract_pass": false,
+        "coverage_status": "observed_and_checked",
+        "mean_timing_seconds_per_sample": 56.155467,
+        "mean_timing_seconds_per_call": 9.909788
+      },
+      "Video_Summary": {
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": false,
+        "normal_execution_contract_pass": false,
+        "coverage_status": "registered_not_exercised",
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": null
+      },
+      "Zoom_in": {
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": false,
+        "normal_execution_contract_pass": false,
+        "coverage_status": "registered_not_exercised",
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": null
+      },
+      "asr": {
+        "call_count": 4,
+        "success_count": 0,
+        "controlled_rejection_count": 4,
+        "error_count": 0,
+        "unknown_count": 0,
+        "timing_seconds_total": 0.0,
+        "timing_sample_count": 0,
+        "sample_uids": [
+          "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+          "mlvu:ego:1:ego-36"
+        ],
+        "evidence_paths": [
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/results/run_result.json",
+          "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/ego-00001-ego-36/results/run_result.json"
+        ],
+        "registered_in_project": true,
+        "registered_active_in_observed_runtime": true,
+        "schema_contract_pass": true,
+        "execution_observed": true,
+        "normal_execution_contract_pass": true,
+        "coverage_status": "observed_and_checked",
+        "mean_timing_seconds_per_sample": null,
+        "mean_timing_seconds_per_call": 0.0
+      }
+    },
+    "coverage_ratio_active_tools": 0.466667,
+    "low_usage_threshold_calls": 1,
+    "low_usage_observed_tools": [
+      "Crop"
+    ],
+    "zero_usage_active_tools": [
+      "Aggregation",
+      "Clean_Results",
+      "Filtering",
+      "Fold_Memory",
+      "Python_Executor",
+      "Tool_Search",
+      "Video_Summary",
+      "Zoom_in"
+    ],
+    "all_observed_execution_contracts_pass": false,
+    "unexercised_active_tools": [
+      "Aggregation",
+      "Clean_Results",
+      "Filtering",
+      "Fold_Memory",
+      "Python_Executor",
+      "Tool_Search",
+      "Video_Summary",
+      "Zoom_in"
+    ]
+  },
+  "tool_ablation_audit": {
+    "status": "not_run",
+    "disabled_tool_name": "",
+    "baseline_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32",
+    "ablation_root": "",
+    "paired_count": 0,
+    "unpaired_count": 0,
+    "contract_pass_count": 0,
+    "utility_evidence_pass_count": 0,
+    "contract_pass": false,
+    "utility_evidence_pass": false,
+    "pairs": [],
+    "reason": "tool_ablation_root_and_disabled_tool_are_required"
+  },
+  "audit_items": {
+    "input_and_anti_leakage": {
+      "scope": "core",
+      "design_link": "official dataset input contract and preprocessing boundary",
+      "correctness": {
+        "status": "pass",
+        "definition": "实现/契约/数据边界是否满足设计"
+      },
+      "effectiveness": {
+        "status": "not_applicable",
+        "definition": "是否通过主指标、消融或案例证据证明预期收益"
+      },
+      "evidence": [
+        "samples[].inference_input",
+        "videomme_scope",
+        "summary_total.answer_leakage_contract_fail"
+      ],
+      "blocking_reasons": []
+    },
+    "execution_completeness": {
+      "scope": "core",
+      "design_link": "atomic per-sample result/progress/aggregate workflow",
+      "correctness": {
+        "status": "pending",
+        "definition": "实现/契约/数据边界是否满足设计"
+      },
+      "effectiveness": {
+        "status": "pending",
+        "definition": "是否通过主指标、消融或案例证据证明预期收益"
+      },
+      "evidence": [
+        "aggregate_consistency",
+        "summary_total",
+        "inventory"
+      ],
+      "blocking_reasons": [
+        "full_inventory_not_in_terminal_state"
+      ]
+    },
+    "trajectory_and_evidence": {
+      "scope": "core",
+      "design_link": "Planner→Observer→Reflector→EvidenceVerifier execution contract",
+      "correctness": {
+        "status": "pending",
+        "definition": "实现/契约/数据边界是否满足设计"
+      },
+      "effectiveness": {
+        "status": "pending",
+        "definition": "是否通过主指标、消融或案例证据证明预期收益"
+      },
+      "evidence": [
+        "samples[].trajectory",
+        "samples[].protocol",
+        "samples[].evidence"
+      ],
+      "blocking_reasons": [
+        "trajectory_or_evidence_gate_not_passed_for_all_participated_cases"
+      ]
+    },
+    "framework_component_ablation": {
+      "scope": "auxiliary_experiment",
+      "design_link": "M4 agent framework ablation and four-role value audit",
+      "correctness": {
+        "status": "pending",
+        "definition": "实现/契约/数据边界是否满足设计"
+      },
+      "effectiveness": {
+        "status": "pending",
+        "definition": "是否通过主指标、消融或案例证据证明预期收益"
+      },
+      "evidence": [
+        "summary_total.four_agent_contract_pass"
+      ],
+      "blocking_reasons": [
+        "paired_counterfactual_role_ablation_required"
+      ]
+    },
+    "tool_library_ablation": {
+      "scope": "auxiliary_experiment",
+      "design_link": "A1/A3 real tool contract, coverage, necessity, and quantity ablation",
+      "correctness": {
+        "status": "pending",
+        "definition": "实现/契约/数据边界是否满足设计"
+      },
+      "effectiveness": {
+        "status": "pending",
+        "definition": "是否通过主指标、消融或案例证据证明预期收益"
+      },
+      "evidence": [
+        "tool_coverage",
+        "samples[].tool_library",
+        "tool_ablation_audit"
+      ],
+      "blocking_reasons": [
+        "paired_tool_ablation_utility_evidence_required",
+        "tool_library_schema_or_execution_contract_failed"
+      ]
+    },
+    "case_study_and_bad_case_regression": {
+      "scope": "auxiliary_experiment",
+      "design_link": "A2/A5 evolution cases and bad-case root-cause regression",
+      "correctness": {
+        "status": "pending",
+        "definition": "实现/契约/数据边界是否满足设计"
+      },
+      "effectiveness": {
+        "status": "pending",
+        "definition": "是否通过主指标、消融或案例证据证明预期收益"
+      },
+      "evidence": [
+        "dynamic_task_audit",
+        "samples[].outcome_class",
+        "samples[].evolution"
+      ],
+      "blocking_reasons": [
+        "representative_positive_negative_case_evidence_incomplete"
+      ]
+    },
+    "runtime_resource_and_queue": {
+      "scope": "core",
+      "design_link": "single-device queue, bounded concurrency, OOM protection, and GPU utilization experiment",
+      "correctness": {
+        "status": "fail",
+        "definition": "实现/契约/数据边界是否满足设计"
+      },
+      "effectiveness": {
+        "status": "pending",
+        "definition": "是否通过主指标、消融或案例证据证明预期收益"
+      },
+      "evidence": [
+        "summary_total.gpu_telemetry_observed_samples",
+        "samples[].gpu_telemetry",
+        "samples[].log_markers"
+      ],
+      "blocking_reasons": [
+        "runtime_error_marker_observed"
+      ]
+    },
+    "evolver": {
+      "audit_item": "evolver",
+      "status": "not_run",
+      "audit_scan_pass": false,
+      "contract_status": "not_run",
+      "acceptance_status": "not_run",
+      "utility_status": "not_proven",
+      "report_count": 0,
+      "candidate_count": 0,
+      "blocking_reasons": [
+        "no_evolution_report_found"
+      ],
+      "reference_design": {
+        "path": "/gemini/code/export_packages/extracted/reference.md",
+        "required_markers": [
+          "Evolver设计",
+          "failure diagnosis",
+          "dependency analysis",
+          "jointly modify",
+          "second rollout",
+          "verify joint modification",
+          "harness component dependency graph"
+        ],
+        "missing_markers": [],
+        "pass": true
+      },
+      "artifact_inventory": {},
+      "reports": [],
+      "scope": "core_and_auxiliary_experiment",
+      "design_link": "offline failure attribution→candidate patch→selective replay→matching/regression→accept/rollback",
+      "correctness": {
+        "status": "not_run",
+        "definition": "proposal boundary、candidate hook、轨迹匹配、无泄露和 replay 契约正确"
+      },
+      "effectiveness": {
+        "status": "not_proven",
+        "definition": "fresh candidate inference、paired replay、分组 coverage 和 utility delta 证明收益"
+      }
+    }
+  },
+  "audit_summary": {
+    "item_count": 8,
+    "correctness_status_counts": {
+      "pass": 1,
+      "pending": 5,
+      "fail": 1,
+      "not_run": 1
+    },
+    "effectiveness_status_counts": {
+      "not_applicable": 1,
+      "pending": 6,
+      "not_proven": 1
+    },
+    "all_correctness_pass": false,
+    "all_effectiveness_proven": false
+  },
+  "evolver_audit": {
+    "audit_item": "evolver",
+    "status": "not_run",
+    "audit_scan_pass": false,
+    "contract_status": "not_run",
+    "acceptance_status": "not_run",
+    "utility_status": "not_proven",
+    "report_count": 0,
+    "candidate_count": 0,
+    "blocking_reasons": [
+      "no_evolution_report_found"
+    ],
+    "reference_design": {
+      "path": "/gemini/code/export_packages/extracted/reference.md",
+      "required_markers": [
+        "Evolver设计",
+        "failure diagnosis",
+        "dependency analysis",
+        "jointly modify",
+        "second rollout",
+        "verify joint modification",
+        "harness component dependency graph"
+      ],
+      "missing_markers": [],
+      "pass": true
+    },
+    "artifact_inventory": {},
+    "reports": []
+  },
+  "missing_sample_uids": [],
+  "failed_sample_uids": [
+    "lvbench:entity-recognition:16:83",
+    "videomme:acrobatics:211-1",
+    "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+    "mlvu:ego:1:ego-36"
+  ],
+  "dynamic_task_audit": [],
+  "samples": [
+    {
+      "sample_uid": "lvbench:entity-recognition:16:83",
+      "dataset_name": "lvbench",
+      "subset_name": "entity recognition",
+      "dataset_scope": {
+        "input_contract": {
+          "video": "full_provided_video",
+          "question": "official_question_and_options",
+          "timestamp_input": "question_text_only",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false,
+          "additional_temporal_annotation": "excluded"
+        }
+      },
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00016-83/mix_sample_result.json",
+      "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00016-83/results/run_result.json",
+      "result_file_present": true,
+      "run_result_file_present": true,
+      "status": "failed",
+      "failure_class": "actual_sample_failure",
+      "accuracy_eligible": false,
+      "outcome_class": "execution_failure",
+      "acc": 0.0,
+      "elapsed_seconds": 2331.106,
+      "cache_stats": {
+        "provider.planner.hit": 12,
+        "preprocess.output_dir.hit": 1,
+        "grounding_embedder.hit": 223,
+        "grounding_embedding_vector.miss": 223,
+        "vector_store.miss": 1,
+        "qwen3_vl_embedding_runtime.hit": 1
+      },
+      "trajectory": {
+        "trajectory_id": "trajectory_ea84ddb14efe4079a9fe6e8193b80d71",
+        "registry_snapshot_id": "snapshot_000",
+        "step_count": 18,
+        "actions": [
+          "Parallel",
+          "Finish",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Finish",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Finish",
+          "Parallel",
+          "Parallel",
+          "Video_Clip_QA",
+          "Video_Clip_QA",
+          "Finish",
+          "Finish",
+          "Finish"
+        ],
+        "tool_actions": [
+          "Parallel",
+          "Inspect_Frame",
+          "Inspect_Frame",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Semantic_Retrieve",
+          "Parallel",
+          "Video_Clip_QA",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Video_Clip_QA",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Video_Clip_QA",
+          "Parallel",
+          "Video_Clip_QA",
+          "Video_Clip_QA",
+          "Video_Clip_QA"
+        ],
+        "finish_attempt_count": 6,
+        "terminal_action": "Finish",
+        "answer": "(D) Hand",
+        "agent_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+        "run_success": false,
+        "trajectory_success": false,
+        "planner_success": false,
+        "parse_event_count": 18,
+        "parse_failure_count": 0,
+        "tool_error_count": 4
+      },
+      "workflow": {
+        "trajectory_node_count": 1,
+        "nested_subtrajectory_count": 0,
+        "max_depth": 0,
+        "recursive_step_count": 11,
+        "parallel_step_count": 10,
+        "parallel_concrete_batch_count": 1,
+        "tool_search_call_count": 0,
+        "reported_subagent_iterations": 0,
+        "subagent_workflow_observed": false,
+        "subagent_trajectory_ids": [],
+        "workflow_contract_pass": true,
+        "semantic_retrieval": {
+          "call_count": 1,
+          "dense_success_count": 1,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "actual_video_clip_qa_call": true,
+        "video_clip_qa_fallback_observed": false,
+        "gpu_video_clip_qa_serialization_observed": false
+      },
+      "protocol": {
+        "expected_mode": "react",
+        "run_success_consistent": true,
+        "terminal_finish": true,
+        "finish_has_chain_complete": true,
+        "finish_has_completion_basis": true,
+        "answer_consistent": false,
+        "all_parse_events_success": true,
+        "direct_single_finish": null,
+        "direct_no_tool_calls": null,
+        "registry_snapshot_present": true,
+        "tool_library_baseline_present": true,
+        "workflow_contract_pass": true,
+        "unanswerable_terminal": false,
+        "protocol_pass": false
+      },
+      "evidence": {
+        "slot_count": 2,
+        "completion_basis": "visual->answer",
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": []
+      },
+      "evolution": {
+        "status": "not_run"
+      },
+      "four_agent_audit": {
+        "roles": {
+          "Planner": {
+            "implementation": "LLM Planner / ReAct controller",
+            "kernel": {},
+            "observed": true,
+            "llm_iteration_count": 18,
+            "parse_success_count": 18,
+            "parse_failure_count": 0,
+            "action_sequence": [
+              "Parallel",
+              "Finish",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Finish",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Finish",
+              "Parallel",
+              "Parallel",
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "Finish",
+              "Finish",
+              "Finish"
+            ],
+            "contract_pass": true
+          },
+          "Observer": {
+            "implementation": "LLM/VLM Observer Agent + constrained tool runtime",
+            "kernel": {},
+            "agent_turn_count": 25,
+            "agent_schema_pass_count": 25,
+            "observed": true,
+            "executed_tool_call_count": 13,
+            "successful_tool_call_count": 10,
+            "error_tool_call_count": 1,
+            "controlled_rejection_count": 2,
+            "unknown_status_count": 0,
+            "executed_tools": [
+              "Inspect_Frame",
+              "Inspect_Frame",
+              "Inspect_Frame",
+              "Inspect_Frame",
+              "Semantic_Retrieve",
+              "Video_Clip_QA",
+              "Inspect_Frame",
+              "Video_Clip_QA",
+              "Inspect_Frame",
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "Video_Clip_QA"
+            ],
+            "actual_video_clip_qa_call": true,
+            "fallback_observed": false,
+            "contract_pass": true
+          },
+          "Reflector": {
+            "implementation": "LLM Reflector Agent + deterministic safety gate",
+            "kernel": {},
+            "agent_turn_count": 4,
+            "agent_schema_pass_count": 4,
+            "required_for_query": true,
+            "observed": true,
+            "decision_count": 4,
+            "blocked_finish_count": 2,
+            "accepted_finish_count": 2,
+            "last_can_finish": true,
+            "missing_information": [],
+            "unresolved_claims": [],
+            "evidence_can_finish": true,
+            "contract_pass": true,
+            "status": "pass"
+          },
+          "Evolver": {
+            "implementation": "offline LLM Evolver Agent + replay gate",
+            "kernel": {},
+            "observed": false,
+            "required_for_current_audit": true,
+            "report_count": 0,
+            "replay_statuses": [],
+            "candidate_replay_statuses": [],
+            "contract_pass": false,
+            "status": "not_run"
+          }
+        },
+        "observed_role_count": 3,
+        "four_agent_contract_pass": true,
+        "online_role_contract_pass": true,
+        "offline_roles": [
+          "Evolver"
+        ],
+        "status": "pass",
+        "subagent_route_observed": false,
+        "semantic_retrieval": {
+          "call_count": 1,
+          "dense_success_count": 1,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "kernel_contract": {
+          "kernel_id": "55f99d0f321a766d",
+          "kernel_provider": "transformers",
+          "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "roles": {
+            "planner": {
+              "agent_role": "planner",
+              "provider_class": "TransformersProvider",
+              "model_role": "planner",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "planner_prompts",
+              "structured_contract": "planner_react_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "tool_orchestration_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "goal + trajectory + registered tool observations + optional frames",
+                "decision_authority": "select executable tool calls and propose Finish",
+                "delegates_to": [
+                  "observer",
+                  "reflector"
+                ]
+              }
+            },
+            "observer": {
+              "agent_role": "observer",
+              "provider_class": "TransformersProvider",
+              "model_role": "observer",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "observer_dispatch_or_evidence_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "execution_and_evidence_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+                "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "reflector": {
+              "agent_role": "reflector",
+              "provider_class": "TransformersProvider",
+              "model_role": "reflector",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "reflector_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "evidence_judgment_agent",
+                "kernel_modality": "llm",
+                "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+                "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "evolver": {
+              "agent_role": "evolver",
+              "provider_class": "TransformersProvider",
+              "model_role": "evolver",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "evolver_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "meta_evolution_agent",
+                "kernel_modality": "llm",
+                "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+                "decision_authority": "attribute failures, analyze the dependency graph, and propose one or at most two coordinated replay-gated harness mutations",
+                "delegates_to": [
+                  "replay_gate"
+                ]
+              }
+            }
+          },
+          "weights_shared_for_memory": true,
+          "role_order": [
+            "planner",
+            "observer",
+            "reflector",
+            "evolver"
+          ]
+        }
+      },
+      "inference_input": {
+        "query_source": "sample.prompt",
+        "query_sha256": "261603d9e6cda69b091ce2bb72d4cd41fdc9af6cfb3ee23dc61a9d032d0c6559",
+        "annotation_time_reference_available": true,
+        "annotation_time_reference_used_for_inference": false,
+        "annotation_time_reference_scope": "annotation_only_not_used",
+        "annotation_time_reference_is_oracle_excluded": true,
+        "input_contract": {
+          "video": "full_provided_video",
+          "question": "official_question_and_options",
+          "timestamp_input": "question_text_only",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false,
+          "additional_temporal_annotation": "excluded"
+        },
+        "annotation_time_reference_disclosed_in_query": false,
+        "answer_field_marker_disclosed_in_query": false,
+        "answer_leakage_contract_pass": true,
+        "runtime_query_matches_sample_prompt": true,
+        "runtime_query_has_answer_field_marker": false,
+        "runtime_input_contract": {
+          "video": "full_provided_video",
+          "question": "official_question_and_options",
+          "timestamp_input": "question_text_only",
+          "audio": "preserved",
+          "audio_transcript": "included",
+          "external_subtitles": false,
+          "additional_temporal_annotation": "excluded",
+          "audio_track": "preserved",
+          "audio_transcript_allowed": true,
+          "temporal_crop": false,
+          "annotation_fields_excluded": [
+            "answer",
+            "ground_truth",
+            "ground_truth_option",
+            "time_reference",
+            "evaluator_output"
+          ],
+          "audio_track_policy": "preserved",
+          "audio_transcript_policy": "included"
+        },
+        "audio_contract_pass": true
+      },
+      "gpu_telemetry": {
+        "status": "ok",
+        "sample_count": 300,
+        "interval_s": 2.0,
+        "gpu_count": 1,
+        "avg_utilization_percent": 45.433,
+        "peak_utilization_percent": 84.0,
+        "peak_memory_used_gib": 30.486,
+        "peak_memory_percent": 38.546,
+        "per_gpu": {
+          "0": {
+            "sample_count": 300,
+            "avg_utilization_percent": 45.433,
+            "peak_utilization_percent": 84.0,
+            "peak_memory_used_gib": 30.486
+          }
+        }
+      },
+      "tool_library": {
+        "baseline_id": "toolbase_5bc5b18117f7b913bb66",
+        "baseline_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/_audit/tool_library_baseline.json",
+        "baseline_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "baseline_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "active_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_tool_count": 15,
+        "schema_match": true,
+        "source_match": true,
+        "added_tools": [],
+        "removed_tools": [],
+        "scoped_hidden_tools": [],
+        "changed_tools": [],
+        "scoped_schema_match": true,
+        "active_tools": [
+          "Aggregation",
+          "Clean_Results",
+          "Crop",
+          "Filtering",
+          "Fold_Memory",
+          "Inspect_Frame",
+          "Keyword_Retrieve",
+          "Python_Executor",
+          "Segment_Retrieve",
+          "Semantic_Retrieve",
+          "Tool_Search",
+          "Video_Clip_QA",
+          "Video_Summary",
+          "Zoom_in",
+          "asr"
+        ],
+        "baseline_contract_pass": true
+      },
+      "log_markers": [],
+      "reported_acc": 0.0,
+      "score_contract": {
+        "reported_acc": 0.0,
+        "recomputed_acc": 0.0,
+        "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+        "predicted_label": "",
+        "ground_truth_labels": [
+          "D"
+        ],
+        "reported_acc_matches_recomputed": true
+      },
+      "timing_breakdown_seconds": {
+        "observer.dispatch_llm_generate_seconds": 182.295054,
+        "observer.llm_generate_seconds": 530.903668,
+        "planner.llm_generate_seconds": 1163.910742,
+        "preprocess.total_seconds": 0.180316,
+        "query.grounding_context_seconds": 15.75374,
+        "query.registry_init_seconds": 3e-06,
+        "query.solve_seconds": 2313.82289,
+        "query.total_seconds": 2329.78598,
+        "reflector.llm_generate_seconds": 134.255179,
+        "retrieval.semantic_search_seconds": 0.112059,
+        "runtime_load.vector_store_seconds": 4.143811,
+        "tool.video_clip_qa_seconds": 93.259186
+      }
+    },
+    {
+      "sample_uid": "lvbench:entity-recognition:39:208",
+      "dataset_name": "lvbench",
+      "subset_name": "entity recognition",
+      "dataset_scope": {
+        "input_contract": {
+          "video": "full_provided_video",
+          "question": "official_question_and_options",
+          "timestamp_input": "question_text_only",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false,
+          "additional_temporal_annotation": "excluded"
+        }
+      },
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00039-208/mix_sample_result.json",
+      "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/lvbench/entity-recognition-00039-208/results/run_result.json",
+      "result_file_present": true,
+      "run_result_file_present": true,
+      "status": "completed",
+      "failure_class": "participated",
+      "accuracy_eligible": true,
+      "outcome_class": "correct",
+      "acc": 1.0,
+      "elapsed_seconds": 1239.179,
+      "cache_stats": {
+        "provider.planner.hit": 10,
+        "preprocess.output_dir.hit": 1,
+        "grounding_embedder.hit": 204,
+        "grounding_embedding_vector.miss": 204,
+        "vector_store.miss": 1,
+        "qwen3_vl_embedding_runtime.hit": 1
+      },
+      "trajectory": {
+        "trajectory_id": "trajectory_500b274fbf5a4a75a661d732211d7b38",
+        "registry_snapshot_id": "snapshot_000",
+        "step_count": 14,
+        "actions": [
+          "Parallel",
+          "Finish",
+          "Parallel",
+          "Video_Clip_QA",
+          "Parallel",
+          "Finish",
+          "Parallel",
+          "Finish",
+          "Parallel",
+          "Video_Clip_QA",
+          "Finish",
+          "Parallel",
+          "Parallel",
+          "Finish"
+        ],
+        "tool_actions": [
+          "Parallel",
+          "Semantic_Retrieve",
+          "Parallel",
+          "Inspect_Frame",
+          "Video_Clip_QA",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Video_Clip_QA",
+          "Video_Clip_QA",
+          "Parallel",
+          "Crop",
+          "Parallel",
+          "Video_Clip_QA"
+        ],
+        "finish_attempt_count": 5,
+        "terminal_action": "Finish",
+        "answer": "(A) Headscarf",
+        "agent_final_answer": "(A) Headscarf",
+        "run_success": true,
+        "trajectory_success": true,
+        "planner_success": true,
+        "parse_event_count": 14,
+        "parse_failure_count": 0,
+        "tool_error_count": 0
+      },
+      "workflow": {
+        "trajectory_node_count": 1,
+        "nested_subtrajectory_count": 0,
+        "max_depth": 0,
+        "recursive_step_count": 7,
+        "parallel_step_count": 7,
+        "parallel_concrete_batch_count": 0,
+        "tool_search_call_count": 0,
+        "reported_subagent_iterations": 0,
+        "subagent_workflow_observed": false,
+        "subagent_trajectory_ids": [],
+        "workflow_contract_pass": true,
+        "semantic_retrieval": {
+          "call_count": 1,
+          "dense_success_count": 1,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "actual_video_clip_qa_call": true,
+        "video_clip_qa_fallback_observed": false,
+        "gpu_video_clip_qa_serialization_observed": false
+      },
+      "protocol": {
+        "expected_mode": "react",
+        "run_success_consistent": true,
+        "terminal_finish": true,
+        "finish_has_chain_complete": true,
+        "finish_has_completion_basis": true,
+        "answer_consistent": true,
+        "all_parse_events_success": true,
+        "direct_single_finish": null,
+        "direct_no_tool_calls": null,
+        "registry_snapshot_present": true,
+        "tool_library_baseline_present": true,
+        "workflow_contract_pass": true,
+        "unanswerable_terminal": false,
+        "protocol_pass": true
+      },
+      "evidence": {
+        "slot_count": 3,
+        "completion_basis": "visual->answer",
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": []
+      },
+      "evolution": {
+        "status": "not_run"
+      },
+      "four_agent_audit": {
+        "roles": {
+          "Planner": {
+            "implementation": "LLM Planner / ReAct controller",
+            "kernel": {},
+            "observed": true,
+            "llm_iteration_count": 14,
+            "parse_success_count": 14,
+            "parse_failure_count": 0,
+            "action_sequence": [
+              "Parallel",
+              "Finish",
+              "Parallel",
+              "Video_Clip_QA",
+              "Parallel",
+              "Finish",
+              "Parallel",
+              "Finish",
+              "Parallel",
+              "Video_Clip_QA",
+              "Finish",
+              "Parallel",
+              "Parallel",
+              "Finish"
+            ],
+            "contract_pass": true
+          },
+          "Observer": {
+            "implementation": "LLM/VLM Observer Agent + constrained tool runtime",
+            "kernel": {},
+            "agent_turn_count": 19,
+            "agent_schema_pass_count": 19,
+            "observed": true,
+            "executed_tool_call_count": 9,
+            "successful_tool_call_count": 9,
+            "error_tool_call_count": 0,
+            "controlled_rejection_count": 0,
+            "unknown_status_count": 0,
+            "executed_tools": [
+              "Semantic_Retrieve",
+              "Inspect_Frame",
+              "Video_Clip_QA",
+              "Inspect_Frame",
+              "Inspect_Frame",
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "Crop",
+              "Video_Clip_QA"
+            ],
+            "actual_video_clip_qa_call": true,
+            "fallback_observed": false,
+            "contract_pass": true
+          },
+          "Reflector": {
+            "implementation": "LLM Reflector Agent + deterministic safety gate",
+            "kernel": {},
+            "agent_turn_count": 4,
+            "agent_schema_pass_count": 4,
+            "required_for_query": true,
+            "observed": true,
+            "decision_count": 4,
+            "blocked_finish_count": 1,
+            "accepted_finish_count": 3,
+            "last_can_finish": true,
+            "missing_information": [],
+            "unresolved_claims": [],
+            "evidence_can_finish": true,
+            "contract_pass": true,
+            "status": "pass"
+          },
+          "Evolver": {
+            "implementation": "offline LLM Evolver Agent + replay gate",
+            "kernel": {},
+            "observed": false,
+            "required_for_current_audit": true,
+            "report_count": 0,
+            "replay_statuses": [],
+            "candidate_replay_statuses": [],
+            "contract_pass": false,
+            "status": "not_run"
+          }
+        },
+        "observed_role_count": 3,
+        "four_agent_contract_pass": true,
+        "online_role_contract_pass": true,
+        "offline_roles": [
+          "Evolver"
+        ],
+        "status": "pass",
+        "subagent_route_observed": false,
+        "semantic_retrieval": {
+          "call_count": 1,
+          "dense_success_count": 1,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "kernel_contract": {
+          "kernel_id": "55f99d0f321a766d",
+          "kernel_provider": "transformers",
+          "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "roles": {
+            "planner": {
+              "agent_role": "planner",
+              "provider_class": "TransformersProvider",
+              "model_role": "planner",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "planner_prompts",
+              "structured_contract": "planner_react_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "tool_orchestration_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "goal + trajectory + registered tool observations + optional frames",
+                "decision_authority": "select executable tool calls and propose Finish",
+                "delegates_to": [
+                  "observer",
+                  "reflector"
+                ]
+              }
+            },
+            "observer": {
+              "agent_role": "observer",
+              "provider_class": "TransformersProvider",
+              "model_role": "observer",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "observer_dispatch_or_evidence_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "execution_and_evidence_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+                "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "reflector": {
+              "agent_role": "reflector",
+              "provider_class": "TransformersProvider",
+              "model_role": "reflector",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "reflector_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "evidence_judgment_agent",
+                "kernel_modality": "llm",
+                "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+                "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "evolver": {
+              "agent_role": "evolver",
+              "provider_class": "TransformersProvider",
+              "model_role": "evolver",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "evolver_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "meta_evolution_agent",
+                "kernel_modality": "llm",
+                "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+                "decision_authority": "attribute failures, analyze the dependency graph, and propose one or at most two coordinated replay-gated harness mutations",
+                "delegates_to": [
+                  "replay_gate"
+                ]
+              }
+            }
+          },
+          "weights_shared_for_memory": true,
+          "role_order": [
+            "planner",
+            "observer",
+            "reflector",
+            "evolver"
+          ]
+        }
+      },
+      "inference_input": {
+        "query_source": "sample.prompt",
+        "query_sha256": "833ea78368046845eca97872cefe3643982b98f143fd1403dd9767c06615ac5e",
+        "annotation_time_reference_available": true,
+        "annotation_time_reference_used_for_inference": false,
+        "annotation_time_reference_scope": "annotation_only_not_used",
+        "annotation_time_reference_is_oracle_excluded": true,
+        "input_contract": {
+          "video": "full_provided_video",
+          "question": "official_question_and_options",
+          "timestamp_input": "question_text_only",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false,
+          "additional_temporal_annotation": "excluded"
+        },
+        "annotation_time_reference_disclosed_in_query": false,
+        "answer_field_marker_disclosed_in_query": false,
+        "answer_leakage_contract_pass": true,
+        "runtime_query_matches_sample_prompt": true,
+        "runtime_query_has_answer_field_marker": false,
+        "runtime_input_contract": {
+          "video": "full_provided_video",
+          "question": "official_question_and_options",
+          "timestamp_input": "question_text_only",
+          "audio": "preserved",
+          "audio_transcript": "included",
+          "external_subtitles": false,
+          "additional_temporal_annotation": "excluded",
+          "audio_track": "preserved",
+          "audio_transcript_allowed": true,
+          "temporal_crop": false,
+          "annotation_fields_excluded": [
+            "answer",
+            "ground_truth",
+            "ground_truth_option",
+            "time_reference",
+            "evaluator_output"
+          ],
+          "audio_track_policy": "preserved",
+          "audio_transcript_policy": "included"
+        },
+        "audio_contract_pass": true
+      },
+      "gpu_telemetry": {
+        "status": "ok",
+        "sample_count": 84,
+        "interval_s": 2.0,
+        "gpu_count": 1,
+        "avg_utilization_percent": 43.19,
+        "peak_utilization_percent": 82.0,
+        "peak_memory_used_gib": 25.863,
+        "peak_memory_percent": 32.701,
+        "per_gpu": {
+          "0": {
+            "sample_count": 84,
+            "avg_utilization_percent": 43.19,
+            "peak_utilization_percent": 82.0,
+            "peak_memory_used_gib": 25.863
+          }
+        }
+      },
+      "tool_library": {
+        "baseline_id": "toolbase_5bc5b18117f7b913bb66",
+        "baseline_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/_audit/tool_library_baseline.json",
+        "baseline_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "baseline_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "active_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_tool_count": 15,
+        "schema_match": true,
+        "source_match": true,
+        "added_tools": [],
+        "removed_tools": [],
+        "scoped_hidden_tools": [],
+        "changed_tools": [],
+        "scoped_schema_match": true,
+        "active_tools": [
+          "Aggregation",
+          "Clean_Results",
+          "Crop",
+          "Filtering",
+          "Fold_Memory",
+          "Inspect_Frame",
+          "Keyword_Retrieve",
+          "Python_Executor",
+          "Segment_Retrieve",
+          "Semantic_Retrieve",
+          "Tool_Search",
+          "Video_Clip_QA",
+          "Video_Summary",
+          "Zoom_in",
+          "asr"
+        ],
+        "baseline_contract_pass": true
+      },
+      "log_markers": [],
+      "reported_acc": 1.0,
+      "score_contract": {
+        "reported_acc": 1.0,
+        "recomputed_acc": 1.0,
+        "raw_final_answer": "(A) Headscarf",
+        "predicted_label": "A",
+        "ground_truth_labels": [
+          "A"
+        ],
+        "reported_acc_matches_recomputed": true
+      },
+      "timing_breakdown_seconds": {
+        "observer.dispatch_llm_generate_seconds": 107.378479,
+        "observer.llm_generate_seconds": 347.736441,
+        "planner.llm_generate_seconds": 580.124782,
+        "preprocess.total_seconds": 0.226611,
+        "query.grounding_context_seconds": 13.818669,
+        "query.registry_init_seconds": 2e-06,
+        "query.solve_seconds": 1223.867685,
+        "query.total_seconds": 1237.925151,
+        "reflector.llm_generate_seconds": 69.803823,
+        "retrieval.semantic_search_seconds": 0.060594,
+        "runtime_load.vector_store_seconds": 2.773422,
+        "tool.video_clip_qa_seconds": 44.498637
+      }
+    },
+    {
+      "sample_uid": "videomme:acrobatics:211-1",
+      "dataset_name": "videomme",
+      "subset_name": "Acrobatics",
+      "dataset_scope": {
+        "subtitle_mode": "w/o sub.",
+        "external_subtitles_used": false,
+        "input_contract": {
+          "video": "official_full_video",
+          "question": "official_question_and_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      },
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/videomme/acrobatics-211-1/mix_sample_result.json",
+      "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/videomme/acrobatics-211-1/results/run_result.json",
+      "result_file_present": true,
+      "run_result_file_present": true,
+      "status": "failed",
+      "failure_class": "actual_sample_failure",
+      "accuracy_eligible": false,
+      "outcome_class": "execution_failure",
+      "acc": 0.0,
+      "elapsed_seconds": 1445.679,
+      "cache_stats": {
+        "provider.planner.hit": 12,
+        "preprocess.output_dir.hit": 1
+      },
+      "trajectory": {
+        "trajectory_id": "trajectory_fae7bbd425a84aa1b6ccb99a14bb253a",
+        "registry_snapshot_id": "snapshot_000",
+        "step_count": 18,
+        "actions": [
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Video_Clip_QA",
+          "Parallel",
+          "Video_Clip_QA",
+          "Finish",
+          "Finish",
+          "Finish",
+          "Finish",
+          "Finish",
+          "Finish",
+          "Finish",
+          "Finish",
+          "Finish"
+        ],
+        "tool_actions": [
+          "Parallel",
+          "Inspect_Frame",
+          "Inspect_Frame",
+          "Parallel",
+          "Video_Clip_QA",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Video_Clip_QA",
+          "Parallel",
+          "Video_Clip_QA",
+          "Parallel",
+          "Inspect_Frame",
+          "Video_Clip_QA",
+          "Parallel",
+          "Inspect_Frame",
+          "Video_Clip_QA"
+        ],
+        "finish_attempt_count": 9,
+        "terminal_action": "Finish",
+        "answer": "(B) She took a bow to the audience.",
+        "agent_final_answer": "Failed: finish_recovery_budget_exhausted_after_repeated_finish_rejection.",
+        "run_success": false,
+        "trajectory_success": false,
+        "planner_success": false,
+        "parse_event_count": 18,
+        "parse_failure_count": 0,
+        "tool_error_count": 10
+      },
+      "workflow": {
+        "trajectory_node_count": 1,
+        "nested_subtrajectory_count": 0,
+        "max_depth": 0,
+        "recursive_step_count": 7,
+        "parallel_step_count": 7,
+        "parallel_concrete_batch_count": 1,
+        "tool_search_call_count": 0,
+        "reported_subagent_iterations": 0,
+        "subagent_workflow_observed": false,
+        "subagent_trajectory_ids": [],
+        "workflow_contract_pass": true,
+        "semantic_retrieval": {
+          "call_count": 0,
+          "dense_success_count": 0,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "actual_video_clip_qa_call": true,
+        "video_clip_qa_fallback_observed": false,
+        "gpu_video_clip_qa_serialization_observed": false
+      },
+      "protocol": {
+        "expected_mode": "react",
+        "run_success_consistent": true,
+        "terminal_finish": true,
+        "finish_has_chain_complete": true,
+        "finish_has_completion_basis": true,
+        "answer_consistent": false,
+        "all_parse_events_success": true,
+        "direct_single_finish": null,
+        "direct_no_tool_calls": null,
+        "registry_snapshot_present": true,
+        "tool_library_baseline_present": true,
+        "workflow_contract_pass": true,
+        "unanswerable_terminal": false,
+        "protocol_pass": false
+      },
+      "evidence": {
+        "slot_count": 2,
+        "completion_basis": "text->answer",
+        "progress_score": 0.0,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "missing_information": [
+          "direct evidence citation"
+        ],
+        "unresolved_claims": [
+          "post_performance_actions"
+        ]
+      },
+      "evolution": {
+        "status": "not_run"
+      },
+      "four_agent_audit": {
+        "roles": {
+          "Planner": {
+            "implementation": "LLM Planner / ReAct controller",
+            "kernel": {},
+            "observed": true,
+            "llm_iteration_count": 18,
+            "parse_success_count": 18,
+            "parse_failure_count": 0,
+            "action_sequence": [
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Video_Clip_QA",
+              "Parallel",
+              "Video_Clip_QA",
+              "Finish",
+              "Finish",
+              "Finish",
+              "Finish",
+              "Finish",
+              "Finish",
+              "Finish",
+              "Finish",
+              "Finish"
+            ],
+            "contract_pass": true
+          },
+          "Observer": {
+            "implementation": "LLM/VLM Observer Agent + constrained tool runtime",
+            "kernel": {},
+            "agent_turn_count": 20,
+            "agent_schema_pass_count": 19,
+            "observed": true,
+            "executed_tool_call_count": 10,
+            "successful_tool_call_count": 7,
+            "error_tool_call_count": 2,
+            "controlled_rejection_count": 1,
+            "unknown_status_count": 0,
+            "executed_tools": [
+              "Inspect_Frame",
+              "Inspect_Frame",
+              "Video_Clip_QA",
+              "Inspect_Frame",
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "Inspect_Frame",
+              "Video_Clip_QA",
+              "Inspect_Frame",
+              "Video_Clip_QA"
+            ],
+            "actual_video_clip_qa_call": true,
+            "fallback_observed": false,
+            "contract_pass": false
+          },
+          "Reflector": {
+            "implementation": "LLM Reflector Agent + deterministic safety gate",
+            "kernel": {},
+            "agent_turn_count": 1,
+            "agent_schema_pass_count": 1,
+            "required_for_query": true,
+            "observed": true,
+            "decision_count": 1,
+            "blocked_finish_count": 1,
+            "accepted_finish_count": 0,
+            "last_can_finish": false,
+            "missing_information": [
+              "direct evidence citation"
+            ],
+            "unresolved_claims": [
+              "post_performance_actions"
+            ],
+            "evidence_can_finish": false,
+            "contract_pass": true,
+            "status": "pass"
+          },
+          "Evolver": {
+            "implementation": "offline LLM Evolver Agent + replay gate",
+            "kernel": {},
+            "observed": false,
+            "required_for_current_audit": true,
+            "report_count": 0,
+            "replay_statuses": [],
+            "candidate_replay_statuses": [],
+            "contract_pass": false,
+            "status": "not_run"
+          }
+        },
+        "observed_role_count": 3,
+        "four_agent_contract_pass": false,
+        "online_role_contract_pass": false,
+        "offline_roles": [
+          "Evolver"
+        ],
+        "status": "partial",
+        "subagent_route_observed": false,
+        "semantic_retrieval": {
+          "call_count": 0,
+          "dense_success_count": 0,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "kernel_contract": {
+          "kernel_id": "55f99d0f321a766d",
+          "kernel_provider": "transformers",
+          "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "roles": {
+            "planner": {
+              "agent_role": "planner",
+              "provider_class": "TransformersProvider",
+              "model_role": "planner",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "planner_prompts",
+              "structured_contract": "planner_react_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "tool_orchestration_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "goal + trajectory + registered tool observations + optional frames",
+                "decision_authority": "select executable tool calls and propose Finish",
+                "delegates_to": [
+                  "observer",
+                  "reflector"
+                ]
+              }
+            },
+            "observer": {
+              "agent_role": "observer",
+              "provider_class": "TransformersProvider",
+              "model_role": "observer",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "observer_dispatch_or_evidence_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "execution_and_evidence_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+                "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "reflector": {
+              "agent_role": "reflector",
+              "provider_class": "TransformersProvider",
+              "model_role": "reflector",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "reflector_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "evidence_judgment_agent",
+                "kernel_modality": "llm",
+                "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+                "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "evolver": {
+              "agent_role": "evolver",
+              "provider_class": "TransformersProvider",
+              "model_role": "evolver",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "evolver_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "meta_evolution_agent",
+                "kernel_modality": "llm",
+                "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+                "decision_authority": "attribute failures, analyze the dependency graph, and propose one or at most two coordinated replay-gated harness mutations",
+                "delegates_to": [
+                  "replay_gate"
+                ]
+              }
+            }
+          },
+          "weights_shared_for_memory": true,
+          "role_order": [
+            "planner",
+            "observer",
+            "reflector",
+            "evolver"
+          ]
+        }
+      },
+      "inference_input": {
+        "query_source": "sample.prompt",
+        "query_sha256": "985680b2ab9baca37d1211744aba31460365f754abdda138aaadd4dcd078edfb",
+        "annotation_time_reference_available": false,
+        "annotation_time_reference_used_for_inference": false,
+        "annotation_time_reference_scope": "annotation_only_not_used",
+        "annotation_time_reference_is_oracle_excluded": true,
+        "input_contract": {
+          "video": "official_full_video",
+          "question": "official_question_and_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        },
+        "annotation_time_reference_disclosed_in_query": false,
+        "answer_field_marker_disclosed_in_query": false,
+        "answer_leakage_contract_pass": true,
+        "runtime_query_matches_sample_prompt": true,
+        "runtime_query_has_answer_field_marker": false,
+        "runtime_input_contract": {
+          "video": "official_full_video",
+          "question": "official_question_and_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "included",
+          "external_subtitles": false,
+          "audio_track": "preserved",
+          "audio_transcript_allowed": true,
+          "annotation_fields_excluded": [
+            "answer",
+            "ground_truth",
+            "ground_truth_option",
+            "time_reference",
+            "evaluator_output"
+          ],
+          "audio_track_policy": "preserved",
+          "audio_transcript_policy": "included"
+        },
+        "audio_contract_pass": true
+      },
+      "gpu_telemetry": {
+        "status": "ok",
+        "sample_count": 48,
+        "interval_s": 2.0,
+        "gpu_count": 1,
+        "avg_utilization_percent": 39.875,
+        "peak_utilization_percent": 82.0,
+        "peak_memory_used_gib": 25.492,
+        "peak_memory_percent": 32.232,
+        "per_gpu": {
+          "0": {
+            "sample_count": 48,
+            "avg_utilization_percent": 39.875,
+            "peak_utilization_percent": 82.0,
+            "peak_memory_used_gib": 25.492
+          }
+        }
+      },
+      "tool_library": {
+        "baseline_id": "toolbase_5bc5b18117f7b913bb66",
+        "baseline_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/_audit/tool_library_baseline.json",
+        "baseline_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "baseline_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "active_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_tool_count": 15,
+        "schema_match": true,
+        "source_match": true,
+        "added_tools": [],
+        "removed_tools": [],
+        "scoped_hidden_tools": [],
+        "changed_tools": [],
+        "scoped_schema_match": true,
+        "active_tools": [
+          "Aggregation",
+          "Clean_Results",
+          "Crop",
+          "Filtering",
+          "Fold_Memory",
+          "Inspect_Frame",
+          "Keyword_Retrieve",
+          "Python_Executor",
+          "Segment_Retrieve",
+          "Semantic_Retrieve",
+          "Tool_Search",
+          "Video_Clip_QA",
+          "Video_Summary",
+          "Zoom_in",
+          "asr"
+        ],
+        "baseline_contract_pass": true
+      },
+      "log_markers": [],
+      "reported_acc": 0.0,
+      "score_contract": {
+        "reported_acc": 0.0,
+        "recomputed_acc": 0.0,
+        "raw_final_answer": "Failed: finish_recovery_budget_exhausted_after_repeated_finish_rejection.",
+        "predicted_label": "",
+        "ground_truth_labels": [
+          "B"
+        ],
+        "reported_acc_matches_recomputed": true
+      },
+      "timing_breakdown_seconds": {
+        "observer.dispatch_llm_generate_seconds": 165.716271,
+        "observer.llm_generate_seconds": 319.003067,
+        "planner.llm_generate_seconds": 747.204059,
+        "preprocess.total_seconds": 0.050654,
+        "query.grounding_context_seconds": 1.281579,
+        "query.registry_init_seconds": 1e-06,
+        "query.solve_seconds": 1442.780478,
+        "query.total_seconds": 1444.124788,
+        "reflector.llm_generate_seconds": 21.780211,
+        "tool.video_clip_qa_seconds": 52.022331
+      }
+    },
+    {
+      "sample_uid": "videomme:acrobatics:211-2",
+      "dataset_name": "videomme",
+      "subset_name": "Acrobatics",
+      "dataset_scope": {
+        "subtitle_mode": "w/o sub.",
+        "external_subtitles_used": false,
+        "input_contract": {
+          "video": "official_full_video",
+          "question": "official_question_and_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      },
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/videomme/acrobatics-211-2/mix_sample_result.json",
+      "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/videomme/acrobatics-211-2/results/run_result.json",
+      "result_file_present": true,
+      "run_result_file_present": true,
+      "status": "completed",
+      "failure_class": "participated",
+      "accuracy_eligible": true,
+      "outcome_class": "correct",
+      "acc": 1.0,
+      "elapsed_seconds": 110.528,
+      "cache_stats": {
+        "provider.planner.hit": 2,
+        "preprocess.output_dir.hit": 1
+      },
+      "trajectory": {
+        "trajectory_id": "trajectory_6caa0ec0c0194ccca52a6da63bc9667d",
+        "registry_snapshot_id": "snapshot_000",
+        "step_count": 2,
+        "actions": [
+          "Parallel",
+          "Finish"
+        ],
+        "tool_actions": [
+          "Parallel",
+          "Inspect_Frame"
+        ],
+        "finish_attempt_count": 1,
+        "terminal_action": "Finish",
+        "answer": "(C) A huge full moon with light effects.",
+        "agent_final_answer": "(C) A huge full moon with light effects.",
+        "run_success": true,
+        "trajectory_success": true,
+        "planner_success": true,
+        "parse_event_count": 2,
+        "parse_failure_count": 0,
+        "tool_error_count": 0
+      },
+      "workflow": {
+        "trajectory_node_count": 1,
+        "nested_subtrajectory_count": 0,
+        "max_depth": 0,
+        "recursive_step_count": 1,
+        "parallel_step_count": 1,
+        "parallel_concrete_batch_count": 0,
+        "tool_search_call_count": 0,
+        "reported_subagent_iterations": 0,
+        "subagent_workflow_observed": false,
+        "subagent_trajectory_ids": [],
+        "workflow_contract_pass": true,
+        "semantic_retrieval": {
+          "call_count": 0,
+          "dense_success_count": 0,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "actual_video_clip_qa_call": false,
+        "video_clip_qa_fallback_observed": false,
+        "gpu_video_clip_qa_serialization_observed": false
+      },
+      "protocol": {
+        "expected_mode": "react",
+        "run_success_consistent": true,
+        "terminal_finish": true,
+        "finish_has_chain_complete": true,
+        "finish_has_completion_basis": true,
+        "answer_consistent": true,
+        "all_parse_events_success": true,
+        "direct_single_finish": null,
+        "direct_no_tool_calls": null,
+        "registry_snapshot_present": true,
+        "tool_library_baseline_present": true,
+        "workflow_contract_pass": true,
+        "unanswerable_terminal": false,
+        "protocol_pass": true
+      },
+      "evidence": {
+        "slot_count": 1,
+        "completion_basis": "visual->answer",
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": []
+      },
+      "evolution": {
+        "status": "not_run"
+      },
+      "four_agent_audit": {
+        "roles": {
+          "Planner": {
+            "implementation": "LLM Planner / ReAct controller",
+            "kernel": {},
+            "observed": true,
+            "llm_iteration_count": 2,
+            "parse_success_count": 2,
+            "parse_failure_count": 0,
+            "action_sequence": [
+              "Parallel",
+              "Finish"
+            ],
+            "contract_pass": true
+          },
+          "Observer": {
+            "implementation": "LLM/VLM Observer Agent + constrained tool runtime",
+            "kernel": {},
+            "agent_turn_count": 3,
+            "agent_schema_pass_count": 3,
+            "observed": true,
+            "executed_tool_call_count": 1,
+            "successful_tool_call_count": 1,
+            "error_tool_call_count": 0,
+            "controlled_rejection_count": 0,
+            "unknown_status_count": 0,
+            "executed_tools": [
+              "Inspect_Frame"
+            ],
+            "actual_video_clip_qa_call": false,
+            "fallback_observed": false,
+            "contract_pass": true
+          },
+          "Reflector": {
+            "implementation": "LLM Reflector Agent + deterministic safety gate",
+            "kernel": {},
+            "agent_turn_count": 1,
+            "agent_schema_pass_count": 1,
+            "required_for_query": true,
+            "observed": true,
+            "decision_count": 1,
+            "blocked_finish_count": 0,
+            "accepted_finish_count": 1,
+            "last_can_finish": true,
+            "missing_information": [],
+            "unresolved_claims": [],
+            "evidence_can_finish": true,
+            "contract_pass": true,
+            "status": "pass"
+          },
+          "Evolver": {
+            "implementation": "offline LLM Evolver Agent + replay gate",
+            "kernel": {},
+            "observed": false,
+            "required_for_current_audit": true,
+            "report_count": 0,
+            "replay_statuses": [],
+            "candidate_replay_statuses": [],
+            "contract_pass": false,
+            "status": "not_run"
+          }
+        },
+        "observed_role_count": 3,
+        "four_agent_contract_pass": true,
+        "online_role_contract_pass": true,
+        "offline_roles": [
+          "Evolver"
+        ],
+        "status": "pass",
+        "subagent_route_observed": false,
+        "semantic_retrieval": {
+          "call_count": 0,
+          "dense_success_count": 0,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "kernel_contract": {
+          "kernel_id": "55f99d0f321a766d",
+          "kernel_provider": "transformers",
+          "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "roles": {
+            "planner": {
+              "agent_role": "planner",
+              "provider_class": "TransformersProvider",
+              "model_role": "planner",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "planner_prompts",
+              "structured_contract": "planner_react_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "tool_orchestration_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "goal + trajectory + registered tool observations + optional frames",
+                "decision_authority": "select executable tool calls and propose Finish",
+                "delegates_to": [
+                  "observer",
+                  "reflector"
+                ]
+              }
+            },
+            "observer": {
+              "agent_role": "observer",
+              "provider_class": "TransformersProvider",
+              "model_role": "observer",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "observer_dispatch_or_evidence_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "execution_and_evidence_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+                "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "reflector": {
+              "agent_role": "reflector",
+              "provider_class": "TransformersProvider",
+              "model_role": "reflector",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "reflector_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "evidence_judgment_agent",
+                "kernel_modality": "llm",
+                "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+                "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "evolver": {
+              "agent_role": "evolver",
+              "provider_class": "TransformersProvider",
+              "model_role": "evolver",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "evolver_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "meta_evolution_agent",
+                "kernel_modality": "llm",
+                "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+                "decision_authority": "attribute failures, analyze the dependency graph, and propose one or at most two coordinated replay-gated harness mutations",
+                "delegates_to": [
+                  "replay_gate"
+                ]
+              }
+            }
+          },
+          "weights_shared_for_memory": true,
+          "role_order": [
+            "planner",
+            "observer",
+            "reflector",
+            "evolver"
+          ]
+        }
+      },
+      "inference_input": {
+        "query_source": "sample.prompt",
+        "query_sha256": "4d595228b3f1aae1e7766741ebea65935a441aba3fc0467535abc5a5983d5fc4",
+        "annotation_time_reference_available": false,
+        "annotation_time_reference_used_for_inference": false,
+        "annotation_time_reference_scope": "annotation_only_not_used",
+        "annotation_time_reference_is_oracle_excluded": true,
+        "input_contract": {
+          "video": "official_full_video",
+          "question": "official_question_and_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        },
+        "annotation_time_reference_disclosed_in_query": false,
+        "answer_field_marker_disclosed_in_query": false,
+        "answer_leakage_contract_pass": true,
+        "runtime_query_matches_sample_prompt": true,
+        "runtime_query_has_answer_field_marker": false,
+        "runtime_input_contract": {
+          "video": "official_full_video",
+          "question": "official_question_and_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "included",
+          "external_subtitles": false,
+          "audio_track": "preserved",
+          "audio_transcript_allowed": true,
+          "annotation_fields_excluded": [
+            "answer",
+            "ground_truth",
+            "ground_truth_option",
+            "time_reference",
+            "evaluator_output"
+          ],
+          "audio_track_policy": "preserved",
+          "audio_transcript_policy": "included"
+        },
+        "audio_contract_pass": true
+      },
+      "gpu_telemetry": {
+        "status": "ok",
+        "sample_count": 50,
+        "interval_s": 2.0,
+        "gpu_count": 1,
+        "avg_utilization_percent": 42.18,
+        "peak_utilization_percent": 75.0,
+        "peak_memory_used_gib": 25.041,
+        "peak_memory_percent": 31.661,
+        "per_gpu": {
+          "0": {
+            "sample_count": 50,
+            "avg_utilization_percent": 42.18,
+            "peak_utilization_percent": 75.0,
+            "peak_memory_used_gib": 25.041
+          }
+        }
+      },
+      "tool_library": {
+        "baseline_id": "toolbase_5bc5b18117f7b913bb66",
+        "baseline_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/_audit/tool_library_baseline.json",
+        "baseline_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "baseline_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "active_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_tool_count": 15,
+        "schema_match": true,
+        "source_match": true,
+        "added_tools": [],
+        "removed_tools": [],
+        "scoped_hidden_tools": [],
+        "changed_tools": [],
+        "scoped_schema_match": true,
+        "active_tools": [
+          "Aggregation",
+          "Clean_Results",
+          "Crop",
+          "Filtering",
+          "Fold_Memory",
+          "Inspect_Frame",
+          "Keyword_Retrieve",
+          "Python_Executor",
+          "Segment_Retrieve",
+          "Semantic_Retrieve",
+          "Tool_Search",
+          "Video_Clip_QA",
+          "Video_Summary",
+          "Zoom_in",
+          "asr"
+        ],
+        "baseline_contract_pass": true
+      },
+      "log_markers": [],
+      "reported_acc": 1.0,
+      "score_contract": {
+        "reported_acc": 1.0,
+        "recomputed_acc": 1.0,
+        "raw_final_answer": "(C) A huge full moon with light effects.",
+        "predicted_label": "C",
+        "ground_truth_labels": [
+          "C"
+        ],
+        "reported_acc_matches_recomputed": true
+      },
+      "timing_breakdown_seconds": {
+        "observer.dispatch_llm_generate_seconds": 9.238927,
+        "observer.llm_generate_seconds": 47.325137,
+        "planner.llm_generate_seconds": 34.959759,
+        "preprocess.total_seconds": 0.038425,
+        "query.grounding_context_seconds": 1.381828,
+        "query.registry_init_seconds": 3e-06,
+        "query.solve_seconds": 107.711088,
+        "query.total_seconds": 109.15333,
+        "reflector.llm_generate_seconds": 9.448408
+      }
+    },
+    {
+      "sample_uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "dataset_scope": {
+        "input_contract": {
+          "video": "official_three_minute_clip",
+          "question": "official_question_and_five_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      },
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/mix_sample_result.json",
+      "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/results/run_result.json",
+      "result_file_present": true,
+      "run_result_file_present": true,
+      "status": "completed",
+      "failure_class": "participated",
+      "accuracy_eligible": true,
+      "outcome_class": "correct",
+      "acc": 1.0,
+      "elapsed_seconds": 163.394,
+      "cache_stats": {
+        "provider.planner.hit": 2,
+        "preprocess.output_dir.hit": 1,
+        "grounding_embedder.hit": 6,
+        "grounding_embedding_vector.miss": 6
+      },
+      "trajectory": {
+        "trajectory_id": "trajectory_338e274f51034a7984be18358e793957",
+        "registry_snapshot_id": "snapshot_000",
+        "step_count": 2,
+        "actions": [
+          "Parallel",
+          "Finish"
+        ],
+        "tool_actions": [
+          "Parallel",
+          "Inspect_Frame"
+        ],
+        "finish_attempt_count": 1,
+        "terminal_action": "Finish",
+        "answer": "(D) C is cleaning dishes.",
+        "agent_final_answer": "(D) C is cleaning dishes.",
+        "run_success": true,
+        "trajectory_success": true,
+        "planner_success": true,
+        "parse_event_count": 2,
+        "parse_failure_count": 0,
+        "tool_error_count": 0
+      },
+      "workflow": {
+        "trajectory_node_count": 1,
+        "nested_subtrajectory_count": 0,
+        "max_depth": 0,
+        "recursive_step_count": 1,
+        "parallel_step_count": 1,
+        "parallel_concrete_batch_count": 0,
+        "tool_search_call_count": 0,
+        "reported_subagent_iterations": 0,
+        "subagent_workflow_observed": false,
+        "subagent_trajectory_ids": [],
+        "workflow_contract_pass": true,
+        "semantic_retrieval": {
+          "call_count": 0,
+          "dense_success_count": 0,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "actual_video_clip_qa_call": false,
+        "video_clip_qa_fallback_observed": false,
+        "gpu_video_clip_qa_serialization_observed": false
+      },
+      "protocol": {
+        "expected_mode": "react",
+        "run_success_consistent": true,
+        "terminal_finish": true,
+        "finish_has_chain_complete": true,
+        "finish_has_completion_basis": true,
+        "answer_consistent": true,
+        "all_parse_events_success": true,
+        "direct_single_finish": null,
+        "direct_no_tool_calls": null,
+        "registry_snapshot_present": true,
+        "tool_library_baseline_present": true,
+        "workflow_contract_pass": true,
+        "unanswerable_terminal": false,
+        "protocol_pass": true
+      },
+      "evidence": {
+        "slot_count": 3,
+        "completion_basis": "visual->answer",
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": []
+      },
+      "evolution": {
+        "status": "not_run"
+      },
+      "four_agent_audit": {
+        "roles": {
+          "Planner": {
+            "implementation": "LLM Planner / ReAct controller",
+            "kernel": {},
+            "observed": true,
+            "llm_iteration_count": 2,
+            "parse_success_count": 2,
+            "parse_failure_count": 0,
+            "action_sequence": [
+              "Parallel",
+              "Finish"
+            ],
+            "contract_pass": true
+          },
+          "Observer": {
+            "implementation": "LLM/VLM Observer Agent + constrained tool runtime",
+            "kernel": {},
+            "agent_turn_count": 3,
+            "agent_schema_pass_count": 3,
+            "observed": true,
+            "executed_tool_call_count": 1,
+            "successful_tool_call_count": 1,
+            "error_tool_call_count": 0,
+            "controlled_rejection_count": 0,
+            "unknown_status_count": 0,
+            "executed_tools": [
+              "Inspect_Frame"
+            ],
+            "actual_video_clip_qa_call": false,
+            "fallback_observed": false,
+            "contract_pass": true
+          },
+          "Reflector": {
+            "implementation": "LLM Reflector Agent + deterministic safety gate",
+            "kernel": {},
+            "agent_turn_count": 1,
+            "agent_schema_pass_count": 1,
+            "required_for_query": true,
+            "observed": true,
+            "decision_count": 1,
+            "blocked_finish_count": 0,
+            "accepted_finish_count": 1,
+            "last_can_finish": true,
+            "missing_information": [],
+            "unresolved_claims": [],
+            "evidence_can_finish": true,
+            "contract_pass": true,
+            "status": "pass"
+          },
+          "Evolver": {
+            "implementation": "offline LLM Evolver Agent + replay gate",
+            "kernel": {},
+            "observed": false,
+            "required_for_current_audit": true,
+            "report_count": 0,
+            "replay_statuses": [],
+            "candidate_replay_statuses": [],
+            "contract_pass": false,
+            "status": "not_run"
+          }
+        },
+        "observed_role_count": 3,
+        "four_agent_contract_pass": true,
+        "online_role_contract_pass": true,
+        "offline_roles": [
+          "Evolver"
+        ],
+        "status": "pass",
+        "subagent_route_observed": false,
+        "semantic_retrieval": {
+          "call_count": 0,
+          "dense_success_count": 0,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "kernel_contract": {
+          "kernel_id": "55f99d0f321a766d",
+          "kernel_provider": "transformers",
+          "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "roles": {
+            "planner": {
+              "agent_role": "planner",
+              "provider_class": "TransformersProvider",
+              "model_role": "planner",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "planner_prompts",
+              "structured_contract": "planner_react_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "tool_orchestration_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "goal + trajectory + registered tool observations + optional frames",
+                "decision_authority": "select executable tool calls and propose Finish",
+                "delegates_to": [
+                  "observer",
+                  "reflector"
+                ]
+              }
+            },
+            "observer": {
+              "agent_role": "observer",
+              "provider_class": "TransformersProvider",
+              "model_role": "observer",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "observer_dispatch_or_evidence_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "execution_and_evidence_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+                "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "reflector": {
+              "agent_role": "reflector",
+              "provider_class": "TransformersProvider",
+              "model_role": "reflector",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "reflector_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "evidence_judgment_agent",
+                "kernel_modality": "llm",
+                "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+                "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "evolver": {
+              "agent_role": "evolver",
+              "provider_class": "TransformersProvider",
+              "model_role": "evolver",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "evolver_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "meta_evolution_agent",
+                "kernel_modality": "llm",
+                "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+                "decision_authority": "attribute failures, analyze the dependency graph, and propose one or at most two coordinated replay-gated harness mutations",
+                "delegates_to": [
+                  "replay_gate"
+                ]
+              }
+            }
+          },
+          "weights_shared_for_memory": true,
+          "role_order": [
+            "planner",
+            "observer",
+            "reflector",
+            "evolver"
+          ]
+        }
+      },
+      "inference_input": {
+        "query_source": "sample.prompt",
+        "query_sha256": "5c24ba749dfbd46d0b2d0cc2ba3945d2af00f8fad8ab199b3ddd28c8c964983b",
+        "annotation_time_reference_available": false,
+        "annotation_time_reference_used_for_inference": false,
+        "annotation_time_reference_scope": "annotation_only_not_used",
+        "annotation_time_reference_is_oracle_excluded": true,
+        "input_contract": {
+          "video": "official_three_minute_clip",
+          "question": "official_question_and_five_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        },
+        "annotation_time_reference_disclosed_in_query": false,
+        "answer_field_marker_disclosed_in_query": false,
+        "answer_leakage_contract_pass": true,
+        "runtime_query_matches_sample_prompt": true,
+        "runtime_query_has_answer_field_marker": false,
+        "runtime_input_contract": {
+          "video": "official_three_minute_clip",
+          "question": "official_question_and_five_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "included",
+          "external_subtitles": false,
+          "audio_track": "preserved",
+          "audio_transcript_allowed": true,
+          "annotation_fields_excluded": [
+            "answer",
+            "ground_truth",
+            "ground_truth_option",
+            "time_reference",
+            "evaluator_output"
+          ],
+          "audio_track_policy": "preserved",
+          "audio_transcript_policy": "included"
+        },
+        "audio_contract_pass": true
+      },
+      "gpu_telemetry": {
+        "status": "ok",
+        "sample_count": 76,
+        "interval_s": 2.0,
+        "gpu_count": 1,
+        "avg_utilization_percent": 44.039,
+        "peak_utilization_percent": 81.0,
+        "peak_memory_used_gib": 25.375,
+        "peak_memory_percent": 32.084,
+        "per_gpu": {
+          "0": {
+            "sample_count": 76,
+            "avg_utilization_percent": 44.039,
+            "peak_utilization_percent": 81.0,
+            "peak_memory_used_gib": 25.375
+          }
+        }
+      },
+      "tool_library": {
+        "baseline_id": "toolbase_5bc5b18117f7b913bb66",
+        "baseline_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/_audit/tool_library_baseline.json",
+        "baseline_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "baseline_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "active_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_tool_count": 15,
+        "schema_match": true,
+        "source_match": true,
+        "added_tools": [],
+        "removed_tools": [],
+        "scoped_hidden_tools": [],
+        "changed_tools": [],
+        "scoped_schema_match": true,
+        "active_tools": [
+          "Aggregation",
+          "Clean_Results",
+          "Crop",
+          "Filtering",
+          "Fold_Memory",
+          "Inspect_Frame",
+          "Keyword_Retrieve",
+          "Python_Executor",
+          "Segment_Retrieve",
+          "Semantic_Retrieve",
+          "Tool_Search",
+          "Video_Clip_QA",
+          "Video_Summary",
+          "Zoom_in",
+          "asr"
+        ],
+        "baseline_contract_pass": true
+      },
+      "log_markers": [],
+      "reported_acc": 1.0,
+      "score_contract": {
+        "reported_acc": 1.0,
+        "recomputed_acc": 1.0,
+        "raw_final_answer": "(D) C is cleaning dishes.",
+        "predicted_label": "D",
+        "ground_truth_labels": [
+          "D"
+        ],
+        "reported_acc_matches_recomputed": true
+      },
+      "timing_breakdown_seconds": {
+        "observer.dispatch_llm_generate_seconds": 6.831467,
+        "observer.llm_generate_seconds": 68.10015,
+        "planner.llm_generate_seconds": 63.695296,
+        "preprocess.total_seconds": 0.067516,
+        "query.grounding_context_seconds": 1.500402,
+        "query.registry_init_seconds": 2e-06,
+        "query.solve_seconds": 160.620892,
+        "query.total_seconds": 162.201648,
+        "reflector.llm_generate_seconds": 15.446695
+      }
+    },
+    {
+      "sample_uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+      "dataset_name": "egoschema",
+      "subset_name": "subset",
+      "dataset_scope": {
+        "input_contract": {
+          "video": "official_three_minute_clip",
+          "question": "official_question_and_five_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      },
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/mix_sample_result.json",
+      "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/egoschema/00006-026a2f15-c454-4c28-80e0-24c85d7f4ecf/results/run_result.json",
+      "result_file_present": true,
+      "run_result_file_present": true,
+      "status": "failed",
+      "failure_class": "actual_sample_failure",
+      "accuracy_eligible": false,
+      "outcome_class": "execution_failure",
+      "acc": 0.0,
+      "elapsed_seconds": 2030.497,
+      "cache_stats": {
+        "provider.planner.miss": 1,
+        "preprocess.output_dir.hit": 1,
+        "grounding_embedder.miss": 1,
+        "grounding_embedding_vector.miss": 7,
+        "qwen3_vl_embedding_runtime.miss": 1,
+        "grounding_embedder.hit": 6,
+        "provider.planner.hit": 9,
+        "vector_store.miss": 1,
+        "qwen3_vl_embedding_runtime.hit": 1,
+        "vector_store.hit": 1
+      },
+      "trajectory": {
+        "trajectory_id": "trajectory_a2c5b01fd98a4a688afb76a25ff148ac",
+        "registry_snapshot_id": "snapshot_000",
+        "step_count": 18,
+        "actions": [
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Finish",
+          "Parallel",
+          "Parallel",
+          "Video_Clip_QA",
+          "Parallel",
+          "Parallel",
+          "Video_Clip_QA",
+          "Finish",
+          "Parallel",
+          "Parallel",
+          "Finish",
+          "Finish",
+          "Parallel",
+          "Parallel",
+          "Finish"
+        ],
+        "tool_actions": [
+          "Parallel",
+          "Video_Clip_QA",
+          "Video_Clip_QA",
+          "Parallel",
+          "Inspect_Frame",
+          "Inspect_Frame",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Semantic_Retrieve",
+          "Parallel",
+          "Video_Clip_QA",
+          "Video_Clip_QA",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Segment_Retrieve",
+          "Segment_Retrieve",
+          "Segment_Retrieve",
+          "Video_Clip_QA",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "asr",
+          "asr",
+          "Parallel",
+          "Semantic_Retrieve",
+          "Parallel",
+          "Video_Clip_QA",
+          "Video_Clip_QA"
+        ],
+        "finish_attempt_count": 5,
+        "terminal_action": "Finish",
+        "answer": "(B) Precision and accuracy are incredibly important in the character's actions, as they ensure that the wood is cut evenly and consistently.",
+        "agent_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+        "run_success": false,
+        "trajectory_success": false,
+        "planner_success": false,
+        "parse_event_count": 18,
+        "parse_failure_count": 0,
+        "tool_error_count": 2
+      },
+      "workflow": {
+        "trajectory_node_count": 1,
+        "nested_subtrajectory_count": 0,
+        "max_depth": 0,
+        "recursive_step_count": 11,
+        "parallel_step_count": 11,
+        "parallel_concrete_batch_count": 5,
+        "tool_search_call_count": 0,
+        "reported_subagent_iterations": 0,
+        "subagent_workflow_observed": false,
+        "subagent_trajectory_ids": [],
+        "workflow_contract_pass": true,
+        "semantic_retrieval": {
+          "call_count": 2,
+          "dense_success_count": 2,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "actual_video_clip_qa_call": true,
+        "video_clip_qa_fallback_observed": false,
+        "gpu_video_clip_qa_serialization_observed": true
+      },
+      "protocol": {
+        "expected_mode": "react",
+        "run_success_consistent": true,
+        "terminal_finish": true,
+        "finish_has_chain_complete": true,
+        "finish_has_completion_basis": true,
+        "answer_consistent": false,
+        "all_parse_events_success": true,
+        "direct_single_finish": null,
+        "direct_no_tool_calls": null,
+        "registry_snapshot_present": true,
+        "tool_library_baseline_present": true,
+        "workflow_contract_pass": true,
+        "unanswerable_terminal": false,
+        "protocol_pass": false
+      },
+      "evidence": {
+        "slot_count": 1,
+        "completion_basis": "visual->text->answer",
+        "progress_score": 0.2,
+        "claim_coverage": 0.0,
+        "direct_grounding": 0.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 1.0,
+        "can_finish": false,
+        "premise_mismatch": false,
+        "missing_information": [
+          "direct evidence citation"
+        ],
+        "unresolved_claims": [
+          "inferred_purpose_of_precision"
+        ]
+      },
+      "evolution": {
+        "status": "not_run"
+      },
+      "four_agent_audit": {
+        "roles": {
+          "Planner": {
+            "implementation": "LLM Planner / ReAct controller",
+            "kernel": {},
+            "observed": true,
+            "llm_iteration_count": 18,
+            "parse_success_count": 18,
+            "parse_failure_count": 0,
+            "action_sequence": [
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Finish",
+              "Parallel",
+              "Parallel",
+              "Video_Clip_QA",
+              "Parallel",
+              "Parallel",
+              "Video_Clip_QA",
+              "Finish",
+              "Parallel",
+              "Parallel",
+              "Finish",
+              "Finish",
+              "Parallel",
+              "Parallel",
+              "Finish"
+            ],
+            "contract_pass": true
+          },
+          "Observer": {
+            "implementation": "LLM/VLM Observer Agent + constrained tool runtime",
+            "kernel": {},
+            "agent_turn_count": 34,
+            "agent_schema_pass_count": 34,
+            "observed": true,
+            "executed_tool_call_count": 19,
+            "successful_tool_call_count": 14,
+            "error_tool_call_count": 0,
+            "controlled_rejection_count": 5,
+            "unknown_status_count": 0,
+            "executed_tools": [
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "Inspect_Frame",
+              "Inspect_Frame",
+              "Inspect_Frame",
+              "Semantic_Retrieve",
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "Inspect_Frame",
+              "Segment_Retrieve",
+              "Segment_Retrieve",
+              "Segment_Retrieve",
+              "Video_Clip_QA",
+              "Inspect_Frame",
+              "asr",
+              "asr",
+              "Semantic_Retrieve",
+              "Video_Clip_QA",
+              "Video_Clip_QA"
+            ],
+            "actual_video_clip_qa_call": true,
+            "fallback_observed": false,
+            "contract_pass": true
+          },
+          "Reflector": {
+            "implementation": "LLM Reflector Agent + deterministic safety gate",
+            "kernel": {},
+            "agent_turn_count": 1,
+            "agent_schema_pass_count": 1,
+            "required_for_query": true,
+            "observed": true,
+            "decision_count": 1,
+            "blocked_finish_count": 1,
+            "accepted_finish_count": 0,
+            "last_can_finish": false,
+            "missing_information": [
+              "structured evidence claims",
+              "direct evidence citation"
+            ],
+            "unresolved_claims": [
+              "claim contract missing: purpose"
+            ],
+            "evidence_can_finish": false,
+            "contract_pass": true,
+            "status": "pass"
+          },
+          "Evolver": {
+            "implementation": "offline LLM Evolver Agent + replay gate",
+            "kernel": {},
+            "observed": false,
+            "required_for_current_audit": true,
+            "report_count": 0,
+            "replay_statuses": [],
+            "candidate_replay_statuses": [],
+            "contract_pass": false,
+            "status": "not_run"
+          }
+        },
+        "observed_role_count": 3,
+        "four_agent_contract_pass": true,
+        "online_role_contract_pass": true,
+        "offline_roles": [
+          "Evolver"
+        ],
+        "status": "pass",
+        "subagent_route_observed": false,
+        "semantic_retrieval": {
+          "call_count": 2,
+          "dense_success_count": 2,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "kernel_contract": {
+          "kernel_id": "55f99d0f321a766d",
+          "kernel_provider": "transformers",
+          "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "roles": {
+            "planner": {
+              "agent_role": "planner",
+              "provider_class": "TransformersProvider",
+              "model_role": "planner",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "planner_prompts",
+              "structured_contract": "planner_react_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "tool_orchestration_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "goal + trajectory + registered tool observations + optional frames",
+                "decision_authority": "select executable tool calls and propose Finish",
+                "delegates_to": [
+                  "observer",
+                  "reflector"
+                ]
+              }
+            },
+            "observer": {
+              "agent_role": "observer",
+              "provider_class": "TransformersProvider",
+              "model_role": "observer",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "observer_dispatch_or_evidence_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "execution_and_evidence_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+                "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "reflector": {
+              "agent_role": "reflector",
+              "provider_class": "TransformersProvider",
+              "model_role": "reflector",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "reflector_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "evidence_judgment_agent",
+                "kernel_modality": "llm",
+                "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+                "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "evolver": {
+              "agent_role": "evolver",
+              "provider_class": "TransformersProvider",
+              "model_role": "evolver",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "evolver_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "meta_evolution_agent",
+                "kernel_modality": "llm",
+                "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+                "decision_authority": "attribute failures, analyze the dependency graph, and propose one or at most two coordinated replay-gated harness mutations",
+                "delegates_to": [
+                  "replay_gate"
+                ]
+              }
+            }
+          },
+          "weights_shared_for_memory": true,
+          "role_order": [
+            "planner",
+            "observer",
+            "reflector",
+            "evolver"
+          ]
+        }
+      },
+      "inference_input": {
+        "query_source": "sample.prompt",
+        "query_sha256": "b168b327ab28682a5a0091d8110935ec3faaded2a5f6e3a9415c10c44b05cb2c",
+        "annotation_time_reference_available": false,
+        "annotation_time_reference_used_for_inference": false,
+        "annotation_time_reference_scope": "annotation_only_not_used",
+        "annotation_time_reference_is_oracle_excluded": true,
+        "input_contract": {
+          "video": "official_three_minute_clip",
+          "question": "official_question_and_five_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        },
+        "annotation_time_reference_disclosed_in_query": false,
+        "answer_field_marker_disclosed_in_query": false,
+        "answer_leakage_contract_pass": true,
+        "runtime_query_matches_sample_prompt": true,
+        "runtime_query_has_answer_field_marker": false,
+        "runtime_input_contract": {
+          "video": "official_three_minute_clip",
+          "question": "official_question_and_five_options",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "included",
+          "external_subtitles": false,
+          "audio_track": "preserved",
+          "audio_transcript_allowed": true,
+          "annotation_fields_excluded": [
+            "answer",
+            "ground_truth",
+            "ground_truth_option",
+            "time_reference",
+            "evaluator_output"
+          ],
+          "audio_track_policy": "preserved",
+          "audio_transcript_policy": "included"
+        },
+        "audio_contract_pass": true
+      },
+      "gpu_telemetry": {
+        "status": "ok",
+        "sample_count": 381,
+        "interval_s": 2.0,
+        "gpu_count": 1,
+        "avg_utilization_percent": 2.202,
+        "peak_utilization_percent": 71.0,
+        "peak_memory_used_gib": 24.225,
+        "peak_memory_percent": 30.629,
+        "per_gpu": {
+          "0": {
+            "sample_count": 381,
+            "avg_utilization_percent": 2.202,
+            "peak_utilization_percent": 71.0,
+            "peak_memory_used_gib": 24.225
+          }
+        }
+      },
+      "tool_library": {
+        "baseline_id": "toolbase_5bc5b18117f7b913bb66",
+        "baseline_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/_audit/tool_library_baseline.json",
+        "baseline_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "baseline_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "active_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_tool_count": 15,
+        "schema_match": true,
+        "source_match": true,
+        "added_tools": [],
+        "removed_tools": [],
+        "scoped_hidden_tools": [],
+        "changed_tools": [],
+        "scoped_schema_match": true,
+        "active_tools": [
+          "Aggregation",
+          "Clean_Results",
+          "Crop",
+          "Filtering",
+          "Fold_Memory",
+          "Inspect_Frame",
+          "Keyword_Retrieve",
+          "Python_Executor",
+          "Segment_Retrieve",
+          "Semantic_Retrieve",
+          "Tool_Search",
+          "Video_Clip_QA",
+          "Video_Summary",
+          "Zoom_in",
+          "asr"
+        ],
+        "baseline_contract_pass": true
+      },
+      "log_markers": [
+        "Serialized GPU Video_Clip_QA"
+      ],
+      "reported_acc": 0.0,
+      "score_contract": {
+        "reported_acc": 0.0,
+        "recomputed_acc": 0.0,
+        "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+        "predicted_label": "",
+        "ground_truth_labels": [
+          "D"
+        ],
+        "reported_acc_matches_recomputed": true
+      },
+      "timing_breakdown_seconds": {
+        "observer.dispatch_llm_generate_seconds": 226.324816,
+        "observer.llm_generate_seconds": 307.47664,
+        "planner.llm_generate_seconds": 448.272162,
+        "preprocess.total_seconds": 0.095015,
+        "query.grounding_context_seconds": 180.015708,
+        "query.registry_init_seconds": 0.189854,
+        "query.solve_seconds": 1112.427799,
+        "query.total_seconds": 1293.825784,
+        "reflector.llm_generate_seconds": 26.809745,
+        "retrieval.semantic_search_seconds": 0.119393,
+        "runtime_load.grounding_embedder_seconds": 0.001794,
+        "runtime_load.provider_planner_seconds": 473.428374,
+        "runtime_load.qwen3_vl_embedding_seconds": 158.081255,
+        "runtime_load.vector_store_seconds": 0.13187,
+        "tool.video_clip_qa_seconds": 50.047027
+      }
+    },
+    {
+      "sample_uid": "mlvu:ego:1:ego-36",
+      "dataset_name": "mlvu",
+      "subset_name": "ego",
+      "dataset_scope": {
+        "input_contract": {
+          "video": "official_preclipped_task_video",
+          "question": "official_question_and_candidates",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      },
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/ego-00001-ego-36/mix_sample_result.json",
+      "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/ego-00001-ego-36/results/run_result.json",
+      "result_file_present": true,
+      "run_result_file_present": true,
+      "status": "failed",
+      "failure_class": "actual_sample_failure",
+      "accuracy_eligible": false,
+      "outcome_class": "execution_failure",
+      "acc": 0.0,
+      "elapsed_seconds": 1529.252,
+      "cache_stats": {
+        "provider.planner.hit": 14,
+        "preprocess.output_dir.hit": 1,
+        "grounding_embedder.hit": 35,
+        "grounding_embedding_vector.miss": 35,
+        "vector_store.miss": 1,
+        "qwen3_vl_embedding_runtime.hit": 1,
+        "vector_store.hit": 2,
+        "tool_search_embedder.miss": 1,
+        "tool_search_schema_index.miss": 1,
+        "tool_search_embedder.hit": 1
+      },
+      "trajectory": {
+        "trajectory_id": "trajectory_647b2bde64374b6bb0c72d81576c5545",
+        "registry_snapshot_id": "snapshot_000",
+        "step_count": 18,
+        "actions": [
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Finish",
+          "Video_Clip_QA",
+          "Video_Clip_QA",
+          "Parallel",
+          "Finish"
+        ],
+        "tool_actions": [
+          "Parallel",
+          "Semantic_Retrieve",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Keyword_Retrieve",
+          "Parallel",
+          "Semantic_Retrieve",
+          "Parallel",
+          "Video_Clip_QA",
+          "Video_Clip_QA",
+          "Video_Clip_QA",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Semantic_Retrieve",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Video_Clip_QA",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "asr",
+          "Parallel",
+          "Keyword_Retrieve",
+          "Video_Clip_QA",
+          "Video_Clip_QA",
+          "Parallel",
+          "asr"
+        ],
+        "finish_attempt_count": 2,
+        "terminal_action": "Finish",
+        "answer": "(D) on the table",
+        "agent_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+        "run_success": false,
+        "trajectory_success": false,
+        "planner_success": false,
+        "parse_event_count": 18,
+        "parse_failure_count": 0,
+        "tool_error_count": 2
+      },
+      "workflow": {
+        "trajectory_node_count": 1,
+        "nested_subtrajectory_count": 0,
+        "max_depth": 0,
+        "recursive_step_count": 14,
+        "parallel_step_count": 14,
+        "parallel_concrete_batch_count": 1,
+        "tool_search_call_count": 0,
+        "reported_subagent_iterations": 0,
+        "subagent_workflow_observed": false,
+        "subagent_trajectory_ids": [],
+        "workflow_contract_pass": true,
+        "semantic_retrieval": {
+          "call_count": 3,
+          "dense_success_count": 2,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "actual_video_clip_qa_call": true,
+        "video_clip_qa_fallback_observed": false,
+        "gpu_video_clip_qa_serialization_observed": true
+      },
+      "protocol": {
+        "expected_mode": "react",
+        "run_success_consistent": true,
+        "terminal_finish": true,
+        "finish_has_chain_complete": true,
+        "finish_has_completion_basis": true,
+        "answer_consistent": false,
+        "all_parse_events_success": true,
+        "direct_single_finish": null,
+        "direct_no_tool_calls": null,
+        "registry_snapshot_present": true,
+        "tool_library_baseline_present": true,
+        "workflow_contract_pass": true,
+        "unanswerable_terminal": false,
+        "protocol_pass": false
+      },
+      "evidence": {
+        "slot_count": 2,
+        "completion_basis": "visual->answer",
+        "progress_score": 0.4,
+        "claim_coverage": 0.5,
+        "direct_grounding": 0.5,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": false,
+        "premise_mismatch": true,
+        "missing_information": [
+          "direct evidence citation"
+        ],
+        "unresolved_claims": [
+          "direct evidence negates the question premise; no listed option is positively supported",
+          "audio_check"
+        ]
+      },
+      "evolution": {
+        "status": "not_run"
+      },
+      "four_agent_audit": {
+        "roles": {
+          "Planner": {
+            "implementation": "LLM Planner / ReAct controller",
+            "kernel": {},
+            "observed": true,
+            "llm_iteration_count": 18,
+            "parse_success_count": 18,
+            "parse_failure_count": 0,
+            "action_sequence": [
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Finish",
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "Parallel",
+              "Finish"
+            ],
+            "contract_pass": true
+          },
+          "Observer": {
+            "implementation": "LLM/VLM Observer Agent + constrained tool runtime",
+            "kernel": {},
+            "agent_turn_count": 35,
+            "agent_schema_pass_count": 35,
+            "observed": true,
+            "executed_tool_call_count": 18,
+            "successful_tool_call_count": 13,
+            "error_tool_call_count": 1,
+            "controlled_rejection_count": 4,
+            "unknown_status_count": 0,
+            "executed_tools": [
+              "Semantic_Retrieve",
+              "Inspect_Frame",
+              "Inspect_Frame",
+              "Keyword_Retrieve",
+              "Semantic_Retrieve",
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "Inspect_Frame",
+              "Semantic_Retrieve",
+              "Inspect_Frame",
+              "Video_Clip_QA",
+              "Inspect_Frame",
+              "asr",
+              "Keyword_Retrieve",
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "asr"
+            ],
+            "actual_video_clip_qa_call": true,
+            "fallback_observed": false,
+            "contract_pass": true
+          },
+          "Reflector": {
+            "implementation": "LLM Reflector Agent + deterministic safety gate",
+            "kernel": {},
+            "agent_turn_count": 1,
+            "agent_schema_pass_count": 1,
+            "required_for_query": true,
+            "observed": true,
+            "decision_count": 1,
+            "blocked_finish_count": 1,
+            "accepted_finish_count": 0,
+            "last_can_finish": false,
+            "missing_information": [
+              "resolve contradictory evidence"
+            ],
+            "unresolved_claims": [],
+            "evidence_can_finish": false,
+            "contract_pass": true,
+            "status": "pass"
+          },
+          "Evolver": {
+            "implementation": "offline LLM Evolver Agent + replay gate",
+            "kernel": {},
+            "observed": false,
+            "required_for_current_audit": true,
+            "report_count": 0,
+            "replay_statuses": [],
+            "candidate_replay_statuses": [],
+            "contract_pass": false,
+            "status": "not_run"
+          }
+        },
+        "observed_role_count": 3,
+        "four_agent_contract_pass": true,
+        "online_role_contract_pass": true,
+        "offline_roles": [
+          "Evolver"
+        ],
+        "status": "pass",
+        "subagent_route_observed": false,
+        "semantic_retrieval": {
+          "call_count": 3,
+          "dense_success_count": 2,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "kernel_contract": {
+          "kernel_id": "55f99d0f321a766d",
+          "kernel_provider": "transformers",
+          "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "roles": {
+            "planner": {
+              "agent_role": "planner",
+              "provider_class": "TransformersProvider",
+              "model_role": "planner",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "planner_prompts",
+              "structured_contract": "planner_react_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "tool_orchestration_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "goal + trajectory + registered tool observations + optional frames",
+                "decision_authority": "select executable tool calls and propose Finish",
+                "delegates_to": [
+                  "observer",
+                  "reflector"
+                ]
+              }
+            },
+            "observer": {
+              "agent_role": "observer",
+              "provider_class": "TransformersProvider",
+              "model_role": "observer",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "observer_dispatch_or_evidence_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "execution_and_evidence_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+                "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "reflector": {
+              "agent_role": "reflector",
+              "provider_class": "TransformersProvider",
+              "model_role": "reflector",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "reflector_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "evidence_judgment_agent",
+                "kernel_modality": "llm",
+                "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+                "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "evolver": {
+              "agent_role": "evolver",
+              "provider_class": "TransformersProvider",
+              "model_role": "evolver",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "evolver_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "meta_evolution_agent",
+                "kernel_modality": "llm",
+                "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+                "decision_authority": "attribute failures, analyze the dependency graph, and propose one or at most two coordinated replay-gated harness mutations",
+                "delegates_to": [
+                  "replay_gate"
+                ]
+              }
+            }
+          },
+          "weights_shared_for_memory": true,
+          "role_order": [
+            "planner",
+            "observer",
+            "reflector",
+            "evolver"
+          ]
+        }
+      },
+      "inference_input": {
+        "query_source": "sample.prompt",
+        "query_sha256": "da40238d5650886f94971879e273aff0051449fe841322027a1b94ac280197d4",
+        "annotation_time_reference_available": false,
+        "annotation_time_reference_used_for_inference": false,
+        "annotation_time_reference_scope": "annotation_only_not_used",
+        "annotation_time_reference_is_oracle_excluded": true,
+        "input_contract": {
+          "video": "official_preclipped_task_video",
+          "question": "official_question_and_candidates",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        },
+        "annotation_time_reference_disclosed_in_query": false,
+        "answer_field_marker_disclosed_in_query": false,
+        "answer_leakage_contract_pass": true,
+        "runtime_query_matches_sample_prompt": true,
+        "runtime_query_has_answer_field_marker": false,
+        "runtime_input_contract": {
+          "video": "official_preclipped_task_video",
+          "question": "official_question_and_candidates",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "included",
+          "external_subtitles": false,
+          "audio_track": "preserved",
+          "audio_transcript_allowed": true,
+          "annotation_fields_excluded": [
+            "answer",
+            "ground_truth",
+            "ground_truth_option",
+            "time_reference",
+            "evaluator_output"
+          ],
+          "audio_track_policy": "preserved",
+          "audio_transcript_policy": "included"
+        },
+        "audio_contract_pass": true
+      },
+      "gpu_telemetry": {
+        "status": "ok",
+        "sample_count": 128,
+        "interval_s": 2.0,
+        "gpu_count": 1,
+        "avg_utilization_percent": 45.516,
+        "peak_utilization_percent": 83.0,
+        "peak_memory_used_gib": 27.795,
+        "peak_memory_percent": 35.143,
+        "per_gpu": {
+          "0": {
+            "sample_count": 128,
+            "avg_utilization_percent": 45.516,
+            "peak_utilization_percent": 83.0,
+            "peak_memory_used_gib": 27.795
+          }
+        }
+      },
+      "tool_library": {
+        "baseline_id": "toolbase_5bc5b18117f7b913bb66",
+        "baseline_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/_audit/tool_library_baseline.json",
+        "baseline_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "baseline_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "active_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_tool_count": 15,
+        "schema_match": true,
+        "source_match": true,
+        "added_tools": [],
+        "removed_tools": [],
+        "scoped_hidden_tools": [],
+        "changed_tools": [],
+        "scoped_schema_match": true,
+        "active_tools": [
+          "Aggregation",
+          "Clean_Results",
+          "Crop",
+          "Filtering",
+          "Fold_Memory",
+          "Inspect_Frame",
+          "Keyword_Retrieve",
+          "Python_Executor",
+          "Segment_Retrieve",
+          "Semantic_Retrieve",
+          "Tool_Search",
+          "Video_Clip_QA",
+          "Video_Summary",
+          "Zoom_in",
+          "asr"
+        ],
+        "baseline_contract_pass": true
+      },
+      "log_markers": [
+        "Traceback",
+        "Serialized GPU Video_Clip_QA"
+      ],
+      "reported_acc": 0.0,
+      "score_contract": {
+        "reported_acc": 0.0,
+        "recomputed_acc": 0.0,
+        "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+        "predicted_label": "",
+        "ground_truth_labels": [
+          "C"
+        ],
+        "reported_acc_matches_recomputed": true
+      },
+      "timing_breakdown_seconds": {
+        "observer.dispatch_llm_generate_seconds": 185.170066,
+        "observer.llm_generate_seconds": 466.023904,
+        "planner.llm_generate_seconds": 559.816117,
+        "planner.route_refresh_seconds": 71.460952,
+        "preprocess.total_seconds": 0.885949,
+        "query.grounding_context_seconds": 3.758993,
+        "query.registry_init_seconds": 2e-06,
+        "query.solve_seconds": 1522.674523,
+        "query.total_seconds": 1527.331315,
+        "reflector.llm_generate_seconds": 21.307026,
+        "retrieval.semantic_search_seconds": 0.15226,
+        "runtime_load.tool_search_embedder_seconds": 0.00066,
+        "runtime_load.vector_store_seconds": 0.335706,
+        "tool.video_clip_qa_seconds": 68.822285,
+        "tool_search.schema_index_seconds": 0.798545
+      }
+    },
+    {
+      "sample_uid": "mlvu:anomaly-reco:0:surveil-20",
+      "dataset_name": "mlvu",
+      "subset_name": "anomaly_reco",
+      "dataset_scope": {
+        "input_contract": {
+          "video": "official_preclipped_task_video",
+          "question": "official_question_and_candidates",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        }
+      },
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/anomaly-reco-00000-surveil-20/mix_sample_result.json",
+      "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/mlvu/anomaly-reco-00000-surveil-20/results/run_result.json",
+      "result_file_present": true,
+      "run_result_file_present": true,
+      "status": "completed",
+      "failure_class": "participated",
+      "accuracy_eligible": true,
+      "outcome_class": "correct",
+      "acc": 1.0,
+      "elapsed_seconds": 1163.472,
+      "cache_stats": {
+        "provider.planner.hit": 12,
+        "preprocess.output_dir.hit": 1,
+        "grounding_embedder.hit": 17,
+        "grounding_embedding_vector.miss": 17,
+        "vector_store.miss": 1,
+        "qwen3_vl_embedding_runtime.hit": 1
+      },
+      "trajectory": {
+        "trajectory_id": "trajectory_ee11dfdc62b542efb179d783c5efd123",
+        "registry_snapshot_id": "snapshot_000",
+        "step_count": 13,
+        "actions": [
+          "Parallel",
+          "Parallel",
+          "Finish",
+          "Parallel",
+          "Video_Clip_QA",
+          "Video_Clip_QA",
+          "Parallel",
+          "Finish",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Parallel",
+          "Finish"
+        ],
+        "tool_actions": [
+          "Parallel",
+          "Video_Clip_QA",
+          "Parallel",
+          "Semantic_Retrieve",
+          "Parallel",
+          "Inspect_Frame",
+          "Video_Clip_QA",
+          "Video_Clip_QA",
+          "Video_Clip_QA",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Video_Clip_QA",
+          "Parallel",
+          "Inspect_Frame",
+          "Parallel",
+          "Video_Clip_QA"
+        ],
+        "finish_attempt_count": 3,
+        "terminal_action": "Finish",
+        "answer": "(C) Shoplifting",
+        "agent_final_answer": "(C) Shoplifting",
+        "run_success": true,
+        "trajectory_success": true,
+        "planner_success": true,
+        "parse_event_count": 13,
+        "parse_failure_count": 0,
+        "tool_error_count": 0
+      },
+      "workflow": {
+        "trajectory_node_count": 1,
+        "nested_subtrajectory_count": 0,
+        "max_depth": 0,
+        "recursive_step_count": 8,
+        "parallel_step_count": 8,
+        "parallel_concrete_batch_count": 1,
+        "tool_search_call_count": 0,
+        "reported_subagent_iterations": 0,
+        "subagent_workflow_observed": false,
+        "subagent_trajectory_ids": [],
+        "workflow_contract_pass": true,
+        "semantic_retrieval": {
+          "call_count": 1,
+          "dense_success_count": 1,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "actual_video_clip_qa_call": true,
+        "video_clip_qa_fallback_observed": false,
+        "gpu_video_clip_qa_serialization_observed": false
+      },
+      "protocol": {
+        "expected_mode": "react",
+        "run_success_consistent": true,
+        "terminal_finish": true,
+        "finish_has_chain_complete": true,
+        "finish_has_completion_basis": true,
+        "answer_consistent": true,
+        "all_parse_events_success": true,
+        "direct_single_finish": null,
+        "direct_no_tool_calls": null,
+        "registry_snapshot_present": true,
+        "tool_library_baseline_present": true,
+        "workflow_contract_pass": true,
+        "unanswerable_terminal": false,
+        "protocol_pass": true
+      },
+      "evidence": {
+        "slot_count": 2,
+        "completion_basis": "visual->answer",
+        "progress_score": 0.8,
+        "claim_coverage": 1.0,
+        "direct_grounding": 1.0,
+        "contradiction_score": 0.0,
+        "cross_modal_support": 0.0,
+        "can_finish": true,
+        "premise_mismatch": false,
+        "missing_information": [],
+        "unresolved_claims": []
+      },
+      "evolution": {
+        "status": "not_run"
+      },
+      "four_agent_audit": {
+        "roles": {
+          "Planner": {
+            "implementation": "LLM Planner / ReAct controller",
+            "kernel": {},
+            "observed": true,
+            "llm_iteration_count": 13,
+            "parse_success_count": 13,
+            "parse_failure_count": 0,
+            "action_sequence": [
+              "Parallel",
+              "Parallel",
+              "Finish",
+              "Parallel",
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "Parallel",
+              "Finish",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Parallel",
+              "Finish"
+            ],
+            "contract_pass": true
+          },
+          "Observer": {
+            "implementation": "LLM/VLM Observer Agent + constrained tool runtime",
+            "kernel": {},
+            "agent_turn_count": 22,
+            "agent_schema_pass_count": 22,
+            "observed": true,
+            "executed_tool_call_count": 11,
+            "successful_tool_call_count": 10,
+            "error_tool_call_count": 0,
+            "controlled_rejection_count": 1,
+            "unknown_status_count": 0,
+            "executed_tools": [
+              "Video_Clip_QA",
+              "Semantic_Retrieve",
+              "Inspect_Frame",
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "Video_Clip_QA",
+              "Inspect_Frame",
+              "Inspect_Frame",
+              "Video_Clip_QA",
+              "Inspect_Frame",
+              "Video_Clip_QA"
+            ],
+            "actual_video_clip_qa_call": true,
+            "fallback_observed": false,
+            "contract_pass": true
+          },
+          "Reflector": {
+            "implementation": "LLM Reflector Agent + deterministic safety gate",
+            "kernel": {},
+            "agent_turn_count": 2,
+            "agent_schema_pass_count": 2,
+            "required_for_query": true,
+            "observed": true,
+            "decision_count": 2,
+            "blocked_finish_count": 1,
+            "accepted_finish_count": 1,
+            "last_can_finish": true,
+            "missing_information": [],
+            "unresolved_claims": [],
+            "evidence_can_finish": true,
+            "contract_pass": true,
+            "status": "pass"
+          },
+          "Evolver": {
+            "implementation": "offline LLM Evolver Agent + replay gate",
+            "kernel": {},
+            "observed": false,
+            "required_for_current_audit": true,
+            "report_count": 0,
+            "replay_statuses": [],
+            "candidate_replay_statuses": [],
+            "contract_pass": false,
+            "status": "not_run"
+          }
+        },
+        "observed_role_count": 3,
+        "four_agent_contract_pass": true,
+        "online_role_contract_pass": true,
+        "offline_roles": [
+          "Evolver"
+        ],
+        "status": "pass",
+        "subagent_route_observed": false,
+        "semantic_retrieval": {
+          "call_count": 1,
+          "dense_success_count": 1,
+          "lexical_fallback_count": 0,
+          "empty_or_partial_index_diagnostic_count": 0
+        },
+        "kernel_contract": {
+          "kernel_id": "55f99d0f321a766d",
+          "kernel_provider": "transformers",
+          "kernel_model": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+          "roles": {
+            "planner": {
+              "agent_role": "planner",
+              "provider_class": "TransformersProvider",
+              "model_role": "planner",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "planner_prompts",
+              "structured_contract": "planner_react_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "tool_orchestration_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "goal + trajectory + registered tool observations + optional frames",
+                "decision_authority": "select executable tool calls and propose Finish",
+                "delegates_to": [
+                  "observer",
+                  "reflector"
+                ]
+              }
+            },
+            "observer": {
+              "agent_role": "observer",
+              "provider_class": "TransformersProvider",
+              "model_role": "observer",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "vlm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "observer_dispatch_or_evidence_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "execution_and_evidence_agent",
+                "kernel_modality": "vlm",
+                "input_contract": "Planner delegation + resolved route candidates + completed tool observations + attached image evidence",
+                "decision_authority": "validate/repair one executable dispatch before execution and extract grounded evidence after execution",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "reflector": {
+              "agent_role": "reflector",
+              "provider_class": "TransformersProvider",
+              "model_role": "reflector",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "reflector_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "evidence_judgment_agent",
+                "kernel_modality": "llm",
+                "input_contract": "proposed answer + evidence slots + trajectory + Reflector verify safety check",
+                "decision_authority": "combine LLM judgment with verify result to accept or block Finish; never execute tools",
+                "delegates_to": [
+                  "planner"
+                ]
+              }
+            },
+            "evolver": {
+              "agent_role": "evolver",
+              "provider_class": "TransformersProvider",
+              "model_role": "evolver",
+              "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+              "modality": "llm",
+              "independent_provider_view": true,
+              "independent_prompt": true,
+              "prompt_source": "four_role_prompts",
+              "structured_contract": "evolver_json",
+              "llm_kernel": true,
+              "agent_definition": {
+                "agent_type": "meta_evolution_agent",
+                "kernel_modality": "llm",
+                "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+                "decision_authority": "attribute failures, analyze the dependency graph, and propose one or at most two coordinated replay-gated harness mutations",
+                "delegates_to": [
+                  "replay_gate"
+                ]
+              }
+            }
+          },
+          "weights_shared_for_memory": true,
+          "role_order": [
+            "planner",
+            "observer",
+            "reflector",
+            "evolver"
+          ]
+        }
+      },
+      "inference_input": {
+        "query_source": "sample.prompt",
+        "query_sha256": "99d21a8800cf555407904bda60c96d443ad73085e6f018921fb0395a7aec3bea",
+        "annotation_time_reference_available": false,
+        "annotation_time_reference_used_for_inference": false,
+        "annotation_time_reference_scope": "annotation_only_not_used",
+        "annotation_time_reference_is_oracle_excluded": true,
+        "input_contract": {
+          "video": "official_preclipped_task_video",
+          "question": "official_question_and_candidates",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "derived_from_source_audio",
+          "external_subtitles": false
+        },
+        "annotation_time_reference_disclosed_in_query": false,
+        "answer_field_marker_disclosed_in_query": false,
+        "answer_leakage_contract_pass": true,
+        "runtime_query_matches_sample_prompt": true,
+        "runtime_query_has_answer_field_marker": false,
+        "runtime_input_contract": {
+          "video": "official_preclipped_task_video",
+          "question": "official_question_and_candidates",
+          "temporal_crop": false,
+          "timestamp_input": "none",
+          "audio": "preserved",
+          "audio_transcript": "included",
+          "external_subtitles": false,
+          "audio_track": "preserved",
+          "audio_transcript_allowed": true,
+          "annotation_fields_excluded": [
+            "answer",
+            "ground_truth",
+            "ground_truth_option",
+            "time_reference",
+            "evaluator_output"
+          ],
+          "audio_track_policy": "preserved",
+          "audio_transcript_policy": "included"
+        },
+        "audio_contract_pass": true
+      },
+      "gpu_telemetry": {
+        "status": "ok",
+        "sample_count": 12,
+        "interval_s": 2.0,
+        "gpu_count": 1,
+        "avg_utilization_percent": 39.417,
+        "peak_utilization_percent": 71.0,
+        "peak_memory_used_gib": 24.555,
+        "peak_memory_percent": 31.047,
+        "per_gpu": {
+          "0": {
+            "sample_count": 12,
+            "avg_utilization_percent": 39.417,
+            "peak_utilization_percent": 71.0,
+            "peak_memory_used_gib": 24.555
+          }
+        }
+      },
+      "tool_library": {
+        "baseline_id": "toolbase_5bc5b18117f7b913bb66",
+        "baseline_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260912_v32/_audit/tool_library_baseline.json",
+        "baseline_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "baseline_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_schema_digest": "4bd1ac2487f80ab9ac0251b6701a03a0f6191b6a44c76c042a1df3e9e449e44f",
+        "active_source_digest": "de7162f18a910f03ca46f2f4ba658d3861c64ac2388e9a266e6dd164ad2cf541",
+        "active_tool_count": 15,
+        "schema_match": true,
+        "source_match": true,
+        "added_tools": [],
+        "removed_tools": [],
+        "scoped_hidden_tools": [],
+        "changed_tools": [],
+        "scoped_schema_match": true,
+        "active_tools": [
+          "Aggregation",
+          "Clean_Results",
+          "Crop",
+          "Filtering",
+          "Fold_Memory",
+          "Inspect_Frame",
+          "Keyword_Retrieve",
+          "Python_Executor",
+          "Segment_Retrieve",
+          "Semantic_Retrieve",
+          "Tool_Search",
+          "Video_Clip_QA",
+          "Video_Summary",
+          "Zoom_in",
+          "asr"
+        ],
+        "baseline_contract_pass": true
+      },
+      "log_markers": [],
+      "reported_acc": 1.0,
+      "score_contract": {
+        "reported_acc": 1.0,
+        "recomputed_acc": 1.0,
+        "raw_final_answer": "(C) Shoplifting",
+        "predicted_label": "C",
+        "ground_truth_labels": [
+          "C"
+        ],
+        "reported_acc_matches_recomputed": true
+      },
+      "timing_breakdown_seconds": {
+        "observer.dispatch_llm_generate_seconds": 129.689171,
+        "observer.llm_generate_seconds": 367.643552,
+        "planner.llm_generate_seconds": 559.404706,
+        "preprocess.total_seconds": 0.084073,
+        "query.grounding_context_seconds": 2.015044,
+        "query.registry_init_seconds": 3e-06,
+        "query.solve_seconds": 1159.28386,
+        "query.total_seconds": 1161.395928,
+        "reflector.llm_generate_seconds": 48.543541,
+        "retrieval.semantic_search_seconds": 0.084942,
+        "runtime_load.vector_store_seconds": 0.333178,
+        "tool.video_clip_qa_seconds": 28.283338
+      }
+    }
+  ],
+  "delivery_gate": {
+    "passed": false,
+    "blocking_reasons": [
+      "full_inventory_required",
+      "audit_items_not_passed",
+      "incomplete_or_failed_samples",
+      "accuracy_below_requirement:lvbench:0.5<0.7",
+      "accuracy_below_requirement:videomme:0.5<0.784",
+      "accuracy_below_requirement:mlvu:0.5<0.844",
+      "accepted_evolver_required"
+    ]
+  }
+}

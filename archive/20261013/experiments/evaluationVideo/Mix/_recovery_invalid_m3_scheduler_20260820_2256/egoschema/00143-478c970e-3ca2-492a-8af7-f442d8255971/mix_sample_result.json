@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00143:478c970e-3ca2-492a-8af7-f442d8255971",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C added a powder to the blender, turned on the blender, tasted the paste, and turned off the blender.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00143-478c970e-3ca2-492a-8af7-f442d8255971",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00143-478c970e-3ca2-492a-8af7-f442d8255971/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00143-478c970e-3ca2-492a-8af7-f442d8255971/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00143-478c970e-3ca2-492a-8af7-f442d8255971/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/478c970e-3ca2-492a-8af7-f442d8255971.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/478c970e-3ca2-492a-8af7-f442d8255971.mp4",
+  "question_block": "Question: What were the primary steps c took to prepare and taste the paste in the blender before and after adding a new ingredient?\nOptions:\n(A) Casually, c added a specific powder to the blender, swiftly turned on the blender, carefully tasted the paste, and then added more powder as needed.\n(B) C added a powder to the blender, turned on the blender, tasted the paste, and turned off the blender.\n(C) Casually, c added a powder to the blender, then turned on the blender, carefully tasted the paste, and finally added more water.\n(D) Casually, c added some powder to the blender, switched on the blender, tasted the semi-solid paste, and incorporated extra vegetables.\n(E) C added a powder to the blender, turned on the blender, tasted the paste, and added more oil.",
+  "options": [
+    "Casually, c added a specific powder to the blender, swiftly turned on the blender, carefully tasted the paste, and then added more powder as needed.",
+    "C added a powder to the blender, turned on the blender, tasted the paste, and turned off the blender.",
+    "Casually, c added a powder to the blender, then turned on the blender, carefully tasted the paste, and finally added more water.",
+    "Casually, c added some powder to the blender, switched on the blender, tasted the semi-solid paste, and incorporated extra vegetables.",
+    "C added a powder to the blender, turned on the blender, tasted the paste, and added more oil."
+  ],
+  "official_meta": {
+    "question_index": "00143",
+    "video_id": "478c970e-3ca2-492a-8af7-f442d8255971",
+    "source_index": 143
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:49:17.840840Z"
+}

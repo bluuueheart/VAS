@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00130:410a6007-f759-4f9a-8196-0dad61934929",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C and the child play a card game together. the child is initially interested in the game, but becomes bored and distracted after a while. c tries to keep the child's attention, but eventually gives up and puts the cards away.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00130-410a6007-f759-4f9a-8196-0dad61934929",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00130-410a6007-f759-4f9a-8196-0dad61934929/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00130-410a6007-f759-4f9a-8196-0dad61934929/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00130-410a6007-f759-4f9a-8196-0dad61934929/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/410a6007-f759-4f9a-8196-0dad61934929.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/410a6007-f759-4f9a-8196-0dad61934929.mp4",
+  "question_block": "Question: Summarize the overarching focus of the video, considering the primary activity shared by both c and the child. how does this activity evolve throughout the video?\nOptions:\n(A) C and the child play a card game together. the child is initially interested in the game, but becomes bored and distracted after a while. c tries to keep the child's attention, but eventually gives up and puts the cards away.\n(B) C and the young child calmly watch a movie together. at first, the child is pretty interested in the movie, but later becomes bored and easily distracted after a while. patiently, c tries to keep the child's attention focused, but eventually gives up and turns off the movie.\n(C) C and the young child engage in playing a board game together. at first, the child shows interest in the game, but soon becomes bored and easily distracted. c makes an effort to maintain the child's attention, but ultimately admits defeat and puts the game away.\n(D) C and the child read a book together. the child is initially interested in the book, but becomes bored and distracted after a while. c tries to keep the child's attention, but eventually gives up and puts the book away.\n(E) C and the young child play outside together cheerfully. the child is initially very interested in playing, but gradually becomes bored and distracted after a while. c persistently tries to keep the child's attention, but eventually admits defeat and goes inside.",
+  "options": [
+    "C and the child play a card game together. the child is initially interested in the game, but becomes bored and distracted after a while. c tries to keep the child's attention, but eventually gives up and puts the cards away.",
+    "C and the young child calmly watch a movie together. at first, the child is pretty interested in the movie, but later becomes bored and easily distracted after a while. patiently, c tries to keep the child's attention focused, but eventually gives up and turns off the movie.",
+    "C and the young child engage in playing a board game together. at first, the child shows interest in the game, but soon becomes bored and easily distracted. c makes an effort to maintain the child's attention, but ultimately admits defeat and puts the game away.",
+    "C and the child read a book together. the child is initially interested in the book, but becomes bored and distracted after a while. c tries to keep the child's attention, but eventually gives up and puts the book away.",
+    "C and the young child play outside together cheerfully. the child is initially very interested in playing, but gradually becomes bored and distracted after a while. c persistently tries to keep the child's attention, but eventually admits defeat and goes inside."
+  ],
+  "official_meta": {
+    "question_index": "00130",
+    "video_id": "410a6007-f759-4f9a-8196-0dad61934929",
+    "source_index": 130
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:48:20.342566Z"
+}

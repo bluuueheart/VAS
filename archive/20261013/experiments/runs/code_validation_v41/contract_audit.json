@@ -1,0 +1,41 @@
+{
+  "kind": "read_only_current_code_contract_probes",
+  "production_source_unchanged": true,
+  "observer_progress_order": {
+    "revision_update_line": 2842,
+    "observer_call_line": 2906,
+    "revision_updated_before_observer": true
+  },
+  "recovery_counting_by_iteration": {
+    "3": false,
+    "6": false,
+    "12": false,
+    "13": true
+  },
+  "reflector_accepts_reject_with_can_finish_true": true,
+  "analysis_schema_accepts_fictitious_evidence": true,
+  "analysis_preserves_first_issue_despite_later_empty_reviews": true,
+  "analysis_fragment_count": 5,
+  "fallback_time_range_regex": {
+    "occurrences": 1,
+    "matches_for_200_408": [
+      []
+    ],
+    "only_active_when_gpu_semantic_retrieval_disabled": true
+  },
+  "disabled_recovery_policy_preflight": {
+    "eligible": false,
+    "activation_step": null,
+    "reason": "recovery condition absent in trigger trajectory"
+  },
+  "live_validation_deadline_mismatch": {
+    "main_role_deadline_seconds": 90,
+    "probe_deadline_seconds": 600,
+    "observed_role_elapsed_seconds": 91.395426,
+    "strict_90_second_call_not_yet_reproduced": true
+  },
+  "limitations": [
+    "Schema/control-flow probes are not estimates of accuracy gain.",
+    "Unobserved contract defects are separately identified in the audit report."
+  ]
+}

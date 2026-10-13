@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:plotqa:0:movie101-66",
+  "dataset_name": "mlvu",
+  "subset_name": "plotQA",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Yellow",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/mlvu/plotqa-00000-movie101-66",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/mlvu/plotqa-00000-movie101-66/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/mlvu/plotqa-00000-movie101-66/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces/mlvu/plotqa-00000-movie101-66/results/run_result.json",
+  "source_video_path": "/gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/1_plotQA/movie101_66.mp4",
+  "prepared_video_path": "/gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/video/1_plotQA/movie101_66.mp4",
+  "question_block": "Question: What color is the main male character in the video?\nOptions:\n(A) Yellow\n(B) Red\n(C) Green\n(D) Blue",
+  "options": [
+    "Yellow",
+    "Red",
+    "Green",
+    "Blue"
+  ],
+  "official_meta": {
+    "task_type": "plotQA",
+    "source_json": "1_plotQA.json",
+    "source_index": 0,
+    "video_subdir": "1_plotQA",
+    "video_relative_path": "1_plotQA/movie101_66.mp4",
+    "data_type": "video"
+  },
+  "error": "Mix sample worker failed sample_uid=mlvu:plotqa:0:movie101-66 visible_device_id=0 return_code=1. Worker output tail:\nSkipping unavailable MLVU subset task_type=count: annotation file is missing: /gemini/code/export_packages/extracted/mlvu_test_subset_20260714/MLVU/json/4_count.json\nTraceback (most recent call last):\n  File \"/gemini/code/export_packages/extracted/evaluationVideo/Mix/run_mix_batch.py\", line 1546, in <module>\n    main()\n  File \"/gemini/code/export_packages/extracted/evaluationVideo/Mix/run_mix_batch.py\", line 1412, in main\n    _run_worker_mode(args)\n  File \"/gemini/code/export_packages/extracted/evaluationVideo/Mix/run_mix_batch.py\", line 1405, in _run_worker_mode\n    result_item = run_single_sample(sample=sample, config=config, no_cache=bool(args.no_cache))\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/gemini/code/export_packages/extracted/evaluationVideo/Mix/run_mix_batch.py\", line 850, in run_single_sample\n    run_e2e_module = _load_run_e2e_module()\n                     ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/gemini/code/export_packages/extracted/evaluationVideo/Mix/run_mix_batch.py\", line 319, in _load_run_e2e_module\n    _RUN_E2E_MODULE = importlib.import_module(\"run_e2e\")\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/miniconda3/lib/python3.11/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1204, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1176, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1147, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 690, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"/gemini/code/export_packages/extracted/RL/run_e2e.py\", line 32, in <module>\n    from config.settings import settings\n  File \"/gemini/code/export_packages/extracted/RL/config/__init__.py\", line 2, in <module>\n    from .settings import settings, Settings\n  File \"/gemini/code/export_packages/extracted/RL/config/settings.py\", line 6, in <module>\n    from pydantic_settings import BaseSettings, SettingsConfigDict\nModuleNotFoundError: No module named 'pydantic_settings'",
+  "updated_at": "2026-07-21T10:28:34.235579Z"
+}

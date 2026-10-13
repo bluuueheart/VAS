@@ -1,0 +1,57 @@
+{
+  "sample_uid": "videomme:humanity-history:001-1",
+  "dataset_name": "videomme",
+  "subset_name": "Humanity & History",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 5,
+  "iter_num": 6,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 5,
+  "planner_iterations": 6,
+  "subagent_iterations": 0,
+  "predicted_label": "C",
+  "ground_truth": "C",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(C) Berries.",
+  "elapsed_seconds": 2983.778,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_v16/videomme/humanity-history-001-1",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_v16/videomme/humanity-history-001-1/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_v16/videomme/humanity-history-001-1/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_v16/videomme/humanity-history-001-1/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/fFjv93ACGo8.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/fFjv93ACGo8.mp4",
+  "question_block": "Question: When demonstrating the Germany modern Christmas tree is initially decorated with apples, candles and berries, which kind of the decoration has the largest number?\nOptions:\n(A) Apples.\n(B) Candles.\n(C) Berries.\n(D) The three kinds are of the same number.",
+  "options": [
+    "A. Apples.",
+    "B. Candles.",
+    "C. Berries.",
+    "D. The three kinds are of the same number."
+  ],
+  "official_meta": {
+    "video_id": "001",
+    "duration": "short",
+    "domain": "Knowledge",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Humanity & History",
+    "task_type": "Counting Problem",
+    "question_id": "001-1",
+    "question_index": 0,
+    "video_item_index": 0,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-23T23:53:45.422339Z"
+}

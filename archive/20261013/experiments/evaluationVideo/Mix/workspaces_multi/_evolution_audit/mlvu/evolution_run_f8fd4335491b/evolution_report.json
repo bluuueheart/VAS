@@ -1,0 +1,113 @@
+{
+  "run_id": "evolution_run_f8fd4335491b",
+  "trajectory_count": 1,
+  "event_count": 6,
+  "diagnoses": [
+    {
+      "diagnosis_id": "diagnosis_1209b39aab43",
+      "trajectory_ids": [
+        "mlvu:needle:0:needle-32"
+      ],
+      "failure_type": "premature_termination",
+      "blamed_component": "evidence_verifier",
+      "blamed_tool_ids": [],
+      "supporting_event_ids": [],
+      "root_cause": "The historical trajectory reached Finish without satisfying the configured evidence gate.",
+      "counterfactual_fix": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, direct dynamic Video_Clip_QA result supporting the selected action, answer claim has no verified evidence, answer candidate lacks directly matched verified evidence",
+      "confidence": 0.95
+    }
+  ],
+  "verifications": [
+    {
+      "trajectory_id": "mlvu:needle:0:needle-32",
+      "sample_uid": "mlvu:needle:0:needle-32",
+      "answer_score": 0.0,
+      "sample_status": "wrong",
+      "held_out": false,
+      "progress_score": 0.0,
+      "claim_coverage": 0.0,
+      "direct_grounding": 0.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": false,
+      "missing_information": [
+        "structured evidence claims",
+        "direct evidence citation",
+        "direct dynamic Video_Clip_QA result supporting the selected action"
+      ],
+      "unresolved_claims": [
+        "answer claim has no verified evidence",
+        "answer candidate lacks directly matched verified evidence"
+      ],
+      "feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, direct dynamic Video_Clip_QA result supporting the selected action, answer claim has no verified evidence, answer candidate lacks directly matched verified evidence"
+    }
+  ],
+  "evolution_intent": {
+    "intent_id": "intent_49d365cb2d85",
+    "diagnosis_ids": [
+      "diagnosis_1209b39aab43"
+    ],
+    "scope": "router",
+    "operations": [
+      {
+        "action": "update_router_rule",
+        "target_type": "evidence_verifier",
+        "target_ids": [
+          "finish_gate"
+        ],
+        "before": {
+          "enforced": false
+        },
+        "after": {
+          "enforced": true,
+          "reject_unverified_finish": true,
+          "resolve_conflicts": true
+        },
+        "reason": "Observed unsupported or conflict-bearing terminal answers."
+      }
+    ],
+    "expected_effects": [
+      "fewer unsupported finishes",
+      "higher evidence-grounded answer consistency"
+    ],
+    "risks": [
+      "additional tool calls",
+      "higher latency"
+    ]
+  },
+  "candidate_snapshot": {
+    "snapshot_id": "snapshot_65111893a286",
+    "parent_snapshot_id": "snapshot_000",
+    "created_at": "2026-08-20T08:09:55.732320Z",
+    "router_policy": {
+      "update_router_rule": {
+        "enforced": true,
+        "reject_unverified_finish": true,
+        "resolve_conflicts": true
+      }
+    },
+    "argument_policy": {},
+    "patch_ids": [
+      "intent_49d365cb2d85"
+    ],
+    "status": "candidate"
+  },
+  "replay_groups": {
+    "trigger": [
+      "mlvu:needle:0:needle-32"
+    ],
+    "neighbor": [],
+    "regression": [],
+    "held_out": []
+  },
+  "replay_status": "pending",
+  "candidate_replay_status": "pending",
+  "batch_metrics": {
+    "accuracy": 0.0,
+    "mean_latency_seconds": 1090.529,
+    "invalid_call_rate": 0.0
+  },
+  "source_paths": [
+    "evaluationVideo/Mix/workspaces_multi/mlvu/needle-00000-needle-32/results/run_result.json"
+  ]
+}

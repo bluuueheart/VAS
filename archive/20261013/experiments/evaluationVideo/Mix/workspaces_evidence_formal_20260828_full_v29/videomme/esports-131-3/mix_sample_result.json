@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:esports:131-3",
+  "dataset_name": "videomme",
+  "subset_name": "Esports",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 6,
+  "iter_num": 8,
+  "tool_success_rate": 0.833333,
+  "successful_tool_calls": 5,
+  "planner_iterations": 8,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "A",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (contradictory_evidence; repeated direct evidence failure)",
+  "elapsed_seconds": 2133.771,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/esports-131-3",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/esports-131-3/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/esports-131-3/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/esports-131-3/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/HdBsD5VspVM.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/HdBsD5VspVM.mp4",
+  "question_block": "Question: What is the armor that first be described in the video?\nOptions:\n(A) Sword.\n(B) Arrow.\n(C) Axe.\n(D) Stick.",
+  "options": [
+    "A. Sword.",
+    "B. Arrow.",
+    "C. Axe.",
+    "D. Stick."
+  ],
+  "official_meta": {
+    "video_id": "131",
+    "video_external_id": "HdBsD5VspVM",
+    "resolved_video_stem": "HdBsD5VspVM",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Sports Competition",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Esports",
+    "task_type": "Object Recognition",
+    "question_id": "131-3",
+    "question_index": 2,
+    "video_item_index": 130,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-09T07:07:01.591257Z"
+}

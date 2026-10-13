@@ -1,0 +1,20 @@
+{
+  "kind": "mix_progress",
+  "layout_version": 1,
+  "updated_at": "2026-08-22T23:41:36.112935Z",
+  "records": {
+    "lvbench:entity-recognition:4:63": {
+      "sample_uid": "lvbench:entity-recognition:4:63",
+      "dataset_name": "lvbench",
+      "subset_name": "entity recognition",
+      "status": "completed",
+      "acc": 1.0,
+      "tool_use_num": 1,
+      "iter_num": 2,
+      "tool_success_rate": 1.0,
+      "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260823_action_scope_v6/lvbench/entity-recognition-00004-63/mix_sample_result.json",
+      "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260823_action_scope_v6/lvbench/entity-recognition-00004-63",
+      "updated_at": "2026-08-22T23:41:36.112872Z"
+    }
+  }
+}

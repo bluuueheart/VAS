@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00064:1f0bdc87-aa40-4fb3-934e-10e9bc19ec4c",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "wrong",
+  "acc": 0.0,
+  "tool_use_num": 16,
+  "iter_num": 17,
+  "tool_success_rate": 0.9375,
+  "successful_tool_calls": 15,
+  "planner_iterations": 17,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C starts by picking up a piece of molding clay. he then rolls the clay with his fingers until it is smooth. he then dips the clay in some solutions and puts it on a sculpture. he continues to roll the clay with his fingers and dip it in solutions until the sculpture is complete. he then stands up and puts the sculpture on the end of the table.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [
+    "E"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) C starts by picking up a piece of molding clay. he then rolls the clay with his fingers until it is smooth. he then dips the clay in some solutions and puts it on a pottery wheel. he continues to roll the clay with his fingers and dip it in solutions until the pottery is complete. he then stands up and puts the pottery on the end of the table.",
+  "elapsed_seconds": 5554.679,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00064-1f0bdc87-aa40-4fb3-934e-10e9bc19ec4c",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00064-1f0bdc87-aa40-4fb3-934e-10e9bc19ec4c/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00064-1f0bdc87-aa40-4fb3-934e-10e9bc19ec4c/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00064-1f0bdc87-aa40-4fb3-934e-10e9bc19ec4c/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/1f0bdc87-aa40-4fb3-934e-10e9bc19ec4c.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/1f0bdc87-aa40-4fb3-934e-10e9bc19ec4c.mp4",
+  "question_block": "Question: Describe the overarching process followed by the character \"c\" in the video, focusing on the main stages of creating the final product.\nOptions:\n(A) C starts by picking up a piece of molding clay. he then rolls the clay with his fingers until it is smooth. he then dips the clay in some solutions and puts it on a pottery wheel. he continues to roll the clay with his fingers and dip it in solutions until the pottery is complete. he then stands up and puts the pottery on the end of the table.\n(B) C starts by picking up a piece of molding clay. he then rolls the clay with his fingers until it is smooth. he then dips the clay in some solutions and puts it on a board. he continues to roll the clay with his fingers and dip it in solutions until the board is complete. he then stands up and puts the board on the end of the table.\n(C) C starts by picking up a piece of molding clay. he then rolls the clay with his fingers until it is smooth. he then dips the clay in some solutions and puts it on a knife. he continues to roll the clay with his fingers and dip it in solutions until the knife is complete. he then stands up and puts the knife on the end of the table.\n(D) C starts by picking up a piece of molding clay. he then rolls the clay with his fingers until it is smooth. he then dips the clay in some solutions and puts it on a tissue paper. he continues to roll the clay with his fingers and dip it in solutions until the tissue paper is complete. he then stands up and puts the tissue paper on the end of the table.\n(E) C starts by picking up a piece of molding clay. he then rolls the clay with his fingers until it is smooth. he then dips the clay in some solutions and puts it on a sculpture. he continues to roll the clay with his fingers and dip it in solutions until the sculpture is complete. he then stands up and puts the sculpture on the end of the table.",
+  "options": [
+    "C starts by picking up a piece of molding clay. he then rolls the clay with his fingers until it is smooth. he then dips the clay in some solutions and puts it on a pottery wheel. he continues to roll the clay with his fingers and dip it in solutions until the pottery is complete. he then stands up and puts the pottery on the end of the table.",
+    "C starts by picking up a piece of molding clay. he then rolls the clay with his fingers until it is smooth. he then dips the clay in some solutions and puts it on a board. he continues to roll the clay with his fingers and dip it in solutions until the board is complete. he then stands up and puts the board on the end of the table.",
+    "C starts by picking up a piece of molding clay. he then rolls the clay with his fingers until it is smooth. he then dips the clay in some solutions and puts it on a knife. he continues to roll the clay with his fingers and dip it in solutions until the knife is complete. he then stands up and puts the knife on the end of the table.",
+    "C starts by picking up a piece of molding clay. he then rolls the clay with his fingers until it is smooth. he then dips the clay in some solutions and puts it on a tissue paper. he continues to roll the clay with his fingers and dip it in solutions until the tissue paper is complete. he then stands up and puts the tissue paper on the end of the table.",
+    "C starts by picking up a piece of molding clay. he then rolls the clay with his fingers until it is smooth. he then dips the clay in some solutions and puts it on a sculpture. he continues to roll the clay with his fingers and dip it in solutions until the sculpture is complete. he then stands up and puts the sculpture on the end of the table."
+  ],
+  "official_meta": {
+    "question_index": "00064",
+    "video_id": "1f0bdc87-aa40-4fb3-934e-10e9bc19ec4c",
+    "resolved_video_stem": "1f0bdc87-aa40-4fb3-934e-10e9bc19ec4c",
+    "video_mapping_verified": true,
+    "source_index": 64,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-08T01:11:39.976839Z"
+}

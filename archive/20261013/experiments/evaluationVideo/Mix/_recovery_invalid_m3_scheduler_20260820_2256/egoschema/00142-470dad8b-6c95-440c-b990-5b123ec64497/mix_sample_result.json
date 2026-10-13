@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00142:470dad8b-6c95-440c-b990-5b123ec64497",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is organizing the wood in the workshop.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00142-470dad8b-6c95-440c-b990-5b123ec64497",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00142-470dad8b-6c95-440c-b990-5b123ec64497/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00142-470dad8b-6c95-440c-b990-5b123ec64497/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00142-470dad8b-6c95-440c-b990-5b123ec64497/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/470dad8b-6c95-440c-b990-5b123ec64497.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/470dad8b-6c95-440c-b990-5b123ec64497.mp4",
+  "question_block": "Question: Given all the interactions between c and various items, what could be the primary purpose behind c's actions in the workshop?\nOptions:\n(A) C is cleaning the wood in the workshop.\n(B) C is organizing the wood in the workshop.\n(C) C is repairing the wood in the workshop.\n(D) C is building something with the wood in the workshop.\n(E) C is painting the wood in the workshop.",
+  "options": [
+    "C is cleaning the wood in the workshop.",
+    "C is organizing the wood in the workshop.",
+    "C is repairing the wood in the workshop.",
+    "C is building something with the wood in the workshop.",
+    "C is painting the wood in the workshop."
+  ],
+  "official_meta": {
+    "question_index": "00142",
+    "video_id": "470dad8b-6c95-440c-b990-5b123ec64497",
+    "source_index": 142
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:49:13.618852Z"
+}

@@ -1,0 +1,12 @@
+[Evolver] role=online_trajectory_cycle_miner
+run_id=evolution_run_7f1cbc167e44
+trajectory_count=2
+diagnosis_count=2
+verification_accepted=1/2
+accepted_correct=0
+accepted_wrong=1
+replay_groups={"held_out": [], "neighbor": [], "regression": [], "trigger": ["trajectory_eeabc1cfb89240ce87753d507ab7f13a"]}
+candidate_snapshot=none
+replay_status=not_required
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=tool_execution confidence=0.90 root_cause=The trajectory contained one or more tool execution failures; the final answer is not a safe proxy for tool correctness.

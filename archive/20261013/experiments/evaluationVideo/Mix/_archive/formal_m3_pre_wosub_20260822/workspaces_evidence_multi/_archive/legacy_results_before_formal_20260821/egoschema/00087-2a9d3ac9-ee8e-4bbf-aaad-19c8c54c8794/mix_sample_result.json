@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00087:2a9d3ac9-ee8e-4bbf-aaad-19c8c54c8794",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The individual is processing leaves.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00087-2a9d3ac9-ee8e-4bbf-aaad-19c8c54c8794",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00087-2a9d3ac9-ee8e-4bbf-aaad-19c8c54c8794/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00087-2a9d3ac9-ee8e-4bbf-aaad-19c8c54c8794/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00087-2a9d3ac9-ee8e-4bbf-aaad-19c8c54c8794/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/2a9d3ac9-ee8e-4bbf-aaad-19c8c54c8794.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/2a9d3ac9-ee8e-4bbf-aaad-19c8c54c8794.mp4",
+  "question_block": "Question: What is the primary task being carried out in the video, and what steps does the individual take to accomplish this task?\nOptions:\n(A) The individual is preparing a meal.\n(B) The individual is processing leaves.\n(C) The individual is cleaning the floor.\n(D) The individual is making a craft.\n(E) The individual is playing a game.",
+  "options": [
+    "The individual is preparing a meal.",
+    "The individual is processing leaves.",
+    "The individual is cleaning the floor.",
+    "The individual is making a craft.",
+    "The individual is playing a game."
+  ],
+  "official_meta": {
+    "question_index": "00087",
+    "video_id": "2a9d3ac9-ee8e-4bbf-aaad-19c8c54c8794",
+    "source_index": 87
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:23:42.341810Z"
+}

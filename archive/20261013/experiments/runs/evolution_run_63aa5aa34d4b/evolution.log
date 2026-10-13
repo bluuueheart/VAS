@@ -1,0 +1,10 @@
+run_id=evolution_run_63aa5aa34d4b
+trajectory_count=1
+diagnosis_count=1
+verification_accepted=0/1
+accepted_correct=0
+accepted_wrong=0
+replay_groups={"held_out": [], "neighbor": [], "regression": [], "trigger": ["trajectory_aac5d25b9eb94fc3b482909eebfc3b1d"]}
+candidate_snapshot=snapshot_b876cdd645f7
+replay_status=pending
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.

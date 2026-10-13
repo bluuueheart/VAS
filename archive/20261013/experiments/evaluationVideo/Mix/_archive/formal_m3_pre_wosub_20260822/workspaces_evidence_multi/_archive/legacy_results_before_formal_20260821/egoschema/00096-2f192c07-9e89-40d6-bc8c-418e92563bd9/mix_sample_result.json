@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00096:2f192c07-9e89-40d6-bc8c-418e92563bd9",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C cuts the cotton wool, drops it on her lap, and then pulls it with her hand.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00096-2f192c07-9e89-40d6-bc8c-418e92563bd9",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00096-2f192c07-9e89-40d6-bc8c-418e92563bd9/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00096-2f192c07-9e89-40d6-bc8c-418e92563bd9/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00096-2f192c07-9e89-40d6-bc8c-418e92563bd9/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/2f192c07-9e89-40d6-bc8c-418e92563bd9.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/2f192c07-9e89-40d6-bc8c-418e92563bd9.mp4",
+  "question_block": "Question: In this video, identify the recurring three-step process that c executes multiple times and explain its significance or purpose in the overall video context.\nOptions:\n(A) C cuts the cotton wool, drops it on the floor, and then picks it up with her hand.\n(B) C cuts the cotton wool, drops it in a bag, and then pulls it out with her hand.\n(C) C cuts the cotton wool, drops it on her lap, and then pulls it with her hand.\n(D) C cuts the cotton wool, drops it in a box, and then pulls it out with her hand.\n(E) C cuts the cotton wool, drops it in a drawer, and then pulls it out with her hand.",
+  "options": [
+    "C cuts the cotton wool, drops it on the floor, and then picks it up with her hand.",
+    "C cuts the cotton wool, drops it in a bag, and then pulls it out with her hand.",
+    "C cuts the cotton wool, drops it on her lap, and then pulls it with her hand.",
+    "C cuts the cotton wool, drops it in a box, and then pulls it out with her hand.",
+    "C cuts the cotton wool, drops it in a drawer, and then pulls it out with her hand."
+  ],
+  "official_meta": {
+    "question_index": "00096",
+    "video_id": "2f192c07-9e89-40d6-bc8c-418e92563bd9",
+    "source_index": 96
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:24:14.258993Z"
+}

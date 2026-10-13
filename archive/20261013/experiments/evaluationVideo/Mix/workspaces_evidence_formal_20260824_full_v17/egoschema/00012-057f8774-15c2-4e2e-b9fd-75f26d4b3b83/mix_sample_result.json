@@ -1,0 +1,50 @@
+{
+  "sample_uid": "egoschema:00012:057f8774-15c2-4e2e-b9fd-75f26d4b3b83",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The woman is making dough.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 5.3,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/egoschema/00012-057f8774-15c2-4e2e-b9fd-75f26d4b3b83",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/egoschema/00012-057f8774-15c2-4e2e-b9fd-75f26d4b3b83/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/egoschema/00012-057f8774-15c2-4e2e-b9fd-75f26d4b3b83/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260824_full_v17/egoschema/00012-057f8774-15c2-4e2e-b9fd-75f26d4b3b83/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/057f8774-15c2-4e2e-b9fd-75f26d4b3b83.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/057f8774-15c2-4e2e-b9fd-75f26d4b3b83.mp4",
+  "question_block": "Question: What is the overall objective of the woman's actions throughout the video and how do her actions contribute to that objective?\nOptions:\n(A) The woman is making a fire.\n(B) The woman is cleaning her house.\n(C) The woman is cooking food.\n(D) The woman is making dough.\n(E) The woman is taking a break.",
+  "options": [
+    "The woman is making a fire.",
+    "The woman is cleaning her house.",
+    "The woman is cooking food.",
+    "The woman is making dough.",
+    "The woman is taking a break."
+  ],
+  "official_meta": {
+    "question_index": "00012",
+    "video_id": "057f8774-15c2-4e2e-b9fd-75f26d4b3b83",
+    "source_index": 12,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "error": "Unable to load the local Qwen3/Qwen3.5 checkpoint with an exact architecture class. Install a transformers build that provides the class named by config.architectures (for Qwen3.5 this must be Qwen3_5ForConditionalGeneration).",
+  "updated_at": "2026-08-24T13:06:25.937522Z"
+}

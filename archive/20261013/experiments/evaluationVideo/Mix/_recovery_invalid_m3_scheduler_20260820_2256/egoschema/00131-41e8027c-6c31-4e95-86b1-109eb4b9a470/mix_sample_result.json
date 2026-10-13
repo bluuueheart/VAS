@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00131:41e8027c-6c31-4e95-86b1-109eb4b9a470",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's primary objective in this video is to sharpen his tools.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00131-41e8027c-6c31-4e95-86b1-109eb4b9a470",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00131-41e8027c-6c31-4e95-86b1-109eb4b9a470/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00131-41e8027c-6c31-4e95-86b1-109eb4b9a470/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00131-41e8027c-6c31-4e95-86b1-109eb4b9a470/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/41e8027c-6c31-4e95-86b1-109eb4b9a470.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/41e8027c-6c31-4e95-86b1-109eb4b9a470.mp4",
+  "question_block": "Question: Discuss the primary objective c focuses on in this video, and relate it to the actions they perform throughout the video.\nOptions:\n(A) C's primary objective in this video is to clean his workspace.\n(B) C's primary objective in this video is to sharpen his tools.\n(C) C's primary objective in this video is to fix a broken knife.\n(D) C's primary objective in this video is to make a sandwich.\n(E) C's primary objective in this video is to test the sharpness of his knives.",
+  "options": [
+    "C's primary objective in this video is to clean his workspace.",
+    "C's primary objective in this video is to sharpen his tools.",
+    "C's primary objective in this video is to fix a broken knife.",
+    "C's primary objective in this video is to make a sandwich.",
+    "C's primary objective in this video is to test the sharpness of his knives."
+  ],
+  "official_meta": {
+    "question_index": "00131",
+    "video_id": "41e8027c-6c31-4e95-86b1-109eb4b9a470",
+    "source_index": 131
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:48:23.489094Z"
+}

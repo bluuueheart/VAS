@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00150:4b7495f1-e2c2-4d69-bbf4-c2dabeb5e634",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The most essential parts of the video are the parts where c grinds the iron rods and marks them with chalk.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00150-4b7495f1-e2c2-4d69-bbf4-c2dabeb5e634",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00150-4b7495f1-e2c2-4d69-bbf4-c2dabeb5e634/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00150-4b7495f1-e2c2-4d69-bbf4-c2dabeb5e634/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00150-4b7495f1-e2c2-4d69-bbf4-c2dabeb5e634/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/4b7495f1-e2c2-4d69-bbf4-c2dabeb5e634.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/4b7495f1-e2c2-4d69-bbf4-c2dabeb5e634.mp4",
+  "question_block": "Question: Which parts of the video can be considered most essential to achieving c's ultimate goal and why? consider the impact of these parts on the overall process.\nOptions:\n(A) The most essential parts of the video are the parts where c grinds the iron rods and marks them with chalk.\n(B) The most crucial and essential parts of the video involve the instances where object c rolls down a nylon on the iron rods effortlessly.\n(C) The most crucial and essential parts of the video involve the segments where character c picks up and handles the iron rods.\n(D) The most crucial and essential parts of the video involve the segments where character c places down the iron rods carefully.\n(E) The most essential parts of the video are the parts where c turns the iron rods.",
+  "options": [
+    "The most essential parts of the video are the parts where c grinds the iron rods and marks them with chalk.",
+    "The most crucial and essential parts of the video involve the instances where object c rolls down a nylon on the iron rods effortlessly.",
+    "The most crucial and essential parts of the video involve the segments where character c picks up and handles the iron rods.",
+    "The most crucial and essential parts of the video involve the segments where character c places down the iron rods carefully.",
+    "The most essential parts of the video are the parts where c turns the iron rods."
+  ],
+  "official_meta": {
+    "question_index": "00150",
+    "video_id": "4b7495f1-e2c2-4d69-bbf4-c2dabeb5e634",
+    "source_index": 150
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:49:45.401314Z"
+}

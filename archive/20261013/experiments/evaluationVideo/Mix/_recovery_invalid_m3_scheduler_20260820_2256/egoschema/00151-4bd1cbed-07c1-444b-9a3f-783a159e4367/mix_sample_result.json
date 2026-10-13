@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00151:4bd1cbed-07c1-444b-9a3f-783a159e4367",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C transfers ingredients by picking them up with her hands or a spoon and placing them in the pot. she adds seasonings by opening the containers and pouring them into the pot. she cleans utensils by rinsing them under water and placing them in the sink.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00151-4bd1cbed-07c1-444b-9a3f-783a159e4367",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00151-4bd1cbed-07c1-444b-9a3f-783a159e4367/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00151-4bd1cbed-07c1-444b-9a3f-783a159e4367/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00151-4bd1cbed-07c1-444b-9a3f-783a159e4367/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/4bd1cbed-07c1-444b-9a3f-783a159e4367.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/4bd1cbed-07c1-444b-9a3f-783a159e4367.mp4",
+  "question_block": "Question: Identify and explain the key sub-processes that c performs during the video in order to transfer ingredients, add seasonings, and clean utensils. compress your answer into a brief, yet comprehensive, explanation.\nOptions:\n(A) C transfers ingredients by picking them up with her hands or a spoon and placing them in the pot. she adds seasonings by opening the containers and pouring them into the pot. she cleans utensils by rinsing them under water and placing them in the sink.\n(B) Cece transfers ingredients, chopping them into small pieces, then diligently adding them to the pot. she adds various seasonings, mixing them together in a separate bowl before incorporating them into the pot. she cleans cooking utensils, thoroughly washing them in the sink using soap and water.\n(C) C carefully transfers ingredients by swiftly scooping them out of a container with a spoon, and then diligently adds them to the pot. she expertly adds seasonings by evenly sprinkling them over the ingredients in the pot. she efficiently cleans utensils by gently wiping them down with a damp cloth.\n(D) Carefully, c transfers ingredients by pouring them from a container right into the pot. then, she adds flavorful seasonings by adding them directly to the pot itself. lastly, she cleans utensils by efficiently placing them in the dishwasher.\n(E) C transfers ingredients by using a food processor to chop them into small pieces. she adds seasonings by adding them directly to the pot. she cleans utensils by placing them in the sink to soak.",
+  "options": [
+    "C transfers ingredients by picking them up with her hands or a spoon and placing them in the pot. she adds seasonings by opening the containers and pouring them into the pot. she cleans utensils by rinsing them under water and placing them in the sink.",
+    "Cece transfers ingredients, chopping them into small pieces, then diligently adding them to the pot. she adds various seasonings, mixing them together in a separate bowl before incorporating them into the pot. she cleans cooking utensils, thoroughly washing them in the sink using soap and water.",
+    "C carefully transfers ingredients by swiftly scooping them out of a container with a spoon, and then diligently adds them to the pot. she expertly adds seasonings by evenly sprinkling them over the ingredients in the pot. she efficiently cleans utensils by gently wiping them down with a damp cloth.",
+    "Carefully, c transfers ingredients by pouring them from a container right into the pot. then, she adds flavorful seasonings by adding them directly to the pot itself. lastly, she cleans utensils by efficiently placing them in the dishwasher.",
+    "C transfers ingredients by using a food processor to chop them into small pieces. she adds seasonings by adding them directly to the pot. she cleans utensils by placing them in the sink to soak."
+  ],
+  "official_meta": {
+    "question_index": "00151",
+    "video_id": "4bd1cbed-07c1-444b-9a3f-783a159e4367",
+    "source_index": 151
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:49:49.363589Z"
+}

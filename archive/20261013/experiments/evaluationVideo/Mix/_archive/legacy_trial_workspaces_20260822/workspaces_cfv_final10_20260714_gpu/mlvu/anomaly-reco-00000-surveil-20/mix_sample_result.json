@@ -1,0 +1,44 @@
+{
+  "sample_uid": "mlvu:anomaly-reco:0:surveil-20",
+  "dataset_name": "mlvu",
+  "subset_name": "anomaly_reco",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 9,
+  "iter_num": 13,
+  "tool_success_rate": 0.666667,
+  "successful_tool_calls": 6,
+  "planner_iterations": 13,
+  "subagent_iterations": 0,
+  "predicted_label": "C",
+  "ground_truth": "Shoplifting",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(C) Shoplifting",
+  "elapsed_seconds": 453.673,
+  "workspace_root": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/anomaly-reco-00000-surveil-20",
+  "launcher_log": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/anomaly-reco-00000-surveil-20/launcher.log",
+  "result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/anomaly-reco-00000-surveil-20/mix_sample_result.json",
+  "run_result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/anomaly-reco-00000-surveil-20/results/run_result.json",
+  "source_video_path": "/mnt/data/LiuXiao/datasets/MLVU/MLVU/video/6_anomaly_reco/surveil_20.mp4",
+  "prepared_video_path": "/mnt/data/LiuXiao/datasets/MLVU/MLVU/video/6_anomaly_reco/surveil_20.mp4",
+  "question_block": "Question: Does this surveillance footage contain any anomalies? If yes, which kind of anomaly?\nOptions:\n(A) RoadAccidents\n(B) Shooting\n(C) Shoplifting\n(D) Assault",
+  "options": [
+    "RoadAccidents",
+    "Shooting",
+    "Shoplifting",
+    "Assault"
+  ],
+  "official_meta": {
+    "task_type": "anomaly_reco",
+    "source_json": "6_anomaly_reco.json",
+    "source_index": 0,
+    "video_subdir": "6_anomaly_reco",
+    "video_relative_path": "6_anomaly_reco/surveil_20.mp4",
+    "data_type": "video"
+  },
+  "updated_at": "2026-07-14T09:12:38.086274Z"
+}

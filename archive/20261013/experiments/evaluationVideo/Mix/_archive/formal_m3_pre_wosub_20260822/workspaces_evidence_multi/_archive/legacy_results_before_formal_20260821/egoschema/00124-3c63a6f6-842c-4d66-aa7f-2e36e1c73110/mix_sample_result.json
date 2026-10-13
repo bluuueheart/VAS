@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00124:3c63a6f6-842c-4d66-aa7f-2e36e1c73110",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is performing an experiment on plants.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00124-3c63a6f6-842c-4d66-aa7f-2e36e1c73110",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00124-3c63a6f6-842c-4d66-aa7f-2e36e1c73110/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00124-3c63a6f6-842c-4d66-aa7f-2e36e1c73110/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00124-3c63a6f6-842c-4d66-aa7f-2e36e1c73110/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/3c63a6f6-842c-4d66-aa7f-2e36e1c73110.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/3c63a6f6-842c-4d66-aa7f-2e36e1c73110.mp4",
+  "question_block": "Question: What are the main objectives and activities that c is performing throughout the video? keep your answer concise and avoid listing all the actions.\nOptions:\n(A) C is watering the plants.\n(B) Currently, c is actively engaged in fertilizing the plants diligently.\n(C) Currently, c is carefully pruning and caring for the plants diligently.\n(D) C is performing an experiment on plants.\n(E) Currently, c is carefully repotting the various plants indoors.",
+  "options": [
+    "C is watering the plants.",
+    "Currently, c is actively engaged in fertilizing the plants diligently.",
+    "Currently, c is carefully pruning and caring for the plants diligently.",
+    "C is performing an experiment on plants.",
+    "Currently, c is carefully repotting the various plants indoors."
+  ],
+  "official_meta": {
+    "question_index": "00124",
+    "video_id": "3c63a6f6-842c-4d66-aa7f-2e36e1c73110",
+    "source_index": 124
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:26:25.461658Z"
+}

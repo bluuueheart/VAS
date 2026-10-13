@@ -1,0 +1,15 @@
+======================================================================
+FAIL: test_framework_audit_requires_paired_positive_role_evidence (RL.evolution.test_selective_replay.SelectiveReplayContractTest.test_framework_audit_requires_paired_positive_role_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/gemini/code/export_packages/extracted/RL/evolution/test_selective_replay.py", line 48, in test_framework_audit_requires_paired_positive_role_evidence
+    self.assertEqual(evaluate(paths), "pass")
+AssertionError: 'pending' != 'pass'
+- pending
++ pass
+
+
+----------------------------------------------------------------------
+Ran 112 tests in 3.965s
+
+FAILED (failures=1)

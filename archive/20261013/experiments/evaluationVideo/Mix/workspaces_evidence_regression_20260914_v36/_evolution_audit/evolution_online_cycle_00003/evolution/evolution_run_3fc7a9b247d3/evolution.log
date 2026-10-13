@@ -1,0 +1,15 @@
+[Evolver] role=online_trajectory_cycle_miner
+run_id=evolution_run_3fc7a9b247d3
+trajectory_count=6
+diagnosis_count=5
+verification_accepted=5/6
+accepted_correct=2
+accepted_wrong=3
+replay_groups={"held_out": ["trajectory_c77708eee4634d729c651a08291bd7bb"], "neighbor": ["trajectory_dbddc759c83242988b0044a3342dd845"], "regression": ["trajectory_389280dac3b24befb71b22fc3500dc44"], "trigger": ["trajectory_eeabc1cfb89240ce87753d507ab7f13a"]}
+candidate_snapshot=snapshot_f4529b93d694ad74
+replay_status=candidate_pending_fresh_inference
+diagnosis=premature_termination confidence=0.95 root_cause=The historical trajectory reached Finish without satisfying the configured evidence gate.
+diagnosis=tool_execution confidence=0.90 root_cause=The trajectory contained one or more tool execution failures; the final answer is not a safe proxy for tool correctness.
+diagnosis=tool_execution confidence=0.90 root_cause=The trajectory contained one or more tool execution failures; the final answer is not a safe proxy for tool correctness.
+diagnosis=contradiction_handling confidence=0.90 root_cause=The trajectory contained conflicting evidence but still produced a terminal answer.
+diagnosis=tool_execution confidence=0.90 root_cause=The trajectory contained one or more tool execution failures; the final answer is not a safe proxy for tool correctness.

@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00020:07a9d3ee-6d81-4bb4-ba24-f8555f8b1929",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 6,
+  "iter_num": 18,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 6,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "The primary tool used by c in the video is a rake.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 4579.213,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00020-07a9d3ee-6d81-4bb4-ba24-f8555f8b1929",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00020-07a9d3ee-6d81-4bb4-ba24-f8555f8b1929/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00020-07a9d3ee-6d81-4bb4-ba24-f8555f8b1929/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00020-07a9d3ee-6d81-4bb4-ba24-f8555f8b1929/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/07a9d3ee-6d81-4bb4-ba24-f8555f8b1929.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/07a9d3ee-6d81-4bb4-ba24-f8555f8b1929.mp4",
+  "question_block": "Question: What was the primary tool used by c in the video, and how did c utilize this tool in order to create a desired outcome?\nOptions:\n(A) The primary tool used by c in the video is a rake.\n(B) The primary tool used by c in the video is a shovel.\n(C) In the video, the primary tool prominently utilized by character c is a gardening instrument known as a hoe.\n(D) In the video, the primary tool predominantly utilized by c is, interestingly, a pickaxe.\n(E) In the video, the primary tool utilized by individual c is indeed a wheelbarrow for transporting materials.",
+  "options": [
+    "The primary tool used by c in the video is a rake.",
+    "The primary tool used by c in the video is a shovel.",
+    "In the video, the primary tool prominently utilized by character c is a gardening instrument known as a hoe.",
+    "In the video, the primary tool predominantly utilized by c is, interestingly, a pickaxe.",
+    "In the video, the primary tool utilized by individual c is indeed a wheelbarrow for transporting materials."
+  ],
+  "official_meta": {
+    "question_index": "00020",
+    "video_id": "07a9d3ee-6d81-4bb4-ba24-f8555f8b1929",
+    "resolved_video_stem": "07a9d3ee-6d81-4bb4-ba24-f8555f8b1929",
+    "video_mapping_verified": true,
+    "source_index": 20,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-31T15:50:59.997615Z"
+}

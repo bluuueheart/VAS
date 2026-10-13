@@ -1,0 +1,44 @@
+{
+  "sample_uid": "mlvu:plotqa:1:xiaoliyu-6",
+  "dataset_name": "mlvu",
+  "subset_name": "plotQA",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 7,
+  "iter_num": 9,
+  "tool_success_rate": 0.428571,
+  "successful_tool_calls": 3,
+  "planner_iterations": 9,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "ground_truth": "Carried by the cartoon turtle",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) Carried by the cartoon turtle",
+  "elapsed_seconds": 396.205,
+  "workspace_root": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/plotqa-00001-xiaoliyu-6",
+  "launcher_log": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/plotqa-00001-xiaoliyu-6/launcher.log",
+  "result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/plotqa-00001-xiaoliyu-6/mix_sample_result.json",
+  "run_result_path": "/mnt/data/LiuXiao/VAS/evaluationVideo/Mix/workspaces_cfv_final10_20260714_gpu/mlvu/plotqa-00001-xiaoliyu-6/results/run_result.json",
+  "source_video_path": "/mnt/data/LiuXiao/datasets/MLVU/MLVU/video/1_plotQA/xiaoliyu_6.mp4",
+  "prepared_video_path": "/mnt/data/LiuXiao/datasets/MLVU/MLVU/video/1_plotQA/xiaoliyu_6.mp4",
+  "question_block": "Question: How did the cartoon jellyfish leave the mire?\nOptions:\n(A) Carried by the cartoon shrimp\n(B) Carried by the cartoon turtle\n(C) Carried by the cartoon catfish\n(D) Carried by the cartoon seahorse",
+  "options": [
+    "Carried by the cartoon shrimp",
+    "Carried by the cartoon turtle",
+    "Carried by the cartoon catfish",
+    "Carried by the cartoon seahorse"
+  ],
+  "official_meta": {
+    "task_type": "plotQA",
+    "source_json": "1_plotQA.json",
+    "source_index": 1,
+    "video_subdir": "1_plotQA",
+    "video_relative_path": "1_plotQA/xiaoliyu_6.mp4",
+    "data_type": "video"
+  },
+  "updated_at": "2026-07-14T09:03:02.763790Z"
+}

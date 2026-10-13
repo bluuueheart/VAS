@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00088:2b627c1c-73ea-4096-aa3b-9894291dffdb",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is preparing a flatbread.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00088-2b627c1c-73ea-4096-aa3b-9894291dffdb",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00088-2b627c1c-73ea-4096-aa3b-9894291dffdb/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00088-2b627c1c-73ea-4096-aa3b-9894291dffdb/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00088-2b627c1c-73ea-4096-aa3b-9894291dffdb/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/2b627c1c-73ea-4096-aa3b-9894291dffdb.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/2b627c1c-73ea-4096-aa3b-9894291dffdb.mp4",
+  "question_block": "Question: Describe the overall process that takes place in the kitchen in this video. what is the primary task being completed and how does it transition to other tasks?\nOptions:\n(A) C is making a pizza.\n(B) Currently, c is in the kitchen enthusiastically making a delicious cake.\n(C) C is preparing a flatbread.\n(D) Currently, c is in the process of making a delicious pie.\n(E) Currently, c is in the process of preparing a sandwich.",
+  "options": [
+    "C is making a pizza.",
+    "Currently, c is in the kitchen enthusiastically making a delicious cake.",
+    "C is preparing a flatbread.",
+    "Currently, c is in the process of making a delicious pie.",
+    "Currently, c is in the process of preparing a sandwich."
+  ],
+  "official_meta": {
+    "question_index": "00088",
+    "video_id": "2b627c1c-73ea-4096-aa3b-9894291dffdb",
+    "source_index": 88
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:45:59.058080Z"
+}

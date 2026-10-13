@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00078:23c1f3cd-c790-47c0-ae6a-7e4af28b8819",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "C",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C and the man are playing chess.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(C) C and the man are playing chess.",
+  "elapsed_seconds": 531.684,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00078-23c1f3cd-c790-47c0-ae6a-7e4af28b8819",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00078-23c1f3cd-c790-47c0-ae6a-7e4af28b8819/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00078-23c1f3cd-c790-47c0-ae6a-7e4af28b8819/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00078-23c1f3cd-c790-47c0-ae6a-7e4af28b8819/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/23c1f3cd-c790-47c0-ae6a-7e4af28b8819.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/23c1f3cd-c790-47c0-ae6a-7e4af28b8819.mp4",
+  "question_block": "Question: Describe the primary interaction between c and the man in the video. focus on their overall aim and activity.\nOptions:\n(A) C and the man are playing checkers.\n(B) C and the man are playing a game of tic-tac-toe.\n(C) C and the man are playing chess.\n(D) C and the man are playing a game of solitaire.\n(E) C and the man are not playing any game at all.",
+  "options": [
+    "C and the man are playing checkers.",
+    "C and the man are playing a game of tic-tac-toe.",
+    "C and the man are playing chess.",
+    "C and the man are playing a game of solitaire.",
+    "C and the man are not playing any game at all."
+  ],
+  "official_meta": {
+    "question_index": "00078",
+    "video_id": "23c1f3cd-c790-47c0-ae6a-7e4af28b8819",
+    "resolved_video_stem": "23c1f3cd-c790-47c0-ae6a-7e4af28b8819",
+    "video_mapping_verified": true,
+    "source_index": 78,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-10T02:16:44.263586Z"
+}

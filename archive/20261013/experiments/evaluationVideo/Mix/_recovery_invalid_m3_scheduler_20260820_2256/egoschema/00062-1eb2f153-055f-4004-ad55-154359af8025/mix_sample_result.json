@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00062:1eb2f153-055f-4004-ad55-154359af8025",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C dips the paintbrush into the paint, turns it, and then paints the wardrobe with it. he repeats this process until the wardrobe is painted.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00062-1eb2f153-055f-4004-ad55-154359af8025",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00062-1eb2f153-055f-4004-ad55-154359af8025/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00062-1eb2f153-055f-4004-ad55-154359af8025/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00062-1eb2f153-055f-4004-ad55-154359af8025/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/1eb2f153-055f-4004-ad55-154359af8025.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/1eb2f153-055f-4004-ad55-154359af8025.mp4",
+  "question_block": "Question: Summarize the process that c goes through while painting the wardrobe, and identify any key interactions or interruptions that occur during this process.\nOptions:\n(A) C opens a paint can, pours the paint into a coconut shell, and then uses the paintbrush to paint the wardrobe.\n(B) C stands up from a chair, adjusts the chair with his right leg, and then drops the paintbrush on a newspaper on a pavement. he then opens a paint can on the newspaper on the pavement, drops the paint can cover on the newspaper on the pavement, pours the paint in the coconut shell into the paint can on the pavement, picks up the paint can cover on the newspaper on the pavement, closes the paint can with the cover, and then picks up the paint can cover on the newspaper on the pavement and closes the paint can with the cover.\n(C) C interacts with a boy, dips the paintbrush into the paint in the coconut shell in his left hand, turns the paintbrush, rubs the paintbrush on the side of the coconut shell, paints the wardrobe with the paintbrush with his right hand, dips the paintbrush into the paint in the coconut shell in his left hand, turns the paintbrush, hits the paintbrush on the coconut shell, paints the wardrobe with the paintbrush with his right hand, dips the paintbrush into the paint in the coconut shell in his left hand, turns the paintbrush, paints the wardrobe with the paintbrush with his right hand, stands up from a chair, adjusts the chair with his right leg, drops the paintbrush on a newspaper on a pavement, opens a paint can on the newspaper on the pavement, drops the paint can cover on the newspaper on the pavement, pours the paint in the coconut shell into the paint can on the pavement, picks up the paint can cover on the newspaper on the pavement, closes the paint can with the cover, and then picks up the paint can cover on the newspaper on the pavement and closes the paint can with the cover.\n(D) C dips the paintbrush into the paint, turns it, and then paints the wardrobe with it. he repeats this process until the wardrobe is painted.\n(E) C dips the paintbrush into the paint, turns it, and then paints the wardrobe with it. he repeats this process until the wardrobe is painted, but he also interacts with a boy and stands up from a chair and adjusts the chair with his right leg.",
+  "options": [
+    "C opens a paint can, pours the paint into a coconut shell, and then uses the paintbrush to paint the wardrobe.",
+    "C stands up from a chair, adjusts the chair with his right leg, and then drops the paintbrush on a newspaper on a pavement. he then opens a paint can on the newspaper on the pavement, drops the paint can cover on the newspaper on the pavement, pours the paint in the coconut shell into the paint can on the pavement, picks up the paint can cover on the newspaper on the pavement, closes the paint can with the cover, and then picks up the paint can cover on the newspaper on the pavement and closes the paint can with the cover.",
+    "C interacts with a boy, dips the paintbrush into the paint in the coconut shell in his left hand, turns the paintbrush, rubs the paintbrush on the side of the coconut shell, paints the wardrobe with the paintbrush with his right hand, dips the paintbrush into the paint in the coconut shell in his left hand, turns the paintbrush, hits the paintbrush on the coconut shell, paints the wardrobe with the paintbrush with his right hand, dips the paintbrush into the paint in the coconut shell in his left hand, turns the paintbrush, paints the wardrobe with the paintbrush with his right hand, stands up from a chair, adjusts the chair with his right leg, drops the paintbrush on a newspaper on a pavement, opens a paint can on the newspaper on the pavement, drops the paint can cover on the newspaper on the pavement, pours the paint in the coconut shell into the paint can on the pavement, picks up the paint can cover on the newspaper on the pavement, closes the paint can with the cover, and then picks up the paint can cover on the newspaper on the pavement and closes the paint can with the cover.",
+    "C dips the paintbrush into the paint, turns it, and then paints the wardrobe with it. he repeats this process until the wardrobe is painted.",
+    "C dips the paintbrush into the paint, turns it, and then paints the wardrobe with it. he repeats this process until the wardrobe is painted, but he also interacts with a boy and stands up from a chair and adjusts the chair with his right leg."
+  ],
+  "official_meta": {
+    "question_index": "00062",
+    "video_id": "1eb2f153-055f-4004-ad55-154359af8025",
+    "source_index": 62
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:45:00.538538Z"
+}

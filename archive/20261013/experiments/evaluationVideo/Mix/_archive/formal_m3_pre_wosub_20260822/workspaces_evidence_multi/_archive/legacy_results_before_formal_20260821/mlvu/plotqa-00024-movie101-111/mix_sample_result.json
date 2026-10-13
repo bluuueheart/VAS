@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:plotqa:24:movie101-111",
+  "dataset_name": "mlvu",
+  "subset_name": "plotQA",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "There was a case he needed to handle",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00024-movie101-111",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00024-movie101-111/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00024-movie101-111/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/plotqa-00024-movie101-111/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/movie101_111.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/movie101_111.mp4",
+  "question_block": "Question: Why did the man in the black coat leave after handing something to the speaker?\nOptions:\n(A) There was a case he needed to handle\n(B) He was preparing for the next speech\n(C) He was in a hurry to go to the bathroom\n(D) He went to get another item",
+  "options": [
+    "There was a case he needed to handle",
+    "He was preparing for the next speech",
+    "He was in a hurry to go to the bathroom",
+    "He went to get another item"
+  ],
+  "official_meta": {
+    "task_type": "plotQA",
+    "source_json": "1_plotQA.json",
+    "source_index": 24,
+    "video_subdir": "1_plotQA",
+    "video_relative_path": "1_plotQA/movie101_111.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:24:02.879110Z"
+}

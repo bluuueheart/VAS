@@ -1,0 +1,3860 @@
+{
+  "run_id": "evolution_run_1edfcbe48637",
+  "trajectory_count": 4,
+  "event_count": 62,
+  "diagnoses": [
+    {
+      "diagnosis_id": "diagnosis_ca1f3709dbc7",
+      "trajectory_ids": [
+        "trajectory_eeabc1cfb89240ce87753d507ab7f13a"
+      ],
+      "failure_type": "premature_termination",
+      "blamed_component": "evidence_verifier",
+      "blamed_tool_ids": [
+        "Inspect_Frame",
+        "Segment_Retrieve",
+        "Video_Clip_QA"
+      ],
+      "supporting_event_ids": [
+        "debug_40"
+      ],
+      "root_cause": "The historical trajectory reached Finish without satisfying the configured evidence gate.",
+      "counterfactual_fix": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, claim contract missing: purpose",
+      "confidence": 0.95,
+      "failure_scope": "global_and_local_failure",
+      "attribution": {
+        "answer_outcome": "incorrect",
+        "tool_failure_count": 5,
+        "planner_success": false,
+        "verifier_blocked": true,
+        "blamed_component": "evidence_verifier",
+        "layered_root_cause": {
+          "primary_layer": "framework_logic",
+          "layers": {
+            "agent_design": {
+              "status": "not_indicated",
+              "signals": [],
+              "candidate_agents": []
+            },
+            "agent_interaction": {
+              "status": "indicated",
+              "signals": [
+                "observer/planner/verifier claim contract has unresolved dimensions",
+                "Reflector judgment and deterministic claim contract must be reconciled"
+              ],
+              "handoff_checks": [
+                "purpose",
+                "reflector_verifier_boundary"
+              ]
+            },
+            "framework_logic": {
+              "status": "indicated",
+              "signals": [
+                "tool execution/runtime failure"
+              ],
+              "checks": [
+                "tool_status_contract"
+              ]
+            }
+          },
+          "role_schema_failures": [],
+          "claim_contract_missing": [
+            "purpose"
+          ],
+          "finish_candidate_count": 1,
+          "contract_pass": false
+        }
+      }
+    },
+    {
+      "diagnosis_id": "diagnosis_2a6235cfaa58",
+      "trajectory_ids": [
+        "trajectory_91c74910842f4bcb8e3d0fa4364b63bd"
+      ],
+      "failure_type": "tool_execution",
+      "blamed_component": "tool_runtime",
+      "blamed_tool_ids": [
+        "Video_Clip_QA",
+        "asr"
+      ],
+      "supporting_event_ids": [
+        "debug_20",
+        "debug_62"
+      ],
+      "root_cause": "The trajectory contained one or more tool execution failures; the final answer is not a safe proxy for tool correctness.",
+      "counterfactual_fix": "Route to a validated fallback after the first hard tool failure.",
+      "confidence": 0.9,
+      "failure_scope": "global_and_local_failure",
+      "attribution": {
+        "answer_outcome": "incorrect",
+        "tool_failure_count": 2,
+        "planner_success": true,
+        "verifier_blocked": false,
+        "blamed_component": "tool_runtime",
+        "layered_root_cause": {
+          "primary_layer": "framework_logic",
+          "layers": {
+            "agent_design": {
+              "status": "not_indicated",
+              "signals": [],
+              "candidate_agents": []
+            },
+            "agent_interaction": {
+              "status": "not_indicated",
+              "signals": [],
+              "handoff_checks": []
+            },
+            "framework_logic": {
+              "status": "indicated",
+              "signals": [
+                "tool execution/runtime failure",
+                "repeated Finish candidate reached the runtime"
+              ],
+              "checks": [
+                "tool_status_contract",
+                "finish_revision_guard"
+              ]
+            }
+          },
+          "role_schema_failures": [],
+          "claim_contract_missing": [],
+          "finish_candidate_count": 3,
+          "contract_pass": true
+        }
+      }
+    },
+    {
+      "diagnosis_id": "diagnosis_dd6715d26df7",
+      "trajectory_ids": [
+        "trajectory_389280dac3b24befb71b22fc3500dc44"
+      ],
+      "failure_type": "tool_execution",
+      "blamed_component": "tool_runtime",
+      "blamed_tool_ids": [
+        "Semantic_Retrieve",
+        "Video_Clip_QA"
+      ],
+      "supporting_event_ids": [
+        "debug_46"
+      ],
+      "root_cause": "The trajectory contained one or more tool execution failures; the final answer is not a safe proxy for tool correctness.",
+      "counterfactual_fix": "Route to a validated fallback after the first hard tool failure.",
+      "confidence": 0.9,
+      "failure_scope": "local_tool_failure",
+      "attribution": {
+        "answer_outcome": "correct",
+        "tool_failure_count": 3,
+        "planner_success": true,
+        "verifier_blocked": false,
+        "blamed_component": "tool_runtime",
+        "layered_root_cause": {
+          "primary_layer": "framework_logic",
+          "layers": {
+            "agent_design": {
+              "status": "not_indicated",
+              "signals": [],
+              "candidate_agents": []
+            },
+            "agent_interaction": {
+              "status": "not_indicated",
+              "signals": [],
+              "handoff_checks": []
+            },
+            "framework_logic": {
+              "status": "indicated",
+              "signals": [
+                "tool execution/runtime failure"
+              ],
+              "checks": [
+                "tool_status_contract"
+              ]
+            }
+          },
+          "role_schema_failures": [],
+          "claim_contract_missing": [],
+          "finish_candidate_count": 1,
+          "contract_pass": true
+        }
+      }
+    },
+    {
+      "diagnosis_id": "diagnosis_e57611aeea1e",
+      "trajectory_ids": [
+        "trajectory_70d258d3271d4153919bd106f35884b3"
+      ],
+      "failure_type": "contradiction_handling",
+      "blamed_component": "evidence_verifier",
+      "blamed_tool_ids": [
+        "Inspect_Frame",
+        "Video_Clip_QA"
+      ],
+      "supporting_event_ids": [
+        "debug_15",
+        "debug_28",
+        "debug_43",
+        "debug_52"
+      ],
+      "root_cause": "The trajectory contained conflicting evidence but still produced a terminal answer.",
+      "counterfactual_fix": "Reject Finish until conflicts are explicitly resolved by a new modality or time window.",
+      "confidence": 0.9,
+      "failure_scope": "global_answer_failure",
+      "attribution": {
+        "answer_outcome": "incorrect",
+        "tool_failure_count": 0,
+        "planner_success": true,
+        "verifier_blocked": false,
+        "blamed_component": "evidence_verifier",
+        "layered_root_cause": {
+          "primary_layer": "framework_logic",
+          "layers": {
+            "agent_design": {
+              "status": "indicated",
+              "signals": [
+                "role schema failure: observer"
+              ],
+              "candidate_agents": [
+                "observer"
+              ]
+            },
+            "agent_interaction": {
+              "status": "not_indicated",
+              "signals": [],
+              "handoff_checks": []
+            },
+            "framework_logic": {
+              "status": "indicated",
+              "signals": [
+                "repeated Finish candidate reached the runtime"
+              ],
+              "checks": [
+                "finish_revision_guard"
+              ]
+            }
+          },
+          "role_schema_failures": [
+            "observer"
+          ],
+          "claim_contract_missing": [],
+          "finish_candidate_count": 4,
+          "contract_pass": true
+        }
+      }
+    }
+  ],
+  "verifications": [
+    {
+      "trajectory_id": "trajectory_eeabc1cfb89240ce87753d507ab7f13a",
+      "sample_uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+      "answer_score": 0.0,
+      "sample_status": "failed",
+      "held_out": false,
+      "progress_score": 0.2,
+      "claim_coverage": 0.0,
+      "direct_grounding": 0.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 1.0,
+      "can_finish": false,
+      "premise_mismatch": false,
+      "option_mismatch": false,
+      "missing_information": [
+        "structured evidence claims",
+        "direct evidence citation"
+      ],
+      "unresolved_claims": [
+        "claim contract missing: purpose"
+      ],
+      "claim_contract": {
+        "status": "blocked",
+        "required": [
+          "purpose",
+          "evidence_redundancy"
+        ],
+        "satisfied": {
+          "purpose": false,
+          "evidence_redundancy": true
+        },
+        "missing": [
+          "purpose"
+        ],
+        "verified_claim_count": 0,
+        "contract_version": 1
+      },
+      "feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, claim contract missing: purpose"
+    },
+    {
+      "trajectory_id": "trajectory_91c74910842f4bcb8e3d0fa4364b63bd",
+      "sample_uid": "lvbench:entity-recognition:16:83",
+      "answer_score": 0.0,
+      "sample_status": "wrong",
+      "held_out": false,
+      "progress_score": 0.8,
+      "claim_coverage": 1.0,
+      "direct_grounding": 1.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": true,
+      "premise_mismatch": false,
+      "option_mismatch": false,
+      "missing_information": [],
+      "unresolved_claims": [],
+      "claim_contract": {
+        "status": "pass",
+        "required": [
+          "comparison",
+          "evidence_redundancy"
+        ],
+        "satisfied": {
+          "comparison": true,
+          "evidence_redundancy": true
+        },
+        "missing": [],
+        "verified_claim_count": 2,
+        "contract_version": 1
+      },
+      "feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "trajectory_id": "trajectory_389280dac3b24befb71b22fc3500dc44",
+      "sample_uid": "mlvu:anomaly-reco:0:surveil-20",
+      "answer_score": 1.0,
+      "sample_status": "completed",
+      "held_out": false,
+      "progress_score": 0.8,
+      "claim_coverage": 1.0,
+      "direct_grounding": 1.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": true,
+      "premise_mismatch": false,
+      "option_mismatch": false,
+      "missing_information": [],
+      "unresolved_claims": [],
+      "claim_contract": {
+        "status": "pass",
+        "required": [
+          "comparison",
+          "evidence_redundancy"
+        ],
+        "satisfied": {
+          "comparison": true,
+          "evidence_redundancy": true
+        },
+        "missing": [],
+        "verified_claim_count": 2,
+        "contract_version": 1
+      },
+      "feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "trajectory_id": "trajectory_70d258d3271d4153919bd106f35884b3",
+      "sample_uid": "videomme:acrobatics:211-1",
+      "answer_score": 0.0,
+      "sample_status": "completed",
+      "held_out": false,
+      "progress_score": 0.666667,
+      "claim_coverage": 0.833333,
+      "direct_grounding": 0.833333,
+      "contradiction_score": 0.166667,
+      "cross_modal_support": 0.0,
+      "can_finish": true,
+      "premise_mismatch": false,
+      "option_mismatch": false,
+      "missing_information": [],
+      "unresolved_claims": [],
+      "claim_contract": {
+        "status": "pass",
+        "required": [
+          "dynamic_relation",
+          "comparison",
+          "qualifier",
+          "evidence_redundancy"
+        ],
+        "satisfied": {
+          "dynamic_relation": true,
+          "comparison": true,
+          "qualifier": true,
+          "evidence_redundancy": true
+        },
+        "missing": [],
+        "verified_claim_count": 1,
+        "contract_version": 1
+      },
+      "feedback": "Evidence verifier accepted termination."
+    }
+  ],
+  "evolution_intent": {
+    "intent_id": "intent_6f3bdd1f24a2",
+    "diagnosis_ids": [
+      "diagnosis_ca1f3709dbc7",
+      "diagnosis_2a6235cfaa58",
+      "diagnosis_dd6715d26df7",
+      "diagnosis_e57611aeea1e"
+    ],
+    "scope": "router",
+    "operations": [
+      {
+        "action": "add_composition_edge",
+        "target_type": "workflow",
+        "target_ids": [
+          "candidate_comparison"
+        ],
+        "before": null,
+        "after": {
+          "after": "evidence_acquisition",
+          "before": "finish",
+          "required": true
+        },
+        "reason": "Collected evidence was not compared consistently across answer candidates."
+      }
+    ],
+    "expected_effects": [
+      "fewer unsupported finishes",
+      "higher evidence-grounded answer consistency"
+    ],
+    "risks": [
+      "additional tool calls",
+      "higher latency"
+    ],
+    "dependency_analysis": {
+      "graph_version": 1,
+      "operation_count": 1,
+      "joint_required": false,
+      "nodes": [
+        {
+          "index": 0,
+          "action": "add_composition_edge",
+          "target_ids": [
+            "candidate_comparison"
+          ],
+          "component": "workflow_composition",
+          "valid": true
+        }
+      ],
+      "dependency_edges": [],
+      "missing_dependencies": [],
+      "conflicts": [],
+      "dependency_pass": true
+    }
+  },
+  "candidate_snapshot": null,
+  "diagnostic_candidate_snapshot": {
+    "snapshot_id": "snapshot_0fceb88369ef",
+    "parent_snapshot_id": "snapshot_000",
+    "created_at": "2026-09-14T11:23:38.830138Z",
+    "router_policy": {
+      "add_composition_edge": {
+        "after": "evidence_acquisition",
+        "before": "finish",
+        "required": true
+      }
+    },
+    "argument_policy": {},
+    "tool_overrides": {},
+    "source_overrides": {},
+    "source_materialized": false,
+    "mutation_delta": {},
+    "base_tool_library_baseline_id": "toolbase_5bc5b18117f7b913bb66",
+    "patch_ids": [
+      "intent_6f3bdd1f24a2"
+    ],
+    "status": "candidate",
+    "dependency_analysis": {
+      "graph_version": 1,
+      "operation_count": 1,
+      "joint_required": false,
+      "nodes": [
+        {
+          "index": 0,
+          "action": "add_composition_edge",
+          "target_ids": [
+            "candidate_comparison"
+          ],
+          "component": "workflow_composition",
+          "valid": true
+        }
+      ],
+      "dependency_edges": [],
+      "missing_dependencies": [],
+      "conflicts": [],
+      "dependency_pass": true
+    }
+  },
+  "candidate_source": "none",
+  "replay_groups": {
+    "trigger": [
+      "trajectory_eeabc1cfb89240ce87753d507ab7f13a"
+    ],
+    "neighbor": [],
+    "regression": [
+      "trajectory_389280dac3b24befb71b22fc3500dc44"
+    ],
+    "held_out": []
+  },
+  "replay_group_contract": {
+    "neighbor_definition": "distinct non-held-out case in the same dataset/subset/question-type cohort as the trigger",
+    "answer_or_annotation_fields_used_for_selection": false,
+    "trigger_sample_uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf"
+  },
+  "replay_status": "not_required",
+  "candidate_replay_status": "not_required",
+  "selective_replay": {
+    "strategy": "selective_suffix_first",
+    "status": "pending_candidate_snapshot",
+    "matching_cases_required": true,
+    "periodic_regression_required": true
+  },
+  "metric_gate_status": "not_run",
+  "fresh_candidate_inference_proven": false,
+  "snapshot_application_proven": false,
+  "snapshot_application_requires_fresh_inference": false,
+  "final_acceptance_status": "no_candidate",
+  "online_publish_status": "not_published",
+  "batch_metrics": {
+    "accuracy": 0.25,
+    "mean_latency_seconds": 1588.30225,
+    "invalid_call_rate": 0.2
+  },
+  "source_paths": [
+    "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260914_v36/_evolution_audit/evolution_online_cycle_00002/evolution_input/egoschema/egoschema_00006_026a2f15-c454-4c28-80e0-24c85d7f4ecf_0001/results/run_result.json",
+    "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260914_v36/_evolution_audit/evolution_online_cycle_00002/evolution_input/lvbench/lvbench_entity-recognition_16_83_0002/results/run_result.json",
+    "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260914_v36/_evolution_audit/evolution_online_cycle_00002/evolution_input/mlvu/mlvu_anomaly-reco_0_surveil-20_0000/results/run_result.json",
+    "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_regression_20260914_v36/_evolution_audit/evolution_online_cycle_00002/evolution_input/videomme/videomme_acrobatics_211-1_0003/results/run_result.json"
+  ],
+  "agent_value_analysis": {
+    "method": "trajectory evidence accounting; not causal ablation",
+    "cases": [
+      {
+        "sample_uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+        "dataset_name": "egoschema",
+        "answer_correct": false,
+        "predicted_label": "",
+        "roles": {
+          "planner": {
+            "turns": 15,
+            "tool_orchestration_steps": 14,
+            "finish_proposals": 2,
+            "schema_valid_turns": 15,
+            "value_verdict": "observed",
+            "evidence": [
+              "selected executable actions and/or a terminal answer"
+            ]
+          },
+          "observer": {
+            "turns": 35,
+            "schema_valid_turns": 35,
+            "evidence_updates": 2,
+            "verified_updates": 2,
+            "logical_conflicts_flagged": 0,
+            "reobserve_or_cross_verify_recommendations": 12,
+            "recommendations_followed_by_planner": 6,
+            "value_verdict": "useful",
+            "evidence": [
+              "changed evidence state or directed a subsequent observation action"
+            ]
+          },
+          "reflector": {
+            "turns": 1,
+            "schema_valid_turns": 1,
+            "accept_count": 0,
+            "reject_or_request_more_count": 1,
+            "effective_finish_blocks": 1,
+            "accept_correct_count": 0,
+            "accept_wrong_count": 0,
+            "value_verdict": "useful",
+            "evidence": [
+              "blocked Finish before additional evidence or validated a correct Finish"
+            ]
+          },
+          "evolver": {
+            "value_verdict": "online_cycle_role_not_case_turn",
+            "evidence": [
+              "evaluated by the online cycle replay report"
+            ]
+          }
+        }
+      },
+      {
+        "sample_uid": "lvbench:entity-recognition:16:83",
+        "dataset_name": "lvbench",
+        "answer_correct": false,
+        "predicted_label": "C",
+        "roles": {
+          "planner": {
+            "turns": 14,
+            "tool_orchestration_steps": 11,
+            "finish_proposals": 5,
+            "schema_valid_turns": 14,
+            "value_verdict": "observed",
+            "evidence": [
+              "selected executable actions and/or a terminal answer"
+            ]
+          },
+          "observer": {
+            "turns": 25,
+            "schema_valid_turns": 25,
+            "evidence_updates": 11,
+            "verified_updates": 11,
+            "logical_conflicts_flagged": 0,
+            "reobserve_or_cross_verify_recommendations": 4,
+            "recommendations_followed_by_planner": 4,
+            "value_verdict": "useful",
+            "evidence": [
+              "changed evidence state or directed a subsequent observation action"
+            ]
+          },
+          "reflector": {
+            "turns": 2,
+            "schema_valid_turns": 2,
+            "accept_count": 2,
+            "reject_or_request_more_count": 0,
+            "effective_finish_blocks": 0,
+            "accept_correct_count": 0,
+            "accept_wrong_count": 2,
+            "value_verdict": "insufficient_or_harmful",
+            "evidence": [
+              "the gate did not demonstrate a beneficial decision on this case"
+            ]
+          },
+          "evolver": {
+            "value_verdict": "online_cycle_role_not_case_turn",
+            "evidence": [
+              "evaluated by the online cycle replay report"
+            ]
+          }
+        }
+      },
+      {
+        "sample_uid": "mlvu:anomaly-reco:0:surveil-20",
+        "dataset_name": "mlvu",
+        "answer_correct": true,
+        "predicted_label": "C",
+        "roles": {
+          "planner": {
+            "turns": 11,
+            "tool_orchestration_steps": 10,
+            "finish_proposals": 1,
+            "schema_valid_turns": 11,
+            "value_verdict": "observed",
+            "evidence": [
+              "selected executable actions and/or a terminal answer"
+            ]
+          },
+          "observer": {
+            "turns": 21,
+            "schema_valid_turns": 21,
+            "evidence_updates": 6,
+            "verified_updates": 4,
+            "logical_conflicts_flagged": 0,
+            "reobserve_or_cross_verify_recommendations": 9,
+            "recommendations_followed_by_planner": 8,
+            "value_verdict": "useful",
+            "evidence": [
+              "changed evidence state or directed a subsequent observation action"
+            ]
+          },
+          "reflector": {
+            "turns": 1,
+            "schema_valid_turns": 1,
+            "accept_count": 1,
+            "reject_or_request_more_count": 0,
+            "effective_finish_blocks": 0,
+            "accept_correct_count": 1,
+            "accept_wrong_count": 0,
+            "value_verdict": "useful",
+            "evidence": [
+              "blocked Finish before additional evidence or validated a correct Finish"
+            ]
+          },
+          "evolver": {
+            "value_verdict": "online_cycle_role_not_case_turn",
+            "evidence": [
+              "evaluated by the online cycle replay report"
+            ]
+          }
+        }
+      },
+      {
+        "sample_uid": "videomme:acrobatics:211-1",
+        "dataset_name": "videomme",
+        "answer_correct": false,
+        "predicted_label": "B",
+        "roles": {
+          "planner": {
+            "turns": 12,
+            "tool_orchestration_steps": 7,
+            "finish_proposals": 6,
+            "schema_valid_turns": 12,
+            "value_verdict": "observed",
+            "evidence": [
+              "selected executable actions and/or a terminal answer"
+            ]
+          },
+          "observer": {
+            "turns": 15,
+            "schema_valid_turns": 14,
+            "evidence_updates": 8,
+            "verified_updates": 7,
+            "logical_conflicts_flagged": 7,
+            "reobserve_or_cross_verify_recommendations": 6,
+            "recommendations_followed_by_planner": 1,
+            "value_verdict": "useful",
+            "evidence": [
+              "changed evidence state or directed a subsequent observation action"
+            ]
+          },
+          "reflector": {
+            "turns": 4,
+            "schema_valid_turns": 4,
+            "accept_count": 1,
+            "reject_or_request_more_count": 3,
+            "effective_finish_blocks": 2,
+            "accept_correct_count": 0,
+            "accept_wrong_count": 1,
+            "value_verdict": "useful",
+            "evidence": [
+              "blocked Finish before additional evidence or validated a correct Finish"
+            ]
+          },
+          "evolver": {
+            "value_verdict": "online_cycle_role_not_case_turn",
+            "evidence": [
+              "evaluated by the online cycle replay report"
+            ]
+          }
+        }
+      }
+    ],
+    "aggregate": {
+      "case_count": 4,
+      "roles": {
+        "planner": {
+          "case_verdict_counts": {
+            "observed": 4
+          },
+          "useful_case_count": 4
+        },
+        "observer": {
+          "case_verdict_counts": {
+            "useful": 4
+          },
+          "useful_case_count": 4
+        },
+        "reflector": {
+          "case_verdict_counts": {
+            "insufficient_or_harmful": 1,
+            "useful": 3
+          },
+          "useful_case_count": 3
+        }
+      }
+    },
+    "evolver": {
+      "trajectory_count": 4,
+      "diagnosis_count": 4,
+      "schema_valid": false,
+      "decision": "propose_mutation",
+      "mutation_targets": [],
+      "mutation_operation_count": 0,
+      "dependency_analysis": {
+        "nodes": [
+          {
+            "action": "update_recovery_policy",
+            "component": "evidence_acquisition",
+            "index": 0,
+            "target_ids": [
+              "low_signal_temporal_grounding"
+            ],
+            "valid": true
+          }
+        ],
+        "dependency_edges": [
+          {
+            "source": "tool_runtime",
+            "target": "evidence_acquisition",
+            "type": "requires"
+          }
+        ],
+        "conflicts": [],
+        "missing_dependencies": [],
+        "dependency_pass": true
+      },
+      "candidate_snapshot_created": false,
+      "proposal_validation": {
+        "status": "invalid_schema",
+        "reason": "Evolver JSON contract failed."
+      },
+      "replay_status": "not_required",
+      "fresh_candidate_inference_proven": false,
+      "value_verdict": "invalid",
+      "evidence": [
+        "a real Evolver kernel turn was recorded",
+        "candidate mutation is not accepted until replay/held-out gates pass"
+      ]
+    }
+  },
+  "evolver_input_contract": {
+    "trajectory_summary_fields": [
+      "answer_score",
+      "can_finish",
+      "missing_information",
+      "sample_status",
+      "sample_uid",
+      "trajectory_id",
+      "unresolved_claims"
+    ],
+    "diagnosis_count": 4,
+    "runtime_capability_manifest": {
+      "manifest_version": 5,
+      "reference_design": {
+        "source": "reference.md#Evolver设计",
+        "pipeline": [
+          "trajectory",
+          "failure_diagnosis",
+          "evolution_intent",
+          "dependency_analysis",
+          "joint_modify",
+          "second_rollout",
+          "verify_joint_modification"
+        ],
+        "joint_edit_enabled": true,
+        "max_operations": 4,
+        "same_snapshot_second_rollout_required": true,
+        "audit_marker": "harness component dependency graph"
+      },
+      "dependency_graph": {
+        "tool_runtime": {
+          "kind": "runtime",
+          "requires": [],
+          "downstream": [
+            "evidence_acquisition"
+          ],
+          "actions": [
+            "update_tool_schema",
+            "edit_tool_source",
+            "update_argument_policy",
+            "update_router_rule",
+            "add_fallback"
+          ]
+        },
+        "evidence_acquisition": {
+          "kind": "workflow",
+          "requires": [
+            "tool_runtime"
+          ],
+          "downstream": [
+            "workflow_composition"
+          ],
+          "actions": [
+            "update_recovery_policy"
+          ]
+        },
+        "workflow_composition": {
+          "kind": "workflow",
+          "requires": [
+            "evidence_acquisition"
+          ],
+          "downstream": [
+            "finish_gate"
+          ],
+          "actions": [
+            "add_composition_edge"
+          ]
+        },
+        "finish_gate": {
+          "kind": "verifier",
+          "requires": [
+            "workflow_composition"
+          ],
+          "downstream": [],
+          "actions": []
+        }
+      },
+      "common_tool_output_contract": {
+        "required_fields": [
+          "status",
+          "result"
+        ],
+        "status_values": [
+          "success",
+          "no_valid_result",
+          "error"
+        ],
+        "output_schema_mutation": "forbidden"
+      },
+      "actions": {
+        "update_argument_policy": {
+          "target": "registered tool whose executable implementation is changed",
+          "after_shape": {
+            "kind": "update",
+            "edits": "same exact path/digest/before/after contract as edit_tool_source"
+          },
+          "runtime_hook": "isolated source worker; real registry and runtime application proof",
+          "limitation": "text-only policies are rejected; the proposal must implement the routing, fallback or argument transformation in tool code"
+        },
+        "update_router_rule": {
+          "target": "registered tool whose executable implementation is changed",
+          "after_shape": {
+            "kind": "update",
+            "edits": "same exact path/digest/before/after contract as edit_tool_source"
+          },
+          "runtime_hook": "isolated source worker; real registry and runtime application proof",
+          "limitation": "text-only policies are rejected; the proposal must implement the routing, fallback or argument transformation in tool code"
+        },
+        "add_fallback": {
+          "target": "registered tool whose executable implementation is changed",
+          "after_shape": {
+            "kind": "fallback",
+            "edits": "same exact path/digest/before/after contract as edit_tool_source"
+          },
+          "runtime_hook": "isolated source worker; real registry and runtime application proof",
+          "limitation": "text-only policies are rejected; the proposal must implement the routing, fallback or argument transformation in tool code"
+        },
+        "edit_tool_source": {
+          "target": "exact tool name, or role name for a prompt edit",
+          "after_shape": {
+            "kind": "add|delete|update|compose|fallback|prompt",
+            "edits": [
+              {
+                "path": "toolkit/impl/example.py",
+                "before_sha256": "SHA256 of the complete original UTF-8 file; empty file hash for additions",
+                "before": "exact unique source snippet",
+                "after": "replacement source"
+              }
+            ]
+          },
+          "allowed_paths": [
+            "toolkit/impl/*.py",
+            "planner/prompts.py",
+            "config/agent_prompts.json"
+          ],
+          "runtime_hook": "source_mutation.materialize_source_snapshot -> isolated Python worker -> source_application_proof",
+          "limitations": "maximum four files; real backend/tool execution required; no evaluator or verification-code edits; no online source writes; compile and paired runtime checks required"
+        },
+        "update_tool_schema": {
+          "target": "one active non-virtual registered tool",
+          "after_fields": [
+            "description",
+            "parameters",
+            "tags"
+          ],
+          "parameters_shape": {
+            "type": "object",
+            "properties": "object",
+            "required": "array (optional)"
+          },
+          "runtime_hook": "harness.apply_harness_registry_overrides",
+          "limitation": "schema cannot create a parameter, output field, or backend behavior; new properties require an explicit run() parameter"
+        },
+        "add_composition_edge": {
+          "target": "candidate_comparison for the Finish gate, or a tool implementing an executable composition",
+          "source_alternative": {
+            "kind": "compose",
+            "edits": "exact source edits implementing the dependency chain"
+          },
+          "after_shape": {
+            "after": "evidence_acquisition",
+            "before": "finish",
+            "required": true
+          },
+          "runtime_hook": "harness.load_harness_snapshot -> EvidenceVerifier"
+        },
+        "update_recovery_policy": {
+          "target": "low_signal_temporal_grounding",
+          "after_shape": {
+            "enabled": true,
+            "max_text_failures": 2,
+            "coverage_density_seconds": 30.0,
+            "max_recovery_calls": 1
+          },
+          "runtime_hook": "harness.load_harness_snapshot -> RecursiveEngine._prepare_concrete_tool_call -> Inspect_Frame",
+          "limitation": "bounded visual coverage calls: failures 1..8, density 5..120 seconds, calls 1..4; after text-retrieval no_valid_result/error; it cannot use annotation timestamps or answer labels"
+        }
+      },
+      "acceptance": {
+        "require_positive_utility_gain": true,
+        "trigger_utility_gain": 0.0,
+        "neighbor_nonregression_floor": 0.0,
+        "regression_answer_drop": 0.0,
+        "minimum_latency_gain": 0.05,
+        "held_out_utility_drop": 0.0,
+        "invalid_call_rate_increase": 0.005,
+        "latency_increase": 0.1,
+        "latency_increase_with_answer_gain": 0.2,
+        "minimum_group_counts": {
+          "trigger": 1,
+          "neighbor": 3,
+          "regression": 3,
+          "held_out": 3
+        }
+      },
+      "failure_attribution": {
+        "scope_values": [
+          "global_answer_failure",
+          "global_and_local_failure",
+          "local_tool_failure",
+          "local_verifier_failure",
+          "efficiency"
+        ],
+        "rule": "attribute tool/runtime/verifier blame separately from final answer correctness"
+      },
+      "replay_contract": {
+        "first_stage": "selective_suffix_replay",
+        "reuse": "cached trajectory state before the first affected step",
+        "runtime_suffix_required_for": [
+          "update_tool_schema",
+          "update_recovery_policy"
+        ],
+        "runtime_execution": "fresh paired trigger rollouts when no resumable checkpoint is available; recorded as paired_runtime_rollout_executed, never as prefix reuse",
+        "verifier_suffix_possible_for": [
+          "add_composition_edge"
+        ],
+        "not_executed_is_not_success": true,
+        "matching_cases_and_periodic_regression_required": true
+      },
+      "coordinated_patch": {
+        "supported": true,
+        "max_operations": 4,
+        "encoding": "payload.mutations array; legacy payload.mutation remains supported",
+        "allowed_surfaces": [
+          "tool_schema_description_or_parameters",
+          "runtime_recovery_policy",
+          "workflow_composition"
+        ],
+        "source_tool_implementation": "exact source edits in isolated worker; real paired runtime and held-out gates required",
+        "conflicting_targets": "rejected",
+        "dependency_analysis": "required before materialization; operation pairs must be connected in dependency_graph"
+      },
+      "final_acceptance_requires": [
+        "candidate snapshot applied in an isolated runtime",
+        "causal selective/suffix replay or an explicitly recorded runtime limitation",
+        "fresh candidate Planner/Observer/Reflector trajectory on matching cases",
+        "minimum paired trigger/neighbor/regression/held-out groups are present",
+        "all trigger/neighbor/regression/held-out/invalid-call/latency gates pass",
+        "dependency analysis and joint replay verify every coordinated operation"
+      ],
+      "online_publish": "disabled until final acceptance",
+      "active_tool_schemas": [
+        {
+          "name": "Aggregation",
+          "description": "Perform statistical aggregation on retrieval results. Supports counting, sorting by confidence/time, finding extremes (e.g., longest segment), and temporal fusion (merging overlapping or adjacent time ranges). Invalid operations are reported instead of silently returning the unmodified input.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "description": "Data to aggregate"
+              },
+              "operation": {
+                "type": "string",
+                "enum": [
+                  "count",
+                  "sort",
+                  "max",
+                  "min",
+                  "merge_temporal"
+                ],
+                "description": "Aggregation operation"
+              },
+              "target_field": {
+                "type": "string",
+                "description": "Field to operate on",
+                "default": null
+              }
+            },
+            "required": [
+              "data",
+              "operation"
+            ]
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "aggregation",
+            "base",
+            "composite"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.processing",
+          "class_qualname": "Aggregation"
+        },
+        {
+          "name": "Clean_Results",
+          "description": "Clean, deduplicate, and rerank retrieval results that were already returned by another retrieval tool. Requires non-empty retrieved_data and does not search the video corpus, segments, captions, or transcripts by itself.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "retrieved_data": {
+                "type": "array",
+                "description": "Raw retrieval results to clean"
+              },
+              "query_intent": {
+                "type": "string",
+                "description": "Original query intent for relevance scoring"
+              }
+            },
+            "required": [
+              "retrieved_data",
+              "query_intent"
+            ]
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "base",
+            "rerank",
+            "retrieval"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.retrieval",
+          "class_qualname": "CleanResults"
+        },
+        {
+          "name": "Crop",
+          "description": "Crop image or extract region to remove background interference. Limit attention to bounding box selected area, exclude surrounding noise, help model focus on specific object.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "image": {
+                "type": "string",
+                "description": "Image identifier or path"
+              },
+              "bbox": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 4,
+                "maxItems": 4,
+                "description": "Bounding box [x, y, width, height]"
+              }
+            },
+            "required": [
+              "image",
+              "bbox"
+            ]
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "base",
+            "edit",
+            "visual"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.visual",
+          "class_qualname": "Crop"
+        },
+        {
+          "name": "Filtering",
+          "description": "Filter retrieval results based on structured metadata. Supports exact values and explicit operators ($eq/$ne/$in/$contains/$gte/$gt/$lte/$lt); it does not search the video corpus.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "description": "Data to filter"
+              },
+              "metadata_constraints": {
+                "type": "object",
+                "description": "Metadata constraints as key-value pairs"
+              }
+            },
+            "required": [
+              "data",
+              "metadata_constraints"
+            ]
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "base",
+            "filter",
+            "metadata",
+            "selection"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.processing",
+          "class_qualname": "Filtering"
+        },
+        {
+          "name": "Fold_Memory",
+          "description": "Summarize and compress overly long reasoning history. In multi-turn dialogue or long-chain reasoning, release context window space, retain key conclusions, forget non-essential details and known errors.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "context_window": {
+                "type": "array",
+                "description": "Historical steps or information to compress"
+              },
+              "keep_recent": {
+                "type": "integer",
+                "description": "Number of recent steps to keep uncompressed",
+                "default": 2
+              },
+              "previous_state": {
+                "type": "object",
+                "description": "Previous structured folded memory state to merge forward",
+                "default": null
+              },
+              "discovered_tools": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Current discovered tool summaries available to the planner",
+                "default": []
+              },
+              "blocked_action_signatures": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Action signatures that runtime has already blocked from repeating",
+                "default": []
+              },
+              "next_allowed_tools": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Runtime-suggested next tools that remain available",
+                "default": []
+              },
+              "importance_field": {
+                "type": "string",
+                "description": "Field name indicating importance score/flag in each step",
+                "default": "importance"
+              },
+              "error_field": {
+                "type": "string",
+                "description": "Field name indicating error info in each step",
+                "default": "error"
+              }
+            },
+            "required": [
+              "context_window"
+            ]
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "base",
+            "compression",
+            "memory"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.system",
+          "class_qualname": "FoldMemory"
+        },
+        {
+          "name": "Inspect_Frame",
+          "description": "Inspect a specific video moment or a short time range via uniform frame sampling. Supports two modes: Inspect_Frame(timestamp) for a single high-resolution frame, or Inspect_Frame(t_start, t_end, density) for uniformly sampled frames across a time range (density is numeric seconds per frame; t_end may be 'entire_video_time' to use the processed video's real end time). Returns direct frame evidence for downstream planners.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "type": [
+                  "string",
+                  "number",
+                  "array",
+                  "null"
+                ],
+                "description": "Single timestamp or list of timestamps to inspect as single-frame snapshots",
+                "default": null
+              },
+              "t_start": {
+                "type": [
+                  "string",
+                  "number",
+                  "array",
+                  "null"
+                ],
+                "description": "Start time or list of start times for inspection windows",
+                "default": null
+              },
+              "t_end": {
+                "type": [
+                  "string",
+                  "number",
+                  "array",
+                  "null"
+                ],
+                "description": "End time/list, or 'entire_video_time' for the processed video's real end",
+                "default": null
+              },
+              "density": {
+                "type": [
+                  "number",
+                  "array",
+                  "null"
+                ],
+                "description": "Sampling density in seconds per frame for window mode; scalar or list of numeric values",
+                "default": 0.5
+              },
+              "duration": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Deprecated legacy window size around timestamp; kept for backward compatibility",
+                "default": null
+              },
+              "query": {
+                "type": "string",
+                "description": "What to look for in the frames",
+                "default": null
+              }
+            },
+            "required": []
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "base",
+            "refine",
+            "visual"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.visual",
+          "class_qualname": "InspectFrame"
+        },
+        {
+          "name": "Keyword_Retrieve",
+          "description": "Perform exact matching retrieval for proper nouns, specific IDs, or rare terms. Returns the matched segment's preprocessed evidence bundle, including caption, transcript, timestamps, and cached frame images.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "term": {
+                "type": "string",
+                "description": "Keyword or term to search for"
+              },
+              "case_sensitive": {
+                "type": "boolean",
+                "description": "Whether search is case-sensitive",
+                "default": false
+              }
+            },
+            "required": [
+              "term"
+            ]
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "base",
+            "keyword",
+            "retrieval"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.retrieval",
+          "class_qualname": "KeywordRetrieve"
+        },
+        {
+          "name": "Python_Executor",
+          "description": "Execute generated Python code to handle complex logic. Used for complex mathematical calculations, text-first aggregation, or processing structured evidence with custom logic after evidence has already been extracted. It must not infer image/video content from file paths alone.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "code_script": {
+                "type": "string",
+                "description": "Python code to execute"
+              },
+              "context_vars": {
+                "type": "object",
+                "description": "Variables to make available in execution context",
+                "default": {}
+              }
+            },
+            "required": [
+              "code_script"
+            ]
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "base",
+            "custom_logic",
+            "execution",
+            "python"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.processing",
+          "class_qualname": "PythonExecutor"
+        },
+        {
+          "name": "Segment_Retrieve",
+          "description": "Retrieve a segment's preprocessed evidence bundle by segment ID or time range. Returns caption, transcript, timestamps, cached frame images, and optional graph entities.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "segment_id": {
+                "type": "string",
+                "description": "Segment identifier. Supports raw IDs like '7' and composite IDs like 'example_7'.",
+                "default": null
+              },
+              "time_range": {
+                "type": "string",
+                "description": "Time range to match (e.g. '30-60' or '00:01:00-00:02:00'). Intersects with segment_id filters when both are provided.",
+                "default": null
+              },
+              "fields": {
+                "type": [
+                  "array",
+                  "string",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Which fields to return. Allowed values: ['caption', 'transcript', 'graph', 'frame_times', 'frame_paths']. May be provided as a list or comma-separated string.",
+                "default": [
+                  "caption",
+                  "transcript",
+                  "graph",
+                  "frame_times",
+                  "frame_paths"
+                ]
+              }
+            },
+            "required": []
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "base",
+            "retrieval",
+            "segment"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.retrieval",
+          "class_qualname": "SegmentRetrieve"
+        },
+        {
+          "name": "Semantic_Retrieve",
+          "description": "Perform fuzzy semantic retrieval based on natural language description. Returns the retrieved segment's preprocessed evidence bundle, including caption, transcript, timestamps, and cached frame images. Supports time-range constraints. Dense visual-only matches are returned as unverified candidates and are not cited as answer evidence until Inspect_Frame or Video_Clip_QA confirms them. Each candidate also exposes its full executable probe window; verify that window before narrowing to a short timestamp.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Natural language query"
+              },
+              "time_range": {
+                "type": "string",
+                "description": "Time range constraint (format: 'HH:MM:SS-HH:MM:SS' or 'SS-SS')",
+                "default": null
+              },
+              "top_k": {
+                "type": "integer",
+                "description": "Number of results to return",
+                "default": 5
+              }
+            },
+            "required": [
+              "query"
+            ]
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "base",
+            "retrieval",
+            "semantic"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.retrieval",
+          "class_qualname": "SemanticRetrieve"
+        },
+        {
+          "name": "Tool_Search",
+          "description": "Discover executable tools from the registry by capability. This tool does not search the video corpus, timestamps, frames, captions, transcripts, or OCR output.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "intent_description": {
+                "type": "string",
+                "description": "Description of what you want to accomplish"
+              },
+              "top_k": {
+                "type": "integer",
+                "description": "Number of tools to retrieve",
+                "default": 5
+              },
+              "tags": {
+                "type": "array",
+                "description": "Optional list of tags to filter tools (e.g., ['base'] or ['meta'])",
+                "items": {
+                  "type": "string"
+                },
+                "default": null
+              },
+              "tool_type": {
+                "type": "string",
+                "enum": [
+                  "base",
+                  "meta",
+                  "all"
+                ],
+                "description": "Primary tool class filter. Use base for executable/base tools, meta for atomic/meta tools, all for both.",
+                "default": "all"
+              }
+            },
+            "required": [
+              "intent_description"
+            ]
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "base",
+            "retrieval",
+            "search"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.retrieval",
+          "class_qualname": "ToolSearch"
+        },
+        {
+          "name": "Video_Clip_QA",
+          "description": "Comprehensive short-window video understanding tool. Clip the requested start/end window first, then send that clip file directly to the local VLM and answer open-ended or ambiguous questions about the clip, including actions, interactions, temporal order, scene changes, object states, counts, comparisons, and overall visual events. Prefer this broad fallback when the request needs holistic reasoning over a short video segment instead of only OCR, single frames, tracking, or a narrow specialized visual probe.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "start_time": {
+                "type": [
+                  "string",
+                  "number"
+                ],
+                "description": "Clip start time in seconds"
+              },
+              "end_time": {
+                "type": [
+                  "string",
+                  "number"
+                ],
+                "description": "Clip end time in seconds"
+              },
+              "query": {
+                "type": "string",
+                "description": "Question to answer from the clipped video"
+              },
+              "segment_id": {
+                "type": [
+                  "string",
+                  "number",
+                  "null"
+                ],
+                "description": "Optional segment reference. If provided, segment-relative start/end times will be converted to full-video absolute times.",
+                "default": null
+              },
+              "video": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Optional source video hint",
+                "default": null
+              },
+              "video_path": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Optional source video path hint",
+                "default": null
+              }
+            },
+            "required": [
+              "start_time",
+              "end_time",
+              "query"
+            ]
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "base",
+            "qa",
+            "video",
+            "visual"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.visual",
+          "class_qualname": "VideoClipQA"
+        },
+        {
+          "name": "Video_Summary",
+          "description": "Summarize all preprocessed segment captions and transcripts for the active local video scope. Uses a text-generation model and returns a concise holistic summary grounded in the video evidence.",
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "base",
+            "retrieval",
+            "summary"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.retrieval",
+          "class_qualname": "VideoSummary"
+        },
+        {
+          "name": "Zoom_in",
+          "description": "Zoom in on local image region with resolution enhancement. Used to identify tiny visual features (e.g., distinguishing distant object color, texture details), simulating human 'looking closer' behavior.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "image": {
+                "type": "string",
+                "description": "Image identifier or path"
+              },
+              "region_of_interest": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 4,
+                "maxItems": 4,
+                "description": "Region to zoom [x, y, width, height]"
+              },
+              "zoom_factor": {
+                "type": "number",
+                "description": "Zoom factor",
+                "minimum": 1.0,
+                "maximum": 8.0,
+                "default": 2.0
+              }
+            },
+            "required": [
+              "image",
+              "region_of_interest"
+            ]
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "base",
+            "enhance",
+            "visual"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.visual",
+          "class_qualname": "ZoomIn"
+        },
+        {
+          "name": "asr",
+          "description": "Locate subtitle or ASR transcript spans from preprocessing outputs for a requested time range, and return the matched text together with utterance-level timestamps.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "time_range": {
+                "type": "string",
+                "description": "Required target time range (for example '30-60' or '00:01:00-00:02:00')."
+              }
+            },
+            "required": [
+              "time_range"
+            ]
+          },
+          "output_schema": {
+            "type": "object",
+            "required": [
+              "status",
+              "result"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "error",
+                  "no_valid_result",
+                  "success"
+                ],
+                "description": "Execution outcome: evidence, failure, or no usable evidence."
+              },
+              "result": {
+                "type": "string",
+                "description": "Concise human-readable summary of the returned payload."
+              },
+              "items": {
+                "type": "array",
+                "description": "Structured result rows when the tool returns a collection."
+              },
+              "value": {
+                "description": "Structured scalar value when the tool does not return rows."
+              }
+            },
+            "additionalProperties": true
+          },
+          "tags": [
+            "asr",
+            "base",
+            "retrieval",
+            "transcript"
+          ],
+          "is_virtual": false,
+          "class_module": "toolkit.impl.retrieval",
+          "class_qualname": "ASRRetrieve"
+        }
+      ],
+      "source_context": [
+        {
+          "path": "toolkit/impl/retrieval.py",
+          "before_sha256": "ab9b69c0266da1eb5050f91d0689a593eb01d8e1e4e0b2cc24da619119e5c4bc",
+          "snippet": "class SemanticRetrieve(BaseTool):\n    \"\"\"Semantic fuzzy retrieval.\"\"\"\n    \n    name: str = \"Semantic_Retrieve\"\n    description: str = (\n        \"Perform fuzzy semantic retrieval based on natural language description. \"\n        \"Returns the retrieved segment's preprocessed evidence bundle, including caption, transcript, \"\n        \"timestamps, and cached frame images. Supports time-range constraints. Dense visual-only matches \"\n        \"are returned as unverified candidates and are not cited as answer evidence until Inspect_Frame \"\n        \"or Video_Clip_QA confirms them. Each candidate also exposes its full executable probe window; \"\n        \"verify that window before narrowing to a short timestamp.\"\n    )\n    tags: list = [\"base\", \"retrieval\", \"semantic\"]\n    parameters: Dict[str, Any] = {\n        \"type\": \"object\",\n        \"properties\": {\n            \"query\": {\n                \"type\": \"string\",\n                \"description\": \"Natural language query\"\n            },\n            \"time_range\": {\n                \"type\": \"string\",\n                \"description\": \"Time range constraint (format: 'HH:MM:SS-HH:MM:SS' or 'SS-SS')\",\n                \"default\": None\n            },\n            \"top_k\": {\n                \"type\": \"integer\",\n                \"description\": \"Number of results to return\",\n                \"default\": 5\n            }\n        },\n        \"required\": [\"query\"]\n    }\n    \n    def run(self, query: str, time_range: Optional[str] = None, top_k: int = 5, **kwargs) -> Dict[str, Any]:\n        \"\"\"Execute semantic retrieval.\n        \n        Args:\n            query: Semantic query\n            time_range: Optional time constraint\n            top_k: Number of results\n            **kwargs: Additional arguments\n            \n        Returns:\n            List of semantically relevant results\n        \"\"\"\n        cache_dir = Path(settings.data_cache_dir) / \"processed\"\n        results: List[Dict[str, Any]] = []\n        load_errors: List[str] = []\n        fallback_candidates: List[Dict[str, Any]] = []\n        video_hint = kwargs.get(\"video\") or kwargs.get(\"video_path\")\n        resolved_scope = sorted(runtime_session.resolve_video_scope(video_hint))\n        hidden_payload = get_sparse_scope_hidden_tool_payload(self.name, video_hint=video_hint)\n        if hidden_payload is not None:\n            hidden_payload.update(\n                {\n                    \"query\": query,\n                    \"time_range\": time_range,\n                    \"top_k\": top_k,\n                    \"match_count\": 0,\n                    \"matched_segments\": [],\n                }\n            )\n            return hidden_payload\n        \n        if not cache_dir.exists():\n            return {\n                \"error\": \"No processed data found\",\n                \"status\": \"error\",\n                \"query\": query,\n                \"time_range\": time_range,\n            }\n            \n        # Parse time range. For benchmark samples with an explicitly labelled\n        # localization prior, apply it even when the planner omitted the\n        # optional tool argument so a distant semantic hit cannot displace the\n        # dataset's scene locator.\n        effective_time_range = time_range\n        time_prior = None\n        if not effective_time_range:\n            time_prior = _extract_query_time_prior(runtime_session.get_active_query_text())\n            if time_prior is not None:\n                effective_time_range = f\"{time_prior[0]:.3f}-{time_prior[1]:.3f}\"\n        time_filter = None\n        if effective_time_range:\n            try:\n                parts = effective_time_range.split('-')\n                if len(parts) == 2:\n                    # Handle HH:MM:SS or SS\n                    def parse_time(t_str):\n                        if ':' in t_str:\n                            h, m, s = map(float, t_str.split(':'))\n                            return h*3600 + m*60 + s\n                        return float(t_str)\n                        \n                    start = parse_time(parts[0])\n                    end = parse_time(parts[1])\n                    time_filter = (start, end)\n            except Exception as e:\n                logger.warning(f\"Failed to parse time range {effective_time_range}: {e}\")\n        \n"
+        },
+        {
+          "path": "toolkit/impl/retrieval.py",
+          "before_sha256": "ab9b69c0266da1eb5050f91d0689a593eb01d8e1e4e0b2cc24da619119e5c4bc",
+          "snippet": "class ASRRetrieve(BaseTool):\n    \"\"\"Locate ASR spans for a requested time window.\"\"\"\n\n    name: str = \"asr\"\n    description: str = (\n        \"Locate subtitle or ASR transcript spans from preprocessing outputs for a requested \"\n        \"time range, and return the matched text together with utterance-level timestamps.\"\n    )\n    tags: list = [\"base\", \"retrieval\", \"asr\", \"transcript\"]\n    parameters: Dict[str, Any] = {\n        \"type\": \"object\",\n        \"properties\": {\n            \"time_range\": {\n                \"type\": \"string\",\n                \"description\": \"Required target time range (for example '30-60' or '00:01:00-00:02:00').\",\n            },\n        },\n        \"required\": [\"time_range\"],\n    }\n\n    def run(self, time_range: str, **kwargs) -> Dict[str, Any]:\n        target_range = _parse_time_range(time_range)\n        video_hint = kwargs.get(\"video\") or kwargs.get(\"video_path\")\n\n        if target_range is None:\n            return {\n                \"error\": \"Invalid or missing time_range. Expected formats like '30-60' or '00:01:00-00:02:00'.\",\n                \"status\": \"error\",\n                \"time_range\": time_range,\n            }\n\n        cache_dir = Path(settings.data_cache_dir) / \"processed\"\n        if not cache_dir.exists():\n            return {\n                \"error\": \"No processed data found. Run preprocessing first.\",\n                \"status\": \"error\",\n                \"time_range\": time_range,\n            }\n\n        hidden_payload = get_sparse_scope_hidden_tool_payload(self.name, video_hint=video_hint)\n        if hidden_payload is not None:\n            hidden_payload.update(\n                {\n                    \"time_range\": time_range,\n                    \"match_count\": 0,\n                    \"matched_entries\": [],\n                    \"transcript\": \"\",\n                }\n            )\n            return hidden_payload\n\n        resolved_scope = sorted(runtime_session.resolve_video_scope(video_hint))\n        matched_entries: List[Dict[str, Any]] = []\n        seen_matches: set[Tuple[str, float, float, str]] = set()\n\n        for video_dir in _iter_scoped_video_dirs(video_hint):\n            entries = _load_cached_full_asr_entries(video_dir)\n            source = \"cached_full_transcript\"\n            if not entries:\n                entries = _collect_processed_asr_entries(video_dir)\n                source = \"processed_transcripts\"\n\n            for entry in entries:\n                entry_range = (\n                    float(entry.get(\"start\", 0.0) or 0.0),\n                    float(entry.get(\"end\", entry.get(\"start\", 0.0)) or 0.0),\n                )\n                if _time_overlap_ratio(entry_range, target_range) <= 0:\n                    continue\n\n                match_key = (\n                    video_dir.name,\n                    float(entry[\"start\"]),\n                    float(entry[\"end\"]),\n                    str(entry[\"text\"]),\n                )\n                if match_key in seen_matches:\n                    continue\n                seen_matches.add(match_key)\n                matched_entries.append(\n                    {\n                        \"video\": video_dir.name,\n                        \"start\": float(entry[\"start\"]),\n                        \"end\": float(entry[\"end\"]),\n                        \"time\": str(entry[\"time\"]),\n                        \"text\": str(entry[\"text\"]),\n                        \"source\": source,\n                    }\n                )\n\n        matched_entries.sort(\n            key=lambda item: (\n                str(item.get(\"video\", \"\")),\n                float(item.get(\"start\", 0.0) or 0.0),\n                float(item.get(\"end\", 0.0) or 0.0),\n            )\n        )\n\n        if matched_entries:\n            transcript = \"\\n\".join(\n                f\"[{float(item['start']):.2f}s -> {float(item['end']):.2f}s] {str(item['text'])}\"\n"
+        },
+        {
+          "path": "toolkit/impl/retrieval.py",
+          "before_sha256": "ab9b69c0266da1eb5050f91d0689a593eb01d8e1e4e0b2cc24da619119e5c4bc",
+          "snippet": "class SegmentRetrieve(BaseTool):\n    \"\"\"Retrieve segment-level caption, transcript, and graph data by ID or time range.\"\"\"\n\n    name: str = \"Segment_Retrieve\"\n    description: str = (\n        \"Retrieve a segment's preprocessed evidence bundle by segment ID or time range. \"\n        \"Returns caption, transcript, timestamps, cached frame images, and optional graph entities.\"\n    )\n    tags: list = [\"base\", \"retrieval\", \"segment\"]\n    parameters: Dict[str, Any] = {\n        \"type\": \"object\",\n        \"properties\": {\n            \"segment_id\": {\n                \"type\": \"string\",\n                \"description\": \"Segment identifier. Supports raw IDs like '7' and composite IDs like 'example_7'.\",\n                \"default\": None,\n            },\n            \"time_range\": {\n                \"type\": \"string\",\n                \"description\": \"Time range to match (e.g. '30-60' or '00:01:00-00:02:00'). Intersects with segment_id filters when both are provided.\",\n                \"default\": None,\n            },\n            \"fields\": {\n                \"type\": [\"array\", \"string\", \"null\"],\n                \"items\": {\"type\": \"string\"},\n                \"description\": (\n                    \"Which fields to return. Allowed values: \"\n                    \"['caption', 'transcript', 'graph', 'frame_times', 'frame_paths']. \"\n                    \"May be provided as a list or comma-separated string.\"\n                ),\n                \"default\": [\"caption\", \"transcript\", \"graph\", \"frame_times\", \"frame_paths\"],\n            },\n        },\n        \"required\": [],\n    }\n\n    def run(\n        self,\n        segment_id: Optional[str] = None,\n        time_range: Optional[str] = None,\n        fields: Optional[List[str]] = None,\n        **kwargs,\n    ) -> Dict[str, Any]:\n        from pathlib import Path\n        from config.settings import settings\n\n        normalized_fields = _normalize_segment_fields(fields or [\"caption\", \"transcript\", \"graph\", \"frame_times\", \"frame_paths\"])\n        want = set(normalized_fields or [\"caption\", \"transcript\", \"graph\", \"frame_times\", \"frame_paths\"])\n\n        cache_dir = Path(settings.data_cache_dir) / \"processed\"\n        if not cache_dir.exists():\n            return {\n                \"error\": \"No processed data found. Run preprocessing first.\",\n                \"status\": \"error\",\n                \"requested_segment_id\": segment_id,\n                \"time_range\": time_range,\n                \"normalized_fields\": sorted(want),\n            }\n\n        target_range = _parse_time_range(time_range)\n        results: List[Dict[str, Any]] = []\n        requested_video, resolved_segment_id, requested_aliases = _parse_segment_reference(segment_id)\n        video_hint = requested_video or kwargs.get(\"video\") or kwargs.get(\"video_path\")\n        hidden_payload = get_sparse_scope_hidden_tool_payload(self.name, video_hint=video_hint)\n        if hidden_payload is not None:\n            hidden_payload.update(\n                {\n                    \"requested_segment_id\": segment_id,\n                    \"resolved_segment_id\": resolved_segment_id,\n                    \"resolved_video\": requested_video,\n                    \"time_range\": time_range,\n                    \"normalized_fields\": sorted(want),\n                    \"available_fields\": [\"caption\", \"transcript\", \"graph\", \"frame_times\", \"frame_paths\"],\n                    \"match_count\": 0,\n                    \"matched_segments\": [],\n                }\n            )\n            return hidden_payload\n        resolved_scope = sorted(runtime_session.resolve_video_scope(video_hint))\n\n        for video_dir in _iter_scoped_video_dirs(video_hint):\n            segments = _load_segments_payload(video_dir)\n            if not segments:\n                continue\n            times_map = _load_segment_times_map(video_dir)\n            graph_entities = _load_segment_graph_entities(video_dir) if \"graph\" in want else {}\n\n            for sid, seg in segments.items():\n                if not isinstance(seg, dict):\n                    continue\n                time_info = times_map.get(str(sid), {}) if isinstance(times_map, dict) else {}\n                aliases = [str(alias) for alias in (time_info.get(\"segment_aliases\") or seg.get(\"segment_aliases\") or [str(sid), f\"{video_dir.name}_{sid}\"]) if str(alias).strip()]\n\n                if segment_id is not None:\n                    if str(sid) != str(resolved_segment_id) and str(segment_id) not in aliases and not set(aliases).intersection(requested_aliases):\n                        continue\n                if target_range is not None:\n                    seg_range = _parse_time_range(seg.get(\"time\"))\n                    if seg_range is None or _time_overlap_ratio(seg_range, target_range) <= 0:\n                        continue\n\n"
+        },
+        {
+          "path": "toolkit/impl/visual.py",
+          "before_sha256": "73ec089d7cee895dde2489352acf5e29b89c1dc3e2444ab927f474264aec8251",
+          "snippet": "class VideoClipQA(BaseTool):\n    \"\"\"Inspect a requested video window by clipping it first, then sending the clip directly to the local VLM.\"\"\"\n\n    name: str = \"Video_Clip_QA\"\n    description: str = (\n        \"Comprehensive short-window video understanding tool. Clip the requested start/end window first, \"\n        \"then send that clip file directly to the local VLM and answer open-ended or ambiguous questions \"\n        \"about the clip, including actions, interactions, temporal order, scene changes, object states, \"\n        \"counts, comparisons, and overall visual events. Prefer this broad fallback when the request needs \"\n        \"holistic reasoning over a short video segment instead of only OCR, single frames, tracking, or a \"\n        \"narrow specialized visual probe.\"\n    )\n    tags: list = [\"base\", \"visual\", \"video\", \"qa\"]\n\n    @property\n    def model_path(self) -> str:\n        return settings.qwen_vl_model_path\n\n    parameters: Dict[str, Any] = {\n        \"type\": \"object\",\n        \"properties\": {\n            \"start_time\": {\n                \"type\": [\"string\", \"number\"],\n                \"description\": \"Clip start time in seconds\",\n            },\n            \"end_time\": {\n                \"type\": [\"string\", \"number\"],\n                \"description\": \"Clip end time in seconds\",\n            },\n            \"query\": {\n                \"type\": \"string\",\n                \"description\": \"Question to answer from the clipped video\",\n            },\n            \"segment_id\": {\n                \"type\": [\"string\", \"number\", \"null\"],\n                \"description\": \"Optional segment reference. If provided, segment-relative start/end times will be converted to full-video absolute times.\",\n                \"default\": None,\n            },\n            \"video\": {\n                \"type\": [\"string\", \"null\"],\n                \"description\": \"Optional source video hint\",\n                \"default\": None,\n            },\n            \"video_path\": {\n                \"type\": [\"string\", \"null\"],\n                \"description\": \"Optional source video path hint\",\n                \"default\": None,\n            },\n        },\n        \"required\": [\"start_time\", \"end_time\", \"query\"],\n    }\n\n    def run(self, start_time: Any, end_time: Any, query: str, **kwargs) -> Dict[str, Any]:\n        start = _parse_time_seconds(start_time)\n        end = _parse_time_seconds(end_time)\n        if start is None or end is None:\n            raise ValueError(\"Video_Clip_QA requires numeric start_time and end_time.\")\n        video_hint = kwargs.get(\"video\") or kwargs.get(\"video_path\")\n        # The planner may emit a dataset/context label (for example ``Mix``)\n        # instead of a filesystem path.  In a single-video query the runtime\n        # session is authoritative; use its active source before scoping the\n        # processed-segment lookup so a valid Video_Clip_QA call is executable.\n        active_video_path = str(\n            runtime_session.get_query_metrics().get(\"active_video_path\") or \"\"\n        ).strip()\n        if active_video_path:\n            hint_path = Path(str(video_hint or \"\").strip()).expanduser()\n            if not video_hint or not hint_path.exists():\n                resolved_hint = _resolve_video_file_path(\n                    hint_path.stem or str(video_hint or \"\"),\n                    preferred_path=str(video_hint or \"\"),\n                )\n                if not resolved_hint:\n                    video_hint = active_video_path\n        rows = _iter_processed_segments(video_hint)\n        normalized_target = _resolve_video_clip_qa_target_range(\n            start=start,\n            end=end,\n            segment_id=kwargs.get(\"segment_id\"),\n            rows=rows,\n        )\n        target_range = normalized_target[\"target_range\"]\n        # Preserve the planner's absolute request separately from the\n        # duration-clamped range used for execution.  The evidence ledger\n        # needs to distinguish what was requested from what the source video\n        # could actually provide.\n        requested_target_range = {\n            \"start\": float(target_range[\"start\"]),\n            \"end\": float(target_range[\"end\"]),\n        }\n        if target_range[\"end\"] <= target_range[\"start\"]:\n            raise ValueError(\"Video_Clip_QA requires end_time greater than start_time.\")\n        max_window_seconds = max(\n            1.0,\n            float(getattr(settings, \"video_clip_qa_max_window_seconds\", 90.0) or 90.0),\n        )\n        requested_window_seconds = _range_length(target_range)\n        if requested_window_seconds > max_window_seconds:\n            return enrich_tool_result(\n                {\n                    \"start_time\": round(float(target_range[\"start\"]), 3),\n"
+        }
+      ],
+      "empty_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evolution_context": {
+      "baseline_metrics": {
+        "accuracy": 0.25,
+        "mean_latency_seconds": 1588.30225,
+        "invalid_call_rate": 0.2
+      },
+      "replay_groups": {
+        "trigger": [
+          "trajectory_eeabc1cfb89240ce87753d507ab7f13a"
+        ],
+        "neighbor": [],
+        "regression": [
+          "trajectory_389280dac3b24befb71b22fc3500dc44"
+        ]
+      },
+      "replay_group_contract": {
+        "neighbor_definition": "distinct non-held-out case in the same dataset/subset/question-type cohort as the trigger",
+        "answer_or_annotation_fields_used_for_selection": false,
+        "trigger_sample_uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf"
+      },
+      "minimum_group_counts": {
+        "trigger": 1,
+        "neighbor": 3,
+        "regression": 3,
+        "held_out": 3
+      },
+      "current_snapshot_id": "snapshot_000",
+      "active_runtime_policy": {},
+      "active_runtime_mutations": [],
+      "dependency_graph": {
+        "tool_runtime": {
+          "kind": "runtime",
+          "requires": [],
+          "downstream": [
+            "evidence_acquisition"
+          ],
+          "actions": [
+            "update_tool_schema",
+            "edit_tool_source",
+            "update_argument_policy",
+            "update_router_rule",
+            "add_fallback"
+          ]
+        },
+        "evidence_acquisition": {
+          "kind": "workflow",
+          "requires": [
+            "tool_runtime"
+          ],
+          "downstream": [
+            "workflow_composition"
+          ],
+          "actions": [
+            "update_recovery_policy"
+          ]
+        },
+        "workflow_composition": {
+          "kind": "workflow",
+          "requires": [
+            "evidence_acquisition"
+          ],
+          "downstream": [
+            "finish_gate"
+          ],
+          "actions": [
+            "add_composition_edge"
+          ]
+        },
+        "finish_gate": {
+          "kind": "verifier",
+          "requires": [
+            "workflow_composition"
+          ],
+          "downstream": [],
+          "actions": []
+        }
+      },
+      "dependency_analysis_required": true,
+      "current_verification_config": {
+        "claim_coverage": 0.8,
+        "direct_grounding": 0.65,
+        "contradiction_score": 0.2,
+        "require_cross_modal": false,
+        "require_answer_support": true,
+        "require_completion_basis": false
+      },
+      "diagnostic_candidate_snapshot": {
+        "snapshot_id": "snapshot_0fceb88369ef",
+        "parent_snapshot_id": "snapshot_000",
+        "created_at": "2026-09-14T11:23:38.830138Z",
+        "router_policy": {
+          "add_composition_edge": {
+            "after": "evidence_acquisition",
+            "before": "finish",
+            "required": true
+          }
+        },
+        "argument_policy": {},
+        "tool_overrides": {},
+        "source_overrides": {},
+        "source_materialized": false,
+        "mutation_delta": {},
+        "base_tool_library_baseline_id": "toolbase_5bc5b18117f7b913bb66",
+        "patch_ids": [
+          "intent_6f3bdd1f24a2"
+        ],
+        "status": "candidate",
+        "dependency_analysis": {
+          "graph_version": 1,
+          "operation_count": 1,
+          "joint_required": false,
+          "nodes": [
+            {
+              "index": 0,
+              "action": "add_composition_edge",
+              "target_ids": [
+                "candidate_comparison"
+              ],
+              "component": "workflow_composition",
+              "valid": true
+            }
+          ],
+          "dependency_edges": [],
+          "missing_dependencies": [],
+          "conflicts": [],
+          "dependency_pass": true
+        }
+      },
+      "fresh_candidate_inference_required": true,
+      "snapshot_application_attestation_required": true,
+      "snapshot_application_requires_fresh_inference": false,
+      "candidate_behavior_change_required": true,
+      "replay_strategy": {
+        "first_stage": "selective_suffix_replay",
+        "trigger_case_full_rerun": "paired fresh baseline/candidate for runtime or coordinated mutations",
+        "matching_cases": "future cases sharing metadata-only dataset/subset/question_type cohort",
+        "periodic_regression": "required before final acceptance",
+        "not_executed_is_not_success": true
+      },
+      "candidate_history": [],
+      "online_publish_status": "not_published"
+    },
+    "output_contract": {
+      "decision_values": [
+        "propose_mutation",
+        "no_mutation",
+        "request_more_cases"
+      ],
+      "mutation_encoding": "mutation or mutations (maximum four non-conflicting executable operations)",
+      "dependency_analysis_required": true,
+      "coordinated_patch_requires_connected_operations": true,
+      "joint_replay_same_snapshot_required": true,
+      "one_mutation_maximum": false,
+      "candidate_preflight_required": true,
+      "snapshot_application_attestation_required": true,
+      "snapshot_application_requires_fresh_inference": false,
+      "selective_suffix_replay_first": true,
+      "fresh_candidate_inference_required": true,
+      "matching_cases_and_periodic_regression_required": true,
+      "online_publish_status": "not_published"
+    }
+  },
+  "evolver_proposal_validation": {
+    "status": "invalid_schema",
+    "reason": "Evolver JSON contract failed."
+  },
+  "evolver_agent": {
+    "agent_role": "evolver",
+    "implementation": "independent LLM meta-agent",
+    "status": "error",
+    "schema_valid": false,
+    "kernel": {
+      "agent_role": "evolver",
+      "provider_class": "TransformersProvider",
+      "model_role": "evolver",
+      "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+      "modality": "llm",
+      "independent_provider_view": true,
+      "independent_prompt": true,
+      "prompt_source": "four_role_prompts",
+      "structured_contract": "evolver_json",
+      "llm_kernel": true,
+      "agent_definition": {
+        "agent_type": "meta_evolution_agent",
+        "kernel_modality": "llm",
+        "input_contract": "completed trajectory summaries + deterministic diagnoses + runtime capability manifest + replay context",
+        "decision_authority": "attribute failures, analyze dependencies, and propose bounded coordinated replay-gated harness mutations",
+        "delegates_to": [
+          "replay_gate"
+        ]
+      }
+    },
+    "proposal": {
+      "decision": "propose_mutation",
+      "mutation": {
+        "action": "update_recovery_policy",
+        "target": "low_signal_temporal_grounding",
+        "before": {
+          "enabled": false,
+          "max_text_failures": 1,
+          "coverage_density_seconds": 10.0,
+          "max_recovery_calls": 1
+        },
+        "after": {
+          "enabled": true,
+          "max_text_failures": 3,
+          "coverage_density_seconds": 30.0,
+          "max_recovery_calls": 2
+        },
+        "reason": "Diagnoses indicate repeated tool execution failures (Video_Clip_QA, Segment_Retrieve, asr) and evidence verifier blocks due to missing structured evidence. Enabling low_signal_temporal_grounding recovery with increased failure tolerance (3 failures) and broader coverage (30s density) allows the system to invoke Inspect_Frame after repeated retrieval failures to acquire direct visual evidence, satisfying the evidence gate requirements."
+      },
+      "mutations": [],
+      "expected_effect": "The system will no longer terminate prematurely on tool failures. Instead, it will trigger Inspect_Frame to gather direct visual evidence when retrieval tools fail or return low-signal results, enabling the evidence verifier to accept the trajectory and produce a correct answer.",
+      "regression_risk": "Increased latency due to additional frame sampling calls. Risk of over-reliance on visual inspection for text-heavy queries if not gated by query type, but bounded by max_recovery_calls=2.",
+      "dependency_analysis": {
+        "nodes": [
+          {
+            "action": "update_recovery_policy",
+            "component": "evidence_acquisition",
+            "index": 0,
+            "target_ids": [
+              "low_signal_temporal_grounding"
+            ],
+            "valid": true
+          }
+        ],
+        "dependency_edges": [
+          {
+            "source": "tool_runtime",
+            "target": "evidence_acquisition",
+            "type": "requires"
+          }
+        ],
+        "conflicts": [],
+        "missing_dependencies": [],
+        "dependency_pass": true
+      },
+      "confidence": 0.92
+    },
+    "proposal_validation": {
+      "status": "invalid_schema",
+      "reason": "Evolver JSON contract failed."
+    },
+    "input_contract": {
+      "trajectory_summary_fields": [
+        "answer_score",
+        "can_finish",
+        "missing_information",
+        "sample_status",
+        "sample_uid",
+        "trajectory_id",
+        "unresolved_claims"
+      ],
+      "diagnosis_count": 4,
+      "runtime_capability_manifest": {
+        "manifest_version": 5,
+        "reference_design": {
+          "source": "reference.md#Evolver设计",
+          "pipeline": [
+            "trajectory",
+            "failure_diagnosis",
+            "evolution_intent",
+            "dependency_analysis",
+            "joint_modify",
+            "second_rollout",
+            "verify_joint_modification"
+          ],
+          "joint_edit_enabled": true,
+          "max_operations": 4,
+          "same_snapshot_second_rollout_required": true,
+          "audit_marker": "harness component dependency graph"
+        },
+        "dependency_graph": {
+          "tool_runtime": {
+            "kind": "runtime",
+            "requires": [],
+            "downstream": [
+              "evidence_acquisition"
+            ],
+            "actions": [
+              "update_tool_schema",
+              "edit_tool_source",
+              "update_argument_policy",
+              "update_router_rule",
+              "add_fallback"
+            ]
+          },
+          "evidence_acquisition": {
+            "kind": "workflow",
+            "requires": [
+              "tool_runtime"
+            ],
+            "downstream": [
+              "workflow_composition"
+            ],
+            "actions": [
+              "update_recovery_policy"
+            ]
+          },
+          "workflow_composition": {
+            "kind": "workflow",
+            "requires": [
+              "evidence_acquisition"
+            ],
+            "downstream": [
+              "finish_gate"
+            ],
+            "actions": [
+              "add_composition_edge"
+            ]
+          },
+          "finish_gate": {
+            "kind": "verifier",
+            "requires": [
+              "workflow_composition"
+            ],
+            "downstream": [],
+            "actions": []
+          }
+        },
+        "common_tool_output_contract": {
+          "required_fields": [
+            "status",
+            "result"
+          ],
+          "status_values": [
+            "success",
+            "no_valid_result",
+            "error"
+          ],
+          "output_schema_mutation": "forbidden"
+        },
+        "actions": {
+          "update_argument_policy": {
+            "target": "registered tool whose executable implementation is changed",
+            "after_shape": {
+              "kind": "update",
+              "edits": "same exact path/digest/before/after contract as edit_tool_source"
+            },
+            "runtime_hook": "isolated source worker; real registry and runtime application proof",
+            "limitation": "text-only policies are rejected; the proposal must implement the routing, fallback or argument transformation in tool code"
+          },
+          "update_router_rule": {
+            "target": "registered tool whose executable implementation is changed",
+            "after_shape": {
+              "kind": "update",
+              "edits": "same exact path/digest/before/after contract as edit_tool_source"
+            },
+            "runtime_hook": "isolated source worker; real registry and runtime application proof",
+            "limitation": "text-only policies are rejected; the proposal must implement the routing, fallback or argument transformation in tool code"
+          },
+          "add_fallback": {
+            "target": "registered tool whose executable implementation is changed",
+            "after_shape": {
+              "kind": "fallback",
+              "edits": "same exact path/digest/before/after contract as edit_tool_source"
+            },
+            "runtime_hook": "isolated source worker; real registry and runtime application proof",
+            "limitation": "text-only policies are rejected; the proposal must implement the routing, fallback or argument transformation in tool code"
+          },
+          "edit_tool_source": {
+            "target": "exact tool name, or role name for a prompt edit",
+            "after_shape": {
+              "kind": "add|delete|update|compose|fallback|prompt",
+              "edits": [
+                {
+                  "path": "toolkit/impl/example.py",
+                  "before_sha256": "SHA256 of the complete original UTF-8 file; empty file hash for additions",
+                  "before": "exact unique source snippet",
+                  "after": "replacement source"
+                }
+              ]
+            },
+            "allowed_paths": [
+              "toolkit/impl/*.py",
+              "planner/prompts.py",
+              "config/agent_prompts.json"
+            ],
+            "runtime_hook": "source_mutation.materialize_source_snapshot -> isolated Python worker -> source_application_proof",
+            "limitations": "maximum four files; real backend/tool execution required; no evaluator or verification-code edits; no online source writes; compile and paired runtime checks required"
+          },
+          "update_tool_schema": {
+            "target": "one active non-virtual registered tool",
+            "after_fields": [
+              "description",
+              "parameters",
+              "tags"
+            ],
+            "parameters_shape": {
+              "type": "object",
+              "properties": "object",
+              "required": "array (optional)"
+            },
+            "runtime_hook": "harness.apply_harness_registry_overrides",
+            "limitation": "schema cannot create a parameter, output field, or backend behavior; new properties require an explicit run() parameter"
+          },
+          "add_composition_edge": {
+            "target": "candidate_comparison for the Finish gate, or a tool implementing an executable composition",
+            "source_alternative": {
+              "kind": "compose",
+              "edits": "exact source edits implementing the dependency chain"
+            },
+            "after_shape": {
+              "after": "evidence_acquisition",
+              "before": "finish",
+              "required": true
+            },
+            "runtime_hook": "harness.load_harness_snapshot -> EvidenceVerifier"
+          },
+          "update_recovery_policy": {
+            "target": "low_signal_temporal_grounding",
+            "after_shape": {
+              "enabled": true,
+              "max_text_failures": 2,
+              "coverage_density_seconds": 30.0,
+              "max_recovery_calls": 1
+            },
+            "runtime_hook": "harness.load_harness_snapshot -> RecursiveEngine._prepare_concrete_tool_call -> Inspect_Frame",
+            "limitation": "bounded visual coverage calls: failures 1..8, density 5..120 seconds, calls 1..4; after text-retrieval no_valid_result/error; it cannot use annotation timestamps or answer labels"
+          }
+        },
+        "acceptance": {
+          "require_positive_utility_gain": true,
+          "trigger_utility_gain": 0.0,
+          "neighbor_nonregression_floor": 0.0,
+          "regression_answer_drop": 0.0,
+          "minimum_latency_gain": 0.05,
+          "held_out_utility_drop": 0.0,
+          "invalid_call_rate_increase": 0.005,
+          "latency_increase": 0.1,
+          "latency_increase_with_answer_gain": 0.2,
+          "minimum_group_counts": {
+            "trigger": 1,
+            "neighbor": 3,
+            "regression": 3,
+            "held_out": 3
+          }
+        },
+        "failure_attribution": {
+          "scope_values": [
+            "global_answer_failure",
+            "global_and_local_failure",
+            "local_tool_failure",
+            "local_verifier_failure",
+            "efficiency"
+          ],
+          "rule": "attribute tool/runtime/verifier blame separately from final answer correctness"
+        },
+        "replay_contract": {
+          "first_stage": "selective_suffix_replay",
+          "reuse": "cached trajectory state before the first affected step",
+          "runtime_suffix_required_for": [
+            "update_tool_schema",
+            "update_recovery_policy"
+          ],
+          "runtime_execution": "fresh paired trigger rollouts when no resumable checkpoint is available; recorded as paired_runtime_rollout_executed, never as prefix reuse",
+          "verifier_suffix_possible_for": [
+            "add_composition_edge"
+          ],
+          "not_executed_is_not_success": true,
+          "matching_cases_and_periodic_regression_required": true
+        },
+        "coordinated_patch": {
+          "supported": true,
+          "max_operations": 4,
+          "encoding": "payload.mutations array; legacy payload.mutation remains supported",
+          "allowed_surfaces": [
+            "tool_schema_description_or_parameters",
+            "runtime_recovery_policy",
+            "workflow_composition"
+          ],
+          "source_tool_implementation": "exact source edits in isolated worker; real paired runtime and held-out gates required",
+          "conflicting_targets": "rejected",
+          "dependency_analysis": "required before materialization; operation pairs must be connected in dependency_graph"
+        },
+        "final_acceptance_requires": [
+          "candidate snapshot applied in an isolated runtime",
+          "causal selective/suffix replay or an explicitly recorded runtime limitation",
+          "fresh candidate Planner/Observer/Reflector trajectory on matching cases",
+          "minimum paired trigger/neighbor/regression/held-out groups are present",
+          "all trigger/neighbor/regression/held-out/invalid-call/latency gates pass",
+          "dependency analysis and joint replay verify every coordinated operation"
+        ],
+        "online_publish": "disabled until final acceptance",
+        "active_tool_schemas": [
+          {
+            "name": "Aggregation",
+            "description": "Perform statistical aggregation on retrieval results. Supports counting, sorting by confidence/time, finding extremes (e.g., longest segment), and temporal fusion (merging overlapping or adjacent time ranges). Invalid operations are reported instead of silently returning the unmodified input.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "description": "Data to aggregate"
+                },
+                "operation": {
+                  "type": "string",
+                  "enum": [
+                    "count",
+                    "sort",
+                    "max",
+                    "min",
+                    "merge_temporal"
+                  ],
+                  "description": "Aggregation operation"
+                },
+                "target_field": {
+                  "type": "string",
+                  "description": "Field to operate on",
+                  "default": null
+                }
+              },
+              "required": [
+                "data",
+                "operation"
+              ]
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "aggregation",
+              "base",
+              "composite"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.processing",
+            "class_qualname": "Aggregation"
+          },
+          {
+            "name": "Clean_Results",
+            "description": "Clean, deduplicate, and rerank retrieval results that were already returned by another retrieval tool. Requires non-empty retrieved_data and does not search the video corpus, segments, captions, or transcripts by itself.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "retrieved_data": {
+                  "type": "array",
+                  "description": "Raw retrieval results to clean"
+                },
+                "query_intent": {
+                  "type": "string",
+                  "description": "Original query intent for relevance scoring"
+                }
+              },
+              "required": [
+                "retrieved_data",
+                "query_intent"
+              ]
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "base",
+              "rerank",
+              "retrieval"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.retrieval",
+            "class_qualname": "CleanResults"
+          },
+          {
+            "name": "Crop",
+            "description": "Crop image or extract region to remove background interference. Limit attention to bounding box selected area, exclude surrounding noise, help model focus on specific object.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "image": {
+                  "type": "string",
+                  "description": "Image identifier or path"
+                },
+                "bbox": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "description": "Bounding box [x, y, width, height]"
+                }
+              },
+              "required": [
+                "image",
+                "bbox"
+              ]
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "base",
+              "edit",
+              "visual"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.visual",
+            "class_qualname": "Crop"
+          },
+          {
+            "name": "Filtering",
+            "description": "Filter retrieval results based on structured metadata. Supports exact values and explicit operators ($eq/$ne/$in/$contains/$gte/$gt/$lte/$lt); it does not search the video corpus.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "description": "Data to filter"
+                },
+                "metadata_constraints": {
+                  "type": "object",
+                  "description": "Metadata constraints as key-value pairs"
+                }
+              },
+              "required": [
+                "data",
+                "metadata_constraints"
+              ]
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "base",
+              "filter",
+              "metadata",
+              "selection"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.processing",
+            "class_qualname": "Filtering"
+          },
+          {
+            "name": "Fold_Memory",
+            "description": "Summarize and compress overly long reasoning history. In multi-turn dialogue or long-chain reasoning, release context window space, retain key conclusions, forget non-essential details and known errors.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "context_window": {
+                  "type": "array",
+                  "description": "Historical steps or information to compress"
+                },
+                "keep_recent": {
+                  "type": "integer",
+                  "description": "Number of recent steps to keep uncompressed",
+                  "default": 2
+                },
+                "previous_state": {
+                  "type": "object",
+                  "description": "Previous structured folded memory state to merge forward",
+                  "default": null
+                },
+                "discovered_tools": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Current discovered tool summaries available to the planner",
+                  "default": []
+                },
+                "blocked_action_signatures": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Action signatures that runtime has already blocked from repeating",
+                  "default": []
+                },
+                "next_allowed_tools": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Runtime-suggested next tools that remain available",
+                  "default": []
+                },
+                "importance_field": {
+                  "type": "string",
+                  "description": "Field name indicating importance score/flag in each step",
+                  "default": "importance"
+                },
+                "error_field": {
+                  "type": "string",
+                  "description": "Field name indicating error info in each step",
+                  "default": "error"
+                }
+              },
+              "required": [
+                "context_window"
+              ]
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "base",
+              "compression",
+              "memory"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.system",
+            "class_qualname": "FoldMemory"
+          },
+          {
+            "name": "Inspect_Frame",
+            "description": "Inspect a specific video moment or a short time range via uniform frame sampling. Supports two modes: Inspect_Frame(timestamp) for a single high-resolution frame, or Inspect_Frame(t_start, t_end, density) for uniformly sampled frames across a time range (density is numeric seconds per frame; t_end may be 'entire_video_time' to use the processed video's real end time). Returns direct frame evidence for downstream planners.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "timestamp": {
+                  "type": [
+                    "string",
+                    "number",
+                    "array",
+                    "null"
+                  ],
+                  "description": "Single timestamp or list of timestamps to inspect as single-frame snapshots",
+                  "default": null
+                },
+                "t_start": {
+                  "type": [
+                    "string",
+                    "number",
+                    "array",
+                    "null"
+                  ],
+                  "description": "Start time or list of start times for inspection windows",
+                  "default": null
+                },
+                "t_end": {
+                  "type": [
+                    "string",
+                    "number",
+                    "array",
+                    "null"
+                  ],
+                  "description": "End time/list, or 'entire_video_time' for the processed video's real end",
+                  "default": null
+                },
+                "density": {
+                  "type": [
+                    "number",
+                    "array",
+                    "null"
+                  ],
+                  "description": "Sampling density in seconds per frame for window mode; scalar or list of numeric values",
+                  "default": 0.5
+                },
+                "duration": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "description": "Deprecated legacy window size around timestamp; kept for backward compatibility",
+                  "default": null
+                },
+                "query": {
+                  "type": "string",
+                  "description": "What to look for in the frames",
+                  "default": null
+                }
+              },
+              "required": []
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "base",
+              "refine",
+              "visual"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.visual",
+            "class_qualname": "InspectFrame"
+          },
+          {
+            "name": "Keyword_Retrieve",
+            "description": "Perform exact matching retrieval for proper nouns, specific IDs, or rare terms. Returns the matched segment's preprocessed evidence bundle, including caption, transcript, timestamps, and cached frame images.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "term": {
+                  "type": "string",
+                  "description": "Keyword or term to search for"
+                },
+                "case_sensitive": {
+                  "type": "boolean",
+                  "description": "Whether search is case-sensitive",
+                  "default": false
+                }
+              },
+              "required": [
+                "term"
+              ]
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "base",
+              "keyword",
+              "retrieval"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.retrieval",
+            "class_qualname": "KeywordRetrieve"
+          },
+          {
+            "name": "Python_Executor",
+            "description": "Execute generated Python code to handle complex logic. Used for complex mathematical calculations, text-first aggregation, or processing structured evidence with custom logic after evidence has already been extracted. It must not infer image/video content from file paths alone.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "code_script": {
+                  "type": "string",
+                  "description": "Python code to execute"
+                },
+                "context_vars": {
+                  "type": "object",
+                  "description": "Variables to make available in execution context",
+                  "default": {}
+                }
+              },
+              "required": [
+                "code_script"
+              ]
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "base",
+              "custom_logic",
+              "execution",
+              "python"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.processing",
+            "class_qualname": "PythonExecutor"
+          },
+          {
+            "name": "Segment_Retrieve",
+            "description": "Retrieve a segment's preprocessed evidence bundle by segment ID or time range. Returns caption, transcript, timestamps, cached frame images, and optional graph entities.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "segment_id": {
+                  "type": "string",
+                  "description": "Segment identifier. Supports raw IDs like '7' and composite IDs like 'example_7'.",
+                  "default": null
+                },
+                "time_range": {
+                  "type": "string",
+                  "description": "Time range to match (e.g. '30-60' or '00:01:00-00:02:00'). Intersects with segment_id filters when both are provided.",
+                  "default": null
+                },
+                "fields": {
+                  "type": [
+                    "array",
+                    "string",
+                    "null"
+                  ],
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Which fields to return. Allowed values: ['caption', 'transcript', 'graph', 'frame_times', 'frame_paths']. May be provided as a list or comma-separated string.",
+                  "default": [
+                    "caption",
+                    "transcript",
+                    "graph",
+                    "frame_times",
+                    "frame_paths"
+                  ]
+                }
+              },
+              "required": []
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "base",
+              "retrieval",
+              "segment"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.retrieval",
+            "class_qualname": "SegmentRetrieve"
+          },
+          {
+            "name": "Semantic_Retrieve",
+            "description": "Perform fuzzy semantic retrieval based on natural language description. Returns the retrieved segment's preprocessed evidence bundle, including caption, transcript, timestamps, and cached frame images. Supports time-range constraints. Dense visual-only matches are returned as unverified candidates and are not cited as answer evidence until Inspect_Frame or Video_Clip_QA confirms them. Each candidate also exposes its full executable probe window; verify that window before narrowing to a short timestamp.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string",
+                  "description": "Natural language query"
+                },
+                "time_range": {
+                  "type": "string",
+                  "description": "Time range constraint (format: 'HH:MM:SS-HH:MM:SS' or 'SS-SS')",
+                  "default": null
+                },
+                "top_k": {
+                  "type": "integer",
+                  "description": "Number of results to return",
+                  "default": 5
+                }
+              },
+              "required": [
+                "query"
+              ]
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "base",
+              "retrieval",
+              "semantic"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.retrieval",
+            "class_qualname": "SemanticRetrieve"
+          },
+          {
+            "name": "Tool_Search",
+            "description": "Discover executable tools from the registry by capability. This tool does not search the video corpus, timestamps, frames, captions, transcripts, or OCR output.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "intent_description": {
+                  "type": "string",
+                  "description": "Description of what you want to accomplish"
+                },
+                "top_k": {
+                  "type": "integer",
+                  "description": "Number of tools to retrieve",
+                  "default": 5
+                },
+                "tags": {
+                  "type": "array",
+                  "description": "Optional list of tags to filter tools (e.g., ['base'] or ['meta'])",
+                  "items": {
+                    "type": "string"
+                  },
+                  "default": null
+                },
+                "tool_type": {
+                  "type": "string",
+                  "enum": [
+                    "base",
+                    "meta",
+                    "all"
+                  ],
+                  "description": "Primary tool class filter. Use base for executable/base tools, meta for atomic/meta tools, all for both.",
+                  "default": "all"
+                }
+              },
+              "required": [
+                "intent_description"
+              ]
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "base",
+              "retrieval",
+              "search"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.retrieval",
+            "class_qualname": "ToolSearch"
+          },
+          {
+            "name": "Video_Clip_QA",
+            "description": "Comprehensive short-window video understanding tool. Clip the requested start/end window first, then send that clip file directly to the local VLM and answer open-ended or ambiguous questions about the clip, including actions, interactions, temporal order, scene changes, object states, counts, comparisons, and overall visual events. Prefer this broad fallback when the request needs holistic reasoning over a short video segment instead of only OCR, single frames, tracking, or a narrow specialized visual probe.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "start_time": {
+                  "type": [
+                    "string",
+                    "number"
+                  ],
+                  "description": "Clip start time in seconds"
+                },
+                "end_time": {
+                  "type": [
+                    "string",
+                    "number"
+                  ],
+                  "description": "Clip end time in seconds"
+                },
+                "query": {
+                  "type": "string",
+                  "description": "Question to answer from the clipped video"
+                },
+                "segment_id": {
+                  "type": [
+                    "string",
+                    "number",
+                    "null"
+                  ],
+                  "description": "Optional segment reference. If provided, segment-relative start/end times will be converted to full-video absolute times.",
+                  "default": null
+                },
+                "video": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Optional source video hint",
+                  "default": null
+                },
+                "video_path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Optional source video path hint",
+                  "default": null
+                }
+              },
+              "required": [
+                "start_time",
+                "end_time",
+                "query"
+              ]
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "base",
+              "qa",
+              "video",
+              "visual"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.visual",
+            "class_qualname": "VideoClipQA"
+          },
+          {
+            "name": "Video_Summary",
+            "description": "Summarize all preprocessed segment captions and transcripts for the active local video scope. Uses a text-generation model and returns a concise holistic summary grounded in the video evidence.",
+            "parameters": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "base",
+              "retrieval",
+              "summary"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.retrieval",
+            "class_qualname": "VideoSummary"
+          },
+          {
+            "name": "Zoom_in",
+            "description": "Zoom in on local image region with resolution enhancement. Used to identify tiny visual features (e.g., distinguishing distant object color, texture details), simulating human 'looking closer' behavior.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "image": {
+                  "type": "string",
+                  "description": "Image identifier or path"
+                },
+                "region_of_interest": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "description": "Region to zoom [x, y, width, height]"
+                },
+                "zoom_factor": {
+                  "type": "number",
+                  "description": "Zoom factor",
+                  "minimum": 1.0,
+                  "maximum": 8.0,
+                  "default": 2.0
+                }
+              },
+              "required": [
+                "image",
+                "region_of_interest"
+              ]
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "base",
+              "enhance",
+              "visual"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.visual",
+            "class_qualname": "ZoomIn"
+          },
+          {
+            "name": "asr",
+            "description": "Locate subtitle or ASR transcript spans from preprocessing outputs for a requested time range, and return the matched text together with utterance-level timestamps.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "time_range": {
+                  "type": "string",
+                  "description": "Required target time range (for example '30-60' or '00:01:00-00:02:00')."
+                }
+              },
+              "required": [
+                "time_range"
+              ]
+            },
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "result"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "no_valid_result",
+                    "success"
+                  ],
+                  "description": "Execution outcome: evidence, failure, or no usable evidence."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Concise human-readable summary of the returned payload."
+                },
+                "items": {
+                  "type": "array",
+                  "description": "Structured result rows when the tool returns a collection."
+                },
+                "value": {
+                  "description": "Structured scalar value when the tool does not return rows."
+                }
+              },
+              "additionalProperties": true
+            },
+            "tags": [
+              "asr",
+              "base",
+              "retrieval",
+              "transcript"
+            ],
+            "is_virtual": false,
+            "class_module": "toolkit.impl.retrieval",
+            "class_qualname": "ASRRetrieve"
+          }
+        ],
+        "source_context": [
+          {
+            "path": "toolkit/impl/retrieval.py",
+            "before_sha256": "ab9b69c0266da1eb5050f91d0689a593eb01d8e1e4e0b2cc24da619119e5c4bc",
+            "snippet": "class SemanticRetrieve(BaseTool):\n    \"\"\"Semantic fuzzy retrieval.\"\"\"\n    \n    name: str = \"Semantic_Retrieve\"\n    description: str = (\n        \"Perform fuzzy semantic retrieval based on natural language description. \"\n        \"Returns the retrieved segment's preprocessed evidence bundle, including caption, transcript, \"\n        \"timestamps, and cached frame images. Supports time-range constraints. Dense visual-only matches \"\n        \"are returned as unverified candidates and are not cited as answer evidence until Inspect_Frame \"\n        \"or Video_Clip_QA confirms them. Each candidate also exposes its full executable probe window; \"\n        \"verify that window before narrowing to a short timestamp.\"\n    )\n    tags: list = [\"base\", \"retrieval\", \"semantic\"]\n    parameters: Dict[str, Any] = {\n        \"type\": \"object\",\n        \"properties\": {\n            \"query\": {\n                \"type\": \"string\",\n                \"description\": \"Natural language query\"\n            },\n            \"time_range\": {\n                \"type\": \"string\",\n                \"description\": \"Time range constraint (format: 'HH:MM:SS-HH:MM:SS' or 'SS-SS')\",\n                \"default\": None\n            },\n            \"top_k\": {\n                \"type\": \"integer\",\n                \"description\": \"Number of results to return\",\n                \"default\": 5\n            }\n        },\n        \"required\": [\"query\"]\n    }\n    \n    def run(self, query: str, time_range: Optional[str] = None, top_k: int = 5, **kwargs) -> Dict[str, Any]:\n        \"\"\"Execute semantic retrieval.\n        \n        Args:\n            query: Semantic query\n            time_range: Optional time constraint\n            top_k: Number of results\n            **kwargs: Additional arguments\n            \n        Returns:\n            List of semantically relevant results\n        \"\"\"\n        cache_dir = Path(settings.data_cache_dir) / \"processed\"\n        results: List[Dict[str, Any]] = []\n        load_errors: List[str] = []\n        fallback_candidates: List[Dict[str, Any]] = []\n        video_hint = kwargs.get(\"video\") or kwargs.get(\"video_path\")\n        resolved_scope = sorted(runtime_session.resolve_video_scope(video_hint))\n        hidden_payload = get_sparse_scope_hidden_tool_payload(self.name, video_hint=video_hint)\n        if hidden_payload is not None:\n            hidden_payload.update(\n                {\n                    \"query\": query,\n                    \"time_range\": time_range,\n                    \"top_k\": top_k,\n                    \"match_count\": 0,\n                    \"matched_segments\": [],\n                }\n            )\n            return hidden_payload\n        \n        if not cache_dir.exists():\n            return {\n                \"error\": \"No processed data found\",\n                \"status\": \"error\",\n                \"query\": query,\n                \"time_range\": time_range,\n            }\n            \n        # Parse time range. For benchmark samples with an explicitly labelled\n        # localization prior, apply it even when the planner omitted the\n        # optional tool argument so a distant semantic hit cannot displace the\n        # dataset's scene locator.\n        effective_time_range = time_range\n        time_prior = None\n        if not effective_time_range:\n            time_prior = _extract_query_time_prior(runtime_session.get_active_query_text())\n            if time_prior is not None:\n                effective_time_range = f\"{time_prior[0]:.3f}-{time_prior[1]:.3f}\"\n        time_filter = None\n        if effective_time_range:\n            try:\n                parts = effective_time_range.split('-')\n                if len(parts) == 2:\n                    # Handle HH:MM:SS or SS\n                    def parse_time(t_str):\n                        if ':' in t_str:\n                            h, m, s = map(float, t_str.split(':'))\n                            return h*3600 + m*60 + s\n                        return float(t_str)\n                        \n                    start = parse_time(parts[0])\n                    end = parse_time(parts[1])\n                    time_filter = (start, end)\n            except Exception as e:\n                logger.warning(f\"Failed to parse time range {effective_time_range}: {e}\")\n        \n"
+          },
+          {
+            "path": "toolkit/impl/retrieval.py",
+            "before_sha256": "ab9b69c0266da1eb5050f91d0689a593eb01d8e1e4e0b2cc24da619119e5c4bc",
+            "snippet": "class ASRRetrieve(BaseTool):\n    \"\"\"Locate ASR spans for a requested time window.\"\"\"\n\n    name: str = \"asr\"\n    description: str = (\n        \"Locate subtitle or ASR transcript spans from preprocessing outputs for a requested \"\n        \"time range, and return the matched text together with utterance-level timestamps.\"\n    )\n    tags: list = [\"base\", \"retrieval\", \"asr\", \"transcript\"]\n    parameters: Dict[str, Any] = {\n        \"type\": \"object\",\n        \"properties\": {\n            \"time_range\": {\n                \"type\": \"string\",\n                \"description\": \"Required target time range (for example '30-60' or '00:01:00-00:02:00').\",\n            },\n        },\n        \"required\": [\"time_range\"],\n    }\n\n    def run(self, time_range: str, **kwargs) -> Dict[str, Any]:\n        target_range = _parse_time_range(time_range)\n        video_hint = kwargs.get(\"video\") or kwargs.get(\"video_path\")\n\n        if target_range is None:\n            return {\n                \"error\": \"Invalid or missing time_range. Expected formats like '30-60' or '00:01:00-00:02:00'.\",\n                \"status\": \"error\",\n                \"time_range\": time_range,\n            }\n\n        cache_dir = Path(settings.data_cache_dir) / \"processed\"\n        if not cache_dir.exists():\n            return {\n                \"error\": \"No processed data found. Run preprocessing first.\",\n                \"status\": \"error\",\n                \"time_range\": time_range,\n            }\n\n        hidden_payload = get_sparse_scope_hidden_tool_payload(self.name, video_hint=video_hint)\n        if hidden_payload is not None:\n            hidden_payload.update(\n                {\n                    \"time_range\": time_range,\n                    \"match_count\": 0,\n                    \"matched_entries\": [],\n                    \"transcript\": \"\",\n                }\n            )\n            return hidden_payload\n\n        resolved_scope = sorted(runtime_session.resolve_video_scope(video_hint))\n        matched_entries: List[Dict[str, Any]] = []\n        seen_matches: set[Tuple[str, float, float, str]] = set()\n\n        for video_dir in _iter_scoped_video_dirs(video_hint):\n            entries = _load_cached_full_asr_entries(video_dir)\n            source = \"cached_full_transcript\"\n            if not entries:\n                entries = _collect_processed_asr_entries(video_dir)\n                source = \"processed_transcripts\"\n\n            for entry in entries:\n                entry_range = (\n                    float(entry.get(\"start\", 0.0) or 0.0),\n                    float(entry.get(\"end\", entry.get(\"start\", 0.0)) or 0.0),\n                )\n                if _time_overlap_ratio(entry_range, target_range) <= 0:\n                    continue\n\n                match_key = (\n                    video_dir.name,\n                    float(entry[\"start\"]),\n                    float(entry[\"end\"]),\n                    str(entry[\"text\"]),\n                )\n                if match_key in seen_matches:\n                    continue\n                seen_matches.add(match_key)\n                matched_entries.append(\n                    {\n                        \"video\": video_dir.name,\n                        \"start\": float(entry[\"start\"]),\n                        \"end\": float(entry[\"end\"]),\n                        \"time\": str(entry[\"time\"]),\n                        \"text\": str(entry[\"text\"]),\n                        \"source\": source,\n                    }\n                )\n\n        matched_entries.sort(\n            key=lambda item: (\n                str(item.get(\"video\", \"\")),\n                float(item.get(\"start\", 0.0) or 0.0),\n                float(item.get(\"end\", 0.0) or 0.0),\n            )\n        )\n\n        if matched_entries:\n            transcript = \"\\n\".join(\n                f\"[{float(item['start']):.2f}s -> {float(item['end']):.2f}s] {str(item['text'])}\"\n"
+          },
+          {
+            "path": "toolkit/impl/retrieval.py",
+            "before_sha256": "ab9b69c0266da1eb5050f91d0689a593eb01d8e1e4e0b2cc24da619119e5c4bc",
+            "snippet": "class SegmentRetrieve(BaseTool):\n    \"\"\"Retrieve segment-level caption, transcript, and graph data by ID or time range.\"\"\"\n\n    name: str = \"Segment_Retrieve\"\n    description: str = (\n        \"Retrieve a segment's preprocessed evidence bundle by segment ID or time range. \"\n        \"Returns caption, transcript, timestamps, cached frame images, and optional graph entities.\"\n    )\n    tags: list = [\"base\", \"retrieval\", \"segment\"]\n    parameters: Dict[str, Any] = {\n        \"type\": \"object\",\n        \"properties\": {\n            \"segment_id\": {\n                \"type\": \"string\",\n                \"description\": \"Segment identifier. Supports raw IDs like '7' and composite IDs like 'example_7'.\",\n                \"default\": None,\n            },\n            \"time_range\": {\n                \"type\": \"string\",\n                \"description\": \"Time range to match (e.g. '30-60' or '00:01:00-00:02:00'). Intersects with segment_id filters when both are provided.\",\n                \"default\": None,\n            },\n            \"fields\": {\n                \"type\": [\"array\", \"string\", \"null\"],\n                \"items\": {\"type\": \"string\"},\n                \"description\": (\n                    \"Which fields to return. Allowed values: \"\n                    \"['caption', 'transcript', 'graph', 'frame_times', 'frame_paths']. \"\n                    \"May be provided as a list or comma-separated string.\"\n                ),\n                \"default\": [\"caption\", \"transcript\", \"graph\", \"frame_times\", \"frame_paths\"],\n            },\n        },\n        \"required\": [],\n    }\n\n    def run(\n        self,\n        segment_id: Optional[str] = None,\n        time_range: Optional[str] = None,\n        fields: Optional[List[str]] = None,\n        **kwargs,\n    ) -> Dict[str, Any]:\n        from pathlib import Path\n        from config.settings import settings\n\n        normalized_fields = _normalize_segment_fields(fields or [\"caption\", \"transcript\", \"graph\", \"frame_times\", \"frame_paths\"])\n        want = set(normalized_fields or [\"caption\", \"transcript\", \"graph\", \"frame_times\", \"frame_paths\"])\n\n        cache_dir = Path(settings.data_cache_dir) / \"processed\"\n        if not cache_dir.exists():\n            return {\n                \"error\": \"No processed data found. Run preprocessing first.\",\n                \"status\": \"error\",\n                \"requested_segment_id\": segment_id,\n                \"time_range\": time_range,\n                \"normalized_fields\": sorted(want),\n            }\n\n        target_range = _parse_time_range(time_range)\n        results: List[Dict[str, Any]] = []\n        requested_video, resolved_segment_id, requested_aliases = _parse_segment_reference(segment_id)\n        video_hint = requested_video or kwargs.get(\"video\") or kwargs.get(\"video_path\")\n        hidden_payload = get_sparse_scope_hidden_tool_payload(self.name, video_hint=video_hint)\n        if hidden_payload is not None:\n            hidden_payload.update(\n                {\n                    \"requested_segment_id\": segment_id,\n                    \"resolved_segment_id\": resolved_segment_id,\n                    \"resolved_video\": requested_video,\n                    \"time_range\": time_range,\n                    \"normalized_fields\": sorted(want),\n                    \"available_fields\": [\"caption\", \"transcript\", \"graph\", \"frame_times\", \"frame_paths\"],\n                    \"match_count\": 0,\n                    \"matched_segments\": [],\n                }\n            )\n            return hidden_payload\n        resolved_scope = sorted(runtime_session.resolve_video_scope(video_hint))\n\n        for video_dir in _iter_scoped_video_dirs(video_hint):\n            segments = _load_segments_payload(video_dir)\n            if not segments:\n                continue\n            times_map = _load_segment_times_map(video_dir)\n            graph_entities = _load_segment_graph_entities(video_dir) if \"graph\" in want else {}\n\n            for sid, seg in segments.items():\n                if not isinstance(seg, dict):\n                    continue\n                time_info = times_map.get(str(sid), {}) if isinstance(times_map, dict) else {}\n                aliases = [str(alias) for alias in (time_info.get(\"segment_aliases\") or seg.get(\"segment_aliases\") or [str(sid), f\"{video_dir.name}_{sid}\"]) if str(alias).strip()]\n\n                if segment_id is not None:\n                    if str(sid) != str(resolved_segment_id) and str(segment_id) not in aliases and not set(aliases).intersection(requested_aliases):\n                        continue\n                if target_range is not None:\n                    seg_range = _parse_time_range(seg.get(\"time\"))\n                    if seg_range is None or _time_overlap_ratio(seg_range, target_range) <= 0:\n                        continue\n\n"
+          },
+          {
+            "path": "toolkit/impl/visual.py",
+            "before_sha256": "73ec089d7cee895dde2489352acf5e29b89c1dc3e2444ab927f474264aec8251",
+            "snippet": "class VideoClipQA(BaseTool):\n    \"\"\"Inspect a requested video window by clipping it first, then sending the clip directly to the local VLM.\"\"\"\n\n    name: str = \"Video_Clip_QA\"\n    description: str = (\n        \"Comprehensive short-window video understanding tool. Clip the requested start/end window first, \"\n        \"then send that clip file directly to the local VLM and answer open-ended or ambiguous questions \"\n        \"about the clip, including actions, interactions, temporal order, scene changes, object states, \"\n        \"counts, comparisons, and overall visual events. Prefer this broad fallback when the request needs \"\n        \"holistic reasoning over a short video segment instead of only OCR, single frames, tracking, or a \"\n        \"narrow specialized visual probe.\"\n    )\n    tags: list = [\"base\", \"visual\", \"video\", \"qa\"]\n\n    @property\n    def model_path(self) -> str:\n        return settings.qwen_vl_model_path\n\n    parameters: Dict[str, Any] = {\n        \"type\": \"object\",\n        \"properties\": {\n            \"start_time\": {\n                \"type\": [\"string\", \"number\"],\n                \"description\": \"Clip start time in seconds\",\n            },\n            \"end_time\": {\n                \"type\": [\"string\", \"number\"],\n                \"description\": \"Clip end time in seconds\",\n            },\n            \"query\": {\n                \"type\": \"string\",\n                \"description\": \"Question to answer from the clipped video\",\n            },\n            \"segment_id\": {\n                \"type\": [\"string\", \"number\", \"null\"],\n                \"description\": \"Optional segment reference. If provided, segment-relative start/end times will be converted to full-video absolute times.\",\n                \"default\": None,\n            },\n            \"video\": {\n                \"type\": [\"string\", \"null\"],\n                \"description\": \"Optional source video hint\",\n                \"default\": None,\n            },\n            \"video_path\": {\n                \"type\": [\"string\", \"null\"],\n                \"description\": \"Optional source video path hint\",\n                \"default\": None,\n            },\n        },\n        \"required\": [\"start_time\", \"end_time\", \"query\"],\n    }\n\n    def run(self, start_time: Any, end_time: Any, query: str, **kwargs) -> Dict[str, Any]:\n        start = _parse_time_seconds(start_time)\n        end = _parse_time_seconds(end_time)\n        if start is None or end is None:\n            raise ValueError(\"Video_Clip_QA requires numeric start_time and end_time.\")\n        video_hint = kwargs.get(\"video\") or kwargs.get(\"video_path\")\n        # The planner may emit a dataset/context label (for example ``Mix``)\n        # instead of a filesystem path.  In a single-video query the runtime\n        # session is authoritative; use its active source before scoping the\n        # processed-segment lookup so a valid Video_Clip_QA call is executable.\n        active_video_path = str(\n            runtime_session.get_query_metrics().get(\"active_video_path\") or \"\"\n        ).strip()\n        if active_video_path:\n            hint_path = Path(str(video_hint or \"\").strip()).expanduser()\n            if not video_hint or not hint_path.exists():\n                resolved_hint = _resolve_video_file_path(\n                    hint_path.stem or str(video_hint or \"\"),\n                    preferred_path=str(video_hint or \"\"),\n                )\n                if not resolved_hint:\n                    video_hint = active_video_path\n        rows = _iter_processed_segments(video_hint)\n        normalized_target = _resolve_video_clip_qa_target_range(\n            start=start,\n            end=end,\n            segment_id=kwargs.get(\"segment_id\"),\n            rows=rows,\n        )\n        target_range = normalized_target[\"target_range\"]\n        # Preserve the planner's absolute request separately from the\n        # duration-clamped range used for execution.  The evidence ledger\n        # needs to distinguish what was requested from what the source video\n        # could actually provide.\n        requested_target_range = {\n            \"start\": float(target_range[\"start\"]),\n            \"end\": float(target_range[\"end\"]),\n        }\n        if target_range[\"end\"] <= target_range[\"start\"]:\n            raise ValueError(\"Video_Clip_QA requires end_time greater than start_time.\")\n        max_window_seconds = max(\n            1.0,\n            float(getattr(settings, \"video_clip_qa_max_window_seconds\", 90.0) or 90.0),\n        )\n        requested_window_seconds = _range_length(target_range)\n        if requested_window_seconds > max_window_seconds:\n            return enrich_tool_result(\n                {\n                    \"start_time\": round(float(target_range[\"start\"]), 3),\n"
+          }
+        ],
+        "empty_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "evolution_context": {
+        "baseline_metrics": {
+          "accuracy": 0.25,
+          "mean_latency_seconds": 1588.30225,
+          "invalid_call_rate": 0.2
+        },
+        "replay_groups": {
+          "trigger": [
+            "trajectory_eeabc1cfb89240ce87753d507ab7f13a"
+          ],
+          "neighbor": [],
+          "regression": [
+            "trajectory_389280dac3b24befb71b22fc3500dc44"
+          ]
+        },
+        "replay_group_contract": {
+          "neighbor_definition": "distinct non-held-out case in the same dataset/subset/question-type cohort as the trigger",
+          "answer_or_annotation_fields_used_for_selection": false,
+          "trigger_sample_uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf"
+        },
+        "minimum_group_counts": {
+          "trigger": 1,
+          "neighbor": 3,
+          "regression": 3,
+          "held_out": 3
+        },
+        "current_snapshot_id": "snapshot_000",
+        "active_runtime_policy": {},
+        "active_runtime_mutations": [],
+        "dependency_graph": {
+          "tool_runtime": {
+            "kind": "runtime",
+            "requires": [],
+            "downstream": [
+              "evidence_acquisition"
+            ],
+            "actions": [
+              "update_tool_schema",
+              "edit_tool_source",
+              "update_argument_policy",
+              "update_router_rule",
+              "add_fallback"
+            ]
+          },
+          "evidence_acquisition": {
+            "kind": "workflow",
+            "requires": [
+              "tool_runtime"
+            ],
+            "downstream": [
+              "workflow_composition"
+            ],
+            "actions": [
+              "update_recovery_policy"
+            ]
+          },
+          "workflow_composition": {
+            "kind": "workflow",
+            "requires": [
+              "evidence_acquisition"
+            ],
+            "downstream": [
+              "finish_gate"
+            ],
+            "actions": [
+              "add_composition_edge"
+            ]
+          },
+          "finish_gate": {
+            "kind": "verifier",
+            "requires": [
+              "workflow_composition"
+            ],
+            "downstream": [],
+            "actions": []
+          }
+        },
+        "dependency_analysis_required": true,
+        "current_verification_config": {
+          "claim_coverage": 0.8,
+          "direct_grounding": 0.65,
+          "contradiction_score": 0.2,
+          "require_cross_modal": false,
+          "require_answer_support": true,
+          "require_completion_basis": false
+        },
+        "diagnostic_candidate_snapshot": {
+          "snapshot_id": "snapshot_0fceb88369ef",
+          "parent_snapshot_id": "snapshot_000",
+          "created_at": "2026-09-14T11:23:38.830138Z",
+          "router_policy": {
+            "add_composition_edge": {
+              "after": "evidence_acquisition",
+              "before": "finish",
+              "required": true
+            }
+          },
+          "argument_policy": {},
+          "tool_overrides": {},
+          "source_overrides": {},
+          "source_materialized": false,
+          "mutation_delta": {},
+          "base_tool_library_baseline_id": "toolbase_5bc5b18117f7b913bb66",
+          "patch_ids": [
+            "intent_6f3bdd1f24a2"
+          ],
+          "status": "candidate",
+          "dependency_analysis": {
+            "graph_version": 1,
+            "operation_count": 1,
+            "joint_required": false,
+            "nodes": [
+              {
+                "index": 0,
+                "action": "add_composition_edge",
+                "target_ids": [
+                  "candidate_comparison"
+                ],
+                "component": "workflow_composition",
+                "valid": true
+              }
+            ],
+            "dependency_edges": [],
+            "missing_dependencies": [],
+            "conflicts": [],
+            "dependency_pass": true
+          }
+        },
+        "fresh_candidate_inference_required": true,
+        "snapshot_application_attestation_required": true,
+        "snapshot_application_requires_fresh_inference": false,
+        "candidate_behavior_change_required": true,
+        "replay_strategy": {
+          "first_stage": "selective_suffix_replay",
+          "trigger_case_full_rerun": "paired fresh baseline/candidate for runtime or coordinated mutations",
+          "matching_cases": "future cases sharing metadata-only dataset/subset/question_type cohort",
+          "periodic_regression": "required before final acceptance",
+          "not_executed_is_not_success": true
+        },
+        "candidate_history": [],
+        "online_publish_status": "not_published"
+      },
+      "output_contract": {
+        "decision_values": [
+          "propose_mutation",
+          "no_mutation",
+          "request_more_cases"
+        ],
+        "mutation_encoding": "mutation or mutations (maximum four non-conflicting executable operations)",
+        "dependency_analysis_required": true,
+        "coordinated_patch_requires_connected_operations": true,
+        "joint_replay_same_snapshot_required": true,
+        "one_mutation_maximum": false,
+        "candidate_preflight_required": true,
+        "snapshot_application_attestation_required": true,
+        "snapshot_application_requires_fresh_inference": false,
+        "selective_suffix_replay_first": true,
+        "fresh_candidate_inference_required": true,
+        "matching_cases_and_periodic_regression_required": true,
+        "online_publish_status": "not_published"
+      }
+    },
+    "output_contract": {
+      "outer_schema_valid": false,
+      "candidate_preflight_required": true,
+      "snapshot_application_attestation_required": true,
+      "snapshot_application_requires_fresh_inference": false,
+      "selective_suffix_replay_first": true,
+      "fresh_candidate_inference_required": true,
+      "matching_cases_and_periodic_regression_required": true,
+      "online_publish_status": "not_published"
+    },
+    "error": ""
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00071:223164c8-abed-4f1a-8f7c-4088c89d3ece",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C uses a sewing machine to join the two pieces of cloth.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00071-223164c8-abed-4f1a-8f7c-4088c89d3ece",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00071-223164c8-abed-4f1a-8f7c-4088c89d3ece/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00071-223164c8-abed-4f1a-8f7c-4088c89d3ece/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00071-223164c8-abed-4f1a-8f7c-4088c89d3ece/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/223164c8-abed-4f1a-8f7c-4088c89d3ece.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/223164c8-abed-4f1a-8f7c-4088c89d3ece.mp4",
+  "question_block": "Question: What is the primary technique c applies to join the two pieces of cloth, and how does she ensure they are properly aligned throughout the process?\nOptions:\n(A) C uses a pair of scissors to join the two pieces of cloth.\n(B) C uses a sewing machine to join the two pieces of cloth.\n(C) C uses a needle and thread to join the two pieces of cloth.\n(D) C uses a glue gun to join the two pieces of cloth.\n(E) C uses a stapler to join the two pieces of cloth.",
+  "options": [
+    "C uses a pair of scissors to join the two pieces of cloth.",
+    "C uses a sewing machine to join the two pieces of cloth.",
+    "C uses a needle and thread to join the two pieces of cloth.",
+    "C uses a glue gun to join the two pieces of cloth.",
+    "C uses a stapler to join the two pieces of cloth."
+  ],
+  "official_meta": {
+    "question_index": "00071",
+    "video_id": "223164c8-abed-4f1a-8f7c-4088c89d3ece",
+    "source_index": 71
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:45:18.711646Z"
+}

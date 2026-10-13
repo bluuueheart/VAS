@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:ego:23:ego-20",
+  "dataset_name": "mlvu",
+  "subset_name": "ego",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "On the upper wooden block",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/ego-00023-ego-20",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/ego-00023-ego-20/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/ego-00023-ego-20/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/ego-00023-ego-20/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/3_ego/ego_20.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/3_ego/ego_20.mp4",
+  "question_block": "Question: Where did I last put the drill machine?\nOptions:\n(A) On the kitchen counter\n(B) In the garage\n(C) On the upper wooden block\n(D) In the toolbox",
+  "options": [
+    "On the kitchen counter",
+    "In the garage",
+    "On the upper wooden block",
+    "In the toolbox"
+  ],
+  "official_meta": {
+    "task_type": "ego",
+    "source_json": "3_ego.json",
+    "source_index": 23,
+    "video_subdir": "3_ego",
+    "video_relative_path": "3_ego/ego_20.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:49:27.195658Z"
+}

@@ -1,0 +1,533 @@
+{
+  "boundaries": 57,
+  "changed": [
+    {
+      "uid": "mlvu:plotqa:0:movie101-66",
+      "iteration": 2,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": true,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: answer_redundancy",
+      "after_feedback": "Evidence verifier accepted termination."
+    }
+  ],
+  "rows": [
+    {
+      "uid": "lvbench:entity-recognition:4:63",
+      "iteration": 10,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: count_redundancy",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: action_count, claim contract missing: count_redundancy, claim contract missing: dynamic_relation, sticks placed, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "lvbench:entity-recognition:4:63",
+      "iteration": 14,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, resolve contradictory evidence, claim contract missing: count_redundancy",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: action_count, claim contract missing: count_redundancy, claim contract missing: dynamic_relation, sticks placed, sticks placed, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "iteration": 6,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, claim contract missing: count_redundancy, decoration counts on German Christmas tree, apples, candles, berries, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, claim contract missing: count_redundancy, decoration counts on German Christmas tree, apples, candles, berries, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "videomme:humanity-history:001-1",
+      "iteration": 10,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, claim contract missing: count_redundancy, decoration counts on German Christmas tree, apples, candles, berries, largest_count, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: comparison, claim contract missing: count_redundancy, decoration counts on German Christmas tree, apples, candles, berries, largest_count, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+      "iteration": 2,
+      "candidate_matches_official_label": true,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "mlvu:plotqa:0:movie101-66",
+      "iteration": 2,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": true,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: answer_redundancy",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "mlvu:plotqa:0:movie101-66",
+      "iteration": 9,
+      "candidate_matches_official_label": true,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "lvbench:event-understanding:1:56",
+      "iteration": 2,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: answer_redundancy, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "lvbench:event-understanding:1:56",
+      "iteration": 7,
+      "candidate_matches_official_label": true,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "videomme:literature-art:011-1",
+      "iteration": 2,
+      "candidate_matches_official_label": true,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "iteration": 5,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "iteration": 8,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+      "iteration": 12,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, rinse_action",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label, rinse_action"
+    },
+    {
+      "uid": "mlvu:needle:0:needle-32",
+      "iteration": 11,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, initial_caption_search, visual_scan_needed, hand_action, hand_action, hand_from_computer, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, initial_caption_search, visual_scan_needed, hand_action, hand_action, hand_from_computer, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "mlvu:needle:0:needle-32",
+      "iteration": 15,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, initial_caption_search, visual_scan_needed, hand_action, hand_action, hand_from_computer, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, initial_caption_search, visual_scan_needed, hand_action, hand_action, hand_from_computer, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "lvbench:entity-recognition:6:67",
+      "iteration": 5,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, final answer text does not match the selected listed option, claim contract missing: scene_count, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, final answer text does not match the selected listed option, claim contract missing: scene_count, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "lvbench:entity-recognition:6:67",
+      "iteration": 11,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: scene_count",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: scene_count"
+    },
+    {
+      "uid": "videomme:biology-medicine:021-1",
+      "iteration": 2,
+      "candidate_matches_official_label": true,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "egoschema:00002:00f93e1e-cf4e-4835-88b4-4ad68216e86f",
+      "iteration": 6,
+      "candidate_matches_official_label": false,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "mlvu:ego:0:ego-35",
+      "iteration": 10,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, disposal into orange trashcan, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, disposal into orange trashcan, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "lvbench:event-understanding:3:62",
+      "iteration": 4,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: answer_redundancy",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: dynamic_relation, claim contract missing: answer_redundancy, protagonist action, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "lvbench:event-understanding:3:62",
+      "iteration": 13,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: answer_redundancy, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: dynamic_relation, claim contract missing: answer_redundancy, protagonist action, protagonist_action, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "lvbench:event-understanding:3:62",
+      "iteration": 14,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: answer_redundancy",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: dynamic_relation, claim contract missing: answer_redundancy, protagonist action, protagonist_action, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "videomme:finance-commerce:031-1",
+      "iteration": 2,
+      "candidate_matches_official_label": true,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+      "iteration": 2,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: order, claim contract missing: evidence_redundancy, brick making process verification, final_action, sequence, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+      "iteration": 7,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: order, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+      "iteration": 12,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: cleaning brick mold with hand, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: order, cleaning brick mold with hand, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "egoschema:00003:00faf954-74f7-4aa3-8b29-4a5dff4f9518",
+      "iteration": 14,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: cleaning brick mold with hand, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: order, cleaning brick mold with hand, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "mlvu:plotqa:1:xiaoliyu-6",
+      "iteration": 2,
+      "candidate_matches_official_label": false,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "lvbench:key-information-retrieval:0:55",
+      "iteration": 2,
+      "candidate_matches_official_label": true,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "videomme:astronomy:041-1",
+      "iteration": 1,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, answer claim has no verified evidence, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, answer claim has no verified evidence, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "videomme:astronomy:041-1",
+      "iteration": 5,
+      "candidate_matches_official_label": true,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+      "iteration": 4,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, cutting adjustments observed, installation fit assessment, adjustment frequency during cutting/installation, trim fit quality and correction events, slot_1, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, cutting adjustments observed, installation fit assessment, adjustment frequency during cutting/installation, trim fit quality and correction events, slot_1, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+      "iteration": 10,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, cutting adjustments observed, installation fit assessment, adjustment frequency during cutting/installation, trim fit quality and correction events, slot_1, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, cutting adjustments observed, installation fit assessment, adjustment frequency during cutting/installation, trim fit quality and correction events, slot_1, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "egoschema:00004:011b8b73-0ce4-4843-95ef-33b79610d212",
+      "iteration": 14,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, cutting adjustments observed, installation fit assessment, adjustment frequency during cutting/installation, trim fit quality and correction events, slot_1, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, cutting adjustments observed, installation fit assessment, adjustment frequency during cutting/installation, trim fit quality and correction events, slot_1, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "mlvu:topic-reasoning:0:awa-6",
+      "iteration": 2,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, grassland, ocean, desert, lake, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, grassland, ocean, desert, lake, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "mlvu:topic-reasoning:0:awa-6",
+      "iteration": 5,
+      "candidate_matches_official_label": true,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "lvbench:entity-recognition:11:75",
+      "iteration": 3,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: answer_redundancy, retrieved segments, object_used, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: answer_redundancy, retrieved segments, object_used, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "lvbench:entity-recognition:11:75",
+      "iteration": 7,
+      "candidate_matches_official_label": false,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "videomme:geography:051-1",
+      "iteration": 4,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy"
+    },
+    {
+      "uid": "videomme:geography:051-1",
+      "iteration": 9,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy"
+    },
+    {
+      "uid": "videomme:geography:051-1",
+      "iteration": 15,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: claim contract missing: count_redundancy"
+    },
+    {
+      "uid": "egoschema:00005:01a144a5-24d2-4a5a-af01-1f318d674bed",
+      "iteration": 2,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label"
+    },
+    {
+      "uid": "egoschema:00005:01a144a5-24d2-4a5a-af01-1f318d674bed",
+      "iteration": 8,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: rationale evidence supports multiple option outcomes; obtain an explicit discriminator before selecting a label"
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "iteration": 2,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: order, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, claim contract missing: order, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "mlvu:order:0:order-126",
+      "iteration": 13,
+      "candidate_matches_official_label": true,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "lvbench:event-understanding:7:68",
+      "iteration": 4,
+      "candidate_matches_official_label": false,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "lvbench:event-understanding:7:68",
+      "iteration": 15,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, final answer text does not match the selected listed option, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct temporal evidence supporting the selected action, final answer text does not match the selected listed option, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "videomme:law:061-1",
+      "iteration": 6,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: scene_count, claim contract missing: count_redundancy, red flags in segment 1, total red flags in video, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: scene_count, claim contract missing: count_redundancy, red flags in segment 1, total red flags in video, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+      "iteration": 9,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: purpose, reason for precision/accuracy in wood cutting, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: purpose, reason for precision/accuracy in wood cutting, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+      "iteration": 14,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: purpose, reason for precision/accuracy in wood cutting, Video_Clip_QA result for 106.2-136.2",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: direct evidence citation, claim contract missing: purpose, reason for precision/accuracy in wood cutting, Video_Clip_QA result for 106.2-136.2"
+    },
+    {
+      "uid": "mlvu:count:0:count-126",
+      "iteration": 9,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: action_count, claim contract missing: count_redundancy, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, direct temporal evidence supporting the selected action, claim contract missing: action_count, claim contract missing: count_redundancy, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "mlvu:count:0:count-126",
+      "iteration": 14,
+      "candidate_matches_official_label": false,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: final answer must select one listed option label, structured evidence claims, direct evidence citation, claim contract missing: action_count, claim contract missing: count_redundancy",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: final answer must select one listed option label, structured evidence claims, direct evidence citation, claim contract missing: action_count, claim contract missing: count_redundancy"
+    },
+    {
+      "uid": "videomme:life-tip:071-1",
+      "iteration": 1,
+      "candidate_matches_official_label": true,
+      "before": false,
+      "after": false,
+      "before_feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, claim contract missing: scene_count, claim contract missing: count_redundancy, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence",
+      "after_feedback": "Evidence verifier rejected termination; acquire or reconcile: structured evidence claims, direct evidence citation, claim contract missing: scene_count, claim contract missing: count_redundancy, claim contract missing: evidence_redundancy, answer candidate lacks directly matched verified evidence"
+    },
+    {
+      "uid": "videomme:life-tip:071-1",
+      "iteration": 12,
+      "candidate_matches_official_label": true,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "egoschema:00007:02925d7a-a5db-4127-8c31-b232e78b684d",
+      "iteration": 2,
+      "candidate_matches_official_label": true,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    },
+    {
+      "uid": "mlvu:anomaly-reco:0:surveil-20",
+      "iteration": 11,
+      "candidate_matches_official_label": true,
+      "before": true,
+      "after": true,
+      "before_feedback": "Evidence verifier accepted termination.",
+      "after_feedback": "Evidence verifier accepted termination."
+    }
+  ],
+  "limitations": [
+    "Frozen historical evidence, not fresh inference or overall accuracy.",
+    "Ground truth is used only for scoring recorded candidates; never verifier input."
+  ]
+}

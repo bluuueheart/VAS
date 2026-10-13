@@ -1,0 +1,33 @@
+{
+  "source_files": 111,
+  "source_drift": [],
+  "historical_trace_sha256": "8aa7a646497695634f61b63612d748d98c469c7b6d2a74fdfd2ae3ee0c3978c2",
+  "fresh_trace_sha256": "7d7f2b12b681e26bff54049fc289718227538d9907c546008bb474fcd6b43ed9",
+  "historical_run_integrity": [
+    {
+      "sample": "lvbench:entity-recognition:4:63",
+      "run_path": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/lvbench/entity-recognition-00004-63/results/run_result.json",
+      "matches": true
+    },
+    {
+      "sample": "mlvu:count:0:count-126",
+      "run_path": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126/results/run_result.json",
+      "matches": true
+    },
+    {
+      "sample": "mlvu:needle:0:needle-32",
+      "run_path": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/needle-00000-needle-32/results/run_result.json",
+      "matches": true
+    },
+    {
+      "sample": "mlvu:order:0:order-126",
+      "run_path": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/order-00000-order-126/results/run_result.json",
+      "matches": true
+    },
+    {
+      "sample": "videomme:humanity-history:001-1",
+      "run_path": "/gemini/code/export_packages/extracted/runs/research_pilot_20260923/baseline/candidate_workspaces/videomme/humanity-history-001-1/results/run_result.json",
+      "matches": true
+    }
+  ]
+}

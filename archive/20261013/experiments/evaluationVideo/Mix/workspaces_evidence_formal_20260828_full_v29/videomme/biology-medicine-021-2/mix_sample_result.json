@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:biology-medicine:021-2",
+  "dataset_name": "videomme",
+  "subset_name": "Biology & Medicine",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 2,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 2,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) Vaccines",
+  "elapsed_seconds": 413.608,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/biology-medicine-021-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/biology-medicine-021-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/biology-medicine-021-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/biology-medicine-021-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/TbaCxIJ_VP4.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/TbaCxIJ_VP4.mp4",
+  "question_block": "Question: Where does mRNA come from in the video?\nOptions:\n(A) Cells.\n(B) Vaccines.\n(C) COVID-19 virus.\n(D) Antibodies.",
+  "options": [
+    "A. Cells.",
+    "B. Vaccines.",
+    "C. COVID-19 virus.",
+    "D. Antibodies."
+  ],
+  "official_meta": {
+    "video_id": "021",
+    "video_external_id": "TbaCxIJ_VP4",
+    "resolved_video_stem": "TbaCxIJ_VP4",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Knowledge",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Biology & Medicine",
+    "task_type": "Attribute Perception",
+    "question_id": "021-2",
+    "question_index": 1,
+    "video_item_index": 20,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-02T08:31:25.128743Z"
+}

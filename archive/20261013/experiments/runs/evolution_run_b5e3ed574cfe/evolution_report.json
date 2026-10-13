@@ -1,0 +1,107 @@
+{
+  "run_id": "evolution_run_b5e3ed574cfe",
+  "trajectory_count": 1,
+  "event_count": 18,
+  "diagnoses": [
+    {
+      "diagnosis_id": "diagnosis_2ab7a4b3e7bc",
+      "trajectory_ids": [
+        "trajectory_1318751d2e9440c595708a6e5efff5c0"
+      ],
+      "failure_type": "tool_execution",
+      "blamed_component": "tool_runtime",
+      "blamed_tool_ids": [
+        "Video_Clip_QA"
+      ],
+      "supporting_event_ids": [
+        "debug_12",
+        "debug_15"
+      ],
+      "root_cause": "The trajectory terminated after one or more tool execution failures.",
+      "counterfactual_fix": "Route to a validated fallback after the first hard tool failure.",
+      "confidence": 0.9
+    }
+  ],
+  "verifications": [
+    {
+      "trajectory_id": "trajectory_1318751d2e9440c595708a6e5efff5c0",
+      "sample_uid": "mlvu:ego:0:ego-35",
+      "answer_score": 0.0,
+      "sample_status": "wrong",
+      "held_out": false,
+      "progress_score": 0.8,
+      "claim_coverage": 1.0,
+      "direct_grounding": 1.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": true,
+      "missing_information": [],
+      "unresolved_claims": [],
+      "feedback": "Evidence verifier accepted termination."
+    }
+  ],
+  "evolution_intent": {
+    "intent_id": "intent_c5d10db53c97",
+    "diagnosis_ids": [
+      "diagnosis_2ab7a4b3e7bc"
+    ],
+    "scope": "router",
+    "operations": [
+      {
+        "action": "add_fallback",
+        "target_type": "router",
+        "target_ids": [
+          "Video_Clip_QA"
+        ],
+        "before": null,
+        "after": {
+          "on_hard_failure": "next_validated_same_family_tool",
+          "max_retries": 1
+        },
+        "reason": "Hard tool failures should not terminate the evidence chain."
+      }
+    ],
+    "expected_effects": [
+      "fewer unsupported finishes",
+      "higher evidence-grounded answer consistency"
+    ],
+    "risks": [
+      "additional tool calls",
+      "higher latency"
+    ]
+  },
+  "candidate_snapshot": {
+    "snapshot_id": "snapshot_1e7608e9e9be",
+    "parent_snapshot_id": "snapshot_000",
+    "created_at": "2026-07-23T15:09:25.493855Z",
+    "router_policy": {
+      "add_fallback": {
+        "on_hard_failure": "next_validated_same_family_tool",
+        "max_retries": 1
+      }
+    },
+    "argument_policy": {},
+    "patch_ids": [
+      "intent_c5d10db53c97"
+    ],
+    "status": "candidate"
+  },
+  "replay_groups": {
+    "trigger": [
+      "trajectory_1318751d2e9440c595708a6e5efff5c0"
+    ],
+    "neighbor": [],
+    "regression": [],
+    "held_out": []
+  },
+  "replay_status": "pending",
+  "candidate_replay_status": "pending",
+  "batch_metrics": {
+    "accuracy": 0.0,
+    "mean_latency_seconds": 1460.504,
+    "invalid_call_rate": 0.214286
+  },
+  "source_paths": [
+    "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_cfv_probe1_20260723_detached/mlvu/ego-00000-ego-35/results/run_result.json"
+  ]
+}

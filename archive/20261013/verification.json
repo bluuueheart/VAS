@@ -1,0 +1,22 @@
+{
+  "items": 94,
+  "compatibility_links": 93,
+  "archived_test_and_probe_files": [
+    "archive/20261013/experiments/runs/code_validation_v38/run_dense_smoke.py",
+    "archive/20261013/experiments/runs/code_validation_v40/source_before/RL/agents/test_four_role.py",
+    "archive/20261013/experiments/runs/code_validation_v40/source_before/RL/evolution/test_selective_replay.py",
+    "archive/20261013/experiments/runs/code_validation_v40/source_before/RL/toolkit/test_visual_sampling.py",
+    "archive/20261013/experiments/runs/code_validation_v41/source_before/RL/evolution/test_intervention.py"
+  ],
+  "frozen_files_verified": 111,
+  "inventory_verified": true,
+  "compatibility_links_verified": 93,
+  "plan_only": {
+    "exit_code": 0,
+    "sample_uids": [
+      "mlvu:topic-reasoning:0:awa-6",
+      "mlvu:order:0:order-126"
+    ],
+    "model_inference_started": false
+  }
+}

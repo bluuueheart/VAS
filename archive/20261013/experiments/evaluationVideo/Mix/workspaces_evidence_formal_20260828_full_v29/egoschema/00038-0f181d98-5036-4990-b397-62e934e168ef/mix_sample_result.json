@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00038:0f181d98-5036-4990-b397-62e934e168ef",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 13,
+  "iter_num": 20,
+  "tool_success_rate": 0.769231,
+  "successful_tool_calls": 10,
+  "planner_iterations": 20,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "C's primary objective was to disassemble the wooden bench. he did this by removing nails from the bench with a nail gun, adjusting nails with his hand, and detaching wooden parts from the bench.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 5343.876,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00038-0f181d98-5036-4990-b397-62e934e168ef",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00038-0f181d98-5036-4990-b397-62e934e168ef/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00038-0f181d98-5036-4990-b397-62e934e168ef/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00038-0f181d98-5036-4990-b397-62e934e168ef/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0f181d98-5036-4990-b397-62e934e168ef.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0f181d98-5036-4990-b397-62e934e168ef.mp4",
+  "question_block": "Question: Can you summarize the primary objective and the steps c took throughout the video to achieve it? ensure your answer captures the essence of the video without listing all actions.\nOptions:\n(A) The main aim of c's primary objective was to create and build a new, sturdy wooden bench.\n(B) The primary objective for c was to thoroughly repair and restore the wooden bench.\n(C) C's primary objective was to thoroughly clean and sanitize the wooden bench's surface.\n(D) C's primary objective was to disassemble the wooden bench. he did this by removing nails from the bench with a nail gun, adjusting nails with his hand, and detaching wooden parts from the bench.\n(E) C's primary objective was to paint the wooden bench.",
+  "options": [
+    "The main aim of c's primary objective was to create and build a new, sturdy wooden bench.",
+    "The primary objective for c was to thoroughly repair and restore the wooden bench.",
+    "C's primary objective was to thoroughly clean and sanitize the wooden bench's surface.",
+    "C's primary objective was to disassemble the wooden bench. he did this by removing nails from the bench with a nail gun, adjusting nails with his hand, and detaching wooden parts from the bench.",
+    "C's primary objective was to paint the wooden bench."
+  ],
+  "official_meta": {
+    "question_index": "00038",
+    "video_id": "0f181d98-5036-4990-b397-62e934e168ef",
+    "resolved_video_stem": "0f181d98-5036-4990-b397-62e934e168ef",
+    "video_mapping_verified": true,
+    "source_index": 38,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-03T18:59:42.660713Z"
+}

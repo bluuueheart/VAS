@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00207:68e0bb20-414d-42ef-a0a0-e821efbe8e06",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C used the pair of scissors to cut the metal rod, the phone to inspect the metal pipe, and the metal rod to clean the metal pipe.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00207-68e0bb20-414d-42ef-a0a0-e821efbe8e06",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00207-68e0bb20-414d-42ef-a0a0-e821efbe8e06/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00207-68e0bb20-414d-42ef-a0a0-e821efbe8e06/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00207-68e0bb20-414d-42ef-a0a0-e821efbe8e06/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/68e0bb20-414d-42ef-a0a0-e821efbe8e06.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/68e0bb20-414d-42ef-a0a0-e821efbe8e06.mp4",
+  "question_block": "Question: Explain how c utilized various tools throughout the video, and how those tools contributed to the overall goal of preparing the vacuum cleaner.\nOptions:\n(A) C used the pair of scissors to cut the metal pipe, the phone to clean the metal pipe, and the metal rod to inspect the metal pipe.\n(B) C used the pair of scissors to cut the metal rod, the phone to inspect the metal pipe, and the metal rod to clean the metal pipe.\n(C) C used the pair of scissors to cut the metal rod, the phone to inspect the metal pipe, and the vacuum cleaner to clean the metal pipe.\n(D) C used the pair of scissors to cut the metal pipe, the vacuum cleaner to inspect the metal pipe, and the metal rod to clean the metal pipe.\n(E) C used the pair of scissors to cut the metal pipe, the vacuum cleaner to clean the metal pipe, and the phone to inspect the metal pipe.",
+  "options": [
+    "C used the pair of scissors to cut the metal pipe, the phone to clean the metal pipe, and the metal rod to inspect the metal pipe.",
+    "C used the pair of scissors to cut the metal rod, the phone to inspect the metal pipe, and the metal rod to clean the metal pipe.",
+    "C used the pair of scissors to cut the metal rod, the phone to inspect the metal pipe, and the vacuum cleaner to clean the metal pipe.",
+    "C used the pair of scissors to cut the metal pipe, the vacuum cleaner to inspect the metal pipe, and the metal rod to clean the metal pipe.",
+    "C used the pair of scissors to cut the metal pipe, the vacuum cleaner to clean the metal pipe, and the phone to inspect the metal pipe."
+  ],
+  "official_meta": {
+    "question_index": "00207",
+    "video_id": "68e0bb20-414d-42ef-a0a0-e821efbe8e06",
+    "source_index": 207
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:53:51.100511Z"
+}

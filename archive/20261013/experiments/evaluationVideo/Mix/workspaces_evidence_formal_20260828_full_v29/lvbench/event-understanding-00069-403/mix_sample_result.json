@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:event-understanding:69:403",
+  "dataset_name": "lvbench",
+  "subset_name": "event understanding",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 13,
+  "iter_num": 19,
+  "tool_success_rate": 0.923077,
+  "successful_tool_calls": 12,
+  "planner_iterations": 19,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "The girl ties him to a tree and burns him",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [
+    "D"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 5825.069,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00069-403",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00069-403/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00069-403/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/event-understanding-00069-403/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/HfEVEGf1A8Q.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/HfEVEGf1A8Q.mp4",
+  "question_block": "Question: What happens in the vampire's dream after he faints in front of the girl?\nOptions:\n(A) The girl ties him to a tree and washes him\n(B) The girl ties him to a cross and burns him\n(C) The girl ties him to a cross and washes him\n(D) The girl ties him to a tree and burns him",
+  "options": [
+    "The girl ties him to a tree and washes him",
+    "The girl ties him to a cross and burns him",
+    "The girl ties him to a cross and washes him",
+    "The girl ties him to a tree and burns him"
+  ],
+  "official_meta": {
+    "question_type": "event understanding",
+    "video_type": "cartoon",
+    "time_reference": "14:30-15:00",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "HfEVEGf1A8Q",
+    "resolved_video_stem": "HfEVEGf1A8Q",
+    "video_mapping_verified": true,
+    "source_index": 69
+  },
+  "updated_at": "2026-09-10T07:39:16.877562Z"
+}

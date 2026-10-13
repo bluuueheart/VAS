@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "timeout": false,
+      "exit": 0,
+      "process_group_signals": 0,
+      "restart_refused": true
+    },
+    {
+      "timeout": true,
+      "exit": 124,
+      "process_group_signals": 2,
+      "restart_refused": true
+    }
+  ],
+  "scope": "Mock supervisor success/timeout/restart control; not a real model run."
+}

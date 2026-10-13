@@ -1,0 +1,139 @@
+{
+  "run_id": "evolution_run_620a403cc984",
+  "trajectory_count": 1,
+  "event_count": 9,
+  "diagnoses": [
+    {
+      "diagnosis_id": "diagnosis_bad3683d1648",
+      "trajectory_ids": [
+        "trajectory_bc3c7d5a0ae340da84a19e2d2530d0ea"
+      ],
+      "failure_type": "answer_synthesis",
+      "blamed_component": "reasoner",
+      "blamed_tool_ids": [
+        "Inspect_Frame",
+        "Segment_Retrieve"
+      ],
+      "supporting_event_ids": [
+        "debug_3"
+      ],
+      "root_cause": "The final option was inconsistent with the collected trajectory evidence.",
+      "counterfactual_fix": "Compare every candidate option against cited evidence before selecting the final answer.",
+      "confidence": 0.8
+    }
+  ],
+  "verifications": [
+    {
+      "trajectory_id": "trajectory_bc3c7d5a0ae340da84a19e2d2530d0ea",
+      "sample_uid": "lvbench:key-information-retrieval:0:55",
+      "answer_score": 0.0,
+      "sample_status": "wrong",
+      "held_out": false,
+      "progress_score": 0.8,
+      "claim_coverage": 1.0,
+      "direct_grounding": 1.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": true,
+      "missing_information": [],
+      "unresolved_claims": [],
+      "feedback": "Evidence verifier accepted termination."
+    }
+  ],
+  "evolution_intent": {
+    "intent_id": "intent_4388182f6bc1",
+    "diagnosis_ids": [
+      "diagnosis_bad3683d1648"
+    ],
+    "scope": "router",
+    "operations": [
+      {
+        "action": "add_composition_edge",
+        "target_type": "workflow",
+        "target_ids": [
+          "candidate_comparison"
+        ],
+        "before": null,
+        "after": {
+          "after": "evidence_acquisition",
+          "before": "finish",
+          "required": true
+        },
+        "reason": "Collected evidence was not compared consistently across answer candidates."
+      }
+    ],
+    "expected_effects": [
+      "fewer unsupported finishes",
+      "higher evidence-grounded answer consistency"
+    ],
+    "risks": [
+      "additional tool calls",
+      "higher latency"
+    ]
+  },
+  "candidate_snapshot": {
+    "snapshot_id": "snapshot_97e92e80a100",
+    "parent_snapshot_id": "snapshot_000",
+    "created_at": "2026-08-20T16:51:10.240724Z",
+    "router_policy": {
+      "add_composition_edge": {
+        "after": "evidence_acquisition",
+        "before": "finish",
+        "required": true
+      }
+    },
+    "argument_policy": {},
+    "patch_ids": [
+      "intent_4388182f6bc1"
+    ],
+    "status": "candidate"
+  },
+  "replay_groups": {
+    "trigger": [
+      "trajectory_bc3c7d5a0ae340da84a19e2d2530d0ea"
+    ],
+    "neighbor": [],
+    "regression": [],
+    "held_out": []
+  },
+  "replay_status": "accepted",
+  "candidate_replay_status": "accepted",
+  "batch_metrics": {
+    "accuracy": 0.0,
+    "mean_latency_seconds": 1221.18,
+    "invalid_call_rate": 0.0
+  },
+  "source_paths": [
+    "evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00000-55/results/run_result.json"
+  ],
+  "replay_evaluation": {
+    "status": "accepted",
+    "checks": {
+      "overall_answer_non_decreasing": true,
+      "trigger_utility_gain": true,
+      "neighbor_utility_gain": true,
+      "regression_answer_drop": true,
+      "held_out_utility_drop": true,
+      "invalid_call_rate_increase": true,
+      "latency_increase": true
+    },
+    "group_utility_deltas": {
+      "trigger": 0.0,
+      "neighbor": 0.0,
+      "regression": 0.0,
+      "held_out": 0.0
+    },
+    "group_counts": {
+      "trigger": 1,
+      "neighbor": 0,
+      "regression": 0,
+      "held_out": 0
+    },
+    "overall_answer_gain": 0.0,
+    "invalid_call_rate_increase": 0.0,
+    "latency_increase": 0.0,
+    "latency_limit": 0.1,
+    "baseline_report": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_evolution_audit/live_wrong_trigger/evolution_run_60e05cd3db1b/evolution_report.json",
+    "evaluated_candidate_snapshot_id": "snapshot_97e92e80a100"
+  }
+}

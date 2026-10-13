@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:stage-play:181-3",
+  "dataset_name": "videomme",
+  "subset_name": "Stage Play",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 3,
+  "iter_num": 3,
+  "tool_success_rate": 0.333333,
+  "successful_tool_calls": 1,
+  "planner_iterations": 3,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "B",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) They are singing and dancing.",
+  "elapsed_seconds": 642.26,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/stage-play-181-3",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/stage-play-181-3/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/stage-play-181-3/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/stage-play-181-3/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/8np5YKYx3sU.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/8np5YKYx3sU.mp4",
+  "question_block": "Question: What are the people on the stage doing in this video?\nOptions:\n(A) They are reciting poetry.\n(B) They are singing and dancing.\n(C) They are performing acrobatics.\n(D) They are performing a drama.",
+  "options": [
+    "A. They are reciting poetry.",
+    "B. They are singing and dancing.",
+    "C. They are performing acrobatics.",
+    "D. They are performing a drama."
+  ],
+  "official_meta": {
+    "video_id": "181",
+    "video_external_id": "8np5YKYx3sU",
+    "resolved_video_stem": "8np5YKYx3sU",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Artistic Performance",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Stage Play",
+    "task_type": "Action Recognition",
+    "question_id": "181-3",
+    "question_index": 2,
+    "video_item_index": 180,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-09T22:49:05.493361Z"
+}

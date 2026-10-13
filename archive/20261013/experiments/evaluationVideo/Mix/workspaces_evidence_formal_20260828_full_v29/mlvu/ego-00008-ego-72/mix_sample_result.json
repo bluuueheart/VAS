@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:ego:8:ego-72",
+  "dataset_name": "mlvu",
+  "subset_name": "ego",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 3,
+  "iter_num": 4,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 3,
+  "planner_iterations": 4,
+  "subagent_iterations": 0,
+  "predicted_label": "C",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "orange juice",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(C) orange juice",
+  "elapsed_seconds": 1696.634,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/ego-00008-ego-72",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/ego-00008-ego-72/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/ego-00008-ego-72/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/ego-00008-ego-72/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/3_ego/ego_72.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/3_ego/ego_72.mp4",
+  "question_block": "Question: What did i put the plastic mug?\n\nOptions:\n(A) water\n(B) coffee\n(C) orange juice\n(D) milk",
+  "options": [
+    "water",
+    "coffee",
+    "orange juice",
+    "milk"
+  ],
+  "official_meta": {
+    "task_type": "ego",
+    "source_question_type": "ego",
+    "prompt_task_type": "ego",
+    "source_json": "3_ego.json",
+    "source_index": 8,
+    "video_subdir": "3_ego",
+    "video_relative_path": "3_ego/ego_72.mp4",
+    "resolved_video_stem": "ego_72",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-06T19:26:40.346066Z"
+}

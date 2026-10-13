@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:exercise:281-2",
+  "dataset_name": "videomme",
+  "subset_name": "Exercise",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 8,
+  "iter_num": 8,
+  "tool_success_rate": 0.875,
+  "successful_tool_calls": 7,
+  "planner_iterations": 8,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "C",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (contradictory_evidence; repeated direct evidence failure)",
+  "elapsed_seconds": 2202.88,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/exercise-281-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/exercise-281-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/exercise-281-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/exercise-281-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/VgtNv__qR0k.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/VgtNv__qR0k.mp4",
+  "question_block": "Question: How many people were exercising in the video?\nOptions:\n(A) 6.\n(B) 8.\n(C) 7.\n(D) 5.",
+  "options": [
+    "A. 6.",
+    "B. 8.",
+    "C. 7.",
+    "D. 5."
+  ],
+  "official_meta": {
+    "video_id": "281",
+    "video_external_id": "VgtNv__qR0k",
+    "resolved_video_stem": "VgtNv__qR0k",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Life Record",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Exercise",
+    "task_type": "Counting Problem",
+    "question_id": "281-2",
+    "question_index": 1,
+    "video_item_index": 280,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-06T21:02:31.600543Z"
+}

@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00162:509e6545-5fff-4f73-ae0f-524dfa8b3c2c",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The wooden crates and the blocks are used to transport the bricks. the bricks are placed on the wooden crates and then stacked on top of each other. the fork lift is used to move the wooden crates and the bricks.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00162-509e6545-5fff-4f73-ae0f-524dfa8b3c2c",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00162-509e6545-5fff-4f73-ae0f-524dfa8b3c2c/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00162-509e6545-5fff-4f73-ae0f-524dfa8b3c2c/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00162-509e6545-5fff-4f73-ae0f-524dfa8b3c2c/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/509e6545-5fff-4f73-ae0f-524dfa8b3c2c.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/509e6545-5fff-4f73-ae0f-524dfa8b3c2c.mp4",
+  "question_block": "Question: Based on c's actions, what is the significance of the wooden crates and the blocks with respect to the fork lift's involvement in the video?\nOptions:\n(A) The wooden crates and the blocks are used to transport the bricks. the bricks are placed on the wooden crates and then stacked on top of each other. the fork lift is used to move the wooden crates and the bricks.\n(B) The wooden crates and the blocks are used to build a structure. the blocks are stacked on top of each other to create a wall. the fork lift is used to move the wooden crates and the blocks into position.\n(C) The wooden crates and the blocks are used to create a barrier. the blocks are stacked in front of the wooden crates to create a wall. the fork lift is used to move the wooden crates and the blocks into position.\n(D) The wooden crates and the blocks are used to create a display. the blocks are stacked on top of each other to create a pyramid. the fork lift is used to move the wooden crates and the blocks into position.\n(E) The wooden crates and the blocks are used to create a sculpture. the blocks are stacked in a variety of shapes to create a work of art. the fork lift is used to move the wooden crates and the blocks into position.",
+  "options": [
+    "The wooden crates and the blocks are used to transport the bricks. the bricks are placed on the wooden crates and then stacked on top of each other. the fork lift is used to move the wooden crates and the bricks.",
+    "The wooden crates and the blocks are used to build a structure. the blocks are stacked on top of each other to create a wall. the fork lift is used to move the wooden crates and the blocks into position.",
+    "The wooden crates and the blocks are used to create a barrier. the blocks are stacked in front of the wooden crates to create a wall. the fork lift is used to move the wooden crates and the blocks into position.",
+    "The wooden crates and the blocks are used to create a display. the blocks are stacked on top of each other to create a pyramid. the fork lift is used to move the wooden crates and the blocks into position.",
+    "The wooden crates and the blocks are used to create a sculpture. the blocks are stacked in a variety of shapes to create a work of art. the fork lift is used to move the wooden crates and the blocks into position."
+  ],
+  "official_meta": {
+    "question_index": "00162",
+    "video_id": "509e6545-5fff-4f73-ae0f-524dfa8b3c2c",
+    "source_index": 162
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:50:38.411670Z"
+}

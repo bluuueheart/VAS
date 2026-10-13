@@ -1,0 +1,58 @@
+{
+  "sample_uid": "lvbench:entity-recognition:25:126",
+  "dataset_name": "lvbench",
+  "subset_name": "entity recognition",
+  "status": "unanswerable",
+  "acc": null,
+  "tool_use_num": 5,
+  "iter_num": 9,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 5,
+  "planner_iterations": 9,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "A rainbow",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [
+    "C"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Error: evidence_unanswerable (premise_mismatch; repeated direct evidence failure)",
+  "elapsed_seconds": 2784.058,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00025-126",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00025-126/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00025-126/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/lvbench/entity-recognition-00025-126/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/q01CUy_gwdU.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/q01CUy_gwdU.mp4",
+  "question_block": "Question: What appears on the screen after the fictional character from the man's book appears in the air for the first time, traveling between buildings?\nOptions:\n(A) The book\n(B) A butterfly\n(C) A rainbow\n(D) A plane",
+  "options": [
+    "The book",
+    "A butterfly",
+    "A rainbow",
+    "A plane"
+  ],
+  "official_meta": {
+    "question_type": "entity recognition",
+    "video_type": "cartoon",
+    "time_reference": "12:31-12:36",
+    "time_reference_used_for_inference": false,
+    "time_reference_inference_scope": "annotation_only_not_used",
+    "input_contract": {
+      "video": "full_provided_video",
+      "question": "official_question_and_options",
+      "timestamp_input": "question_text_only",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false,
+      "additional_temporal_annotation": "excluded"
+    },
+    "video_key": "q01CUy_gwdU",
+    "resolved_video_stem": "q01CUy_gwdU",
+    "video_mapping_verified": true,
+    "source_index": 25
+  },
+  "updated_at": "2026-08-29T15:49:27.076813Z"
+}

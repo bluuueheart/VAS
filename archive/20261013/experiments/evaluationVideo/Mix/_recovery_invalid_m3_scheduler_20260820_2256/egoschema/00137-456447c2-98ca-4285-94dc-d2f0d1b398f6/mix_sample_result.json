@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00137:456447c2-98ca-4285-94dc-d2f0d1b398f6",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is trying to win a game of solitaire.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00137-456447c2-98ca-4285-94dc-d2f0d1b398f6",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00137-456447c2-98ca-4285-94dc-d2f0d1b398f6/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00137-456447c2-98ca-4285-94dc-d2f0d1b398f6/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00137-456447c2-98ca-4285-94dc-d2f0d1b398f6/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/456447c2-98ca-4285-94dc-d2f0d1b398f6.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/456447c2-98ca-4285-94dc-d2f0d1b398f6.mp4",
+  "question_block": "Question: How would you describe the overall end goal of c's actions throughout the video, demonstrating an understanding of his various card and game piece manipulations?\nOptions:\n(A) C is trying to build a house of cards.\n(B) C is trying to sort the cards by suit.\n(C) C is trying to find a matching pair of cards.\n(D) C is trying to make a pattern with the cards.\n(E) C is trying to win a game of solitaire.",
+  "options": [
+    "C is trying to build a house of cards.",
+    "C is trying to sort the cards by suit.",
+    "C is trying to find a matching pair of cards.",
+    "C is trying to make a pattern with the cards.",
+    "C is trying to win a game of solitaire."
+  ],
+  "official_meta": {
+    "question_index": "00137",
+    "video_id": "456447c2-98ca-4285-94dc-d2f0d1b398f6",
+    "source_index": 137
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:48:50.226056Z"
+}

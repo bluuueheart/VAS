@@ -1,0 +1,86 @@
+[
+  {
+    "cycle": "evolution_online_cycle_00001",
+    "sample_uid": "lvbench:entity-recognition:4:63",
+    "eligible": false,
+    "activation_step": null,
+    "reason": "recovery condition absent in trigger trajectory"
+  },
+  {
+    "cycle": "evolution_online_cycle_00002",
+    "sample_uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+    "eligible": false,
+    "activation_step": null,
+    "reason": "recovery condition absent in trigger trajectory"
+  },
+  {
+    "cycle": "evolution_online_cycle_00003",
+    "sample_uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+    "eligible": false,
+    "activation_step": null,
+    "reason": "recovery condition absent in trigger trajectory"
+  },
+  {
+    "cycle": "evolution_online_cycle_00004",
+    "sample_uid": "lvbench:entity-recognition:4:63",
+    "eligible": false,
+    "activation_step": null,
+    "reason": "recovery condition absent in trigger trajectory"
+  },
+  {
+    "cycle": "evolution_online_cycle_00005",
+    "sample_uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+    "eligible": false,
+    "activation_step": null,
+    "reason": "recovery condition absent in trigger trajectory"
+  },
+  {
+    "cycle": "evolution_online_cycle_00006",
+    "sample_uid": "lvbench:entity-recognition:4:63",
+    "eligible": false,
+    "activation_step": null,
+    "reason": "recovery condition absent in trigger trajectory"
+  },
+  {
+    "cycle": "evolution_online_cycle_00007",
+    "sample_uid": "lvbench:entity-recognition:4:63",
+    "eligible": false,
+    "activation_step": null,
+    "reason": "recovery condition absent in trigger trajectory"
+  },
+  {
+    "cycle": "evolution_online_cycle_00008",
+    "sample_uid": "lvbench:entity-recognition:4:63",
+    "eligible": false,
+    "activation_step": null,
+    "reason": "recovery condition absent in trigger trajectory"
+  },
+  {
+    "cycle": "evolution_online_cycle_00009",
+    "sample_uid": "lvbench:entity-recognition:4:63",
+    "eligible": false,
+    "activation_step": null,
+    "reason": "recovery condition absent in trigger trajectory"
+  },
+  {
+    "cycle": "evolution_online_cycle_00010",
+    "sample_uid": "lvbench:entity-recognition:4:63",
+    "eligible": false,
+    "activation_step": null,
+    "reason": "recovery condition absent in trigger trajectory"
+  },
+  {
+    "cycle": "evolution_online_cycle_00011",
+    "sample_uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+    "eligible": false,
+    "activation_step": null,
+    "reason": "recovery condition absent in trigger trajectory"
+  },
+  {
+    "cycle": "evolution_online_cycle_00012",
+    "sample_uid": "egoschema:00006:026a2f15-c454-4c28-80e0-24c85d7f4ecf",
+    "eligible": false,
+    "activation_step": null,
+    "reason": "recovery condition absent in trigger trajectory"
+  }
+]

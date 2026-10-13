@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00171:548cbaae-8311-4709-9822-185e18ff895b",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is cleaning the house.",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00171-548cbaae-8311-4709-9822-185e18ff895b",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00171-548cbaae-8311-4709-9822-185e18ff895b/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00171-548cbaae-8311-4709-9822-185e18ff895b/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00171-548cbaae-8311-4709-9822-185e18ff895b/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/548cbaae-8311-4709-9822-185e18ff895b.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/548cbaae-8311-4709-9822-185e18ff895b.mp4",
+  "question_block": "Question: Analyze the overarching theme of the video and c's primary objective. how do the actions c is performing contribute to their purpose?\nOptions:\n(A) C is preparing to cook dinner.\n(B) C is cleaning the house.\n(C) C is taking a shower.\n(D) C is getting ready for bed.\n(E) C is doing laundry.",
+  "options": [
+    "C is preparing to cook dinner.",
+    "C is cleaning the house.",
+    "C is taking a shower.",
+    "C is getting ready for bed.",
+    "C is doing laundry."
+  ],
+  "official_meta": {
+    "question_index": "00171",
+    "video_id": "548cbaae-8311-4709-9822-185e18ff895b",
+    "source_index": 171
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:51:17.709737Z"
+}

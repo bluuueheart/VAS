@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00154:4ca1c82d-232c-4ffc-bad0-69f9aa992aef",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C's overall goal in the video is to keep her house clean and tidy.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00154-4ca1c82d-232c-4ffc-bad0-69f9aa992aef",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00154-4ca1c82d-232c-4ffc-bad0-69f9aa992aef/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00154-4ca1c82d-232c-4ffc-bad0-69f9aa992aef/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00154-4ca1c82d-232c-4ffc-bad0-69f9aa992aef/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/4ca1c82d-232c-4ffc-bad0-69f9aa992aef.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/4ca1c82d-232c-4ffc-bad0-69f9aa992aef.mp4",
+  "question_block": "Question: Considering all the actions performed by c, what can you infer about the overall goals or objectives of her actions throughout the video?\nOptions:\n(A) C's primary overall goal in the video is ultimately to make her beloved child genuinely happy and content.\n(B) C's primary overall goal portrayed in the video content is ultimately to make herself feel genuinely happy.\n(C) C's overall goal in the video is to get a bottle of water.\n(D) C's overall goal in the video is to keep her house clean and tidy.\n(E) C's primary and overall goal within the video is to engage in conversation and chat with her beloved child.",
+  "options": [
+    "C's primary overall goal in the video is ultimately to make her beloved child genuinely happy and content.",
+    "C's primary overall goal portrayed in the video content is ultimately to make herself feel genuinely happy.",
+    "C's overall goal in the video is to get a bottle of water.",
+    "C's overall goal in the video is to keep her house clean and tidy.",
+    "C's primary and overall goal within the video is to engage in conversation and chat with her beloved child."
+  ],
+  "official_meta": {
+    "question_index": "00154",
+    "video_id": "4ca1c82d-232c-4ffc-bad0-69f9aa992aef",
+    "source_index": 154
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:49:59.730197Z"
+}

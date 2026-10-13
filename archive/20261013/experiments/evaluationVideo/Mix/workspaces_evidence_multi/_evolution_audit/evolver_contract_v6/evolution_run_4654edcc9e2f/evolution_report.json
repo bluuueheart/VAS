@@ -1,0 +1,374 @@
+{
+  "run_id": "evolution_run_4654edcc9e2f",
+  "trajectory_count": 2,
+  "event_count": 11,
+  "diagnoses": [
+    {
+      "diagnosis_id": "diagnosis_53d129ad2981",
+      "trajectory_ids": [
+        "trajectory_ef5490ada76a4ef7b1aa41cce5fe85e7"
+      ],
+      "failure_type": "premature_termination",
+      "blamed_component": "evidence_verifier",
+      "blamed_tool_ids": [
+        "Semantic_Retrieve"
+      ],
+      "supporting_event_ids": [
+        "debug_5"
+      ],
+      "root_cause": "The historical trajectory reached Finish without satisfying the configured evidence gate.",
+      "counterfactual_fix": "Evidence verifier rejected termination; acquire or reconcile: selected option lacks verified comparison against plausible alternatives",
+      "confidence": 0.95
+    }
+  ],
+  "verifications": [
+    {
+      "trajectory_id": "trajectory_ef5490ada76a4ef7b1aa41cce5fe85e7",
+      "sample_uid": "lvbench:entity-recognition:16:83",
+      "answer_score": 0.0,
+      "sample_status": "failed",
+      "held_out": false,
+      "progress_score": 0.8,
+      "claim_coverage": 1.0,
+      "direct_grounding": 1.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": false,
+      "premise_mismatch": false,
+      "missing_information": [],
+      "unresolved_claims": [
+        "selected option lacks verified comparison against plausible alternatives"
+      ],
+      "feedback": "Evidence verifier rejected termination; acquire or reconcile: selected option lacks verified comparison against plausible alternatives"
+    },
+    {
+      "trajectory_id": "trajectory_f23209e3afec4ebcbaba6f2ba94bdcee",
+      "sample_uid": "lvbench:entity-recognition:4:63",
+      "answer_score": 1.0,
+      "sample_status": "completed",
+      "held_out": true,
+      "progress_score": 0.8,
+      "claim_coverage": 1.0,
+      "direct_grounding": 1.0,
+      "contradiction_score": 0.0,
+      "cross_modal_support": 0.0,
+      "can_finish": true,
+      "premise_mismatch": false,
+      "missing_information": [],
+      "unresolved_claims": [],
+      "feedback": "Evidence verifier accepted termination."
+    }
+  ],
+  "evolution_intent": {
+    "intent_id": "intent_f35862cf9df2",
+    "diagnosis_ids": [
+      "diagnosis_53d129ad2981"
+    ],
+    "scope": "router",
+    "operations": [
+      {
+        "action": "update_router_rule",
+        "target_type": "evidence_verifier",
+        "target_ids": [
+          "finish_gate"
+        ],
+        "before": {
+          "enforced": false
+        },
+        "after": {
+          "enforced": true,
+          "reject_unverified_finish": true,
+          "resolve_conflicts": true
+        },
+        "reason": "Observed unsupported or conflict-bearing terminal answers."
+      }
+    ],
+    "expected_effects": [
+      "fewer unsupported finishes",
+      "higher evidence-grounded answer consistency"
+    ],
+    "risks": [
+      "additional tool calls",
+      "higher latency"
+    ]
+  },
+  "candidate_snapshot": {
+    "snapshot_id": "snapshot_8f7f1d2324e9",
+    "parent_snapshot_id": "snapshot_000",
+    "created_at": "2026-08-23T03:14:56.653692Z",
+    "router_policy": {
+      "add_composition_edge": {
+        "after": "evidence_acquisition",
+        "before": "finish",
+        "required": true
+      }
+    },
+    "argument_policy": {},
+    "tool_overrides": {},
+    "base_tool_library_baseline_id": null,
+    "patch_ids": [
+      "evolver_intent_b95db0fc4ba9"
+    ],
+    "status": "candidate"
+  },
+  "diagnostic_candidate_snapshot": {
+    "snapshot_id": "snapshot_10ac4b030cee",
+    "parent_snapshot_id": "snapshot_000",
+    "created_at": "2026-08-23T03:09:44.016473Z",
+    "router_policy": {
+      "update_router_rule": {
+        "enforced": true,
+        "reject_unverified_finish": true,
+        "resolve_conflicts": true
+      }
+    },
+    "argument_policy": {},
+    "tool_overrides": {},
+    "base_tool_library_baseline_id": null,
+    "patch_ids": [
+      "intent_f35862cf9df2"
+    ],
+    "status": "candidate"
+  },
+  "candidate_source": "evolver_llm",
+  "replay_groups": {
+    "trigger": [
+      "trajectory_ef5490ada76a4ef7b1aa41cce5fe85e7"
+    ],
+    "neighbor": [],
+    "regression": [],
+    "held_out": [
+      "trajectory_f23209e3afec4ebcbaba6f2ba94bdcee"
+    ]
+  },
+  "replay_status": "candidate_pending_fresh_inference",
+  "candidate_replay_status": "candidate_pending_fresh_inference",
+  "metric_gate_status": "not_run",
+  "fresh_candidate_inference_proven": false,
+  "final_acceptance_status": "candidate_pending_fresh_inference",
+  "online_publish_status": "not_published",
+  "batch_metrics": {
+    "accuracy": 0.5,
+    "mean_latency_seconds": 540.9025,
+    "invalid_call_rate": 0.0
+  },
+  "source_paths": [
+    "evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00016-83/results/run_result.json",
+    "evaluationVideo/Mix/workspaces_evidence_multi/lvbench/entity-recognition-00004-63/results/run_result.json"
+  ],
+  "agent_value_analysis": {
+    "method": "trajectory evidence accounting; not causal ablation",
+    "cases": [
+      {
+        "sample_uid": "lvbench:entity-recognition:16:83",
+        "dataset_name": "lvbench",
+        "answer_correct": false,
+        "predicted_label": "",
+        "roles": {
+          "planner": {
+            "turns": 2,
+            "tool_orchestration_steps": 1,
+            "finish_proposals": 1,
+            "schema_valid_turns": 2,
+            "value_verdict": "observed",
+            "evidence": [
+              "selected executable actions and/or a terminal answer"
+            ]
+          },
+          "observer": {
+            "turns": 2,
+            "schema_valid_turns": 2,
+            "evidence_updates": 2,
+            "verified_updates": 2,
+            "logical_conflicts_flagged": 0,
+            "reobserve_or_cross_verify_recommendations": 0,
+            "recommendations_followed_by_planner": 1,
+            "value_verdict": "useful",
+            "evidence": [
+              "changed evidence state or directed a subsequent observation action"
+            ]
+          },
+          "reflector": {
+            "turns": 1,
+            "schema_valid_turns": 1,
+            "accept_count": 1,
+            "reject_or_request_more_count": 0,
+            "effective_finish_blocks": 0,
+            "accept_correct_count": 0,
+            "accept_wrong_count": 1,
+            "value_verdict": "insufficient_or_harmful",
+            "evidence": [
+              "the gate did not demonstrate a beneficial decision on this case"
+            ]
+          },
+          "evolver": {
+            "value_verdict": "offline_batch_role_not_online_case_turn",
+            "evidence": [
+              "evaluated by the batch-level replay report"
+            ]
+          }
+        }
+      },
+      {
+        "sample_uid": "lvbench:entity-recognition:4:63",
+        "dataset_name": "lvbench",
+        "answer_correct": true,
+        "predicted_label": "D",
+        "roles": {
+          "planner": {
+            "turns": 2,
+            "tool_orchestration_steps": 1,
+            "finish_proposals": 1,
+            "schema_valid_turns": 2,
+            "value_verdict": "observed",
+            "evidence": [
+              "selected executable actions and/or a terminal answer"
+            ]
+          },
+          "observer": {
+            "turns": 2,
+            "schema_valid_turns": 2,
+            "evidence_updates": 2,
+            "verified_updates": 2,
+            "logical_conflicts_flagged": 0,
+            "reobserve_or_cross_verify_recommendations": 0,
+            "recommendations_followed_by_planner": 1,
+            "value_verdict": "useful",
+            "evidence": [
+              "changed evidence state or directed a subsequent observation action"
+            ]
+          },
+          "reflector": {
+            "turns": 1,
+            "schema_valid_turns": 1,
+            "accept_count": 1,
+            "reject_or_request_more_count": 0,
+            "effective_finish_blocks": 0,
+            "accept_correct_count": 1,
+            "accept_wrong_count": 0,
+            "value_verdict": "useful",
+            "evidence": [
+              "blocked Finish before additional evidence or validated a correct Finish"
+            ]
+          },
+          "evolver": {
+            "value_verdict": "offline_batch_role_not_online_case_turn",
+            "evidence": [
+              "evaluated by the batch-level replay report"
+            ]
+          }
+        }
+      }
+    ],
+    "aggregate": {
+      "case_count": 2,
+      "roles": {
+        "planner": {
+          "case_verdict_counts": {
+            "observed": 2
+          },
+          "useful_case_count": 2
+        },
+        "observer": {
+          "case_verdict_counts": {
+            "useful": 2
+          },
+          "useful_case_count": 2
+        },
+        "reflector": {
+          "case_verdict_counts": {
+            "insufficient_or_harmful": 1,
+            "useful": 1
+          },
+          "useful_case_count": 1
+        }
+      }
+    },
+    "evolver": {
+      "trajectory_count": 2,
+      "diagnosis_count": 1,
+      "schema_valid": true,
+      "decision": "propose_mutation",
+      "mutation_targets": [
+        "candidate_comparison"
+      ],
+      "candidate_snapshot_created": true,
+      "proposal_validation": {
+        "status": "candidate_created",
+        "action": "add_composition_edge",
+        "target_ids": [
+          "candidate_comparison"
+        ],
+        "intent_id": "evolver_intent_b95db0fc4ba9"
+      },
+      "replay_status": "candidate_pending_fresh_inference",
+      "fresh_candidate_inference_proven": false,
+      "value_verdict": "observed_but_unvalidated",
+      "evidence": [
+        "a real Evolver kernel turn was recorded",
+        "candidate mutation is not accepted until replay/held-out gates pass"
+      ]
+    }
+  },
+  "evolver_proposal_validation": {
+    "status": "candidate_created",
+    "action": "add_composition_edge",
+    "target_ids": [
+      "candidate_comparison"
+    ],
+    "intent_id": "evolver_intent_b95db0fc4ba9"
+  },
+  "evolver_agent": {
+    "agent_role": "evolver",
+    "implementation": "independent LLM meta-agent",
+    "status": "success",
+    "schema_valid": true,
+    "kernel": {
+      "agent_role": "evolver",
+      "provider_class": "TransformersProvider",
+      "model_role": "evolver",
+      "model_name": "/gemini/pretrain/model/Qwen/Qwen3.5-9B",
+      "modality": "llm",
+      "independent_provider_view": true,
+      "independent_prompt": true,
+      "prompt_source": "four_role_prompts",
+      "structured_contract": "evolver_json",
+      "llm_kernel": true,
+      "agent_definition": {
+        "agent_type": "meta_evolution_agent",
+        "kernel_modality": "llm",
+        "input_contract": "completed trajectory summaries + deterministic diagnoses",
+        "decision_authority": "propose at most one replay-gated harness mutation",
+        "delegates_to": [
+          "replay_gate"
+        ]
+      }
+    },
+    "proposal": {
+      "decision": "propose_mutation",
+      "mutation": {
+        "action": "add_composition_edge",
+        "target": "candidate_comparison",
+        "before": {},
+        "after": {
+          "after": "evidence_acquisition",
+          "before": "finish",
+          "required": true
+        },
+        "reason": "The diagnosis indicates premature termination because the evidence verifier rejected the finish state due to a lack of verified comparison against plausible alternatives. The trajectory reached 'finish' without satisfying the evidence gate. Adding a required composition edge from 'evidence_acquisition' to 'finish' enforces that evidence gathering (including comparison against alternatives) must occur before the trajectory can legally terminate."
+      },
+      "expected_effect": "The system will now enforce a mandatory path where the 'evidence_acquisition' step must be completed and validated before the 'finish' step can be executed, preventing premature termination on samples requiring comparative evidence.",
+      "regression_risk": "Low. This mutation only restricts the termination condition to ensure safety and correctness; it does not alter the core logic of tools or introduce new failure modes, though it may increase latency for samples that previously finished quickly without rigorous comparison.",
+      "confidence": 0.95
+    },
+    "proposal_validation": {
+      "status": "candidate_created",
+      "action": "add_composition_edge",
+      "target_ids": [
+        "candidate_comparison"
+      ],
+      "intent_id": "evolver_intent_b95db0fc4ba9"
+    },
+    "error": ""
+  }
+}

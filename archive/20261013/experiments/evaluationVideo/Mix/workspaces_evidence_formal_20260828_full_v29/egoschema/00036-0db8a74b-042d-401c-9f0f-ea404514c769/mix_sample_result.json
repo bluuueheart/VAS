@@ -1,0 +1,55 @@
+{
+  "sample_uid": "egoschema:00036:0db8a74b-042d-401c-9f0f-ea404514c769",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 15,
+  "iter_num": 18,
+  "tool_success_rate": 0.733333,
+  "successful_tool_calls": 11,
+  "planner_iterations": 18,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "failure_class": "sample_failure",
+  "accuracy_eligible": false,
+  "ground_truth": "The paint brush is used to apply paint to the artwork, while the oil is used to thin the paint.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": false,
+  "raw_final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+  "elapsed_seconds": 5615.405,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00036-0db8a74b-042d-401c-9f0f-ea404514c769",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00036-0db8a74b-042d-401c-9f0f-ea404514c769/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00036-0db8a74b-042d-401c-9f0f-ea404514c769/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/egoschema/00036-0db8a74b-042d-401c-9f0f-ea404514c769/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0db8a74b-042d-401c-9f0f-ea404514c769.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0db8a74b-042d-401c-9f0f-ea404514c769.mp4",
+  "question_block": "Question: Describe the significance of the paint brush and oil in c's work on the art piece, and how c alternates between using them.\nOptions:\n(A) The paint brush is used to apply paint to the artwork, while the oil is used to thin the paint.\n(B) The paint brush, a vital tool, is skillfully utilized to apply oil gracefully onto the artwork, whereas the paint is importantly employed to effectively thin the oil.\n(C) The paint brush is used to apply both paint and oil to the artwork.\n(D) The oil is typically used to apply paint effectively to the artwork, while the paint brush plays a crucial role in thinning the paint evenly.\n(E) The oil and paint brush, as artistic tools, are both utilized to effectively apply paint to enhance the artwork's appearance.",
+  "options": [
+    "The paint brush is used to apply paint to the artwork, while the oil is used to thin the paint.",
+    "The paint brush, a vital tool, is skillfully utilized to apply oil gracefully onto the artwork, whereas the paint is importantly employed to effectively thin the oil.",
+    "The paint brush is used to apply both paint and oil to the artwork.",
+    "The oil is typically used to apply paint effectively to the artwork, while the paint brush plays a crucial role in thinning the paint evenly.",
+    "The oil and paint brush, as artistic tools, are both utilized to effectively apply paint to enhance the artwork's appearance."
+  ],
+  "official_meta": {
+    "question_index": "00036",
+    "video_id": "0db8a74b-042d-401c-9f0f-ea404514c769",
+    "resolved_video_stem": "0db8a74b-042d-401c-9f0f-ea404514c769",
+    "video_mapping_verified": true,
+    "source_index": 36,
+    "input_contract": {
+      "video": "official_three_minute_clip",
+      "question": "official_question_and_five_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-03T09:20:55.863896Z"
+}

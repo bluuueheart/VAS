@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00027:0a8109fe-15b9-4f5c-b5f2-993013cb216b",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The correct answer to question 2 is: the primary function of the scrapper throughout the video is to cut the dough into small pieces.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00027-0a8109fe-15b9-4f5c-b5f2-993013cb216b",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00027-0a8109fe-15b9-4f5c-b5f2-993013cb216b/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00027-0a8109fe-15b9-4f5c-b5f2-993013cb216b/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00027-0a8109fe-15b9-4f5c-b5f2-993013cb216b/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/0a8109fe-15b9-4f5c-b5f2-993013cb216b.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/0a8109fe-15b9-4f5c-b5f2-993013cb216b.mp4",
+  "question_block": "Question: In your own words, what was the primary function of the scrapper throughout the video? discuss how it contributed to the overall process without mentioning specific actions.\nOptions:\n(A) Inaccurately, the wrong response to question 2 states: the primary purpose of the scrapper throughout the entire video is to effectively remove excess dough from the wooden plank.\n(B) Inaccurately, question 2's incorrect response states: the primary purpose of the scrapper present in the video is to shape and form the dumplings.\n(C) Inaccurately, the wrong answer to question 2 states: the primary function of the scrapper, as shown in the video, is essentially to knead the dough.\n(D) The wrong answer to question 2 is: the primary function of the scrapper throughout the video is to roll out the dough.\n(E) The correct answer to question 2 is: the primary function of the scrapper throughout the video is to cut the dough into small pieces.",
+  "options": [
+    "Inaccurately, the wrong response to question 2 states: the primary purpose of the scrapper throughout the entire video is to effectively remove excess dough from the wooden plank.",
+    "Inaccurately, question 2's incorrect response states: the primary purpose of the scrapper present in the video is to shape and form the dumplings.",
+    "Inaccurately, the wrong answer to question 2 states: the primary function of the scrapper, as shown in the video, is essentially to knead the dough.",
+    "The wrong answer to question 2 is: the primary function of the scrapper throughout the video is to roll out the dough.",
+    "The correct answer to question 2 is: the primary function of the scrapper throughout the video is to cut the dough into small pieces."
+  ],
+  "official_meta": {
+    "question_index": "00027",
+    "video_id": "0a8109fe-15b9-4f5c-b5f2-993013cb216b",
+    "source_index": 27
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:43:31.644801Z"
+}

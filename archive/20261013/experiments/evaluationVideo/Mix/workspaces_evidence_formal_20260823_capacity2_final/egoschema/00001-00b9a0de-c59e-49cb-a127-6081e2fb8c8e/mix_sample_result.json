@@ -1,0 +1,42 @@
+{
+  "sample_uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 8,
+  "iter_num": 9,
+  "tool_success_rate": 0.875,
+  "successful_tool_calls": 7,
+  "planner_iterations": 9,
+  "subagent_iterations": 0,
+  "predicted_label": "E",
+  "ground_truth": "To clean the paintbrush.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [
+    "E"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(E) To clean the paintbrush.",
+  "elapsed_seconds": 697.468,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_capacity2_final/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_capacity2_final/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_capacity2_final/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260823_capacity2_final/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/00b9a0de-c59e-49cb-a127-6081e2fb8c8e.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/00b9a0de-c59e-49cb-a127-6081e2fb8c8e.mp4",
+  "question_block": "Question: What was the primary purpose of the cup of water in this video, and how did it contribute to the overall painting process?\nOptions:\n(A) To provide a source of water for the paintbrush.\n(B) To provide a place to store the paintbrush.\n(C) To provide a place to dispose of the paintbrush.\n(D) To provide a place to rest the paintbrush.\n(E) To clean the paintbrush.",
+  "options": [
+    "To provide a source of water for the paintbrush.",
+    "To provide a place to store the paintbrush.",
+    "To provide a place to dispose of the paintbrush.",
+    "To provide a place to rest the paintbrush.",
+    "To clean the paintbrush."
+  ],
+  "official_meta": {
+    "question_index": "00001",
+    "video_id": "00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+    "source_index": 1
+  },
+  "updated_at": "2026-08-23T00:40:20.645322Z"
+}

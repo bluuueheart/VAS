@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00132:425f2fb4-a2a7-4925-94b5-25f6b0b85f78",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C consistently picks up a block, throws it on the ground, and then picks up another block.",
+  "ground_truth_option": "E",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00132-425f2fb4-a2a7-4925-94b5-25f6b0b85f78",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00132-425f2fb4-a2a7-4925-94b5-25f6b0b85f78/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00132-425f2fb4-a2a7-4925-94b5-25f6b0b85f78/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00132-425f2fb4-a2a7-4925-94b5-25f6b0b85f78/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/425f2fb4-a2a7-4925-94b5-25f6b0b85f78.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/425f2fb4-a2a7-4925-94b5-25f6b0b85f78.mp4",
+  "question_block": "Question: Identify the key steps that c consistently repeats, and infer the potential purpose behind these actions.\nOptions:\n(A) C consistently picks up a block, shakes it, and then throws it on the ground.\n(B) C consistently picks up a block, moves it around, and then throws it on the ground.\n(C) C consistently picks up a block, touches it, and then throws it on the ground.\n(D) C consistently picks up a block, wraps it around his waist, and then throws it on the ground.\n(E) C consistently picks up a block, throws it on the ground, and then picks up another block.",
+  "options": [
+    "C consistently picks up a block, shakes it, and then throws it on the ground.",
+    "C consistently picks up a block, moves it around, and then throws it on the ground.",
+    "C consistently picks up a block, touches it, and then throws it on the ground.",
+    "C consistently picks up a block, wraps it around his waist, and then throws it on the ground.",
+    "C consistently picks up a block, throws it on the ground, and then picks up another block."
+  ],
+  "official_meta": {
+    "question_index": "00132",
+    "video_id": "425f2fb4-a2a7-4925-94b5-25f6b0b85f78",
+    "source_index": 132
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:48:26.725528Z"
+}

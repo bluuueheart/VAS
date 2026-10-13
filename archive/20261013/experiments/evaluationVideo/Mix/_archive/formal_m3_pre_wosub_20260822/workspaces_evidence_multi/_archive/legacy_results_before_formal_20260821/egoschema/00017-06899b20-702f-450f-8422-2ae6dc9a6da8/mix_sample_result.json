@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00017:06899b20-702f-450f-8422-2ae6dc9a6da8",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and shaping the dough.",
+  "ground_truth_option": "D",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00017-06899b20-702f-450f-8422-2ae6dc9a6da8",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00017-06899b20-702f-450f-8422-2ae6dc9a6da8/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00017-06899b20-702f-450f-8422-2ae6dc9a6da8/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00017-06899b20-702f-450f-8422-2ae6dc9a6da8/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/06899b20-702f-450f-8422-2ae6dc9a6da8.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/06899b20-702f-450f-8422-2ae6dc9a6da8.mp4",
+  "question_block": "Question: In the process of creating the final dough piece, can you identify three main stages that c goes through, and explain how her methods and techniques change during each stage?\nOptions:\n(A) C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and baking the dough.\n(B) C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and letting the dough rise.\n(C) C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and adding the toppings.\n(D) C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and shaping the dough.\n(E) C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and freezing the dough.",
+  "options": [
+    "C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and baking the dough.",
+    "C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and letting the dough rise.",
+    "C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and adding the toppings.",
+    "C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and shaping the dough.",
+    "C goes through three main stages in creating the final dough piece: combining the ingredients, kneading the dough, and freezing the dough."
+  ],
+  "official_meta": {
+    "question_index": "00017",
+    "video_id": "06899b20-702f-450f-8422-2ae6dc9a6da8",
+    "source_index": 17
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:18:50.182571Z"
+}

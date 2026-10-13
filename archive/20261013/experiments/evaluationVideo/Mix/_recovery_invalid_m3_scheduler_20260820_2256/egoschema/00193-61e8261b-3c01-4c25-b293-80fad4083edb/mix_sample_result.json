@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00193:61e8261b-3c01-4c25-b293-80fad4083edb",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is installing a roof.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00193-61e8261b-3c01-4c25-b293-80fad4083edb",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00193-61e8261b-3c01-4c25-b293-80fad4083edb/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00193-61e8261b-3c01-4c25-b293-80fad4083edb/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00193-61e8261b-3c01-4c25-b293-80fad4083edb/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/61e8261b-3c01-4c25-b293-80fad4083edb.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/61e8261b-3c01-4c25-b293-80fad4083edb.mp4",
+  "question_block": "Question: Describe the main tasks that c is performing in this video and how these tasks are related to each other.\nOptions:\n(A) C is repairing a roof.\n(B) C is cleaning a roof.\n(C) C is installing a roof.\n(D) C is painting a roof.\n(E) C is installing solar panels on a roof.",
+  "options": [
+    "C is repairing a roof.",
+    "C is cleaning a roof.",
+    "C is installing a roof.",
+    "C is painting a roof.",
+    "C is installing solar panels on a roof."
+  ],
+  "official_meta": {
+    "question_index": "00193",
+    "video_id": "61e8261b-3c01-4c25-b293-80fad4083edb",
+    "source_index": 193
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:44.153129Z"
+}

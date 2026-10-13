@@ -1,0 +1,62 @@
+{
+  "sample_uid": "videomme:humanity-history:001-2",
+  "dataset_name": "videomme",
+  "subset_name": "Humanity & History",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 1,
+  "iter_num": 3,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 1,
+  "planner_iterations": 3,
+  "subagent_iterations": 0,
+  "predicted_label": "A",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "A",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [
+    "A"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(A) It is a news report that introduces the history behind Christmas decorations.",
+  "elapsed_seconds": 741.587,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/humanity-history-001-2",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/humanity-history-001-2/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/humanity-history-001-2/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/videomme/humanity-history-001-2/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/Video-MME/data/fFjv93ACGo8.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/Video-MME/data/fFjv93ACGo8.mp4",
+  "question_block": "Question: What is the genre of this video?\nOptions:\n(A) It is a news report that introduces the history behind Christmas decorations.\n(B) It is a documentary on the evolution of Christmas holiday recipes.\n(C) It is a travel vlog exploring Christmas markets around the world.\n(D) It is a tutorial on DIY Christmas ornament crafting.",
+  "options": [
+    "A. It is a news report that introduces the history behind Christmas decorations.",
+    "B. It is a documentary on the evolution of Christmas holiday recipes.",
+    "C. It is a travel vlog exploring Christmas markets around the world.",
+    "D. It is a tutorial on DIY Christmas ornament crafting."
+  ],
+  "official_meta": {
+    "video_id": "001",
+    "video_external_id": "fFjv93ACGo8",
+    "resolved_video_stem": "fFjv93ACGo8",
+    "video_mapping_verified": true,
+    "duration": "short",
+    "domain": "Knowledge",
+    "subtitle_mode": "w/o sub.",
+    "external_subtitles_used": false,
+    "sub_category": "Humanity & History",
+    "task_type": "Information Synopsis",
+    "question_id": "001-2",
+    "question_index": 1,
+    "video_item_index": 0,
+    "input_contract": {
+      "video": "official_full_video",
+      "question": "official_question_and_options",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-09-02T01:00:10.256872Z"
+}

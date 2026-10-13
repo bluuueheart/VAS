@@ -1,0 +1,43 @@
+{
+  "sample_uid": "mlvu:order:25:order-269",
+  "dataset_name": "mlvu",
+  "subset_name": "order",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "playing trombone --> jetskiing --> water sliding --> abseiling",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00025-order-269",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00025-order-269/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00025-order-269/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/mlvu/order-00025-order-269/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_269.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/5_order/order_269.mp4",
+  "question_block": "Question: Please identify the option that corresponds to the order of events as they occur in the video.\nOptions:\n(A) jetskiing --> abseiling --> water sliding --> playing trombone\n(B) playing trombone --> jetskiing --> water sliding --> abseiling\n(C) playing trombone --> abseiling --> jetskiing --> water sliding\n(D) abseiling --> playing trombone --> jetskiing --> water sliding",
+  "options": [
+    "jetskiing --> abseiling --> water sliding --> playing trombone",
+    "playing trombone --> jetskiing --> water sliding --> abseiling",
+    "playing trombone --> abseiling --> jetskiing --> water sliding",
+    "abseiling --> playing trombone --> jetskiing --> water sliding"
+  ],
+  "official_meta": {
+    "task_type": "order",
+    "source_json": "5_order.json",
+    "source_index": 25,
+    "video_subdir": "5_order",
+    "video_relative_path": "5_order/order_269.mp4",
+    "data_type": "video"
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:54:28.584451Z"
+}

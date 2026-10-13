@@ -1,0 +1,42 @@
+{
+  "sample_uid": "lvbench:key-information-retrieval:333:2654",
+  "dataset_name": "lvbench",
+  "subset_name": "key information retrieval",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "Do not walk on the lava",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00333-2654",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00333-2654/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00333-2654/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/lvbench/key-information-retrieval-00333-2654/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/hROKtPqktO8.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/LVBench/video_chunks/hROKtPqktO8.mp4",
+  "question_block": "Question: What is the first warn on the warning sign in the volcano skali?\nOptions:\n(A) Do not walk on the lava\n(B) Attention\n(C) Do not throw anything at the lava\n(D) Do not make carvings on the lava",
+  "options": [
+    "Do not walk on the lava",
+    "Attention",
+    "Do not throw anything at the lava",
+    "Do not make carvings on the lava"
+  ],
+  "official_meta": {
+    "question_type": "key information retrieval",
+    "video_type": "selfmedia",
+    "time_reference": "21:15-21:30",
+    "video_key": "hROKtPqktO8",
+    "source_index": 333
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:52:48.733545Z"
+}

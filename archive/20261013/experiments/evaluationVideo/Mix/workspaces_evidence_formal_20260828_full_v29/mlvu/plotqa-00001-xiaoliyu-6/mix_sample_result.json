@@ -1,0 +1,59 @@
+{
+  "sample_uid": "mlvu:plotqa:1:xiaoliyu-6",
+  "dataset_name": "mlvu",
+  "subset_name": "plotQA",
+  "status": "completed",
+  "acc": 1.0,
+  "tool_use_num": 4,
+  "iter_num": 6,
+  "tool_success_rate": 1.0,
+  "successful_tool_calls": 4,
+  "planner_iterations": 6,
+  "subagent_iterations": 0,
+  "predicted_label": "B",
+  "failure_class": "",
+  "accuracy_eligible": true,
+  "ground_truth": "Carried by the cartoon turtle",
+  "ground_truth_option": "B",
+  "ground_truth_labels": [
+    "B"
+  ],
+  "planner_success": true,
+  "raw_final_answer": "(B) Carried by the cartoon turtle",
+  "elapsed_seconds": 346.038,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00001-xiaoliyu-6",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00001-xiaoliyu-6/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00001-xiaoliyu-6/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260828_full_v29/mlvu/plotqa-00001-xiaoliyu-6/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/xiaoliyu_6.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/MLVU/MLVU/video/1_plotQA/xiaoliyu_6.mp4",
+  "question_block": "Question: How did the cartoon jellyfish leave the mire?\nOptions:\n(A) Carried by the cartoon shrimp\n(B) Carried by the cartoon turtle\n(C) Carried by the cartoon catfish\n(D) Carried by the cartoon seahorse",
+  "options": [
+    "Carried by the cartoon shrimp",
+    "Carried by the cartoon turtle",
+    "Carried by the cartoon catfish",
+    "Carried by the cartoon seahorse"
+  ],
+  "official_meta": {
+    "task_type": "plotQA",
+    "source_question_type": "plotQA",
+    "prompt_task_type": "plotQA",
+    "source_json": "1_plotQA.json",
+    "source_index": 1,
+    "video_subdir": "1_plotQA",
+    "video_relative_path": "1_plotQA/xiaoliyu_6.mp4",
+    "resolved_video_stem": "xiaoliyu_6",
+    "video_mapping_verified": true,
+    "data_type": "video",
+    "input_contract": {
+      "video": "official_preclipped_task_video",
+      "question": "official_question_and_candidates",
+      "temporal_crop": false,
+      "timestamp_input": "none",
+      "audio": "preserved",
+      "audio_transcript": "derived_from_source_audio",
+      "external_subtitles": false
+    }
+  },
+  "updated_at": "2026-08-28T10:28:59.191000Z"
+}

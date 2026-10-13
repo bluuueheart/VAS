@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00107:330a2524-55c2-4c1e-bc01-8d5eef614978",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The two critical moments in the video where c adjusts the lawn mower are when they adjust the steering of the lawn mower at the beginning of the video, and when they adjust the hand brake several times throughout the video.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00107-330a2524-55c2-4c1e-bc01-8d5eef614978",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00107-330a2524-55c2-4c1e-bc01-8d5eef614978/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00107-330a2524-55c2-4c1e-bc01-8d5eef614978/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00107-330a2524-55c2-4c1e-bc01-8d5eef614978/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/330a2524-55c2-4c1e-bc01-8d5eef614978.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/330a2524-55c2-4c1e-bc01-8d5eef614978.mp4",
+  "question_block": "Question: Identify two critical moments in the video where c adjusts the lawn mower and explain the importance of these adjustments in the context of the overall task.\nOptions:\n(A) The two critical moments in the video where c adjusts the lawn mower are when they adjust the seat of the lawn mower at the beginning of the video, and when they adjust the hand brake several times throughout the video.\n(B) The two crucial instances in the video, where c adjusts the lawn mower, are when they pick up a stick, and subsequently when they discard the stick away.\n(C) The two critical moments in the video where c adjusts the lawn mower are when they adjust the steering of the lawn mower at the beginning of the video, and when they adjust the hand brake several times throughout the video.\n(D) In the video, the two critical moments where the individual, c, adjusts the lawn mower are specifically when they forcefully kick a stick aside, and subsequently when they kick yet another stick.\n(E) The two crucial instances in the video where person c adjusts the lawn mower involve when they firmly hold the lawn mower using both hands, and when they carefully hold the lawn mower with just their left hand.",
+  "options": [
+    "The two critical moments in the video where c adjusts the lawn mower are when they adjust the seat of the lawn mower at the beginning of the video, and when they adjust the hand brake several times throughout the video.",
+    "The two crucial instances in the video, where c adjusts the lawn mower, are when they pick up a stick, and subsequently when they discard the stick away.",
+    "The two critical moments in the video where c adjusts the lawn mower are when they adjust the steering of the lawn mower at the beginning of the video, and when they adjust the hand brake several times throughout the video.",
+    "In the video, the two critical moments where the individual, c, adjusts the lawn mower are specifically when they forcefully kick a stick aside, and subsequently when they kick yet another stick.",
+    "The two crucial instances in the video where person c adjusts the lawn mower involve when they firmly hold the lawn mower using both hands, and when they carefully hold the lawn mower with just their left hand."
+  ],
+  "official_meta": {
+    "question_index": "00107",
+    "video_id": "330a2524-55c2-4c1e-bc01-8d5eef614978",
+    "source_index": 107
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_6_67__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T19:25:02.953668Z"
+}

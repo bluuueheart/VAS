@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00146:47f4c828-f238-459f-91c3-6b221db54c5b",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "The character prepares a meal, eats it, and then uses their laptop.",
+  "ground_truth_option": "C",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00146-47f4c828-f238-459f-91c3-6b221db54c5b",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00146-47f4c828-f238-459f-91c3-6b221db54c5b/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00146-47f4c828-f238-459f-91c3-6b221db54c5b/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00146-47f4c828-f238-459f-91c3-6b221db54c5b/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/47f4c828-f238-459f-91c3-6b221db54c5b.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/47f4c828-f238-459f-91c3-6b221db54c5b.mp4",
+  "question_block": "Question: Describe the overall sequence of events in the video, paying special attention to how the character interacts with objects and maintains cleanliness throughout their activities in the kitchen.\nOptions:\n(A) The main character creates a sandwich, and subsequently enjoys eating it.\n(B) The main character skillfully prepares a meal, later consumes and enjoys it wholeheartedly.\n(C) The character prepares a meal, eats it, and then uses their laptop.\n(D) The primary character simply prepares a tasty snack and subsequently consumes it with pleasure.\n(E) The character prepares a meal, eats it, and then uses their phone.",
+  "options": [
+    "The main character creates a sandwich, and subsequently enjoys eating it.",
+    "The main character skillfully prepares a meal, later consumes and enjoys it wholeheartedly.",
+    "The character prepares a meal, eats it, and then uses their laptop.",
+    "The primary character simply prepares a tasty snack and subsequently consumes it with pleasure.",
+    "The character prepares a meal, eats it, and then uses their phone."
+  ],
+  "official_meta": {
+    "question_index": "00146",
+    "video_id": "47f4c828-f238-459f-91c3-6b221db54c5b",
+    "source_index": 146
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:49:30.779690Z"
+}

@@ -19,8 +19,10 @@ from matplotlib.ticker import PercentFormatter
 
 PARTICIPATED_STATUSES = {"completed", "wrong"}
 SAMPLE_RESULT_FILENAME = "mix_sample_result.json"
-DATASET_ORDER = ("mvbench", "mlvu", "videomme")
+DATASET_ORDER = ("lvbench", "videomme", "egoschema", "mlvu", "mvbench")
 DATASET_DISPLAY_NAMES = {
+    "lvbench": "LVBench",
+    "egoschema": "EgoSchema",
     "mvbench": "MVBench",
     "mlvu": "MLVU",
     "videomme": "Video-MME",

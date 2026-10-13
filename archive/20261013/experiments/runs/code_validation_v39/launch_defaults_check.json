@@ -1,0 +1,21 @@
+{
+  "checks": [
+    {
+      "overrides": {},
+      "resolved": "2 2 1 all 1"
+    },
+    {
+      "overrides": {
+        "ONLINE_EVOLUTION_TRIGGER_EVERY": "3"
+      },
+      "resolved": "3 3 1 all 1"
+    },
+    {
+      "overrides": {
+        "ONLINE_EVOLUTION_GROUP_SIZE": "1"
+      },
+      "resolved": "1 2 1 all 1"
+    }
+  ],
+  "model_execution": false
+}

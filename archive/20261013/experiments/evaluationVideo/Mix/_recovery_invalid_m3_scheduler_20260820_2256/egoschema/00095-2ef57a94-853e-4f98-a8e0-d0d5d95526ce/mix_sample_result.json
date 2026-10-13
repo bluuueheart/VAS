@@ -1,0 +1,41 @@
+{
+  "sample_uid": "egoschema:00095:2ef57a94-853e-4f98-a8e0-d0d5d95526ce",
+  "dataset_name": "egoschema",
+  "subset_name": "subset",
+  "status": "failed",
+  "acc": 0.0,
+  "tool_use_num": 0,
+  "iter_num": 0,
+  "tool_success_rate": 0.0,
+  "successful_tool_calls": 0,
+  "planner_iterations": 0,
+  "subagent_iterations": 0,
+  "predicted_label": "",
+  "ground_truth": "C is trying to clean the house.",
+  "ground_truth_option": "A",
+  "ground_truth_labels": [],
+  "planner_success": false,
+  "raw_final_answer": "",
+  "elapsed_seconds": 0.0,
+  "workspace_root": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00095-2ef57a94-853e-4f98-a8e0-d0d5d95526ce",
+  "launcher_log": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00095-2ef57a94-853e-4f98-a8e0-d0d5d95526ce/launcher.log",
+  "result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00095-2ef57a94-853e-4f98-a8e0-d0d5d95526ce/mix_sample_result.json",
+  "run_result_path": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/egoschema/00095-2ef57a94-853e-4f98-a8e0-d0d5d95526ce/results/run_result.json",
+  "source_video_path": "/gemini/data-1/datasets/egoschema/videos/2ef57a94-853e-4f98-a8e0-d0d5d95526ce.mp4",
+  "prepared_video_path": "/gemini/data-1/datasets/egoschema/videos/2ef57a94-853e-4f98-a8e0-d0d5d95526ce.mp4",
+  "question_block": "Question: What could be a possible reasoning behind c's repetitive action of picking up and throwing cloths, and how does this action evolve over the course of the video?\nOptions:\n(A) C is trying to clean the house.\n(B) C is deliberately attempting to create a disorganized, chaotic mess.\n(C) Currently, c is making an effort to participate in regular exercise activities.\n(D) Currently, c is making an effort to find amusement and entertain herself independently.\n(E) C is trying to train her dog.",
+  "options": [
+    "C is trying to clean the house.",
+    "C is deliberately attempting to create a disorganized, chaotic mess.",
+    "Currently, c is making an effort to participate in regular exercise activities.",
+    "Currently, c is making an effort to find amusement and entertain herself independently.",
+    "C is trying to train her dog."
+  ],
+  "official_meta": {
+    "question_index": "00095",
+    "video_id": "2ef57a94-853e-4f98-a8e0-d0d5d95526ce",
+    "source_index": 95
+  },
+  "error": "Reusable Mix worker did not produce a per-sample result. return_code=-9 worker_log=/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_multi/_worker_logs/group_lvbench_entity-recognition_4_63__videomme_multilingual_900-3.log",
+  "updated_at": "2026-08-20T14:46:17.143464Z"
+}

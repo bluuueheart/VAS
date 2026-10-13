@@ -1,0 +1,14 @@
+{
+  "ONLINE_EVOLUTION": "1",
+  "ONLINE_EVOLUTION_GROUP_SIZE": "1",
+  "ONLINE_EVOLUTION_TRIGGER_EVERY": "2",
+  "MIX_PAIRED_ABLATIONS": "1",
+  "MIX_PAIRED_ABLATION_TOOLS": "all",
+  "TOOLSTAR_DISABLE_LOCAL_VECTOR_INDEX": "0",
+  "TOOLSTAR_SEMANTIC_INDEX_VIDEO": "1",
+  "CUDA_VISIBLE_DEVICES": "0",
+  "TOOLSTAR_WORKSPACES_ROOT_OVERRIDE": "/gemini/code/export_packages/extracted/evaluationVideo/Mix/workspaces_evidence_formal_20260917_full_v38",
+  "pid": 164338,
+  "tmux_session": "mix_full_v38",
+  "command": "/gemini/code/bin/python3.11 evaluationVideo/Mix/run_mix_batch.py --config evaluationVideo/Mix/mix_config_evidence_multi.json "
+}

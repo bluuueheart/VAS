@@ -1,0 +1,171 @@
+{
+  "date": "2026-09-30",
+  "project_root": "/gemini/code/export_packages/extracted",
+  "source_manifest": {
+    "files": 111,
+    "mismatches": []
+  },
+  "pilot": {
+    "counts": {
+      "completed": 7,
+      "failed": 5
+    },
+    "all_attempt_correct_fraction": 0.5833333333333334,
+    "rows": [
+      {
+        "uid": "egoschema:00000:0074f737-11cb-497d-8d07-77c3a8127391",
+        "status": "completed",
+        "acc": 1.0,
+        "source_video_exists": true,
+        "artifact": "runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00000-0074f737-11cb-497d-8d07-77c3a8127391/mix_sample_result.json",
+        "artifact_sha256": "8b77094a4c72342454904add46c7b04d1396ef70a711abc95cf2edc692c48c38",
+        "run_sha256": "34670c7986ea929604f5e2a183f323d02982e81de6bf966a6ef2614b50d70919",
+        "steps": 6,
+        "final_answer": "(D) C is cleaning dishes.",
+        "snapshot": "snapshot_000"
+      },
+      {
+        "uid": "egoschema:00001:00b9a0de-c59e-49cb-a127-6081e2fb8c8e",
+        "status": "completed",
+        "acc": 1.0,
+        "source_video_exists": true,
+        "artifact": "runs/research_pilot_20260923/baseline/candidate_workspaces/egoschema/00001-00b9a0de-c59e-49cb-a127-6081e2fb8c8e/mix_sample_result.json",
+        "artifact_sha256": "a8f5d6bb530ecfc64bbf796d5fa41a8ba1b169160bce26517aa5568421768083",
+        "run_sha256": "b8595a920db81f6f7b83fa0221c2f61652f5862d66d751bbd8061a2cfd357e66",
+        "steps": 7,
+        "final_answer": "(E) To clean the paintbrush.",
+        "snapshot": "snapshot_000"
+      },
+      {
+        "uid": "lvbench:entity-recognition:4:63",
+        "status": "failed",
+        "acc": 0.0,
+        "source_video_exists": true,
+        "artifact": "runs/research_pilot_20260923/baseline/candidate_workspaces/lvbench/entity-recognition-00004-63/mix_sample_result.json",
+        "artifact_sha256": "281657ef1981029dbc4657f7d020ead5189c2e477dffd2ee0c92c0179e629a0b",
+        "run_sha256": "718899562ae5ab6215a34d86d8338ca3074bb5c220e80fe6943129b77a0ebfcf",
+        "steps": 15,
+        "final_answer": "Failed: planner_recovery_exhausted_without_verifiable_finish.",
+        "snapshot": "snapshot_000"
+      },
+      {
+        "uid": "lvbench:key-information-retrieval:0:55",
+        "status": "completed",
+        "acc": 1.0,
+        "source_video_exists": true,
+        "artifact": "runs/research_pilot_20260923/baseline/candidate_workspaces/lvbench/key-information-retrieval-00000-55/mix_sample_result.json",
+        "artifact_sha256": "d5d175cdde20009821e81215b417582bbc6dea39d282da05101959f20299e7e9",
+        "run_sha256": "29ef63a0a05f82798b496681116968282fd34439c7e4106839b099d78321ca5f",
+        "steps": 3,
+        "final_answer": "(D) 1633",
+        "snapshot": "snapshot_000"
+      },
+      {
+        "uid": "mlvu:anomaly-reco:0:surveil-20",
+        "status": "completed",
+        "acc": 1.0,
+        "source_video_exists": true,
+        "artifact": "runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/anomaly-reco-00000-surveil-20/mix_sample_result.json",
+        "artifact_sha256": "1c882166acefdb494701362de03f591e3a62779d939ace823105cb171561c8a6",
+        "run_sha256": "e1dfa2a8a7a6c148064a6a30c02a8870407738b5ebd050d0f4ef1f71a51eb0b4",
+        "steps": 7,
+        "final_answer": "(C) Shoplifting",
+        "snapshot": "snapshot_000"
+      },
+      {
+        "uid": "mlvu:count:0:count-126",
+        "status": "failed",
+        "acc": 0.0,
+        "source_video_exists": true,
+        "artifact": "runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/count-00000-count-126/mix_sample_result.json",
+        "artifact_sha256": "00475f998047f8535d8682b7684bdeee4000333378d01f08637faaab87bda448",
+        "run_sha256": "0a60633e9f0d04b60a747e526595cc8b6ae7689f62c4f9d3cdd0a89425776e55",
+        "steps": 11,
+        "final_answer": "Failed: evidence_recovery_budget_exhausted_without_new_grounded_evidence.",
+        "snapshot": "snapshot_000"
+      },
+      {
+        "uid": "mlvu:needle:0:needle-32",
+        "status": "failed",
+        "acc": 0.0,
+        "source_video_exists": true,
+        "artifact": "runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/needle-00000-needle-32/mix_sample_result.json",
+        "artifact_sha256": "0caf5fedb9ed1b1d7ab21dd9bfd3285044f21cf1ac1b6160f458f2a5be870fe0",
+        "run_sha256": "e0336a0a94b1439b7e2a642ab64422b0455efabbc7f16787b526b18a11da1d04",
+        "steps": 8,
+        "final_answer": "Failed: evidence_recovery_budget_exhausted_without_new_grounded_evidence.",
+        "snapshot": "snapshot_000"
+      },
+      {
+        "uid": "mlvu:order:0:order-126",
+        "status": "failed",
+        "acc": 0.0,
+        "source_video_exists": true,
+        "artifact": "runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/order-00000-order-126/mix_sample_result.json",
+        "artifact_sha256": "6c5ed16c5b16862ff6105b0a5c08512262f647dd3eaa3f03ce10a391d511974b",
+        "run_sha256": "988e8ff695fe3415d81647e33b68dd69e9c49ceba1d7c17699a1f1fd1a3ee069",
+        "steps": 7,
+        "final_answer": "Failed: evidence_recovery_budget_exhausted_without_new_grounded_evidence.",
+        "snapshot": "snapshot_000"
+      },
+      {
+        "uid": "mlvu:topic-reasoning:0:awa-6",
+        "status": "completed",
+        "acc": 1.0,
+        "source_video_exists": true,
+        "artifact": "runs/research_pilot_20260923/baseline/candidate_workspaces/mlvu/topic-reasoning-00000-awa-6/mix_sample_result.json",
+        "artifact_sha256": "405ef7c2af5301f3cd9cb5ba6b4040af5f67e5fac37db8eceef0a49acc4ae06f",
+        "run_sha256": "c5dcbbfa51eeb82ea74c152a7699188a444b6ad4148674f06e57d58c1707d007",
+        "steps": 2,
+        "final_answer": "(A) Grassland",
+        "snapshot": "snapshot_000"
+      },
+      {
+        "uid": "videomme:astronomy:041-1",
+        "status": "completed",
+        "acc": 1.0,
+        "source_video_exists": true,
+        "artifact": "runs/research_pilot_20260923/baseline/candidate_workspaces/videomme/astronomy-041-1/mix_sample_result.json",
+        "artifact_sha256": "76c3155eb45220aa32f009e15ececbfaeed8e0232709b418ab61dc7619c41b6d",
+        "run_sha256": "936e2a97abb88ee06ddad2e899f5bc179b9cd94e2d4447bcc6cb826091d8cf9f",
+        "steps": 5,
+        "final_answer": "(A) On March 19.",
+        "snapshot": "snapshot_000"
+      },
+      {
+        "uid": "videomme:biology-medicine:021-1",
+        "status": "completed",
+        "acc": 1.0,
+        "source_video_exists": true,
+        "artifact": "runs/research_pilot_20260923/baseline/candidate_workspaces/videomme/biology-medicine-021-1/mix_sample_result.json",
+        "artifact_sha256": "aa48c3cd44716844ea3afc80be47d1c7a7ba6b35aed786a53308ec6c81bad15e",
+        "run_sha256": "60b2ce91d68933c3fce44386c0d8b0aa31d629fcd99aaac010251ef58457947f",
+        "steps": 2,
+        "final_answer": "(A) How mRNA vaccines work.",
+        "snapshot": "snapshot_000"
+      },
+      {
+        "uid": "videomme:humanity-history:001-1",
+        "status": "failed",
+        "acc": 0.0,
+        "source_video_exists": true,
+        "artifact": "runs/research_pilot_20260923/baseline/candidate_workspaces/videomme/humanity-history-001-1/mix_sample_result.json",
+        "artifact_sha256": "e70c053e5457c36ce7983949fb7b40501dbdfd8d84e1b3043de05d41d789791d",
+        "run_sha256": "a9f6ee10723aeedc88433c902630f8e58f141b0dbd4bb9e21f4a501807818ea5",
+        "steps": 6,
+        "final_answer": "Failed: evidence_recovery_budget_exhausted_without_new_grounded_evidence.",
+        "snapshot": "snapshot_000"
+      }
+    ]
+  },
+  "v39_counts": {
+    "completed": 12,
+    "failed": 17,
+    "wrong": 3
+  },
+  "limitations": [
+    "Historical artifacts audited; no fresh GPU inference in this audit.",
+    "Original export excludes Git; branch, diff and commit provenance unavailable.",
+    "Root cause categories remain hypotheses until controlled interventions."
+  ]
+}
