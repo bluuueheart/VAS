@@ -7,9 +7,10 @@
   },
   {
     "path": ".gitignore",
-    "bytes": 230,
-    "sha256": "f7415cc9c170652e6796340fbda1054cb4100c754352b2a16865d9dc173a57d5",
-    "source_sha256": "f7415cc9c170652e6796340fbda1054cb4100c754352b2a16865d9dc173a57d5"
+    "bytes": 719,
+    "sha256": "93fc37e85d06d65784d017413b19c32283b782a1326a07b5905b4b4b38e20697",
+    "source_sha256": "f7415cc9c170652e6796340fbda1054cb4100c754352b2a16865d9dc173a57d5",
+    "publication_adjustment": "Documentation or ignore rules adapted for published checkout"
   },
   {
     "path": "AGENTS.md",
@@ -25,9 +26,10 @@
   },
   {
     "path": "README.md",
-    "bytes": 1336,
-    "sha256": "a930ca6e899cc55d6d475ff2fbe69e1697b890c3c6266d3a42af99608ea1ac5a",
-    "source_sha256": "a930ca6e899cc55d6d475ff2fbe69e1697b890c3c6266d3a42af99608ea1ac5a"
+    "bytes": 1470,
+    "sha256": "9666f9f699f2fc55230ed23ee42742580baf38dfbff3aef294f589c147fc0927",
+    "source_sha256": "a930ca6e899cc55d6d475ff2fbe69e1697b890c3c6266d3a42af99608ea1ac5a",
+    "publication_adjustment": "Documentation or ignore rules adapted for published checkout"
   },
   {
     "path": "RL/.env.example",
@@ -4273,9 +4275,10 @@
   },
   {
     "path": "archive/20261013/README.md",
-    "bytes": 21762,
-    "sha256": "c1f653c54bbf482c89fb1399ede7f4accd551faa4c14608bd86df7ff9000cd6e",
-    "source_sha256": "c1f653c54bbf482c89fb1399ede7f4accd551faa4c14608bd86df7ff9000cd6e"
+    "bytes": 21908,
+    "sha256": "19ee38d22ab8b68624c7be9113a73079c2646aeb9bb7e186de0c1ab233d8ec61",
+    "source_sha256": "c1f653c54bbf482c89fb1399ede7f4accd551faa4c14608bd86df7ff9000cd6e",
+    "publication_adjustment": "Documentation or ignore rules adapted for published checkout"
   },
   {
     "path": "archive/20261013/documents/execution_log.md",

@@ -1,8 +1,10 @@
 # 历史归档：2026-10-13
 
+Git 中保存的是选定文本证据；完整本地归档范围、未提交素材及精确重放限制见 [发布说明](../../docs/PUBLICATION.md)。
+
 本目录保存旧规划、旧实验结果及随历史验证产物归档的测试快照和一次性脚本。归档不表示实验结论无效；它们不再作为当前入口。
 
-当前状态：[Recovery/PROJECT_STATUS.md](/gemini/code/Recovery/PROJECT_STATUS.md)。当前冻结基线保留在 `runs/research_pilot_20260923/`；Recovery 产物及 `runs/recovery_audit_20260930/` 保留。
+当前状态：[Recovery/PROJECT_STATUS.md](../../Recovery/PROJECT_STATUS.md)。当前冻结基线保留在 `runs/research_pilot_20260923/`；Recovery 产物及 `runs/recovery_audit_20260930/` 保留。
 
 保留 v26 工作区（当前共享预处理缓存）及 v39 主实验工作区（当前审计证据）；保留研究方向文档 `journal_extension_alignment.md`、参考资料 `reference.md`、当前回归测试及 Qwen 运行诊断 probe。
 
